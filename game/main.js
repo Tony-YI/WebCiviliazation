@@ -7,7 +7,12 @@ function Init()
 }
 
 //This is the function to add 'ACTIONS' to the form that is going to be processed on the server side
-function add_action_to_form(actions)
+function player_add_action_to_form(actions)
+{
+
+}
+//This is the function to get the Round result from the server
+function player_get_result()
 {
 
 }

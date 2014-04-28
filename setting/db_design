@@ -1,0 +1,25 @@
+
+
+#Game
+| Game ID | player A | player B | player C|
+
+#player
+| player | 
+
+#unit
+| unit (PRIMARY KEY)|  owner (REFERENCE player)| unit_type | slot | 
+
+#unit_type
+| unit_type (PRIMARY KEY)| HP | AP | ATTACK |
+
+#slot
+| slot (PRIMARY KEY)| owner | slot_type | unit |
+
+#slot_type
+|slot_type (PRIMARY KEY)| production_gold | production_lumber |
+
+#action
+|action id (PRIMARY KEY)| actor (REFERENCE unit) | action_type | target_slot (REFERENCE slot)| round |
+
+#round
+|
