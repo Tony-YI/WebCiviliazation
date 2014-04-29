@@ -14,4 +14,9 @@
 #$db is the connection to the mysql server
 $db = mysql_connect("$MYSQL_HOST:$MYSQL_PORT",$MYSQL_USR,$MYSQL_PWD);
 
+
+	function check_cookie()
+	{
+		$USER_COOKIE = $_COOKIE["USER_COOKIE"];
+	}
 ?>

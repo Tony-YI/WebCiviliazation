@@ -1,1 +1,8 @@
 #This file define the data struct used in communication
+
+Cookie (name "USER_COOKIE")
+{
+	value:md5(user_id)
+	expired_time:DATE()
+	game_id:int
+}
