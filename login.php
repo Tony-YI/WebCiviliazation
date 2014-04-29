@@ -22,6 +22,5 @@
 	<td><input type=submit value=Login></td>
 	</tr>
 </table>
-<a href='album.cgi'>View album (read-only)</a>
 </body>
 </html>
