@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
 <?php
-	echo "<h1>hello, edward ! test sublime</h1>";
+	echo "<h1>hello, edward !</h1>";
 ?>
 </html>
