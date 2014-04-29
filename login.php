@@ -18,8 +18,8 @@
 	</tr>
 
 	<tr>
-	<td></td>
 	<td><input type=submit value=Login></td>
+	<td><input type=submit value=Register></td>
 	</tr>
 </table>
 </body>
