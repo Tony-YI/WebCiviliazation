@@ -11,12 +11,12 @@
 }
 .button1 {
   border-top: 1px solid #f7cf97;
-   background: #c25823;
-   background: -webkit-gradient(linear, left top, left bottom, from(#e88c1c), to(#c25823));
-   background: -webkit-linear-gradient(top, #e88c1c, #c25823);
-   background: -moz-linear-gradient(top, #e88c1c, #c25823);
-   background: -ms-linear-gradient(top, #e88c1c, #c25823);
-   background: -o-linear-gradient(top, #e88c1c, #c25823);
+   background: #d19866;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e3bb29), to(#d19866));
+   background: -webkit-linear-gradient(top, #e3bb29, #d19866);
+   background: -moz-linear-gradient(top, #e3bb29, #d19866);
+   background: -ms-linear-gradient(top, #e3bb29, #d19866);
+   background: -o-linear-gradient(top, #e3bb29, #d19866);
    padding: 12px 24px;
    -webkit-border-radius: 17px;
    -moz-border-radius: 17px;
@@ -26,7 +26,7 @@
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: #ebebeb;
-   font-size: 16px;
+   font-size: 17px;
    font-family: Californian FB, Serif;
    text-decoration: none;
    vertical-align: middle;
@@ -37,6 +37,6 @@
    color: #f2f2f2;
    }
 .button1:active {
-   border-top-color: #bdb2bd;
-   background: #bdb2bd;
+   border-top-color: #e8b372;
+   background: #e8b372;
    }
