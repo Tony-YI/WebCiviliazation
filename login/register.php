@@ -19,8 +19,11 @@
 	$result = mysqli_query($db, $SQL_CHECK_DUPLICATE);
 	if($result)
 	{
+		while($temp = mysqli_fetch_row($result))
+		{
+			echo '$temp';
+		}
 		echo "<p>User name has already been registered, please change to another user name.</p>";
-		show_db_php();
 	}
 	else
 	{
