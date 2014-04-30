@@ -1,4 +1,10 @@
-table#infoTable.userInfoTable
+#roomInfoTable
 {
     border: 3px;
+    display: inline-block;
+}
+#userInfoTable
+{
+    border: 3px;
+    display: inline-block;
 }
