@@ -31,12 +31,12 @@
    text-decoration: none;
    vertical-align: middle;
    }
-.button:hover {
+.button1:hover {
    border-top-color: #e68d2e;
    background: #e68d2e;
    color: #f2f2f2;
    }
-.button:active {
+.button1:active {
    border-top-color: #bdb2bd;
    background: #bdb2bd;
    }
