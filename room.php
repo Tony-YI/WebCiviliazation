@@ -3,15 +3,22 @@
 <head>
     <title>Room Information</title>
     <link rel="stylesheet" type="text/css" href="room/room.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="room/room.js"></script>
+
 </head>
 <body>
     <div id="bg0">
+        <div id="header">
+            
+        </div>
         <div id="roomNum">    
             <button>Room1 <i>Click to Join</i></button><br>
             <?php  
                 $i = 0;
                 while($i < 40){
                     $i++;
+
                     echo "<button type='submit'>whatever la hahahhahaha</button><br>";
                 }
             ?>
