@@ -1,21 +1,20 @@
-<?php
-	#Check Cookie here
-	#if cookie exist, redirect the page
-	$cookie = $_COOKIE['USER_COOKIE'];
-	require_once("lib/db.php");
-	if(check_cookie($db))
-	{
-		#redirect to room.html
-		header("Location: room.html");
-		exit;
-	}
-?>
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<title>Login</title>
 	<script type="text/javascript" src="login/login.js"></script>
+	<?php
+		#Check Cookie here
+		#if cookie exist, redirect the page
+		$cookie = $_COOKIE['USER_COOKIE'];
+		require_once("lib/db.php");
+		if(check_cookie($db))
+		{
+			#redirect to room.html
+			echo "<script type=\"text/javascript\">location.href=\"room.html\"</script>"
+		}
+	?>
+
 </head>
 <body style="font-family:verdana, sans-serif;">
 <h2>Login</h2>

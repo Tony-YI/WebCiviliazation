@@ -42,14 +42,6 @@
 		}
 	}
 
-	if(check_cookie($db))
-	{
-		echo "@!#!%!@#%@!%$@#!$@#!$<br>";
-	}
-	else 
-	{
-		echo "@@@@@@@@@@@@@@@@@<br>";
-	}
 	function db_create_table($con,$sql,$table_name)
 	{
 		if(mysqli_query($con,$sql))
