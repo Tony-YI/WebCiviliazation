@@ -30,7 +30,20 @@
 			xhr.setRequestHeader('username',usr);
 			xhr.setRequestHeader('password',pwd);
 			xhr.send();
-			alert(xhr.responseText);
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4)
+				{
+					if(xhr.status != 200)
+					{
+						alert("Error code = " + new String(xhr.status));
+						return false;
+					}
+					var msg = document.crateElement("p");
+					msg.innerHTML = xhr.responseText;
+					var body = document.getElementByTagName("body");
+					body.appendChild(msg);
+				}
+			};
 		}
 	</script>
 

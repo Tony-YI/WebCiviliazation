@@ -9,7 +9,7 @@
 	require_once("../lib/db.php");
 	if(mysqli_connect_errno())
 	{
-		echo "<p>Failed to connect to MySQL server: ".mysqli_connect_error()."</p>";
+		echo "Failed to connect to MySQL server: " . mysqli_connect_error();
 		show_db_php();
 	}
 	$user_name = $_SERVER['HTTP_USERNAME'];
@@ -22,15 +22,15 @@
 		{
 			echo '$temp' . " 123";
 		}
-		echo "<p>User name has already been registered, please change to another user name.</p>";
+		echo "User name has already been registered, please change to another user name.";
 	}
 	else
 	{
 		$SQL_GET_USER_NUM = "SELECT COUNT(*) FROM `User`";
 		$count = mysqli_query($db, $SQL_GET_USER_NUM);
 		$user_id = mysqli_fetch_row($count)[0];
-		echo $user_id;
 		$SQL_INSERT_USER = "INSERT INTO User VALUES ($user_id,'$user_name','$pass_word')";
 		mysqli_query($db, $SQL_INSERT_USER);
+		echo "Register successfully, you will be redirect to login page.";
 	}
 ?>
