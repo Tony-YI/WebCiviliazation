@@ -10,13 +10,13 @@
     left: 70%;
 }
 .button1 {
-  border-top: 1px solid #f7cf97;
-   background: #d19866;
-   background: -webkit-gradient(linear, left top, left bottom, from(#e3bb29), to(#d19866));
-   background: -webkit-linear-gradient(top, #e3bb29, #d19866);
-   background: -moz-linear-gradient(top, #e3bb29, #d19866);
-   background: -ms-linear-gradient(top, #e3bb29, #d19866);
-   background: -o-linear-gradient(top, #e3bb29, #d19866);
+ border-top: 1px solid #f7cf97;
+   background: #fab237;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ebe34c), to(#fab237));
+   background: -webkit-linear-gradient(top, #ebe34c, #fab237);
+   background: -moz-linear-gradient(top, #ebe34c, #fab237);
+   background: -ms-linear-gradient(top, #ebe34c, #fab237);
+   background: -o-linear-gradient(top, #ebe34c, #fab237);
    padding: 12px 24px;
    -webkit-border-radius: 17px;
    -moz-border-radius: 17px;
@@ -26,8 +26,8 @@
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: #ebebeb;
-   font-size: 17px;
-   font-family: Californian FB, Serif;
+   font-size: 16px;
+   font-family: Georgia, Serif;
    text-decoration: none;
    vertical-align: middle;
    }
