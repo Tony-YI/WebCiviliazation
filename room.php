@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Room Information</title>
-    <link rel="stylesheet" type="text/css" href="room.css">
+    <link rel="stylesheet" type="text/css" href="room/room.css">
 </head>
 <body>
     <div id="bg0">
