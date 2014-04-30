@@ -20,7 +20,7 @@
 		echo "<p>RUNTIME_DATA_DIR $RUNTIME_DATA_DIR</p>";
 		echo "<p>MYSQL_HOST $MYSQL_HOST</p>";
 		echo "<p>MYSQL_PORT $MYSQL_PORT</p>";
-		echo "<p>MYSQL_USR $MYSQL_USR</p>;"
+		echo "<p>MYSQL_USR $MYSQL_USR</p>;";
 		echo "<P>MYSQL_PWD $MYSQL_PWD</p>";
 	}
 
