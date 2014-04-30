@@ -16,7 +16,6 @@
 	$pass_word = $_SERVER['HTTP_PASSWORD'];
 	$SQL_CHECK_DUPLICATE = "SELECT * FROM `User` WHERE `username` = '$user_name'";
 	$result = mysqli_query($db, $SQL_CHECK_DUPLICATE);
-	echo mysqli_num_rows($result);
 	if(mysqli_num_rows($result) != 0)
 	{
 		while($temp = mysqli_fetch_row($result))
@@ -29,8 +28,8 @@
 	{
 		$SQL_GET_USER_NUM = "SELECT COUNT(*) FROM `User`";
 		$count = mysqli_query($db, $SQL_GET_USER_NUM);
-		$user_id = mysqli_fetch_row($count);
-		echo "<p>$user_id</p>";
+		$user_id = mysqli_fetch_row($count)[0];
+		echo $user_id;
 		$SQL_INSERT_USER = "INSERT INTO User VALUES ($user_id,'$user_name','$pass_word')";
 		mysqli_query($db, $SQL_INSERT_USER);
 	}
