@@ -19,12 +19,12 @@
         <div id="Info">
             <div id="userInfo" align="inline">
                 <table id="userInfoTable" class="infoTable">
-                    <tr><td>It is just a simple test about no thing to say in this page hahahahhaha</td></tr>
+                    <tr><td>"It is just a simple test about no thing to say in this page hahahahhaha"</td></tr>
                 </table>
             </div>
             <div id="roomInfo">
                 <table id="roomInfoTable" class="infoTable">
-                    <tr>It is just a simple test about no thing to say in this page hahahahhaha</tr>
+                    <tr>"It is just a simple test about no thing to say in this page hahahahhaha"</tr>
                 </table>
             </div> 
         </div>
