@@ -2,50 +2,19 @@
 <html>
 <head>
     <title>Room Information</title>
+    <link rel="stylesheet" type="text/css" href="room.css">
 </head>
 <body>
     <div id="bg0">
         <div id="roomNum">    
             <button type="submit">Room1 <i>Click to Join</i></button><br>
-            <button type="submit">Room2 <i>Click to Join</i></button><br>
-            <button type="submit">Room3 <i>Click to Join</i></button><br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room1 <i>Click to Join</i></button><br>
-            <button type="submit">Room2 <i>Click to Join</i></button><br>
-            <button type="submit">Room3 <i>Click to Join</i></button><br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
-            <button type="submit">Room3 <i>Click to Join</i></button> <br>
+            <?php  
+                $i = 0;
+                while($i < 20){
+                    $i++;
+                    echo "<button type='submit'>whatever la hahahhahaha<button>";
+                }
+            ?>
         </div>
         <div id="Info">
             <div id="userInfo">
