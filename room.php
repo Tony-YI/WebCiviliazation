@@ -12,7 +12,7 @@
                 $i = 0;
                 while($i < 40){
                     $i++;
-                    echo "<button type='submit' class='btn btn-7 btn-7h icon-envelope'>whatever la hahahhahaha</button><br>";
+                    echo "<button type='submit' class='btn btn-7 btn-7a icon-truck'>whatever la hahahhahaha</button><br>";
                 }
             ?>
         </div>
