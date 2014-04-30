@@ -20,5 +20,13 @@ function room_create()
 
 function logout()
 {
-
+	new xhr = XMLHttpRequest();
+	xhr.open("POST","login/logout.php",false);
+	xhr.send();
+	response = JSON.parse(xhr.responseText);
+	if(response.status == "success")
+	{
+		console.log("Logout Success, going to redirect");
+		window.location = "login.php";
+	}
 }
