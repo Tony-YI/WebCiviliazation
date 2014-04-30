@@ -17,14 +17,14 @@
             ?>
         </div>
         <div id="Info">
-            <div id="userInfo" align="inline">
-                <table id="userInfoTable" class="infoTable">
-                    <tr><td>"It is just a simple test about no thing to say in this page hahahahhaha"</td></tr>
+            <div id="userInfo">
+                <table id="userInfoTable" class="infoTable" border="3">
+                    <tr><td>what</td><td>what????????</td></tr>
                 </table>
             </div>
             <div id="roomInfo">
                 <table id="roomInfoTable" class="infoTable">
-                    <tr>"It is just a simple test about no thing to say in this page hahahahhaha"</tr>
+                    <tr></tr>
                 </table>
             </div> 
         </div>
