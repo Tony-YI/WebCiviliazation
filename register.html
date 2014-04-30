@@ -2,5 +2,49 @@
 <html>
 <head>
 	<title>Register for WebCivilazation</title>
+	<style>
+		body{background-color: #b0c4de;}
+		h1.Register{font-family: "Consolas"font-style: bold;}
+		h2.Register{font-family: "Consolas";}
+		div.form_field{font-family: "Consolas";font-style: bold;font-size: 18px;}
+	</style>
+	<script>
+		function register()
+		{
+			var usr = document.getElementById("usr").value;
+			var pwd = document.getElementById("pwd").value;
+			if(!usr)
+			{
+				alert("Empty user name is not allowed !");
+				return false;
+			}
+			if(!pwd)
+			{
+				alert("Empty password is not allowed !");
+				return false;
+			}	
+			console.log(usr);
+			console.log(pwd);
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST","login/register.php",false);
+			xhr.setRequestHeader('username',usr);
+			xhr.setRequestHeader('password',pwd);
+			xhr.send();
+			alert(xhr.responseText);
+		}
+	</script>
+
 </head>
+<body>
+	<div id="register_form">
+	<h1 class="Register">WelCome to WebCivilization!</h1>
+	<h2 class="Register">Register Now !</h2>
+	
+	<div class="form_field">
+	Username: <input id="usr" type="text"><br>
+	Password: <input id="pwd" type="password"><br>
+	</div>
+	<button type="button" onclick="register()">regsiter !</button>
+	</div>
+</body>
 </html>
