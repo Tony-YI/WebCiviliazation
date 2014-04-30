@@ -22,7 +22,7 @@
 		if(mysqli_num_rows($result))
 		{
 			#Authentication successful
-			$cookie_value = md5($username.((string)rand());
+			$cookie_value = md5($username.((string)rand()));
 
 			setcookie("USER_COOKIE",$cookie_value,time() + 3600 * 24);
 			echo "{'username':'$username',";
