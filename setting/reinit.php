@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title> Reinitilization of the WebCivilazation</title>
+	<link rel="stylesheet" type="text/css" href="../main.css">
 </head>
 <body>
 <?php

@@ -23,11 +23,11 @@
 	{
 		if(mysqli_query($con,$sql))
 		{
-			echo "Create table $table_name successfully<br>"; 
+			echo "<p>Create table $table_name successfully</p><br>"; 
 		}
 		else
 		{
-			echo "Error creating table $table_name: ".mysqli_error($con)."<br>";
+			echo "<p>Error creating table $table_name: ".mysqli_error($con)."</p><br>";
 		}
 	}
 
@@ -35,11 +35,11 @@
 	{
 		if(mysqli_query($con,$sql))
 		{
-			echo "Drop table $table_name successfully<br>";
+			echo "<p>Drop table $table_name successfully</p><br>";
 		}
 		else
 		{
-			echo "Error dropping table $table_name: ".mysqli_error($con)."<br>";
+			echo "<p>Error dropping table $table_name: ".mysqli_error($con)."</p><br>";
 		}
 	}
 ?>
