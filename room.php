@@ -18,12 +18,12 @@
         </div>
         <div id="Info">
             <div id="userInfo">
-                <table id="userInfoTable" class="infoTable">
+                <table id="userInfoTable" border="3px">
                     <tr><td>what</td><td>what????????</td></tr>
                 </table>
             </div>
             <div id="roomInfo">
-                <table id="roomInfoTable" class="infoTable">
+                <table id="roomInfoTable"  border="3px">
                    <tr><td>what the hell</td><td>what????????</td></tr>
                 </table>
             </div> 
