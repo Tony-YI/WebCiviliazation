@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Room Information</title>
-    <link rel="stylesheet" type="text/css" href="room.css">
+    <link rel="stylesheet" type="text/css" href="room/room.css">
 </head>
 <body>
     <div id="bg0">
@@ -18,13 +18,13 @@
         </div>
         <div id="Info">
             <div id="userInfo">
-                <table id="useInfoTable" class="infoTable">
-                    <tr>It is just a simple test about no thing to say in this page hahahahhaha</tr>
+                <table id="userInfoTable" class="infoTable">
+                    <tr><td>what</td><td>what????????</td></tr>
                 </table>
             </div>
             <div id="roomInfo">
                 <table id="roomInfoTable" class="infoTable">
-                    <tr>It is just a simple test about no thing to say in this page hahahahhaha</tr>
+                   <tr><td>what the hell</td><td>what????????</td></tr>
                 </table>
             </div> 
         </div>
