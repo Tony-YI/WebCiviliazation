@@ -10,13 +10,44 @@
     left: 70%;
 }
 .button1 {
- border-top: 1px solid #f7cf97;
-   background: #fab237;
-   background: -webkit-gradient(linear, left top, left bottom, from(#ebe34c), to(#fab237));
-   background: -webkit-linear-gradient(top, #ebe34c, #fab237);
-   background: -moz-linear-gradient(top, #ebe34c, #fab237);
-   background: -ms-linear-gradient(top, #ebe34c, #fab237);
-   background: -o-linear-gradient(top, #ebe34c, #fab237);
+   border-top: 1px solid #f7cf97;
+     background: #fab237;
+     background: -webkit-gradient(linear, left top, left bottom, from(#ebe34c), to(#fab237));
+     background: -webkit-linear-gradient(top, #ebe34c, #fab237);
+     background: -moz-linear-gradient(top, #ebe34c, #fab237);
+     background: -ms-linear-gradient(top, #ebe34c, #fab237);
+     background: -o-linear-gradient(top, #ebe34c, #fab237);
+     padding: 12px 24px;
+     -webkit-border-radius: 17px;
+     -moz-border-radius: 17px;
+     border-radius: 17px;
+     -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+     -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+     box-shadow: rgba(0,0,0,1) 0 1px 0;
+     text-shadow: rgba(0,0,0,.4) 0 1px 0;
+     color: #122638;
+     font-size: 16px;
+     font-family: Georgia, Serif;
+     text-decoration: none;
+     vertical-align: middle;
+   }
+.button1:hover {
+   border-top-color: #e68d2e;
+   background: #e68d2e;
+   color: #f2f2f2;
+   }
+.button1:active {
+   border-top-color: #e8b372;
+   background: #e8b372;
+   }
+   .button2 {
+   border-top: 1px solid #9b98f5;
+   background: #98cdf5;
+   background: -webkit-gradient(linear, left top, left bottom, from(#897ced), to(#98cdf5));
+   background: -webkit-linear-gradient(top, #897ced, #98cdf5);
+   background: -moz-linear-gradient(top, #897ced, #98cdf5);
+   background: -ms-linear-gradient(top, #897ced, #98cdf5);
+   background: -o-linear-gradient(top, #897ced, #98cdf5);
    padding: 12px 24px;
    -webkit-border-radius: 17px;
    -moz-border-radius: 17px;
@@ -31,12 +62,12 @@
    text-decoration: none;
    vertical-align: middle;
    }
-.button1:hover {
-   border-top-color: #e68d2e;
-   background: #e68d2e;
+.button2:hover {
+   border-top-color: #7774d6;
+   background: #7774d6;
    color: #f2f2f2;
    }
-.button1:active {
-   border-top-color: #e8b372;
-   background: #e8b372;
+.button2:active {
+   border-top-color: #b273e6;
+   background: #b273e6;
    }
