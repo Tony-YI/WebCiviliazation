@@ -7,12 +7,12 @@
 <body>
     <div id="bg0">
         <div id="roomNum">    
-            <button type="submit">Room1 <i>Click to Join</i></button><br>
+            //<button type="submit">Room1 <i>Click to Join</i></button><br>
             <?php  
                 $i = 0;
-                while($i < 20){
+                while($i < 30){
                     $i++;
-                    echo "<button type='submit'>whatever la hahahhahaha<button>";
+                    echo "<button type='submit'>whatever la hahahhahaha<button><br>";
                 }
             ?>
         </div>
