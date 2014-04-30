@@ -23,7 +23,6 @@ function login()
 	xhr.setRequestHeader('username',usr);
 	xhr.setRequestHeader('password',pwd);
 	xhr.send();
-	
 	response = JSON.parse(xhr.responseText);
 	if(response.status == "success")
 	{

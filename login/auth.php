@@ -34,24 +34,24 @@
 			{
 				$SQL_INSERT_ERROR  = mysqli_error($db);
 			}
-			echo "{'username':'$username',";
-			echo "'status':'success',";
-			echo "'cookie':'$cookie_value',";
-			echo "'sql_error':'$SQL_INSERT_ERROR'}";
+			echo "{\"username\":\"$username\",";
+			echo "\"status\":\"success\",";
+			echo "\"cookie\":\"$cookie_value\",";
+			echo "\"sql_error\":\"$SQL_INSERT_ERROR\"}";
 		}
 		else
 		{
-			echo "{'username':'$username',";
-			echo "'status':'failed',";
-			echo "'cookie':''}";		
+			echo "{\"username\":\"$username\",";
+			echo "\"status\":\"failed\",";
+			echo "\"cookie\":\"\"}";		
 		}
 		mysqli_free_result($result);
 	}
 	else
 	{
-		echo "{'username':'$username',";
-		echo "'status':'unknown',";
-		echo "'cookie':''}";
+		echo "{\"username\":\"$username\",";
+		echo "\"status\":\"unknown\",";
+		echo "\"cookie\":\"\"}";
 	}
 
 ?>
