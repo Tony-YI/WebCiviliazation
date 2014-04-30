@@ -21,7 +21,7 @@
 	{
 		while($temp = mysqli_fetch_row($result))
 		{
-			echo '$temp';
+			echo '$temp' . " 123";
 		}
 		echo "<p>User name has already been registered, please change to another user name.</p>";
 	}
