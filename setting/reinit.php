@@ -13,6 +13,12 @@
 	2. Generate all the tables (Accroding to the db_design)
 	*/
 	require_once("../lib/db.php");
+	if(mysqli_connect_errno())
+	{
+		echo "<p>Failed to connect to MySQL server: ".mysqli_connect_error();
+		show_db();
+	}
+
 	$SQL_DROP_User = "DROP TABLE User";
 	$SQL_DROP_Cookie = "DROP TABLE Cookie";
 	$SQL_DROP_Game = "DROP TABEL Game";

@@ -13,6 +13,16 @@
 	$MYSQL_USR = $_ENV['OPENSHIFT_MYSQL_DB_USERNAME'];
 #$db is the connection to the mysql server
 	$db = mysqli_connect("$MYSQL_HOST:$MYSQL_PORT",$MYSQL_USR,$MYSQL_PWD,"project");
+	
+	function show_db_php()
+	{
+		echo "<p>DATA_DIR $DATA_DIR</p>";
+		echo "<p>RUNTIME_DATA_DIR $RUNTIME_DATA_DIR</p>";
+		echo "<p>MYSQL_HOST $MYSQL_HOST</p>";
+		echo "<p>MYSQL_PORT $MYSQL_PORT</p>";
+		echo "<p>MYSQL_USR $MYSQL_USR</p>;"
+		echo "<P>MYSQL_PWD $MYSQL_PWD</p>";
+	}
 
 	function check_cookie()
 	{
@@ -23,11 +33,11 @@
 	{
 		if(mysqli_query($con,$sql))
 		{
-			echo "<p>Create table $table_name successfully</p><br>"; 
+			echo "<p>Create table $table_name successfully</p>"; 
 		}
 		else
 		{
-			echo "<p>Error creating table $table_name: ".mysqli_error($con)."</p><br>";
+			echo "<p>Error creating table $table_name: ".mysqli_error($con)."</p>";
 		}
 	}
 
@@ -35,11 +45,11 @@
 	{
 		if(mysqli_query($con,$sql))
 		{
-			echo "<p>Drop table $table_name successfully</p><br>";
+			echo "<p>Drop table $table_name successfully</p>";
 		}
 		else
 		{
-			echo "<p>Error dropping table $table_name: ".mysqli_error($con)."</p><br>";
+			echo "<p>Error dropping table $table_name: ".mysqli_error($con)."</p>";
 		}
 	}
 ?>
