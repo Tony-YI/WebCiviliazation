@@ -12,14 +12,12 @@
         <div id="header">
             
         </div>
-        <div id="roomNum">    
-            <button>Room1 <i>Click to Join</i></button><br>
+        <div id="roomNum">  
             <?php  
                 $i = 0;
                 while($i < 40){
                     $i++;
-
-                    echo "<button type='submit'>whatever la hahahhahaha</button><br>";
+                    echo "<button type='submit' id='button{$i % 7}'>whatever la hahahhahaha</button><br>";
                 }
             ?>
         </div>
