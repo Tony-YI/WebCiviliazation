@@ -7,4 +7,5 @@
 	4. Send the Cookie to the user
 	5. Redirect the user to room selection
 	*/
+
 ?>

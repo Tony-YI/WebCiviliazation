@@ -5,7 +5,7 @@
 <h2>Login</h2>
 
 
-<form method=post action=login.cgi>
+<form method=post action="login/auth.php">
 <table cellspacing=5pt cellpadding=10pt style="border:1pt solid #7777ff;">
 	<tr>
 	<td>User</td>
@@ -19,8 +19,9 @@
 
 	<tr>
 	<td><input type=submit value=Login></td>
-	<td><input type=submit value=Register></td>
+	<!--<td><input type=submit value=Register></td>-->
 	</tr>
 </table>
+<a href="register.html">click to register</a>
 </body>
 </html>
