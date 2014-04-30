@@ -23,11 +23,19 @@
 		{
 			#Authentication successful
 			$cookie_value = md5($username.((string)rand()));
-
+			
 			setcookie("USER_COOKIE",$cookie_value,time() + 3600 * 24,"/");
+			$row = mysqli_fetch_row($result);
+			$SQL_INSERT_COOKIE = "INSERT INTO Cookie VALUES ('$cookie_value',$row[0])";
+			
+			if(!mysqli_query($db,$SQL_INSERT_COOKIE))
+			{
+				$SQL_INSERT_ERROR  = mysqli_error($db);
+			}
 			echo "{'username':'$username',";
 			echo "'status':'success',";
-			echo "'cookie':'$cookie_value'}";
+			echo "'cookie':'$cookie_value',";
+			echo "'sql_error':'$SQL_INSERT_ERROR'}";
 		}
 		else
 		{
