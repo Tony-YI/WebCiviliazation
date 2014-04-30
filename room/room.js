@@ -20,7 +20,7 @@ function room_create()
 
 function logout()
 {
-	new xhr = XMLHttpRequest();
+	var xhr = new XMLHttpRequest();
 	xhr.open("POST","login/logout.php",false);
 	xhr.send();
 	response = JSON.parse(xhr.responseText);
