@@ -12,11 +12,11 @@
 .button1 {
    border-top: 1px solid #f7cf97;
    background: #ed8d56;
-   background: -webkit-gradient(linear, left top, left bottom, from(#eff700), to(#ed8d56));
-   background: -webkit-linear-gradient(top, #eff700, #ed8d56);
-   background: -moz-linear-gradient(top, #eff700, #ed8d56);
-   background: -ms-linear-gradient(top, #eff700, #ed8d56);
-   background: -o-linear-gradient(top, #eff700, #ed8d56);
+   background: -webkit-gradient(linear, left top, left bottom, from(#e0e336), to(#ed8d56));
+   background: -webkit-linear-gradient(top, #e0e336, #ed8d56);
+   background: -moz-linear-gradient(top, #e0e336, #ed8d56);
+   background: -ms-linear-gradient(top, #e0e336, #ed8d56);
+   background: -o-linear-gradient(top, #e0e336, #ed8d56);
    padding: 16px 32px;
    -webkit-border-radius: 17px;
    -moz-border-radius: 17px;
@@ -25,9 +25,9 @@
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 24px;
-   font-family: Chiller, Serif;
+   color: #780f0f;
+   font-size: 22px;
+   font-family: Comic Sans MS, Serif;
    text-decoration: none;
    vertical-align: middle;
    }
@@ -37,6 +37,6 @@
    color: #f2f2f2;
    }
 .button1:active {
-   border-top-color: #ffffff;
-   background: #ffffff;
+   border-top-color: #bdb2bd;
+   background: #bdb2bd;
    }
