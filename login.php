@@ -2,7 +2,8 @@
 	#Check Cookie here
 	#if cookie exist, redirect the page
 	$cookie = $_COOKIE['USER_COOKIE'];
-	echo "<!--".$cookie."-->";
+	require_once("lib/db.php");
+	echo "<!--".check_cookie()."-->";
 ?>
 
 <!DOCTYPE HTML>
