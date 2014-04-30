@@ -17,7 +17,7 @@
 	
 	$SQL_CHECK_DUPLICATE = "SELECT * FROM `User` WHERE `username` = '$user_name'";
 	$result = mysqli_query($db, $SQL_CHECK_DUPLICATE);
-	echo "$result" . ' nani?!!';
+	echo $result . ' nani?!!';
 	if($result)
 	{
 		while($temp = mysqli_fetch_row($result))
