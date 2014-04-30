@@ -39,7 +39,7 @@
 						alert("Error code = " + new String(xhr.status));
 						return false;
 					}
-					var msg = document.getElementsById("message");
+					var msg = document.getElementById("message");
 					msg.innerHTML = xhr.responseText;
 				}
 			};

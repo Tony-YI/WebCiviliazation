@@ -28,6 +28,7 @@ function login()
 	if(response.status == "success")
 	{
 		console.log("Login Success, going to redirect");
+		window.location = "room.php";
 	}
 	else if(response.status =="failed")
 	{
