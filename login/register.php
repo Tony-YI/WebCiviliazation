@@ -18,10 +18,6 @@
 	$result = mysqli_query($db, $SQL_CHECK_DUPLICATE);
 	if(mysqli_num_rows($result) != 0)
 	{
-		while($temp = mysqli_fetch_row($result))
-		{
-			echo '$temp' . " 123";
-		}
 		echo "User name has already been registered, please change to another user name.";
 	}
 	else
