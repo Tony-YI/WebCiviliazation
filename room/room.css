@@ -1,12 +1,8 @@
+#roomNum
+{
+    display: inline-block;
+}
 #Info
-{
-    display: inline-block;
-}
-#userInfo
-{
-    display: inline-block;
-}
-#roomInfo
 {
     display: inline-block;
 }
