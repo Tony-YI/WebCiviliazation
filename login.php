@@ -3,7 +3,12 @@
 	#if cookie exist, redirect the page
 	$cookie = $_COOKIE['USER_COOKIE'];
 	require_once("lib/db.php");
-	echo "<!--".check_cookie()."-->";
+	if(check_cookie())
+	{
+		#redirect to room.html
+		header("Location: room.html");
+		exit;
+	}
 ?>
 
 <!DOCTYPE HTML>
