@@ -36,9 +36,9 @@
 	$SQL_CREATE_Game = "CREATE TABLE Game";
 	$SQL_CREATE_Game .= "(Game_id INT PRIMARY KEY)";
 	
-	db_drop_table($db,$SQL_DROP_User,"User");
-	db_drop_table($db,$SQL_DROP_Cookie,"Cookie");
 	db_drop_table($db,$SQL_DROP_Game,"Game");
+	db_drop_table($db,$SQL_DROP_Cookie,"Cookie");
+	db_drop_table($db,$SQL_DROP_User,"User");
 
 	db_create_table($db,$SQL_CREATE_User,"User");
 	db_create_table($db,$SQL_CREATE_Cookie,"Cookie");
