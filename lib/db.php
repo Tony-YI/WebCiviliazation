@@ -12,11 +12,34 @@
 	$MYSQL_PWD = $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'];
 	$MYSQL_USR = $_ENV['OPENSHIFT_MYSQL_DB_USERNAME'];
 #$db is the connection to the mysql server
-$db = mysql_connect("$MYSQL_HOST:$MYSQL_PORT",$MYSQL_USR,$MYSQL_PWD);
-
+	$db = mysqli_connect("$MYSQL_HOST:$MYSQL_PORT",$MYSQL_USR,$MYSQL_PWD,"project");
 
 	function check_cookie()
 	{
 		$USER_COOKIE = $_COOKIE["USER_COOKIE"];
+	}
+
+	function db_create_table($con,$sql,$table_name)
+	{
+		if(mysqli_query($con,$sql))
+		{
+			echo "Create table $table_name successfully<br>"; 
+		}
+		else
+		{
+			echo "Error creating table $table_name: ".mysqli_error($con)."<br>";
+		}
+	}
+
+	function db_drop_table($con,$sql,$table_name)
+	{
+		if(mysqli_query($con,$sql))
+		{
+			echo "Drop table $table_name successfully<br>";
+		}
+		else
+		{
+			echo "Error dropping table $table_name: ".mysqli_error($con)."<br>";
+		}
 	}
 ?>

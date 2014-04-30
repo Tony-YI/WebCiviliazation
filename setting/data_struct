@@ -6,3 +6,15 @@ Cookie (name "USER_COOKIE")
 	expired_time:DATE()
 	game_id:int
 }
+
+login
+{
+	'username':char(32);
+	'password':char(32);
+}
+
+register
+{
+	'username':char(32);
+	'password':char(32);
+}
