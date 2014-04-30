@@ -19,7 +19,7 @@
                 while($i < 40){
                     $i++;
                     $num = $i % 7;
-                    echo "<button type='submit' class='button$num'>whatever la hahahhahaha</button><br>";
+                    echo "<button type='submit' class='button$num'>Room $i ! Click to enter room</button><br>";
                 }
             ?>
         </div>
