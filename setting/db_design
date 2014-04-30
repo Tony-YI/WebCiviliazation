@@ -2,8 +2,10 @@
 
 =======================GENERAL DATA==========================
 #User
-|user_id (PRIMARY KEY)| password | cookie | expired_at |
+|user_id (PRIMARY KEY)| password |
 
+#Cookie
+|cookie(PRIMARY KEY) | expired_at | user_id (REFERENCE User.user_id)|
 #Game/Room
 | Game_id (PRIMARY KEY) | player A (REFERENCE User.user_id) | player B (REFERENCE User.user_id) | player C (REFERENCE User.user_id) | Game_Database |  
 
@@ -12,21 +14,21 @@
 #Player_list
 | Player ID (PRIMARY KEY) | cookie | expried_at |
 
-#slot
+#Slot
 | slot_id (PRIMARY KEY)| owner | slot_type | unit | N (REFERENCE slot.slot_id) | NE (REFERENCE slot.slot_id)| E (REFERENCE slot.slot_id)| SE (REFERENCE slot.slot_id)| S (REFERENCE slot.slot_id) | SW (REFERENCE slot.slot_id)| W (REFERENCE slot.slot_id)| NW (REFERENCE slot.slot_id)|
 
-#unit
+#Unit
 | unit (PRIMARY KEY)|  owner (REFERENCE player)| unit_type | slot | 
 
-#unit_type
+#Unit_type
 | unit_type (PRIMARY KEY)| HP | AP | ATTACK |
 
-#slot_type
+#Slot_type
 |slot_type (PRIMARY KEY)| production_gold | production_lumber |
 
 #action
 |action id (PRIMARY KEY)| actor (REFERENCE unit) | action_type | target_slot (REFERENCE slot)| round |
 
-#round
+#Round
 |
 ===============================================================================

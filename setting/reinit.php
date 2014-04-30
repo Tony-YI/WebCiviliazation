@@ -7,4 +7,10 @@
 	*/
 	require_once("../lib/db.php");
 	mysql_select_db("project",)
+	$SQL_DROP_User = "DROP TABLE User";
+	$SQL_DROP_Cookie = "DROP TABLE Cookie";
+	$SQL_DROP_Game = "DROP TABEL Game";
+	$SQL_CREATE_User = "";
+	$SQL_CREATE_Cookie = "";
+	$SQL_CREATE_Game = "";
 ?>
