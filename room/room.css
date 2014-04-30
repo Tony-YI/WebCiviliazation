@@ -102,3 +102,34 @@
    border-top-color: #6cf773;
    background: #6cf773;
    }
+   .button4 {
+   border-top: 1px solid #f59dcc;
+   background: #f385f5;
+   background: -webkit-gradient(linear, left top, left bottom, from(#f26ad9), to(#f385f5));
+   background: -webkit-linear-gradient(top, #f26ad9, #f385f5);
+   background: -moz-linear-gradient(top, #f26ad9, #f385f5);
+   background: -ms-linear-gradient(top, #f26ad9, #f385f5);
+   background: -o-linear-gradient(top, #f26ad9, #f385f5);
+   padding: 12px 24px;
+   -webkit-border-radius: 17px;
+   -moz-border-radius: 17px;
+   border-radius: 17px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #122638;
+   font-size: 16px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button4:hover {
+   border-top-color: #d65895;
+   background: #d65895;
+   color: #f2f2f2;
+   }
+.button4:active {
+   border-top-color: #f56ee1;
+   background: #f56ee1;
+   }
