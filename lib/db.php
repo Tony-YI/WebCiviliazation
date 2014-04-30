@@ -25,9 +25,21 @@
 		echo "<P>MYSQL_PWD: |$MYSQL_PWD|</p>";
 	}
 
-	function check_cookie()
+	function check_cookie($con)
 	{
 		$USER_COOKIE = $_COOKIE["USER_COOKIE"];
+		$SQL_COOKIE_QUERY = "SELECT * FROM Cookie WHERE `cookie` = '$USER_COOKIE'";
+		if($result = mysqli_query($con,$SQL_COOKIE_QUERY))
+		{
+			if(mysqli_num_rows($result))
+			{
+				return true;
+			}
+			else
+			{
+				 return false;
+			}
+		}
 	}
 
 	function db_create_table($con,$sql,$table_name)
