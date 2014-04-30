@@ -13,4 +13,8 @@
 		echo "<p>Failed to connect to MySQL server: ".mysqli_connect_error()."</p>";
 		show_db_php();
 	}
+	echo "What you submiited is ";
+	$user_name = $_SERVER['HTTP_username'];
+	$pass_word = $_SERVER['HTTP_password'];
+	echo "$user_name, $pass_word";
 ?>
