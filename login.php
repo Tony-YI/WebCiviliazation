@@ -11,7 +11,7 @@
 		if(check_cookie($db))
 		{
 			#redirect to room.html
-			echo "<script type=\"text/javascript\">location.href=\"room.html\"</script>"
+			echo "<script type=\"text/javascript\">location.href=\"room.html\"</script>";
 		}
 	?>
 
