@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title id="title">Room Information</title>
@@ -12,4 +12,4 @@
     </div>
 
 </body>
-</html>>
+</html>
