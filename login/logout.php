@@ -3,7 +3,7 @@
 
 	$USER_COOKIE = $_COOKIE["USER_COOKIE"];
 	$SQL_COOKIE_QUERY = "SELECT * FROM Cookie WHERE `cookie` = '$USER_COOKIE'";
-	if($result = mysqli_query($con,$SQL_COOKIE_QUERY))
+	if($result = mysqli_query($db,$SQL_COOKIE_QUERY))
 	{
 		if(mysqli_num_rows($result))
 		{
