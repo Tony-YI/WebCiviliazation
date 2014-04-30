@@ -18,3 +18,17 @@ register
 	'username':char(32);
 	'password':char(32);
 }
+
+register_result
+{
+	'username':char(32);
+	'status':'success | error';
+}
+
+Game
+{
+	Gamd_id: INT
+	P1: INT
+	P2: INT
+	P3: INT
+}
