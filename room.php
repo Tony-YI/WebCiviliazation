@@ -6,9 +6,34 @@
 <body>
     <div id="bg0">
         <div id="roomNum">    
-            <button type="submit">Room1 <i>Click to Join</i></button>      
+            <button type="submit">Room1 <i>Click to Join</i></button>
+            <button type="submit">Room2 <i>Click to Join</i></button>
+            <button type="submit">Room3 <i>Click to Join</i></button>
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
+            <button type="submit">Room3 <i>Click to Join</i></button> 
         </div>
         <div id="Info">
+            <div id="userInfo">
+                <table id="useInfoTable" class="infoTable"></table>
+            </div>
+            <div id="roomInfo">
+                <table id="roomInfoTable" class="infoTable"></table>
+            </div> 
         </div>
     </div>
 
