@@ -164,3 +164,34 @@
    border-top-color: #f56e90;
    background: #f56e90;
    }
+   .button6 {
+   border-top: 1px solid #ebf59f;
+   background: #fcf941;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fffc47), to(#fcf941));
+   background: -webkit-linear-gradient(top, #fffc47, #fcf941);
+   background: -moz-linear-gradient(top, #fffc47, #fcf941);
+   background: -ms-linear-gradient(top, #fffc47, #fcf941);
+   background: -o-linear-gradient(top, #fffc47, #fcf941);
+   padding: 12px 24px;
+   -webkit-border-radius: 17px;
+   -moz-border-radius: 17px;
+   border-radius: 17px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #122638;
+   font-size: 16px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button6:hover {
+   border-top-color: #e3c739;
+   background: #e3c739;
+   color: #f2f2f2;
+   }
+.button6:active {
+   border-top-color: #e5f56e;
+   background: #e5f56e;
+   }
