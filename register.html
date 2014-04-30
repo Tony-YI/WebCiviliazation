@@ -31,6 +31,7 @@
 			xhr.setRequestHeader('password',pwd);
 			xhr.send();
 			xhr.onreadystatechange = function(){
+				console.log(xhr.readyState);
 				if(xhr.readyState == 4)
 				{
 					if(xhr.status != 200)
