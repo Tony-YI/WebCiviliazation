@@ -27,6 +27,6 @@
 		$user_id = mysqli_fetch_row($count)[0];
 		$SQL_INSERT_USER = "INSERT INTO User VALUES ($user_id,'$user_name','$pass_word')";
 		mysqli_query($db, $SQL_INSERT_USER);
-		echo "Register successfully, you will be redirect to login page.";
+		echo "Register successfully, you will be redirect to login page in 5 seconds.";
 	}
 ?>
