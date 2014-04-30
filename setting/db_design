@@ -2,7 +2,7 @@
 
 =======================GENERAL DATA==========================
 #User
-|user_id (PRIMARY KEY)| password |
+|user_id (PRIMARY KEY)| username | password |
 
 #Cookie
 |cookie(PRIMARY KEY) | expired_at | user_id (REFERENCE User.user_id)|

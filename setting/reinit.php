@@ -37,7 +37,9 @@
 	$SQL_CREATE_Game = "CREATE TABLE Game";
 	$SQL_CREATE_Game .= "(Game_id INT PRIMARY KEY,";
 	$SQL_CREATE_Game .= "P1 CHAR(32),P2 CHAR(32), P3 CHAR(32),";
-	$SQL_CREATE_Game .= "FOREIGN KEY(P1) REFERENCES User(user_id)"
+	$SQL_CREATE_Game .= "FOREIGN KEY(P1) REFERENCES User(user_id),";
+	$SQL_CREATE_Game .= "FOREIGN KEY(P2) REFERENCES User(user_id),";
+	$SQL_CREATE_Game .= "FOREIGN KEY(P3) REFERENCES User(user_id))";
 	
 	db_drop_table($db,$SQL_DROP_Game,"Game");
 	db_drop_table($db,$SQL_DROP_Cookie,"Cookie");
