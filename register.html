@@ -30,7 +30,22 @@
 			xhr.setRequestHeader('username',usr);
 			xhr.setRequestHeader('password',pwd);
 			xhr.send();
-			alert(xhr.responseText);
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4)
+				{
+					if(xhr.status != 200)
+					{
+						alert("Error code = " + new String(xhr.status));
+						return false;
+					}
+					var msg = document.createElement("p");
+					msg.innerHTML = xhr.responseText;
+					console.log(msg);
+					var body = document.getElementByTagName("body");
+					console.log(body);
+					body.appendChild(msg);
+				}
+			};
 		}
 	</script>
 
