@@ -26,7 +26,7 @@
 			console.log(usr);
 			console.log(pwd);
 			var xhr = new XMLHttpRequest();
-			xhr.open("POST","login/register.php",false);
+			xhr.open("POST","login/register.php",true);
 			xhr.setRequestHeader('username',usr);
 			xhr.setRequestHeader('password',pwd);
 			xhr.send();
