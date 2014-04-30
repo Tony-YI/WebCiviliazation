@@ -29,11 +29,12 @@
 	
 	$SQL_CREATE_Cookie = "CREATE TABLE Cookie";
 	$SQL_CREATE_Cookie .= "(cookie CHAR(32) PRIMARY KEY,";
-	$SQL_CREATE_Cookie .= "user_id CHAR(32) FOREIGN KEY REFERENCES User(user_id))";
+	$SQL_CREATE_Cookie .= "user_id CHAR(32),";
+	$SQL_CREATE_Cookie .= "FOREIGN KEY (user_id) REFERENCES User(user_id))";
 
 
 	$SQL_CREATE_Game = "CREATE TABLE Game";
-	$SQL_CREATE_Game = "(Game_id int PRIMARY KEY)";
+	$SQL_CREATE_Game .= "(Game_id INT PRIMARY KEY)";
 	
 	db_drop_table($db,$SQL_DROP_User,"User");
 	db_drop_table($db,$SQL_DROP_Cookie,"Cookie");
