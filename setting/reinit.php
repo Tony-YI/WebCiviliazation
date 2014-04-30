@@ -12,6 +12,7 @@
 	1. Drop all the table
 	2. Generate all the tables (Accroding to the db_design)
 	*/
+	error_reporting(22527);
 	require_once("../lib/db.php");
 	if(mysqli_connect_errno())
 	{
@@ -25,7 +26,7 @@
 	
 	$SQL_CREATE_User = "CREATE TABLE User";
 	$SQL_CREATE_User .= "(user_id INT PRIMARY KEY,";
-	$SQL_CREATE_User .= "username CHAR(32)"
+	$SQL_CREATE_User .= "username CHAR(32)";
 	$SQL_CREATE_User .= "password CHAR(32))";
 	
 	$SQL_CREATE_Cookie = "CREATE TABLE Cookie";
