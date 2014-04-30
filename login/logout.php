@@ -14,7 +14,15 @@
 			setcookie("USER_COOKIE",$USER_COOKIE,time() - 3600,"/");
 			setcookie("CURRENT_USER",$usr_id,time() - 3600,"/");
 			$SQL_DELETE_COOKIE = "DELETE FROM Cookie WHERE `cookie` = '$USER_COOKIE'";
-			echo "{\"status\":\"success\"}";
+			if(mysqli_query($db,$SQL_DELETE_COOKIE))
+			{	
+				$sql_error = "";
+			}
+			else
+			{
+				$sql_error = mysqli_error($db);
+			}
+			echo "{\"status\":\"success\",\"sql_error\":\"$sql_error\"}";
 		}
 	}
 ?>
