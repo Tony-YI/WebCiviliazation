@@ -18,7 +18,7 @@
         </div>
         <div id="Info">
             <div id="userInfo">
-                <table id="useInfoTable" class="infoTable">
+                <table id="userInfoTable" class="infoTable">
                     <tr>It is just a simple test about no thing to say in this page hahahahhaha</tr>
                 </table>
             </div>
