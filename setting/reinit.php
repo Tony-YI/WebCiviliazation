@@ -25,7 +25,7 @@
 	
 	$SQL_CREATE_User = "CREATE TABLE User";
 	$SQL_CREATE_User .= "(user_id INT PRIMARY KEY,";
-	$SQL_CREATE_User .= "username CHAR(32)";
+	$SQL_CREATE_User .= "username CHAR(32),";
 	$SQL_CREATE_User .= "password CHAR(32))";
 	
 	$SQL_CREATE_Cookie = "CREATE TABLE Cookie";
