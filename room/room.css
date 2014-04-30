@@ -5,5 +5,7 @@
 #Info
 {
     display: inline-block;
-    position: relative;
+    position: fixed;
+    top: 30%;
+    left: 50%;
 }

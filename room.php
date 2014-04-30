@@ -16,7 +16,7 @@
                 }
             ?>
         </div>
-        <div id="Info">
+        <div id="Info" align="right">
             <div id="userInfo">
                 <table id="userInfoTable" border="3px">
                     <tr><td>what</td><td>what????????</td></tr>
