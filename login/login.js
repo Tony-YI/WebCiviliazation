@@ -23,5 +23,14 @@ function login()
 	xhr.setRequestHeader('username',usr);
 	xhr.setRequestHeader('password',pwd);
 	xhr.send();
-	alert(xhr.responseText);
+	
+	response = JSON.parse(xhr.responseText);
+	if(response.status == "success")
+	{
+		console.log("Login Success, going to redirect");
+	}
+	else if(response.status =="failed")
+	{
+		console.log("Login Failed, check password");
+	}
 }
