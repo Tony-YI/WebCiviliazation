@@ -20,7 +20,7 @@
 	{
 		echo $temp;
 	}
-	if($result)
+	if($result != NULL)
 	{
 		while($temp = mysqli_fetch_row($result))
 		{
