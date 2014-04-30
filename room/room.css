@@ -10,14 +10,14 @@
     left: 70%;
 }
 .button1 {
-   border-top: 1px solid #f7cf97;
+  border-top: 1px solid #f7cf97;
    background: #ed8d56;
    background: -webkit-gradient(linear, left top, left bottom, from(#e0e336), to(#ed8d56));
    background: -webkit-linear-gradient(top, #e0e336, #ed8d56);
    background: -moz-linear-gradient(top, #e0e336, #ed8d56);
    background: -ms-linear-gradient(top, #e0e336, #ed8d56);
    background: -o-linear-gradient(top, #e0e336, #ed8d56);
-   padding: 16px 32px;
+   padding: 12px 24px;
    -webkit-border-radius: 17px;
    -moz-border-radius: 17px;
    border-radius: 17px;
@@ -26,8 +26,8 @@
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: #780f0f;
-   font-size: 22px;
-   font-family: Book Antiqua, Serif;
+   font-size: 16px;
+   font-family: Californian FB, Serif;
    text-decoration: none;
    vertical-align: middle;
    }
