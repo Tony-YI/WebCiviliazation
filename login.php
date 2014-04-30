@@ -7,6 +7,7 @@
 	{
 		#redirect to room.html
 		header("Location: room.html");
+		exit;
 	}
 ?>
 
