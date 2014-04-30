@@ -13,18 +13,21 @@
 		echo "<p>Failed to connect to MySQL server: ".mysqli_connect_error()."</p>";
 		show_db_php();
 	}
-	echo "What you submiited is ";
 	$username = $_SERVER['HTTP_USERNAME'];
 	$password = $_SERVER['HTTP_PASSWORD'];
-	echo "$username, $password";
-
 	$SQL_CHECK_CREDENTIAL = "SELECT * FROM `User` WHERE `username` = '$username' AND `password` = '$password'";
 
 	if($result = mysqli_query($db,$SQL_CHECK_CREDENTIAL))
 	{
-		while($row = mysqli_fetch_row($result))
+		if(mysqli_num_rows($result))
 		{
-			printf("user_id: %d username: %s password: %s",$row[0],$row[1],$row[2]);
+			echo "{'username':'$username',";
+			echo "'status':'success'}";
+		}
+		else
+		{
+			echo "{'username':'$username',";
+			echo "'status':'failed'}";		
 		}
 		mysqli_free_result($result);
 	}
