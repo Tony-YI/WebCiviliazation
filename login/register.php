@@ -17,10 +17,14 @@
 	
 	$SQL_CHECK_DUPLICATE = "SELECT * FROM `User` WHERE `username` = '$user_name'";
 	$result = mysqli_query($db, $SQL_CHECK_DUPLICATE);
+	echo "$result" . " nani?!!";
 	if($result)
 	{
+		while($temp = mysqli_fetch_row($result))
+		{
+			echo '$temp' . " 123";
+		}
 		echo "<p>User name has already been registered, please change to another user name.</p>";
-		show_db_php();
 	}
 	else
 	{
