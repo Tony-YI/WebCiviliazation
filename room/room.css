@@ -1,4 +1,4 @@
-table.userInfoTable
+table#inforTable.userInfoTable
 {
     border: 3px;
 }
