@@ -195,7 +195,7 @@
    border-top-color: #e5f56e;
    background: #e5f56e;
    }
-   .button7 {
+   .button0 {
    border-top: 1px solid #9fc9f5;
    background: #41e4fa;
    background: -webkit-gradient(linear, left top, left bottom, from(#47ddff), to(#41e4fa));
@@ -217,12 +217,12 @@
    text-decoration: none;
    vertical-align: middle;
    }
-.button7:hover {
+.button0:hover {
    border-top-color: #3baee3;
    background: #3baee3;
    color: #f2f2f2;
    }
-.button7:active {
+.button0:active {
    border-top-color: #6ebbf5;
    background: #6ebbf5;
    }
