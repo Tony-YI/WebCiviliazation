@@ -16,8 +16,8 @@
 	$pass_word = $_SERVER['HTTP_PASSWORD'];
 	$SQL_CHECK_DUPLICATE = "SELECT * FROM `User` WHERE `username` = '$user_name'";
 	$result = mysqli_query($db, $SQL_CHECK_DUPLICATE);
-	echo gettype($result);
-	if($result)
+	echo mysqli_num_rows($result);
+	if(mysqli_num_rows($result) != 0)
 	{
 		while($temp = mysqli_fetch_row($result))
 		{
