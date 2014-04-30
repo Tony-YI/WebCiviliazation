@@ -21,19 +21,27 @@
 	{
 		if(mysqli_num_rows($result))
 		{
+			#Authentication successful
+			$cookie_value = md5($username.((string)rand());
+
+			setcookie("USER_COOKIE",$cookie_value,time() + 3600 * 24);
 			echo "{'username':'$username',";
-			echo "'status':'success'}";
+			echo "'status':'success',";
+			echo "'cookie':'$cookie_value'}";
 		}
 		else
 		{
 			echo "{'username':'$username',";
-			echo "'status':'failed'}";		
+			echo "'status':'failed',";
+			echo "'cookie':''}";		
 		}
 		mysqli_free_result($result);
 	}
 	else
 	{
-		echo "AUTH FAILED!";
+		echo "{'username':'$username',";
+		echo "'status':'unknown',";
+		echo "'cookie':''}";
 	}
 
 ?>
