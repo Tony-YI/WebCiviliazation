@@ -13,24 +13,35 @@
 		echo "<p>Failed to connect to MySQL server: ".mysqli_connect_error()."</p>";
 		show_db_php();
 	}
-	echo "What you submiited is ";
 	$username = $_SERVER['HTTP_USERNAME'];
 	$password = $_SERVER['HTTP_PASSWORD'];
-	echo "$username, $password";
-
 	$SQL_CHECK_CREDENTIAL = "SELECT * FROM `User` WHERE `username` = '$username' AND `password` = '$password'";
 
 	if($result = mysqli_query($db,$SQL_CHECK_CREDENTIAL))
 	{
-		while($row = mysqli_fetch_row($result))
+		if(mysqli_num_rows($result))
 		{
-			printf("user_id: %d username: %s password: %s",$row[0],$row[1],$row[2]);
+			#Authentication successful
+			$cookie_value = md5($username.((string)rand()));
+
+			setcookie("USER_COOKIE",$cookie_value,time() + 3600 * 24,"/");
+			echo "{'username':'$username',";
+			echo "'status':'success',";
+			echo "'cookie':'$cookie_value'}";
+		}
+		else
+		{
+			echo "{'username':'$username',";
+			echo "'status':'failed',";
+			echo "'cookie':''}";		
 		}
 		mysqli_free_result($result);
 	}
 	else
 	{
-		echo "AUTH FAILED!";
+		echo "{'username':'$username',";
+		echo "'status':'unknown',";
+		echo "'cookie':''}";
 	}
 
 ?>
