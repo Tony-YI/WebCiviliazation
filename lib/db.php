@@ -24,6 +24,7 @@
 		echo "<p>MYSQL_USR: |$MYSQL_USR|</p>";
 		echo "<P>MYSQL_PWD: |$MYSQL_PWD|</p>";
 	}
+	
 	function check_cookie()
 	{
 		$USER_COOKIE = $_COOKIE["USER_COOKIE"];

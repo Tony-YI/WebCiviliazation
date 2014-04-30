@@ -12,6 +12,7 @@
 	1. Drop all the table
 	2. Generate all the tables (Accroding to the db_design)
 	*/
+	error_reporting(22527);
 	require_once("../lib/db.php");
 	if(mysqli_connect_errno())
 	{
