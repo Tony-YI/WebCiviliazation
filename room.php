@@ -7,7 +7,7 @@
 <body>
     <div id="bg0">
         <div id="roomNum">    
-            <button type="submit">Room1 <i>Click to Join</i></button><br>
+            <button>Room1 <i>Click to Join</i></button><br>
             <?php  
                 $i = 0;
                 while($i < 40){
