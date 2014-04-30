@@ -30,13 +30,13 @@
 	
 	$SQL_CREATE_Cookie = "CREATE TABLE Cookie";
 	$SQL_CREATE_Cookie .= "(cookie CHAR(32) PRIMARY KEY,";
-	$SQL_CREATE_Cookie .= "user_id CHAR(32),";
+	$SQL_CREATE_Cookie .= "user_id INT,";
 	$SQL_CREATE_Cookie .= "FOREIGN KEY (user_id) REFERENCES User(user_id))";
 
 
 	$SQL_CREATE_Game = "CREATE TABLE Game";
 	$SQL_CREATE_Game .= "(Game_id INT PRIMARY KEY,";
-	$SQL_CREATE_Game .= "P1 CHAR(32),P2 CHAR(32), P3 CHAR(32),";
+	$SQL_CREATE_Game .= "P1 INT,P2 INT, P3 INT,";
 	$SQL_CREATE_Game .= "FOREIGN KEY(P1) REFERENCES User(user_id),";
 	$SQL_CREATE_Game .= "FOREIGN KEY(P2) REFERENCES User(user_id),";
 	$SQL_CREATE_Game .= "FOREIGN KEY(P3) REFERENCES User(user_id))";
