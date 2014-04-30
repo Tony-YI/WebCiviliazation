@@ -5,15 +5,14 @@
 #$MYSQL_PORT is the port of the MYSQL SERVER
 #$MYSQL_PWD is the password of the MYSQL SERVER
 #$MYSQL_USR is the username of the MYSQL SERVER
-	$DATA_DIR = $_ENV['OPENSHIFT_DATA_DIR'];
-	$RUNTIME_DATA_DIR = $_ENV['OPENSHIFT_REPO_DIR'];
-	$MYSQL_HOST = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
-	$MYSQL_PORT = $_ENV['OPENSHIFT_MYSQL_DB_PORT'];
-	$MYSQL_PWD = $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'];
-	$MYSQL_USR = $_ENV['OPENSHIFT_MYSQL_DB_USERNAME'];
+	$DATA_DIR = getenv('OPENSHIFT_DATA_DIR');
+	$RUNTIME_DATA_DIR = getenv('OPENSHIFT_REPO_DIR');
+	$MYSQL_HOST = getenv("OPENSHIFT_MYSQL_DB_HOST");
+	$MYSQL_PORT = getenv("OPENSHIFT_MYSQL_DB_PORT");
+	$MYSQL_PWD = getenv("OPENSHIFT_MYSQL_DB_PASSWORD");
+	$MYSQL_USR = getenv("OPENSHIFT_MYSQL_DB_USERNAME");
 #$db is the connection to the mysql server
 	$db = mysqli_connect("$MYSQL_HOST:$MYSQL_PORT",$MYSQL_USR,$MYSQL_PWD,"project");
-
 
 	function show_db_php()
 	{
@@ -24,7 +23,7 @@
 		echo "<p>MYSQL_USR $MYSQL_USR</p>;";
 		echo "<P>MYSQL_PWD $MYSQL_PWD</p>";
 	}
-
+	show_db_php();
 	function check_cookie()
 	{
 		$USER_COOKIE = $_COOKIE["USER_COOKIE"];
