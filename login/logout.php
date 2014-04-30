@@ -22,7 +22,11 @@
 			{
 				$sql_error = mysqli_error($db);
 			}
-			echo "{\"status\":\"success\",\"sql_error\":\"$sql_error\"}";
+			echo "{\"status\":\"success\",\"sql_error\":\"$sql_error\",\"cookie_used_in_query\":\"$USER_COOKIE\"}";
+			exit;
 		}
+		else 
+			echo "{\"status\":\"failed\",\"sql_error\":\"no cookie found\",\"cookie_used_in_query\":\"$USER_COOKIE\"}";
 	}
+	echo "{\"status\":\"failed\",\"sql_error\":\"error in query\",\"cookie_used_in_query\":\"$USER_COOKIE\"}";
 ?>
