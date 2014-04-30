@@ -1,4 +1,8 @@
 .infoTable
 {
-    border: 2px;
+    border: 2px black;
+}
+#userInfoTable
+{
+    border:2px black;
 }
