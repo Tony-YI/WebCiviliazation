@@ -1,6 +1,8 @@
 <?php
 	#Check Cookie here
 	#if cookie exist, redirect the page
+	$cookie = $_COOKIE['USER_COOKIE'];
+	echo "<!--$cookie-->";
 ?>
 
 <!DOCTYPE HTML>
