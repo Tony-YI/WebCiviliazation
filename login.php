@@ -1,19 +1,17 @@
 <?php
-	#Check for cookie,
-	# if cookie exist and correct, auto redirect to room selection
-	#otherwise
-	$html_content = <<<EOD
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<title>Login</title>
-		<script type="text/javascript" src="login/login.js"/>
-	</head>
-	<body style="font-family:verdana, sans-serif;">
-	<h2>Login</h2>
+	#Check Cookie here
+	#if cookie exist, redirect the page
+?>
 
-
-	<form method=post action="login/auth.php">
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Login</title>
+	<script type="text/javascript" src="login/login.js"></script>
+</head>
+<body style="font-family:verdana, sans-serif;">
+<h2>Login</h2>
+<form method=post action="login/auth.php">
 	<table cellspacing=5pt cellpadding=10pt style="border:1pt solid #7777ff;">
 		<tr>
 		<td>User</td>
@@ -26,14 +24,10 @@
 		</tr>
 
 		<tr>
-		<td><button type="button">Login</button></td>
+		<td><button type="button" onclick="login()">Login</button></td>
 		</tr>
 	</table>
 	<a href="register.html">click to register</a>
-	</body>
-	</html>
-EOD;
-	echo $html_content;
-?>
-
+</body>
+</html>
 

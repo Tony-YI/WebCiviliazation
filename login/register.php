@@ -12,13 +12,15 @@
 		echo "<p>Failed to connect to MySQL server: ".mysqli_connect_error()."</p>";
 		show_db_php();
 	}
-	$user_name = $_SERVER['HTTP_username'];
-	$pass_word = $_SERVER['HTTP_password'];
-	echo $user_name;
-	echo $pass_word;
+	$user_name = $_SERVER['HTTP_USERNAME'];
+	$pass_word = $_SERVER['HTTP_PASSWORD'];
 	$SQL_CHECK_DUPLICATE = "SELECT * FROM `User` WHERE `username` = '$user_name'";
 	$result = mysqli_query($db, $SQL_CHECK_DUPLICATE);
-	if($result)
+	while($temp = mysqli_fetch_row($result))
+	{
+		echo $temp;
+	}
+	if($result == NULL)
 	{
 		while($temp = mysqli_fetch_row($result))
 		{
