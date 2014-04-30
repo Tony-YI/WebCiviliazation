@@ -23,6 +23,7 @@ function logout()
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","login/logout.php",false);
 	xhr.send();
+	console.log(xhr.responseText);
 	response = JSON.parse(xhr.responseText);
 	if(response.status == "success")
 	{
