@@ -26,7 +26,7 @@
 			console.log(usr);
 			console.log(pwd);
 			var xhr = new XMLHttpRequest();
-			xhr.open("POST","login/register.php",false);
+			xhr.open("POST","login/register.php",true);
 			xhr.setRequestHeader('username',usr);
 			xhr.setRequestHeader('password',pwd);
 			xhr.send();
@@ -42,9 +42,9 @@
 					var msg = document.createElement("p");
 					msg.innerHTML = xhr.responseText;
 					console.log(msg);
-					var body = document.getElementByTagName("body");
+					var body = document.getElementsByTagName("body");
 					console.log(body);
-					body.appendChild(msg);
+					body[0].appendChild(msg);
 				}
 			};
 			return false;
