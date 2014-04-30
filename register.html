@@ -40,7 +40,9 @@
 					}
 					var msg = document.createElement("p");
 					msg.innerHTML = xhr.responseText;
+					console.log(msg);
 					var body = document.getElementByTagName("body");
+					console.log(body);
 					body.appendChild(msg);
 				}
 			};
