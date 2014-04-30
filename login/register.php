@@ -14,10 +14,12 @@
 	}
 	$user_name = $_SERVER['HTTP_USERNAME'];
 	$pass_word = $_SERVER['HTTP_PASSWORD'];
-	echo $user_name;
-	echo $pass_word;
 	$SQL_CHECK_DUPLICATE = "SELECT * FROM `User` WHERE `username` = '$user_name'";
 	$result = mysqli_query($db, $SQL_CHECK_DUPLICATE);
+	while($temp = mysqli_fetch_row($result))
+	{
+		echo '$temp';
+	}
 	if($result)
 	{
 		while($temp = mysqli_fetch_row($result))
