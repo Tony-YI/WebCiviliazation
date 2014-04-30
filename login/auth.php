@@ -24,7 +24,7 @@
 			#Authentication successful
 			$cookie_value = md5($username.((string)rand()));
 
-			setcookie("USER_COOKIE",$cookie_value,time() + 3600 * 24);
+			setcookie("USER_COOKIE",$cookie_value,time() + 3600 * 24,"/");
 			echo "{'username':'$username',";
 			echo "'status':'success',";
 			echo "'cookie':'$cookie_value'}";
