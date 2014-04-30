@@ -14,7 +14,23 @@
 		show_db_php();
 	}
 	echo "What you submiited is ";
-	$user_name = $_SERVER['HTTP_username'];
-	$pass_word = $_SERVER['HTTP_password'];
-	echo "$user_name, $pass_word";
+	$username = $_SERVER['HTTP_USERNAME'];
+	$password = $_SERVER['HTTP_PASSWORD'];
+	echo "$username, $password";
+
+	$SQL_CHECK_CREDENTIAL = "SELECT * FROM `User` WHERE `username` = '$username' AND `password` = `$password`";
+
+	if($result = mysqli_query($db,$SQL_CHECK_CREDENTIAL))
+	{
+		while($row = mysqli_fetch_row($result))
+		{
+			printf("user_id: %d username: %s password: %s",$row[0],$row[1],$row[2]);
+		}
+		mysqli_free_result($result);
+	}
+	else
+	{
+		echo "AUTH FAILED!";
+	}
+
 ?>
