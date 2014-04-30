@@ -18,7 +18,7 @@
 	$result = mysqli_query($db, $SQL_CHECK_DUPLICATE);
 	while($temp = mysqli_fetch_row($result))
 	{
-		echo '$temp';
+		echo $temp;
 	}
 	if($result)
 	{
