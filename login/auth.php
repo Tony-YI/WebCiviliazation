@@ -18,7 +18,7 @@
 	$password = $_SERVER['HTTP_PASSWORD'];
 	echo "$username, $password";
 
-	$SQL_CHECK_CREDENTIAL = "SELECT * FROM `User` WHERE `username` = '$username' AND `password` = `$password`";
+	$SQL_CHECK_CREDENTIAL = "SELECT * FROM `User` WHERE `username` = '$username' AND `password` = '$password'";
 
 	if($result = mysqli_query($db,$SQL_CHECK_CREDENTIAL))
 	{
