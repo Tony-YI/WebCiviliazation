@@ -10,8 +10,8 @@
     left: 70%;
 }
 
-.icon-envelope:before {
-    content: "\e000";
+.icon-truck:before {
+    content: "\e00e";
 }
 .btn-7a {
     overflow: hidden;
