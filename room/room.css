@@ -133,3 +133,34 @@
    border-top-color: #f56ee1;
    background: #f56ee1;
    }
+   .button5 {
+   border-top: 1px solid #f59dcc;
+   background: #f5879e;
+   background: -webkit-gradient(linear, left top, left bottom, from(#f06969), to(#f5879e));
+   background: -webkit-linear-gradient(top, #f06969, #f5879e);
+   background: -moz-linear-gradient(top, #f06969, #f5879e);
+   background: -ms-linear-gradient(top, #f06969, #f5879e);
+   background: -o-linear-gradient(top, #f06969, #f5879e);
+   padding: 12px 24px;
+   -webkit-border-radius: 17px;
+   -moz-border-radius: 17px;
+   border-radius: 17px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #122638;
+   font-size: 16px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button5:hover {
+   border-top-color: #d45963;
+   background: #d45963;
+   color: #f2f2f2;
+   }
+.button5:active {
+   border-top-color: #f56e90;
+   background: #f56e90;
+   }
