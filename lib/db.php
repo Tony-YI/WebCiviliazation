@@ -13,7 +13,8 @@
 	$MYSQL_USR = $_ENV['OPENSHIFT_MYSQL_DB_USERNAME'];
 #$db is the connection to the mysql server
 	$db = mysqli_connect("$MYSQL_HOST:$MYSQL_PORT",$MYSQL_USR,$MYSQL_PWD,"project");
-	
+
+
 	function show_db_php()
 	{
 		echo "<p>DATA_DIR $DATA_DIR</p>";
