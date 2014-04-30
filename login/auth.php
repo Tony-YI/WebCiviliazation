@@ -25,7 +25,9 @@
 			$cookie_value = md5($username.((string)rand()));
 			
 			setcookie("USER_COOKIE",$cookie_value,time() + 3600 * 24,"/");
+
 			$row = mysqli_fetch_row($result);
+			setcookie("CURRENT_USER",$row[0],time() + 3600 * 24,"/");
 			$SQL_INSERT_COOKIE = "INSERT INTO Cookie VALUES ('$cookie_value',$row[0])";
 			
 			if(!mysqli_query($db,$SQL_INSERT_COOKIE))
