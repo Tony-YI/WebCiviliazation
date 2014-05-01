@@ -25,7 +25,7 @@ function room_get_list()
 				return false;
 			}
 			var room_info = xhr.responseText;
-			document.getElementById("roomNum").innerHTML = room_info;
+			//document.getElementById("roomNum").innerHTML = room_info;
 		}
 	};
 	return false;
@@ -45,7 +45,7 @@ function pseudo_room_get_list()
 	console.log(current_room_info);
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","room/get_room.php",true);
-	xhr.setRequestHeader('refresh_type',"true");
+	xhr.setRequestHeader('refresh_type',"pseudo");
 	xhr.setRequestHeader('room_info',current_room_info);
 	xhr.send();
 	xhr.onreadystatechange = function(){
