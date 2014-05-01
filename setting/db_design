@@ -6,8 +6,12 @@
 
 #Cookie
 |cookie(PRIMARY KEY) | expired_at | user_id (REFERENCE User.user_id)|
+
+#Cookie_Game
+|cookie(PRIMARY KEY) | Game_id (REFERENCE Game.game_id) | user_id (REFERENCE User.user_id) |
+
 #Game/Room
-| Game_id (PRIMARY KEY) | player A (REFERENCE User.user_id) | player B (REFERENCE User.user_id) | player C (REFERENCE User.user_id) | Game_Database |  
+| game_id (PRIMARY KEY) | p1 (REFERENCE User.user_id) | p2 (REFERENCE User.user_id) | p3 (REFERENCE User.user_id) | Game_Database |  
 
 
 =========================FOR EVERY GAME DATABASE =============================

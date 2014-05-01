@@ -35,11 +35,12 @@
 
 
 	$SQL_CREATE_Game = "CREATE TABLE Game";
-	$SQL_CREATE_Game .= "(Game_id INT PRIMARY KEY,";
-	$SQL_CREATE_Game .= "P1 INT,P2 INT, P3 INT,";
-	$SQL_CREATE_Game .= "FOREIGN KEY(P1) REFERENCES User(user_id),";
-	$SQL_CREATE_Game .= "FOREIGN KEY(P2) REFERENCES User(user_id),";
-	$SQL_CREATE_Game .= "FOREIGN KEY(P3) REFERENCES User(user_id))";
+	$SQL_CREATE_Game .= "(game_id INT PRIMARY KEY,";
+	$SQL_CREATE_Game .= "p1 INT,p2 INT, p3 INT,";
+	$SQL_CREATE_Game .= "game_started INT DEFAULT(0)";
+	$SQL_CREATE_Game .= "FOREIGN KEY(p1) REFERENCES User(user_id),";
+	$SQL_CREATE_Game .= "FOREIGN KEY(p2) REFERENCES User(user_id),";
+	$SQL_CREATE_Game .= "FOREIGN KEY(p3) REFERENCES User(user_id),)";
 	
 	db_drop_table($db,$SQL_DROP_Game,"Game");
 	db_drop_table($db,$SQL_DROP_Cookie,"Cookie");

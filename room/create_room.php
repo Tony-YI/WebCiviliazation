@@ -5,6 +5,12 @@
 	2. If not, create a new room
 	3. Add the new room information into the database
 	4. Reply the user with the execution result of this file
+		The execution result format should be 
+		example:
+		{
+			"status":"success",
+			"game_id":"1"
+		}
 	*/
 	require_once("../lib/db.php");
 	if(mysqli_connect_errno())

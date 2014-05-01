@@ -36,3 +36,8 @@ function logout()
 		window.location = "login.php";
 	}
 }
+
+function start_game()
+{
+	
+}
