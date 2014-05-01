@@ -26,10 +26,10 @@ body
      background: -moz-linear-gradient(top, #ebe34c, #fab237);
      background: -ms-linear-gradient(top, #ebe34c, #fab237);
      background: -o-linear-gradient(top, #ebe34c, #fab237);*/
-     padding: 12px 24px;
+     padding: 12px 32px;
      -webkit-border-radius: 17px;
      -moz-border-radius: 17px;
-     border-radius: 17px;
+     border-radius: 8px;
      -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
      -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
      box-shadow: rgba(0,0,0,1) 0 1px 0;
