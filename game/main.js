@@ -3,7 +3,6 @@
 */
 function Init()
 {
-
 	var panel_layer = create_panel_layer();
 	document.body.appendChild(panel_layer);	
 }
