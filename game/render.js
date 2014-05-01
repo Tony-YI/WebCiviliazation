@@ -57,7 +57,7 @@ function update_slot_info_div(slot_info)
 		slot_info_div = document.createElement("div");
 		slot_info_div.id = "slot_info_div";
 	}
-	return update_slot_info_div;
+	return slot_info_div;
 }
 
 function update_army_info_div(army_info)
