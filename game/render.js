@@ -24,7 +24,7 @@ function update_status_div(status)
 	//This function will update the status div div
 	var status_div = $("#status_div");
 	//If the status_div does not exist yet
-	if(status.length == 0)
+	if(status_div.length == 0)
 	{
 		status_div = document.createElement("div");
 		status_div.id = "status_div";
@@ -36,7 +36,7 @@ function update_status_div(status)
 function update_actions_div(actions)
 {
 	//This function will update the actions list div
-	var actions_div=$("#actions_div")
+	var actions_div = $("#actions_div")
 	//If the actions_div does not exist yet
 	if(actions_div.length == 0)
 	{
