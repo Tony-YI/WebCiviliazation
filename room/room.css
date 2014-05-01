@@ -17,7 +17,7 @@ body
   background-attachment: fixed;
   margin: 0px;
 }
-button{
+.button1 {
      border-top: 1px solid #330099;
      background: url(../images/bt1.jpg);
      /*background: #fab237;
@@ -40,16 +40,16 @@ button{
      text-decoration: none;
      vertical-align: middle;
    }
-button:hover {
+.button1:hover {
    border-top-color: #6633ff;
-   background: #6699ff;
+   background: url(../images/bt1_h.jpg);
    color: #f2f2f2;
    }
-button:active {
+.button1:active {
    border-top-color: #6666ff;
    background: #6699ff;
    }
-   /*.button2 {
+   .button2 {
    border-top: 1px solid #9b98f5;
    background: #98cdf5;
    background: -webkit-gradient(linear, left top, left bottom, from(#7cbbeb), to(#98cdf5));
@@ -235,4 +235,3 @@ button:active {
    border-top-color: #6ebbf5;
    background: #6ebbf5;
    }
-   */
