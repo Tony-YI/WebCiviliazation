@@ -25,6 +25,12 @@ function room_create()
 	xhr.open("POST","room/create_room.php",false);
 	xhr.setRequestHeader("USERID",current_usr);
 	xhr.send();
+	console.log(xhr.responseText);
+	response = JSON.parse(xhr.responseText);
+	if(response.status = "success")
+	{
+		alert("You've created a room");
+	}
 }
 
 function logout()

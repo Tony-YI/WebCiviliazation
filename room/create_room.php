@@ -15,13 +15,33 @@
 	require_once("../lib/db.php");
 	if(mysqli_connect_errno())
 	{
-		echo "<p>Failed to connect to MySQL server: ".mysqli_connect_error()."</p>";
-		show_db_php();
+		echo "{\"status\":\"CANNOT_ACCESS_MYSQL\"}";
+		exit;
 	}
 
 	$user_id = $_SERVER["HTTP_USERID"];
 	$game_id = 1;
+	$prev_game_id = 1;
 	$SQL_INSPECT_GAMES = "SELECT * FROM Game ORDER BY game_id ASC";
 	$result = mysqli_query($db,$SQL_INSPECT_GAMES);
 
+	//Go though all the game_id and try to find an unused game_id
+	while($row = mysqli_fetch_row($result))
+	{
+		if($game_id < $row[0])
+			break;
+		else
+			$game_id = $game_id + 1;
+	}
+
+	$SQL_INSERT_NEW_GAME = "INSERT INTO Game Values ($game_id,$user_id)";
+
+	if(!mysqli_query($db,$SQL_INSERT_NEW_GAME))
+	{
+		echo "{\"status\":\"failed\"}";
+	}
+	else
+	{
+		echo "{\"status\":\"success\",\"game_id\":\"$game_id\"}";
+	}
 ?>
