@@ -1,14 +1,20 @@
 /*
 	This file contains implementation of the page rendering, with proper input parameter
 */
+var panel_layer;
+var status_div;
+var actions_div;
+var slot_info_div;
+var army_info_div;
+
 function create_panel_layer()
 {
-	var panel_layer = document.createElement("div");
+	panel_layer = document.createElement("div");
 	panel_layer.id = "panel_layer";
-	var status_div = update_status_div(null);
-	var actions_div = update_actions_div(null);
-	var slot_info_div = update_slot_info_div(null);
-	var army_info_div = update_army_info_div(null);
+	update_status_div(null);
+	update_actions_div(null);
+	update_slot_info_div(null);
+	update_army_info_div(null);
 
 	panel_layer.appendChild(status_div);
 	panel_layer.appendChild(actions_div);
@@ -21,7 +27,7 @@ function create_panel_layer()
 function update_status_div(status)
 {
 	//This function will update the status div div
-	var status_div;
+
 	//If the status_div does not exist yet
 	if(!status_div = $("#status_div"))
 	{
@@ -35,7 +41,7 @@ function update_status_div(status)
 function update_actions_div(actions)
 {
 	//This function will update the actions list div
-	var actions_div;
+
 	//If the actions_div does not exist yet
 	if(!actions_div=$("#actions_div"))
 	{
@@ -49,7 +55,7 @@ function update_actions_div(actions)
 function update_slot_info_div(slot_info)
 {
 	//This function will update the slot info div
-	var slot_info_div;
+
 	//If the slot_info_div does not exist yet
 	if(!slot_info_div = $("#slot_info_div"))
 	{
@@ -62,7 +68,7 @@ function update_slot_info_div(slot_info)
 function update_army_info_div(army_info)
 {
 	//This function will update the army info div
-	var army_info_div;
+
 	if(!army_info_div=$("#army_info_div"))
 	{
 		army_info_div = document.createElement("div");
