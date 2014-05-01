@@ -13,8 +13,8 @@ function room_get_list()
 	//This function is to send request to room/get_room.php
 	//Then get the existing room data from the server and dynamically render the page
 	var xhr = new XMLHttpRequest();
-	xhr.setRequestHeader('refresh_type',"true");
 	xhr.open("POST","room/get_room.php",true);
+	xhr.setRequestHeader('refresh_type',"true");
 	xhr.send();
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4)
@@ -40,13 +40,13 @@ function pseudo_room_get_list()
 	var current_room_info = "";
 	for (var i = 0; i < current_room.length; i++)
 	{
-		current_room_info = current_room_info + current_room.id;
+		current_room_info = current_room_info + current_room[i].id;
 	}
 	console.log(current_room_info);
 	var xhr = new XMLHttpRequest();
-	xhr.setRequestHeader('refresh_type',"true");
-	xhr.setRequestHeader('refresh_type',"true");
 	xhr.open("POST","room/get_room.php",true);
+	xhr.setRequestHeader('refresh_type',"true");
+	xhr.setRequestHeader('room_info',current_room_info);
 	xhr.send();
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4)
