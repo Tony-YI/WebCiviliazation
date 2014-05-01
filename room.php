@@ -9,8 +9,8 @@
 
 </head>
 <body>
-<button type="button" onclick="logout()">logout</button>
-<button type="button" onclick="room_create()">create a new room</button>
+<button type="button" id="logout" onclick="logout()">logout</button>
+<button type="button" id="newRoom" onclick="room_create()">create a new room</button>
     <div id="bg0">
         <div id="header">
             
@@ -21,7 +21,7 @@
                 while($i < 40){
                     $i++;
                     $num = $i % 7;
-                    echo "<button type='submit' class='button$num'>Room $i ! Click to enter room</button><br><br>";
+                    echo "<button type='submit' class='roomBtn'>Room $i ! Click to enter room</button><br><br>";
                 }
             ?>
         </div>
