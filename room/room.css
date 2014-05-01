@@ -26,8 +26,7 @@ body
      background: -moz-linear-gradient(top, #ebe34c, #fab237);
      background: -ms-linear-gradient(top, #ebe34c, #fab237);
      background: -o-linear-gradient(top, #ebe34c, #fab237);*/
-     padding: 8% 8%;
-     width: 30%;
+     padding: 12px 100%;
      -webkit-border-radius: 17px;
      -moz-border-radius: 17px;
      border-radius: 8px;
