@@ -41,13 +41,13 @@ body
      vertical-align: middle;
    }
 .button1:hover {
-   border-top-color: #e68d2e;
-   background: #e68d2e;
+   border-top-color: #6633ff;
+   background: #6666ff;
    color: #f2f2f2;
    }
 .button1:active {
-   border-top-color: #e8b372;
-   background: #e8b372;
+   border-top-color: #6666ff;
+   background: #6699ff;
    }
    .button2 {
    border-top: 1px solid #9b98f5;
