@@ -6,7 +6,7 @@ var current_usrname = $.cookie("CURRENT_USERNAME");
 var in_room = 0;
 
 if(current_usr_id)
-	console.log("CURRENT_USER is " + current_usr);
+	console.log("CURRENT_USER is " + current_usr_id);
 
 function room_get_list()
 {
@@ -75,7 +75,7 @@ function room_create()
 	var xhr = new XMLHttpRequest();
 	//this is a synchornous request
 	xhr.open("POST","room/create_room.php",false);
-	xhr.setRequestHeader("USERID",current_usr);
+	xhr.setRequestHeader("USERID",current_usr_id);
 	xhr.send();
 	console.log(xhr.responseText);
 	response = JSON.parse(xhr.responseText);
