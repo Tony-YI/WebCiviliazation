@@ -26,7 +26,7 @@ body
      background: -moz-linear-gradient(top, #ebe34c, #fab237);
      background: -ms-linear-gradient(top, #ebe34c, #fab237);
      background: -o-linear-gradient(top, #ebe34c, #fab237);*/
-     padding: 12px 32px;
+     padding: 10% 30%;
      -webkit-border-radius: 17px;
      -moz-border-radius: 17px;
      border-radius: 8px;
@@ -34,7 +34,7 @@ body
      -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
      box-shadow: rgba(0,0,0,1) 0 1px 0;
      text-shadow: rgba(0,0,0,.4) 0 1px 0;
-     color: #122638;
+     color: #ffffcc;
      font-size: 16px;
      font-family: Georgia, Serif;
      text-decoration: none;
