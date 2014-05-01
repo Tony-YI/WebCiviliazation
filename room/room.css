@@ -47,7 +47,7 @@ body
    }
 .button1:active {
    border-top-color: #6666ff;
-   background: #6699ff;
+   background: url(../images/bt1_a.jpg);
    }
    .button2 {
    border-top: 1px solid #9b98f5;
