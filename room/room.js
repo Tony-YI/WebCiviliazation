@@ -14,8 +14,8 @@ function room_get_list()
 }
 
 function room_onclick()
-{
-
+{	
+	//Pop out a confirmation window 
 }
 
 function room_create()
@@ -30,9 +30,22 @@ function room_create()
 	if(response.status = "success")
 	{
 		alert("You've created a room");
+		in_room = 1;
+		$.("#newRoom").hide();
+		render_room_information(response)
 	}
 }
 
+function render_user_information()
+{
+	//This function will show the user information on the right hand side
+}
+
+function render_room_information(response)
+{
+	//This function will show the room information on the right hand side
+
+}
 function logout()
 {
 	var xhr = new XMLHttpRequest();
