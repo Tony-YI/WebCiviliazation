@@ -57,7 +57,7 @@ function pseudo_room_get_list()
 				return false;
 			}
 			var room_info = xhr.responseText;
-			document.getElementById("roomNum").innerHTML = room_info;
+			//document.getElementById("roomNum").innerHTML = room_info;
 		}
 	};
 	return false;
