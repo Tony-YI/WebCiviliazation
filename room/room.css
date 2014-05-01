@@ -19,8 +19,7 @@ body
 }
 .button1 {
      border-top: 1px solid #f7cf97;
-     background-image: url(../images/bt1.jpg);
-     background: #fab237;
+     background: url(../images/bt1.jpg);
      background: -webkit-gradient(linear, left top, left bottom, from(#ebe34c), to(#fab237));
      background: -webkit-linear-gradient(top, #ebe34c, #fab237);
      background: -moz-linear-gradient(top, #ebe34c, #fab237);
