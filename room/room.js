@@ -5,7 +5,7 @@ var current_usrname = $.cookie("CURRENT_USERNAME");
 //in_room is a flag to denote whether the current user is already inside a game/room
 var in_room = 0;
 
-if(current_usr)
+if(current_usr_id)
 	console.log("CURRENT_USER is " + current_usr);
 
 function room_get_list()
