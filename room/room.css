@@ -18,7 +18,8 @@ body
   margin: 0px;
 }
 .button1 {
-   border-top: 1px solid #f7cf97;
+     border-top: 1px solid #f7cf97;
+     background-image: url(../images/bt1.jpg);
      background: #fab237;
      background: -webkit-gradient(linear, left top, left bottom, from(#ebe34c), to(#fab237));
      background: -webkit-linear-gradient(top, #ebe34c, #fab237);
