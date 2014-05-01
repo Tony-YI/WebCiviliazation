@@ -37,7 +37,7 @@
 	$SQL_CREATE_Game = "CREATE TABLE Game";
 	$SQL_CREATE_Game .= "(game_id INT PRIMARY KEY,";
 	$SQL_CREATE_Game .= "p1 INT,p2 INT, p3 INT,";
-	$SQL_CREATE_Game .= "game_started INT DEFAULT(0)";
+	$SQL_CREATE_Game .= "game_started INT DEFAULT(0),";
 	$SQL_CREATE_Game .= "FOREIGN KEY(p1) REFERENCES User(user_id),";
 	$SQL_CREATE_Game .= "FOREIGN KEY(p2) REFERENCES User(user_id),";
 	$SQL_CREATE_Game .= "FOREIGN KEY(p3) REFERENCES User(user_id),)";

@@ -18,6 +18,10 @@
 		echo "<p>Failed to connect to MySQL server: ".mysqli_connect_error()."</p>";
 		show_db_php();
 	}
-	$_SERVER["HTTP_USERID"];
-	$SQL_INSPECT_GAMES = "SELECT * FROM Game ORDER BY Game_id ASC";
+
+	$user_id = $_SERVER["HTTP_USERID"];
+	$game_id = 1;
+	$SQL_INSPECT_GAMES = "SELECT * FROM Game ORDER BY game_id ASC";
+	$result = mysqli_query($db,$SQL_INSPECT_GAMES);
+
 ?>

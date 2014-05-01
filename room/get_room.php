@@ -14,6 +14,7 @@
 	require_once("../lib/db.php");
 	if(!check_cookie($db))
 	{
+		//If the cookie exists
 	}
 	else
 	{
