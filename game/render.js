@@ -10,10 +10,10 @@ function create_panel_layer()
 	var slot_info_div = update_slot_info_div(null);
 	var army_info_div = update_army_info_div(null);
 
-	panel.appendChild(status_div);
-	panel.appendChild(actions_div);
-	panel.appendChild(slot_info_div);
-	panel.appendChild(army_info_div);
+	panel_layer.appendChild(status_div);
+	panel_layer.appendChild(actions_div);
+	panel_layer.appendChild(slot_info_div);
+	panel_layer.appendChild(army_info_div);
 
 	return panel_layer;
 }
