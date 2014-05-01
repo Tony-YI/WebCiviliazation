@@ -8,6 +8,8 @@
 		h2.Register{font-family: "Consolas";}
 		div.form_field{font-family: "Consolas";font-style: bold;font-size: 18px;}
 	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
 	<script>
 		function register()
 		{
@@ -22,7 +24,16 @@
 			{
 				alert("Empty password is not allowed !");
 				return false;
-			}	
+			}
+			//Clear the cookie
+			if($.cookie("CURRENT_USER"))
+			{
+				$.cookie("CURRENT_USER",'',{expires:-1});
+			}
+			if($.cookie("USER_COOKIE"))
+			{
+				$.cookie("USER_COOKIE",'',{expires:-1});
+			}
 			var xhr = new XMLHttpRequest();
 			xhr.open("POST","login/register.php",true);
 			xhr.setRequestHeader('username',usr);
