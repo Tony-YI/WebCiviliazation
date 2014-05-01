@@ -18,7 +18,7 @@ body
   margin: 0px;
 }
 .button1 {
-     border-top: 1px solid #f7cf97;
+     border-top: 1px solid #330099;
      background: url(../images/bt1.jpg);
      /*background: #fab237;
      background: -webkit-gradient(linear, left top, left bottom, from(#ebe34c), to(#fab237));
@@ -26,7 +26,7 @@ body
      background: -moz-linear-gradient(top, #ebe34c, #fab237);
      background: -ms-linear-gradient(top, #ebe34c, #fab237);
      background: -o-linear-gradient(top, #ebe34c, #fab237);*/
-     padding: 5% 10% 5% 10%;
+     padding: 10% 20% 10% 20%;
      -webkit-border-radius: 17px;
      -moz-border-radius: 17px;
      border-radius: 8px;
