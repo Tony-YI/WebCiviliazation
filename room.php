@@ -17,7 +17,7 @@
         </div>
         <div id="roomNum">  
             <?php  
-                require_once("../lib/db.php");
+                require_once("lib/db.php");
                 if(mysqli_connect_errno())
                 {
                     echo "{\"status\":\"CANNOT_ACCESS_MYSQL\"}";
