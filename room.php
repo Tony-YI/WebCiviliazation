@@ -17,7 +17,7 @@
         </div>
         <div id="roomNum">  
             <?php  
-                require_once("../lib/db.php");
+                require_once("lib/db.php");
                 if(mysqli_connect_errno())
                 {
                     echo "{\"status\":\"CANNOT_ACCESS_MYSQL\"}";
@@ -33,7 +33,7 @@
                 while($row = mysqli_fetch_row($result))
                 {
                    $num = $row[0];
-                    echo "<button type='submit' class='roomBtn'>Room $num ! Click to enter room</button><br><br>";
+                    echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button><br><br>";
                 }
 
                 /*$i = 0;
