@@ -1,4 +1,5 @@
-var current_usr = $.cookie("CURRENT_USER");
+var current_usr_id = $.cookie("CURRENT_USER");
+var current_usrname = $.cookie("CURRENT_USERNAME");
 
 
 //in_room is a flag to denote whether the current user is already inside a game/room
@@ -31,7 +32,7 @@ function room_create()
 	{
 		alert("You've created a room");
 		in_room = 1;
-		$.("#newRoom").hide();
+		$("#newRoom").hide();
 		render_room_information(response)
 	}
 }
