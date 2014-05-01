@@ -38,7 +38,8 @@
 
 	if(!mysqli_query($db,$SQL_INSERT_NEW_GAME))
 	{
-		echo "{\"status\":\"failed\"}";
+		$error_str = mysqli_error($db);
+		echo "{\"status\":\"failed\",\"error\":\"$error_str\"}";
 	}
 	else
 	{
