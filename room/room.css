@@ -20,17 +20,7 @@ body
 .button1 {
      border-top: 1px solid #f7cf97;
      background: url(../images/bt1.jpg);
-     background: -webkit-gradient(linear, left top, left bottom, from(#ebe34c), to(#fab237));
-     background: -webkit-linear-gradient(top, #ebe34c, #fab237);
-     background: -moz-linear-gradient(top, #ebe34c, #fab237);
-     background: -ms-linear-gradient(top, #ebe34c, #fab237);
-     background: -o-linear-gradient(top, #ebe34c, #fab237);
-     padding: 12px 24px;
-     -webkit-border-radius: 17px;
-     -moz-border-radius: 17px;
-     border-radius: 17px;
-     -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-     -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+     
      box-shadow: rgba(0,0,0,1) 0 1px 0;
      text-shadow: rgba(0,0,0,.4) 0 1px 0;
      color: #122638;
