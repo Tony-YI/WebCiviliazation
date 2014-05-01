@@ -9,10 +9,6 @@ Web Civlization is a web game that imitate the very famouse Civilization Series.
 
 ================================================================================
 
-A user shall first visit login.php, after login, he/she will be redirect to room.php, and after the game started, he will be redirected to game.html
-
-================================================================================
-
 /game/net/ is the directory holding implementation of the network connection
 /game/slot/ is the directory holding implementation of the interaction between user and the slot
 /game/panel/ is the directory holding implementation of the interaction between user and the panel
@@ -26,5 +22,7 @@ A user shall first visit login.php, after login, he/she will be redirect to room
 ================================================================================
 
 TODO: May use HTML5 WebSocket technique to implement the interaction between server and the client
-
+1. Implement create game/room functionality
+2. Implement join game/room functionality
+3. Implement get game/room information functionality
 

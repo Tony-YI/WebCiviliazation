@@ -32,3 +32,25 @@ Game
 	P2: INT
 	P3: INT
 }
+
+create_room_request
+{
+	User_id:INT
+}
+
+create_room_response
+{
+	status:'success | error';
+	game_id : INT;
+}
+
+join_room_request
+{
+	User_id:INT;
+	game_id:INT;
+}
+
+join_room_response
+{
+	status:'success | error';
+}
