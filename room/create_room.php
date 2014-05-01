@@ -34,7 +34,7 @@
 			$game_id = $game_id + 1;
 	}
 
-	$SQL_INSERT_NEW_GAME = "INSERT INTO Game Values ($game_id,$user_id)";
+	$SQL_INSERT_NEW_GAME = "INSERT INTO Game Values ($game_id,$user_id,DEFAULT,DEFAULT,DEFAULT)";
 
 	if(!mysqli_query($db,$SQL_INSERT_NEW_GAME))
 	{
