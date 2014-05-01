@@ -17,12 +17,31 @@
         </div>
         <div id="roomNum">  
             <?php  
-                $i = 0;
+                require_once("../lib/db.php");
+                if(mysqli_connect_errno())
+                {
+                    echo "{\"status\":\"CANNOT_ACCESS_MYSQL\"}";
+                    exit;
+                }
+
+                $user_id = $_SERVER["HTTP_USERID"];
+                $game_id = 1;
+                $prev_game_id = 1;
+                $SQL_INSPECT_GAMES = "SELECT * FROM Game ORDER BY game_id ASC";
+                $result = mysqli_query($db,$SQL_INSPECT_GAMES);
+
+                while($row = mysqli_fetch_row($result))
+                {
+                   $num = $row[0];
+                    echo "<button type='submit' class='roomBtn'>Room $num ! Click to enter room</button><br><br>";
+                }
+
+                /*$i = 0;
                 while($i < 40){
                     $i++;
                     $num = $i % 7;
                     echo "<button type='submit' class='roomBtn'>Room $i ! Click to enter room</button><br><br>";
-                }
+                }*/
             ?>
         </div>
         <div id="Info" align="right">
