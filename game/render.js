@@ -63,14 +63,14 @@ function update_slot_info_div(slot_info)
 function update_army_info_div(army_info)
 {
 	//This function will update the army info div
-	var army_info_div=$("#army_info_div")
+	var army_info_div = $("#army_info_div")
 	if(army_info_div.length == 0)
 	{
 		army_info_div = document.createElement("div");
 		army_info_div.id = "army_info_div";
 	}
 
-	return update_army_info_div;
+	return army_info_div;
 }
 
 function update_slot(slot)
