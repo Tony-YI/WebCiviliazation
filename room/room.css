@@ -10,6 +10,11 @@
     left: 70%;
 }
 
+#roomNum
+{
+  margin-left: 10%;
+}
+
 body
 {
   background-image: url(../images/bg0.jpg);
