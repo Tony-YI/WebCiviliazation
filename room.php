@@ -18,6 +18,12 @@
         <div id="roomNum">  
             <?php  
                 require_once("lib/db.php");
+                $cookie = $_COOKIE['USER_COOKIE'];
+                if(!check_cookie($db))
+                {
+                    #redirect to room.html
+                    echo "<script type=\"text/javascript\">location.href=\"login.php\"</script>";
+                }
                 if(mysqli_connect_errno())
                 {
                     echo "{\"status\":\"CANNOT_ACCESS_MYSQL\"}";
