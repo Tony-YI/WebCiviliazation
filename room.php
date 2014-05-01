@@ -10,6 +10,7 @@
 </head>
 <body>
 <button type="button" onclick="logout()">logout</button>
+<button type="button" onclick="room_create()">create a new room</button>
     <div id="bg0">
         <div id="header">
             
