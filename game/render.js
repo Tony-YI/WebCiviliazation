@@ -15,7 +15,7 @@ function create_panel_layer()
 	panel.appendChild(slot_info_div);
 	panel.appendChild(army_info_div);
 
-	document.appendChild(panel);
+	return panel_layer;
 }
 
 function update_status_div(status)

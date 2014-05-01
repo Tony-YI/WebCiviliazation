@@ -3,7 +3,9 @@
 */
 function Init()
 {
-	
+
+	var panel_layer = create_panel_layer();
+	document.appendChild(panel_layer);	
 }
 
 //This is the function to add 'ACTIONS' to the form that is going to be processed on the server side
