@@ -37,7 +37,11 @@
                 while($row = mysqli_fetch_row($result))
                 {
                    $num = $row[0];
-                    echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button><br><br>";
+                    echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
+                    if($num % 2 == 0)
+                    {
+                        echo "<br><br>";
+                    }
                 }
 
                 /*$i = 0;
