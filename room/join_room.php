@@ -50,15 +50,15 @@
 			$response['seat0'] = $seat[0];
 			$response['seat1'] = $seat[1];
 			$response['seat2'] = $seat[2];
-			if(!$seat[0])
+			if($seat[0] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P1 = '$user_id' WHERE Game_id = '$room_id'";
 			}
-			else if(!$seat[1])
+			else if($seat[1] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P2 = '$user_id' WHERE Game_id = '$room_id'";
 			}
-			else if(!$seat[2])
+			else if($seat[2] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P3 = '$user_id' WHERE Game_id = '$room_id'";
 			}
