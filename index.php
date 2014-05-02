@@ -14,7 +14,7 @@
 		else
 		{
 			#redirect to login.php
-			echo "<script type=\"text/javascript\">location.href=\"login.php\"</script>";
+			echo "<script type=\"text/javascript\">location.href=\"./login/login.php\"</script>";
 		}
 	?>
 </html>
