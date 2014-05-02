@@ -46,6 +46,7 @@
                    if($p1)
                    {
                     $p1Name = $usernames[$p1];
+                    echo "hahahahhahahahahah $usernames[$p1]";
                    }
                    if($p2)
                    {
@@ -58,9 +59,8 @@
 
                    
                     //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
-                    echo "<div class='roomBtn' id=$num><div class='numDiv' id='room'$num>Room $num ! Click  and Enter this room ! !</div>
-                    <div class='gameInfo' id='room'$num'Info' p1=$p1 p2=$p2 p3=$p3><br>Room Creator : $p1Name<br>Other Player : $p2Name<br>Other Player : $p3Name<br></div>
-                    </div>";
+                    echo "<div class='roomBtn' id=$num><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div>
+                    <div class='gameInfo' id='room$numInfo' p1=$p1 p2=$p2 p3=$p3><br>Room Creator : $p1Name<br>Other Player : $p2Name<br>Other Player : $p3Name<br></div></div>";
                     if($num % 3 == 0)
                     {
                         echo "<br><br>";
