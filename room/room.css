@@ -61,10 +61,10 @@ body
      transition:border linear .2s,box-shadow linear .5s;
      -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
      -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
-     outline:none;border-color:rgba(255,165,0,.95);
-     box-shadow:0 0 8px rgba(255,165,0,.7);
-     -moz-box-shadow:0 0 8px rgba(255,165,0,.7);
-     -webkit-box-shadow:0 0 8px rgba(255,165,0,.5);
+     outline:none;border-color:rgba(132,112,255,.95);
+     box-shadow:0 0 8px rgba(132,112,255,.7);
+     -moz-box-shadow:0 0 8px rgba(132,112,255,.7);
+     -webkit-box-shadow:0 0 8px rgba(132,112,255,.5);
 
      color: #ffffcc;
      font-size: 14px;
