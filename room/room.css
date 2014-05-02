@@ -1,6 +1,6 @@
 #roomNum
 {
-   display: inline-block;
+   /*display: inline-block;*/
    margin-left: 2%;
    margin-top: 3%;
 }
@@ -29,7 +29,7 @@ body
 .roomBtn {
      border-top: 1px solid #330099;
      background: url(../images/bt1.jpg);
-     padding: 10% 20% 10% 20%;
+     /*padding: 10% 20% 10% 20%;*/
      -webkit-border-radius: 17px;
      -moz-border-radius: 17px;
      border-radius: 8px;
