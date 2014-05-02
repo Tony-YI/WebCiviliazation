@@ -26,6 +26,8 @@ function room_get_list()
 			var room_info = xhr.responseText;
 			console.log(room_info);
 			var obj = JSON.parse(room_info);
+			console.log(obj.status);
+			console.log(obj.game);
 			//document.getElementById("roomNum").innerHTML = room_info;
 		}
 	};
