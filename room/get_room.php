@@ -42,6 +42,7 @@
 		$SQL_INSPECT_USERS = "SELECT username FROM User ORDER BY user_id ASC";
 		$result2 = mysqli_query($db,$SQL_INSPECT_USERS);
 		$usernames = mysqli_fetch_all($result2);
+		$text = "";
 		while($row = mysqli_fetch_row($result))
 		{
 			$num = $row[0];
@@ -63,7 +64,7 @@
 				$p3Name = $usernames[$p3][0];
 			}
 			
-			$text = "<div class='roomBtn' id=$num onclick=room_onclick()><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div><div class='gameInfo' id='room$numInfo' P1='$p1' P2='$p2' P3='$p3'><br/>Player1 : $p1Name<br/>Player2 : $p2Name<br/>Player3 : $p3Name<br/></div></div>";
+			$text = $text . "<div class='roomBtn' id=$num onclick=room_onclick()><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div><div class='gameInfo' id='room$numInfo' P1='$p1' P2='$p2' P3='$p3'><br/>Player1 : $p1Name<br/>Player2 : $p2Name<br/>Player3 : $p3Name<br/></div></div>";
 			if($num % 3 == 0)
 			{
 				$text = $text  . "<br><br>";
@@ -72,9 +73,10 @@
 			{
 				$text = $text  . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 			}
-			$response['html'] = $text;
+			
 			//echo $text;
 		}
+		$response['html'] = $text;
 	}
 	else
 	{
