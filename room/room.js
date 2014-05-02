@@ -8,7 +8,12 @@ var in_room = 0;
 if(current_usr_id)
 	console.log("CURRENT_USER is " + current_usr_id);
 setInterval(room_get_list,1000);
-
+var rooms = document.getElementsByClassName("roomBtn");
+for (var i = 0; i < rooms.length; i++) 
+{
+	console.log(rooms[i]);
+	rooms[i].addEventListener("click",room_onclick,false);
+};
 function room_get_list()
 {
 	//This function is to send request to room/get_room.php
@@ -54,7 +59,6 @@ function room_onclick(e)
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST","room/join_room.php",true);
 		xhr.setRequestHeader("USERID",current_usr_id);
-		xhr.setRequestHeader("ROOM",e.target);
 		console.log(e.target);
 	}
 	else
