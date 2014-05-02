@@ -21,6 +21,15 @@
    font-size: 14px;
    font-family: Georgia, Serif;
    text-decoration: none;
+
+    transition:border linear .3s,box-shadow linear .7s;
+    -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
+    -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
+    outline:none;border-color:rgba(0,191,255,.75);
+    box-shadow:0 0 8px rgba(0,191,255,.5);
+    -moz-box-shadow:0 0 8px rgba(0,191,255,.5);
+    -webkit-box-shadow:0 0 8px rgba(0,191,255,.3);
+
 }
 body
 {
@@ -52,10 +61,10 @@ body
      transition:border linear .3s,box-shadow linear .7s;
      -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
      -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
-     outline:none;border-color:rgba(255,215,0,.75);
-     box-shadow:0 0 8px rgba(255,215,0,.5);
-     -moz-box-shadow:0 0 8px rgba(255,215,0,.5);
-     -webkit-box-shadow:0 0 8px rgba(255,215,0,3);
+     outline:none;border-color:rgba(255,215,0,.95);
+     box-shadow:0 0 8px rgba(255,215,0,.7);
+     -moz-box-shadow:0 0 8px rgba(255,215,0,.7);
+     -webkit-box-shadow:0 0 8px rgba(255,215,0,.5);
 
      color: #ffffcc;
      font-size: 14px;
