@@ -58,8 +58,8 @@
             ?>
         </div>
         <div id="main" align="right">
-            <button type="button" id="logout" onclick="logout()">logout</button>
-            <button type="button" id="newRoom" onclick="room_create()">create a new room</button>
+            <button type="button" id="logout" onclick="logout()">Log Out</button>
+            <button type="button" id="newRoom" onclick="room_create()">Create New Room</button>
         </div>
         <!--<div id="Info" align="right">
             <div id="main" align="right">
