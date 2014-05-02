@@ -21,9 +21,10 @@
 		$current_room_info = "";
 		while($temp = mysqli_fetch_row($result))
 		{
+			echo $temp . " ";
 			$current_room_info += json_encode($temp);
 		}
-		echo json_encode($current_room_info); 
+		//echo json_encode($current_room_info); 
 	}
 	else
 	{
