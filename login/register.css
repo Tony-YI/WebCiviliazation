@@ -43,3 +43,9 @@ div.form_field
 	font-style: bold; 
 	font-size: 18px;
 }
+
+#message
+{
+	position: relative;
+	top: 250px;
+}
