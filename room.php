@@ -41,8 +41,8 @@
                    $p2 = $row[2];
                    $p3 = $row[3];
                     //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
-                    echo "<div class='roomBtn' id=$num><div class='numDiv' id='room'$num>Room $num ! Click ENTER BUTTON to enter room</div>
-                    <div class='gameInfo' id='room'$num'Info'><br>Room Creator : $p1<br>Other Player: $p2<br>Other Player:$p3<br></div>
+                    echo "<div class='roomBtn' id=$num><div class='numDiv' id='room'$num>Room $num ! Click  and Enter this room ! !</div>
+                    <div class='gameInfo' id='room'$num'Info'><br>Room Creator : $p1<br>Other Player : $p2<br>Other Player : $p3<br></div>
                     </div>";
                     if($num % 3 == 0)
                     {
