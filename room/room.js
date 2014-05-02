@@ -25,11 +25,11 @@ function room_get_list()
 				return false;
 			}
 			var room_info = xhr.responseText;
-			//console.log(room_info);
+			console.log(room_info);
 			var obj = JSON.parse(room_info);
 			var status = obj.status;
 			var html = obj.html;
-			console.log(obj);
+			//console.log(obj);
 			if(status == "failed")
 			{
 				document.location.href = '../login/login.php';
