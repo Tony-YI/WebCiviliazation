@@ -9,11 +9,12 @@ body
 
 .display
 {
-    width: 800px;
+    width: 900px;
     height:500px;
     -webkit-transform: perspective(550px) rotateX(65deg);
     transform: perspective(550px) rotateX(65deg);
     overflow: scroll;
+    border: 1px black solid;
 }
 
 .hexagon
@@ -21,7 +22,7 @@ body
     width: 100px;
     height: 55px;
     background: black;
-    position: relative;
+    
     float: left;
     margin: 5px 5px 5px 5px;
 }
@@ -59,7 +60,7 @@ body
     width: 100px;
     height: 55px;
     background: black;
-    position: relative;
+    
     float: left;
     margin: 5px 5px 5px 5px;
 }
@@ -93,7 +94,7 @@ body
     width: 100px;
     height: 55px;
     background: black;
-    position: relative;
+    
     float: left;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -130,7 +131,7 @@ body
     width: 100px;
     height: 55px;
     background: black;
-    position: relative;
+    
     float: left;
     margin: 5px 5px 5px 5px;
 }
@@ -162,6 +163,6 @@ body
 .new-line
 {
     float: right;
-    position: relative;
+    
     width: 100%;
 }
