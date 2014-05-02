@@ -8,8 +8,8 @@
 {
     display: inline-block;
     position: fixed;
-    top: -0.3%;
-    left: 70%;
+    top: -0.25%;
+    left: 85%;
 }
 
 #logout
@@ -44,6 +44,10 @@ body
      -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
      box-shadow: rgba(0,0,0,1) 0 1px 0;
      text-shadow: rgba(0,0,0,.4) 0 1px 0;*/
+     filter:alpha(opacity=30);
+     -moz-opacity:0.3;
+     opacity:0.3; 
+     -khtml-opacity: 0.3;
      color: #ffffcc;
      font-size: 14px;
      font-family: Georgia, Serif;
