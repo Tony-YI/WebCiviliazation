@@ -29,7 +29,7 @@
 			$parsedRow['P2'] = $temp[2];
 			$parsedRow['P3'] = $temp[3];
 			$row = json_encode($parsedRow);
-			array_push($game,  $row);
+			$game = array_push($game,  $row);
 		}
 		//echo json_encode($current_room_info);
 		$response['game'] = $game;
