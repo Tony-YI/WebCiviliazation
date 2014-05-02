@@ -48,13 +48,15 @@ body
      -moz-opacity:0.8;
      opacity:0.8; 
      -khtml-opacity: 0.8;
+
      transition:border linear .2s,box-shadow linear .5s;
      -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
      -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
-     outline:none;border-color:rgba(241,39,242,.75);
-     box-shadow:0 0 8px rgba(241,39,232,.5);
-     -moz-box-shadow:0 0 8px rgba(241,39,232,.5);
-     -webkit-box-shadow:0 0 8px rgba(241,39,232,3);
+     outline:none;border-color:rgba(30,144,255,.75);
+     box-shadow:0 0 8px rgba(30,144,255,.5);
+     -moz-box-shadow:0 0 8px rgba(30,144,255,.5);
+     -webkit-box-shadow:0 0 8px rgba(30,144,255,3);
+
      color: #ffffcc;
      font-size: 14px;
      font-family: Georgia, Serif;
