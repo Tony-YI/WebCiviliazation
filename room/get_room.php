@@ -41,5 +41,6 @@
 	$response = str_replace("\\", "", $response);
 	$response = str_replace("\"{", "{", $response);
 	$response = str_replace("}\"", "}", $response);
+	$response = str_replace("null", "\"null\"", $response);
 	echo $response;
 ?>
