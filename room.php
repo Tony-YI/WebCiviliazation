@@ -39,13 +39,13 @@
                    $num = $row[0];
                     //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
                     echo "<div class='roomBtn' id=$num><div class='numDiv' id='room'$num>Room $num ! Click ENTER BUTTON to enter room</div></div>";
-                    if($num % 2 == 0)
+                    if($num % 3 == 0)
                     {
                         echo "<br><br>";
                     }
                     else
                     {
-                        echo "&nbsp;&nbsp;";
+                        echo "&nbsp;&nbsp;&nbsp;&nbsp;";
                     }
                 }
 
@@ -57,8 +57,11 @@
                 }*/
             ?>
         </div>
-        
-        <div id="Info" align="right">
+        <div id="main" align="right">
+            <button type="button" id="logout" onclick="logout()">logout</button>
+            <button type="button" id="newRoom" onclick="room_create()">create a new room</button>
+        </div>
+        <!--<div id="Info" align="right">
             <div id="main" align="right">
             <button type="button" id="logout" onclick="logout()">logout</button>
             <button type="button" id="newRoom" onclick="room_create()">create a new room</button>
@@ -74,7 +77,7 @@
                    <tr><td>what the hell</td><td>what????????</td></tr>
                 </table>
             </div> 
-        </div>
+        </div>-->
     </div>
 
 </body>
