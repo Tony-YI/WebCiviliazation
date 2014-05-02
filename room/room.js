@@ -11,6 +11,7 @@ setInterval(room_get_list,1000);
 var rooms = document.getElementsByClassName("roomBtn");
 for (var i = 0; i < rooms.length; i++) 
 {
+	console.log(rooms[i]);
 	rooms[i].addEventListener("click",room_onclick,false);
 }
 function room_get_list()
@@ -58,7 +59,6 @@ function room_onclick(e)
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST","room/join_room.php",true);
 		xhr.setRequestHeader("USERID",current_usr_id);
-		xhr.setRequestHeader("ROOM",e.target);
 		console.log(e.target);
 	}
 	else
