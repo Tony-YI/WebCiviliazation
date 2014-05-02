@@ -15,9 +15,14 @@
 	if(!check_cookie($db))
 	{
 		//If the cookie exists
+		$browser_room_info = $_SERVER['HTTP_ROOM_INFO'];
+		$SQL_ROOM_INFO = "SELECT * FROM `Game`";
+		$result = mysqli_query($db, $SQL_ROOM_INFO);
+		$current_room_info = json_encode($result);
+		echo $current_room_info; 
 	}
 	else
 	{
-		echo "{\"status\":\"success\",";
+		echo "{\"status\":\"failed\",";
 	}
 ?>
