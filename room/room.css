@@ -18,6 +18,9 @@
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
    border-radius: 8px;
+   font-size: 14px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
 }
 body
 {
