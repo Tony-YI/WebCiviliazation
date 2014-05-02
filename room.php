@@ -9,8 +9,6 @@
 
 </head>
 <body>
-<button type="button" id="logout" onclick="logout()">logout</button>
-<button type="button" id="newRoom" onclick="room_create()">create a new room</button>
     <div id="bg0">
         <div id="header">
             
@@ -18,6 +16,12 @@
         <div id="roomNum">  
             <?php  
                 require_once("lib/db.php");
+                $cookie = $_COOKIE['USER_COOKIE'];
+                if(!check_cookie($db))
+                {
+                    #redirect to room.html
+                    echo "<script type=\"text/javascript\">location.href=\"login.php\"</script>";
+                }
                 if(mysqli_connect_errno())
                 {
                     echo "{\"status\":\"CANNOT_ACCESS_MYSQL\"}";
@@ -33,7 +37,15 @@
                 while($row = mysqli_fetch_row($result))
                 {
                    $num = $row[0];
-                    echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button><br><br>";
+                    echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
+                    if($num % 2 == 0)
+                    {
+                        echo "<br><br>";
+                    }
+                    else
+                    {
+                        echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                    }
                 }
 
                 /*$i = 0;
@@ -44,7 +56,13 @@
                 }*/
             ?>
         </div>
+        
         <div id="Info" align="right">
+            <div id="main" align="right">
+            <button type="button" id="logout" onclick="logout()">logout</button>
+            <button type="button" id="newRoom" onclick="room_create()">create a new room</button>
+            <br><br>
+            </div>
             <div id="userInfo">
                 <table id="userInfoTable" border="3px">
                     <tr><td>what</td><td>what????????</td></tr>
