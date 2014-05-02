@@ -27,7 +27,7 @@
 			$parsedRow['P2'] = $temp[2];
 			$parsedRow['P3'] = $temp[3];
 			$current_room_info += json_encode($temp);
-			echo  json_encode($temp) . " ";
+			echo  json_encode($parsedRow) . " ";
 		}
 		//echo json_encode($current_room_info); 
 	}
