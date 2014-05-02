@@ -8,7 +8,7 @@ var in_room = 0;
 if(current_usr_id)
 	console.log("CURRENT_USER is " + current_usr_id);
 setInterval(room_get_list,1000);
-var rooms = document.getElemantsByClassName("roomBtn");
+var rooms = document.getElementsByClassName("roomBtn");
 for (var i = 0; i < rooms.length; i++) 
 {
 	rooms[i].addEventListener("click",room_onclick,false);
