@@ -48,6 +48,7 @@ function room_get_list()
 function room_onclick(e)
 {	
 	//Pop out a confirmation window 
+	e = e || window.event;
 	var isJoin = confirm("Do you want to join this room?");
 	if(isJoin == true)
 	{
