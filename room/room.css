@@ -36,6 +36,7 @@
 }
 #newRoom
 {
+  display: inline-block;
   background: rgba(139,129,76,0.85);
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
