@@ -14,7 +14,7 @@
 
 #logout
 {
-  background: transparent;
+  background: rgba(139,129,76,0.85);
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
    border-radius: 8px;
@@ -58,6 +58,7 @@ body
      opacity:0.8; 
      -khtml-opacity: 0.8;
 
+      border:3px;
      transition:border linear .4s,box-shadow linear .8s;
      -moz-transition:border linear .4s,-moz-box-shadow linear .8s;
      -webkit-transition:border linear .4s,-webkit-box-shadow linear .8s;
