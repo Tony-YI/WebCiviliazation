@@ -32,15 +32,52 @@
 		}
 		//echo json_encode($current_room_info);
 		$response['game'] = $game;
+		$response = str_replace("\\", "", $response);
+		$response = str_replace("\"{", "{", $response);
+		$response = str_replace("}\"", "}", $response);
+		$response = str_replace("null", "\"null\"", $response);
+
+		$SQL_INSPECT_GAMES = "SELECT * FROM Game ORDER BY game_id ASC";
+		$result = mysqli_query($db,$SQL_INSPECT_GAMES);
+		$SQL_INSPECT_USERS = "SELECT username FROM User ORDER BY user_id ASC";
+		$result2 = mysqli_query($db,$SQL_INSPECT_USERS);
+		$usernames = mysqli_fetch_all($result2);
+		while($row = mysqli_fetch_row($result))
+		{
+			$num = $row[0];
+			$p1 = $row[1]; $p1Name = "";
+			$p2 = $row[2]; $p2Name = "";
+			$p3 = $row[3]; $p3Name = "";
+			if($p1)
+			{
+				$p1Name = $usernames[$p1][0];
+			}
+	  
+			if($p2)
+			{
+				$p1Name = $usernames[$p2][0];
+			}
+	                  
+			if($p3)
+			{
+				$p3Name = $usernames[$p3][0];
+			}
+			$html = "<div class='roomBtn' id=$num onclick=room_onclick()><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div><div class='gameInfo' id='room$numInfo' P1='$p1' P2='$p2' P3='$p3'><br>Player1 : $p1Name<br>Player2 : $p2Name<br>Player3 : $p3Name<br></div>div></div>";
+			if($num % 3 == 0)
+			{
+				$html = $html + "<br><br>";
+			}
+			else
+			{
+				$html = $html + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+			}
+			$response['html'] = $html;
+		}
 	}
 	else
 	{
 		$response['status'] = 'failed';
 	}
 	$response = json_encode($response);
-	$response = str_replace("\\", "", $response);
-	$response = str_replace("\"{", "{", $response);
-	$response = str_replace("}\"", "}", $response);
-	$response = str_replace("null", "\"null\"", $response);
 	echo $response;
 ?>

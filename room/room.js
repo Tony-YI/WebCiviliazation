@@ -28,6 +28,8 @@ function room_get_list()
 			//console.log(room_info);
 			var obj = JSON.parse(room_info);
 			var status = obj.status;
+			var html = obj.html;
+			console.log(obj);
 			if(status == "failed")
 			{
 				document.location.href = '../login/login.php';
@@ -35,7 +37,7 @@ function room_get_list()
 			}
 			var browser_games = document.getElementsByClassName("roomBtn");
 			var server_games = obj.game;
-			console.log(isUpade(browser_games,server_games));
+			//console.log(isUpade(browser_games,server_games));
 			if(isUpade(browser_games,server_games))
 			{
 				//document.getElementById("roomNum").innerHTML = "";
