@@ -53,6 +53,7 @@
             <div id="main" align="right">
             <button type="button" id="logout" onclick="logout()">logout</button>
             <button type="button" id="newRoom" onclick="room_create()">create a new room</button>
+            <br><br>
             </div>
             <div id="userInfo">
                 <table id="userInfoTable" border="3px">
