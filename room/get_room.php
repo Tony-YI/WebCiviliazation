@@ -12,7 +12,7 @@
 		}
 	*/
 	require_once("../lib/db.php");
-	if(!check_cookie($db))
+	if(check_cookie($db))
 	{
 		//If the cookie exists
 		$browser_room_info = $_SERVER['HTTP_ROOM_INFO'];
