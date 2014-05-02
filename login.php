@@ -18,7 +18,7 @@
 
 </head>
 <body>
-<h2>Welcome To WebCivilization</h2>
+<h1>Welcome To WebCivilization</h1>
 
 <div class="form">
 	<form method=post action="login/auth.php">
