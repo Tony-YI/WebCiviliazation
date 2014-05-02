@@ -10,5 +10,11 @@ It is used to help the client side to login
 #logout.php
 It is used to logout the client
 
+#register.css
+It defines the style of register interface 
+
+#register.html
+It is the register interface
+
 #register.php
 It is used to handle register request
