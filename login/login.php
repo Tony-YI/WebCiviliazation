@@ -4,6 +4,18 @@
 	<title>LogIn</title>
 	<link rel="stylesheet" type="text/css" href="./login.css">
 	<script type="text/javascript" src="./login.js"></script>
+	<?php
+		#Check Cookie here
+		#if cookie exist, redirect the page
+		#else ask the user to login
+		$cookie = $_COOKIE['USER_COOKIE'];
+		require_once("../lib/db.php");
+		if(check_cookie($db))
+		{
+			#redirect to room.php
+			echo "<script type=\"text/javascript\">location.href=\"../room.php\"</script>";
+		}
+	?>
 </head>
 
 <body>
