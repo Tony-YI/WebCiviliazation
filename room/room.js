@@ -31,6 +31,7 @@ function room_get_list()
 			for(var i = 0; i < games.length; i++)
 			{
 				console.log(games[i]);
+				console.log(games[i].P1);
 			}
 			//document.getElementById("roomNum").innerHTML = room_info;
 		}
