@@ -43,3 +43,13 @@ div.form_field
 	font-style: bold; 
 	font-size: 18px;
 }
+
+#message
+{
+	position: relative;
+	top: 25px;
+	color: white;
+	font-size: 15pt;
+	background-color: black;
+	text-align: center;
+}
