@@ -5,7 +5,7 @@
 	//login.php will check whether there exists valid cookies or not
 	//if yes, login.php will redirect to room.php
 	//else, login.php will ask you to login
-	header("./login.php");
+	header("Location: ./login.php");
 	exit;
 ?>
 </html>
