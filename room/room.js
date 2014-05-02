@@ -36,6 +36,11 @@ function room_get_list()
 			var browser_games = document.getElementsByClassName("roomBtn");
 			var server_games = obj.game;
 			console.log(isUpade(browser_games,server_games));
+			if(isUpade(browser_games,server_games))
+			{
+				//document.getElementById("roomNum").innerHTML = "";
+
+			}
 			//document.getElementById("roomNum").innerHTML = room_info;
 		}
 	};
@@ -60,22 +65,14 @@ function isUpade(browser_games, server_games)
 			{
 				var browser = browser_games[i].childNodes[2];
 				var server = server_games[i];
-				console.log(browser);
-				console.log(server);
-				console.log(browser.getAttribute('p1'));
-				console.log(server.P1);
 				if(browser.getAttribute('p1') != server.P1)
 				{
 					return true;
 				}
-				console.log(browser.getAttribute('p2'));
-				console.log(server.P2);
 				if(browser.getAttribute('p2') != server.P2)
 				{
 					return true;
 				}
-				console.log(browser.getAttribute('p3'));
-				console.log(server.P3);
 				if(browser.getAttribute('p3') != server.P3)
 				{
 					return true;
