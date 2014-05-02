@@ -29,6 +29,7 @@ div.register_form
 {
 	width: 320px;
 	height: 151px;
+	text-align: center;
 	font-family: "Chalkduster"; 
 	border: 5px white solid;
 	position: relative;
@@ -41,9 +42,4 @@ div.form_field
 	font-family: "Chalkduster"; 
 	font-style: bold; 
 	font-size: 18px;
-}
-
-p
-{
-	position: relative;
 }
