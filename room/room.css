@@ -17,6 +17,7 @@
   background: rgba(139,129,76,0.85);
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
+   color: #8B4513;
    border-radius: 8px;
    font-size: 14px;
    font-family: Georgia, Serif;
@@ -58,14 +59,13 @@ body
      opacity:0.8; 
      -khtml-opacity: 0.8;
 
-      border:3px;
-     transition:border linear .4s,box-shadow linear .8s;
-     -moz-transition:border linear .4s,-moz-box-shadow linear .8s;
-     -webkit-transition:border linear .4s,-webkit-box-shadow linear .8s;
-     outline:none;border-color:rgba(132,112,255,.95);
-     box-shadow:0 0 8px rgba(132,112,255,.7);
-     -moz-box-shadow:0 0 8px rgba(132,112,255,.7);
-     -webkit-box-shadow:0 0 8px rgba(132,112,255,.5);
+     transition:border linear .4s,box-shadow linear .7s;
+     -moz-transition:border linear .4s,-moz-box-shadow linear .7s;
+     -webkit-transition:border linear .4s,-webkit-box-shadow linear .7s;
+     outline:none;border-color:rgba(255,48,48,.95);
+     box-shadow:0 0 8px rgba(255,48,48,.7);
+     -moz-box-shadow:0 0 8px rgba(255,48,48,.7);
+     -webkit-box-shadow:0 0 8px rgba(255,48,48,.5);
 
      color: #ffffcc;
      font-size: 14px;
