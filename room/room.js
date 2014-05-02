@@ -29,7 +29,7 @@ function room_get_list()
 			var obj = JSON.parse(room_info);
 			var status = obj.status;
 			var html = obj.html;
-			console.log(html);
+			console.log(obj);
 			if(status == "failed")
 			{
 				document.location.href = '../login/login.php';
