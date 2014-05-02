@@ -63,7 +63,18 @@
 				$p3Name = $usernames[$p3][0];
 			}
 			
-			$text = "<div class='roomBtn' id=$num onclick=room_onclick()><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div><div class='gameInfo' id='room$numInfo' P1='$p1' P2='$p2' P3='$p3'><br>Player1 : $p1Name<br>Player2 : $p2Name<br>Player3 : $p3Name<br></div>";
+			$text = "<div class='roomBtn' id=$num onclick=room_onclick()>
+					<div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div>
+					<div class='gameInfo' id='room$numInfo' P1='$p1' P2='$p2' P3='$p3'>
+						<br/>
+						Player1 : $p1Name
+						<br/>
+						Player2 : $p2Name
+						<br/>
+						Player3 : $p3Name
+						<br/>
+					</div>
+				</div>";
 			if($num % 3 == 0)
 			{
 				$text = $text  . "<br><br>";
