@@ -30,9 +30,8 @@ body
      /*border-top: 1px solid #330099;*/
      background: url(../images/bt1.jpg);
      border-radius: 8px;
-     width: 30%;
-     height: 400%;
-     /*padding: 2.5% 7% 2.5% 7%;
+     padding: 2.5% 7% 2.5% 7%;
+     /*
      -webkit-border-radius: 8px;
      -moz-border-radius: 8px;
      border-radius: 8px;
@@ -44,6 +43,7 @@ body
      font-size: 16px;
      font-family: Georgia, Serif;
      text-decoration: none;
+     align:middle;
      vertical-align: middle;
    }
 .roomBtn:hover {
