@@ -47,8 +47,8 @@ div.form_field
 #message
 {
 	position: relative;
-	top: 50px;
-	left: 25px;
+	top: 25px;
 	color: white;
 	font-size: 15pt;
+	background-color: black;
 }
