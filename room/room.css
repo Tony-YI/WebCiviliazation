@@ -47,7 +47,7 @@
   font-family: Buxton Sketch, Serif;
   text-decoration: none;
 
-  padding: 1% 1% 1% 1%;
+  /*padding: 1% 1% 1% 1%;*/
   transition:border linear .3s,box-shadow linear .7s;
   -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
   -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
