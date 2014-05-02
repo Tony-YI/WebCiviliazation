@@ -13,7 +13,7 @@ for (var i = 0; i < rooms.length; i++)
 {
 	console.log(rooms[i]);
 	rooms[i].addEventListener("click",room_onclick,false);
-}
+};
 function room_get_list()
 {
 	//This function is to send request to room/get_room.php
