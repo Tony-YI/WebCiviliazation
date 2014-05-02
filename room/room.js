@@ -50,6 +50,7 @@ function room_onclick(e)
 	//Pop out a confirmation window 
 	e = e || window.event;
 	var target = e.target;
+	console.log(target);
 	while(target.class != "roomBtn")
 	{
 		target = target.parentNode;
