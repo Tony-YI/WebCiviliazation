@@ -16,7 +16,7 @@
 	{
 		//If the cookie exists
 		$browser_room_info = $_SERVER['HTTP_ROOM_INFO'];
-		$SQL_ROOM_INFO = "SELECT * FROM `Game`";
+		$SQL_ROOM_INFO = "SELECT * FROM Game";
 		$result = mysqli_query($db, $SQL_ROOM_INFO);
 		$current_room_info = "";
 		while($temp = mysqli_fetch_row($result))
