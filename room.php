@@ -45,7 +45,7 @@
                     }
                     else
                     {
-                        echo "&nbsp;&nbsp;";
+                        echo "&nbsp;&nbsp;&nbsp;&nbsp;";
                     }
                 }
 
@@ -58,7 +58,7 @@
             ?>
         </div>
         
-        <div id="Info" align="right">
+        <!--<div id="Info" align="right">
             <div id="main" align="right">
             <button type="button" id="logout" onclick="logout()">logout</button>
             <button type="button" id="newRoom" onclick="room_create()">create a new room</button>
@@ -74,7 +74,7 @@
                    <tr><td>what the hell</td><td>what????????</td></tr>
                 </table>
             </div> 
-        </div>
+        </div>-->
     </div>
 
 </body>
