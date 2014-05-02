@@ -27,6 +27,8 @@ h2.Register
 
 div.register_form
 {
+	width: 320px;
+	height: 151px;
 	font-family: "Chalkduster"; 
 	border-color: white;
 	border-width: 5px;
