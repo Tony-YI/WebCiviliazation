@@ -20,7 +20,7 @@
                 if(!check_cookie($db))
                 {
                     #redirect to room.html
-                    echo "<script type=\"text/javascript\">location.href=\"login.php\"</script>";
+                    echo "<script type=\"text/javascript\">location.href=\"login/login.php\"</script>";
                 }
                 if(mysqli_connect_errno())
                 {
