@@ -47,6 +47,9 @@
 			$result = mysqli_query($db, $SQL_ROOM_INFO);
 			$seat = mysqli_fetch_row($result);
 			$SQL_JOIN_ROOM = "";
+			$response['seat0'] = $seat[0];
+			$response['seat1'] = $seat[1];
+			$response['seat2'] = $seat[2];
 			if(!$seat[0])
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P1 = '$user_id' WHERE Game_id = '$room_id'";
