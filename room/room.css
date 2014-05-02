@@ -15,43 +15,43 @@
 #logout
 {
   display: inline-block;
-  background: rgba(139,129,76,0.85);
+  background: rgba(19,19,19,0.85);
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
-   color: #8B4513;
+   color: #E6E6FA;
    border-radius: 8px;
    font-size: 16px;
-   font-family: Britannic Bold, Serif;
+   font-family: Centaur, Serif;
    text-decoration: none;
 
     transition:border linear .3s,box-shadow linear .7s;
     -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
     -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
-    outline:none;border-color:rgba(205,102,0,.75);
-    box-shadow:0 0 8px rgba(205,102,0,.5);
-    -moz-box-shadow:0 0 8px rgba(205,102,0,.5);
-    -webkit-box-shadow:0 0 8px rgba(205,102,0,.3);
+    outline:none;border-color:rgba(200,200,200,.75);
+    box-shadow:0 0 8px rgba(200,200,200,.5);
+    -moz-box-shadow:0 0 8px rgba(200,200,200,.5);
+    -webkit-box-shadow:0 0 8px rgba(200,200,200,.3);
 
 }
 #newRoom
 {
   display: inline-block;
-  background: rgba(139,129,76,0.85);
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  color: #8B4513;
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: Britannic Bold, Serif;
-  text-decoration: none;
+  background: rgba(19,19,19,0.85);
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   color: #E6E6FA;
+   border-radius: 8px;
+   font-size: 16px;
+   font-family: Centaur, Serif;
+   text-decoration: none;
 
-  transition:border linear .3s,box-shadow linear .7s;
-  -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
-  -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
-  outline:none;border-color:rgba(205,102,0,.75);
-  box-shadow:0 0 8px rgba(205,102,0,.5);
-  -moz-box-shadow:0 0 8px rgba(205,102,0,.5);
-  -webkit-box-shadow:0 0 8px rgba(205,102,0,.3);
+    transition:border linear .3s,box-shadow linear .7s;
+    -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
+    -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
+    outline:none;border-color:rgba(200,200,200,.75);
+    box-shadow:0 0 8px rgba(200,200,200,.5);
+    -moz-box-shadow:0 0 8px rgba(200,200,200,.5);
+    -webkit-box-shadow:0 0 8px rgba(200,200,200,.3);
 }
 body
 {
@@ -83,10 +83,10 @@ body
      transition:border linear .2s,box-shadow linear .5s;
      -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
      -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
-     outline:none;border-color:rgba(0,255,255,.95);
-     box-shadow:0 0 8px rgba(0,255,255,.7);
-     -moz-box-shadow:0 0 8px rgba(0,255,255,.7);
-     -webkit-box-shadow:0 0 8px rgba(0,255,255,.5);
+     outline:none;border-color:rgba(255,255,255,.95);
+     box-shadow:0 0 8px rgba(255,255,255,.7);
+     -moz-box-shadow:0 0 8px rgba(255,255,255,.7);
+     -webkit-box-shadow:0 0 8px rgba(255,255,255,.5);
 
      color: #ffffcc;
      font-size: 14px;
