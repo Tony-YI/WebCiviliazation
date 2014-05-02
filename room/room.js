@@ -24,6 +24,7 @@ function room_get_list()
 				return false;
 			}
 			var room_info = xhr.responseText;
+			console.log(room_info);
 			//document.getElementById("roomNum").innerHTML = room_info;
 		}
 	};
