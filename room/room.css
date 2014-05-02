@@ -60,5 +60,6 @@ body
    }
    .numDiv
    {
+    display: inline-block;
     size:70% 70%;
    }
