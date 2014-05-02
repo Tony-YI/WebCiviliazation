@@ -17,10 +17,10 @@
 	?>
 
 </head>
-<body style="font-family:verdana, sans-serif;">
+<body>
 <h2>Welcome To WebCivilization</h2>
 
-<div name="form">
+<div class="form">
 	<form method=post action="login/auth.php">
 		<table cellspacing=5pt cellpadding=10pt>
 			<tr>
