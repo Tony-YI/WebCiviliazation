@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
 <?php
-	//redirect to login.php
-	//login.php will check whether there exists valid cookies or not
-	//if yes, login.php will redirect to room.php
-	//else, login.php will ask you to login
-	header("Location: ./login.php");
-	exit;
+	<?php
+		#Check Cookie here
+		#if cookie exist, redirect the page
+		#else ask the user to login
+		$cookie = $_COOKIE['USER_COOKIE'];
+		require_once("lib/db.php");
+		if(check_cookie($db))
+		{
+			#redirect to room.php
+			echo "<script type=\"text/javascript\">location.href=\"room.php\"</script>";
+		}
+		else
+		{
+			#redirect to login.php
+			echo "<script type=\"text/javascript\">location.href=\"login.php\"</script>";
+		}
+	?>
 ?>
 </html>
