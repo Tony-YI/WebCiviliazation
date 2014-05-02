@@ -14,14 +14,13 @@ function room_get_list()
 	//Then get the existing room data from the server and dynamically render the page
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","room/get_room.php",true);
-	xhr.setRequestHeader('refresh_type',"true");
 	xhr.send();
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4)
 		{
 			if(xhr.status != 200)
 			{
-				alert("Error code = " + new String(xhr.status));
+				//alert("Error code = " + new String(xhr.status));
 				return false;
 			}
 			var room_info = xhr.responseText;
@@ -31,39 +30,7 @@ function room_get_list()
 	return false;
 }
 
-function pseudo_room_get_list()
-{
-	//This function is to send request and current room data in the browser to room/get_room.php
-	//If room data in server updated, then get the existing room data from the server and dynamically render the page
-	//Else do nothing
-	var current_room = document.getElementsByClassName("roomBtn");
-	var current_room_info = "";
-	for (var i = 0; i < current_room.length; i++)
-	{
-		current_room_info = current_room_info + current_room[i].id;
-	}
-	console.log(current_room_info);
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST","room/get_room.php",true);
-	xhr.setRequestHeader('refresh_type',"pseudo");
-	xhr.setRequestHeader('room_info',current_room_info);
-	xhr.send();
-	xhr.onreadystatechange = function(){
-		if(xhr.readyState == 4)
-		{
-			if(xhr.status != 200)
-			{
-				alert("Error code = " + new String(xhr.status));
-				return false;
-			}
-			var room_info = xhr.responseText;
-			//document.getElementById("roomNum").innerHTML = room_info;
-		}
-	};
-	return false;
-}
-setInterval(room_get_list,10000);
-setInterval(pseudo_room_get_list,1000);
+setInterval(room_get_list,1000);
 
 function room_onclick()
 {	
