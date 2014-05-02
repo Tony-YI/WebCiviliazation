@@ -58,7 +58,7 @@ function isUpade(browser_games, server_games)
 			}
 			else
 			{
-				var browser = browser_games[i].childNodes[1];
+				var browser = browser_games[i].childNodes[2];
 				var server = server_games[i];
 				console.log(browser);
 				console.log(server);
