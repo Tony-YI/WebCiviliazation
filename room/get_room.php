@@ -23,7 +23,7 @@
 		{
 			$current_room_info += json_encode($temp);
 		}
-		echo $current_room_info; 
+		echo json_encode($current_room_info); 
 	}
 	else
 	{
