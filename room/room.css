@@ -27,16 +27,19 @@ body
   margin: 0px;
 }
 .roomBtn {
-     border-top: 1px solid #330099;
+     /*border-top: 1px solid #330099;*/
      background: url(../images/bt1.jpg);
-     padding: 2.5% 7% 2.5% 7%;
+     border-radius: 8px;
+     width: 20%;
+     height: 20%;
+     /*padding: 2.5% 7% 2.5% 7%;
      -webkit-border-radius: 8px;
      -moz-border-radius: 8px;
      border-radius: 8px;
      -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
      -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
      box-shadow: rgba(0,0,0,1) 0 1px 0;
-     text-shadow: rgba(0,0,0,.4) 0 1px 0;
+     text-shadow: rgba(0,0,0,.4) 0 1px 0;*/
      color: #ffffcc;
      font-size: 16px;
      font-family: Georgia, Serif;
