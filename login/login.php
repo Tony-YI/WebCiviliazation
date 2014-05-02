@@ -2,15 +2,15 @@
 <html>
 <head>
 	<title>LogIn</title>
-	<link rel="stylesheet" type="text/css" href="login.css">
-	<script type="text/javascript" src="login.js"></script>
+	<link rel="stylesheet" type="text/css" href="./login.css">
+	<script type="text/javascript" src="./login.js"></script>
 </head>
 
 <body>
 <h1>Welcome To WebCivilization</h1>
 
 <div class="form">
-	<form method=post action="auth.php">
+	<form method=post action="./auth.php">
 		<table cellspacing=5pt cellpadding=10pt>
 			<tr>
 				<td>User</td>
