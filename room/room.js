@@ -8,7 +8,11 @@ var in_room = 0;
 if(current_usr_id)
 	console.log("CURRENT_USER is " + current_usr_id);
 setInterval(room_get_list,1000);
-
+var rooms = document.getElemantsByClassName("roomBtn");
+for (var i = 0; i < rooms.length; i++) 
+{
+	rooms[i].addEventListener("click",room_onclick,false);
+}
 function room_get_list()
 {
 	//This function is to send request to room/get_room.php
