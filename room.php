@@ -35,7 +35,10 @@
                 $result = mysqli_query($db,$SQL_INSPECT_GAMES);
                 $SQL_INSPECT_USERS = "SELECT username FROM User ORDER BY game_id ASC";
                 $result2 = mysqli_query($db,$SQL_INSPECT_USERS);
-                $usernames = mysqli_fetch_all($result2);
+                while($usernames = mysqli_fetch_row($result2))
+                {
+                     echo "hahahahhahahahahah $usernames";
+                }
 
                 while($row = mysqli_fetch_row($result))
                 {
@@ -46,7 +49,7 @@
                    if($p1)
                    {
                     $p1Name = $usernames[$p1];
-                    echo "hahahahhahahahahah $usernames";
+                   
                    }
                    if($p2)
                    {
