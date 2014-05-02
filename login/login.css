@@ -5,6 +5,12 @@ body
 	min-width: 800px;
 	min-height: 600px;
 	font-family:verdana, sans-serif;
+	text-align: center;
+}
+
+h2
+{
+	margin-top: 50px;
 }
 
 table
@@ -19,5 +25,5 @@ table
 	position: relative;
 	float: right;
 	top: 200px;
-	right: 50px;
+	right: 100px;
 }
