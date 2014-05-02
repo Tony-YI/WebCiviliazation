@@ -33,12 +33,9 @@
                 $prev_game_id = 1;
                 $SQL_INSPECT_GAMES = "SELECT * FROM Game ORDER BY game_id ASC";
                 $result = mysqli_query($db,$SQL_INSPECT_GAMES);
-                $SQL_INSPECT_USERS = "SELECT username FROM User ORDER BY game_id ASC";
+                $SQL_INSPECT_USERS = "SELECT username FROM User ORDER BY user_id ASC";
                 $result2 = mysqli_query($db,$SQL_INSPECT_USERS);
-                while($usernames = mysqli_fetch_row($result2))
-                {
-                     echo "hahahahhahahahahah $usernames";
-                }
+                $usernames = mysqli_fetch_all($result2);
 
                 while($row = mysqli_fetch_row($result))
                 {
@@ -49,7 +46,6 @@
                    if($p1)
                    {
                     $p1Name = $usernames[$p1];
-                   
                    }
                    if($p2)
                    {
@@ -63,7 +59,8 @@
                    
                     //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
                     echo "<div class='roomBtn' id=$num><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div>
-                    <div class='gameInfo' id='room$numInfo' p1=$p1 p2=$p2 p3=$p3><br>Room Creator : $p1Name<br>Other Player : $p2Name<br>Other Player : $p3Name<br></div></div>";
+                    <div class='gameInfo' id='room$numInfo' p1=$p1 p2=$p2 p3=$p3><br>Room Creator : $p1Name<br>Other Player : $p2Name<br>Other Player : $p3Name<br></div>
+                    </div>";
                     if($num % 3 == 0)
                     {
                         echo "<br><br>";
