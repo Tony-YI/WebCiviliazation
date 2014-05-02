@@ -59,6 +59,7 @@
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P3 = '$user_id' WHERE Game_id = '$room_id'";
 			}
+			mysqli_query($db, $SQL_JOIN_ROOM);
 		}
 	}
 	else
