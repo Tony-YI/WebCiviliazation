@@ -65,14 +65,20 @@ function isUpade(browser_games, server_games)
 			{
 				var browser = browser_games[i].childNodes[2];
 				var server = server_games[i];
+				if(server.P1 == "null")
+					server.P1 = "";
 				if(browser.getAttribute('p1') != server.P1)
 				{
 					return true;
 				}
+				if(server.P2 == "null")
+					server.P2 = "";
 				if(browser.getAttribute('p2') != server.P2)
 				{
 					return true;
 				}
+				if(server.P3 == "null")
+					server.P3 = "";
 				if(browser.getAttribute('p3') != server.P3)
 				{
 					return true;
