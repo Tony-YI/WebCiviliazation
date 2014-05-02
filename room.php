@@ -38,7 +38,7 @@
                 {
                    $num = $row[0];
                     //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
-                    echo "<div class='roomBtn' id=$num><div class='numDiv' id='room'$num>Room $num !<br> Click ENTER BUTTON to enter room</div></div>";
+                    echo "<div class='roomBtn' id=$num><div class='numDiv' id='room'$num>Room $num ! Click ENTER BUTTON to enter room</div></div>";
                     if($num % 3 == 0)
                     {
                         echo "<br><br>";
