@@ -38,11 +38,11 @@
                 {
                    $num = $row[0];
                     //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
-                   echo "<div class='roomBtn' id=$num>
+                   echo """<div class='roomBtn' id=$num>
                                     <div class='roomNumLine'>Room $num ! Click to enter button to enter! </div>
                                     <button type='submit' class='enterBtn' id='enterRoom'$num>ENTER</button>
                                     <div class='roomInfoLine'>hahahaha hehehehe huhuhuhuhu gugugugugu</div>
-                                    </div>"
+                                    </div>"""
                     if($num % 2 == 0)
                     {
                         echo "<br><br>";
@@ -61,7 +61,7 @@
                 }*/
             ?>
         </div>
-        
+    </div>
         <!--<div id="Info" align="right">
             <div id="main" align="right">
             <button type="button" id="logout" onclick="logout()">logout</button>
@@ -79,8 +79,7 @@
                 </table>
             </div> 
         </div>
-    </div>
-    -->
+    </div>-->
 
 </body>
 </html>
