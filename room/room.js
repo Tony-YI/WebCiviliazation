@@ -37,7 +37,7 @@ function room_get_list()
 			for(var i = 0; i < games.length; i++)
 			{
 				//console.log(games[i]);
-				//console.log(games[i].P1);
+				console.log(games[i].P2);
 			}
 			//document.getElementById("roomNum").innerHTML = room_info;
 		}
@@ -50,7 +50,7 @@ function room_onclick(e)
 	//Pop out a confirmation window 
 	e = e || window.event;
 	var target = e.target;
-	console.log(target);
+	//console.log(target);
 	while(target.className != "roomBtn")
 	{
 		target = target.parentNode;
@@ -61,7 +61,24 @@ function room_onclick(e)
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST","room/join_room.php",true);
 		xhr.setRequestHeader("USERID",current_usr_id);
-		console.log(target);
+		//console.log(target);
+		xhr.setRequestHeader("ROOMID",target.id);
+		xhr.send();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4)
+			{
+				if(xhr.status != 200)
+				{
+					console.log("Error code = " + new String(xhr.status));
+					return false;
+				}
+				var response = xhr.responseText;
+				console.log(response);
+				var obj = JSON.parse(response);
+				var status = obj.status;
+			}
+		};
+	return false;
 	}
 	else
 	{
