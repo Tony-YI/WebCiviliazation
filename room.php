@@ -37,8 +37,7 @@
                 while($row = mysqli_fetch_row($result))
                 {
                    $num = $row[0];
-                    //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
-                   echo "<div class='roomBtn' id=$num>                                   </div>"
+                    echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
                     if($num % 2 == 0)
                     {
                         echo "<br><br>";
@@ -57,8 +56,8 @@
                 }*/
             ?>
         </div>
-    </div>
-        <!--<div id="Info" align="right">
+        
+        <div id="Info" align="right">
             <div id="main" align="right">
             <button type="button" id="logout" onclick="logout()">logout</button>
             <button type="button" id="newRoom" onclick="room_create()">create a new room</button>
@@ -75,7 +74,7 @@
                 </table>
             </div> 
         </div>
-    </div>-->
+    </div>
 
 </body>
 </html>
