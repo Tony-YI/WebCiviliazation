@@ -1,3 +1,8 @@
+.display
+{
+    -webkit-transform: rotateY(130deg);
+}
+
 .hexagon
 {
     width: 100px;
