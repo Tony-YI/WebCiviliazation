@@ -30,7 +30,7 @@
 				$.cookie("USER_COOKIE",'',{expires:-1});
 			}
 			var xhr = new XMLHttpRequest();
-			xhr.open("POST","login/register.php",true);
+			xhr.open("POST","./register.php",true);
 			xhr.setRequestHeader('username',usr);
 			xhr.setRequestHeader('password',pwd);
 			xhr.send();
@@ -65,7 +65,7 @@
 
 </head>
 <body>
-	<div id="register_form">
+	<div class="register_form">
 		<h2 class="Register">Register Now !</h2>
 	
 		<div class="form_field">
@@ -74,6 +74,6 @@
 		</div>
 		<button type="button" onclick="register()"><h4>regsiter</h4></button>
 	</div>
-	<p id=message></p>
+	<p id="message"></p>
 </body>
 </html>
