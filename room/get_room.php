@@ -23,6 +23,7 @@
 		{
 			echo $temp . " ";
 			$current_room_info += json_encode($temp);
+			echo  json_encode($temp) . " ";
 		}
 		//echo json_encode($current_room_info); 
 	}
