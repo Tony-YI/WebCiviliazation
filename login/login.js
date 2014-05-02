@@ -19,7 +19,7 @@ function login()
 	console.log(usr);
 	console.log(pwd);
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST","login/auth.php",false);
+	xhr.open("POST","./auth.php",false);
 	xhr.setRequestHeader('username',usr);
 	xhr.setRequestHeader('password',pwd);
 	xhr.send();
@@ -27,7 +27,7 @@ function login()
 	if(response.status == "success")
 	{
 		console.log("Login Success, going to redirect");
-		window.location = "room.php";
+		window.location = "../room.php";
 	}
 	else if(response.status =="failed")
 	{
