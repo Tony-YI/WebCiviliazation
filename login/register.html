@@ -30,7 +30,7 @@
 				$.cookie("USER_COOKIE",'',{expires:-1});
 			}
 			var xhr = new XMLHttpRequest();
-			xhr.open("POST","login/register.php",true);
+			xhr.open("POST","./register.php",true);
 			xhr.setRequestHeader('username',usr);
 			xhr.setRequestHeader('password',pwd);
 			xhr.send();
@@ -47,7 +47,7 @@
 					if(xhr.responseText == "Register successfully, you will be redirect to login page in 5 seconds.")
 					{
 						var time = 0;
-						var url = './login/login.php';
+						var url = './login.php';
 						function forward_to(){
 							 time ++;
 							 if(time == 5){
@@ -65,6 +65,7 @@
 
 </head>
 <body>
+	<p id="message"></p>
 	<div class="register_form">
 		<h2 class="Register">Register Now !</h2>
 	
