@@ -34,7 +34,7 @@
 			</tr>
 
 			<tr>
-				<td><button type="button" onclick="login()">LogIn</button></td>
+				<td><button type="button" onclick="login()"><h4>LogIn</h4></button></td>
 			</tr>
 		</table>
 	</form>
