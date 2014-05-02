@@ -46,7 +46,7 @@
                    if($p1)
                    {
                     $p1Name = $usernames[$p1];
-                    echo "hahahahhahahahahah $usernames[$p1]";
+                    echo "hahahahhahahahahah $usernames";
                    }
                    if($p2)
                    {
