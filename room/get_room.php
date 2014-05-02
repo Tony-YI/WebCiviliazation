@@ -12,13 +12,15 @@
 		}
 	*/
 	require_once("../lib/db.php");
+	$response = "";
 	if(check_cookie($db))
 	{
 		//If the cookie exists
 		$browser_room_info = $_SERVER['HTTP_ROOM_INFO'];
 		$SQL_ROOM_INFO = "SELECT * FROM Game";
 		$result = mysqli_query($db, $SQL_ROOM_INFO);
-		$current_room_info = "";
+		$response['status'] = 'success';
+		$game = "";
 		while($temp = mysqli_fetch_row($result))
 		{
 			$parsedRow = "";
@@ -26,13 +28,15 @@
 			$parsedRow['P1'] = $temp[1];
 			$parsedRow['P2'] = $temp[2];
 			$parsedRow['P3'] = $temp[3];
-			$current_room_info += json_encode($temp);
-			echo  json_encode($parsedRow) . " ";
+			//echo   json_encode($parsedRow) . " ";
+			array_push($game,  json_encode($parsedRow));
 		}
-		//echo json_encode($current_room_info); 
+		//echo json_encode($current_room_info);
+		$response['game'] = $game;
 	}
 	else
 	{
-		echo "{\"status\":\"failed\",";
+		$response['status'] = 'failed';
 	}
+	echo  json_encode($response);
 ?>
