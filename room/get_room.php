@@ -38,5 +38,6 @@
 	{
 		$response['status'] = 'failed';
 	}
-	echo  json_encode($response);
+	$response = str_replace("\\", "", json_encode($response));
+	echo $response;
 ?>
