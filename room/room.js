@@ -40,7 +40,7 @@ function room_get_list()
 			//console.log(isUpade(browser_games,server_games));
 			if(isUpade(browser_games,server_games))
 			{
-				//document.getElementById("roomNum").innerHTML = "";
+				document.getElementById("roomNum").innerHTML = html;
 
 			}
 			//document.getElementById("roomNum").innerHTML = room_info;
