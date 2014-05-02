@@ -42,6 +42,10 @@
                     {
                         echo "<br><br>";
                     }
+                    else
+                    {
+                        echo "&nbsp;&nbsp;&nbsp;";
+                    }
                 }
 
                 /*$i = 0;
