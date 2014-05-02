@@ -25,7 +25,7 @@ function room_get_list()
 				return false;
 			}
 			var room_info = xhr.responseText;
-			console.log(room_info);
+			//console.log(room_info);
 			var obj = JSON.parse(room_info);
 			var status = obj.status;
 			var html = obj.html;
@@ -41,7 +41,7 @@ function room_get_list()
 			if(isUpade(browser_games,server_games))
 			{
 				document.getElementById("roomNum").innerHTML = html;
-
+				return false;
 			}
 			//document.getElementById("roomNum").innerHTML = room_info;
 		}
