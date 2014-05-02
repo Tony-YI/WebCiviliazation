@@ -33,18 +33,56 @@ function room_get_list()
 				document.location.href = '../login/login.php';
 				return false;
 			}
-			var games = obj.game;
-			for(var i = 0; i < games.length; i++)
-			{
-				//console.log(games[i]);
-				console.log(games[i].P2);
-			}
+			var browser_games = document.getElementsByClassName("roomBtn");
+			var server_games = obj.game;
+			console.log(isUpade(browser_games,server_games));
 			//document.getElementById("roomNum").innerHTML = room_info;
 		}
 	};
 	return false;
 }
 
+function isUpade(browser_games, server_games)
+{
+	if(browser_games.length != server_games.length)
+	{
+		return true;
+	}
+	else
+	{
+		for (var i = 0; i < browser_games.length; i++) 
+		{
+			if(browser_games[i].id != server_games[i].Game_id)
+			{
+				return true;
+			}
+			else
+			{
+				var browser = browser_games[i].childNode[1];
+				var server = server_games[i];
+				console.log(browser.p1);
+				console.log(server.p1);
+				if(browser.p1 ！= server.p1)
+				{
+					return true;
+				}
+				console.log(browser.p2);
+				console.log(server.p2);
+				if(browser.p2 ！= server.p2)
+				{
+					return true;
+				}
+				console.log(browser.p3);
+				console.log(server.p3);
+				if(browser.p3 ！= server.p3)
+				{
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
 function room_onclick(e)
 {	
 	//Pop out a confirmation window 
@@ -125,7 +163,7 @@ function logout()
 	if(response.status == "success")
 	{
 		console.log("Logout Success, going to redirect");
-		window.location = "login.php";
+		window.location = "login/login.php";
 	}
 }
 
