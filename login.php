@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Login</title>
+	<title>LogIn</title>
+	<link rel="stylesheet" type="text/css" href="login/login.css">
 	<script type="text/javascript" src="login/login.js"></script>
 	<?php
 		#Check Cookie here
@@ -17,7 +18,7 @@
 
 </head>
 <body style="font-family:verdana, sans-serif;">
-<h2>Login</h2>
+<h2>Welcome To WebCivilization</h2>
 <form method=post action="login/auth.php">
 	<table cellspacing=5pt cellpadding=10pt style="border:1pt solid #7777ff;">
 		<tr>
