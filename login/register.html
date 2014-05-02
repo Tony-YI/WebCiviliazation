@@ -2,15 +2,9 @@
 <html>
 <head>
 	<title>Register for WebCivilazation</title>
-	<style>
-		body{background-color: black; opacity: 0.8; background-image: url('../images/background1.jpg');}
-		h4{font-family: Chalkduster; margin: 0 auto;}
-		h1.Register{font-family: "Chalkduster"; font-style: bold;}
-		h2.Register{font-family: "Chalkduster";}
-		div.form_field{font-family: "Chalkduster"; font-style: bold; font-size: 18px;}
-	</style>
+	<link type="text/css" rel="stylesheet" href="./register.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
-    <script type="text/javascript" src="jquery.cookie.js"></script>
+    <script type="text/javascript" src="../jquery.cookie.js"></script>
 	<script>
 		function register()
 		{
@@ -53,7 +47,7 @@
 					if(xhr.responseText == "Register successfully, you will be redirect to login page in 5 seconds.")
 					{
 						var time = 0;
-						var url = 'login.php';
+						var url = './login/login.php';
 						function forward_to(){
 							 time ++;
 							 if(time == 5){
@@ -72,13 +66,13 @@
 </head>
 <body>
 	<div id="register_form">
-	<h2 class="Register">Register Now !</h2>
+		<h2 class="Register">Register Now !</h2>
 	
-	<div class="form_field">
-	Username: <input id="usr" type="text"><br>
-	Password: <input id="pwd" type="password"><br>
-	</div>
-	<button type="button" onclick="register()"><h4>regsiter</h4></button>
+		<div class="form_field">
+			Username: <input id="usr" type="text"><br>
+			Password: <input id="pwd" type="password"><br>
+		</div>
+		<button type="button" onclick="register()"><h4>regsiter</h4></button>
 	</div>
 	<p id=message></p>
 </body>
