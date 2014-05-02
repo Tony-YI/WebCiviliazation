@@ -9,8 +9,6 @@
 
 </head>
 <body>
-<button type="button" id="logout" onclick="logout()">logout</button>
-<button type="button" id="newRoom" onclick="room_create()">create a new room</button>
     <div id="bg0">
         <div id="header">
             
@@ -49,6 +47,10 @@
                     echo "<button type='submit' class='roomBtn'>Room $i ! Click to enter room</button><br><br>";
                 }*/
             ?>
+        </div>
+        <div id="main">
+            <button type="button" id="logout" onclick="logout()">logout</button>
+            <button type="button" id="newRoom" onclick="room_create()">create a new room</button>
         </div>
         <div id="Info" align="right">
             <div id="userInfo">

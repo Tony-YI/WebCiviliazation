@@ -1,6 +1,7 @@
 #roomNum
 {
     display: inline-block;
+     top: 5%;
 }
 #Info
 {
@@ -8,6 +9,13 @@
     position: fixed;
     top: 5%;
     left: 70%;
+}
+#main
+{
+   display: inline-block;
+    position: fixed;
+    top: 5%;
+    left: 50%;
 }
 
 #roomNum
