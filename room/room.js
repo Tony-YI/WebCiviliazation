@@ -62,19 +62,19 @@ function isUpade(browser_games, server_games)
 				var server = server_games[i];
 				console.log(browser.p1);
 				console.log(server.p1);
-				if(browser.p1 ！= server.p1)
+				if(browser.p1 != server.p1)
 				{
 					return true;
 				}
 				console.log(browser.p2);
 				console.log(server.p2);
-				if(browser.p2 ！= server.p2)
+				if(browser.p2 != server.p2)
 				{
 					return true;
 				}
 				console.log(browser.p3);
 				console.log(server.p3);
-				if(browser.p3 ！= server.p3)
+				if(browser.p3 != server.p3)
 				{
 					return true;
 				}
