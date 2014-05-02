@@ -12,7 +12,7 @@
     left: 85%;
 }
 
-#logout
+#logout #newRoom
 {
   background: rgba(139,129,76,0.85);
    -webkit-border-radius: 8px;
@@ -20,7 +20,7 @@
    color: #8B4513;
    border-radius: 8px;
    font-size: 14px;
-   font-family: Georgia, Serif;
+   font-family: Buxton Sketch, Serif;
    text-decoration: none;
 
     transition:border linear .3s,box-shadow linear .7s;
