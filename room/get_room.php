@@ -20,7 +20,7 @@
 		$SQL_ROOM_INFO = "SELECT * FROM Game";
 		$result = mysqli_query($db, $SQL_ROOM_INFO);
 		$response['status'] = 'success';
-		$game = "";
+		$game = array();
 		while($temp = mysqli_fetch_row($result))
 		{
 			$parsedRow = "";
@@ -29,7 +29,7 @@
 			$parsedRow['P2'] = $temp[2];
 			$parsedRow['P3'] = $temp[3];
 			$row = json_encode($parsedRow);
-			$game = array_push($game,  $row);
+			array_push($game,  $row);
 		}
 		//echo json_encode($current_room_info);
 		$response['game'] = $game;
