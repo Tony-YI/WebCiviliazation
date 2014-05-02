@@ -43,7 +43,6 @@ function room_get_list()
 				document.getElementById("roomNum").innerHTML = html;
 				return false;
 			}
-			//document.getElementById("roomNum").innerHTML = room_info;
 		}
 	};
 	return false;
