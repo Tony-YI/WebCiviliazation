@@ -45,15 +45,15 @@
                    $p3 = $row[3]; $p3Name = "";
                    if($p1)
                    {
-                    $p1Name = $usernames[$p1];
+                    $p1Name = $usernames[$p1][0];
                    }
                    if($p2)
                    {
-                    $p1Name = $usernames[$p2];
+                    $p1Name = $usernames[$p2][0];
                    }
                    if($p3)
                    {
-                    $p3Name = $usernames[$p3];
+                    $p3Name = $usernames[$p3][0];
                    }
 
                    
