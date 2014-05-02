@@ -26,9 +26,12 @@ function room_get_list()
 			var room_info = xhr.responseText;
 			console.log(room_info);
 			var obj = JSON.parse(room_info);
-			console.log(obj.status);
-			var games = JSON.parse(obj.game);
-			console.log(games.length);
+			var status = obj.status;
+			var games = obj.game;
+			for(var i = 0; i < games.length; i++)
+			{
+				console.log(games[i]);
+			}
 			//document.getElementById("roomNum").innerHTML = room_info;
 		}
 	};
