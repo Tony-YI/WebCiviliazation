@@ -38,11 +38,8 @@
 		$response['status'] = 'failed';
 	}
 	$response = json_encode($response);
-	$search = array("\\", "\"{", "}\"");
-	$replace = array("", "{", "}");
-	//$response = str_replace("\\", "", $response);
-	//$response = str_replace("\"{", "{", $response);
-	//$response = str_replace("}\"", "}", $response);
-	$response = str_replace($search, $replace, $response)
+	$response = str_replace("\\", "", $response);
+	$response = str_replace("\"{", "{", $response);
+	$response = str_replace("}\"", "}", $response);
 	echo $response;
 ?>
