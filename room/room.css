@@ -58,13 +58,13 @@ body
      opacity:0.8; 
      -khtml-opacity: 0.8;
 
-     transition:border linear .3s,box-shadow linear .7s;
-     -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
-     -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
-     outline:none;border-color:rgba(255,215,0,.95);
-     box-shadow:0 0 8px rgba(255,215,0,.7);
-     -moz-box-shadow:0 0 8px rgba(255,215,0,.7);
-     -webkit-box-shadow:0 0 8px rgba(255,215,0,.5);
+     transition:border linear .2s,box-shadow linear .5s;
+     -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+     -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+     outline:none;border-color:rgba(255,165,0,.95);
+     box-shadow:0 0 8px rgba(255,165,0,.7);
+     -moz-box-shadow:0 0 8px rgba(255,165,0,.7);
+     -webkit-box-shadow:0 0 8px rgba(255,165,0,.5);
 
      color: #ffffcc;
      font-size: 14px;
