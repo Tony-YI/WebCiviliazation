@@ -36,7 +36,7 @@ function room_get_list()
 			var games = obj.game;
 			for(var i = 0; i < games.length; i++)
 			{
-				console.log(games[i]);
+				//console.log(games[i]);
 				//console.log(games[i].P1);
 			}
 			//document.getElementById("roomNum").innerHTML = room_info;
@@ -45,9 +45,22 @@ function room_get_list()
 	return false;
 }
 
-function room_onclick()
+function room_onclick(e)
 {	
 	//Pop out a confirmation window 
+	var isJoin = confirm("Do you want to join this room?");
+	if(isJoin == true)
+	{
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST","room/join_room.php",true);
+		xhr.setRequestHeader("USERID",current_usr_id);
+		xhr.setRequestHeader("ROOM",e.target);
+		console.log(e.target);
+	}
+	else
+	{
+		return false;
+	}
 }
 
 function room_create()
