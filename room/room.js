@@ -25,11 +25,11 @@ function room_get_list()
 				return false;
 			}
 			var room_info = xhr.responseText;
-			//console.log(room_info);
+			console.log(room_info);
 			var obj = JSON.parse(room_info);
 			var status = obj.status;
 			var html = obj.html;
-			console.log(obj);
+			//console.log(obj);
 			if(status == "failed")
 			{
 				document.location.href = '../login/login.php';
@@ -40,7 +40,7 @@ function room_get_list()
 			//console.log(isUpade(browser_games,server_games));
 			if(isUpade(browser_games,server_games))
 			{
-				//document.getElementById("roomNum").innerHTML = "";
+				document.getElementById("roomNum").innerHTML = html;
 
 			}
 			//document.getElementById("roomNum").innerHTML = room_info;
