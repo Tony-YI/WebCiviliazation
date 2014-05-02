@@ -85,7 +85,7 @@ function logout()
 	if(response.status == "success")
 	{
 		console.log("Logout Success, going to redirect");
-		window.location = "login.php";
+		window.location = "login/login.php";
 	}
 }
 
