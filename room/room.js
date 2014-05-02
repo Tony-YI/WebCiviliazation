@@ -7,6 +7,7 @@ var in_room = 0;
 
 if(current_usr_id)
 	console.log("CURRENT_USER is " + current_usr_id);
+setInterval(room_get_list,1000);
 
 function room_get_list()
 {
@@ -43,7 +44,6 @@ function room_get_list()
 	};
 	return false;
 }
-setInterval(room_get_list,1000);
 
 function room_onclick()
 {	
