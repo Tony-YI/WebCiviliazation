@@ -29,7 +29,7 @@ function room_get_list()
 			var status = obj.status;
 			if(status == "failed")
 			{
-				document.location.href = '../login.php';
+				document.location.href = '../login/login.php';
 				return false;
 			}
 			var games = obj.game;
@@ -89,7 +89,7 @@ function logout()
 	if(response.status == "success")
 	{
 		console.log("Logout Success, going to redirect");
-		window.location = "login/login.php";
+		window.location = "login.php";
 	}
 }
 
