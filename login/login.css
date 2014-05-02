@@ -6,7 +6,7 @@ body
 	min-height: 600px;
 	font-family:verdana, sans-serif;
 	text-align: center;
-	background-image: "../images/background.jpg";
+	background-image: url('../images/background.jpg');
 }
 
 h2
