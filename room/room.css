@@ -1,7 +1,8 @@
 #roomNum
 {
    display: inline-block;
-    top:3%;
+   margin-left: 2%;
+   margin-top: 3%;
 }
 #Info
 {
@@ -12,15 +13,10 @@
 }
 #main
 {
-   display: inline-block;
+    display: inline-block;
     position: fixed;
     top: 2%;
     left: 50%;
-}
-
-#roomNum
-{
-  margin-left: 2%;
 }
 
 body
