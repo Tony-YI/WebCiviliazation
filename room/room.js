@@ -49,13 +49,19 @@ function room_onclick(e)
 {	
 	//Pop out a confirmation window 
 	e = e || window.event;
+	var target = e.target;
+	console.log(target);
+	while(target.className != "roomBtn")
+	{
+		target = target.parentNode;
+	}
 	var isJoin = confirm("Do you want to join this room?");
 	if(isJoin == true)
 	{
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST","room/join_room.php",true);
 		xhr.setRequestHeader("USERID",current_usr_id);
-		console.log(e.target);
+		console.log(target);
 	}
 	else
 	{
