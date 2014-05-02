@@ -38,14 +38,14 @@
                 {
                    $num = $row[0];
                     //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
-                    echo "<div class='roomBtn' id=$num'>Room $num ! Click to enter room</div>";
+                    echo "<div class='roomBtn' id=$num><div class='numDiv' id='room'$num>Room $num ! Click ENTER BUTTON to enter room</div></div>";
                     if($num % 2 == 0)
                     {
                         echo "<br><br>";
                     }
                     else
                     {
-                        echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                        echo "&nbsp;&nbsp;";
                     }
                 }
 
