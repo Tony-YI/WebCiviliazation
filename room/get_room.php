@@ -21,7 +21,11 @@
 		$current_room_info = "";
 		while($temp = mysqli_fetch_row($result))
 		{
-			echo $temp . " ";
+			$parsedRow = "";
+			$parsedRow['Game_id'] = $temp[0];
+			$parsedRow['P1'] = $temp[1];
+			$parsedRow['P2'] = $temp[2];
+			$parsedRow['P3'] = $temp[3];
 			$current_room_info += json_encode($temp);
 			echo  json_encode($temp) . " ";
 		}
