@@ -1,6 +1,7 @@
 .display
 {
-    -webkit-transform: rotateY(130deg);
+    -webkit-transform: perspective(500px) rotateX(45deg);
+    transform: perspective(500px) rotateX(45deg);
 }
 
 .hexagon
