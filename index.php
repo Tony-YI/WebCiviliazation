@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php
 	<?php
 		#Check Cookie here
 		#if cookie exist, redirect the page
@@ -18,5 +17,4 @@
 			echo "<script type=\"text/javascript\">location.href=\"login.php\"</script>";
 		}
 	?>
-?>
 </html>
