@@ -15,6 +15,9 @@
 #logout
 {
   background: transparent;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
 }
 body
 {
@@ -27,8 +30,8 @@ body
      border-top: 1px solid #330099;
      background: url(../images/bt1.jpg);
      padding: 2.5% 7% 2.5% 7%;
-     -webkit-border-radius: 17px;
-     -moz-border-radius: 17px;
+     -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
      border-radius: 8px;
      -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
      -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
