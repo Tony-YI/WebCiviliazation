@@ -47,15 +47,26 @@
                    {
                     $p1Name = $usernames[$p1][0];
                    }
+                   else
+                   {
+                    $p1 = 'null';
+                   }
                    if($p2)
                    {
                     $p1Name = $usernames[$p2][0];
+                   }
+                   else
+                   {
+                    $p2 = 'null';
                    }
                    if($p3)
                    {
                     $p3Name = $usernames[$p3][0];
                    }
-
+                   else
+                   {
+                    $p3 = 'null';
+                   }
                    
                     //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
                     echo "<div class='roomBtn' id=$num onclick=room_onclick()><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div>

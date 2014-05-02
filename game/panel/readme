@@ -1,0 +1,11 @@
+#display.html
+This is the interface of the panel
+
+#display.css
+It defines the style ofo the interface
+
+#display.php
+It handels the AJAX or XHR
+
+#display.js
+It handels the AJAX or XHR

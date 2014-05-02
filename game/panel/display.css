@@ -1,0 +1,154 @@
+.display
+{
+    -webkit-transform: rotateY(130deg);
+}
+
+.hexagon
+{
+    width: 100px;
+    height: 55px;
+    background: black;
+    position: relative;
+    float: left;
+    margin: 5px 5px 5px 5px;
+}
+.hexagon:before 
+{
+    content: "";
+    position: absolute;
+    top: -25px; 
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid black;
+}
+.hexagon:after
+{
+    content: "";
+    position: absolute;
+    bottom: -25px; 
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid black;
+}
+.hexagon:hover
+{
+    background: white;
+}
+
+.hexagon-begin-odd
+{
+    width: 100px;
+    height: 55px;
+    background: black;
+    position: relative;
+    float: left;
+    margin: 5px 5px 5px 5px;
+}
+.hexagon-begin-odd:before
+{
+    content: "";
+    position: absolute;
+    top: -25px; 
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid black;
+}
+.hexagon-begin-odd:after
+{
+    content: "";
+    position: absolute;
+    bottom: -25px; 
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid black;
+}
+
+.hexagon-begin-even
+{
+    width: 100px;
+    height: 55px;
+    background: black;
+    position: relative;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 60px;
+    margin-right: 5px;
+}
+.hexagon-begin-even:before
+{
+    content: "";
+    position: absolute;
+    top: -25px; 
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid black;
+}
+.hexagon-begin-even:after
+{
+    content: "";
+    position: absolute;
+    bottom: -25px; 
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid black;
+}
+
+.hexagon-last
+{
+    width: 100px;
+    height: 55px;
+    background: black;
+    position: relative;
+    float: left;
+    margin: 5px 5px 5px 5px;
+}
+.hexagon-last:before
+{
+    content: "";
+    position: absolute;
+    top: -25px; 
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid black;
+}
+.hexagon-last:after
+{
+    content: "";
+    position: absolute;
+    bottom: -25px; 
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid black;
+}
+
+.new-line
+{
+    float: right;
+    position: relative;
+    width: 100%;
+}
