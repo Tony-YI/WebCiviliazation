@@ -20,25 +20,29 @@ function room_get_list()
 		{
 			if(xhr.status != 200)
 			{
-				//alert("Error code = " + new String(xhr.status));
+				console.log("Error code = " + new String(xhr.status));
 				return false;
 			}
 			var room_info = xhr.responseText;
-			console.log(room_info);
+			//console.log(room_info);
 			var obj = JSON.parse(room_info);
 			var status = obj.status;
+			if(status == "failed")
+			{
+				document.location.href = '../login.php';
+				return false;
+			}
 			var games = obj.game;
 			for(var i = 0; i < games.length; i++)
 			{
 				console.log(games[i]);
-				console.log(games[i].P1);
+				//console.log(games[i].P1);
 			}
 			//document.getElementById("roomNum").innerHTML = room_info;
 		}
 	};
 	return false;
 }
-
 setInterval(room_get_list,1000);
 
 function room_onclick()
