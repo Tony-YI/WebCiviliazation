@@ -72,7 +72,7 @@
 			{
 				$text = $text  . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 			}
-			//$response['html'] = $text;
+			$response['html'] = $text;
 			echo $text;
 		}
 	}
