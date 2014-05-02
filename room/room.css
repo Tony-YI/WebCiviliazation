@@ -95,6 +95,15 @@ body
      /*vertical-align: middle;*/
    }
 .roomBtn:hover {
+
+    transition:border linear .4s,box-shadow linear .7s;
+    -moz-transition:border linear .4s,-moz-box-shadow linear .7s;
+    -webkit-transition:border linear .4s,-webkit-box-shadow linear .7s;
+    outline:none;border-color:rgba(255,0,0,.95);
+    box-shadow:0 0 8px rgba(255,0,0,.7);
+    -moz-box-shadow:0 0 8px rgba(255,0,0,.7);
+    -webkit-box-shadow:0 0 8px rgba(255,0,0,.5);
+
    border-top-color: #6633ff;
    background: url(../images/bt1_h.jpg);
    color: #f2f2f2;
