@@ -16,6 +16,8 @@ table
 
 .form
 {
-	position: fixed;
+	position: relative;
 	float: right;
+	top: 200px;
+	right: 50px;
 }
