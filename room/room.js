@@ -51,7 +51,7 @@ function room_onclick(e)
 	e = e || window.event;
 	var target = e.target;
 	console.log(target);
-	while(target.class != "roomBtn")
+	while(target.className != "roomBtn")
 	{
 		target = target.parentNode;
 	}
