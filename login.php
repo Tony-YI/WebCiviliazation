@@ -38,7 +38,7 @@
 			</tr>
 		</table>
 	</form>
-		<a href="register.html">click to register</a>
+		<a href="register.html">Click To Register</a>
 </div>
 
 </body>
