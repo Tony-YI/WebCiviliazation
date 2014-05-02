@@ -44,10 +44,19 @@ body
      -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
      box-shadow: rgba(0,0,0,1) 0 1px 0;
      text-shadow: rgba(0,0,0,.4) 0 1px 0;*/
-     filter:alpha(opacity=30);
-     -moz-opacity:0.3;
-     opacity:0.3; 
-     -khtml-opacity: 0.3;
+     filter:alpha(opacity=80);
+     -moz-opacity:0.8;
+     opacity:0.8; 
+     -khtml-opacity: 0.8;
+
+     transition:border linear .3s,box-shadow linear .7s;
+     -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
+     -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
+     outline:none;border-color:rgba(255,215,0,.75);
+     box-shadow:0 0 8px rgba(255,215,0,.5);
+     -moz-box-shadow:0 0 8px rgba(255,215,0,.5);
+     -webkit-box-shadow:0 0 8px rgba(255,215,0,3);
+
      color: #ffffcc;
      font-size: 14px;
      font-family: Georgia, Serif;
