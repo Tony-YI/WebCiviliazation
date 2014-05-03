@@ -41,6 +41,7 @@ function room_get_list()
 			if(isUpade(browser_games,server_games))
 			{
 				document.getElementById("roomNum").innerHTML = html;
+				console.log("Updating the roomNum div");
 				return false;
 			}
 		}
