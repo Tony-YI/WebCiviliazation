@@ -114,7 +114,7 @@ function remove_manual()
 	var manual = document.getElementsByClassName('manual');
 	for(var i = 0; i < manual.length; i++)
 	{
-		hexagon[i].setAttribute('class', 'hexagon');
+		manual[i].setAttribute('class', 'hexagon');
 	}
 }
 
