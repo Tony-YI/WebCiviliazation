@@ -47,6 +47,8 @@ function mousedown(e)
 function stop_scroll_propagate(e)
 {
 	e.stopPropagation();
+	e.preventDefault();
+	alert("no scroll");
 }
 
 function no_right_click(e)
