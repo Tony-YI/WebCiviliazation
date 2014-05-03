@@ -119,8 +119,10 @@ function addBoxes()
 	{
 		new_line[i] = document.createElement('div');
 		new_line[i].setAttribute('id', 'new_line');
-		var br = document.createElement('br');
-		new_line[i].appendChild(br);
+		var br1 = document.createElement('br');
+		var br2 = document.createElement('br');
+		new_line[i].appendChild(br1);
+		new_line[i].appendChild(br2);
 	}
 
 	var hexagon = Array();
