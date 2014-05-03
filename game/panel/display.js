@@ -115,7 +115,7 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
-	window.addEventListener("scroll", no_scroll, false);
+	window.addEventListener("onmousewheel", no_scroll, false);
 }
 
 window.addEventListener('load', init, false);
