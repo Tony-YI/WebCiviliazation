@@ -58,9 +58,9 @@
   position: fixed;
   margin-left: -2%;
   width: 18%;
-  border-radius: 9px;
+  border-radius: 5px;
   background-image: url(../images/user_info.jpg);
-  
+  background-repeat: no-repeat; 
   text-align: left;
   color:#8B1A1A;
   font-size: 24px;
