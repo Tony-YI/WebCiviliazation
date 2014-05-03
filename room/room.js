@@ -52,8 +52,8 @@ function room_get_list()
 
 function isUpade(browser_games, server_games)
 {
-	console.log(browser_games.length);
-	console.log(server_games.length);
+	//console.log(browser_games.length);
+	//console.log(server_games.length);
 	if(browser_games.length != server_games.length)
 	{
 		return true;
@@ -62,9 +62,9 @@ function isUpade(browser_games, server_games)
 	{
 		for (var i = 0; i < browser_games.length; i++) 
 		{
-			console.log(browser_games[i].id);
-			console.log(server_games[i].Game_id);
-			console.log(JSON.parse(server_games[i]).Game_id);
+			//console.log(browser_games[i].id);
+			//console.log(server_games[i].Game_id);
+			//console.log(JSON.parse(server_games[i]).Game_id);
 			var server_game = JSON.parse(server_games[i]);
 			if(browser_games[i].id != server_game.Game_id)
 			{
@@ -74,8 +74,10 @@ function isUpade(browser_games, server_games)
 			{
 				var browser = browser_games[i].childNodes[2];
 				var server = server_game;
+				console.log(browser);
+				console.log(server);
 				if(server.P1 == "null")
-					server.P1 = "";
+					server.P1 = null;
 				console.log(browser.getAttribute('p1'));
 				console.log(server.P1);
 				if(browser.getAttribute('p1') != server.P1)
@@ -83,7 +85,7 @@ function isUpade(browser_games, server_games)
 					return true;
 				}
 				if(server.P2 == "null")
-					server.P2 = "";
+					server.P2 = null;
 				console.log(browser.getAttribute('p2'));
 				console.log(server.P2);
 				if(browser.getAttribute('p2') != server.P2)
@@ -91,7 +93,7 @@ function isUpade(browser_games, server_games)
 					return true;
 				}
 				if(server.P3 == "null")
-					server.P3 = "";
+					server.P3 = null;
 				console.log(browser.getAttribute('p3'));
 				console.log(server.P3);
 				if(browser.getAttribute('p3') != server.P3)
