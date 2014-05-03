@@ -15,22 +15,13 @@ body
     border: 1px red solid;
 }
 
-#box1
+#box
 {
     width: 2255px;
     height: 100%;
     -webkit-transform: perspective(550px) rotateX(65deg);
     transform: perspective(550px) rotateX(65deg);
     overflow: scroll;
-    border: 1px black solid;
-}
-
-#box
-{
-    width: 2255px;
-    height: 100%;
-    overflow: scroll;
-    border: 1px black solid;
 }
 
 #hexagon
