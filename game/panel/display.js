@@ -99,6 +99,12 @@ function display_manual(e)
 	var x_axis = e.clientX;
 	var y_axis = e.clientY;
 
+	var manual = document.createElement('div');
+	manual.setAttribute('id', 'manual');
+	manual.style.top = y_axis;
+	manual.style.left = x_axis;
+	document.getElementById('box').appendChild(manual);
+
 	console.log(pos_x, pos_y, x_axis, y_axis);
 }
 
