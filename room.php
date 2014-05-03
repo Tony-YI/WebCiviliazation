@@ -84,6 +84,9 @@
         <div id="main" align="right">
             <button type="button" id="logout" onclick="logout()">Log Out</button>
             <button type="button" id="newRoom" onclick="room_create()">Create New Room</button>
+            <br/>
+            <br/>
+            <div id="userInfo">haaaaaaaaaaaaaaah</div>
         </div>
         <!--<div id="Info" align="right">
             <div id="main" align="right">

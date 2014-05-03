@@ -53,6 +53,12 @@
     -moz-box-shadow:0 0 8px rgba(200,200,200,.5);
     -webkit-box-shadow:0 0 8px rgba(200,200,200,.3);
 }
+#userInfo
+{
+  position: fixed;
+  background: rgba(200,200,200,.5);
+  margin-left: 20%;
+}
 body
 {
   background-image: url(../images/bg0.jpg);
