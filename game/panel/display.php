@@ -9,11 +9,11 @@
         #if cookie exist, redirect the page
         #else ask the user to login
         $cookie = $_COOKIE['USER_COOKIE'];
-        require_once("lib/db.php");
+        require_once("../../lib/db.php");
         if(!check_cookie($db))
         {
             #redirect to login.php
-            echo "<script type=\"text/javascript\">location.href=\"login/login.php\"</script>";
+            echo "<script type=\"text/javascript\">location.href=\"../../login/login.php\"</script>";
         }
     ?>
 </head>
