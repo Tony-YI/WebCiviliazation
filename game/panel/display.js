@@ -39,6 +39,8 @@ function mousedown(e)
 			break;
 		case 3:
 			console.log('right click');
+			e.target.addEventListener('mousemove', mousemove, false);
+			e.target.addEventListener('mouseup', mouseup, false);
 			break;
 		default:
 			console.log('no such click id');
