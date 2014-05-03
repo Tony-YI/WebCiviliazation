@@ -36,7 +36,7 @@ function mousedown_1(e)
 			console.log('middle mousedown 1');
 			break;
 		case 3:
-			console.log('right mousedown 1');
+			console.log('right mousedown 	1');
 
 			if(e.target.getAttribute('usage') == 'no') //not for use
 			{
@@ -177,9 +177,9 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'type_A');
 				hexagon[i].innerHTML = 'type_A';
 				hexagon[i].style.opacity = '1.0';
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
@@ -187,9 +187,9 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'type_B');
 				hexagon[i].innerHTML = 'type_B';
 				hexagon[i].style.opacity = '1.0';
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
@@ -197,9 +197,9 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'type_C');
 				hexagon[i].innerHTML = 'type_C';
 				hexagon[i].style.opacity = '1.0';
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
@@ -207,9 +207,9 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'cancel');
 				hexagon[i].innerHTML = 'Cancel';
 				hexagon[i].style.opacity = '1.0';
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
 		}
@@ -223,9 +223,9 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'type_A');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].innerHTML = 'type_A';
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
@@ -233,9 +233,9 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'type_B');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].innerHTML = 'type_B';
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
@@ -243,9 +243,9 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'type_C');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].innerHTML = 'type_C';
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
@@ -253,9 +253,9 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'cancel');
 				hexagon[i].innerHTML = 'Cancel';
 				hexagon[i].style.opacity = '1.0';
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
 		}
