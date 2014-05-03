@@ -134,6 +134,24 @@
 
 	function initilze_new_game_database($game_id,$con,&$response)
 	{
+		//1. Dealing with the player list
+		$SQL_SELECT_PLAYER = "SELECT P1, P2, P3 FROM Game WHERE game_id = $game_id";
+		$result = mysqli_query($con,$SQL_SELECT_PLAYER);
+		$row = mysqli_fetch_row($result);
+		$p[0] = $row[0];
+		$p[1] = $row[1];
+		$p[2] = $row[2];
 
+		$p_name[0] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = $p1_id"))[0];
+		$p_name[1] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = $p2_id"))[0];
+		$p_name[2] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = $p3_id"))[0];
+
+		for($count = 0;$count < 3;$count++)
+		{
+			$SQL_INSERT_playerlist = "INSERT INTO game_{$game_id}_playerlist VALUES ($p[0],'$p_name[0]',0,0)";
+			if(!mysqli_query($con,$SQL_INSERT_playerlist))
+				$response["SQL_INSERT_playerlist_$count"] = mysqli_error($con);
+		}
+		//2. Dealing with 
 	}
 ?>

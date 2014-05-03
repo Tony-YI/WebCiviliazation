@@ -54,6 +54,7 @@
 	{
 		$sql_error = mysqli_error($db);
 		echo "<p>SELECTING STARTED GAME Error: $sql_error</p>";
+		exit;
 	}
 	db_drop_table($db,$SQL_DROP_Game,"Game");
 	db_drop_table($db,$SQL_DROP_Cookie,"Cookie");
