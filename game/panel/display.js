@@ -39,6 +39,11 @@ function mousedown(e)
 		case 3:
 			console.log('right mousedown');
 			e.target.addEventListener('mouseup', mouseup, false);
+			var manual = document.getElementById('manual');
+			if(manual)
+			{
+				document.getElementById('box').removeChild(manual);
+			}
 			break;
 		default:
 			console.log('no such mousedown id');
@@ -98,6 +103,12 @@ function display_manual(e)
 
 	var x_axis = e.clientX;
 	var y_axis = e.clientY;
+
+	var manual = document.createElement('div');
+	manual.setAttribute('id', 'manual');
+	manual.style.top = y_axis + 'px';
+	manual.style.left = x_axis + 'px';
+	document.getElementById('box').appendChild(manual);
 
 	console.log(pos_x, pos_y, x_axis, y_axis);
 }

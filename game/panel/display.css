@@ -33,9 +33,9 @@ body
 {
     width: 100px;
     height: 100px;
-    position: fixed;
+    position: relative;
     border: 1px solid red;
-    display: none;
+    z-index: 100;
 }
 
 #hexagon_normal
