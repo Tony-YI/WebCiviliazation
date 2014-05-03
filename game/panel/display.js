@@ -115,9 +115,32 @@ function addBoxes()
 	for(var i = 0; i < hexagon_num; i++)
 	{
 		hexagon[i] = document.createElement('div');
-		hexagon[i].setAttribute('id', 'hexagon');
-		hexagon[i].setAttribute('x', i % new_line_num);
-		hexagon[i].setAttribute('y', parseInt(i / new_line_num));
+		hexagon[i].setAttribute('class', 'hexagon');
+		var x = i % new_line_num;
+		var y = parseInt(i / new_line_num);
+		hexagon[i].setAttribute('x', x);
+		hexagon[i].setAttribute('y', y);
+
+		if(x == 0) //start hexagon
+		{
+			if(y % 2 == 0) //odd begin hexagon
+			{
+				hexagon[i].setAttribute('id', 'hexagon_begin_odd');
+			}
+			else //even begin hexagon
+			{
+				hexagon[i].setAttribute('id', 'hexagon_begin_even');
+			}
+		}
+		else if (x == new_line_num - 1) //end hexagon of one row
+		{
+			hexagon[i].setAttribute('id', 'hexagon_last');
+		}
+		else //normal hexagon
+		{
+			hexagon[i].setAttribute('id', 'hexagon_normal');
+		}
+
 		hexagon[i].addEventListener('mousedown', mousedown, false)
 	}
 

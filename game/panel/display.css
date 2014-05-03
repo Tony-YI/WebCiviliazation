@@ -29,7 +29,7 @@ body
     height: 100%;
 }
 
-#hexagon
+#hexagon_normal
 {
     width: 100px;
     height: 55px;
@@ -38,7 +38,7 @@ body
     float: left;
     margin: 5px 5px 5px 5px;
 }
-#hexagon:before 
+#hexagon_normal:before 
 {
     content: "";
     position: absolute;
@@ -50,7 +50,7 @@ body
     border-right: 50px solid transparent;
     border-bottom: 25px solid gray;
 }
-#hexagon:after
+#hexagon_normal:after
 {
     content: "";
     position: absolute;
