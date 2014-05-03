@@ -497,17 +497,17 @@ function select_manual(e)
 
 	if(target_function == 'attack')
 	{
-		alert(army_type': Attack');
+		alert(army_type + ': Attack');
 		remove_manual();
 	}
 	else if(target_function == 'move')
 	{
-		alert(army_type': Move');
+		alert(army_type + ': Move');
 		remove_manual();
 	}
 	else if(target_function == 'defence')
 	{
-		alert(army_type': Defence');
+		alert(army_type + ': Defence');
 		remove_manual();
 	}
 	else if(target_function == 'back')
