@@ -83,7 +83,7 @@ function mouseup(e)
 			break;
 		case 3:
 			console.log('right mouseup');
-			display_manual(e.target);
+			display_manual(e);
 			break;
 		default:
 			console.log('no such mouseup id');
@@ -91,12 +91,15 @@ function mouseup(e)
 	}
 }
 
-function display_manual(target)
+function display_manual(e)
 {
-	var pos_x = target.getAttribute('x');
-	var pos_y = target.getAttribute('y');
+	var pos_x = e.target.getAttribute('x');
+	var pos_y = e.target.getAttribute('y');
 
-	console.log(pos_x, pos_y);
+	var x_axis = e.clientX;
+	var y_axis = e.clientY;
+
+	console.log(pos_x, pos_y, x_axis, y_axis);
 }
 
 function no_contextmenu(e)
