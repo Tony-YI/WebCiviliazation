@@ -65,14 +65,15 @@ function isUpade(browser_games, server_games)
 			console.log(browser_games[i].id);
 			console.log(server_games[i].Game_id);
 			console.log(JSON.parse(server_games[i]).Game_id);
-			if(browser_games[i].id != server_games[i].Game_id)
+			var server_game = JSON.parse(server_games[i]);
+			if(browser_games[i].id != server_game.Game_id)
 			{
 				return true;
 			}
 			else
 			{
 				var browser = browser_games[i].childNodes[2];
-				var server = server_games[i];
+				var server = server_game;
 				if(server.P1 == "null")
 					server.P1 = "";
 				console.log(browser.getAttribute('p1'));
