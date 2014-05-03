@@ -516,6 +516,8 @@ function select_manual(e)
 	{
 		alert('Back');
 		remove_manual();
+		e.target.removeEventListener('mousedown', mousedown_1, false);
+		e.target.removeEventListener('mouseup', mousedown_1, false);
 		display_army_type(e);
 	}
 	else
