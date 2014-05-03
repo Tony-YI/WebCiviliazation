@@ -32,7 +32,7 @@
 		if($seat[0] && $seat[1] && $seat[2])
 		{
 			$response['status'] = 'failed';
-			$response['error'] = 'room full'
+			$response['error'] = 'room full';
 		}
 		
 		$SQL_CHECK_USER = "SELECT * FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
