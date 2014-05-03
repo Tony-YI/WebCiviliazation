@@ -39,6 +39,7 @@ function mousedown(e)
 		case 3:
 			console.log('right mousedown');
 			e.target.addEventListener('mouseup', mouseup, false);
+			remove_manual();
 			break;
 		default:
 			console.log('no such mousedown id');
@@ -83,7 +84,7 @@ function mouseup(e)
 			break;
 		case 3:
 			console.log('right mouseup');
-			display_manual(e.target);
+			display_manual(e);
 			break;
 		default:
 			console.log('no such mouseup id');
@@ -91,12 +92,30 @@ function mouseup(e)
 	}
 }
 
-function display_manual(target)
+function display_manual(e)
 {
-	var pos_x = target.getAttribute('x');
-	var pos_y = target.getAttribute('y');
+	var pos_x = e.target.getAttribute('x');
+	var pos_y = e.target.getAttribute('y');
+
+	var hexagon = document.getElementsByClassName('hexagon');
+	for(var i = 0; i < hexagon.length; i++)
+	{
+		if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+		{
+			hexagon[i].setAttribute('class', 'manual');
+		}
+	}
 
 	console.log(pos_x, pos_y);
+}
+
+function remove_manual()
+{
+	var manual = document.getElementsByClassName('manual');
+	for(var i = 0; i < manual.length; i++)
+	{
+		manual[i].setAttribute('class', 'hexagon');
+	}
 }
 
 function no_contextmenu(e)

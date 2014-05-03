@@ -37,6 +37,7 @@ function room_get_list()
 			}
 			var browser_games = document.getElementsByClassName("roomBtn");
 			var server_games = obj.game;
+			//console.log(JSON.parse(server_games));
 			//console.log(isUpade(browser_games,server_games));
 			if(isUpade(browser_games,server_games))
 			{
@@ -51,6 +52,8 @@ function room_get_list()
 
 function isUpade(browser_games, server_games)
 {
+	//console.log(browser_games.length);
+	//console.log(server_games.length);
 	if(browser_games.length != server_games.length)
 	{
 		return true;
@@ -59,28 +62,35 @@ function isUpade(browser_games, server_games)
 	{
 		for (var i = 0; i < browser_games.length; i++) 
 		{
-			if(browser_games[i].id != server_games[i].Game_id)
+			//console.log(browser_games[i].id);
+			//console.log(server_games[i].Game_id);
+			//console.log(JSON.parse(server_games[i]).Game_id);
+			var server_game = JSON.parse(server_games[i]);
+			if(browser_games[i].id != server_game.Game_id)
 			{
 				return true;
 			}
 			else
 			{
-				var browser = browser_games[i].childNodes[2];
-				var server = server_games[i];
-				if(server.P1 == "null")
-					server.P1 = "";
+				console.log(browser_games[i]);
+				var browser = browser_games[i].childNodes[1];
+				var server = server_game;
+				console.log(browser);
+				console.log(server);
+				console.log(browser.getAttribute('p1'));
+				console.log(server.P1);
 				if(browser.getAttribute('p1') != server.P1)
 				{
 					return true;
 				}
-				if(server.P2 == "null")
-					server.P2 = "";
+				console.log(browser.getAttribute('p2'));
+				console.log(server.P2);
 				if(browser.getAttribute('p2') != server.P2)
 				{
 					return true;
 				}
-				if(server.P3 == "null")
-					server.P3 = "";
+				console.log(browser.getAttribute('p3'));
+				console.log(server.P3);
 				if(browser.getAttribute('p3') != server.P3)
 				{
 					return true;

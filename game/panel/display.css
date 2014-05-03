@@ -29,11 +29,36 @@ body
     height: 100%;
 }
 
+.manual
+{
+    background: red; 
+}
+.manual:before
+{
+    border-bottom: 25px solid red;
+}
+.manual:after
+{
+    border-top: 25px solid red;
+}
+
+.hexagon
+{
+    background: gray; 
+}
+.hexagon:before
+{
+    border-bottom: 25px solid gray;
+}
+.hexagon:after
+{
+    border-top: 25px solid gray;
+}
+
 #hexagon_normal
 {
     width: 100px;
     height: 55px;
-    background: gray;
     position: relative;
     float: left;
     margin: 5px 5px 5px 5px;
@@ -48,7 +73,6 @@ body
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 25px solid gray;
 }
 #hexagon_normal:after
 {
@@ -60,14 +84,12 @@ body
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 25px solid gray;
 }
 
 #hexagon_begin_odd
 {
     width: 100px;
     height: 55px;
-    background: gray;
     position: relative;
     float: left;
     margin: 5px 5px 5px 5px;
@@ -82,7 +104,6 @@ body
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 25px solid gray;
 }
 #hexagon_begin_odd:after
 {
@@ -94,14 +115,12 @@ body
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 25px solid gray;
 }
 
 #hexagon_begin_even
 {
     width: 100px;
     height: 55px;
-    background: gray;
     position: relative;
     float: left;
     margin-top: 5px;
@@ -119,7 +138,6 @@ body
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 25px solid gray;
 }
 #hexagon_begin_even:after
 {
@@ -131,14 +149,12 @@ body
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 25px solid gray;
 }
 
 #hexagon_last
 {
     width: 100px;
     height: 55px;
-    background: gray;
     position: relative;
     float: left;
     margin: 5px 5px 5px 5px;
@@ -153,7 +169,6 @@ body
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 25px solid gray;
 }
 #hexagon_last:after
 {
@@ -165,7 +180,6 @@ body
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 25px solid gray;
 }
 
 #new_line
