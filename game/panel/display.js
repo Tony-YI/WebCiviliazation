@@ -116,8 +116,8 @@ function addBoxes()
 	{
 		hexagon[i] = document.createElement('div');
 		hexagon[i].setAttribute('id', 'hexagon');
-		hexagon[i].setAttribute('x', hexagon_num % new_line_num);
-		hexagon[i].setAttribute('y', parseInt(hexagon_num / new_line_num));
+		hexagon[i].setAttribute('x', i % new_line_num);
+		hexagon[i].setAttribute('y', parseInt(i / new_line_num));
 		hexagon[i].addEventListener('mousedown', mousedown, false)
 	}
 
