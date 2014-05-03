@@ -96,7 +96,7 @@ function display_manual(target)
 	var pos_x = target.x;
 	var pos_y = target.y;
 
-	console.log("x = pos_x; y = pos_y");
+	console.log(pos_x, pos_y);
 }
 
 function no_contextmenu(e)
