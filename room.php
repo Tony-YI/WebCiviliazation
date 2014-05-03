@@ -13,8 +13,8 @@
         <div id="header">
             
         </div>
-        <div id="roomNum">  
-            <?php  
+            <?php 
+                echo "<div id='roomNum'>"; 
                 require_once("lib/db.php");
                 $cookie = $_COOKIE['USER_COOKIE'];
                 if(!check_cookie($db))
@@ -36,7 +36,6 @@
                 $SQL_INSPECT_USERS = "SELECT username FROM User ORDER BY user_id ASC";
                 $result2 = mysqli_query($db,$SQL_INSPECT_USERS);
                 $usernames = mysqli_fetch_all($result2);
-                $user_name = $usernames[$user_id][0];
 
                 while($row = mysqli_fetch_row($result))
                 {
@@ -80,15 +79,16 @@
                     $num = $i % 7;
                     echo "<button type='submit' class='roomBtn'>Room $i ! Click to enter room</button><br><br>";
                 }*/
-            ?>
-        </div>
-        <div id="main" align="right">
-            <button type="button" id="logout" onclick="logout()">Log Out</button>
-            <button type="button" id="newRoom" onclick="room_create()">Create New Room</button>
-            <br/>
-            <br/>
-            <div id="userInfo">Current Player: $user_name<br/> Now you are in Room </div>
-        </div>
+                echo "
+                    </div>
+                    <div id='main' align='right'>
+                        <button type='button' id='logout' onclick='logout()''>Log Out</button>
+                        <button type='button'id='newRoom' onclick='room_create()''>Create New Room</button>
+                        <br/>
+                        <br/>
+                        <div id='userInfo'>Current Player: $user_name<br/> Now you are in Room </div>
+                    </div>"
+             ?>
         <!--<div id="Info" align="right">
             <div id="main" align="right">
             <button type="button" id="logout" onclick="logout()">logout</button>
