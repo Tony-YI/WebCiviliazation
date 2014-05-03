@@ -101,8 +101,8 @@ function display_manual(e)
 
 	var manual = document.createElement('div');
 	manual.setAttribute('id', 'manual');
-	manual.style.top = y_axis;
-	manual.style.left = x_axis;
+	manual.style.top = y_axis + 'px';
+	manual.style.left = x_axis + 'px';
 	document.getElementById('box').appendChild(manual);
 
 	console.log(pos_x, pos_y, x_axis, y_axis);
