@@ -12,4 +12,4 @@ function init(e)
 
 
 
-window.addEventListener(load, init, false);
+window.addEventListener('load', init, false);
