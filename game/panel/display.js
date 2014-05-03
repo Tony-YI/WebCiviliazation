@@ -83,11 +83,17 @@ function mouseup(e)
 			break;
 		case 3:
 			console.log('right mouseup');
+			display_manual(e.target);
 			break;
 		default:
 			console.log('no such mouseup id');
 			break;
 	}
+}
+
+function display_manual(target)
+{
+	alert(target);
 }
 
 function no_contextmenu(e)
