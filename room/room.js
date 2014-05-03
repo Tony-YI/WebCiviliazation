@@ -191,6 +191,20 @@ function logout()
 	}
 }
 
+
+//This function will periodically send request to the server
+//to know whether the game has stared, if so, the user will be 
+//redirect to the gaming page, this function is only valid when the 
+//user is in one room.
+function query_game_started()
+{
+	if(!in_room)
+		return ;
+	else
+	{
+		//ask server whether the game has started
+	}
+}
 function start_game()
 {
 	
