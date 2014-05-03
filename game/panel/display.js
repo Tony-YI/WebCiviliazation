@@ -36,7 +36,7 @@ function mousedown_1(e)
 			console.log('middle mousedown 1');
 			break;
 		case 3:
-			console.log('right mousedown 	1');
+			console.log('right mousedown 1');
 
 			if(e.target.getAttribute('usage') == 'no') //not for use
 			{
@@ -74,6 +74,10 @@ function mousedown_2(e)
 	{
 		case 1:
 			console.log('left mousedown 2');
+			if(e.target.getAttribute('usage') == 'no') //not for use
+			{
+				return false;
+			}
 			e.target.addEventListener('mouseup', mouseup_2, false);
 			break;
 		case 2:
@@ -84,6 +88,33 @@ function mousedown_2(e)
 			break;
 		default:
 			console.log('no such mousedown id 2');
+			break;
+	}
+}
+
+function mousedown_3(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	switch(e.which)
+	{
+		case 1:
+			console.log('left mousedown 3');
+			if(e.target.getAttribute('usage') == 'no') //not for use
+			{
+				return false;
+			}
+			e.target.addEventListener('mouseup', mouseup_3, false);
+			break;
+		case 2:
+			console.log('middle mousedown 3');
+			break;
+		case 3:
+			console.log('right mousedown 3');
+			break;
+		default:
+			console.log('no such mousedown id 3');
 			break;
 	}
 }
@@ -152,6 +183,29 @@ function mouseup_2(e)
 			break;
 		default:
 			console.log('no such mouseup id 2');
+			break;
+	}
+}
+
+function mouseup_3(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	switch(e.which)
+	{
+		case 1:
+			console.log('left mouseup 3');
+			select_manual(e);
+			break;
+		case 2:
+			console.log('middle mouseup 3');
+			break;
+		case 3:
+			console.log('right mouseup 3');
+			break;
+		default:
+			console.log('no such mouseup id 3');
 			break;
 	}
 }
@@ -273,37 +327,36 @@ function select_army_type(e)
 
 	if(target_function == 'type_A')
 	{
-		alert('A');
+		//alert('A');
+		remove_manual(e);
+		display_manual(e);
 	}
 	else if(target_function == 'type_B')
 	{
-		alert('A');
+		//alert('B');
+		remove_manual(e);
+		display_manual(e);
 	}
 	else if(target_function == 'type_C')
 	{
-		alert('A');
+		//alert('C');
+		remove_manual(e);
+		display_manual(e);
 	}
 	else if(target_function == 'cancel')
 	{
-		alert('Cancel');
+		//alert('Cancel');
 		remove_manual(e);
 	}
 	else
 	{
+		remove_manual(e);
 		console.log('error in function game/panel/display.js->select_army_type(e)');
 	}
 }
 
 function display_manual(e)
 {
-	if(e.target.getAttribute('usage') == 'no')
-	{
-		return false;
-	}
-
-	//TODO: check whether this slot belongs to the user
-	//if yes, continuous
-
 	var pos_x = e.target.getAttribute('x');
 	var pos_y = e.target.getAttribute('y');
 
@@ -317,20 +370,42 @@ function display_manual(e)
 			{
 				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 				hexagon[i].setAttribute('function', 'attack');
+				hexagon[i].innerHTML = 'Attack';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
 				hexagon[i].setAttribute('function', 'move');
+				hexagon[i].innerHTML = 'Move';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
 				hexagon[i].setAttribute('function', 'defence');
+				hexagon[i].innerHTML = 'Defence';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
+			}
+			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
+			{
+				hexagon[i].setAttribute('function', 'back');
+				hexagon[i].innerHTML = 'Back';
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_3, false);
+				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 		}
 	}
@@ -341,25 +416,82 @@ function display_manual(e)
 			if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
 				hexagon[i].setAttribute('function', 'attack');
+				hexagon[i].innerHTML = 'Attack';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
 				hexagon[i].setAttribute('function', 'move');
+				hexagon[i].innerHTML = 'Move';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
 				hexagon[i].setAttribute('function', 'defence');
+				hexagon[i].innerHTML = 'Defence';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
+			}
+			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
+			{
+				hexagon[i].setAttribute('function', 'back');
+				hexagon[i].innerHTML = 'Back';
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_3, false);
+				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 		}
 	}
 
 	console.log(pos_x, pos_y);
+}
+
+function select_manual(e)
+{
+	e.target.removeEventListener('mousedown', mousedown_3, false);
+	e.target.removeEventListener('mouseup', mouseup_3, false);
+
+	var target_function = e.target.getAttribute('function');
+
+	if(target_function == 'attack')
+	{
+		alert('Attack');
+		remove_manual(e);
+	}
+	else if(target_function == 'move')
+	{
+		alert('Move');
+		remove_manual(e);
+	}
+	else if(target_function == 'defence')
+	{
+		alert('Defence');
+		remove_manual(e);
+	}
+	else if(target_function == 'back')
+	{
+		alert('Back');
+		remove_manual(e);
+		display_army_type(e);
+	}
+	else
+	{
+		remove_manual(e);
+		console.log('error in function game/panel/display.js->select_manual(e)');
+	}
 }
 
 function remove_manual()
