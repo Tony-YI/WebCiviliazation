@@ -9,7 +9,7 @@
     display: inline-block;
     position: fixed;
     top: -0.25%;
-    left: 65%;
+    left: 70%;
 }
 
 #logout
@@ -57,7 +57,7 @@
 {
   position: fixed;
   background: rgba(200,200,200,.5);
-  margin-left: 10%;
+  /*margin-left: 10%;*/
   width: 19%;
 }
 body
