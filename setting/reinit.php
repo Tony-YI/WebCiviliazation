@@ -33,17 +33,17 @@
 			if(!mysqli_query($db,$SQL_DROP_slotlist))
 			{
 				$sql_error = mysqli_error($db);
-				echo "<p>Drop Slotlist Error: $sql_error</p>";
+				echo "<p>$SQL_DROP_slotlist Error: $sql_error</p>";
 			}
 			if(!mysqli_query($db,$SQL_DROP_armylist))
 			{
 				$sql_error = mysqli_error($db);
-				echo "<p>Drop armylist Error: $sql_error</p>";
+				echo "<p>$SQL_DROP_armylist Error: $sql_error</p>";
 			}
 			if(!mysqli_query($db,$SQL_DROP_playerlist))
 			{
 				$sql_error = mysqli_error($db);
-				echo "<p>Drop playerlist Error: $sql_error</p>";
+				echo "<p>$SQL_DROP_playerlist Error: $sql_error</p>";
 			}
 		}
 	}
