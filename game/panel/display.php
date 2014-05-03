@@ -20,7 +20,7 @@
 
 <body>
 <div class="display">
-    <div class="box">
+    <div class="box" name="hehe">
     </div>
 </div>
 </body>

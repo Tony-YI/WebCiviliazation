@@ -22,11 +22,6 @@
         <div class="hexagon"></div>
         <div class="hexagon_last"></div>
 */
-function init(e)
-{
-	addBoxes();
-}
-
 function addBoxes()
 {
 	var new_line = document.createElement('div');
@@ -44,7 +39,8 @@ function addBoxes()
 	var hexagon_last = document.createElement('div');
 	hexagon_last.setAttribute('class', 'hexagon_last');
 
-	var box = document.getElementsByClassName('box');
+	var box = document.getElementsByName('hehe');
+
 	box.appendChild(new_line);
 	box.appendChild(hexagon_begin_odd);
 	box.appendChild(hexagon);
@@ -54,6 +50,11 @@ function addBoxes()
 	box.appendChild(hexagon_begin_even);
 	box.appendChild(hexagon);
 	box.appendChild(hexagon_last);
+}
+
+function init(e)
+{
+	addBoxes();
 }
 
 window.addEventListener('load', init, false);
