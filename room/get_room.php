@@ -88,9 +88,11 @@
 		}
 		else if(mysqli_num_rows($result) == 1)
 		{
-			$room_num = mysqli_fetch_row($result)[0];
+			$temp = mysqli_fetch_row($result);
+			$room_num = $temp[0];
 			$response['userDiv'] = "Current Player : $user_name<br/> Now you are in Room $room_num"; 
-			if(mysqli_fetch_row($result)[1] == 1)
+			$response['temp'] = $temp;
+			if($temp[1] == 1)
 			{
 				$response['started'] = 'yes';
 			}
