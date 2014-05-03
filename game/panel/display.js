@@ -132,6 +132,7 @@ function display_army_type(e)
 				hexagon[i].innerHTML = 'type_A';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
@@ -139,6 +140,7 @@ function display_army_type(e)
 				hexagon[i].innerHTML = 'type_B';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
@@ -146,6 +148,7 @@ function display_army_type(e)
 				hexagon[i].innerHTML = 'type_C';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
 			{
@@ -153,6 +156,7 @@ function display_army_type(e)
 				hexagon[i].innerHTML = 'Cancel';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 		}
 	}
@@ -263,6 +267,7 @@ function remove_manual()
 			manual[0].style.opacity = '0.0';
 		}
 		manual[0].setAttribute('function', 'none');
+		manual[0].innerHTML = '';
 		manual[0].setAttribute('class', 'hexagon');
 	}
 }
