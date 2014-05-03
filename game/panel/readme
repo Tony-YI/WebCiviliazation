@@ -1,6 +1,3 @@
-#display.html
-This is the interface of the panel
-
 #display.css
 It defines the style ofo the interface
 
@@ -9,3 +6,23 @@ It handels the AJAX or XHR
 
 #display.js
 It handels the AJAX or XHR
+
+#each hexagon has attributes like:
+
+heaxgon(class: heaxgon/manual, function: none/attack/move/defence, usage: yes/no, id: heaxgon_begin_odd/heaxgon_begin_even/heaxgon_last/heaxgon_normal, style:"opacity: 0/1");
+
+class->hexgon: this is a solt not for manual
+class->manual: this is a manual slot
+
+function->none: this means this slot is not for manual
+function->attack/move/defence: this means this slot is for manual
+
+usage->yes: user can move to this slot
+usage->no: user can not move to this slot
+
+id: different kinds of heaxgon
+
+style->opacity->0: user can move to this slot
+style->opacity->1: user can not move to this slot
+
+TODO: add 'user' and somthing like that in the solt's attribute
