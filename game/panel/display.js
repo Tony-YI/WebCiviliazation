@@ -39,11 +39,6 @@ function mousedown(e)
 		case 3:
 			console.log('right mousedown');
 			e.target.addEventListener('mouseup', mouseup, false);
-			var manual = document.getElementById('manual');
-			if(manual)
-			{
-				document.getElementById('box').removeChild(manual);
-			}
 			break;
 		default:
 			console.log('no such mousedown id');
@@ -102,11 +97,12 @@ function display_manual(e)
 	var pos_y = e.target.getAttribute('y');
 
 	var hexagon = document.getElementsByClassName('hexagon');
+	alert(hexagon.length);
 	for(var i = 0; i < hexagon.length; i++)
 	{
 		if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_x - 1)
 		{
-			hexagon[i].style.color = 'red';
+			hexagon[i].style.backgroundColor = 'red';
 		}
 	}
 
