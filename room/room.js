@@ -52,8 +52,8 @@ function room_get_list()
 
 function isUpade(browser_games, server_games)
 {
-	console.log(browser_games.length);
-	console.log(server_games.length);
+	//console.log(browser_games.length);
+	//console.log(server_games.length);
 	if(browser_games.length != server_games.length)
 	{
 		return true;
