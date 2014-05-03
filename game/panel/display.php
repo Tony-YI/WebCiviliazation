@@ -21,28 +21,6 @@
 <body>
 <div class="display">
     <div class="box">
-        <div class="new-line"><br/></div>
-        <div class="hexagon-begin-odd"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon-last"></div>
-
-        <div class="new-line"><br/></div>   
-        <div class="hexagon-begin-even"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon-last"></div>
     </div>
 </div>
 </body>

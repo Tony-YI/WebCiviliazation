@@ -2,15 +2,15 @@ body
 {
     width: 100%;
     height: 100%;
-    min-width: 1000px;
-    min-height: 700px;
+    min-width: 1100px;
+    min-height: 900px;
     text-align: center;
 }
 
 .display
 {
-    width: 900px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     overflow: scroll;
 }
 
@@ -62,7 +62,7 @@ body
     background: white;
 }
 
-.hexagon-begin-odd
+.hexagon_begin_odd
 {
     width: 100px;
     height: 55px;
@@ -71,7 +71,7 @@ body
     float: left;
     margin: 5px 5px 5px 5px;
 }
-.hexagon-begin-odd:before
+.hexagon_begin_odd:before
 {
     content: "";
     position: absolute;
@@ -83,7 +83,7 @@ body
     border-right: 50px solid transparent;
     border-bottom: 25px solid black;
 }
-.hexagon-begin-odd:after
+.hexagon_begin_odd:after
 {
     content: "";
     position: absolute;
@@ -96,7 +96,7 @@ body
     border-top: 25px solid black;
 }
 
-.hexagon-begin-even
+.hexagon_begin_even
 {
     width: 100px;
     height: 55px;
@@ -108,7 +108,7 @@ body
     margin-left: 60px;
     margin-right: 5px;
 }
-.hexagon-begin-even:before
+.hexagon_begin_even:before
 {
     content: "";
     position: absolute;
@@ -120,7 +120,7 @@ body
     border-right: 50px solid transparent;
     border-bottom: 25px solid black;
 }
-.hexagon-begin-even:after
+.hexagon_begin_even:after
 {
     content: "";
     position: absolute;
@@ -133,7 +133,7 @@ body
     border-top: 25px solid black;
 }
 
-.hexagon-last
+.hexagon_last
 {
     width: 100px;
     height: 55px;
@@ -142,7 +142,7 @@ body
     float: left;
     margin: 5px 5px 5px 5px;
 }
-.hexagon-last:before
+.hexagon_last:before
 {
     content: "";
     position: absolute;
@@ -154,7 +154,7 @@ body
     border-right: 50px solid transparent;
     border-bottom: 25px solid black;
 }
-.hexagon-last:after
+.hexagon_last:after
 {
     content: "";
     position: absolute;
@@ -167,7 +167,7 @@ body
     border-top: 25px solid black;
 }
 
-.new-line
+.new_line
 {
     float: right;
     position: relative;
