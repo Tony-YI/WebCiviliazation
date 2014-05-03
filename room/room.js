@@ -50,7 +50,7 @@ function room_get_list()
 			}
 			if(obj.started == 'yes')
 			{
-				alert('Your game has started!');
+				console.log('Your game has started!');
 			}
 		}
 	};
