@@ -39,15 +39,9 @@ function addBoxes()
 	var hexagon_last = document.createElement('div');
 	hexagon_last.setAttribute('class', 'hexagon_last');
 
-	var box = document.getElementsByClassName('box');
-	try
-	{
-		box.appendChild(new_line);
-	}
-	catch(e)
-	{
-		alert(e);
-	}
+	var box = document.getElementsByName('box');
+
+	box.appendChild(new_line);
 	box.appendChild(hexagon_begin_odd);
 	box.appendChild(hexagon);
 	box.appendChild(hexagon_last);

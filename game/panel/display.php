@@ -19,8 +19,8 @@
 </head>
 
 <body>
-<div class="display">
-    <div class="box">
+<div class="display" name="display">
+    <div class="box" name="box">
     </div>
 </div>
 </body>
