@@ -76,11 +76,11 @@ function addBoxes()
 
 		if(i % 2 == 0) //odd
 		{
-			box.appendChild(hexagon_begin_odd[i]);
+			box.appendChild(hexagon_begin_odd[parseInt(i / 2)]);
 		}
 		else
 		{
-			box.appendChild(hexagon_begin_even[i]);
+			box.appendChild(hexagon_begin_even[parseInt(i / 2)]);
 		}
 
 		for(var j = 0; j < new_line_num - 2; j++)
