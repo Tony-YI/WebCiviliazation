@@ -153,6 +153,7 @@ function remove_manual()
 	{
 		manual[0].setAttribute('function', 'none');
 		manual[0].setAttribute('class', 'hexagon');
+		manual = document.getElementsByClassName('manual');
 	}
 }
 
