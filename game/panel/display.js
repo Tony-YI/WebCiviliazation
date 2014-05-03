@@ -149,14 +149,10 @@ function display_manual(e)
 function remove_manual()
 {
 	var manual = document.getElementsByClassName('manual');
-	while(manual)
+	for(var i = 0; i < manual.length; i++)
 	{
-		if(manual[0])
-		{
-			manual[0].setAttribute('function', 'none');
-			manual[0].setAttribute('class', 'hexagon');
-			manual = document.getElementsByClassName('manual');
-		}
+		manual[0].setAttribute('function', 'none');
+		manual[0].setAttribute('class', 'hexagon');
 	}
 }
 
