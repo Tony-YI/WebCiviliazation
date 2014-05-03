@@ -36,7 +36,8 @@
                 $SQL_INSPECT_USERS = "SELECT username FROM User ORDER BY user_id ASC";
                 $result2 = mysqli_query($db,$SQL_INSPECT_USERS);
                 $usernames = mysqli_fetch_all($result2);
-                $user_name = $usernames[int($user_id)][0];
+                $user_id = (int)$user_id;
+                $user_name = $usernames[$user_id][0];
 
                 while($row = mysqli_fetch_row($result))
                 {
