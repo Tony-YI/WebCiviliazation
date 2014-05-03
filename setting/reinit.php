@@ -46,7 +46,7 @@
 	CREATE TABLE Armytype
 	(
 		type_id INT PRIMARY KEY,
-		name CHAR(32)
+		name CHAR(32),
 		MAX_HP INT,
 		MAX_AP INT,
 		ATTACK INT
