@@ -91,6 +91,7 @@ function isUpade(browser_games, server_games)
 				}
 				console.log(browser.getAttribute('p3') == "");
 				console.log(server.P3 == null);
+				console.log(null | "");
 				if(browser.getAttribute('p3') != server.P3)
 				{
 					return true;
