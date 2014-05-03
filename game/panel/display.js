@@ -212,9 +212,6 @@ function mouseup_3(e)
 
 function display_army_type(e) //TODO: check whether this slot has shuch army type
 {
-	e.target.removeEventListener('mousedown', mousedown_1, false);
-	e.target.removeEventListener('mouseup', mouseup_1, false);
-
 	var pos_x = e.target.getAttribute('x');
 	var pos_y = e.target.getAttribute('y');
 
@@ -320,9 +317,6 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 
 function select_army_type(e)
 {
-	e.target.removeEventListener('mousedown', mousedown_2, false);
-	e.target.removeEventListener('mouseup', mouseup_2, false);
-
 	var x = e.target.getAttribute('x');
 	var y = e.target.getAttribute('y');
 
@@ -359,7 +353,7 @@ function select_army_type(e)
 			x = parseInt(x) + 1;
 		}
 		y = parseInt(y) - 1;
-		
+
 		display_manual(x, y);
 	}
 	else if(target_function == 'cancel')
@@ -376,9 +370,6 @@ function select_army_type(e)
 
 function display_manual(x, y)
 {
-	e.target.removeEventListener('mousedown', mousedown_2, false);
-	e.target.removeEventListener('mouseup', mouseup_2, false);
-
 	//var pos_x = e.target.getAttribute('x');
 	//var pos_y = e.target.getAttribute('y');
 
@@ -494,9 +485,6 @@ function display_manual(x, y)
 
 function select_manual(e)
 {
-	e.target.removeEventListener('mousedown', mousedown_3, false);
-	e.target.removeEventListener('mouseup', mouseup_3, false);
-
 	var target_function = e.target.getAttribute('function');
 
 	if(target_function == 'attack')
@@ -538,6 +526,12 @@ function remove_manual()
 		}
 		manual[0].setAttribute('function', 'none');
 		manual[0].innerHTML = '';
+		manual[0].removeEventListener('mousedown', mousedown_1, false);
+		manual[0].removeEventListener('mousedown', mousedown_2, false);
+		manual[0].removeEventListener('mousedown', mousedown_3, false);
+		manual[0].removeEventListener('mouseup', mousedown_1, false);
+		manual[0].removeEventListener('mouseup', mousedown_2, false);
+		manual[0].removeEventListener('mouseup', mousedown_3, false);
 		manual[0].addEventListener('mousedown', mousedown_1, false);
 		manual[0].setAttribute('class', 'hexagon');
 	}
