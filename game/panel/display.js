@@ -323,14 +323,26 @@ function select_army_type(e)
 	e.target.removeEventListener('mousedown', mousedown_2, false);
 	e.target.removeEventListener('mouseup', mouseup_2, false);
 
+	var x = '';
+	var y = '';
+
+	if(parseInt(e.target.getAttribute('y')) % 2 == 0) //odd
+	{
+		x = parseInt(e.target.getAttribute('x')) + 1;
+	}
+	else
+	{
+		x = parseInt(e.target.getAttribute('x'));
+	}
+	y = e.target.getAttribute('y');
+
 	var target_function = e.target.getAttribute('function');
 
 	if(target_function == 'type_A')
 	{
 		//alert('A');
 		remove_manual();
-		var x = 2;
-		var y = 2;
+		y = parseInt(y) + 1;
 		display_manual(x, y);
 	}
 	else if(target_function == 'type_B')
@@ -343,6 +355,7 @@ function select_army_type(e)
 	{
 		//alert('C');
 		remove_manual();
+		y = parseInt(y) - 1;
 		display_manual(x, y);
 	}
 	else if(target_function == 'cancel')
