@@ -39,6 +39,11 @@ function mousedown(e)
 		case 3:
 			console.log('right mousedown');
 			e.target.addEventListener('mouseup', mouseup, false);
+			var manual = document.getElementById('manual');
+			if(manual)
+			{
+				document.getElementById('box').removeChild(manual);
+			}
 			break;
 		default:
 			console.log('no such mousedown id');
