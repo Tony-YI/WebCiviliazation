@@ -29,6 +29,19 @@ body
     height: 100%;
 }
 
+.manual
+{
+    background: red; 
+}
+.manual:before
+{
+    background: red;
+}
+.manual:after
+{
+    background: red;
+}
+
 #hexagon_normal
 {
     width: 100px;
