@@ -42,7 +42,7 @@
 		$SQL_INSPECT_USERS = "SELECT username FROM User ORDER BY user_id ASC";
 		$result2 = mysqli_query($db,$SQL_INSPECT_USERS);
 		$usernames = mysqli_fetch_all($result2);
-		$text = "";
+		$roomDiv = "";
 		while($row = mysqli_fetch_row($result))
 		{
 			$num = $row[0];
@@ -64,19 +64,37 @@
 				$p3Name = $usernames[$p3][0];
 			}
 			
-			$text = $text . "<div class='roomBtn' id=$num onclick=room_onclick()><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div><div class='gameInfo' id='room$numInfo' P1='$p1' P2='$p2' P3='$p3'><br/>Player1 : $p1Name<br/>Player2 : $p2Name<br/>Player3 : $p3Name<br/></div></div>";
+			$roomDiv = $roomDiv . "<div class='roomBtn' id=$num onclick=room_onclick()><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div><div class='gameInfo' id='room$numInfo' P1='$p1' P2='$p2' P3='$p3'><br/>Player1 : $p1Name<br/>Player2 : $p2Name<br/>Player3 : $p3Name<br/></div></div>";
 			if($num % 3 == 0)
 			{
-				$text = $text  . "<br><br>";
+				$roomDiv = $roomDiv  . "<br><br>";
 			}
 			else
 			{
-				$text = $text  . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+				$roomDiv = $roomDiv  . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 			}
 			
-			//echo $text;
+			//echo $roomDiv;
 		}
-		$response['roomDiv'] = $text;
+		$response['roomDiv'] = $roomDiv;
+
+		$user_name = $_COOKIE['CURRENT_USERNAME'];
+		$user_id = $_SERVER['HTTP_USERID'];
+		$SQL_CHECK_ROOM = "SELECT Game_id FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
+		$result = mysqli_query($db, $SQL_CHECK_ROOM);
+		if(mysqli_num_rows($result) == 0)
+		{
+			$response['userDiv'] = "Current Player : $user_name<br/> Now you are not in any room"; 
+		}
+		else if(mysqli_num_rows($result) == 1)
+		{
+			$room_num = mysqli_fetch_row($result)[0];
+			$response['userDiv'] = "Current Player : $user_name<br/> Now you are in Room $room_num"; 
+		}
+		else
+		{
+			$response['status'] = 'failed';
+		}
 	}
 	else
 	{

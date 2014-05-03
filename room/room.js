@@ -15,7 +15,8 @@ function room_get_list()
 	//Then get the existing room data from the server and dynamically render the page
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","room/get_room.php",true);
-	xhr.send();
+	xhr.setRequestHeader("USERID",current_usr_id);
+;	xhr.send();
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4)
 		{
@@ -29,6 +30,7 @@ function room_get_list()
 			var obj = JSON.parse(room_info);
 			var status = obj.status;
 			var roomDiv = obj.roomDiv;
+			var userDiv = obj.userDiv;
 			//console.log(obj);
 			if(status == "failed")
 			{
@@ -42,6 +44,7 @@ function room_get_list()
 			if(isUpade(browser_games,server_games))
 			{
 				document.getElementById("roomNum").innerHTML = roomDiv;
+				document.getElementById("userDiv").innerHTML = userDiv;
 				console.log("Updating the roomNum div");
 				return false;
 			}
@@ -191,20 +194,6 @@ function logout()
 	}
 }
 
-
-//This function will periodically send request to the server
-//to know whether the game has stared, if so, the user will be 
-//redirect to the gaming page, this function is only valid when the 
-//user is in one room.
-function query_game_started()
-{
-	if(!in_room)
-		return ;
-	else
-	{
-		//ask server whether the game has started
-	}
-}
 function start_game()
 {
 	
