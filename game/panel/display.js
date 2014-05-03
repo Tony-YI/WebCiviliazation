@@ -137,8 +137,10 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
-	window.addEventListener("scroll", no_scroll, true);
-	window.addEventListener("contextmenu", no_right_click, true);
+	window.addEventListener("scroll", no_scroll, false);
+	document.addEventListener("scroll", no_scroll, false);
+	document.body.addEventListener("scroll", no_scroll, false);
+	window.addEventListener("contextmenu", no_right_click, false);
 }
 
 window.addEventListener('load', init, false);
