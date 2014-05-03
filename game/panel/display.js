@@ -74,10 +74,6 @@ function mousedown_2(e)
 	{
 		case 1:
 			console.log('left mousedown 2');
-			if(e.target.getAttribute('usage') == 'no') //not for use
-			{
-				return false;
-			}
 			e.target.addEventListener('mouseup', mouseup_2, false);
 			break;
 		case 2:
@@ -228,6 +224,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].innerHTML = 'type_A';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -238,6 +235,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].innerHTML = 'type_B';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -248,6 +246,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].innerHTML = 'type_C';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -258,6 +257,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].innerHTML = 'Cancel';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -274,6 +274,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].innerHTML = 'type_A';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -284,6 +285,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].innerHTML = 'type_B';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -294,6 +296,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].innerHTML = 'type_C';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -304,6 +307,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].innerHTML = 'Cancel';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -389,7 +393,7 @@ function display_manual(x, y)
 				hexagon[i].innerHTML = 'Attack';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -400,7 +404,7 @@ function display_manual(x, y)
 				hexagon[i].innerHTML = 'Move';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -411,7 +415,7 @@ function display_manual(x, y)
 				hexagon[i].innerHTML = 'Defence';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -422,7 +426,7 @@ function display_manual(x, y)
 				hexagon[i].innerHTML = 'Back';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -439,7 +443,7 @@ function display_manual(x, y)
 				hexagon[i].innerHTML = 'Attack';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -450,7 +454,7 @@ function display_manual(x, y)
 				hexagon[i].innerHTML = 'Move';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -461,7 +465,7 @@ function display_manual(x, y)
 				hexagon[i].innerHTML = 'Defence';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -472,7 +476,7 @@ function display_manual(x, y)
 				hexagon[i].innerHTML = 'Back';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
+				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
