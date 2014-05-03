@@ -73,7 +73,7 @@ function isUpade(browser_games, server_games)
 			else
 			{
 				console.log(browser_games[i]);
-				var browser = browser_games[i].childNodes;
+				var browser = browser_games[i].childNodes[2];
 				var server = server_game;
 				console.log(browser);
 				console.log(server);
@@ -89,8 +89,8 @@ function isUpade(browser_games, server_games)
 				{
 					return true;
 				}
-				console.log(browser.getAttribute('p3'));
-				console.log(server.P3);
+				console.log(browser.getAttribute('p3') == null);
+				console.log(server.P3 == null);
 				if(browser.getAttribute('p3') != server.P3)
 				{
 					return true;
