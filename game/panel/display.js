@@ -39,6 +39,7 @@ function mousedown(e)
 		case 3:
 			console.log('right mousedown');
 			e.target.addEventListener('mouseup', mouseup, false);
+			remove_manual();
 			break;
 		default:
 			console.log('no such mousedown id');
@@ -99,13 +100,22 @@ function display_manual(e)
 	var hexagon = document.getElementsByClassName('hexagon');
 	for(var i = 0; i < hexagon.length; i++)
 	{
-		if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_x) - 1)
+		if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 		{
-			hexagon[i].style.backgroundColor = 'red';
+			hexagon[i].setAttribute('class', 'manual');
 		}
 	}
 
 	console.log(pos_x, pos_y);
+}
+
+function remove_manual()
+{
+	var manual = document.getElementsByClassName('manual');
+	for(var i = 0; i < manual.length; i++)
+	{
+		hexagon[i].setAttribute('class', 'hexagon');
+	}
 }
 
 function no_contextmenu(e)
