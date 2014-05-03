@@ -32,17 +32,14 @@ body
 .manual
 {
     background: red;
-    opacity: 1;
 }
 .manual:before
 {
     border-bottom: 25px solid red;
-    opacity: 1;
 }
 .manual:after
 {
     border-top: 25px solid red;
-    opacity: 1;
 }
 
 .hexagon
