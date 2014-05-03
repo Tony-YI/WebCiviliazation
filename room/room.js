@@ -139,12 +139,16 @@ function room_create()
 	xhr.send();
 	console.log(xhr.responseText);
 	response = JSON.parse(xhr.responseText);
-	if(response.status = "success")
+	if(response.status == "success")
 	{
 		alert("You've created a room");
 		in_room = 1;
 		$("#newRoom").hide();
 		render_room_information(response)
+	}
+	else
+	{
+		alert(response.error);
 	}
 }
 
