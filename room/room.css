@@ -57,7 +57,8 @@
 {
   position: fixed;
   background: rgba(200,200,200,.5);
-  width: 17%;
+  margin-left: -2%;
+  width: 18%;
 }
 body
 {
