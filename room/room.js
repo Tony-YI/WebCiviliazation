@@ -137,9 +137,20 @@ function room_onclick(e)
 				console.log(response);
 				var obj = JSON.parse(response);
 				var status = obj.status;
+				if(status == 'success')
+				{
+					if(obj.start == 'yes')
+					{
+						alert("Your game is on!");
+					}
+				}
+				else
+				{
+					alert(obj.error);
+				}
 			}
 		};
-	return false;
+		return false;
 	}
 	else
 	{

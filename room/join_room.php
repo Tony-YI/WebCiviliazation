@@ -54,16 +54,19 @@
 			if($seat[0] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P1 = '$user_id' WHERE Game_id = '$room_id'";
+				$response['started'] = 'no';
 			}
 			else if($seat[1] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P2 = '$user_id' WHERE Game_id = '$room_id'";
+				$response['started'] = 'no';
 			}
 			else if($seat[2] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P3 = '$user_id' WHERE Game_id = '$room_id'";
 				//If the current user is the last one to join, the game, the game shall start
 				$start_game = 1;
+				$response['started'] = 'yes';
 			}
 			mysqli_query($db, $SQL_JOIN_ROOM);
 			if($start_game)
