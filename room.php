@@ -28,7 +28,7 @@
                     exit;
                 }
 
-                $user_id = $_SERVER["HTTP_USERID"];
+    
                 $game_id = 1;
                 $prev_game_id = 1;
                 $SQL_INSPECT_GAMES = "SELECT * FROM Game ORDER BY game_id ASC";
@@ -37,7 +37,7 @@
                 $result2 = mysqli_query($db,$SQL_INSPECT_USERS);
                 $usernames = mysqli_fetch_all($result2);
                 $user_id = (int)$user_id;
-                $user_name = $usernames[$user_id][0];
+                $user_name = $_COOKIE['CURRENT_USERNAME'];
 
                 while($row = mysqli_fetch_row($result))
                 {
@@ -62,9 +62,7 @@
                   
                    
                     //echo "<button type='submit' class='roomBtn' id=$num>Room $num ! Click to enter room</button>";
-                    echo "<div class='roomBtn' id=$num onclick=room_onclick()><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div>
-                    <div class='gameInfo' id='room$numInfo' P1='$p1' P2='$p2' P3='$p3'><br>Player1 : $p1Name<br>Player2 : $p2Name<br>Player3 : $p3Name<br></div>
-                    </div>";
+                    echo "<div class='roomBtn' id=$num onclick=room_onclick()><div class='numDiv' id='room$num'>Room $num ! Click  and Enter this room ! !</div><div class='gameInfo' id='room$numInfo' P1='$p1' P2='$p2' P3='$p3'><br>Player1 : $p1Name<br>Player2 : $p2Name<br>Player3 : $p3Name<br></div></div>";
                     if($num % 3 == 0)
                     {
                         echo "<br><br>";
@@ -88,7 +86,7 @@
                         <button type='button'id='newRoom' onclick='room_create()''>Create New Room</button>
                         <br/>
                         <br/>
-                        <div id='userInfo'>Current Player: '$user_name'<br/> Now you are in Room </div>
+                        <div id='userInfo'>Current Player : $user_name<br/> Now you are in Room </div>
                     </div>"
              ?>
         <!--<div id="Info" align="right">

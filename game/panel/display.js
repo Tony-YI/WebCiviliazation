@@ -94,6 +94,11 @@ function mouseup(e)
 
 function display_manual(e)
 {
+	if(e.target.getAttribute('usage') == 'no')
+	{
+		return false;
+	}
+	
 	var pos_x = e.target.getAttribute('x');
 	var pos_y = e.target.getAttribute('y');
 
@@ -107,16 +112,19 @@ function display_manual(e)
 			{
 				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 				hexagon[i].setAttribute('function', 'attack');
+				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
 				hexagon[i].setAttribute('function', 'move');
+				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
 				hexagon[i].setAttribute('function', 'defence');
+				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
 		}
@@ -128,16 +136,19 @@ function display_manual(e)
 			if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
 				hexagon[i].setAttribute('function', 'attack');
+				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
 				hexagon[i].setAttribute('function', 'move');
+				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
 				hexagon[i].setAttribute('function', 'defence');
+				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
 		}
@@ -149,8 +160,12 @@ function display_manual(e)
 function remove_manual()
 {
 	var manual = document.getElementsByClassName('manual');
-	while(manual)
+	while(manual[0])
 	{
+		if(manual[0].getAttribute('usage') == 'no')
+		{
+			manual[0].style.opacity = '0.0';
+		}
 		manual[0].setAttribute('function', 'none');
 		manual[0].setAttribute('class', 'hexagon');
 	}
@@ -165,8 +180,8 @@ function no_contextmenu(e)
 function addBoxes()
 {
 	//20 x 20 map//
-	var hexagon_num = 400;
-	var new_line_num = 20;
+	var hexagon_num = 484;
+	var new_line_num = 22; //the top/left/bottom/right are useless
 
 	var new_line = Array();
 	for(var i = 0; i < new_line_num; i++)
@@ -183,6 +198,7 @@ function addBoxes()
 		hexagon[i] = document.createElement('div');
 		hexagon[i].setAttribute('class', 'hexagon');
 		hexagon[i].setAttribute('function', 'none');
+		hexagon[i].setAttribute('usage', 'yes');
 		var x = i % new_line_num;
 		var y = parseInt(i / new_line_num);
 		hexagon[i].setAttribute('x', x);
@@ -193,19 +209,30 @@ function addBoxes()
 			if(y % 2 == 0) //odd begin hexagon
 			{
 				hexagon[i].setAttribute('id', 'hexagon_begin_odd');
+				hexagon[i].setAttribute('usage', 'no');
+				hexagon[i].style.opacity = '0.0';
 			}
 			else //even begin hexagon
 			{
 				hexagon[i].setAttribute('id', 'hexagon_begin_even');
+				hexagon[i].setAttribute('usage', 'no');
+				hexagon[i].style.opacity = '0.0';
 			}
 		}
 		else if (x == new_line_num - 1) //end hexagon of one row
 		{
 			hexagon[i].setAttribute('id', 'hexagon_last');
+			hexagon[i].setAttribute('usage', 'no');
+			hexagon[i].style.opacity = '0.0';
 		}
 		else //normal hexagon
 		{
 			hexagon[i].setAttribute('id', 'hexagon_normal');
+			if(i < new_line_num || i > hexagon_num - new_line_num)
+			{
+				hexagon[i].setAttribute('usage', 'no');
+				hexagon[i].style.opacity = '0.0';
+			}
 		}
 
 		hexagon[i].addEventListener('mousedown', mousedown, false);
