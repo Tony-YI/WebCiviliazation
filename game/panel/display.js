@@ -119,6 +119,7 @@ function addBoxes()
 	{
 		hexagon_begin_odd[i] = document.createElement('div');
 		hexagon_begin_odd[i].setAttribute('id', 'hexagon_begin_odd');
+		hexagon_begin_odd[i].setAttribute('node', i);
 		hexagon_begin_odd[i].addEventListener('mousedown', mousedown, false)
 	}
 
