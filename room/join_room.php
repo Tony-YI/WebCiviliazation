@@ -136,7 +136,6 @@ SQL_STATEMENT;
 			slot_type INT,
 			slot_army INT,
 			N INT, NW INT, NE INT, W INT, E INT, SW INT, SE INT, S INT,
-			PRIMARY KEY(slot_id),
 			FOREIGN KEY(slot_owner) REFERENCES game_{$game_id}_playerlist(player_id),
 			FOREIGN KEY(slot_type) REFERENCES Slot_type(type_id),
 			FOREIGN KEY(slot_army) REFERENCES game_{$game_id}_armylist(army_id),
