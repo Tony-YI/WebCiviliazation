@@ -148,7 +148,10 @@
 
 		for($count = 0;$count < 3;$count++)
 		{
-			$SQL_INSERT_playerlist = "INSERT INTO game_{$game_id}_playerlist VALUES ($p[0],'$p_name[0]',0,0)";
+			$SQL_INSERT_playerlist = "INSERT INTO game_{$game_id}_playerlist ";
+			$SQL_INSERT_playerlist .= "VALUES (".$p[$count].",";
+			$SQL_INSERT_playerlist .= "'".$p_name[$count]."',";
+			$SQL_INSERT_playerlist .= "0,0)";
 			if(!mysqli_query($con,$SQL_INSERT_playerlist))
 				$response["SQL_INSERT_playerlist_$count"] = mysqli_error($con);
 		}
