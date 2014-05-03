@@ -151,9 +151,12 @@ function remove_manual()
 	var manual = document.getElementsByClassName('manual');
 	while(manual)
 	{
-		manual[0].setAttribute('function', 'none');
-		manual[0].setAttribute('class', 'hexagon');
-		manual = document.getElementsByClassName('manual');
+		if(manual[0])
+		{
+			manual[0].setAttribute('function', 'none');
+			manual[0].setAttribute('class', 'hexagon');
+			manual = document.getElementsByClassName('manual');
+		}
 	}
 }
 
