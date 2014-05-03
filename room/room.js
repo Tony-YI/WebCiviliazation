@@ -37,7 +37,7 @@ function room_get_list()
 			}
 			var browser_games = document.getElementsByClassName("roomBtn");
 			var server_games = obj.game;
-			console.log(JSON.parse(server_games));
+			//console.log(JSON.parse(server_games));
 			//console.log(isUpade(browser_games,server_games));
 			if(isUpade(browser_games,server_games))
 			{
