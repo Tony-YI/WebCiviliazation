@@ -88,7 +88,7 @@
                         <button type='button'id='newRoom' onclick='room_create()''>Create New Room</button>
                         <br/>
                         <br/>
-                        <div id='userInfo'>Current Player: '$user_name'<br/> Now you are in Room </div>
+                        <div id='userInfo'>Current Player : $user_name<br/> Now you are in Room </div>
                     </div>"
              ?>
         <!--<div id="Info" align="right">
