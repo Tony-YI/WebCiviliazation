@@ -28,9 +28,6 @@
 		$SQL_CHECK_FULL = "SELECT P1, P2, P3 FROM Game WHERE Game_id = '$room_id'";
 		$result = mysqli_query($db, $SQL_CHECK_FULL);
 		$seat = mysqli_fetch_row($result);
-		$response['seat0'] = $seat[0];
-		$response['seat1'] = $seat[1];
-		$response['seat2'] = $seat[2];
 		if($seat[0] && $seat[1] && $seat[2])
 		{
 			$response['status'] = 'room full';
@@ -53,14 +50,17 @@
 			if($seat[0] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P1 = '$user_id' WHERE Game_id = '$room_id'";
+				$response['seat0'] = $seat[0];
 			}
 			else if($seat[1] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P2 = '$user_id' WHERE Game_id = '$room_id'";
+				$response['seat1'] = $seat[1];
 			}
 			else if($seat[2] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P3 = '$user_id' WHERE Game_id = '$room_id'";
+				$response['seat2'] = $seat[2];
 			}
 			mysqli_query($db, $SQL_JOIN_ROOM);
 		}
