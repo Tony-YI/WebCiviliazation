@@ -93,8 +93,8 @@ function mouseup(e)
 
 function display_manual(target)
 {
-	var pos_x = target.x;
-	var pos_y = target.y;
+	var pos_x = target.getAttribute('x');
+	var pos_y = target.getAttribute('y');
 
 	console.log(pos_x, pos_y);
 }
