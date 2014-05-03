@@ -100,9 +100,41 @@ function display_manual(e)
 	var hexagon = document.getElementsByClassName('hexagon');
 	for(var i = 0; i < hexagon.length; i++)
 	{
-		if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+		if(pos_y % 2 == 0)//odd
 		{
-			hexagon[i].setAttribute('class', 'manual');
+			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y - 1)
+			{
+				hexagon[i].setAttribute('class', 'manual');
+				hexagon[i].setAttribute('function', 'attack');
+			}
+			if(hexagon[i].getAttribute('x') == pos_x + 1 && hexagon[i].getAttribute('y') == pos_y)
+			{
+				hexagon[i].setAttribute('class', 'manual');
+				hexagon[i].setAttribute('function', 'move');
+			}
+			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y + 1)
+			{
+				hexagon[i].setAttribute('class', 'manual');
+				hexagon[i].setAttribute('function', 'defence');
+			}
+		}
+		else //even
+		{
+			if(hexagon[i].getAttribute('x') == pos_x + 1 && hexagon[i].getAttribute('y') == pos_y - 1)
+			{
+				hexagon[i].setAttribute('class', 'manual');
+				hexagon[i].setAttribute('function', 'attack');
+			}
+			if(hexagon[i].getAttribute('x') == pos_x + 1 && hexagon[i].getAttribute('y') == pos_y)
+			{
+				hexagon[i].setAttribute('class', 'manual');
+				hexagon[i].setAttribute('function', 'move');
+			}
+			if(hexagon[i].getAttribute('x') == pos_x + 1 && hexagon[i].getAttribute('y') == pos_y + 1)
+			{
+				hexagon[i].setAttribute('class', 'manual');
+				hexagon[i].setAttribute('function', 'defence');
+			}
 		}
 	}
 
