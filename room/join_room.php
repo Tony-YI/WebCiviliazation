@@ -99,6 +99,12 @@
 	*/
 	function start_game_on_server($game_id,$con,&$response)
 	{
+		create_new_game_table($game_id,$con,$response);
+		initilze_new_game_database($game_id,$con,$response);
+	}
+
+	function create_new_game_table($game_id,$con,&$response)
+	{
 		//Make the game start in TABLE Game
 		$SQL_START_GAME = "UPDATE Game SET game_started = 1 WHERE `game_id` = $game_id ";
 		if(!mysqli_query($con,$SQL_START_GAME))
@@ -136,7 +142,6 @@ SQL_STATEMENT;
 			slot_type INT,
 			slot_army INT,
 			N INT, NW INT, NE INT, W INT, E INT, SW INT, SE INT, S INT,
-			PRIMARY KEY(slot_id),
 			FOREIGN KEY(slot_owner) REFERENCES game_{$game_id}_playerlist(player_id),
 			FOREIGN KEY(slot_type) REFERENCES Slot_type(type_id),
 			FOREIGN KEY(slot_army) REFERENCES game_{$game_id}_armylist(army_id),
@@ -150,7 +155,6 @@ SQL_STATEMENT;
 			FOREIGN KEY(S) REFERENCES game_{$game_id}_slotlist(slot_id)
 		)
 SQL_STATEMENT;
-
 		if(!mysqli_query($con,$SQL_CREATE_PLAYERLIST))
 		{
 			$response["sql_playerlist_error"] = mysqli_error($con);
@@ -163,6 +167,10 @@ SQL_STATEMENT;
 		{
 			$response["sql_slotlist_error"] = mysqli_error($con);
 		}
+	}
+
+	function initilze_new_game_database($game_id,$con,&$response)
+	{
 
 	}
 ?>
