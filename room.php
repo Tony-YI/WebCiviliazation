@@ -28,7 +28,7 @@
                     exit;
                 }
 
-                $user_id = $_SERVER["HTTP_USERID"];
+    
                 $game_id = 1;
                 $prev_game_id = 1;
                 $SQL_INSPECT_GAMES = "SELECT * FROM Game ORDER BY game_id ASC";
@@ -37,7 +37,7 @@
                 $result2 = mysqli_query($db,$SQL_INSPECT_USERS);
                 $usernames = mysqli_fetch_all($result2);
                 $user_id = (int)$user_id;
-                $user_name = $usernames[$user_id][0];
+                $user_name = $_COOKIE['CURRENT_USERNAME'];
 
                 while($row = mysqli_fetch_row($result))
                 {
