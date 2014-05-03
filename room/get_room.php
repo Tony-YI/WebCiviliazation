@@ -56,7 +56,7 @@
 	  
 			if($p2)
 			{
-				$p1Name = $usernames[$p2][0];
+				$p2Name = $usernames[$p2][0];
 			}
 	                  
 			if($p3)
