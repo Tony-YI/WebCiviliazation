@@ -7,14 +7,14 @@ body
     text-align: center;
 }
 
-.display
+#display
 {
     width: 100%;
     height: 100%;
     overflow: scroll;
 }
 
-.box
+#box
 {
     width: 900px;
     height:500px;
@@ -24,7 +24,7 @@ body
     border: 1px black solid;
 }
 
-.hexagon
+#hexagon
 {
     width: 100px;
     height: 55px;
@@ -33,7 +33,7 @@ body
     float: left;
     margin: 5px 5px 5px 5px;
 }
-.hexagon:before 
+#hexagon:before 
 {
     content: "";
     position: absolute;
@@ -45,7 +45,7 @@ body
     border-right: 50px solid transparent;
     border-bottom: 25px solid black;
 }
-.hexagon:after
+#hexagon:after
 {
     content: "";
     position: absolute;
@@ -57,12 +57,12 @@ body
     border-right: 50px solid transparent;
     border-top: 25px solid black;
 }
-.hexagon:hover
+#hexagon:hover
 {
     background: white;
 }
 
-.hexagon_begin_odd
+#hexagon_begin_odd
 {
     width: 100px;
     height: 55px;
@@ -71,7 +71,7 @@ body
     float: left;
     margin: 5px 5px 5px 5px;
 }
-.hexagon_begin_odd:before
+#hexagon_begin_odd:before
 {
     content: "";
     position: absolute;
@@ -83,7 +83,7 @@ body
     border-right: 50px solid transparent;
     border-bottom: 25px solid black;
 }
-.hexagon_begin_odd:after
+#hexagon_begin_odd:after
 {
     content: "";
     position: absolute;
@@ -96,7 +96,7 @@ body
     border-top: 25px solid black;
 }
 
-.hexagon_begin_even
+#hexagon_begin_even
 {
     width: 100px;
     height: 55px;
@@ -108,7 +108,7 @@ body
     margin-left: 60px;
     margin-right: 5px;
 }
-.hexagon_begin_even:before
+#hexagon_begin_even:before
 {
     content: "";
     position: absolute;
@@ -120,7 +120,7 @@ body
     border-right: 50px solid transparent;
     border-bottom: 25px solid black;
 }
-.hexagon_begin_even:after
+#hexagon_begin_even:after
 {
     content: "";
     position: absolute;
@@ -133,7 +133,7 @@ body
     border-top: 25px solid black;
 }
 
-.hexagon_last
+#hexagon_last
 {
     width: 100px;
     height: 55px;
@@ -142,7 +142,7 @@ body
     float: left;
     margin: 5px 5px 5px 5px;
 }
-.hexagon_last:before
+#hexagon_last:before
 {
     content: "";
     position: absolute;
@@ -154,7 +154,7 @@ body
     border-right: 50px solid transparent;
     border-bottom: 25px solid black;
 }
-.hexagon_last:after
+#hexagon_last:after
 {
     content: "";
     position: absolute;
@@ -167,7 +167,7 @@ body
     border-top: 25px solid black;
 }
 
-.new_line
+#new_line
 {
     float: right;
     position: relative;
