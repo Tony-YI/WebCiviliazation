@@ -70,6 +70,8 @@ SQL_STATEMENT;
 	db_create_table($db,$SQL_CREATE_User,"User");
 	db_create_table($db,$SQL_CREATE_Cookie,"Cookie");
 	db_create_table($db,$SQL_CREATE_Game,"Game");
+	db_create_table($db,$SQL_CREATE_ARMYTYPE,"Armytype");
+	db_create_table($db,$SQL_CREATE_SLOTTYPE,"Slottype");
 
 	$SQL_INSERT_ADMIN = "INSERT INTO User VALUES (0,'admin','admin')";
 	mysqli_query($db,$SQL_INSERT_ADMIN);
