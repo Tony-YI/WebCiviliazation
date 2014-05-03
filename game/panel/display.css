@@ -19,8 +19,8 @@ body
 {
     width: 2255px;
     height: 100%;
-    -webkit-transform: perspective(550px) rotateX(65deg);
-    transform: perspective(550px) rotateX(65deg);
+    -webkit-transform: perspective(550px) rotateX(45deg);
+    transform: perspective(550px) rotateX(45deg);
     overflow: scroll;
 }
 
