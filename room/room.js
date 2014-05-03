@@ -48,6 +48,10 @@ function room_get_list()
 				console.log("Updating the roomNum div");
 				return false;
 			}
+			if(obj.started == 'yes')
+			{
+				alert('Your game has started!');
+			}
 		}
 	};
 	return false;
@@ -139,7 +143,7 @@ function room_onclick(e)
 				var status = obj.status;
 				if(status == 'success')
 				{
-					if(obj.start == 'yes')
+					if(obj.started == 'yes')
 					{
 						alert("Your game is on!");
 					}

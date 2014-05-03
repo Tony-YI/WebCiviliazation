@@ -80,7 +80,7 @@
 
 		$user_name = $_COOKIE['CURRENT_USERNAME'];
 		$user_id = $_SERVER['HTTP_USERID'];
-		$SQL_CHECK_ROOM = "SELECT Game_id FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
+		$SQL_CHECK_ROOM = "SELECT Game_id, game_started  FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
 		$result = mysqli_query($db, $SQL_CHECK_ROOM);
 		if(mysqli_num_rows($result) == 0)
 		{
@@ -90,6 +90,14 @@
 		{
 			$room_num = mysqli_fetch_row($result)[0];
 			$response['userDiv'] = "Current Player : $user_name<br/> Now you are in Room $room_num"; 
+			if(mysqli_fetch_row($result)[1] == 1)
+			{
+				$response['started'] == 'yes';
+			}
+			else
+			{
+				$response['started'] == 'no';
+			}
 		}
 		else
 		{
