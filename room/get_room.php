@@ -84,7 +84,7 @@
 		$result = mysqli_query($db, $SQL_CHECK_ROOM);
 		if(mysqli_num_rows($result) == 0)
 		{
-			$response['userDiv'] = "Current Player : $user_name<br/> Now you are not in any room"; 
+			$response['userDiv'] = "Current Player : $user_name<br/> <p id='line1'>Now you are not in any room.</p><p id='line2'>You can create a new room or join an existed room.</p>"; 
 		}
 		else if(mysqli_num_rows($result) == 1)
 		{

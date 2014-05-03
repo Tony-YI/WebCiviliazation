@@ -79,7 +79,17 @@
                     $num = $i % 7;
                     echo "<button type='submit' class='roomBtn'>Room $i ! Click to enter room</button><br><br>";
                 }*/
-                echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/> Welcome!! Choose a room to start a new game!! Or, you can create a new room!! </div></div>"
+                $SQL_CHECK_ROOM = "SELECT Game_id FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
+                $result = mysqli_query($db, $SQL_CHECK_ROOM);
+                if(mysqli_num_rows($result) == 0)
+                {
+                    echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/><p id='line1'>Now you are not in any room.</p><p id='line2'>You can create a new room or join an existed room.</p></div></div>";
+                }
+                else if(mysqli_num_rows($result) == 1)
+                {
+                    $room_num = mysqli_fetch_row($result)[0];
+                    echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/>Now you are in Room $room_num</div></div>";
+                }
              ?>
     </div>
 
