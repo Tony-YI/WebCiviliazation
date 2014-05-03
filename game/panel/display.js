@@ -52,6 +52,22 @@ function mousemove(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
+
+	switch(e.which)
+	{
+		case 1:
+			console.log('left mousemove');
+			break;
+		case 2:
+			console.log('middle mousemove');
+			break;
+		case 3:
+			console.log('right mousemove');
+			break;
+		default:
+			console.log('no such mousemove id');
+			break;
+	}
 }
 
 function mouseup(e)
