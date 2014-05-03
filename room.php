@@ -79,7 +79,7 @@
                     $num = $i % 7;
                     echo "<button type='submit' class='roomBtn'>Room $i ! Click to enter room</button><br><br>";
                 }*/
-                echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/> Welcome!! Choose a room to start a new game!! Or, you can create a new room!! </div></div>"
+                echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/><p id='line1'>Welcome!! Choose a room to start a new game!!</p><p id='line2'>Or, you can create a new room!!</p></div></div>"
              ?>
     </div>
 
