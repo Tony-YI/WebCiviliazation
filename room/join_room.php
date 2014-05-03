@@ -68,7 +68,7 @@
 			mysqli_query($db, $SQL_JOIN_ROOM);
 			if($start_game)
 			{
-				start_game_on_server($room_id,$db,&$response);
+				start_game_on_server($room_id,$db,$response);
 			}
 		}
 	}
@@ -126,7 +126,7 @@ SQL_STATEMENT;
 			owner_id INT,
 			FOREIGN KEY(owner_id) REFERENCES game_{$game_id}_playerlist(player_id)
 		)
-SQL_STATEMENT
+SQL_STATEMENT;
 
 		$SQL_CREATE_SLOTLIST = <<<SQL_STATEMENT
 		CREATE TABLE game_{$game_id}_slotlist
@@ -149,7 +149,7 @@ SQL_STATEMENT
 			FOREIGN KEY(SE) REFERENCES game_{$game_id}_slotlist(slot_id),
 			FOREIGN KEY(S) REFERENCES game_{$game_id}_slotlist(slot_id)
 		)
-SQL_STATEMENT
+SQL_STATEMENT;
 
 		if(!mysqli_query($con,$SQL_CREATE_PLAYERLIST))
 		{
