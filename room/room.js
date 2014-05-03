@@ -28,7 +28,7 @@ function room_get_list()
 			//console.log(room_info);
 			var obj = JSON.parse(room_info);
 			var status = obj.status;
-			var html = obj.html;
+			var roomDiv = obj.roomDiv;
 			//console.log(obj);
 			if(status == "failed")
 			{
@@ -41,7 +41,7 @@ function room_get_list()
 			//console.log(isUpade(browser_games,server_games));
 			if(isUpade(browser_games,server_games))
 			{
-				document.getElementById("roomNum").innerHTML = html;
+				document.getElementById("roomNum").innerHTML = roomDiv;
 				console.log("Updating the roomNum div");
 				return false;
 			}
@@ -72,13 +72,13 @@ function isUpade(browser_games, server_games)
 			}
 			else
 			{
-				console.log(browser_games[i]);
-				var browser = browser_games[i].childNodes[2];
+				//console.log(browser_games[i]);
+				var browser = browser_games[i].childNodes[1];
 				var server = server_game;
 				//console.log(browser);
-				console.log(browser_games[i].childNodes[0]);
-				console.log(browser_games[i].childNodes[1]);
-				console.log(browser_games[i].childNodes[2]);
+				//console.log(browser_games[i].childNodes[0]);
+				//console.log(browser_games[i].childNodes[1]);
+				//console.log(browser_games[i].childNodes[2]);
 				//console.log(server);
 				//console.log(browser.getAttribute('p1'));
 				//console.log(server.P1);
@@ -191,6 +191,20 @@ function logout()
 	}
 }
 
+
+//This function will periodically send request to the server
+//to know whether the game has stared, if so, the user will be 
+//redirect to the gaming page, this function is only valid when the 
+//user is in one room.
+function query_game_started()
+{
+	if(!in_room)
+		return ;
+	else
+	{
+		//ask server whether the game has started
+	}
+}
 function start_game()
 {
 	

@@ -112,49 +112,12 @@
 			$sql_error = mysqli_error($con);
 		}
 		//
-
-		$SQL_CREATE_PLAYERLIST = <<<SQL_STATEMENT
-		CREATE TABLE game_{$game_id}_playerlist
-		(
-			player_id INT PRIMARY KEY,
-			player_name CHAR(32),
-			player_gold INT,
-			player_lumber INT,
-			FOREIGN KEY(player_id) REFERENCES User(user_id)
-		)
-SQL_STATEMENT;
-
-		$SQL_CREATE_ARMYLIST = <<<SQL_STATEMENT
-		CREATE TABLE game_{$game_id}_armylist
-		(
-			army_id INT PRIMARY KEY,
-			army_type INT,
-			owner_id INT,
-			FOREIGN KEY(owner_id) REFERENCES game_{$game_id}_playerlist(player_id)
-		)
-SQL_STATEMENT;
-
-		$SQL_CREATE_SLOTLIST = <<<SQL_STATEMENT
-		CREATE TABLE game_{$game_id}_slotlist
-		(
-			slot_id INT PRIMARY KEY,
-			slot_owner INT,
-			slot_type INT,
-			slot_army INT,
-			N INT, NW INT, NE INT, W INT, E INT, SW INT, SE INT, S INT,
-			FOREIGN KEY(slot_owner) REFERENCES game_{$game_id}_playerlist(player_id),
-			FOREIGN KEY(slot_type) REFERENCES Slottype(type_id),
-			FOREIGN KEY(slot_army) REFERENCES game_{$game_id}_armylist(army_id),
-			FOREIGN KEY(N) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(NW) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(NE) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(W) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(E) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(SW) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(SE) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(S) REFERENCES game_{$game_id}_slotlist(slot_id)
-		)
-SQL_STATEMENT;
+		require_once("../lib/sql.php");
+		
+		$SQL_CREATE_PLAYERLIST = sql_create_playerlist($game_id);
+		$SQL_CREATE_ARMYLIST = sql_create_armylist($game_id);
+		$SQL_CREATE_SLOTLIST = sql_create_slotlist($game_id);
+		
 		if(!mysqli_query($con,$SQL_CREATE_PLAYERLIST))
 		{
 			$response["sql_playerlist_error"] = mysqli_error($con);
@@ -171,6 +134,27 @@ SQL_STATEMENT;
 
 	function initilze_new_game_database($game_id,$con,&$response)
 	{
+		//1. Dealing with the player list
+		$SQL_SELECT_PLAYER = "SELECT P1, P2, P3 FROM Game WHERE game_id = $game_id";
+		$result = mysqli_query($con,$SQL_SELECT_PLAYER);
+		$row = mysqli_fetch_row($result);
+		$p[0] = $row[0];
+		$p[1] = $row[1];
+		$p[2] = $row[2];
 
+		$p_name[0] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = ".$p[0]))[0];
+		$p_name[1] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = ".$p[1]))[0];
+		$p_name[2] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = ".$p[2]))[0];
+
+		for($count = 0;$count < 3;$count++)
+		{
+			$SQL_INSERT_playerlist = "INSERT INTO game_{$game_id}_playerlist ";
+			$SQL_INSERT_playerlist .= "VALUES (".$p[$count].",";
+			$SQL_INSERT_playerlist .= "'".$p_name[$count]."',";
+			$SQL_INSERT_playerlist .= "0,0)";
+			if(!mysqli_query($con,$SQL_INSERT_playerlist))
+				$response["SQL_INSERT_playerlist_$count"] = mysqli_error($con);
+		}
+		//2. Dealing with 
 	}
 ?>

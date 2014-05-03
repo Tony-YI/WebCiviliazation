@@ -76,7 +76,7 @@
 			
 			//echo $text;
 		}
-		$response['html'] = $text;
+		$response['roomDiv'] = $text;
 	}
 	else
 	{
