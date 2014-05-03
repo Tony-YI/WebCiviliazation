@@ -107,6 +107,7 @@ function display_manual(e)
 		if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_x - 1)
 		{
 			hexagon[i].style.color = 'red';
+			alert('hehe');
 		}
 	}
 
