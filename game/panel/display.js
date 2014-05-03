@@ -52,6 +52,14 @@ function no_scroll(e)
 	console.log("scroll");
 }
 
+function no_right_click(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	alert('right click');
+}
+
 function addBoxes()
 {
 	//20 x 20 map//
@@ -130,6 +138,7 @@ function init(e)
 {
 	addBoxes();
 	window.addEventListener("onmousewheel", no_scroll, false);
+	window.addEventListener("contextmenu", no_right_click, false);
 }
 
 window.addEventListener('load', init, false);
