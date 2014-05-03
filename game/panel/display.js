@@ -165,8 +165,8 @@ function no_contextmenu(e)
 function addBoxes()
 {
 	//20 x 20 map//
-	var hexagon_num = 400;
-	var new_line_num = 20;
+	var hexagon_num = 484;
+	var new_line_num = 22; //the top/left/bottom/right are useless
 
 	var new_line = Array();
 	for(var i = 0; i < new_line_num; i++)
@@ -193,19 +193,26 @@ function addBoxes()
 			if(y % 2 == 0) //odd begin hexagon
 			{
 				hexagon[i].setAttribute('id', 'hexagon_begin_odd');
+				hexagon[i].style.opacity = '0.0';
 			}
 			else //even begin hexagon
 			{
 				hexagon[i].setAttribute('id', 'hexagon_begin_even');
+				hexagon[i].style.opacity = '0.0';
 			}
 		}
 		else if (x == new_line_num - 1) //end hexagon of one row
 		{
 			hexagon[i].setAttribute('id', 'hexagon_last');
+			hexagon[i].style.opacity = '0.0';
 		}
 		else //normal hexagon
 		{
 			hexagon[i].setAttribute('id', 'hexagon_normal');
+			if(i < new_line_num || i > hexagon_num - new_line_num)
+			{
+				hexagon[i].style.opacity = '0.0';
+			}
 		}
 
 		hexagon[i].addEventListener('mousedown', mousedown, false);
