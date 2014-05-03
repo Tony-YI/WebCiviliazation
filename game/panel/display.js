@@ -103,7 +103,7 @@ function display_manual(e)
 	{
 		for(var i = 0; i < hexagon.length; i++)
 		{
-			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == (parseInt(pos_y) - 1))
 			{
 				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].setAttribute('function', 'attack');
