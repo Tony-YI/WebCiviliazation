@@ -126,7 +126,6 @@ function mouseup_1(e)
 		case 3:
 			console.log('right mouseup 1');
 			display_army_type(e);
-			//display_manual(e);
 			break;
 		default:
 			console.log('no such mouseup id 1');
@@ -143,7 +142,7 @@ function mouseup_2(e)
 	{
 		case 1:
 			console.log('left mouseup 2');
-			alert('mouseup_2');
+			select_army_type(e);
 			break;
 		case 2:
 			console.log('middle mouseup 2');
@@ -157,7 +156,7 @@ function mouseup_2(e)
 	}
 }
 
-function display_army_type(e)
+function display_army_type(e) //TODO: check whether this slot has shuch army type
 {
 	e.target.removeEventListener('mousedown', mousedown_1, false);
 	e.target.removeEventListener('mouseup', mouseup_1, false);
@@ -265,6 +264,36 @@ function display_army_type(e)
 	console.log(pos_x, pos_y);
 }
 
+function select_army_type(e)
+{
+	e.target.removeEventListener('mousedown', mousedown_2, false);
+	e.target.removeEventListener('mouseup', mouseup_2, false);
+
+	var target_function = e.target.getAttribute('function');
+
+	if(target_function == 'type_A')
+	{
+		alert('A');
+	}
+	else if(target_function == 'type_B')
+	{
+		alert('A');
+	}
+	else if(target_function == 'type_C')
+	{
+		alert('A');
+	}
+	else if(target_function == 'cancel')
+	{
+		alert('Cancel');
+		remove_manual(e);
+	}
+	else
+	{
+		console.log('error in function game/panel/display.js->select_army_type(e)');
+	}
+}
+
 function display_manual(e)
 {
 	if(e.target.getAttribute('usage') == 'no')
@@ -344,6 +373,7 @@ function remove_manual()
 		}
 		manual[0].setAttribute('function', 'none');
 		manual[0].innerHTML = '';
+		manual[0].addEventListener('mousedown', mousedown_1, false);
 		manual[0].setAttribute('class', 'hexagon');
 	}
 }
