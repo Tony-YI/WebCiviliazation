@@ -129,28 +129,28 @@ function display_army_type(e)
 			{
 				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 				hexagon[i].setAttribute('function', 'type_A');
-				hexagon[i].innerHtml = 'type_A';
+				hexagon[i].innerHTML = 'type_A';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
 				hexagon[i].setAttribute('function', 'type_B');
-				hexagon[i].innerHtml = 'type_B';
+				hexagon[i].innerHTML = 'type_B';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
 				hexagon[i].setAttribute('function', 'type_C');
-				hexagon[i].innerHtml = 'type_C';
+				hexagon[i].innerHTML = 'type_C';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
 			{
 				hexagon[i].setAttribute('function', 'cancel');
-				hexagon[i].innerHtml = 'Cancel';
+				hexagon[i].innerHTML = 'Cancel';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].setAttribute('class', 'manual');
 			}
