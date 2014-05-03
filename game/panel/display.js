@@ -323,7 +323,7 @@ function select_army_type(e)
 	e.target.removeEventListener('mousedown', mousedown_2, false);
 	e.target.removeEventListener('mouseup', mouseup_2, false);
 
-	if(parseInt(e.target.getAttribute('y')) % 2 == 0) //odd
+	if(parseInt(e.target.getAttribute('y')) % 2 == 1) //odd
 	{
 		var flag = 'odd';
 	}
@@ -379,6 +379,9 @@ function select_army_type(e)
 
 function display_manual(x, y)
 {
+	e.target.removeEventListener('mousedown', mousedown_2, false);
+	e.target.removeEventListener('mouseup', mouseup_2, false);
+
 	//var pos_x = e.target.getAttribute('x');
 	//var pos_y = e.target.getAttribute('y');
 
