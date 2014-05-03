@@ -142,9 +142,9 @@
 		$p[1] = $row[1];
 		$p[2] = $row[2];
 
-		$p_name[0] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = $p1_id"))[0];
-		$p_name[1] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = $p2_id"))[0];
-		$p_name[2] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = $p3_id"))[0];
+		$p_name[0] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = ".$p[0]))[0];
+		$p_name[1] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = ".$p[1]))[0];
+		$p_name[2] = mysqli_fetch_row(mysqli_query($con,"SELECT username FROM User WHERE user_id = ".$p[2]))[0];
 
 		for($count = 0;$count < 3;$count++)
 		{
