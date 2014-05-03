@@ -24,8 +24,22 @@
 */
 function mousedown(e)
 {
-	e.stopPropagation();
-	e.preventDefault();
+	try
+	{
+		e.stopPropagation();
+	}
+	catch(ee)
+	{
+		alert(ee);
+	}
+	try
+	{
+		e.preventDefault();
+	}
+	catch(eee)
+	{
+		alert(eee);
+	}
 
 	alert("hehe");
 }
