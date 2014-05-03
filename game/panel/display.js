@@ -138,7 +138,7 @@ function init(e)
 {
 	addBoxes();
 	window.addEventListener("scroll", no_scroll, true);
-	window.addEventListener("contextmenu", no_right_click, false);
+	window.addEventListener("contextmenu", no_right_click, true);
 }
 
 window.addEventListener('load', init, false);
