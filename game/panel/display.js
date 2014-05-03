@@ -39,7 +39,7 @@ function addBoxes()
 	var hexagon_last = document.createElement('div');
 	hexagon_last.setAttribute('class', 'hexagon_last');
 
-	var box = document.getElementByClassName('box');
+	var box = document.getElementsByClassName('box');
 	box.appendChild(new_line);
 	box.appendChild(hexagon_begin_odd);
 	box.appendChild(hexagon);
