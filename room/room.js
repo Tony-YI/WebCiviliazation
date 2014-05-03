@@ -69,18 +69,24 @@ function isUpade(browser_games, server_games)
 				var server = server_games[i];
 				if(server.P1 == "null")
 					server.P1 = "";
+				console.log(browser.getAttribute('p1'));
+				console.log(server.P1);
 				if(browser.getAttribute('p1') != server.P1)
 				{
 					return true;
 				}
 				if(server.P2 == "null")
 					server.P2 = "";
+				console.log(browser.getAttribute('p2'));
+				console.log(server.P2);
 				if(browser.getAttribute('p2') != server.P2)
 				{
 					return true;
 				}
 				if(server.P3 == "null")
 					server.P3 = "";
+				console.log(browser.getAttribute('p3'));
+				console.log(server.P3);
 				if(browser.getAttribute('p3') != server.P3)
 				{
 					return true;
