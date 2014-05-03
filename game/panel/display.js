@@ -328,37 +328,42 @@ function select_army_type(e)
 	if(target_function == 'type_A')
 	{
 		//alert('A');
-		remove_manual(e);
-		display_manual(e);
+		remove_manual();
+		var x = 2;
+		var y = 2;
+		display_manual(x, y);
 	}
 	else if(target_function == 'type_B')
 	{
 		//alert('B');
-		remove_manual(e);
-		display_manual(e);
+		remove_manual();
+		display_manual(x, y);
 	}
 	else if(target_function == 'type_C')
 	{
 		//alert('C');
-		remove_manual(e);
-		display_manual(e);
+		remove_manual();
+		display_manual(x, y);
 	}
 	else if(target_function == 'cancel')
 	{
 		//alert('Cancel');
-		remove_manual(e);
+		remove_manual();
 	}
 	else
 	{
-		remove_manual(e);
+		remove_manual();
 		console.log('error in function game/panel/display.js->select_army_type(e)');
 	}
 }
 
-function display_manual(e)
+function display_manual(x, y)
 {
-	var pos_x = e.target.getAttribute('x');
-	var pos_y = e.target.getAttribute('y');
+	//var pos_x = e.target.getAttribute('x');
+	//var pos_y = e.target.getAttribute('y');
+
+	var pos_x = x;
+	var pos_y = y;
 
 	var hexagon = document.getElementsByClassName('hexagon');
 
@@ -373,6 +378,7 @@ function display_manual(e)
 				hexagon[i].innerHTML = 'Attack';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -383,6 +389,7 @@ function display_manual(e)
 				hexagon[i].innerHTML = 'Move';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -393,6 +400,7 @@ function display_manual(e)
 				hexagon[i].innerHTML = 'Defence';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -403,6 +411,7 @@ function display_manual(e)
 				hexagon[i].innerHTML = 'Back';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -419,6 +428,7 @@ function display_manual(e)
 				hexagon[i].innerHTML = 'Attack';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -429,6 +439,7 @@ function display_manual(e)
 				hexagon[i].innerHTML = 'Move';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -439,6 +450,7 @@ function display_manual(e)
 				hexagon[i].innerHTML = 'Defence';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -449,6 +461,7 @@ function display_manual(e)
 				hexagon[i].innerHTML = 'Back';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].removeEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -469,27 +482,27 @@ function select_manual(e)
 	if(target_function == 'attack')
 	{
 		alert('Attack');
-		remove_manual(e);
+		remove_manual();
 	}
 	else if(target_function == 'move')
 	{
 		alert('Move');
-		remove_manual(e);
+		remove_manual();
 	}
 	else if(target_function == 'defence')
 	{
 		alert('Defence');
-		remove_manual(e);
+		remove_manual();
 	}
 	else if(target_function == 'back')
 	{
 		alert('Back');
-		remove_manual(e);
+		remove_manual();
 		display_army_type(e);
 	}
 	else
 	{
-		remove_manual(e);
+		remove_manual();
 		console.log('error in function game/panel/display.js->select_manual(e)');
 	}
 }
