@@ -141,7 +141,7 @@ function addBoxes()
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
-		hexagon[i].addEventListener('mousedown', mousedown, false)
+		hexagon[i].addEventListener('mousedown', mousedown, false);
 	}
 
 	var box = document.getElementById('box');
