@@ -492,6 +492,9 @@ function display_manual(x, y)
 
 function select_manual(e)
 {
+	e.target.removeEventListener('mousedown', mousedown_3, false);
+	e.target.removeEventListener('mouseup', mouseup_3, false);
+
 	var target_function = e.target.getAttribute('function');
 
 	if(target_function == 'attack')
