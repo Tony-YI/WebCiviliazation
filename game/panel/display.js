@@ -36,7 +36,7 @@ function mousedown_1(e)
 			console.log('middle mousedown 1');
 			break;
 		case 3:
-			console.log('right mousedown' 1);
+			console.log('right mousedown 1');
 
 			if(e.target.getAttribute('usage') == 'no') //not for use
 			{
