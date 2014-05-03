@@ -151,7 +151,7 @@ function remove_manual()
 	var manual = document.getElementsByClassName('manual');
 	for(var i = 0; i < manual.length; i++)
 	{
-		manual[i].setAttribute('class', 'hexagon');
+		manual[0].setAttribute('class', 'hexagon');
 	}
 }
 
