@@ -58,6 +58,7 @@
   position: fixed;
   background: rgba(200,200,200,.5);
   margin-left: 20%;
+  width: 50%;
 }
 body
 {

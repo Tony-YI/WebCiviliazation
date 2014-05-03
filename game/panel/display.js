@@ -101,16 +101,16 @@ function display_manual(e)
 	var pos_x = e.target.getAttribute('x');
 	var pos_y = e.target.getAttribute('y');
 
-	var x_axis = e.clientX;
-	var y_axis = e.clientY;
+	var hexagon = document.getElementsByClassName('hexagon');
+	for(var i = 0; i < hexagon.length; i++)
+	{
+		if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_x - 1)
+		{
+			hexagon[i].style.color = 'red';
+		}
+	}
 
-	var manual = document.createElement('div');
-	manual.setAttribute('id', 'manual');
-	manual.style.top = y_axis + 'px';
-	manual.style.left = x_axis + 'px';
-	document.getElementById('box').appendChild(manual);
-
-	console.log(pos_x, pos_y, x_axis, y_axis);
+	console.log(pos_x, pos_y);
 }
 
 function no_contextmenu(e)
