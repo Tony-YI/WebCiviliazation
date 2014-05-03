@@ -25,8 +25,8 @@
 function addBoxes()
 {
 	//20 x 20 map//
-	var hexagon_num = 10;
-	var new_line_num = 4;
+	var hexagon_num = 360;
+	var new_line_num = 20;
 	var hexagon_last_num = new_line_num;
 	var hexagon_begin_odd_num = parseInt(new_line_num / 2);
 	var hexagon_begin_even_num = parseInt(new_line_num / 2);
@@ -70,23 +70,26 @@ function addBoxes()
 
 	var box = document.getElementById('box');
 
-	box.appendChild(new_line[0]);
-	box.appendChild(hexagon_begin_odd[0]);
-	box.appendChild(hexagon[0]);
-	box.appendChild(hexagon[1]);
-	box.appendChild(hexagon[2]);
-	box.appendChild(hexagon[3]);
-	box.appendChild(hexagon[4]);
-	box.appendChild(hexagon_last[0]);
+	for(var i = 0; i < new_line_num; i++)
+	{
+		box.appendChild(new_line[i]);
 
-	box.appendChild(new_line[1]);
-	box.appendChild(hexagon_begin_even[0]);
-	box.appendChild(hexagon[5]);
-	box.appendChild(hexagon[6]);
-	box.appendChild(hexagon[7]);
-	box.appendChild(hexagon[8]);
-	box.appendChild(hexagon[9]);
-	box.appendChild(hexagon_last[1]);
+		if(i % 2 == 0) //odd
+		{
+			box.appendChild(hexagon_begin_odd[i]);
+		}
+		else
+		{
+			box.appendChild(hexagon_begin_even[i]);
+		}
+
+		for(var j = 0; j < new_line_num - 2; j++)
+		{
+			box.appendChild(hexagon[18 * i + j]);
+		}
+
+		box.appendChild(hexagon_last[i]);
+	}
 }
 
 function init(e)
