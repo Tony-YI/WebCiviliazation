@@ -105,18 +105,19 @@ function display_manual(e)
 		{
 			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
-				hexagon[i].setAttribute('class', 'manual');
+				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 				hexagon[i].setAttribute('function', 'attack');
+				hexagon[i].setAttribute('class', 'manual');
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].setAttribute('function', 'move');
+				hexagon[i].setAttribute('class', 'manual');
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].setAttribute('function', 'defence');
+				hexagon[i].setAttribute('class', 'manual');
 			}
 		}
 	}
@@ -124,20 +125,20 @@ function display_manual(e)
 	{
 		for(var i = 0; i < hexagon.length; i++)
 		{
-			if(hexagon[i].getAttribute('x') == pos_x + 1 && hexagon[i].getAttribute('y') == pos_y - 1)
+			if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
-				hexagon[i].setAttribute('class', 'manual');
 				hexagon[i].setAttribute('function', 'attack');
-			}
-			else if(hexagon[i].getAttribute('x') == pos_x + 1 && hexagon[i].getAttribute('y') == pos_y)
-			{
 				hexagon[i].setAttribute('class', 'manual');
+			}
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
+			{
 				hexagon[i].setAttribute('function', 'move');
-			}
-			else if(hexagon[i].getAttribute('x') == pos_x + 1 && hexagon[i].getAttribute('y') == pos_y + 1)
-			{
 				hexagon[i].setAttribute('class', 'manual');
+			}
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
+			{
 				hexagon[i].setAttribute('function', 'defence');
+				hexagon[i].setAttribute('class', 'manual');
 			}
 		}
 	}
