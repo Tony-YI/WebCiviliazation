@@ -99,6 +99,45 @@ function no_contextmenu(e)
 function addBoxes()
 {
 	//20 x 20 map//
+	var hexagon_num = 400;
+	var new_line_num = 20;
+
+	var new_line = Array();
+	for(var i = 0; i < new_line_num; i++)
+	{
+		new_line[i] = document.createElement('div');
+		new_line[i].setAttribute('id', 'new_line');
+		var br = document.createElement('br');
+		new_line[i].appendChild(br);
+	}
+
+	var hexagon = Array();
+	for(var i = 0; i < hexagon_num; i++)
+	{
+		hexagon[i] = document.createElement('div');
+		hexagon[i].setAttribute('id', 'hexagon');
+		hexagon[i].setAttribute('x', hexagon_num % new_line_num);
+		hexagon[i].setAttribute('y', parseInt(hexagon_num / new_line_num));
+		hexagon[i].addEventListener('mousedown', mousedown, false)
+	}
+
+	var box = document.getElementById('box');
+	box.addEventListener('contextmenu', no_contextmenu, false);
+
+	for(var i = 0; i < new_line_num; i++)
+	{
+		box.appendChild(new_line[i]);
+
+		for(var j = 0; j < new_line_num; j++)
+		{
+			box.appendChild(hexagon[new_line_num * i + j]);
+		}
+	}
+}
+
+function addBoxes1()
+{
+	//20 x 20 map//
 	var hexagon_num = 360;
 	var new_line_num = 20;
 	var hexagon_last_num = new_line_num;
@@ -119,7 +158,6 @@ function addBoxes()
 	{
 		hexagon_begin_odd[i] = document.createElement('div');
 		hexagon_begin_odd[i].setAttribute('id', 'hexagon_begin_odd');
-		hexagon_begin_odd[i].setAttribute('node', i);
 		hexagon_begin_odd[i].addEventListener('mousedown', mousedown, false)
 	}
 
