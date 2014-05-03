@@ -72,27 +72,26 @@ function isUpade(browser_games, server_games)
 			}
 			else
 			{
-				console.log(browser_games[i]);
+				//console.log(browser_games[i]);
 				var browser = browser_games[i].childNodes[2];
 				var server = server_game;
-				console.log(browser);
-				console.log(server);
-				console.log(browser.getAttribute('p1'));
-				console.log(server.P1);
-				if(browser.getAttribute('p1') != server.P1)
+				//console.log(browser);
+				//console.log(server);
+				//console.log(browser.getAttribute('p1'));
+				//console.log(server.P1);
+				if(browser.getAttribute('p1') != server.P1 && !(browser.getAttribute('p1') == "" && server.P1 == null))
 				{
 					return true;
 				}
-				console.log(browser.getAttribute('p2'));
-				console.log(server.P2);
-				if(browser.getAttribute('p2') != server.P2)
+				//console.log(browser.getAttribute('p2'));
+				//console.log(server.P2);
+				if(browser.getAttribute('p2') != server.P2 && !(browser.getAttribute('p2') == "" && server.P2 == null))
 				{
 					return true;
 				}
-				console.log(browser.getAttribute('p3') == "");
-				console.log(server.P3 == null);
-				console.log(null | "");
-				if(browser.getAttribute('p3') != server.P3)
+				//console.log(browser.getAttribute('p3') == "");
+				//console.log(server.P3 == null);
+				if(browser.getAttribute('p3') != server.P3 && !(browser.getAttribute('p3') == "" && server.P3 == null))
 				{
 					return true;
 				}
