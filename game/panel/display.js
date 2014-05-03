@@ -371,6 +371,7 @@ function select_army_type(e)
 	}
 }
 
+var army_type = '';
 function display_manual(x, y, type)
 {
 	//var pos_x = e.target.getAttribute('x');
@@ -483,7 +484,7 @@ function display_manual(x, y, type)
 		}
 	}
 
-	var army_type = type; 
+	army_type = type; 
 	console.log(pos_x, pos_y, type);
 }
 
@@ -496,17 +497,17 @@ function select_manual(e)
 
 	if(target_function == 'attack')
 	{
-		alert('Attack');
+		alert(army_type': Attack');
 		remove_manual();
 	}
 	else if(target_function == 'move')
 	{
-		alert('Move');
+		alert(army_type': Move');
 		remove_manual();
 	}
 	else if(target_function == 'defence')
 	{
-		alert('Defence');
+		alert(army_type': Defence');
 		remove_manual();
 	}
 	else if(target_function == 'back')
