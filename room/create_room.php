@@ -33,16 +33,25 @@
 		else
 			$game_id = $game_id + 1;
 	}
-
-	$SQL_INSERT_NEW_GAME = "INSERT INTO Game Values ($game_id,$user_id,DEFAULT,DEFAULT,DEFAULT)";
-
-	if(!mysqli_query($db,$SQL_INSERT_NEW_GAME))
+	
+	$SQL_CHECK_USER = "SELECT * FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
+	$result = mysqli_query($db, $SQL_CHECK_USER);
+	if(mysqli_num_rows($result) != 0)
 	{
-		$error_str = mysqli_error($db);
-		echo "{\"status\":\"failed\",\"error\":\"$error_str\"}";
+		echo "{\"status\":\"failed\",\"error\":\"user not available\"}";
 	}
 	else
 	{
-		echo "{\"status\":\"success\",\"game_id\":\"$game_id\"}";
+		$SQL_INSERT_NEW_GAME = "INSERT INTO Game Values ($game_id,$user_id,DEFAULT,DEFAULT,DEFAULT)";
+
+		if(!mysqli_query($db,$SQL_INSERT_NEW_GAME))
+		{
+			$error_str = mysqli_error($db);
+			echo "{\"status\":\"failed\",\"error\":\"$error_str\"}";
+		}
+		else
+		{
+			echo "{\"status\":\"success\",\"game_id\":\"$game_id\"}";
+		}
 	}
 ?>
