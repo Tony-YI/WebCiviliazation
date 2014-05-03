@@ -92,11 +92,11 @@
 			$response['userDiv'] = "Current Player : $user_name<br/> Now you are in Room $room_num"; 
 			if(mysqli_fetch_row($result)[1] == 1)
 			{
-				$response['started'] == 'yes';
+				$response['started'] = 'yes';
 			}
 			else
 			{
-				$response['started'] == 'no';
+				$response['started'] = 'no';
 			}
 		}
 		else
