@@ -29,15 +29,6 @@ body
     height: 100%;
 }
 
-#manual
-{
-    width: 100px;
-    height: 100px;
-    position: relative;
-    border: 1px solid red;
-    z-index: 100;
-}
-
 #hexagon_normal
 {
     width: 100px;
