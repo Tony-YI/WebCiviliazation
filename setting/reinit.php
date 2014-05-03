@@ -42,6 +42,27 @@
 	$SQL_CREATE_Game .= "FOREIGN KEY(p2) REFERENCES User(user_id),";
 	$SQL_CREATE_Game .= "FOREIGN KEY(p3) REFERENCES User(user_id))";
 	
+	$SQL_CREATE_ARMYTYPE = <<<SQL_STATEMENT
+	CREATE TABLE Armytype
+	(
+		type_id INT PRIMARY KEY,
+		name CHAR(32)
+		MAX_HP INT,
+		MAX_AP INT,
+		ATTACK INT
+	)
+SQL_STATEMENT;
+
+	$SQL_CREATE_SLOTTYPE = <<<SQL_STATEMENT
+	CREATE TABLE Slottype
+	(
+		type_id INT PRIMARY KEY,
+		gold_production INT,
+		lumber_production INT
+	)
+SQL_STATEMENT;
+
+
 	db_drop_table($db,$SQL_DROP_Game,"Game");
 	db_drop_table($db,$SQL_DROP_Cookie,"Cookie");
 	db_drop_table($db,$SQL_DROP_User,"User");
@@ -54,6 +75,7 @@
 	mysqli_query($db,$SQL_INSERT_ADMIN);
 	
 	mysqli_close($db);
+
 ?>
 </body>
 </html>
