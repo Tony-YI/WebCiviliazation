@@ -98,9 +98,10 @@ function display_manual(e)
 	var pos_y = e.target.getAttribute('y');
 
 	var hexagon = document.getElementsByClassName('hexagon');
-	for(var i = 0; i < hexagon.length; i++)
+
+	if(pos_y % 2 == 0)//odd
 	{
-		if(pos_y % 2 == 0)//odd
+		for(var i = 0; i < hexagon.length; i++)
 		{
 			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y - 1)
 			{
@@ -118,7 +119,10 @@ function display_manual(e)
 				hexagon[i].setAttribute('function', 'defence');
 			}
 		}
-		else //even
+	}
+	else //even
+	{
+		for(var i = 0; i < hexagon.length; i++)
 		{
 			if(hexagon[i].getAttribute('x') == pos_x + 1 && hexagon[i].getAttribute('y') == pos_y - 1)
 			{
