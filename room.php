@@ -83,12 +83,12 @@
                 $result = mysqli_query($db, $SQL_CHECK_ROOM);
                 if(mysqli_num_rows($result) == 0)
                 {
-                    echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/><p id='line1'>Now you are not in any room.</p><p id='line2'>You can create a new room or join an existed room.</p></div></div>"
+                    echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/><p id='line1'>Now you are not in any room.</p><p id='line2'>You can create a new room or join an existed room.</p></div></div>";
                 }
                 else if(mysqli_num_rows($result) == 1)
                 {
                     $room_num = mysqli_fetch_row($result)[0];
-                    echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/>Now you are in Room $room_num</div></div>"
+                    echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/>Now you are in Room $room_num</div></div>";
                 }
              ?>
     </div>
