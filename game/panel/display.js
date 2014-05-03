@@ -40,7 +40,14 @@ function addBoxes()
 	hexagon_last.setAttribute('class', 'hexagon_last');
 
 	var box = document.getElementsByClassName('box');
-	box.appendChild(new_line);
+	try
+	{
+		box.appendChild(new_line);
+	}
+	catch(e)
+	{
+		alert(e);
+	}
 	box.appendChild(hexagon_begin_odd);
 	box.appendChild(hexagon);
 	box.appendChild(hexagon_last);
