@@ -22,7 +22,7 @@
         <div id="hexagon"></div>
         <div id="hexagon_last"></div>
 */
-function click(e)
+function mousedown(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -53,7 +53,7 @@ function addBoxes()
 	{
 		hexagon_begin_odd[i] = document.createElement('div');
 		hexagon_begin_odd[i].setAttribute('id', 'hexagon_begin_odd');
-		hexagon_begin_odd[i].addEventListener('mousedown', click, false)
+		hexagon_begin_odd[i].addEventListener('mousedown', mousedown, false)
 	}
 
 	var hexagon = Array();
@@ -61,6 +61,7 @@ function addBoxes()
 	{
 		hexagon[i] = document.createElement('div');
 		hexagon[i].setAttribute('id', 'hexagon');
+		hexagon[i].addEventListener('mousedown', mousedown, false)
 	}
 
 	var hexagon_begin_even = Array();
@@ -68,6 +69,7 @@ function addBoxes()
 	{
 		hexagon_begin_even[i] = document.createElement('div');
 		hexagon_begin_even[i].setAttribute('id', 'hexagon_begin_even');
+		hexagon_begin_even[i].addEventListener('mousedown', mousedown, false)
 	}
 
 	var hexagon_last = Array();
@@ -75,6 +77,7 @@ function addBoxes()
 	{
 		hexagon_last[i] = document.createElement('div');
 		hexagon_last[i].setAttribute('id', 'hexagon_last');
+		hexagon_last[i].addEventListener('mousedown', mousedown, false)
 	}
 
 	var box = document.getElementById('box');

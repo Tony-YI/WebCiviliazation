@@ -15,12 +15,19 @@ body
     border: 1px red solid;
 }
 
-#box
+#box1
 {
     width: 2255px;
     height: 100%;
     -webkit-transform: perspective(550px) rotateX(45deg);
     transform: perspective(550px) rotateX(45deg);
+    overflow: scroll;
+}
+
+#box
+{
+    width: 2255px;
+    height: 100%;
     overflow: scroll;
 }
 
