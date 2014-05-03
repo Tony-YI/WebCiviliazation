@@ -30,20 +30,20 @@ function mousedown(e)
 	switch(e.which)
 	{
 		case 1:
-			console.log('left click');
+			console.log('left mousedown');
 			e.target.addEventListener('mousemove', mousemove, false);
 			e.target.addEventListener('mouseup', mouseup, false);
 			break;
 		case 2:
-			console.log('middle click');
+			console.log('middle mousedown');
 			break;
 		case 3:
-			console.log('right click');
+			console.log('right mousedown');
 			e.target.addEventListener('mousemove', mousemove, false);
 			e.target.addEventListener('mouseup', mouseup, false);
 			break;
 		default:
-			console.log('no such click id');
+			console.log('no such mousedown id');
 			break;
 	}
 }
@@ -62,16 +62,16 @@ function mouseup(e)
 	switch(e.which)
 	{
 		case 1:
-			console.log('left click 2');
+			console.log('left mouseup');
 			break;
 		case 2:
-			console.log('middle click 2');
+			console.log('middle mouseup');
 			break;
 		case 3:
-			console.log('right click 2');
+			console.log('right mouseup');
 			break;
 		default:
-			console.log('no such click id 2');
+			console.log('no such mouseup id');
 			break;
 	}
 }
