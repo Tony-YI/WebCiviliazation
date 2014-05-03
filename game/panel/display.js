@@ -41,15 +41,17 @@ function addBoxes()
 
 	var box = document.getElementsByClassName('box');
 
-	document.body.appendChild(new_line);
-	document.body.appendChild(hexagon_begin_odd);
-	document.body.appendChild(hexagon);
-	document.body.appendChild(hexagon_last);
+	box.setAttribute('name', 'aaaa');
 
-	document.body.appendChild(new_line);
-	document.body.appendChild(hexagon_begin_even);
-	document.body.appendChild(hexagon);
-	document.body.appendChild(hexagon_last);
+	box.appendChild(new_line);
+	box.appendChild(hexagon_begin_odd);
+	box.appendChild(hexagon);
+	box.appendChild(hexagon_last);
+
+	box.appendChild(new_line);
+	box.appendChild(hexagon_begin_even);
+	box.appendChild(hexagon);
+	box.appendChild(hexagon_last);
 }
 
 function init(e)
