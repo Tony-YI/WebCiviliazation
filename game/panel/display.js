@@ -30,13 +30,13 @@ function mousedown_1(e)
 	switch(e.which)
 	{
 		case 1:
-			console.log('left mousedown');
+			console.log('left mousedown 1');
 			break;
 		case 2:
-			console.log('middle mousedown');
+			console.log('middle mousedown 1');
 			break;
 		case 3:
-			console.log('right mousedown');
+			console.log('right mousedown 	1');
 
 			if(e.target.getAttribute('usage') == 'no') //not for use
 			{
@@ -60,7 +60,30 @@ function mousedown_1(e)
 			remove_manual();
 			break;
 		default:
-			console.log('no such mousedown id');
+			console.log('no such mousedown id 1');
+			break;
+	}
+}
+
+function mousedown_2(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	switch(e.which)
+	{
+		case 1:
+			console.log('left mousedown 2');
+			e.target.addEventListener('mouseup', mouseup_2, false);
+			break;
+		case 2:
+			console.log('middle mousedown 2');
+			break;
+		case 3:
+			console.log('right mousedown 2');
+			break;
+		default:
+			console.log('no such mousedown id 2');
 			break;
 	}
 }
@@ -73,16 +96,16 @@ function mousemove_1(e)
 	switch(e.which)
 	{
 		case 1:
-			console.log('left mousemove');
+			console.log('left mousemove 1');
 			break;
 		case 2:
-			console.log('middle mousemove');
+			console.log('middle mousemove 1');
 			break;
 		case 3:
-			console.log('right mousemove');
+			console.log('right mousemove 1');
 			break;
 		default:
-			console.log('no such mousemove id');
+			console.log('no such mousemove id 1');
 			break;
 	}
 }
@@ -95,23 +118,45 @@ function mouseup_1(e)
 	switch(e.which)
 	{
 		case 1:
-			console.log('left mouseup');
+			console.log('left mouseup 1');
 			break;
 		case 2:
-			console.log('middle mouseup');
+			console.log('middle mouseup 1');
 			break;
 		case 3:
-			console.log('right mouseup');
+			console.log('right mouseup 1');
 			display_army_type(e);
-			//display_manual(e);
 			break;
 		default:
-			console.log('no such mouseup id');
+			console.log('no such mouseup id 1');
 			break;
 	}
 }
 
-function display_army_type(e)
+function mouseup_2(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	switch(e.which)
+	{
+		case 1:
+			console.log('left mouseup 2');
+			select_army_type(e);
+			break;
+		case 2:
+			console.log('middle mouseup 2');
+			break;
+		case 3:
+			console.log('right mouseup 2');
+			break;
+		default:
+			console.log('no such mouseup id 2');
+			break;
+	}
+}
+
+function display_army_type(e) //TODO: check whether this slot has shuch army type
 {
 	e.target.removeEventListener('mousedown', mousedown_1, false);
 	e.target.removeEventListener('mouseup', mouseup_1, false);
@@ -131,6 +176,8 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'type_A');
 				hexagon[i].innerHTML = 'type_A';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -139,6 +186,8 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'type_B');
 				hexagon[i].innerHTML = 'type_B';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -147,6 +196,8 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'type_C');
 				hexagon[i].innerHTML = 'type_C';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -155,6 +206,8 @@ function display_army_type(e)
 				hexagon[i].setAttribute('function', 'cancel');
 				hexagon[i].innerHTML = 'Cancel';
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -164,29 +217,81 @@ function display_army_type(e)
 	{
 		for(var i = 0; i < hexagon.length; i++)
 		{
-			if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
-				hexagon[i].setAttribute('function', 'attack');
+				hexagon[i].setAttribute('function', 'type_A');
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].innerHTML = 'type_A';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('function', 'move');
+				hexagon[i].setAttribute('function', 'type_B');
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].innerHTML = 'type_B';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
+			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
-				hexagon[i].setAttribute('function', 'defence');
+				hexagon[i].setAttribute('function', 'type_C');
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].innerHTML = 'type_C';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
+				i--;
+			}
+			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
+			{
+				hexagon[i].setAttribute('function', 'cancel');
+				hexagon[i].innerHTML = 'Cancel';
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].setAttribute('class', 'manual');
+				i--;
 			}
 		}
 	}
 
 	//TODO add event listener
 	console.log(pos_x, pos_y);
+}
+
+function select_army_type(e)
+{
+	e.target.removeEventListener('mousedown', mousedown_2, false);
+	e.target.removeEventListener('mouseup', mouseup_2, false);
+
+	var target_function = e.target.getAttribute('function');
+
+	if(target_function == 'type_A')
+	{
+		alert('A');
+	}
+	else if(target_function == 'type_B')
+	{
+		alert('A');
+	}
+	else if(target_function == 'type_C')
+	{
+		alert('A');
+	}
+	else if(target_function == 'cancel')
+	{
+		alert('Cancel');
+		remove_manual(e);
+	}
+	else
+	{
+		console.log('error in function game/panel/display.js->select_army_type(e)');
+	}
 }
 
 function display_manual(e)
@@ -268,6 +373,7 @@ function remove_manual()
 		}
 		manual[0].setAttribute('function', 'none');
 		manual[0].innerHTML = '';
+		manual[0].addEventListener('mousedown', mousedown_1, false);
 		manual[0].setAttribute('class', 'hexagon');
 	}
 }

@@ -79,25 +79,8 @@
                     $num = $i % 7;
                     echo "<button type='submit' class='roomBtn'>Room $i ! Click to enter room</button><br><br>";
                 }*/
-                echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/> Now you are in Room </div></div>"
+                echo "</div><div id='main' align='right'><button type='button'id='newRoom' onclick='room_create()''>Create New Room</button><button type='button' id='logout' onclick='logout()''>Log Out</button><br/><br/><div id='userInfo'>Current Player : $user_name<br/> Welcome!! Choose a room to start a new game!! Or, you can create a new room!! </div></div>"
              ?>
-        <!--<div id="Info" align="right">
-            <div id="main" align="right">
-            <button type="button" id="logout" onclick="logout()">logout</button>
-            <button type="button" id="newRoom" onclick="room_create()">create a new room</button>
-            <br><br>
-            </div>
-            <div id="userInfo">
-                <table id="userInfoTable" border="3px">
-                    <tr><td>what</td><td>what????????</td></tr>
-                </table>
-            </div>
-            <div id="roomInfo">
-                <table id="roomInfoTable"  border="3px">
-                   <tr><td>what the hell</td><td>what????????</td></tr>
-                </table>
-            </div> 
-        </div>-->
     </div>
 
 </body>
