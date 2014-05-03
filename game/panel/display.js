@@ -24,6 +24,7 @@
 */
 function addBoxes()
 {
+	//20 x 20 map//
 	var hexagon_num = 10;
 	var new_line_num = 4;
 	var hexagon_last_num = new_line_num;
@@ -35,6 +36,8 @@ function addBoxes()
 	{
 		new_line[i] = document.createElement('div');
 		new_line[i].setAttribute('id', 'new_line');
+		var br = document.createElement('br');
+		new_line[i].appendChild(br);
 	}
 
 	var hexagon_begin_odd = Array();
