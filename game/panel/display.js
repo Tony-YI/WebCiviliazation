@@ -44,10 +44,18 @@ function addBoxes()
 	box.appendChild(new_line);
 	box.appendChild(hexagon_begin_odd);
 	box.appendChild(hexagon);
+	box.appendChild(hexagon);
+	box.appendChild(hexagon);
+	box.appendChild(hexagon);
+	box.appendChild(hexagon);
 	box.appendChild(hexagon_last);
 
 	box.appendChild(new_line);
 	box.appendChild(hexagon_begin_even);
+	box.appendChild(hexagon);
+	box.appendChild(hexagon);
+	box.appendChild(hexagon);
+	box.appendChild(hexagon);
 	box.appendChild(hexagon);
 	box.appendChild(hexagon_last);
 }
