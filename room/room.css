@@ -59,7 +59,18 @@
   background: rgba(200,200,200,.5);
   margin-left: -2%;
   width: 18%;
-  text-align: left
+  border-radius: 9px;
+  text-align: left;
+  color:#8B1A1A;
+  font-size: 24px;
+  font-family: Buxton Sketch, Serif;
+  background: url(../images/user_info.jpg);
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  filter:alpha(opacity=80);
+  -moz-opacity:0.8;
+  opacity:0.8; 
+  -khtml-opacity: 0.8;
 }
 body
 {
@@ -75,14 +86,7 @@ body
      width: 20%;
      padding: 1% 1% 3% 1%;
      display: inline-block;
-     /*
-     -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-     border-radius: 8px;
-     -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-     -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-     box-shadow: rgba(0,0,0,1) 0 1px 0;
-     text-shadow: rgba(0,0,0,.4) 0 1px 0;*/
+
      filter:alpha(opacity=80);
      -moz-opacity:0.8;
      opacity:0.8; 
