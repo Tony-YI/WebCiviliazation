@@ -57,10 +57,6 @@ body
     border-right: 50px solid transparent;
     border-top: 25px solid gray;
 }
-#hexagon:hover
-{
-    background: white;
-}
 
 #hexagon_begin_odd
 {

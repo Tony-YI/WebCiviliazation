@@ -22,6 +22,14 @@
         <div id="hexagon"></div>
         <div id="hexagon_last"></div>
 */
+function click(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	alert("hehe");
+}
+
 function addBoxes()
 {
 	//20 x 20 map//
