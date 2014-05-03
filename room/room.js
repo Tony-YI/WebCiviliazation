@@ -63,6 +63,7 @@ function isUpade(browser_games, server_games)
 		{
 			console.log(browser_games[i].id);
 			console.log(server_games[i].Game_id);
+			console.log(server_games[i]);
 			if(browser_games[i].id != server_games[i].Game_id)
 			{
 				return true;
