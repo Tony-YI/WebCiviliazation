@@ -28,7 +28,7 @@ function room_get_list()
 			//console.log(room_info);
 			var obj = JSON.parse(room_info);
 			var status = obj.status;
-			var html = obj.html;
+			var roomDiv = obj.roomDiv;
 			//console.log(obj);
 			if(status == "failed")
 			{
@@ -41,7 +41,7 @@ function room_get_list()
 			//console.log(isUpade(browser_games,server_games));
 			if(isUpade(browser_games,server_games))
 			{
-				document.getElementById("roomNum").innerHTML = html;
+				document.getElementById("roomNum").innerHTML = roomDiv;
 				console.log("Updating the roomNum div");
 				return false;
 			}
