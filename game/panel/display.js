@@ -336,7 +336,7 @@ function select_army_type(e)
 		}
 		y = parseInt(y) + 1;
 		
-		display_manual(x, y);
+		display_manual(x, y, 'type_A');
 	}
 	else if(target_function == 'type_B')
 	{
@@ -345,7 +345,7 @@ function select_army_type(e)
 
 		x = parseInt(x) + 1;
 
-		display_manual(x, y);
+		display_manual(x, y, 'type_B');
 	}
 	else if(target_function == 'type_C')
 	{
@@ -357,7 +357,7 @@ function select_army_type(e)
 		}
 		y = parseInt(y) - 1;
 
-		display_manual(x, y);
+		display_manual(x, y, 'type_C');
 	}
 	else if(target_function == 'cancel')
 	{
@@ -371,7 +371,7 @@ function select_army_type(e)
 	}
 }
 
-function display_manual(x, y)
+function display_manual(x, y, type)
 {
 	//var pos_x = e.target.getAttribute('x');
 	//var pos_y = e.target.getAttribute('y');
@@ -483,7 +483,8 @@ function display_manual(x, y)
 		}
 	}
 
-	console.log(pos_x, pos_y);
+	var army_type = type; 
+	console.log(pos_x, pos_y, type);
 }
 
 function select_manual(e)
