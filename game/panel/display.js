@@ -44,12 +44,9 @@ function mousedown(e)
 	alert("hehe");
 }
 
-function no_scroll(e)
+function stop_scroll_propagate(e)
 {
 	e.stopPropagation();
-	e.preventDefault();
-
-	console.log("scroll");
 }
 
 function no_right_click(e)
@@ -110,6 +107,7 @@ function addBoxes()
 
 	var box = document.getElementById('box');
 	box.addEventListener("contextmenu", no_right_click, false);
+	box.addEventListener("DOMMouseScroll", stop_scroll_propagate, false);
 
 	for(var i = 0; i < new_line_num; i++)
 	{
@@ -136,9 +134,6 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
-	window.addEventListener("scroll", no_scroll, false);
-	document.addEventListener("scroll", no_scroll, false);
-	document.body.addEventListener("scroll", no_scroll, false);
 }
 
 window.addEventListener('load', init, false);
