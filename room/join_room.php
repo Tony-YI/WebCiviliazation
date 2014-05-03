@@ -22,7 +22,8 @@
 		$result = mysqli_query($db, $SQL_CHECK_ROOM);
 		if(mysqli_num_rows($result) == 0)
 		{
-			$response['status'] = 'room not exist';
+			$response['status'] = 'failed';
+			$response['error'] = 'room not exist';
 		}
 		
 		$SQL_CHECK_FULL = "SELECT P1, P2, P3 FROM Game WHERE Game_id = '$room_id'";
@@ -30,14 +31,16 @@
 		$seat = mysqli_fetch_row($result);
 		if($seat[0] && $seat[1] && $seat[2])
 		{
-			$response['status'] = 'room full';
+			$response['status'] = 'failed';
+			$response['error'] = 'room full'
 		}
 		
 		$SQL_CHECK_USER = "SELECT * FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
 		$result = mysqli_query($db, $SQL_CHECK_USER);
 		if(mysqli_num_rows($result) != 0)
 		{
-			$response['status'] = 'user not available';
+			$response['status'] = 'failed';
+			$response['error'] = 'user not available';
 		}
 		
 		if($response['status'] == "")
@@ -50,17 +53,14 @@
 			if($seat[0] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P1 = '$user_id' WHERE Game_id = '$room_id'";
-				$response['seat0'] = $seat[0];
 			}
 			else if($seat[1] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P2 = '$user_id' WHERE Game_id = '$room_id'";
-				$response['seat1'] = $seat[1];
 			}
 			else if($seat[2] == null)
 			{
 				$SQL_JOIN_ROOM = "UPDATE Game SET P3 = '$user_id' WHERE Game_id = '$room_id'";
-				$response['seat2'] = $seat[2];
 			}
 			mysqli_query($db, $SQL_JOIN_ROOM);
 		}
