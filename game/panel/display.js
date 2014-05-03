@@ -53,6 +53,7 @@ function addBoxes()
 	{
 		hexagon_begin_odd[i] = document.createElement('div');
 		hexagon_begin_odd[i].setAttribute('id', 'hexagon_begin_odd');
+		hexagon_begin_odd[i].addEventListener('click', click, false)
 	}
 
 	var hexagon = Array();
