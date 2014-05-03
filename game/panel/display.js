@@ -31,6 +31,8 @@ function mousedown(e)
 	{
 		case 1:
 			console.log('left click');
+			e.target.addEventListener('mousemove', mousemove, false);
+			e.target.addEventListener('mouseup', mouseup, false);
 			break;
 		case 2:
 			console.log('middle click');
@@ -46,12 +48,30 @@ function mousedown(e)
 
 function mousemove(e)
 {
-
+	e.stopPropagation();
+	e.preventDefault();
 }
 
 function mouseup(e)
 {
+	e.stopPropagation();
+	e.preventDefault();
 
+	switch(e.which)
+	{
+		case 1:
+			console.log('left click 2');
+			break;
+		case 2:
+			console.log('middle click 2');
+			break;
+		case 3:
+			console.log('right click 2');
+			break;
+		default:
+			console.log('no such click id 2');
+			break;
+	}
 }
 
 function addBoxes()
