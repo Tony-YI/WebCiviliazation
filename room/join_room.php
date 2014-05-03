@@ -112,49 +112,12 @@
 			$sql_error = mysqli_error($con);
 		}
 		//
-
-		$SQL_CREATE_PLAYERLIST = <<<SQL_STATEMENT
-		CREATE TABLE game_{$game_id}_playerlist
-		(
-			player_id INT PRIMARY KEY,
-			player_name CHAR(32),
-			player_gold INT,
-			player_lumber INT,
-			FOREIGN KEY(player_id) REFERENCES User(user_id)
-		)
-SQL_STATEMENT;
-
-		$SQL_CREATE_ARMYLIST = <<<SQL_STATEMENT
-		CREATE TABLE game_{$game_id}_armylist
-		(
-			army_id INT PRIMARY KEY,
-			army_type INT,
-			owner_id INT,
-			FOREIGN KEY(owner_id) REFERENCES game_{$game_id}_playerlist(player_id)
-		)
-SQL_STATEMENT;
-
-		$SQL_CREATE_SLOTLIST = <<<SQL_STATEMENT
-		CREATE TABLE game_{$game_id}_slotlist
-		(
-			slot_id INT PRIMARY KEY,
-			slot_owner INT,
-			slot_type INT,
-			slot_army INT,
-			N INT, NW INT, NE INT, W INT, E INT, SW INT, SE INT, S INT,
-			FOREIGN KEY(slot_owner) REFERENCES game_{$game_id}_playerlist(player_id),
-			FOREIGN KEY(slot_type) REFERENCES Slottype(type_id),
-			FOREIGN KEY(slot_army) REFERENCES game_{$game_id}_armylist(army_id),
-			FOREIGN KEY(N) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(NW) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(NE) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(W) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(E) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(SW) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(SE) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(S) REFERENCES game_{$game_id}_slotlist(slot_id)
-		)
-SQL_STATEMENT;
+		require_once("../lib/sql.php");
+		
+		$SQL_CREATE_PLAYERLIST = sql_create_playerlist($game_id);
+		$SQL_CREATE_ARMYLIST = sql_create_armylist($game_id);
+		$SQL_CREATE_SLOTLIST = sql_create_slotlist($game_id);
+		
 		if(!mysqli_query($con,$SQL_CREATE_PLAYERLIST))
 		{
 			$response["sql_playerlist_error"] = mysqli_error($con);
