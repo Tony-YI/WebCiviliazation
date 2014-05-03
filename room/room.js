@@ -51,6 +51,8 @@ function room_get_list()
 
 function isUpade(browser_games, server_games)
 {
+	console.log(browser_games.length);
+	console.log(server_games.length);
 	if(browser_games.length != server_games.length)
 	{
 		return true;
@@ -59,6 +61,8 @@ function isUpade(browser_games, server_games)
 	{
 		for (var i = 0; i < browser_games.length; i++) 
 		{
+			console.log(browser_games[i].id);
+			console.log(server_games[i].Game_id);
 			if(browser_games[i].id != server_games[i].Game_id)
 			{
 				return true;
