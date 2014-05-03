@@ -38,7 +38,7 @@ function mousedown(e)
 		case 3:
 			console.log('right click');
 			break;
-		case default:
+		default:
 			console.log('no such click id');
 			break;
 	}
