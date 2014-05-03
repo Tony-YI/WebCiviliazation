@@ -76,6 +76,12 @@ function mouseup(e)
 	}
 }
 
+function no_contextmenu(e)
+{
+	e.preventDefault();
+	e.stopPropagation();
+}
+
 function addBoxes()
 {
 	//20 x 20 map//
@@ -127,6 +133,7 @@ function addBoxes()
 	}
 
 	var box = document.getElementById('box');
+	box.addEventListener('contextmenu', no_contextmenu, false);
 
 	for(var i = 0; i < new_line_num; i++)
 	{
