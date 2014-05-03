@@ -24,37 +24,34 @@
 */
 function mousedown(e)
 {
-	try
-	{
-		e.stopPropagation();
-	}
-	catch(ee)
-	{
-		alert(ee);
-	}
-	try
-	{
-		e.preventDefault();
-	}
-	catch(eee)
-	{
-		alert(eee);
-	}
-
-	alert("hehe");
-}
-
-function stop_scroll_propagate(e)
-{
 	e.stopPropagation();
 	e.preventDefault();
-	alert("no scroll");
+
+	switch(e.which)
+	{
+		case 1:
+			console.log('left click');
+			break;
+		case 2:
+			console.log('middle click');
+			break;
+		case 3:
+			console.log('right click');
+			break;
+		case default:
+			console.log('no such click id');
+			break;
+	}
 }
 
-function no_right_click(e)
+function mousemove(e)
 {
-	e.stopPropagation();
-	e.preventDefault();
+
+}
+
+function mouseup(e)
+{
+
 }
 
 function addBoxes()
@@ -108,8 +105,6 @@ function addBoxes()
 	}
 
 	var box = document.getElementById('box');
-	box.addEventListener("contextmenu", no_right_click, false);
-	box.addEventListener("DOMMouseScroll", stop_scroll_propagate, false);
 
 	for(var i = 0; i < new_line_num; i++)
 	{
