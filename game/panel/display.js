@@ -30,6 +30,14 @@ function mousedown(e)
 	alert("hehe");
 }
 
+function no_scroll(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	console.log("scroll");
+}
+
 function addBoxes()
 {
 	//20 x 20 map//
@@ -107,6 +115,7 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
+	window.addEventListener("scroll", no_scroll, false);
 }
 
 window.addEventListener('load', init, false);
