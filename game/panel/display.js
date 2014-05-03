@@ -324,8 +324,8 @@ function select_army_type(e)
 	var x = e.target.getAttribute('x');
 	var y = e.target.getAttribute('y');
 
-	e.removeEventListener('mousedown', mousedown_2, false);
-	e.removeEventListener('mouseup', mouseup_2, false);
+	e.target.removeEventListener('mousedown', mousedown_2, false);
+	e.target.removeEventListener('mouseup', mouseup_2, false);
 
 	var target_function = e.target.getAttribute('function');
 
