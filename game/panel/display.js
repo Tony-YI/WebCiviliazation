@@ -149,8 +149,9 @@ function display_manual(e)
 function remove_manual()
 {
 	var manual = document.getElementsByClassName('manual');
-	for(var i = 0; i < manual.length; i++)
+	while(manual[0])
 	{
+		manual[0].setAttribute('function', 'none');
 		manual[0].setAttribute('class', 'hexagon');
 	}
 }
@@ -181,6 +182,7 @@ function addBoxes()
 	{
 		hexagon[i] = document.createElement('div');
 		hexagon[i].setAttribute('class', 'hexagon');
+		hexagon[i].setAttribute('function', 'none');
 		var x = i % new_line_num;
 		var y = parseInt(i / new_line_num);
 		hexagon[i].setAttribute('x', x);
