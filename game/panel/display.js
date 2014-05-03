@@ -56,8 +56,6 @@ function no_right_click(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
-
-	alert('right click');
 }
 
 function addBoxes()
@@ -111,6 +109,7 @@ function addBoxes()
 	}
 
 	var box = document.getElementById('box');
+	box.addEventListener("contextmenu", no_right_click, false);
 
 	for(var i = 0; i < new_line_num; i++)
 	{
@@ -140,7 +139,6 @@ function init(e)
 	window.addEventListener("scroll", no_scroll, false);
 	document.addEventListener("scroll", no_scroll, false);
 	document.body.addEventListener("scroll", no_scroll, false);
-	window.addEventListener("contextmenu", no_right_click, false);
 }
 
 window.addEventListener('load', init, false);
