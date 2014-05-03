@@ -22,7 +22,7 @@
         <div id="hexagon"></div>
         <div id="hexagon_last"></div>
 */
-function mousedown(e)
+function mousedown_1(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -31,14 +31,32 @@ function mousedown(e)
 	{
 		case 1:
 			console.log('left mousedown');
-			e.target.addEventListener('mouseup', mouseup, false);
 			break;
 		case 2:
 			console.log('middle mousedown');
 			break;
 		case 3:
 			console.log('right mousedown');
-			e.target.addEventListener('mouseup', mouseup, false);
+
+			if(e.target.getAttribute('usage') == 'no') //not for use
+			{
+				return false;
+			}
+
+			//TODO: check whether this slot belongs to the user
+			/*
+			if(belong to user)
+			{
+				continuous;
+			}
+			else
+			{
+				break;
+			}
+			*/
+
+			//add eventListener
+			e.target.addEventListener('mouseup', mouseup_1, false);
 			remove_manual();
 			break;
 		default:
@@ -47,7 +65,7 @@ function mousedown(e)
 	}
 }
 
-function mousemove(e)
+function mousemove_1(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -69,7 +87,7 @@ function mousemove(e)
 	}
 }
 
-function mouseup(e)
+function mouseup_1(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -84,12 +102,87 @@ function mouseup(e)
 			break;
 		case 3:
 			console.log('right mouseup');
-			display_manual(e);
+			display_army_type(e);
+			//display_manual(e);
 			break;
 		default:
 			console.log('no such mouseup id');
 			break;
 	}
+}
+
+function display_army_type(e)
+{
+	e.target.removeEventListener('mousedown', mousedown_1, false);
+	e.target.removeEventListener('mouseup', mouseup_1, false);
+
+	var pos_x = e.target.getAttribute('x');
+	var pos_y = e.target.getAttribute('y');
+
+	var hexagon = document.getElementsByClassName('hexagon');
+
+	if(pos_y % 2 == 0)//odd
+	{
+		for(var i = 0; i < hexagon.length; i++)
+		{
+			if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+			{
+				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
+				hexagon[i].setAttribute('function', 'type_A');
+				hexagon[i].innerHtml = 'type_A';
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('class', 'manual');
+			}
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
+			{
+				hexagon[i].setAttribute('function', 'type_B');
+				hexagon[i].innerHtml = 'type_B';
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('class', 'manual');
+			}
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
+			{
+				hexagon[i].setAttribute('function', 'type_C');
+				hexagon[i].innerHtml = 'type_C';
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('class', 'manual');
+			}
+			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
+			{
+				hexagon[i].setAttribute('function', 'cancel');
+				hexagon[i].innerHtml = 'Cancel';
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('class', 'manual');
+			}
+		}
+	}
+	else //even
+	{
+		for(var i = 0; i < hexagon.length; i++)
+		{
+			if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+			{
+				hexagon[i].setAttribute('function', 'attack');
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('class', 'manual');
+			}
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
+			{
+				hexagon[i].setAttribute('function', 'move');
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('class', 'manual');
+			}
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
+			{
+				hexagon[i].setAttribute('function', 'defence');
+				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('class', 'manual');
+			}
+		}
+	}
+
+	//TODO add event listener
+	console.log(pos_x, pos_y);
 }
 
 function display_manual(e)
@@ -98,7 +191,10 @@ function display_manual(e)
 	{
 		return false;
 	}
-	
+
+	//TODO: check whether this slot belongs to the user
+	//if yes, continuous
+
 	var pos_x = e.target.getAttribute('x');
 	var pos_y = e.target.getAttribute('y');
 
@@ -235,7 +331,7 @@ function addBoxes()
 			}
 		}
 
-		hexagon[i].addEventListener('mousedown', mousedown, false);
+		hexagon[i].addEventListener('mousedown', mousedown_1, false);
 	}
 
 	var box = document.getElementById('box');
