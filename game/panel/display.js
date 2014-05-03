@@ -97,10 +97,6 @@ function mousedown_3(e)
 	{
 		case 1:
 			console.log('left mousedown 3');
-			if(e.target.getAttribute('usage') == 'no') //not for use
-			{
-				return false;
-			}
 			e.target.addEventListener('mouseup', mouseup_3, false);
 			break;
 		case 2:
@@ -514,10 +510,7 @@ function select_manual(e)
 	}
 	else if(target_function == 'back')
 	{
-		alert('Back');
 		remove_manual();
-		e.target.removeEventListener('mousedown', mousedown_1, false);
-		e.target.removeEventListener('mouseup', mousedown_1, false);
 		display_army_type(e);
 	}
 	else
