@@ -138,12 +138,12 @@ SQL_STATEMENT;
 		CREATE TABLE game_{$game_id}_slotlist
 		(
 			slot_id INT PRIMARY KEY,
-			slot_owner  INT,
+			slot_owner INT,
 			slot_type INT,
 			slot_army INT,
 			N INT, NW INT, NE INT, W INT, E INT, SW INT, SE INT, S INT,
 			FOREIGN KEY(slot_owner) REFERENCES game_{$game_id}_playerlist(player_id),
-			FOREIGN KEY(slot_type) REFERENCES Slot_type(type_id),
+			FOREIGN KEY(slot_type) REFERENCES Slottype(type_id),
 			FOREIGN KEY(slot_army) REFERENCES game_{$game_id}_armylist(army_id),
 			FOREIGN KEY(N) REFERENCES game_{$game_id}_slotlist(slot_id),
 			FOREIGN KEY(NW) REFERENCES game_{$game_id}_slotlist(slot_id),
