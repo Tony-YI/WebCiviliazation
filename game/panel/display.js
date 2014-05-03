@@ -31,7 +31,6 @@ function mousedown(e)
 	{
 		case 1:
 			console.log('left mousedown');
-			e.target.addEventListener('mousemove', mousemove, false);
 			e.target.addEventListener('mouseup', mouseup, false);
 			break;
 		case 2:
@@ -39,7 +38,6 @@ function mousedown(e)
 			break;
 		case 3:
 			console.log('right mousedown');
-			e.target.addEventListener('mousemove', mousemove, false);
 			e.target.addEventListener('mouseup', mouseup, false);
 			break;
 		default:
