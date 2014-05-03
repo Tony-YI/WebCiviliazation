@@ -17,7 +17,7 @@ body
 
 #box1
 {
-    width: 2255px;
+    width: 2485px;
     height: 100%;
     -webkit-transform: perspective(550px) rotateX(45deg);
     transform: perspective(550px) rotateX(45deg);
@@ -31,15 +31,18 @@ body
 
 .manual
 {
-    background: red; 
+    background: red;
+    opacity: 1;
 }
 .manual:before
 {
     border-bottom: 25px solid red;
+    opacity: 1;
 }
 .manual:after
 {
     border-top: 25px solid red;
+    opacity: 1;
 }
 
 .hexagon
