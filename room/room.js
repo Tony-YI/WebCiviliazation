@@ -206,6 +206,10 @@ function quit_room()
 			}
 			console.log(xhr.responseText);
 			var obj = JSON.parse(xhr.responseText);
+			if(obj.status == 'success')
+			{
+				$("#newRoom").show();
+			}
 			//var status = obj.status;
 			//var roomDiv = obj.roomDiv;
 			//var userDiv = obj.userDiv;
