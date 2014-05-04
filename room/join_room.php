@@ -221,12 +221,12 @@ SQL_STATEMENT;
                             switch ($posNum[$i]) {
                                 case 1:
                                 	shuffle($intv1);
-                                    $x[$i] = $intv1[0 % (intv+1)];
-                                    $y[$i] = $intv1[1 % (intv+1)];                          
-                                    $goldPx[$i] = $intv1[2 % (intv+1)];
-                                    $goldPy[$i] = $intv1[3 % (intv+1)];
-                                    $woodPx[$i] = $intv1[4 % (intv+1)];
-                                    $woodPy[$i] = $intv1[5 % (intv+1)];
+                                    $x[$i] = $intv1[0];
+                                    $y[$i] = $intv1[2];                          
+                                    $goldPx[$i] = $intv1[2)];
+                                    $goldPy[$i] = $intv1[1];
+                                    $woodPx[$i] = $intv1[1];
+                                    $woodPy[$i] = $intv1[0];
                                     break;
                                 case 2:
                                 	shuffle($intv1);
@@ -250,12 +250,12 @@ SQL_STATEMENT;
                                     break;
                                 case 4:
                                 	shuffle($intv2);
-                                    $x[$i] = $intv2[0 % (intv+1)];
-                                    $y[$i] = $intv2[1 % (intv+1)];                          
-                                    $goldPx[$i] = $intv2[2 % (intv+1)];
-                                    $goldPy[$i] = $intv2[3 % (intv+1)];
-                                    $woodPx[$i] = $intv2[4 % (intv+1)];
-                                    $woodPy[$i] = $intv2[5 % (intv+1)];
+                                    $x[$i] = $intv2[0];
+                                    $y[$i] = $intv2[2];                          
+                                    $goldPx[$i] = $intv2[2];
+                                    $goldPy[$i] = $intv2[1];
+                                    $woodPx[$i] = $intv2[1];
+                                    $woodPy[$i] = $intv2[0];
                                     break;
                                 default:
                                     break;
