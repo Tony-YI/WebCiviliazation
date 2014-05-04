@@ -63,12 +63,12 @@
   background-image: url(../images/user_info.jpg);
   background-repeat: no-repeat; 
   text-align: left;
-  color:#CD0000;
+  color:#EEE9BF;
   font-size: 24px;
   font-family: Buxton Sketch, Chalkduster;
   padding: 1% 1% 1% 1%;
-  -moz-box-shadow: 5px 5px 25px 5px #888888; /* 老的 Firefox */
-  box-shadow: 5px 5px 25px 5px #888888;
+  -moz-box-shadow: 5px 5px 25px 5px #8470FF; 
+  box-shadow: 5px 5px 25px 5px #8470FF;
   filter:alpha(opacity=100);
   -moz-opacity:1;
   opacity:1; 
