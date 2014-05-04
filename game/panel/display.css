@@ -208,17 +208,14 @@ body
 .hexagon
 {
     background: gray;
-    box-shadow: 4px 4px 4px;
 }
 .hexagon:before
 {
     border-bottom: 25px solid gray;
-    box-shadow: 4px 4px 4px;
 }
 .hexagon:after
 {
     border-top: 25px solid gray;
-    box-shadow: 4px 4px 4px;
 }
 
 #hexagon_normal
