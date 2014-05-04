@@ -660,6 +660,7 @@ function init(e)
 {
 	addBoxes();
 	alert(window.innerHeight);
+	document.getElementById('display').style.height = window.innerHeight + 'px';
 }
 
 window.addEventListener('load', init, false);
