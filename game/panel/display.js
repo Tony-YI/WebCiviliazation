@@ -659,6 +659,8 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
+	document.getElementById('display').style.width = parseInt(window.innerWidth) - 20 + 'px';
+	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
 }
 
 window.addEventListener('load', init, false);
