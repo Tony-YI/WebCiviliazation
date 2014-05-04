@@ -17,7 +17,6 @@
 		//If the cookie exists
 		$user_id = $_SERVER['HTTP_USERID'];
 		$room_id = $_SERVER['HTTP_ROOMID'];
-		
 		$SQL_CHECK_ROOM = "SELECT * FROM Game WHERE Game_id = '$room_id'";
 		$result = mysqli_query($db, $SQL_CHECK_ROOM);
 		if(mysqli_num_rows($result) == 0)
@@ -205,7 +204,9 @@ SQL_STATEMENT;
 	//This function will randomly set the starting position of each player
 	function randomize_players_start_position($game_id,$con,&$response,$row_num)
 	{
-
+                            $posNum = range(1,3);
+                            shuffle($posNum);
+                            $response['hahahahahahannm'] = $posNum;
 	}
 
 	//This function will randomly set some (5-10) special slots on the maps

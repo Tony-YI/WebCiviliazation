@@ -11,6 +11,7 @@
 					{"Game_id":"4","P1":"12","P2":"3","P3":"NULL"}]
 		}
 	*/
+	
 	require_once("../lib/db.php");
 	$response = "";
 	if(check_cookie($db))
@@ -90,7 +91,7 @@
 		{
 			$temp = mysqli_fetch_row($result);
 			$room_num = $temp[0];
-			$response['userDiv'] = "Current Player : $user_name<br/> Now you are in Room $room_num"; 
+			$response['userDiv'] = "Current Player : $user_name<br/> Now you are in Room $room_num<button type='button' id='quit' onclick='quit_room()'>Quit Current Room</button>"; 
 			$response['temp'] = $temp;
 			if($temp[1] == 1)
 			{
