@@ -22,13 +22,12 @@ body
     width: 2685px;
     -webkit-transform: perspective(550px) rotateX(45deg);
     transform: perspective(550px) rotateX(45deg);
-    background: url('../../images/game_background.jpg'); 
 }
 
 #box
 {
     width: 2685px;
-    background: url('../../images/game_background.jpg'); 
+    border: 1px green solid;
 }
 
 .manual
