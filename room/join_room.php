@@ -325,6 +325,7 @@ SQL_STATEMENT;
                         $intv3 = range($intv+2, $row_num - $intv);
                         $intv4 = range($row_num - $intv+1,$row_num - 1);
                         $intv5 = range($row_num - $intv+2,$row_num - 1);
+                        $response['intervals'] = $intv5;
                         $i = 0;
                         while($i < 6){
 	                        switch ($i) {
