@@ -229,7 +229,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].addEventListener('webkitAnimationEnd', end_slidein, false);
+				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
