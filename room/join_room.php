@@ -396,6 +396,8 @@ SQL_STATEMENT;
                         	mysqli_query($con,$SQL_SET_SLOT_TYPE);
                         	$i++;
                     	}
+                    	$response['Gold222'] = "($goldPx[0], $goldPy[0]) , ($goldPx[1], $goldPy[1]) , ($goldPx[2], $goldPy[2]),($goldPx[3], $goldPy[3]),($goldPx[4], $goldPy[4]),($goldPx[5], $goldPy[5])";
+                        $response['Wood222'] = "($woodPx[0], $woodPy[0]) , ($woodPx[1], $woodPy[1]) , ($woodPx[2], $woodPy[2]), ($woodPx[3], $woodPy[3]), ($woodPx[4], $woodPy[4]), ($woodPx[5], $woodPy[5])";
 	}
 
 
