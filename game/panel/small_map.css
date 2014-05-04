@@ -8,6 +8,7 @@
 	bottom: 9px;
 	z-index: 102;
 	display: none;
+	background-color: white;
 
 	animation-name: slidein;
     -webkit-animation-name: slidein;
@@ -17,7 +18,6 @@
     -webkit-animation-duration: 0.5s;
     -moz-animation-duration: 0.5s;
 }
-
 @keyframes slidein
 {
     0% {
@@ -80,4 +80,15 @@
 	100% {
 		-moz-transform: translateX(0%);
 	}
+}
+
+.slot
+{
+	width: 12px;
+	height: 12px;
+	background-color: gray;
+	margin: 1px 1px 1px 1px;
+	z-index: 103;
+	position: relative;
+	float: left;
 }

@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./info.css"/>
     <link rel="stylesheet" type="text/css" href="./small_map.css"/>
     <script type="text/javascript" src="./display.js"></script>
+    <script type="text/javascript" src="./small_map.js"></script>
     <?php
         #Check Cookie here
         #if cookie exist, redirect the page
@@ -27,7 +28,6 @@
 </div>
 
 <div id="small_map">
-    <iframe src="./display.php"></iframe>
 </div>
 
 <div id="display">
