@@ -62,7 +62,6 @@ function mousedown_1(e) //handel the right click on slot
 			//add eventListener
 			e.target.addEventListener('mouseup', mouseup_1, false);
 			remove_manual();
-			clean_small_map_dot(); //in small_map.js
 			break;
 		default:
 			console.log('no such mousedown id 1');
@@ -598,6 +597,8 @@ function select_manual(e)
 
 function remove_manual()
 {
+	clean_small_map_dot(); //in small_map.js
+	
 	var manual = document.getElementsByClassName('manual');
 	while(manual[0])
 	{
