@@ -217,12 +217,21 @@ function key_down(e)
 	e.stopPropagation();
 	e.preventDefault();
 
-	console.log(e.keyCode);
+	var key = e.keyCode;
+	if(key == 77)
+	{
+		console.log(key);
+		document.getElementById('small_map').style.display = 'block';
+	}
 }
 
 function key_up(e)
 {
-
+	var key = e.keyCode;
+	if(key == 77)
+	{
+		console.log(key);
+	}
 }
 
 function no_contextmenu(e) //no default right click when event on the map
@@ -695,6 +704,7 @@ function init(e)
 	resize();
 	window.addEventListener('resize', window_resize, false);
 	window.addEventListener('keydown', key_down, false);
+	window.addEventListener('keyup', key_up, false)
 }
 
 window.addEventListener('load', init, false);

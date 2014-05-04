@@ -4,6 +4,7 @@
     <title>WebCivilization</title>
     <link rel="stylesheet" type="text/css" href="./display.css"/>
     <link rel="stylesheet" type="text/css" href="./info.css"/>
+    <link rel="stylesheet" type="text/css" href="./small_map.css"/>
     <script type="text/javascript" src="./display.js"></script>
     <?php
         #Check Cookie here
@@ -24,6 +25,10 @@
     <div id="gold">Gold:</div>
     <div id="lumber">Lumber:</div>
 </div>
+
+<div id="small_map">
+</div>
+
 <div id="display">
     <div id="box">
     </div>

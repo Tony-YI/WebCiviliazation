@@ -1,0 +1,11 @@
+#small_map
+{
+	width: 300px;
+	height:300px;
+	border: 1px solid red;
+	position: fixed;
+	right: 9px;
+	bottom: 9px;
+	z-index: 102;
+	display: none;
+}
