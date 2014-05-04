@@ -15,6 +15,7 @@ body
     overflow: scroll;
     border: 1px red solid;
     margin: 9px 9px 9px 9px;
+    background: url('../../images/game_background.jpg'); 
 }
 
 #box1
@@ -207,7 +208,7 @@ body
 
 .hexagon
 {
-    background: gray; 
+    background: gray;
 }
 .hexagon:before
 {
