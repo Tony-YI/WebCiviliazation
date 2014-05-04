@@ -60,7 +60,7 @@
   width: 18%;
   min-height: 30%;
   height: auto!important;
-  border-radius: 5px;
+  border-radius: 30px;
   background-image: url(../images/user_info.jpg);
   background-repeat: no-repeat; 
   text-align: left;
@@ -74,7 +74,7 @@ body
   background-image: url(../images/bg0.jpg);
   background-repeat: no-repeat; 
   background-attachment: fixed;
-  size:100%;
+  background-size: 100% 100%;
   margin: 0px;
    filter:alpha(opacity=80);
    -moz-opacity:0.8;
