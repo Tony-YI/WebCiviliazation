@@ -6,7 +6,7 @@ body
     min-height: 700px;
     text-align: center;
     margin: 0 auto;
-    background: url('../../images/game_background.jpg');
+    background: black;
     opacity: 0.8;
 }
 
@@ -29,6 +29,7 @@ body
 #box
 {
     width: 2685px;
+    background: url('../../images/game_background.jpg');
 }
 
 .manual
