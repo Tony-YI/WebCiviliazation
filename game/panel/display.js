@@ -204,7 +204,9 @@ function mouseup_3(e)
 
 function end_slidein(e)
 {
-	e.target.removeEventListener('mouseover', end_slidein, false);
+	e.stopPropagation();
+	e.preventDefault();
+	//e.target.removeEventListener('mouseover', end_slidein, false);
 	e.target.setAttribute('type', 'none');
 
 	alert('hehe');
