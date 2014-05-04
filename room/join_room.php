@@ -205,27 +205,28 @@ SQL_STATEMENT;
 	function randomize_players_start_position($game_id,$con,&$response,$row_num)
 	{
                             $posNum = range(1,4);
+                            $intv = $row_num / 4;
                             shuffle($posNum);
                             $x = range(1,3);
                             $y = range(1,3);
                             $i = 0;
                             while ($i < 3) {
-                                switch ($posNum[i]) {
+                                switch ($posNum[$i]) {
                                     case 1:
-                                        $x[$i] = rand(1,5);
-                                        $x[$i] = rand(1,5);
+                                        $x[$i] = rand(1,$intv);
+                                        $x[$i] = rand(1,$intv);
                                         break;
                                     case 2:
-                                        $x[$i] = rand(1,5);
-                                        $y[$i] = rand(16,20);
+                                        $x[$i] = rand(1,$intv);
+                                        $y[$i] = rand(20-$intv+1,20);
                                         break;
                                     case 3:
-                                        $x[$i] = rand(16,20);
-                                        $y[$i] = rand(1,5);
+                                        $x[$i] = rand(20-$intv+1,20);
+                                        $y[$i] = rand(1,$intv);
                                         break;
                                     case 4:
-                                        $x[$i] = rand(16,20);
-                                        $y[$i] = rand(16,20);
+                                        $x[$i] = rand(20-$intv+1,20);
+                                        $y[$i] = rand(20-$intv+1,20);
                                     default:
                                         break;
                                 }

@@ -212,6 +212,29 @@ function end_slidein(e)  //handel the animation
 	e.target.setAttribute('type', 'none');
 }
 
+function key_down(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	var key = e.keyCode;
+	if(key == 77)
+	{
+		console.log(key);
+		document.getElementById('small_map').style.display = 'block';
+	}
+}
+
+function key_up(e)
+{
+	var key = e.keyCode;
+	if(key == 77)
+	{
+		console.log(key);
+		document.getElementById('small_map').style.display = 'block';
+	}
+}
+
 function no_contextmenu(e) //no default right click when event on the map
 {
 	e.preventDefault();
@@ -223,12 +246,6 @@ function window_resize(e) //handel window resize
 	resize();
 }
 /***********************************/
-
-function resize()
-{
-	document.getElementById('display').style.width = parseInt(window.innerWidth) - 20 + 'px';
-	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
-}
 
 /***********************************/
 /*********display functions*********/
@@ -600,6 +617,12 @@ function remove_manual()
 }
 /***********************************/
 
+function resize()
+{
+	document.getElementById('display').style.width = parseInt(window.innerWidth) - 20 + 'px';
+	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
+}
+
 function addBoxes()
 {
 	//20 x 20 map//
@@ -681,6 +704,8 @@ function init(e)
 	addBoxes();
 	resize();
 	window.addEventListener('resize', window_resize, false);
+	window.addEventListener('keydown', key_down, false);
+	window.addEventListener('keyup', key_up, false)
 }
 
 window.addEventListener('load', init, false);
