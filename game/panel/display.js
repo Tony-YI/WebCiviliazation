@@ -506,7 +506,7 @@ function display_manual(x, y, type)
 				hexagon[i].innerHTML = 'Back';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
