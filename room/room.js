@@ -193,7 +193,7 @@ function quit_room()
 	console.log('quit room clicked');
 	var xhr = new XMLHttpRequest();
 	//this is a synchornous request
-	xhr.open("POST","room/quit_room.php",false);
+	xhr.open("POST","room/quit_room.php",true);
 	xhr.setRequestHeader("USERID",current_usr_id);
 	xhr.send();
 	xhr.onreadystatechange = function(){
