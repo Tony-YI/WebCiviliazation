@@ -204,8 +204,10 @@ function mouseup_3(e)
 
 function end_slidein(e)
 {
-	e.target.removeEventListener('webkitAnimationEnd', end_slidein, false);
+	e.target.removeEventListener('mouseover', end_slidein, false);
 	e.target.setAttribute('type', 'none');
+
+	alert('hehe');
 }
 
 function display_army_type(e) //TODO: check whether this slot has shuch army type
