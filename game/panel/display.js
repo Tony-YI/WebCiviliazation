@@ -659,10 +659,10 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
-	document.body.style.width = window.innerWidth;
-	document.body.style.height = window.innerHeight;
-	document.getElementById('display').style.width = window.innerWidth;
-	document.getElementById('display').style.height = window.innerHeight;
+	document.body.style.width = window.innerWidth + 'px';
+	document.body.style.height = window.innerHeight + 'px';
+	document.getElementById('display').style.width = window.innerWidth + 'px';
+	document.getElementById('display').style.height = window.innerHeight + 'px';
 }
 
 window.addEventListener('load', init, false);
