@@ -31,7 +31,7 @@ function room_get_list()
 			var status = obj.status;
 			var roomDiv = obj.roomDiv;
 			var userDiv = obj.userDiv;
-			console.log(obj);
+			//console.log(obj);
 			if(status == "failed")
 			{
 				document.location.href = '../login/login.php';
@@ -45,7 +45,7 @@ function room_get_list()
 			{
 				document.getElementById("roomNum").innerHTML = roomDiv;
 				document.getElementById("userInfo").innerHTML = userDiv;
-				console.log("Updating the roomNum div");
+				//console.log("Updating the roomNum div");
 				return false;
 			}
 			if(obj.started == 'yes')
