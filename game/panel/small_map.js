@@ -1,3 +1,19 @@
+function small_map_dot(e)
+{
+	var pos_x = e.target.getAttribute('x');
+	var pos_y = e.target.getAttribute('y');
+
+	var slot = document.getElementsByClassName('slot');
+	var slot_num = 484;
+	for(var i = 0; i < slot_num; i++)
+	{
+		if(slot[i].getAttribute('x') == pos_x && slot[i].getAttribute('y') == pos_y)
+		{
+			slot[i].style.backgroundColor = 'red';
+		}
+	}
+}
+
 function init_small_map(e)
 {
 	//20 x 20 map//
@@ -14,18 +30,7 @@ function init_small_map(e)
 		slot[i].setAttribute('x', x);
 		slot[i].setAttribute('y', y);
 
-		if(x == 0) //start slot
-		{
-			if(y % 2 == 0) //odd begin slot
-			{
-				slot[i].style.opacity = '0.0';
-			}
-			else //even begin slot
-			{
-				slot[i].style.opacity = '0.0';
-			}
-		}
-		else if (x == line_num - 1) //end slot of one row
+		if(x == 0 || x == line_num - 1 || y == 0 || y == line_num - 1) //row start slot
 		{
 			slot[i].style.opacity = '0.0';
 		}

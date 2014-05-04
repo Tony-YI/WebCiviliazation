@@ -153,6 +153,7 @@ function mouseup_1(e) //w.r.t function mouse_down_1(e)
 		case 3:
 			console.log('right mouseup 1');
 			display_army_type(e);
+			small_map_dot(e); //in small_map.js
 			break;
 		default:
 			console.log('no such mouseup id 1');
