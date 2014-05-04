@@ -18,14 +18,14 @@ body
     border: 0px red solid;
 }
 
-#box
+#box1
 {
     width: 2485px;
     -webkit-transform: perspective(550px) rotateX(45deg);
     transform: perspective(550px) rotateX(45deg);
 }
 
-#box1
+#box
 {
     width: 2485px;
 }
