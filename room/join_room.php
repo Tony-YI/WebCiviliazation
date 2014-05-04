@@ -194,7 +194,7 @@
 					$slot_type = 1;
 
 				$SQL_INSERT_UNUSED_SLOTS = <<<SQL_STATEMENT
-				INSERT INTO $table_slotlist VALUES ($count_row,$count_col,NULL,$slot_type,NULL)"
+				INSERT INTO $table_slotlist VALUES ($count_row,$count_col,NULL,$slot_type,NULL)
 SQL_STATEMENT;
 				if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
 				{
