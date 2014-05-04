@@ -25,6 +25,7 @@
 <div id="info">
     <div id="gold">Gold:</div>
     <div id="lumber">Lumber:</div>
+    <div id="hexagon_info"></div>
 </div>
 
 <div id="small_map">

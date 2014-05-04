@@ -57,26 +57,25 @@ JSON_ERROR;
 	
 	//PLAYER INFO
 	$count = 0;
+	echo "{";
 	while($player_row = mysqli_fetch_row($playerlist_result))
 	{
-		$player_id[$count] = $player_row[0];
-		$player_name[$count] = $player_row[1];
-		$player_gold[$count] = $player_row[2];
-		$player_wood[$count] = $player_row[3];
+		$player_id = $player_row[0];
+		$player_name = $player_row[1];
+		$player_gold = $player_row[2];
+		$player_wood = $player_row[3];
 		$count++;
+		echo "\"p$count\":";
+		echo "{\"user_id\":\"$player_id\",";
+		echo "\"username\":\"$player_name\",";
+		echo "\"gold\":\"$player_gold\",";
+		echo "\"wood\":\"$player_wood\"},";
 	}
 
-	echo <<<JSON_PLAYER
-	{
-		"p1":{"user_id":"$player_id[0]","username":"$player_name[0]","gold":"$player_gold[0]","wood":"$player_wood[0]"},
-		"p2":{"user_id":"$player_id[1]","username":"$player_name[1]","gold":"$player_gold[1]","wood":"$player_wood[1]"},
-		"p3":{"user_id":"$player_id[2]","username":"$player_name[2]","gold":"$player_gold[2]","wood":"$player_wood[2]"},
-JSON_PLAYER;
-	
 	//SLOT INFO
 	$count = 0;
 	$slot_num = mysqli_num_rows($slotlist_result);
-	echo "\"slot_query:\":\"$SQL_GET_SLOTLIST\",";
+	echo "\"slot_query\":\"$SQL_GET_SLOTLIST\",";
 	echo "\"slot_num\":\"$slot_num\",";
 	echo "\"slot\":[";
 	for($count = 0;$count < $slot_num;$count++)
@@ -87,15 +86,12 @@ JSON_PLAYER;
 		$slot_owner = $slot_row[2];
 		$slot_type = $slot_row[3];
 		$slot_army = $slot_row[4];
-		echo <<<JSON_SLOT
-		{
-			"slot_x":"$slot_x",
-			"slot_y":"$slot_y",
-			"slot_owner":"$slot_owner",
-			"slot_type":"$slot_type",
-			"slot_army":"$slot_army"
-		}
-JSON_SLOT;
+		echo "{";
+		echo "\"slot_x\":\"$slot_x\",";
+		echo "\"slot_y\":\"$slot_y\",";
+		echo "\"slot_owner\":\"$slot_owner\",";
+		echo "\"slot_type\":\"$slot_type\",";
+		echo "\"slot_army\":\"$slot_army\"}";
 		if(($count + 1) < $slot_num)
 			echo ",";
 		else
@@ -104,6 +100,7 @@ JSON_SLOT;
 
 	//TODO:
 	//ARMY INFO
-
+	$army_num = mysqli_num_rows($armylist_result);
+	echo "\"army_num\":\"$army_num\"";
 	echo "}";
 ?>

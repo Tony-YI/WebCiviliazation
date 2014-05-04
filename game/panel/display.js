@@ -35,6 +35,9 @@ function mousedown_1(e) //handel the right click on slot
 	{
 		case 1:
 			console.log('left mousedown 1');
+			clean_small_map_dot(); //in small_map.js
+			small_map_dot(e); //in small_map.js
+			display_hexagon_info(e);
 			break;
 		case 2:
 			console.log('middle mousedown 1');
@@ -62,7 +65,6 @@ function mousedown_1(e) //handel the right click on slot
 			//add eventListener
 			e.target.addEventListener('mouseup', mouseup_1, false);
 			remove_manual();
-			clean_small_map_dot(); //in small_map.js
 			break;
 		default:
 			console.log('no such mousedown id 1');
@@ -154,7 +156,6 @@ function mouseup_1(e) //w.r.t function mouse_down_1(e)
 		case 3:
 			console.log('right mouseup 1');
 			display_army_type(e);
-			small_map_dot(e); //in small_map.js
 			break;
 		default:
 			console.log('no such mouseup id 1');
@@ -616,6 +617,15 @@ function remove_manual()
 		manual[0].addEventListener('mousedown', mousedown_1, false);
 		manual[0].setAttribute('class', 'hexagon');
 	}
+}
+
+function display_hexagon_info(e)
+{
+	var pos_x = e.target.getAttribute('x');
+	var pos_y = e.target.getAttribute('y');
+
+	var hexagon_info = document.getElementById('hexagon_info');
+	hexagon_info.innerHTML = 'x = ' + pos_x + '; y = ' + pos_y;
 }
 /***********************************/
 

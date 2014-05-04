@@ -22,7 +22,10 @@ function clean_small_map_dot()
 	var slot = document.getElementsByClassName('slot');
 	for(var i = 0; i < slot_num; i++)
 	{
-		slot[i].style.backgroundColor = 'gray';
+		if(slot[i].style.backgroundColor == 'red')
+		{
+			slot[i].style.backgroundColor = 'gray';
+		}
 	}
 }
 
