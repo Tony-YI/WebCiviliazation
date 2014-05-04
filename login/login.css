@@ -10,6 +10,7 @@ body
 	opacity: 0.8;
 	background-repeat: no-repeat;
 	size: 100%;
+	background-attachment: fixed;
 }
 
 h1
