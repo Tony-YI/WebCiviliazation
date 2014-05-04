@@ -694,7 +694,7 @@ function init(e)
 	addBoxes();
 	resize();
 	window.addEventListener('resize', window_resize, false);
-	window.addEventListener('keydowm', key_dowm, false);
+	window.addEventListener('keydowm', key_down, false);
 }
 
 window.addEventListener('load', init, false);
