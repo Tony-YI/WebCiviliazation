@@ -659,6 +659,10 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
+	document.body.style.width = 1100 + 'px';
+	document.body.style.height = 700 + 'px';
+	document.getElementById('display').style.width = 1100 + 'px';
+	document.getElementById('display').style.height = 700 + 'px';
 }
 
 window.addEventListener('load', init, false);
