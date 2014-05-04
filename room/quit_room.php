@@ -30,5 +30,6 @@
 		$response['status'] = 'failed';
 		$response['error'] = 'Invalid cookie';
 	}
+	$response = json_encode($response);
 	echo $response;
 ?>
