@@ -1,8 +1,10 @@
 #info
 {
-	width: 100px;
-	height:100px;
+	width: 200px;
+	height:300px;
 	border: 1px solid red;
 	position: fixed;
-	float: right;
+	right: 9px;
+	top: 9px;
+	z-index: 101;
 }

@@ -11,6 +11,7 @@
 					{"Game_id":"4","P1":"12","P2":"3","P3":"NULL"}]
 		}
 	*/
+	
 	require_once("../lib/db.php");
 	$response = "";
 	if(check_cookie($db))

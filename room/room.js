@@ -191,6 +191,27 @@ function quit_room()
 {
 	//This function will let the user quit the room he entered
 	console.log('quit room clicked');
+	var xhr = new XMLHttpRequest();
+	//this is a synchornous request
+	xhr.open("POST","room/quit_room.php",true);
+	xhr.setRequestHeader("USERID",current_usr_id);
+	xhr.send();
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4)
+		{
+			if(xhr.status != 200)
+			{
+				console.log("Error code = " + new String(xhr.status));
+				return false;
+			}
+			console.log(xhr.responseText);
+			var obj = JSON.parse(xhr.responseText);
+			//var status = obj.status;
+			//var roomDiv = obj.roomDiv;
+			//var userDiv = obj.userDiv;
+			
+		}
+	};
 }
 function render_user_information()
 {
