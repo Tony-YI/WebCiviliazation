@@ -63,12 +63,12 @@
   background-image: url(../images/user_info.jpg);
   background-repeat: no-repeat; 
   text-align: left;
-  color:#EEE9BF;
+  color:#D3D3D3;
   font-size: 24px;
   font-family: Buxton Sketch, Chalkduster;
   padding: 1% 1% 1% 1%;
-  -moz-box-shadow: 5px 5px 25px 5px #8470FF; 
-  box-shadow: 5px 5px 25px 5px #8470FF;
+  -moz-box-shadow: 5px 10px 25px 5px #4169E1; 
+  box-shadow: 5px 5px 10px 5px #4169E1;
   filter:alpha(opacity=100);
   -moz-opacity:1;
   opacity:1; 
