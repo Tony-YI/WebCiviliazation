@@ -35,6 +35,7 @@ function mousedown_1(e) //handel the right click on slot
 	{
 		case 1:
 			console.log('left mousedown 1');
+			clean_small_map_dot(); //in small_map.js
 			small_map_dot(e); //in small_map.js
 			display_hexagon_info(e);
 			break;
@@ -148,7 +149,6 @@ function mouseup_1(e) //w.r.t function mouse_down_1(e)
 	{
 		case 1:
 			console.log('left mouseup 1');
-			clean_small_map_dot(); //in small_map.js
 			break;
 		case 2:
 			console.log('middle mouseup 1');
