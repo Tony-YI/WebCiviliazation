@@ -8,15 +8,15 @@
 	bottom: 9px;
 	z-index: 102;
 	display: none;
-	background-color: black;
+	background-color: gray;
 
 	animation-name: slidein;
     -webkit-animation-name: slidein;
     -moz-animation-name: slidein;
 
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
 }
 
 @keyframes slidein
