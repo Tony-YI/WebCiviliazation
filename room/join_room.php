@@ -160,7 +160,10 @@
 		}
 		//2. Initilize slots
 		$row_num = 20;
-		initilize_slots($game_id,$con,$response,$row_num);
+		
+		//initilize_slots($game_id,$con,$response,$row_num);
+		
+		return true;
 	}
 
 	function initilze_slots($game_id,$con,&$response,$row_num)
