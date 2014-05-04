@@ -30,9 +30,9 @@
 	$SQL_GET_PLAYERLIST = "SELECT * FROM game_{$game_id}_playerlist";
 	$SQL_GET_SLOTLIST = "SELECT * FROM game_{$game_id}_slotlist";
 	$SQL_GET_ARMYLIST = "SELECT * FROM game_{$game_id}_armylist";
-	$playerlist_result = mysqli_query($db,$SQL_GET_PLAYERLIST)
-	$slotlist_result = mysqli_query($db,$SQL_GET_SLOTLIST))
-	$armylist_result = mysqli_query($db,$SQL_GET_ARMYLIST))
+	$playerlist_result = mysqli_query($db,$SQL_GET_PLAYERLIST);
+	$slotlist_result = mysqli_query($db,$SQL_GET_SLOTLIST);
+	$armylist_result = mysqli_query($db,$SQL_GET_ARMYLIST);
 	
 	//PLAYER INFO
 	$count = 0;
@@ -58,7 +58,7 @@ JSON_PLAYER;
 	$slot_num = mysqli_num_rows($slotlist_result);
 	for($count = 0;$count < $slot_num;$count++)
 	{
-		$slot_row = mysqli_fetch_row($slotlist_result))
+		$slot_row = mysqli_fetch_row($slotlist_result);
 		$slot_x = $slot_row[0];
 		$slot_y = $slot_row[1];
 		$slot_owner = $slot_row[2];
