@@ -159,7 +159,8 @@
 				$response["SQL_INSERT_playerlist_$count"] = mysqli_error($con);
 		}
 		//2. Initilize slots
-		initilize_slots($game_id,$con,$response,20);
+		$row_num = 20;
+		initilize_slots($game_id,$con,$response,$row_num);
 	}
 
 	function initilze_slots($game_id,$con,&$response,$row_num)
@@ -176,8 +177,8 @@
 SQL_STATEMENT;
 			if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
 			{
-				$response["SQL_INSERT_UNUSED_SLOTS"] = mysqli_error($con);
-				exit;
+				$response["SQL_INSERT_UNUSED_SLOTS"] = $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
+				return false;
 			}
 		}
 
@@ -192,8 +193,8 @@ SQL_STATEMENT;
 SQL_STATEMENT;
 			if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
 			{
-				$response["SQL_INSERT_UNUSED_SLOTS"] = mysqli_error($con);
-				exit;
+				$response["SQL_INSERT_UNUSED_SLOTS"] .= $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
+				return false;
 			}
 		}
 	}
