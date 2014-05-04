@@ -9,16 +9,23 @@ It handels the AJAX or XHR
 
 #each hexagon has attributes like:
 
-heaxgon(class: heaxgon/manual, function: none/attack/move/defence, usage: yes/no, id: heaxgon_begin_odd/heaxgon_begin_even/heaxgon_last/heaxgon_normal, style:"opacity: 0/1");
+heaxgon(class, function, type, usage, x, y, id, style:"opacity: 0/1");
 
 class->hexgon: this is a solt not for manual
 class->manual: this is a manual slot
 
 function->none: this means this slot is not for manual
-function->attack/move/defence: this means this slot is for manual
+function->type_A/type_B/type_C/cancle: this means this slot is for manual
+function->attack/move/defence/back: this means this slot is for manual
 
-usage->yes: user can move to this slot
-usage->no: user can not move to this slot
+type->none: no fade in animation
+type->slidein: there is fade in animation in this slot
+
+usage->yes: user can move to this slot (opacity = 1)
+usage->no: user can not move to this slot (opacity = 0)
+
+x->#: x position of this slot
+y->#: y position of this slot
 
 id: different kinds of heaxgon
 
