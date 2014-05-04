@@ -95,6 +95,7 @@
 			$response['temp'] = $temp;
 			if($temp[1] == 1)
 			{
+				setcookie("IN_GAME",$room_num,null,"/");
 				$response['started'] = 'yes';
 			}
 			else
