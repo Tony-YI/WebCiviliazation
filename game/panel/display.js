@@ -659,6 +659,8 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
+	document.body.style.width = window.innerWidth;
+	document.body.style.height = window.innerHeight;
 }
 
 window.addEventListener('load', init, false);
