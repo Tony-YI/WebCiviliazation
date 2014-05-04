@@ -207,7 +207,7 @@ body
 
 .hexagon
 {
-    background: url('../../images/background1.jpg'); 
+    background: gray;
 }
 .hexagon:before
 {
