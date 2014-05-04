@@ -90,7 +90,7 @@
 		{
 			$temp = mysqli_fetch_row($result);
 			$room_num = $temp[0];
-			$response['userDiv'] = "Current Player : $user_name<br/> Now you are in Room $room_num<button type='button' id='quit' onclick=></button>"; 
+			$response['userDiv'] = "Current Player : $user_name<br/> Now you are in Room $room_num<button type='button' id='quit' onclick=>Quit Current Room</button>"; 
 			$response['temp'] = $temp;
 			if($temp[1] == 1)
 			{
