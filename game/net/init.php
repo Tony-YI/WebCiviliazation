@@ -75,7 +75,7 @@ JSON_ERROR;
 	//SLOT INFO
 	$count = 0;
 	$slot_num = mysqli_num_rows($slotlist_result);
-	echo "\"slot_query:\":\"$SQL_GET_SLOTLIST\",";
+	echo "\"slot_query\":\"$SQL_GET_SLOTLIST\",";
 	echo "\"slot_num\":\"$slot_num\",";
 	echo "\"slot\":[";
 	for($count = 0;$count < $slot_num;$count++)
@@ -100,5 +100,7 @@ JSON_ERROR;
 
 	//TODO:
 	//ARMY INFO
+	$army_num = mysqli_num_rows($armylist_result);
+	echo "\"army_num\":\"$army_num\"";
 	echo "}";
 ?>
