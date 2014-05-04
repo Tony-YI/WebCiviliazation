@@ -343,7 +343,7 @@ SQL_STATEMENT;
 	                        		$goldPx[$i] = $intv3[0];
 	                        		$goldPy[$i] = $intv1[0];
 	                        		$woodPx[$i] = $intv3[1];
-	                        		$woodPy[$i] = $intv1[1]
+	                        		$woodPy[$i] = $intv1[1];
 	                        		break;
 	                        	case 2:
 	                        		shuffle($intv2);
