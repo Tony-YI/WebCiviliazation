@@ -88,4 +88,5 @@
 	height: 13.5px;
 	background-color: gray;
 	margin: 1px 1px 1px 1px;
+	z-index: 103;
 }
