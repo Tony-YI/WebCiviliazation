@@ -51,6 +51,9 @@ function room_get_list()
 			if(obj.started == 'yes')
 			{
 				console.log('Your game has started!');
+				document.location.href = '../game/game.html';
+				return false;
+
 			}
 		}
 	};
@@ -184,6 +187,10 @@ function room_create()
 	}
 }
 
+function quit_room()
+{
+	//This function will let the user quit the room he entered
+}
 function render_user_information()
 {
 	//This function will show the user information on the right hand side
