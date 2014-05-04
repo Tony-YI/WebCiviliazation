@@ -22,7 +22,16 @@
 	$game_id = $_COOKIE["IN_GAME"];
 	$user_id = $_COOKIE["CURRENT_USER"];
 	$username = $_COOKIE["CURRENT_USERNAME"];
-
+	if(!$game_id || !$user_id || !$username)
+	{
+		echo<<<JSON_ERROR
+		{
+			"status":"cookie_error",
+			"cookie_error":"lacking necessary cookie"
+		}
+JSON_ERROR;
+		exit;
+	}
 	$table_playerlist = "game_{$game_id}_playerlist";
 	$table_slotlist = "game_{$game_id}_slotlist";
 	$table_armylist = "game_{$game_id}_armylist";
@@ -30,9 +39,21 @@
 	$SQL_GET_PLAYERLIST = "SELECT * FROM game_{$game_id}_playerlist";
 	$SQL_GET_SLOTLIST = "SELECT * FROM game_{$game_id}_slotlist";
 	$SQL_GET_ARMYLIST = "SELECT * FROM game_{$game_id}_armylist";
-	$playerlist_result = mysqli_query($db,$SQL_GET_PLAYERLIST);
-	$slotlist_result = mysqli_query($db,$SQL_GET_SLOTLIST);
-	$armylist_result = mysqli_query($db,$SQL_GET_ARMYLIST);
+
+	if(!$playerlist_result = mysqli_query($db,$SQL_GET_PLAYERLIST) || 
+		!$slotlist_result = mysqli_query($db,$SQL_GET_SLOTLIST) || 
+		!$armylist_result = mysqli_query($db,$SQL_GET_ARMYLIST))
+	{
+		$sql_error = mysqli_error($db);
+		echo<<<JSON_ERROR
+		{
+			"status":"sql_error",
+			"sql_error":"$sql_error"
+		}
+JSON_ERROR;
+		exit;
+	}
+	
 	
 	//PLAYER INFO
 	$count = 0;
