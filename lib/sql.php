@@ -103,7 +103,7 @@ SQL_STATEMENT;
 			PRIMARY KEY(slot_x,slot_y),
 			FOREIGN KEY(slot_owner) REFERENCES game_{$game_id}_playerlist(player_id),
 			FOREIGN KEY(slot_type) REFERENCES Slottype(type_id),
-			FOREIGN KEY(slot_army) REFERENCES game_{$game_id}_armylist(army_id),
+			FOREIGN KEY(slot_army) REFERENCES game_{$game_id}_armylist(army_id)
 		)
 SQL_STATEMENT;
 		return $SQL_CREATE_SLOTLIST;
