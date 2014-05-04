@@ -35,6 +35,8 @@ function mousedown_1(e) //handel the right click on slot
 	{
 		case 1:
 			console.log('left mousedown 1');
+			clean_small_map_dot(); //in small_map.js
+			small_map_dot(e); //in small_map.js
 			display_hexagon_info(e);
 			break;
 		case 2:
@@ -154,7 +156,6 @@ function mouseup_1(e) //w.r.t function mouse_down_1(e)
 		case 3:
 			console.log('right mouseup 1');
 			display_army_type(e);
-			small_map_dot(e); //in small_map.js
 			break;
 		default:
 			console.log('no such mouseup id 1');
@@ -598,8 +599,6 @@ function select_manual(e)
 
 function remove_manual()
 {
-	clean_small_map_dot(); //in small_map.js
-
 	var manual = document.getElementsByClassName('manual');
 	while(manual[0])
 	{
