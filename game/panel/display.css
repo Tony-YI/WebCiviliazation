@@ -18,7 +18,6 @@ body
 #box1
 {
     width: 2485px;
-    height: 100%;
     -webkit-transform: perspective(550px) rotateX(45deg);
     transform: perspective(550px) rotateX(45deg);
 }
@@ -26,7 +25,6 @@ body
 #box
 {
     width: 2485px;
-    height: 100%;
 }
 
 .manual
