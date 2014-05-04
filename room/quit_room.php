@@ -15,7 +15,7 @@
 		}
 		else if(mysqli_num_rows($result) == 1)
 		{
-			$temp =  mysqli_fetch_row($row);
+			$temp =  mysqli_fetch_row($result);
 			$Game_id = $temp[0];
 			$game_started = $temp[1];
 			$response['id'] = $Game_id;
