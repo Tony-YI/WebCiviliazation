@@ -227,7 +227,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -240,7 +240,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -253,7 +253,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -265,7 +265,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].innerHTML = 'Cancel';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -283,7 +283,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].innerHTML = 'type_A';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -296,7 +296,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].innerHTML = 'type_B';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -309,7 +309,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].innerHTML = 'type_C';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -321,7 +321,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].innerHTML = 'Cancel';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -412,7 +412,7 @@ function display_manual(x, y, type)
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -425,7 +425,7 @@ function display_manual(x, y, type)
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -438,7 +438,7 @@ function display_manual(x, y, type)
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -450,7 +450,7 @@ function display_manual(x, y, type)
 				hexagon[i].innerHTML = 'Back';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -468,7 +468,7 @@ function display_manual(x, y, type)
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -481,7 +481,7 @@ function display_manual(x, y, type)
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -494,7 +494,7 @@ function display_manual(x, y, type)
 				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
@@ -506,7 +506,7 @@ function display_manual(x, y, type)
 				hexagon[i].innerHTML = 'Back';
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
+				hexagon[i].removeEventListener('mouseup', mouseup1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
@@ -566,9 +566,9 @@ function remove_manual()
 		manual[0].removeEventListener('mousedown', mousedown_1, false);
 		manual[0].removeEventListener('mousedown', mousedown_2, false);
 		manual[0].removeEventListener('mousedown', mousedown_3, false);
-		manual[0].removeEventListener('mouseup', mousedown_1, false);
-		manual[0].removeEventListener('mouseup', mousedown_2, false);
-		manual[0].removeEventListener('mouseup', mousedown_3, false);
+		manual[0].removeEventListener('mouseup', mouseup_1, false);
+		manual[0].removeEventListener('mouseup', mouseup_2, false);
+		manual[0].removeEventListener('mouseup', mouseup_3, false);
 		manual[0].addEventListener('mousedown', mousedown_1, false);
 		manual[0].setAttribute('class', 'hexagon');
 	}
