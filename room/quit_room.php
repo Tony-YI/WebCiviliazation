@@ -7,7 +7,7 @@
 		//If the cookie exists
 		$user_id = $_SERVER['HTTP_USERID'];
 		$SQL_CHECK_ROOM = "SELECT Game_id, game_started  FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
-		$result =  mysqli_fetch_row(mysqli_query($db, $SQL_CHECK_ROOM));
+		$result = mysqli_query($db, $SQL_CHECK_ROOM);
 		if(mysqli_num_rows($result) == 0)
 		{
 			$response['status'] = 'failed';
@@ -15,8 +15,9 @@
 		}
 		else if(mysqli_num_rows($result) == 1)
 		{
-			$Game_id = $result[0];
-			$game_started = $result[1];
+			$temp =  mysqli_fetch_row($row);
+			$Game_id = $temp[0];
+			$game_started = $temp[1];
 			$response['id'] = $Game_id;
 			$response['started'] = $game_started;
 		}
