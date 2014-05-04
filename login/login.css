@@ -8,10 +8,10 @@ body
 	text-align: center;
 	background-image: url('../images/background.jpg');
 	opacity: 0.8;
-	-webkit-background-size: auto 100%;
-  	-moz-background-size: auto 100%;
-  	-o-background-size: auto 100%;
-  	background-size: auto 100%;
+	-webkit-background-size: contain;
+  	-moz-background-size: contain;
+  	-o-background-size: contain;
+  	background-size: contain;
   	background-repeat: no-repeat;
 }
 
