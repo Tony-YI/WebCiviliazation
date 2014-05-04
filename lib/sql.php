@@ -95,22 +95,15 @@ SQL_STATEMENT;
 		$SQL_CREATE_SLOTLIST = <<<SQL_STATEMENT
 		CREATE TABLE game_{$game_id}_slotlist
 		(
-			slot_id INT PRIMARY KEY,
+			slot_x INT,
+			slot_y INT,
 			slot_owner INT,
 			slot_type INT,
 			slot_army INT,
-			N INT, NW INT, NE INT, W INT, E INT, SW INT, SE INT, S INT,
+			PRIMARY KEY(slot_x,slot_y),
 			FOREIGN KEY(slot_owner) REFERENCES game_{$game_id}_playerlist(player_id),
 			FOREIGN KEY(slot_type) REFERENCES Slottype(type_id),
 			FOREIGN KEY(slot_army) REFERENCES game_{$game_id}_armylist(army_id),
-			FOREIGN KEY(N) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(NW) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(NE) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(W) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(E) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(SW) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(SE) REFERENCES game_{$game_id}_slotlist(slot_id),
-			FOREIGN KEY(S) REFERENCES game_{$game_id}_slotlist(slot_id)
 		)
 SQL_STATEMENT;
 		return $SQL_CREATE_SLOTLIST;

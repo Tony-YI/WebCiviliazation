@@ -1,0 +1,9 @@
+#Slottype
+
+
+type_id | type_name | gold_production | wood_production | 
+1 Unused 0 0
+2 Normal_Slot 0 0
+3 Gold Slot 5 0
+4 Wood Slot 0 5
+5 Capital 20 20
