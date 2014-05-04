@@ -20,10 +20,10 @@
 </head>
 
 <body>
+<div id="info">
+</div>
 <div id="display">
     <div id="box">
-    </div>
-    <div id="info">
     </div>
 </div>
 </body>
