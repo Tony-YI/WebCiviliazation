@@ -263,12 +263,10 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			{
 				hexagon[i].setAttribute('function', 'cancel');
 				hexagon[i].innerHTML = 'Cancel';
-				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -321,12 +319,10 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			{
 				hexagon[i].setAttribute('function', 'cancel');
 				hexagon[i].innerHTML = 'Cancel';
-				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -413,10 +409,12 @@ function display_manual(x, y, type)
 				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 				hexagon[i].setAttribute('function', 'attack');
 				hexagon[i].innerHTML = 'Attack';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
+				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -424,10 +422,12 @@ function display_manual(x, y, type)
 			{
 				hexagon[i].setAttribute('function', 'move');
 				hexagon[i].innerHTML = 'Move';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
+				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -435,10 +435,12 @@ function display_manual(x, y, type)
 			{
 				hexagon[i].setAttribute('function', 'defence');
 				hexagon[i].innerHTML = 'Defence';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
+				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -463,10 +465,12 @@ function display_manual(x, y, type)
 			{
 				hexagon[i].setAttribute('function', 'attack');
 				hexagon[i].innerHTML = 'Attack';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
+				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -474,10 +478,12 @@ function display_manual(x, y, type)
 			{
 				hexagon[i].setAttribute('function', 'move');
 				hexagon[i].innerHTML = 'Move';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
+				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -485,10 +491,12 @@ function display_manual(x, y, type)
 			{
 				hexagon[i].setAttribute('function', 'defence');
 				hexagon[i].innerHTML = 'Defence';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_3, false);
+				hexagon[i].addEventListener('mouseover', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
