@@ -239,6 +239,7 @@ SQL_STATEMENT;
                             $p[1] = $row[1];
                             $p[2] = $row[2];
                             $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = '5' , slot_owner = '$p[0]' WHERE slot_x = '$x[0]' AND slot_y = '$y[0]'";
+                            $response['sql1'] = $SQL_SET_START_POS;
                             mysqli_query($con,$SQL_SET_START_POS);
                             $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = '5' , slot_owner = '$p[1]' WHERE slot_x = '$x[1]' AND slot_y = '$y[1]'";
                             mysqli_query($con,$SQL_SET_START_POS);
@@ -247,6 +248,7 @@ SQL_STATEMENT;
                             $response['player1Ini'] = "($x[0],$y[0])";
                             $response['player2Ini'] = "($x[1],$y[1])";
                             $response['player3Ini'] = "($x[2],$y[2])";
+
 	}
 
 	//This function will randomly set some (5-10) special slots on the maps
@@ -258,6 +260,7 @@ SQL_STATEMENT;
 
 	function initilize_slots_unused_row($game_id,$con,&$response,$row,$col_num)
 	{
+                        $table_slotlist = "game_{$game_id}_slotlist";
 		for($count_col = 0;$count_col < $col_num;$count_col++)
 		{
 			$SQL_INSERT_UNUSED_SLOTS = "INSERT INTO $table_slotlist VALUES ($row,$count_col,NULL,0,NULL)";
