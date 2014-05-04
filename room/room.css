@@ -74,7 +74,6 @@ body
   background-image: url(../images/bg0.jpg);
   background-repeat: no-repeat; 
   background-attachment: fixed;
-  background-size: 100%;
   margin: 0px;
    filter:alpha(opacity=80);
    -moz-opacity:0.8;
