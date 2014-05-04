@@ -161,12 +161,12 @@
 		//2. Initilize slots
 		$row_num = 20;
 		
-		//initilize_slots($game_id,$con,$response,$row_num);
+		initilize_slots($game_id,$con,$response,$row_num);
 		
 		return true;
 	}
 
-	function initilze_slots($game_id,$con,&$response,$row_num)
+	function initilize_slots($game_id,$con,&$response,$row_num)
 	{
 		$table_slotlist = "game_{$game_id}_slotlist";
 		//only support same row number and same column number for now
