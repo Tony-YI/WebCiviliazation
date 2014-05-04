@@ -35,6 +35,7 @@ function mousedown_1(e) //handel the right click on slot
 	{
 		case 1:
 			console.log('left mousedown 1');
+			display_hexagon_info(e);
 			break;
 		case 2:
 			console.log('middle mousedown 1');
@@ -598,7 +599,7 @@ function select_manual(e)
 function remove_manual()
 {
 	clean_small_map_dot(); //in small_map.js
-	
+
 	var manual = document.getElementsByClassName('manual');
 	while(manual[0])
 	{
@@ -617,6 +618,15 @@ function remove_manual()
 		manual[0].addEventListener('mousedown', mousedown_1, false);
 		manual[0].setAttribute('class', 'hexagon');
 	}
+}
+
+function display_hexagon_info(e)
+{
+	var pos_x = e.target.getAttribute('x');
+	var pos_y = e.target.getAttribute('y');
+
+	var hexagon_info = document.getElementById('hexagon_info');
+	hexagon_info.innerHTML = 'x = ' + pos_x + '; y = ' + pos_y;
 }
 /***********************************/
 
