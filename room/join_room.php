@@ -210,7 +210,7 @@ SQL_STATEMENT;
                             $y = range(1,3);
                             $i = 0;
                             while ($i < 3) {
-                                switch ($posNum[i]) {
+                                switch ($posNum[$i]) {
                                     case 1:
                                         $x[$i] = rand(1,5);
                                         $x[$i] = rand(1,5);
