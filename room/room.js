@@ -190,6 +190,7 @@ function room_create()
 function quit_room()
 {
 	//This function will let the user quit the room he entered
+	console.log('quit room clicked');
 }
 function render_user_information()
 {
