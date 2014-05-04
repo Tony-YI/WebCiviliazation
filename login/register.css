@@ -14,19 +14,19 @@ body
 
 h4
 {
-	font-family: Chalkduster; 
+	font-family: Chalkduster, Castellar; 
 	margin: 0 auto;
 }
 
 h1.Register
 {
-	font-family: "Chalkduster" white; 
+	font-family: Chalkduster, Castellar white; 
 	font-style: bold;
 }
 
 h2.Register
 {
-	font-family: "Chalkduster" white;
+	font-family: Chalkduster, Castellar white;
 }
 
 div.register_form
@@ -34,7 +34,7 @@ div.register_form
 	width: 320px;
 	height: 151px;
 	text-align: center;
-	font-family: "Chalkduster"; 
+	font-family: Chalkduster, Castellar; 
 	border: 5px white solid;
 	position: relative;
 	top: 50px;
@@ -43,7 +43,7 @@ div.register_form
 
 div.form_field
 {
-	font-family: "Chalkduster"; 
+	font-family: Chalkduster, Castellar; 
 	font-style: bold; 
 	font-size: 18px;
 }
