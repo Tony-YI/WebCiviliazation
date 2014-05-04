@@ -3,6 +3,7 @@
 <head>
     <title>WebCivilization</title>
     <link rel="stylesheet" type="text/css" href="./display.css"/>
+    <link rel="stylesheet" type="text/css" href="./info.css"/>
     <script type="text/javascript" src="./display.js"></script>
     <?php
         #Check Cookie here
@@ -19,6 +20,8 @@
 </head>
 
 <body>
+<div id="info">
+</div>
 <div id="display">
     <div id="box">
     </div>

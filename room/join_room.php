@@ -205,7 +205,9 @@ SQL_STATEMENT;
 	//This function will randomly set the starting position of each player
 	function randomize_players_start_position($game_id,$con,&$response,$row_num)
 	{
-
+                            $posNum = range(1,3);
+                            shuffle($posNum);
+                            flush($posNum);
 	}
 
 	//This function will randomly set some (5-10) special slots on the maps
