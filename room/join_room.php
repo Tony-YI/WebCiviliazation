@@ -183,7 +183,6 @@ SQL_STATEMENT;
 
 		//
 
-
 		//The last row are unused
 		for($count_col = 0;$count_col < $col_num;$count_col++)
 		{
