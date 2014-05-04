@@ -13,7 +13,7 @@
 					{}]
 		}
 	*/
-	require_once("../lib/db.php");
+	require_once("../../lib/db.php");
 	if(!check_cookie($db))
 	{
 		echo "{\"status\":\"unauthorized user\"}";
