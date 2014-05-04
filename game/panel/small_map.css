@@ -84,9 +84,10 @@
 
 .slot
 {
-	width: 13.5px;
-	height: 13.5px;
+	width: 11.5px;
+	height: 11.5px;
 	background-color: gray;
 	margin: 1px 1px 1px 1px;
 	z-index: 103;
+	position: relative;
 }

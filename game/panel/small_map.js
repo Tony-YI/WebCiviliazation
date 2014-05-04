@@ -16,7 +16,7 @@ function init_small_map(e)
 
 		if(x == 0) //start slot
 		{
-			if(y % 2 == 0) //odd begin slot
+			if(y % 2 == 0 || y == 0 || y == line_num) //odd begin slot
 			{
 				slot[i].style.opacity = '0.0';
 			}
