@@ -202,31 +202,61 @@ SQL_STATEMENT;
 	}
 
 	//This function will randomly set the starting position of each player
+	//I also set several slots type here!!!! @ Edward
 	function randomize_players_start_position($game_id,$con,&$response,$row_num)
 	{
 		$posNum = range(1,4);
                         $intv = $row_num / 4;
                         shuffle($posNum);
-                        $x = range(1,3);
+                        $x = range(1,3);// just for build an array, no meaning
                         $y = range(1,3);
+                        $goldPx = range(1,3);
+                        $goldPy = range(1,3);
+                        $woodPx = range(1,3);
+                        $woodPy = range(1,3);
+                        $intv1 = range(1,$intv);
+                        $intv2 = range(20-$intv+1,20);
                         $i = 0;
                         while ($i < 3) {
                             switch ($posNum[$i]) {
                                 case 1:
-                                    $x[$i] = rand(1,$intv);
-                                    $x[$i] = rand(1,$intv);
+                                	shuffle($intv1);
+                                    $x[$i] = $intv1[0];
+                                    $y[$i] = $intv1[1];
+                                    $goldPx[$i] = $intv1[2];
+                                    $goldPy[$i] = $intv1[3];
+                                    $woodPx[$i] = $intv1[4];
+                                    $woodPy[$i] = $intv1[5];
                                     break;
                                 case 2:
-                                    $x[$i] = rand(1,$intv);
-                                    $y[$i] = rand(20-$intv+1,20);
+                                	shuffle($intv1);
+                                	shuffle($intv2);
+                                    $x[$i] = $intv1[0];
+                                    $y[$i] = $intv2[0];
+                                    $goldPx[$i] = $intv1[1];
+                                    $goldPy[$i] = $intv2[1];
+                                    $woodPx[$i] = $intv1[2];
+                                    $woodPy[$i] = $intv2[2];
                                     break;
                                 case 3:
-                                    $x[$i] = rand(20-$intv+1,20);
-                                    $y[$i] = rand(1,$intv);
+                                	shuffle($intv1);
+                                	shuffle($intv2);
+                                    $x[$i] = $intv2[0];
+                                    $y[$i] = $intv1[0];
+                                    $goldPx[$i] = $intv2[1];
+                                    $goldPy[$i] = $intv1[1];
+                                    $woodPx[$i] = $intv2[1];
+                                    $woodPy[$i] = $intv1[1];
                                     break;
                                 case 4:
-                                    $x[$i] = rand(20-$intv+1,20);
-                                    $y[$i] = rand(20-$intv+1,20);
+                                	shuffle($intv2);
+                                    $x[$i] = $intv2[0];
+                                    $y[$i] = $intv2[1];
+                                    $goldPx[$i] = $intv2[2];
+                                    $goldPy[$i] = $intv2[3];
+                                    $woodPx[$i] = $intv2[4];
+                                    $woodPy[$i] = $intv2[5];
+                                    break;
                                 default:
                                     break;
                              }
@@ -239,7 +269,6 @@ SQL_STATEMENT;
                         $p[1] = $row[1];
                         $p[2] = $row[2];
                         $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[0] WHERE slot_x = $x[0] AND slot_y = $y[0]";
-                        $response['sql1'] = $SQL_SET_START_POS;
                         mysqli_query($con,$SQL_SET_START_POS);
                         $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[1] WHERE slot_x = $x[1] AND slot_y = $y[1]";
                         mysqli_query($con,$SQL_SET_START_POS);
@@ -248,7 +277,8 @@ SQL_STATEMENT;
                         $response['player1Ini'] = "($x[0],$y[0])";
                         $response['player2Ini'] = "($x[1],$y[1])";
                         $response['player3Ini'] = "($x[2],$y[2])";
-
+                        $response['Gold'] = "($goldPx[0], $goldPy[0]) , ($goldPx[1], $goldPy[1]) , ($goldPx[2], $goldPy[2])";
+                        $response['Wood'] = "($woodPx[0], $woodPy[0]) , ($woodPx[1], $woodPy[1]) , ($woodPx[2], $woodPy[2])";
 	}
 
 	//This function will randomly set some (5-10) special slots on the maps
