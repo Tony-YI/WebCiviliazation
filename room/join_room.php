@@ -17,7 +17,7 @@
 		//If the cookie exists
 		$user_id = $_SERVER['HTTP_USERID'];
 		$room_id = $_SERVER['HTTP_ROOMID'];
-		
+		$response['id'] = $user_id;
 		$SQL_CHECK_ROOM = "SELECT * FROM Game WHERE Game_id = '$room_id'";
 		$result = mysqli_query($db, $SQL_CHECK_ROOM);
 		if(mysqli_num_rows($result) == 0)
@@ -207,7 +207,9 @@ SQL_STATEMENT;
 	{
                             $posNum = range(1,3);
                             shuffle($posNum);
-                            flush($posNum);
+                            echo "$posNum";
+                            ob_flush();
+                            flush();
 	}
 
 	//This function will randomly set some (5-10) special slots on the maps
