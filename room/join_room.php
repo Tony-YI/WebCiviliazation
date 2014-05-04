@@ -174,11 +174,8 @@
 		//The first row are unused
 		for($count_col = 0;$count_col < $col_num;$count_col++)
 		{
-			$SQL_INSERT_UNUSED_SLOTS = <<<SQL_STATEMENT
-			INSERT INTO $table_slotlist VALUES
-			(0,$count_col,NULL,0,NULL)
-SQL_STATEMENT;
-			#if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
+			$SQL_INSERT_UNUSED_SLOTS = "INSERT INTO $table_slotlist VALUES (0,$count_col,NULL,0,NULL)";
+			if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
 			{
 				$response["SQL_INSERT_UNUSED_SLOTS"] = $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
 				return false;
