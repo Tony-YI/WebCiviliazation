@@ -231,7 +231,7 @@ function key_up(e)
 	if(key == 77)
 	{
 		console.log(key);
-		document.getElementById('small_map').style.display = 'block';
+		document.getElementById('small_map').style.display = 'none';
 	}
 }
 
