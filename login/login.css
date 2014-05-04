@@ -4,7 +4,7 @@ body
 	height: 100%;
 	min-width: 800px;
 	min-height: 600px;
-	font-family: Chalkduster;
+	font-family: Chalkduster, Castellar;
 	text-align: center;
 	background-image: url('../images/background.jpg');
 	opacity: 0.8;
@@ -21,7 +21,7 @@ h1
 
 h4
 {
-	font-family: Chalkduster;
+	font-family: Chalkduster, Castellar;
 	margin: 0 auto;
 }
 
