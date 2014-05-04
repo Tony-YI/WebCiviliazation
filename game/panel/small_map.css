@@ -8,7 +8,6 @@
 	bottom: 9px;
 	z-index: 102;
 	display: none;
-	background-color: gray;
 
 	animation-name: slidein;
     -webkit-animation-name: slidein;
