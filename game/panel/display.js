@@ -218,6 +218,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 				hexagon[i].setAttribute('function', 'type_A');
 				hexagon[i].innerHTML = 'type_A';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
@@ -229,6 +230,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			{
 				hexagon[i].setAttribute('function', 'type_B');
 				hexagon[i].innerHTML = 'type_B';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
@@ -240,6 +242,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			{
 				hexagon[i].setAttribute('function', 'type_C');
 				hexagon[i].innerHTML = 'type_C';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
@@ -251,6 +254,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			{
 				hexagon[i].setAttribute('function', 'cancel');
 				hexagon[i].innerHTML = 'Cancel';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
@@ -268,6 +272,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			{
 				hexagon[i].setAttribute('function', 'type_A');
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].innerHTML = 'type_A';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
@@ -279,6 +284,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			{
 				hexagon[i].setAttribute('function', 'type_B');
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].innerHTML = 'type_B';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
@@ -290,6 +296,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			{
 				hexagon[i].setAttribute('function', 'type_C');
 				hexagon[i].style.opacity = '1.0';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].innerHTML = 'type_C';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
@@ -301,6 +308,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			{
 				hexagon[i].setAttribute('function', 'cancel');
 				hexagon[i].innerHTML = 'Cancel';
+				hexagon[i].setAttribute('type', 'slidein');
 				hexagon[i].style.opacity = '1.0';
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
@@ -571,6 +579,7 @@ function addBoxes()
 		hexagon[i] = document.createElement('div');
 		hexagon[i].setAttribute('class', 'hexagon');
 		hexagon[i].setAttribute('function', 'none');
+		hexagon[i].setAttribute('type', 'none');
 		hexagon[i].setAttribute('usage', 'yes');
 		var x = i % new_line_num;
 		var y = parseInt(i / new_line_num);

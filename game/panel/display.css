@@ -32,13 +32,6 @@ body
 .manual
 {
     background: red;
-    animation-name: slidein;
-    -webkit-animation-name: slidein;
-    -moz-animation-name: slidein;
-
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
 }
 .manual:before
 {
@@ -47,6 +40,17 @@ body
 .manual:after
 {
     border-top: 25px solid red;
+}
+
+.manual[type="slidein"]
+{
+    animation-name: slidein;
+    -webkit-animation-name: slidein;
+    -moz-animation-name: slidein;
+
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
 }
 .manual:hover
 {
