@@ -264,6 +264,20 @@ SQL_STATEMENT;
                              }
                              $i++;
                         }
+                        $i = 0;
+                        while($i < 3){
+                        	if($woodPx[$i] == $goldPx[$i])
+                        	{
+                        		if($woodPx[$i] == $row_num - 1){
+                        			$woodPx[$i]--;
+                        		}
+                        		else{
+                        			$woodPx[$i]++;
+                        		}
+
+                        	}
+                        	$i++;
+                        }
                         
                         $SQL_SELECT_PLAYER = "SELECT P1, P2, P3 FROM Game WHERE game_id = $game_id";
                         $result = mysqli_query($con,$SQL_SELECT_PLAYER);
