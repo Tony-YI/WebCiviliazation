@@ -141,8 +141,8 @@ function room_onclick(e)
 					return false;
 				}
 				var response = xhr.responseText;
-				console.log(response);
 				var obj = JSON.parse(response);
+				console.log(obj);
 				var status = obj.status;
 				if(status == 'success')
 				{
