@@ -71,12 +71,14 @@ JSON_ERROR;
 		"p1":{"user_id":"$player_id[0]","username":"$player_name[0]","gold":"$player_gold[0]","wood":"$player_wood[0]"},
 		"p2":{"user_id":"$player_id[1]","username":"$player_name[1]","gold":"$player_gold[1]","wood":"$player_wood[1]"},
 		"p3":{"user_id":"$player_id[2]","username":"$player_name[2]","gold":"$player_gold[2]","wood":"$player_wood[2]"},
-		"slots":[
 JSON_PLAYER;
 	
 	//SLOT INFO
 	$count = 0;
 	$slot_num = mysqli_num_rows($slotlist_result);
+	echo "\"slot_query:\":\"$SQL_GET_SLOTLIST\",";
+	echo "\"slot_num\":\"$slot_num\",";
+	echo "\"slot\":[";
 	for($count = 0;$count < $slot_num;$count++)
 	{
 		$slot_row = mysqli_fetch_row($slotlist_result);
@@ -102,4 +104,6 @@ JSON_SLOT;
 
 	//TODO:
 	//ARMY INFO
+
+	echo "}";
 ?>
