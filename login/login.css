@@ -8,6 +8,8 @@ body
 	text-align: center;
 	background-image: url('../images/background.jpg');
 	opacity: 0.8;
+	background-repeat: no-repeat;
+	size: 100%;
 }
 
 h1

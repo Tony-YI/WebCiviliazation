@@ -7,7 +7,7 @@ body
 	opacity: 0.8; 
 	background-image: url('../images/background1.jpg');
 	background-repeat: no-repeat;
-	background-size: 100%;
+	size: 100%;
 }
 
 h4
