@@ -216,8 +216,7 @@ SQL_STATEMENT;
                         $woodPy = range(1,3);
                         $intv1 = range(1,$intv);
                         $intv2 = range(20-$intv+1,20);
-                        $min = 1;
-                        $max = $row_num - 1;
+  
                         $i = 0;
                         while ($i < 3) {
                             switch ($posNum[$i]) {
@@ -266,7 +265,7 @@ SQL_STATEMENT;
                         }
                         $i = 0;
                         while($i < 3){
-                        	if($woodPx[$i] == $goldPx[$i])
+                        	if($woodPx[$i] == $goldPx[$i] && $woodPy[$i] == $goldPy[%i])
                         	{
                         		if($woodPx[$i] == $row_num - 1){
                         			$woodPx[$i]--;
@@ -315,8 +314,90 @@ SQL_STATEMENT;
 	//For the types of slots, please refer to setting/Slottype 
 	function randomize_special_slots($game_id,$con,&$response,$row_num)
 	{
-
+		//I know it is a stupid method to generate an array!!! @Edward
+		$goldPx = range(1,6);
+                        $goldPy = range(1,6);
+                        $woodPx = range(1,6);
+                        $woodPy = range(1,6);
+                        $intv = $row_num / 4;
+                        $intv1 = range(1,$intv);
+                        $intv2 = range($intv+1, $row_num - $intv);
+                        $intv3 = range($intv+2, $row_num - $intv);
+                        $intv4 = range($row_num - $intv+1,$row_num - 1);
+                        $intv5 = range($row_num - $intv+2,$row_num - 1);
+                        $i = 0;
+                        while($i < 6){
+	                        switch ($i) {
+	                        	case 0:
+	                        		shuffle($intv1);
+	                        		shuffle($intv2);
+	                        		$goldPx[$i] = $intv1[0];
+	                        		$goldPy[$i] = $intv2[0];
+	                        		$woodPx[$i] = $intv1[1];
+	                        		$woodPy[$i] = $intv2[1];
+	                        		break;
+	                        	case 1:
+	                        		shuffle($intv1);
+	                        		shuffle($intv3);
+	                        		$goldPx[$i] = $intv3[0];
+	                        		$goldPy[$i] = $intv1[0]
+	                        		$woodPx[$i] = $intv3[1];
+	                        		$woodPy[$i] = $intv1[1]
+	                        		break;
+	                        	case 2:
+	                        		shuffle($intv2);
+	                        		shuffle($intv3);
+	                        		$goldPx[$i] = $intv3[0];
+	                        		$goldPy[$i] = $intv2[0];
+	                        		$woodPx[$i] = $intv3[1];
+	                        		$woodPy[$i] = $intv2[1];
+	                        		break;
+	                        	case 3:
+	                        		shuffle($intv2);
+	                        		shuffle($intv3);
+	                        		$goldPx[$i] = $intv3[0];
+	                        		$goldPy[$i] = $intv2[0];
+	                        		$woodPx[$i] = $intv3[1];
+	                        		$woodPy[$i] = $intv2[1];
+	                        		break;
+	                        	case 4:
+	                        		shuffle($intv3);
+	                        		shuffle($intv4);
+	                        		$goldPx[$i] = $intv3[0];
+	                        		$goldPy[$i] = $intv4[0];
+	                        		$woodPx[$i] = $intv3[1];
+	                        		$woodPy[$i] = $intv4[1];
+	                        		break;
+	                        	case 5:
+	                        		shuffle($intv2);
+	                        		shuffle($intv5);
+	                        		$goldPx[$i] = $intv5[0];
+	                        		$goldPy[$i] = $intv2[0];
+	                        		$woodPx[$i] = $intv5[1];
+	                        		$woodPy[$i] = $intv2[1];
+	                        		break;
+	                        	default:
+	                        		
+	                        		break;
+	                        }
+                        $i++;
+                    	}
+                    	$i = 0;
+                    	while($i < 6){
+                    		if( ($woodPx[2] == $woodPx[3] && $woodPy[2] == $woodPy[3]) || ($woodPx[2] == $goldPx[3] && $woodPy[2] == $goldPy[3]) ){
+                    			$woodPx[2]++;
+                    		}
+                    		if(($goldPx[2] == $woodPx[3] && $goldPy[2] == $woodPy[3]) || ($goldPx[2] == $goldPx[3] && $goldPy[2] == $goldPy[3])){
+                    			$goldPx[2]++;
+                    		}
+                    		$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $goldPx[$i] AND slot_y = $goldPy[$i]";
+                        	mysqli_query($con,$SQL_SET_SLOT_TYPE);
+                        	$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 WHERE slot_x = $woodPx[$i] AND slot_y = $woodPy[$i]";
+                        	mysqli_query($con,$SQL_SET_SLOT_TYPE);
+                        	$i++;
+                    	}
 	}
+
 
 	function initilize_slots_unused_row($game_id,$con,&$response,$row,$col_num)
 	{
