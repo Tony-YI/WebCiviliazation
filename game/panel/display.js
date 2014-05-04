@@ -202,6 +202,12 @@ function mouseup_3(e)
 	}
 }
 
+function end_slidein(e)
+{
+	e.target.removeEventListener('animationend', end_slidein, false);
+	e.target.setAttribute('type', 'none');
+}
+
 function display_army_type(e) //TODO: check whether this slot has shuch army type
 {
 	var pos_x = e.target.getAttribute('x');
@@ -223,6 +229,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].addEventListener('animationend', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -235,6 +242,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].addEventListener('animationend', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -247,6 +255,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].addEventListener('animationend', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -259,6 +268,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].addEventListener('animationend', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -277,6 +287,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].addEventListener('animationend', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -289,6 +300,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].addEventListener('animationend', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -301,6 +313,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].addEventListener('animationend', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
@@ -313,6 +326,7 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 				hexagon[i].removeEventListener('mouseup', mousedown_1, false);
 				hexagon[i].addEventListener('mousedown', mousedown_2, false);
+				hexagon[i].addEventListener('animationend', end_slidein, false);
 				hexagon[i].setAttribute('class', 'manual');
 				i--;
 			}
