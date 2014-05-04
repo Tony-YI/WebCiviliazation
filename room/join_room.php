@@ -232,9 +232,21 @@ SQL_STATEMENT;
                                 }
                                 $i++;
                             }
-                            $response['player1'] = "($x[0],$y[0])";
-                            $response['player2'] = "($x[1],$y[1])";
-                            $response['player3'] = "($x[2],$y[2])";
+                            $SQL_SELECT_PLAYER = "SELECT P1, P2, P3 FROM Game WHERE game_id = $game_id";
+                            $result = mysqli_query($con,$SQL_SELECT_PLAYER);
+                            $row = mysqli_fetch_row($result);
+                            $p[0] = $row[0];
+                            $p[1] = $row[1];
+                            $p[2] = $row[2];
+                            $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = '5' , slot_owner = '$p[0]' WHERE slot_x = '$x[0]' AND slot_y = '$y[0]'";
+                            mysqli_query($con,$SQL_SELECT_PLAYER);
+                            $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = '5' , slot_owner = '$p[1]' WHERE slot_x = '$x[1]' AND slot_y = '$y[1]'";
+                            mysqli_query($con,$SQL_SELECT_PLAYER);
+                            $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = '5' , slot_owner = '$p[2]' WHERE slot_x = '$x[2]' AND slot_y = '$y[2]'";
+                            mysqli_query($con,$SQL_SELECT_PLAYER);
+                            $response['player1Ini'] = "($x[0],$y[0])";
+                            $response['player2Ini'] = "($x[1],$y[1])";
+                            $response['player3Ini'] = "($x[2],$y[2])";
 	}
 
 	//This function will randomly set some (5-10) special slots on the maps
