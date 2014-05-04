@@ -135,6 +135,7 @@
 		}
 	}
 
+
 	function initilze_new_game_database($game_id,$con,&$response)
 	{
 		//1. Dealing with the player list
@@ -166,22 +167,14 @@
 		return true;
 	}
 
+
 	function initilize_slots($game_id,$con,&$response,$row_num)
 	{
 		$table_slotlist = "game_{$game_id}_slotlist";
 		//only support same row number and same column number for now
 		$col_num = $row_num;
 		//The first row are unused
-		for($count_col = 0;$count_col < $col_num;$count_col++)
-		{
-			$SQL_INSERT_UNUSED_SLOTS = "INSERT INTO $table_slotlist VALUES (0,$count_col,NULL,0,NULL)";
-			if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
-			{
-				$response["SQL_INSERT_UNUSED_SLOTS"] = $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
-				return false;
-			}
-		}
-
+		initilize_slots_unused_row($game_id,$con,$response,0,$col_num);
 		//The middle rows
 		for($count_row = 1;$count_row < $row_num - 1;$count_row++)
 		{	
@@ -197,23 +190,39 @@
 SQL_STATEMENT;
 				if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
 				{
-					$response["SQL_INSERT_SLOT_{$count_col}_{$count_row}"] = $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
+					$response["SQL_INSERT_SLOT_{$count_rpw}_{$count_col}"] = $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
 					return false;
 				}
 			}
 		}
-
-
 		//The last row are unused
+		initilize_slots_unused_row($game_id,$con,$response,$row_num,$col_num);
+
+		randomize_players_start_position($game_id,$con,$response,$row_num);
+		randomize_special_slots($game_id,$con,$response,$row_num);
+	}
+
+	//This function will randomly set the starting position of each player
+	function randomize_players_start_position($game_id,$con,&$response,$row_num)
+	{
+
+	}
+
+	//This function will randomly set some (5-10) special slots on the maps
+	//For the types of slots, please refer to setting/Slottype 
+	function randomize_special_slots($game_id,$con,&$response,$row_num)
+	{
+
+	}
+
+	function initilize_slots_unused_row($game_id,$con,&$response,$row,$col_num)
+	{
 		for($count_col = 0;$count_col < $col_num;$count_col++)
 		{
-			$SQL_INSERT_UNUSED_SLOTS = <<<SQL_STATEMENT
-			INSERT INTO $table_slotlist VALUES
-			($row_num,$count_col,NULL,0,NULL)
-SQL_STATEMENT;
+			$SQL_INSERT_UNUSED_SLOTS = "INSERT INTO $table_slotlist VALUES ($row,$count_col,NULL,0,NULL)";
 			if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
 			{
-				$response["SQL_INSERT_UNUSED_SLOTS"] .= $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
+				$response["SQL_INSERT_UNUSED_SLOTS"] = $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
 				return false;
 			}
 		}
