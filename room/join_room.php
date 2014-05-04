@@ -204,50 +204,50 @@ SQL_STATEMENT;
 	//This function will randomly set the starting position of each player
 	function randomize_players_start_position($game_id,$con,&$response,$row_num)
 	{
-                            $posNum = range(1,4);
-                            $intv = $row_num / 4;
-                            shuffle($posNum);
-                            $x = range(1,3);
-                            $y = range(1,3);
-                            $i = 0;
-                            while ($i < 3) {
-                                switch ($posNum[$i]) {
-                                    case 1:
-                                        $x[$i] = rand(1,$intv);
-                                        $x[$i] = rand(1,$intv);
-                                        break;
-                                    case 2:
-                                        $x[$i] = rand(1,$intv);
-                                        $y[$i] = rand(20-$intv+1,20);
-                                        break;
-                                    case 3:
-                                        $x[$i] = rand(20-$intv+1,20);
-                                        $y[$i] = rand(1,$intv);
-                                        break;
-                                    case 4:
-                                        $x[$i] = rand(20-$intv+1,20);
-                                        $y[$i] = rand(20-$intv+1,20);
-                                    default:
-                                        break;
-                                }
-                                $i++;
-                            }
-                            $SQL_SELECT_PLAYER = "SELECT P1, P2, P3 FROM Game WHERE game_id = $game_id";
-                            $result = mysqli_query($con,$SQL_SELECT_PLAYER);
-                            $row = mysqli_fetch_row($result);
-                            $p[0] = $row[0];
-                            $p[1] = $row[1];
-                            $p[2] = $row[2];
-                            $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = 5 , slot_owner = $p[0] WHERE slot_x = $x[0] AND slot_y = $y[0]";
-                            $response['sql1'] = $SQL_SET_START_POS;
-                            mysqli_query($con,$SQL_SET_START_POS);
-                            $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = 5 , slot_owner = $p[1] WHERE slot_x = $x[1] AND slot_y = $y[1]";
-                            mysqli_query($con,$SQL_SET_START_POS);
-                            $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = 5 , slot_owner = $p[2] WHERE slot_x = $x[2] AND slot_y = $y[2]";
-                            mysqli_query($con,$SQL_SET_START_POS);
-                            $response['player1Ini'] = "($x[0],$y[0])";
-                            $response['player2Ini'] = "($x[1],$y[1])";
-                            $response['player3Ini'] = "($x[2],$y[2])";
+		$posNum = range(1,4);
+                        $intv = $row_num / 4;
+                        shuffle($posNum);
+                        $x = range(1,3);
+                        $y = range(1,3);
+                        $i = 0;
+                        while ($i < 3) {
+                            switch ($posNum[$i]) {
+                                case 1:
+                                    $x[$i] = rand(1,$intv);
+                                    $x[$i] = rand(1,$intv);
+                                    break;
+                                case 2:
+                                    $x[$i] = rand(1,$intv);
+                                    $y[$i] = rand(20-$intv+1,20);
+                                    break;
+                                case 3:
+                                    $x[$i] = rand(20-$intv+1,20);
+                                    $y[$i] = rand(1,$intv);
+                                    break;
+                                case 4:
+                                    $x[$i] = rand(20-$intv+1,20);
+                                    $y[$i] = rand(20-$intv+1,20);
+                                default:
+                                    break;
+                             }
+                             $i++;
+                        }
+                        $SQL_SELECT_PLAYER = "SELECT P1, P2, P3 FROM Game WHERE game_id = $game_id";
+                        $result = mysqli_query($con,$SQL_SELECT_PLAYER);
+                        $row = mysqli_fetch_row($result);
+                        $p[0] = $row[0];
+                        $p[1] = $row[1];
+                        $p[2] = $row[2];
+                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = 5 , slot_owner = $p[0] WHERE slot_x = $x[0] AND slot_y = $y[0]";
+                        $response['sql1'] = $SQL_SET_START_POS;
+                        mysqli_query($con,$SQL_SET_START_POS);
+                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = 5 , slot_owner = $p[1] WHERE slot_x = $x[1] AND slot_y = $y[1]";
+                        mysqli_query($con,$SQL_SET_START_POS);
+                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_playerlist SET slot_type = 5 , slot_owner = $p[2] WHERE slot_x = $x[2] AND slot_y = $y[2]";
+                        mysqli_query($con,$SQL_SET_START_POS);
+                        $response['player1Ini'] = "($x[0],$y[0])";
+                        $response['player2Ini'] = "($x[1],$y[1])";
+                        $response['player3Ini'] = "($x[2],$y[2])";
 
 	}
 
