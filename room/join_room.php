@@ -264,19 +264,7 @@ SQL_STATEMENT;
                              }
                              $i++;
                         }
-                        $i = 0;
-                        while($i < 3){
-                        	if(woodPx[$i] == goldPx[$i]){
-                        		if(woodPx[$i] == $row_num - 1){
-                        			woodPx[$i] = woodPx[$i] - 1;
-                        		}
-                        		else{
-                        			woodPx[$i] = woodPx[$i] + 1;
-                        		}
-
-                        	}
-                        	$i++;
-                        }
+                        
                         $SQL_SELECT_PLAYER = "SELECT P1, P2, P3 FROM Game WHERE game_id = $game_id";
                         $result = mysqli_query($con,$SQL_SELECT_PLAYER);
                         $row = mysqli_fetch_row($result);
