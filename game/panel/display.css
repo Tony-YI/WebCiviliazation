@@ -27,7 +27,6 @@ body
 #box
 {
     width: 2685px;
-    border: 1px green solid;
 }
 
 .manual
@@ -208,7 +207,7 @@ body
 
 .hexagon
 {
-    background: gray;
+    background: url('../../images/background1.jpg'); 
 }
 .hexagon:before
 {
