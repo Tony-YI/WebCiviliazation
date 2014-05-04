@@ -14,7 +14,15 @@ function Init_get_init_data()
 	xhr.open("POST","./net/init.php",false);
 	xhr.send();
 	console.log(xhr.responseText);
-	JSON.parse(xhr.responseText);
+	try
+	{
+		var response = JSON.parse(xhr.responseText);
+	}
+	catch(e)
+	{
+		console.error("Parsing Error: ",e);
+	}
+
 }
 //This is the function to add 'ACTIONS' to the form that is going to be processed on the server side
 function player_add_action_to_form(actions)
