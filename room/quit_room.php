@@ -6,7 +6,7 @@
 	{
 		//If the cookie exists
 		$user_id = $_SERVER['HTTP_USERID'];
-		$SQL_CHECK_ROOM = "SELECT Game_id, game_started  FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
+		$SQL_CHECK_ROOM = "SELECT *  FROM Game WHERE P1 = '$user_id' OR P2 = '$user_id' OR P3 = '$user_id'";
 		$result = mysqli_query($db, $SQL_CHECK_ROOM);
 		if(mysqli_num_rows($result) == 0)
 		{
@@ -17,9 +17,57 @@
 		{
 			$temp =  mysqli_fetch_row($result);
 			$Game_id = $temp[0];
-			$game_started = $temp[1];
-			$response['id'] = $Game_id;
-			$response['started'] = $game_started;
+			$game_started = $temp[4];
+			if($game_started == 1)
+			{
+
+				$response['started'] = $game_started;
+				$response['status'] = 'failed';
+				$response['error'] = 'Game has been started';
+			}
+			else
+			{
+				$SQL_QUIT_ROOM = "";
+				if($temp[1] == $user_id)
+				{
+					$SQL_QUIT_ROOM = "UPDATE Game SET P1 = null WHERE Game_id = '$Game_id'";
+					$response['status'] = 'success';
+				}
+				else if($temp[2] == $user_id)
+				{
+					$SQL_QUIT_ROOM = "UPDATE Game SET P2 = null WHERE Game_id = '$Game_id'";
+					$response['status'] = 'success';
+				}
+				else if($temp[3] == $user_id)
+				{
+					$SQL_QUIT_ROOM = "UPDATE Game SET P3 = null WHERE Game_id = '$Game_id'";
+					$response['status'] = 'success';
+				}
+				else
+				{
+					$response['status'] = 'failed';
+					$response['error'] = 'Not in any room';
+				}
+				if($response['status'] == 'success')
+				{
+					mysqli_query($db, $SQL_QUIT_ROOM);
+					$SQL_CHECK_ROOM_EMPTY = "SELECT P1, P2, P3  FROM Game WHERE Game_id = '$Game_id'";
+					$r = mysqli_query($db, $SQL_CHECK_ROOM_EMPTY);
+					$t = mysqli_fetch_row($r);
+					if($t[0] == null && $t[1] == null && $t[2] == null)
+					{
+						$SQL_DELETE_ROOM = "DELETE FROM Game WHERE Game_id = '$Game_id'";
+						mysqli_query($db, $SQL_DELETE_ROOM);
+						$response['msg'] = 'Room deleted';
+					}
+					else
+					{
+						$response['msg'] = 'Room not deleted';
+					}
+				}
+			}
+			$response['Game_id'] = $Game_id;
+			
 		}
 		else
 		{
