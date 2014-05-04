@@ -52,7 +52,7 @@ SQL_STATEMENT;
 	(
 		type_id INT PRIMARY KEY,
 		gold_production INT,
-		lumber_production INT
+		wood_production INT
 	)
 SQL_STATEMENT;
 
@@ -68,7 +68,7 @@ SQL_STATEMENT;
 			player_id INT PRIMARY KEY,
 			player_name CHAR(32),
 			player_gold INT,
-			player_lumber INT,
+			player_wood INT,
 			FOREIGN KEY(player_id) REFERENCES User(user_id)
 		)
 SQL_STATEMENT;
