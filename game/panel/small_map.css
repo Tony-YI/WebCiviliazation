@@ -10,15 +10,15 @@
 	display: none;
 	background-color: white;
 
-	animation-name: slidein;
-    -webkit-animation-name: slidein;
-    -moz-animation-name: slidein;
+	animation-name: popup;
+    -webkit-animation-name: popup;
+    -moz-animation-name: popup;
 
     animation-duration: 0.5s;
     -webkit-animation-duration: 0.5s;
     -moz-animation-duration: 0.5s;
 }
-@keyframes slidein
+@keyframes popup
 {
     0% {
 		transform: translateX(150%);
@@ -39,7 +39,7 @@
 		transform: translateX(0%);
 	}
 }
-@-webkit-keyframes slidein
+@-webkit-keyframes popup
 {
     0% {
 		-webkit-transform: translateX(150%);
@@ -60,7 +60,7 @@
 		-webkit-transform: translateX(0%);
 	}
 }
-@-moz-keyframes slidein
+@-moz-keyframes popup
 {
     0% {
 		-moz-transform: translateX(150%);
