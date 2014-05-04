@@ -27,6 +27,7 @@
 </div>
 
 <div id="small_map">
+    <iframe src="./display.php"></iframe>
 </div>
 
 <div id="display">
