@@ -22,7 +22,11 @@
         <div id="hexagon"></div>
         <div id="hexagon_last"></div>
 */
-function mousedown_1(e)
+
+/***********************************/
+/**********event handelers**********/
+/***********************************/
+function mousedown_1(e) //handel the right click on slot
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -65,7 +69,7 @@ function mousedown_1(e)
 	}
 }
 
-function mousedown_2(e)
+function mousedown_2(e) //handel the left click on selecting army type
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -88,7 +92,7 @@ function mousedown_2(e)
 	}
 }
 
-function mousedown_3(e)
+function mousedown_3(e) //handel the left click on selecting function (attack/defance/move)
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -111,7 +115,7 @@ function mousedown_3(e)
 	}
 }
 
-function mousemove_1(e)
+function mousemove_1(e) //useless
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -133,7 +137,7 @@ function mousemove_1(e)
 	}
 }
 
-function mouseup_1(e)
+function mouseup_1(e) //w.r.t function mouse_down_1(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -156,7 +160,7 @@ function mouseup_1(e)
 	}
 }
 
-function mouseup_2(e)
+function mouseup_2(e)  //w.r.t function mouse_down_2(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -179,7 +183,7 @@ function mouseup_2(e)
 	}
 }
 
-function mouseup_3(e)
+function mouseup_3(e)  //w.r.t function mouse_down_3(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -202,12 +206,34 @@ function mouseup_3(e)
 	}
 }
 
-function end_slidein(e)
+function end_slidein(e)  //handel the animation
 {
 	e.target.removeEventListener('mouseover', end_slidein, false);
 	e.target.setAttribute('type', 'none');
 }
 
+function no_contextmenu(e) //no default right click when event on the map
+{
+	e.preventDefault();
+	e.stopPropagation();
+}
+
+function window_resize(e) //handel window resize
+{
+	resize();
+}
+/***********************************/
+
+function resize()
+{
+	document.getElementById('display').style.width = parseInt(window.innerWidth) - 20 + 'px';
+	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
+}
+
+
+/***********************************/
+/*********display functions*********/
+/***********************************/
 function display_army_type(e) //TODO: check whether this slot has shuch army type
 {
 	var pos_x = e.target.getAttribute('x');
@@ -573,12 +599,7 @@ function remove_manual()
 		manual[0].setAttribute('class', 'hexagon');
 	}
 }
-
-function no_contextmenu(e)
-{
-	e.preventDefault();
-	e.stopPropagation();
-}
+/***********************************/
 
 function addBoxes()
 {
@@ -659,8 +680,8 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
-	document.getElementById('display').style.width = parseInt(window.innerWidth) - 20 + 'px';
-	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
+	resize();
+	window.addEventListener('resize', window_resize, false);
 }
 
 window.addEventListener('load', init, false);
