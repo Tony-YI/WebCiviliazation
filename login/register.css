@@ -6,10 +6,10 @@ body
 	min-height: 600px;
 	opacity: 0.8; 
 	background-image: url('../images/background1.jpg');
-	background-repeat: no-repeat;
-	size: 100%;
-	background-attachment: fixed;
-	background-size: 100% 100%;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
 
 h4
