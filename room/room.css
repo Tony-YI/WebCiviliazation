@@ -60,7 +60,6 @@
   width: 18%;
   min-height: 30%;
   height: auto!important;
-  border-radius: 30px;
   background-image: url(../images/user_info.jpg);
   background-repeat: no-repeat; 
   text-align: left;
@@ -68,6 +67,7 @@
   font-size: 24px;
   font-family: Buxton Sketch, Chalkduster;
   padding: 1% 1% 1% 1%;
+  box-shadow: 10px 10px 5px #888888;
 }
 body
 {

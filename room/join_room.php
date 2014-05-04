@@ -93,7 +93,7 @@
 	
 	game_1_slotlist
 	2. Slot list
-	| slot_id | slot_owner | N | NW | NE | W | E | SW | SE | S |
+	| slot_x | slot_y | slot_owner | slot_army | slot_type |
 	
 	game_1_armylist
 	3. Army list
@@ -158,6 +158,27 @@
 			if(!mysqli_query($con,$SQL_INSERT_playerlist))
 				$response["SQL_INSERT_playerlist_$count"] = mysqli_error($con);
 		}
-		//2. Dealing with 
+		//2. Initilize slots
+		initilize_slots($game_id,$con,$response,20);
+	}
+
+	function initilze_slots($game_id,$con,&$response,$row_num)
+	{
+		$table_slotlist = "game_{$game_id}_slotlist";
+		//only support same row number and same column number for now
+		$col_num = $row_num;
+		//The first row are unused
+		for($count_col = 0;$count_col < $col_num;$count_col++)
+		{
+			$SQL_INSERT_UNUSED_SLOTS = <<<SQL_STATEMENT
+			INSERT INTO $table_slotlist VALUES
+			(0,$count_col,NULL,0,NULL)
+SQL_STATEMENT
+			if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
+			{
+				$response["SQL_INSERT_UNUSED_SLOTS"] = mysqli_error($con);
+				exit;
+			}
+		}
 	}
 ?>
