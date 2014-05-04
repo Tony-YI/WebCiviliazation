@@ -230,7 +230,6 @@ function resize()
 	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
 }
 
-
 /***********************************/
 /*********display functions*********/
 /***********************************/
