@@ -185,20 +185,19 @@
 		//The middle rows
 		for($count_row = 1;$count_row < $row_num - 1;$count_row++)
 		{	
-			for($count_col = 1;$count_col < $col_num;$count_col++)
+			for($count_col = 0;$count_col < $col_num;$count_col++)
 			{
 				//the last and the first of a row is unused
-				if($count_col == 1 || $count_col == $col_num - 1)
+				if($count_col == 0 || $count_col == $col_num - 1)
 					$slot_type = 0;
 				else
 					$slot_type = 1;
-
 				$SQL_INSERT_UNUSED_SLOTS = <<<SQL_STATEMENT
 				INSERT INTO $table_slotlist VALUES ($count_row,$count_col,NULL,$slot_type,NULL)
 SQL_STATEMENT;
 				if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
 				{
-					$response["SQL_INSERT_UNUSED_SLOTS"] = $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
+					$response["SQL_INSERT_SLOT_{$count_col}_{$count_row}"] = $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
 					return false;
 				}
 			}
