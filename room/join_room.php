@@ -216,6 +216,8 @@ SQL_STATEMENT;
                         $woodPy = range(1,3);
                         $intv1 = range(1,$intv);
                         $intv2 = range(20-$intv+1,20);
+                        $min = 1;
+                        $max = $row_num - 1;
                         $i = 0;
                         while ($i < 3) {
                             switch ($posNum[$i]) {
@@ -261,6 +263,18 @@ SQL_STATEMENT;
                                     break;
                              }
                              $i++;
+                        }
+                        $i = 0;
+                        while($i < 3){
+                        	if(woodPx[$i] == goldPx[$i]){
+                        		if(woodPx[$i] == $row_num - 1){
+                        			woodPx[$i] = woodPx[$i] - 1;
+                        		}
+                        		else{
+                        			woodPx[$i] = woodPx[$i] + 1;
+                        		}
+
+                        	}
                         }
                         $SQL_SELECT_PLAYER = "SELECT P1, P2, P3 FROM Game WHERE game_id = $game_id";
                         $result = mysqli_query($con,$SQL_SELECT_PLAYER);
