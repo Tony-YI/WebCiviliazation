@@ -14,18 +14,7 @@ function init_small_map(e)
 		slot[i].setAttribute('x', x);
 		slot[i].setAttribute('y', y);
 
-		if(x == 0) //start slot
-		{
-			if(y % 2 == 0 || y == 0 || y == line_num) //odd begin slot
-			{
-				slot[i].style.opacity = '0.0';
-			}
-			else //even begin slot
-			{
-				slot[i].style.opacity = '0.0';
-			}
-		}
-		else if (x == line_num - 1) //end slot of one row
+		if(x == 0 || x == line_num - 1 || y == 0 || y == line_num - 1) //row start slot
 		{
 			slot[i].style.opacity = '0.0';
 		}
