@@ -30,18 +30,18 @@
 				$SQL_QUIT_ROOM = "";
 				if($temp[1] == $user_id)
 				{
-					$SQL_QUIT_ROOM = "UPDATE Game SET P1 = NUll WHERE Game_id = '$Game_id'";
-					$response['status'] = 'failed';
+					$SQL_QUIT_ROOM = "UPDATE Game SET P1 = null WHERE Game_id = '$Game_id'";
+					$response['status'] = 'success';
 				}
 				else if($temp[2] == $user_id)
 				{
-					$SQL_QUIT_ROOM = "UPDATE Game SET P2 = NUll WHERE Game_id = '$Game_id'";
-					$response['status'] = 'failed';
+					$SQL_QUIT_ROOM = "UPDATE Game SET P2 = null WHERE Game_id = '$Game_id'";
+					$response['status'] = 'success';
 				}
 				else if($temp[3] == $user_id)
 				{
-					$SQL_QUIT_ROOM = "UPDATE Game SET P3 = NUll WHERE Game_id = '$Game_id'";
-					$response['status'] = 'failed';
+					$SQL_QUIT_ROOM = "UPDATE Game SET P3 = null WHERE Game_id = '$Game_id'";
+					$response['status'] = 'success';
 				}
 				else
 				{
