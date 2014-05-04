@@ -31,7 +31,7 @@ function room_get_list()
 			var status = obj.status;
 			var roomDiv = obj.roomDiv;
 			var userDiv = obj.userDiv;
-			console.log(obj);
+			//console.log(obj);
 			if(status == "failed")
 			{
 				document.location.href = '../login/login.php';
@@ -45,12 +45,15 @@ function room_get_list()
 			{
 				document.getElementById("roomNum").innerHTML = roomDiv;
 				document.getElementById("userInfo").innerHTML = userDiv;
-				console.log("Updating the roomNum div");
+				//console.log("Updating the roomNum div");
 				return false;
 			}
 			if(obj.started == 'yes')
 			{
 				console.log('Your game has started!');
+				//document.location.href = '../game/game.html';
+				return false;
+
 			}
 		}
 	};
@@ -184,6 +187,11 @@ function room_create()
 	}
 }
 
+function quit_room()
+{
+	//This function will let the user quit the room he entered
+	console.log('quit room clicked');
+}
 function render_user_information()
 {
 	//This function will show the user information on the right hand side
