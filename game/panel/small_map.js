@@ -38,7 +38,7 @@ function init_small_map(e)
 	{
 		for(var j = 0; j < line_num; j++)
 		{
-			box.appendChild(slot[line_num * i + j]);
+			small_map.appendChild(slot[line_num * i + j]);
 		}
 	}
 }
