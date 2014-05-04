@@ -21,6 +21,8 @@
 
 <body>
 <div id="info">
+    <div id="gold">Gold:</div>
+    <div id="lumber">Lumber:</div>
 </div>
 <div id="display">
     <div id="box">
