@@ -659,6 +659,7 @@ function addBoxes()
 function init(e)
 {
 	addBoxes();
+	alert(window.innerHeight);
 }
 
 window.addEventListener('load', init, false);
