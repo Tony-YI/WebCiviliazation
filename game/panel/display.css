@@ -20,14 +20,14 @@ body
 
 #box1
 {
-    width: 2485px;
+    width: 2685px;
     -webkit-transform: perspective(550px) rotateX(45deg);
     transform: perspective(550px) rotateX(45deg);
 }
 
 #box
 {
-    width: 2485px;
+    width: 2685px;
 }
 
 .manual
