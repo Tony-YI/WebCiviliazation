@@ -312,7 +312,7 @@ SQL_STATEMENT;
 
 	//This function will randomly set some (5-10) special slots on the maps
 	//For the types of slots, please refer to setting/Slottype 
-	function randomize_special_slots($game_id,$con,&$response,$row_num)
+	/*function randomize_special_slots($game_id,$con,&$response,$row_num)
 	{
 		//I know it is a stupid method to generate an array!!! @Edward
 		$goldPx = range(1,6);
@@ -399,7 +399,7 @@ SQL_STATEMENT;
                     	}
                     	$response['Gold222'] = "($goldPx[0], $goldPy[0]) , ($goldPx[1], $goldPy[1]) , ($goldPx[2], $goldPy[2]),($goldPx[3], $goldPy[3]),($goldPx[4], $goldPy[4]),($goldPx[5], $goldPy[5])";
                         $response['Wood222'] = "($woodPx[0], $woodPy[0]) , ($woodPx[1], $woodPy[1]) , ($woodPx[2], $woodPy[2]), ($woodPx[3], $woodPy[3]), ($woodPx[4], $woodPy[4]), ($woodPx[5], $woodPy[5])";
-	}
+	}*/
 
 
 	function initilize_slots_unused_row($game_id,$con,&$response,$row,$col_num)
