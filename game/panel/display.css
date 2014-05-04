@@ -6,6 +6,8 @@ body
     min-height: 700px;
     text-align: center;
     margin: 0 auto;
+    background: url('../../images/game_background.jpg');
+    opacity: 0.8;
 }
 
 #display
