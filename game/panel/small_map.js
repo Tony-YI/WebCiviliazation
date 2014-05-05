@@ -7,15 +7,15 @@ function update_small_map() //update according to the global variable slot_list
 	var slot = document.getElementsByClassName('slot');
 	for(var i = 0; i < slot.length; i++)
 	{
-		if(slot_list[i].owner == user_1)
+		if(parseInt(slot_list[i].owner) == parseInt(user_1))
 		{
 			slot[i].style.backgroundColor = user_1_color;
 		}
-		else if(slot_list[i].owner == user_2)
+		else if(parseInt(slot_list[i].owner) == parseInt(user_2))
 		{
 			slot[i].style.backgroundColor = user_1_color;
 		}
-		else if(slot_list[i].owner == user_3)
+		else if(parseInt(slot_list[i].owner) == parseInt(user_3))
 		{
 			slot[i].style.backgroundColor = user_3_color;
 		}
@@ -64,7 +64,7 @@ function clean_small_map_dot()
 				break;
 
 				case 4: //capital
-				//slot[i].style.backgroundColor = 'white';
+				slot[i].style.backgroundColor = 'white';
 				break;
 
 				default:
