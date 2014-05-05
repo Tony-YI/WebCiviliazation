@@ -220,7 +220,7 @@ SQL_STATEMENT;
                         $woodPx = range(1,3);
                         $woodPy = range(1,3);
                         $intv1 = range(1,$intv);
-                        $intv2 = range(20-$intv+1,20);
+                        $intv2 = range(20-$intv+1,$row_num - 2);
   
                         $i = 0;
                         while ($i < 3) {
@@ -336,8 +336,8 @@ SQL_STATEMENT;
 		$intv1 = range(1,$intv);
 		$intv2 = range($intv+1, $row_num - $intv);
 		$intv3 = range($intv+2, $row_num - $intv);
-		$intv4 = range($row_num - $intv+1,$row_num - 1);
-		$intv5 = range($row_num - $intv+2,$row_num - 1);
+		$intv4 = range($row_num - $intv+1,$row_num - 2);
+		$intv5 = range($row_num - $intv+2,$row_num - 2);
 		$response['intervals'] = $intv5;
 		$i = 0;
 		while($i < 6){
