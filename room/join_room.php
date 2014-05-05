@@ -164,7 +164,7 @@
 				$response["SQL_INSERT_playerlist_$count"] = mysqli_error($con);
 		}
 		//2. Initilize slots
-		$row_num = 20;
+		$row_num = 22;
 		
 		initilize_slots($game_id,$con,$response,$row_num);
 		
