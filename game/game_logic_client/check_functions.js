@@ -6,7 +6,23 @@ function check_slot_owner(e) //check the slot owner
 	//TODO: check whether this slot belongs to the user
 	var user_id = getCookie('CURRENT_USER'); //in game/game_logic_client/check_functions.js
 
-	return true;
+	var pos_x = e.target.getAttribute('x');
+	var pos_y = e.target.getAttribute('y');
+
+	for(var i = 0; i < slot_list.length; i++)
+	{
+		if(parseInt(slot_list[i].slot_x) == parseInt(pos_x) && parseInt(slot_list[i].slot_y) == parseInt(pos_y))
+		{
+			if(parseInt(slot_list[i].owner) == parseInt(user_id))
+			{
+				return true;
+			}
+		}
+	}
+
+	console.log(pos_x);
+	console.log(pos_y);
+	return false;
 }
 
 function check_army_type(e) //check the army type of this slot
