@@ -2,8 +2,8 @@
 
 function Slot(slot_x,slot_y)
 {
-	this.x = slot_x;
-	this.y = slot_y;
+	this.slot_x = slot_x;
+	this.slot_y = slot_y;
 	this.type_id = null;
 	this.army_id = null;
 	this.owner = null;

@@ -11,17 +11,17 @@ function init_army_list(army)
 
 function getArmyById(army_id)
 {
-	for(var count = 0;count < window.army_list.length;count)
+	for(var count = 0;count < window.army_list.length;count++)
 	{
-		if(window.army_list[count].id = army_id)
+		if(window.army_list[count].army_id == army_id)
 			return window.army_list[count];
 	}
 }
 
 function Army(army_id,type_id,army_owner)
 {
-	console.log("creating army object with id" + army_id);
-	this.id = army_id;
+	console.log("creating army object with id " + army_id);
+	this.army_id = army_id;
 	this.owner = army_owner;
 	this.type_id = type_id
 	this.hp = null;
