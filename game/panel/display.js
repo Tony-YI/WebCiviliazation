@@ -694,30 +694,29 @@ function addBoxes(list)
 		switch(i)
 		{
 			case 1: //unused
-			hexagon[i].setAttribute('usage', 'no');
-			hexagon[i].style.opacity = '0.0';
+			hexagon[i].setAttribute('slot_type', 'unused_slot');
 			break;
 
 			case 2: //normal slot
 			hexagon[i].style.background = 'gray';
-			hexagon[i].setAttribute('usage', 'yes');
+			hexagon[i].setAttribute('slot_type', 'normal_slot');
 			hexagon[i].style.opacity = '1.0';
 			break;
 
 			case 3: //gold slot
 			hexagon[i].style.background = 'rgb(254,215,40)';
-			hexagon[i].setAttribute('usage', 'yes');
+			hexagon[i].setAttribute('slot_type', 'gold_slot');
 			hexagon[i].style.opacity = '1.0';
 			break;
 
 			case 4: //wood slot
 			hexagon[i].style.background = 'rgb(125,103,7)';
-			hexagon[i].setAttribute('usage', 'yes');
+			hexagon[i].setAttribute('slot_type', 'wood_slot');
 			hexagon[i].style.opacity = '1.0';
 			break;
 
 			case 5: //capital
-			hexagon[i].setAttribute('usage', 'yes');
+			hexagon[i].setAttribute('slot_type', 'capital_slot');
 			hexagon[i].style.opacity = '1.0';
 			break;
 
