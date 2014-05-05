@@ -51,18 +51,18 @@ table
 	opacity: 0.8;
 }
 a:link {  
-   	color: #000000;  
+   	color: #CAE1FF;  
    	text-decoration: none;  
  }  
 a:visited {  
  	text-decoration: none;  
-   	color: #000000;  
+   	color: #CAE1FF;  
    }  
 a:hover {  
    	text-decoration: underline;  
-   	color: #FF0000;  
+   	color: #4876FF;  
 }  
 a:active {  
 	text-decoration: none;  
-   	color: #FF0000;  
+   	color: #4876FF;  
 }  
