@@ -8,11 +8,11 @@ function Slot(slot_x,slot_y)
 	this.army_id = null;
 	this.owner = null;
 }
-
+var num_of_slot_in_row = 22
 function getSlotByXY(slot_x,slot_y)
 {
-	console.log(slotslot_list[slot_x * 22 + slot_y])
-	return slot_list[slot_x * 22 + slot_y];
+	console.log(slot_list[slot_x * num_of_slot_in_row + slot_y])
+	return slot_list[slot_x * num_of_slot_in_row + slot_y];
 } 
 
 function init_slot_list(slots)
