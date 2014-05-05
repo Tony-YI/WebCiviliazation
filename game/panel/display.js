@@ -643,7 +643,7 @@ function resize()
 	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
 }
 
-var user_1_color = 'white';
+var user_1_color = 'purple';
 var user_2_color = 'green';
 var user_3_color = 'blue';
 function addBoxes(list)

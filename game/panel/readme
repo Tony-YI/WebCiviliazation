@@ -21,8 +21,8 @@ function->attack/move/defence/back: this means this slot is for manual
 type->none: no fade in animation
 type->slidein: there is fade in animation in this slot
 
-usage->yes: user can move to this slot (opacity = 1)
-usage->no: user can not move to this slot (opacity = 0)
+slot_type->unused_slot: user can move to this slot (opacity = 0)
+slot_type->normal_slot/gold_slot/wood_slot/capital_slot: user can not move to this slot (opacity = 0)
 
 x->#: x position of this slot
 y->#: y position of this slot
