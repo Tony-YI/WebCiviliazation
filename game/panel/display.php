@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./small_map.css"/>
     <script type="text/javascript" src="./display.js"></script>
     <script type="text/javascript" src="./small_map.js"></script>
-    <script type="text/javascript" src="../game/game_logic_client/check_functions.js"></script>
+    <script type="text/javascript" src="../game_logic_client/check_functions.js"></script>
     <?php
         #Check Cookie here
         #if cookie exist, redirect the page
