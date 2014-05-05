@@ -24,6 +24,7 @@ player.prototype.show_info = function()
 	{
 		case user_1:
 		username_div.style.background = user_1_color;
+		console.log(this.pname);
 		break;
 
 		case user_2:
