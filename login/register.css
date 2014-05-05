@@ -17,19 +17,21 @@ h4
 {
 	font-family: Chalkduster, Buxton Sketch; 
 	margin: 0 auto;
+	font-size: 20px;
 }
 
 h1.Register
 {
 	font-family: Chalkduster, Buxton Sketch;
-	color: #27408B; 
+	color: #F0FFFF; 
 	font-style: bold;
+	font-size: 40px;
 }
 
 h2.Register
 {
 	font-family: Chalkduster, Buxton Sketch;
-	color: #27408B;
+	color: #F0FFFF;
 }
 
 div.register_form
@@ -49,7 +51,7 @@ div.form_field
 	font-family: Chalkduster, Buxton Sketch; 
 	font-style: bold; 
 	font-size: 18px;
-	color:#27408B;
+	color:#F0FFFF;
 }
 
 #message
