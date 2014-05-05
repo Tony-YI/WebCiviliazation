@@ -6,11 +6,12 @@ function show_range(x, y)
 	remove_manual(); //in display.js
 	var slot_div = document.getElementsByClassName('hexagon');
 
-	var i = parseInt(y) * line_num + parseInt(x);
+	var i = parseInt(y) * line_num + parseInt(x);//line_nume: global variable in small_map.js
+	var user_id = parseInt(getCookie('CURRENT_USER')); //in game/game_logic_client/check_functions.js
 
-	if(slot_list[i].type_id != 0 && !(slot_list[i].owner >= 0)) //not unused and no owner
+	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
 	{
-		slot_div[i].setAttribute('function', 'range'); //line_nume: global variable in small_map.js
+		slot_div[i].setAttribute('function', 'range');
 		//all the change color thing are done in display.css
 	}
 }
@@ -26,6 +27,7 @@ function clear_range()
 		}
 	}
 }
+
 function attack_clicked_handler()
 {
 	/*
