@@ -20,17 +20,18 @@ player.prototype.show_info = function()
 	var lumber_div = document.getElementById("lumber");
 
 	username_div.innerHTML = "Player: " + this.pname;
-	switch(this.player_id)
+	switch(parseInt(this.player_id))
 	{
-		case user_1:
+		case parseInt(user_1):
 		username_div.style.background = user_1_color;
 		console.log(this.pname);
 		break;
 
-		case user_2:
+		case parseInt(user_2):
 		username_div.style.background = user_2_color;
 		break;
-		case user_3:
+
+		case parseInt(user_3):
 		username_div.style.background = user_3_color;
 		break;
 
