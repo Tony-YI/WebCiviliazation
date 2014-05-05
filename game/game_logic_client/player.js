@@ -2,8 +2,6 @@
 
 /*
 	1. Player
-	2. Army
-	3. Slot (Hope that Tony can merge this with his implementatio of the display.js)
 */
 
 function player(player_id, playername,gold,wood)

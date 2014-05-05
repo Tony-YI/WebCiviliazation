@@ -4,7 +4,7 @@ body
 	height: 100%;
 	min-width: 1100px;
 	min-height: 900px;
-	font-family: Chalkduster, Castellar;
+	font-family: Chalkduster, Buxton Sketch;
 	text-align: center;
 	background-image: url('../images/background.jpg');
 	opacity: 0.8;
@@ -13,24 +13,26 @@ body
   	-o-background-size: cover;
   	background-size: cover;
   	background-repeat: no-repeat;
+  	color: #CDC1C5;
 }
 
 h1
 {
 	margin-top: 50px;
-	font-family: Chalkduster, Castellar;
+	font-family: Chalkduster, Buxton Sketch;
 	color: white;
 }
 
 h4
 {
-	font-family: Chalkduster, Castellar;
+	font-family: Chalkduster, Buxton Sketch;
 	margin: 0 auto;
 }
 
 td
 {
 	color: white;
+	font-size: 15px;
 }
 
 table
@@ -48,3 +50,19 @@ table
 	right: 100px;
 	opacity: 0.8;
 }
+a:link {  
+   	color: #CAE1FF;  
+   	text-decoration: none;  
+ }  
+a:visited {  
+ 	text-decoration: none;  
+   	color: #CAE1FF;  
+   }  
+a:hover {  
+   	text-decoration: underline;  
+   	color: #4876FF;  
+}  
+a:active {  
+	text-decoration: none;  
+   	color: #4876FF;  
+}  

@@ -11,23 +11,27 @@ body
   	-o-background-size: cover;
   	background-size: cover;
   	background-repeat: no-repeat;
+
 }
 
 h4
 {
-	font-family: Chalkduster, Castellar; 
+	font-family: Chalkduster, Buxton Sketch; 
 	margin: 0 auto;
+	font-size: 14px;
 }
 
 h1.Register
 {
-	font-family: Chalkduster, Castellar white; 
+	font-family: Chalkduster, Buxton Sketch;
+	color: #F0FFFF; 
 	font-style: bold;
 }
 
 h2.Register
 {
-	font-family: Chalkduster, Castellar white;
+	font-family: Chalkduster, Buxton Sketch;
+	color: #F0FFFF;
 }
 
 div.register_form
@@ -35,7 +39,7 @@ div.register_form
 	width: 320px;
 	height: 151px;
 	text-align: center;
-	font-family: Chalkduster, Castellar; 
+	font-family: Chalkduster, Buxton Sketch; 
 	border: 5px white solid;
 	position: relative;
 	top: 50px;
@@ -44,9 +48,10 @@ div.register_form
 
 div.form_field
 {
-	font-family: Chalkduster, Castellar; 
+	font-family: Chalkduster, Buxton Sketch; 
 	font-style: bold; 
 	font-size: 18px;
+	color:#F0FFFF;
 }
 
 #message
