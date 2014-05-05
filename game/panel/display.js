@@ -730,10 +730,6 @@ function addBoxes(list)
 			j++;
 			user_1 = list[i].owner;
 			hexagon[i].style.background = user_1_color;
-			
-			var anchor = document.createElement('div');
-			anchor.setAttribute('id', 'anchor');
-			hexagon[i].appendChild(anchor);
 		}
 		else if(list[i].owner && j == 1)
 		{
@@ -774,9 +770,6 @@ function addBoxes(list)
 			box.appendChild(hexagon[new_line_num * i + j]);
 		}
 	}
-
-	window.location.hash = '#anchor';
-	document.getElementById('anchor').focus();
 }
 
 function update_slot() //TODO: update the slot every movement
