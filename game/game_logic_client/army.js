@@ -1,4 +1,8 @@
 //This javascript file contains implementation of the army class
+function Army_list()
+{
+}
+
 
 function army(army_id,army_owner,hp,ap,attack,position_x,position_y)
 {
