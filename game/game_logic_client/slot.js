@@ -22,8 +22,8 @@ function init_slot_list(slots)
 		if(slot.army_id != "")
 		{
 			var army_object = getArmyById(slot.army_id);
-			army_object.position_x = slot.x;
-			army_object.position_y = slot.y;
+			army_object.position_x = slot.slot_x;
+			army_object.position_y = slot.slot_y;
 		}
 		//console.log("getting slotowner");
 		slot.owner = slots[count].slot_owner;
