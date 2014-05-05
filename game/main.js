@@ -5,7 +5,7 @@ function Init()
 {
 	//send request to get the initilization data
 	Init_get_init_data();
-	display_init();
+	display_init(slot_list);
 	init_small_map();
 }
 
