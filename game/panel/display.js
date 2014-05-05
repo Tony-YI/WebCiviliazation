@@ -689,6 +689,7 @@ function addBoxes()
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
+		alert(slot_list[0].type_id);
 		switch(parseInt(slot_list[i].type_id))
 		{
 			case 1: //unused
