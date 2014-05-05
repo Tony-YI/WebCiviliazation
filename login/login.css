@@ -13,6 +13,7 @@ body
   	-o-background-size: cover;
   	background-size: cover;
   	background-repeat: no-repeat;
+  	color: #CDC1C5;
 }
 
 h1
@@ -31,6 +32,7 @@ h4
 td
 {
 	color: white;
+	font-size: 15px;
 }
 
 table
