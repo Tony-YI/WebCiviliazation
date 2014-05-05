@@ -1,4 +1,14 @@
 //This file contains implementation of slot class
+
+function slot(slot_x,slot_y)
+{
+	this.x = slot_x;
+	this.y = slot_y;
+	this.type_id = null;
+	this.army_id = null;
+	this.owner = null;
+}
+
 function init_slot_list(slots)
 {
 	for(var count = 0;count < slots.length;count++)
@@ -11,13 +21,6 @@ function init_slot_list(slots)
 	}
 }
 
-function slot(slot_x,slot_y)
-{
-	this.x = slot_x;
-	this.y = slot_y;
-	this.type_id = null;
-	this.army_id = null;
-	this.owner = null;
-}
+
 
 
