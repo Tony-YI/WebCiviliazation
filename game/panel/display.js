@@ -759,6 +759,11 @@ function addBoxes(list)
 	}
 }
 
+function update_slot() //TODO: update the slot every movement
+{
+
+}
+
 
 function display_init(list)
 {

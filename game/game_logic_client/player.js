@@ -20,6 +20,22 @@ player.prototype.show_info = function()
 	var lumber_div = document.getElementById("lumber");
 
 	username_div.innerHTML = "Player: " + this.pname;
+	switch(this.player_id)
+	{
+		case user_1:
+		username_div.style.background = user_1_color;
+		break;
+
+		case user_2:
+		username_div.style.background = user_2_color;
+		break;
+		case user_3:
+		username_div.style.background = user_3_color;
+		break;
+
+		default:
+		break;
+	}
 	gold_div.innerHTML = "gold: " + this.gold;
 	lumber_div.innerHTML = "wood: " + this.wood;
 }
