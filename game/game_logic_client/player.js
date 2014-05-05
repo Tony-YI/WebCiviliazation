@@ -20,7 +20,8 @@ player.prototype.show_info = function()
 	var lumber_div = document.getElementById("lumber");
 
 	username_div.innerHTML = "Player: " + this.pname;
-	var pid = parseInt(this.pid); 
+	var pid = parseInt(this.pid);
+	console.log(this.pid);
  	if(pid == parseInt(user_1))
 	{
 		username_div.style.backgroundColor = user_1_color;
