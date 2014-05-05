@@ -26,7 +26,6 @@
 /***********************************/
 /**********event handelers**********/
 /***********************************/
-var latest_slot;
 function mousedown_1(e) //handel the right click on slot
 {
 	e.stopPropagation();

@@ -45,6 +45,30 @@ function init_small_map()
 		{
 			slot[i].style.opacity = '0.0';
 		}
+
+		switch(parseInt(slot_list[i].type_id))
+		{
+			case 0: //unused
+			break;
+
+			case 1: //normal slot
+			break;
+
+			case 2: //gold slot
+			slot[i].style.backgroundColor = 'rgb(254,215,40)';
+			break;
+
+			case 3: //wood slot
+			slot[i].style.backgroundColor = 'rgb(125,103,7)';
+			break;
+
+			case 4: //capital
+			slot[i].style.backgroundColor = 'white';
+			break;
+
+			default:
+			break;
+		}
 	}
 
 	var small_map = document.getElementById('small_map');
