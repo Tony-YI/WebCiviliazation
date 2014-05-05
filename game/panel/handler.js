@@ -4,7 +4,8 @@ function attack_handler()
 {
 	/*
 	1. show the attack range
-	2. attach attack event listener (attack_action() to the div) 
+	2. attach attack event listener (attack_action() to the div) 3
+	3. attach cancel event handler 
 	*/
 }
 
@@ -14,6 +15,7 @@ function attack_action()
 	1. compute the result of the attack
 	2. show the result
 	3. record the result in result list
+	4. clear the attack range
 	*/
 }
 
@@ -21,7 +23,8 @@ function move_handler()
 {
 	/*
 	1. show the move range
-	2. attach move event listener (move_action() to the div) 
+	2. attach move event listener (move_action() to the div)
+	3. attach cancel event handler 
 	*/
 }
 
