@@ -26,7 +26,6 @@
 /***********************************/
 /**********event handelers**********/
 /***********************************/
-var latest_slot;
 function mousedown_1(e) //handel the right click on slot
 {
 	e.stopPropagation();
@@ -441,7 +440,6 @@ function select_army_type(e)
 	}
 }
 
-var army_type = '';
 function display_manual(x, y, type)
 {
 	//var pos_x = e.target.getAttribute('x');
@@ -581,16 +579,19 @@ function select_manual(e)
 	{
 		alert(army_type + ': Attack');
 		remove_manual();
+		attack_clicked_handler();
 	}
 	else if(target_function == 'move')
 	{
 		alert(army_type + ': Move');
 		remove_manual();
+		move_clicked_handler();
 	}
 	else if(target_function == 'defence')
 	{
 		alert(army_type + ': Defence');
 		remove_manual();
+		defend_clicked_handler();
 	}
 	else if(target_function == 'back')
 	{

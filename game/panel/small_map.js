@@ -29,6 +29,11 @@ function clean_small_map_dot()
 	}
 }
 
+function update_small_map() //TODO:
+{
+
+}
+
 function init_small_map()
 {
 	var slot = Array();
@@ -44,6 +49,30 @@ function init_small_map()
 		if(x == 0 || x == line_num - 1 || y == 0 || y == line_num - 1) //row start slot
 		{
 			slot[i].style.opacity = '0.0';
+		}
+
+		switch(parseInt(slot_list[i].type_id))
+		{
+			case 0: //unused
+			break;
+
+			case 1: //normal slot
+			break;
+
+			case 2: //gold slot
+			slot[i].style.backgroundColor = 'rgb(254,215,40)';
+			break;
+
+			case 3: //wood slot
+			slot[i].style.backgroundColor = 'rgb(125,103,7)';
+			break;
+
+			case 4: //capital
+			slot[i].style.backgroundColor = 'white';
+			break;
+
+			default:
+			break;
 		}
 	}
 
