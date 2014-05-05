@@ -207,18 +207,40 @@ body
     }
 }
 
-.hexagon[slot_type="unused"]
+.hexagon
 {
     background: gray;
-    opacity = 0;
 }
-.hexagon[slot_type="unused"]:before
+.hexagon:before
 {
     border-bottom: 25px solid gray;
 }
-.hexagon[slot_type="unused"]:after
+.hexagon:after
 {
     border-top: 25px solid gray;
+}
+
+.hexagon[slot_type="unused_slot"]
+{
+    opacity = 0;
+}
+.hexagon[slot_type="normal_slot"]
+{
+    opacity = 1;
+}
+.hexagon[slot_type="gold_slot"]
+{
+    opacity = 1;
+    background: rgb(254,215,40);
+}
+.hexagon[slot_type="wood_slot"]
+{
+    opacity = 1;
+    background: rgb(125,103,7);
+}
+.hexagon[slot_type="capital_slot"]
+{
+    opacity = 1;
 }
 
 #hexagon_normal
