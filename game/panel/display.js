@@ -639,7 +639,7 @@ function resize()
 	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
 }
 
-function addBoxes()
+function addBoxes(slot_list)
 {
 	//20 x 20 map//
 	var hexagon_num = 484;
@@ -688,8 +688,8 @@ function addBoxes()
 		{
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
-		
-		switch(window.slot_list[i].type_id)
+
+		switch(slot_list[i].type_id)
 		{
 			case 1: //unused
 			hexagon[i].setAttribute('usage', 'no');
