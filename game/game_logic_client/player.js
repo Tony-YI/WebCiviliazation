@@ -22,6 +22,7 @@ player.prototype.show_info = function()
 	username_div.innerHTML = "Player: " + this.pname;
 	var pid = parseInt(this.pid);
 	console.log(this.pid);
+	console.log(pid);
  	if(pid == parseInt(user_1))
 	{
 		username_div.style.backgroundColor = user_1_color;
