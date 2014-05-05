@@ -11,9 +11,7 @@ function Slot(slot_x,slot_y)
 var num_of_slot_in_row = 22
 function getSlotByXY(slot_x,slot_y)
 {
-	console.log("accessing slot_list[" + parseInt(parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x)) + "]");
-	console.log(slot_list[parseInt(parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x))])
-	return slot_list[parseInt(parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x))];
+	return slot_list[parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x)];
 } 
 
 function init_slot_list(slots)
@@ -31,12 +29,14 @@ function init_slot_list(slots)
 			var army_object = getArmyById(slot.army_id);
 			army_object.position_x = slot.slot_x;
 			army_object.position_y = slot.slot_y;
-			console.log(slot);
+			//console.log(slot);
 		}
+		/*
 		if(slot.owner_id != "")
 		{
 			console.log(slot);
 		}
+		*/
 		//console.log("getting slotowner");
 		slot.owner = slots[count].slot_owner;
 		//console.log("pushing into the array");
