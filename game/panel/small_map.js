@@ -38,10 +38,10 @@ function small_map_dot(e)
 	}
 }
 
-function f_switch(i, type_id)
+function f_switch(j, type_id)
 {
 	var slot = document.getElementsByClassName('slot');
-	i = parseInt(i);
+	var i = parseInt(j);
 
 	switch(parseInt(type_id))
 	{
