@@ -28,8 +28,6 @@ function Init_get_init_data()
 	init_slot_list(response.slots);
 	console.log("Things done for slots");
 	
-	
-	//init_army_list(response.army);
 	console.log(player_list);
 	console.log(slot_list);
 	console.log(army_list);
