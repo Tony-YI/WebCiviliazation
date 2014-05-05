@@ -26,6 +26,7 @@
 /***********************************/
 /**********event handelers**********/
 /***********************************/
+var latest_slot;
 function mousedown_1(e) //handel the right click on slot
 {
 	e.stopPropagation();
@@ -59,6 +60,8 @@ function mousedown_1(e) //handel the right click on slot
 
 			//add eventListener
 			e.target.addEventListener('mouseup', mouseup_1, false);
+			latest_slot = e.target;
+			console.log(latest_slot.getAttribute('x'), latest_slot.getAttribute('y'));
 			remove_manual();
 			break;
 		default:
@@ -606,7 +609,7 @@ function remove_manual()
 	var manual = document.getElementsByClassName('manual');
 	while(manual[0])
 	{
-		if(manual[0].getAttribute('usage') == 'no')
+		if(manual[0].getAttribute('slot_type') == 'unused_slot')
 		{
 			manual[0].style.opacity = '0.0';
 		}
@@ -688,10 +691,13 @@ function addBoxes(list)
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
+		hexagon[i].addEventListener('mousedown', mousedown_1, false);
+
 		switch(parseInt(list[i].type_id))
 		{
 			case 0: //unused
 			hexagon[i].setAttribute('slot_type', 'unused_slot');
+			hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 			break;
 
 			case 1: //normal slot
@@ -713,8 +719,6 @@ function addBoxes(list)
 			default:
 			break;
 		}
-		
-		hexagon[i].addEventListener('mousedown', mousedown_1, false);
 	}
 
 	var box = document.getElementById('box');

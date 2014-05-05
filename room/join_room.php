@@ -211,7 +211,7 @@ SQL_STATEMENT;
 	function randomize_players_start_position($game_id,$con,&$response,$row_num)
 	{
 		$posNum = range(1,4);
-                        $intv = $row_num / 4;
+                        $intv = (int)(($row_num - 2)/ 4);
                         shuffle($posNum);
                         $x = range(1,3);// just for build an array, no meaning
                         $y = range(1,3);
@@ -220,7 +220,7 @@ SQL_STATEMENT;
                         $woodPx = range(1,3);
                         $woodPy = range(1,3);
                         $intv1 = range(1,$intv);
-                        $intv2 = range(20-$intv+1,20);
+                        $intv2 = range(20-$intv+1,$row_num - 2);
   
                         $i = 0;
                         while ($i < 3) {
@@ -332,12 +332,12 @@ SQL_STATEMENT;
 		$goldPy = range(1,6);
 		$woodPx = range(1,6);
 		$woodPy = range(1,6);
-		$intv = $row_num / 4;
+		$intv = (int)(($row_num - 2)/ 4);
 		$intv1 = range(1,$intv);
 		$intv2 = range($intv+1, $row_num - $intv);
 		$intv3 = range($intv+2, $row_num - $intv);
-		$intv4 = range($row_num - $intv+1,$row_num - 1);
-		$intv5 = range($row_num - $intv+2,$row_num - 1);
+		$intv4 = range($row_num - $intv+1,$row_num - 2);
+		$intv5 = range($row_num - $intv+2,$row_num - 2);
 		$response['intervals'] = $intv5;
 		$i = 0;
 		while($i < 6){
@@ -399,6 +399,7 @@ SQL_STATEMENT;
 		}
 		$i = 0;
 		while($i < 6){
+
 			if( ($woodPx[2] == $woodPx[3] && $woodPy[2] == $woodPy[3]) || ($woodPx[2] == $goldPx[3] && $woodPy[2] == $goldPy[3]) ){
 				$woodPx[2]++;
 			}
