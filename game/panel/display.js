@@ -688,10 +688,13 @@ function addBoxes(list)
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
+		hexagon[i].addEventListener('mousedown', mousedown_1, false);
+
 		switch(parseInt(list[i].type_id))
 		{
 			case 0: //unused
 			hexagon[i].setAttribute('slot_type', 'unused_slot');
+			hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 			break;
 
 			case 1: //normal slot
@@ -713,8 +716,6 @@ function addBoxes(list)
 			default:
 			break;
 		}
-		
-		hexagon[i].addEventListener('mousedown', mousedown_1, false);
 	}
 
 	var box = document.getElementById('box');
