@@ -13,10 +13,15 @@ function init_slot_list(slots)
 {
 	for(var count = 0;count < slots.length;count++)
 	{
+		console.log("Constructing new Slot");
 		var slot = new Slot(slots[count].slot_x,slots[count].slot_y);
+		console.log("getting slottype");
 		slot.type_id = slots[count].slot_type;
+		console.log("getting slotarmy");
 		slot.army_id = slots[count].slot_army;
+		console.log("getting slotowner");
 		slot.owner = slots[count].slot_owner;
+		console.log("pushing into the array");
 		slot_list.push(slot);
 	}
 }
