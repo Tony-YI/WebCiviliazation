@@ -121,7 +121,7 @@ SQL_STATEMENT;
 			army_type INT,
 			army_num INT,
 			action_type INT,
-			PRIMARY KEY(id),
+			PRIMARY KEY (id)
 		)
 SQL_STATEMENT;
 		return $SQL_CREATE_SLOTLIST;
