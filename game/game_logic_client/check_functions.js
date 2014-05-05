@@ -15,8 +15,8 @@ function check_slot_owner(e) //check the slot owner
 		{
 			if(slot_list[i].owner == user_id)
 			{
-				alert(slot_list[i].owner);
-				alert(user_id);
+				console.log(slot_list[i].owner);
+				console.log(user_id);
 				return true;
 			}
 		}
