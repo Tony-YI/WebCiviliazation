@@ -9,9 +9,11 @@ function check_slot_owner(e) //check the slot owner
 	var pos_x = e.target.getAttribute('x');
 	var pos_y = e.target.getAttribute('y');
 
-	var slot = getSlotByXY(pos_x, pos_y);
+	var slot = getSlotByXY(pos_x, pos_y); //in slot.js
 
-	console.log(slot.owner);
+	console.log(pos_x);
+	console.log(pos_y);
+	console.log(slot);
 
 	if(parseInt(slot.owner) == parseInt(user_id))
 	{

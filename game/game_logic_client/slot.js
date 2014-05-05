@@ -11,8 +11,9 @@ function Slot(slot_x,slot_y)
 var num_of_slot_in_row = 22
 function getSlotByXY(slot_x,slot_y)
 {
-	console.log(slot_list[slot_x * num_of_slot_in_row + slot_y])
-	return slot_list[slot_x * num_of_slot_in_row + slot_y];
+	console.log("accessing slot_list[" + parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x) + "]");
+	console.log(slot_list[parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x)])
+	return slot_list[parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x)];
 } 
 
 function init_slot_list(slots)
