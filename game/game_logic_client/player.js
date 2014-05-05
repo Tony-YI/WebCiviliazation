@@ -19,7 +19,7 @@ player.prototype.show_info = function()
 	var gold_div = document.getElementById("gold");
 	var lumber_div = document.getElementById("lumber");
 
-	username_div.innerHTML = "Player: " + this.playername
+	username_div.innerHTML = "Player: " + this.pname;
 	gold_div.innerHTML = "gold: " + this.gold;
 	lumber_div.innerHTML = "wood: " + this.wood;
 }
