@@ -579,13 +579,13 @@ function select_manual(e)
 	{
 		alert(army_type + ': Attack');
 		remove_manual();
-		attack_clicked_hanlder();
+		attack_clicked_handler();
 	}
 	else if(target_function == 'move')
 	{
 		alert(army_type + ': Move');
 		remove_manual();
-		move_clicked_hanlder();
+		move_clicked_handler();
 	}
 	else if(target_function == 'defence')
 	{

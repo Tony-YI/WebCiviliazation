@@ -11,10 +11,6 @@ function check_slot_owner(e) //check the slot owner
 
 	var slot = getSlotByXY(pos_x, pos_y); //in slot.js
 
-	console.log(pos_x);
-	console.log(pos_y);
-	console.log(slot);
-
 	if(parseInt(slot.owner) == parseInt(user_id))
 	{
 		return true;
