@@ -655,8 +655,8 @@ function addBoxes()
 	}
 
 	//TODO: var slot_array = ;
-	var user_id = getCookie('user_id'); //in game/game_logic_client/check_functions.js
-	alert(user_id);
+	var user_id = getCookie('CURRENT_USER'); //in game/game_logic_client/check_functions.js
+	//alert(user_id);
 
 	var hexagon = Array();
 	for(var i = 0; i < hexagon_num; i++)
