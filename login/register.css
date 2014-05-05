@@ -11,13 +11,13 @@ body
   	-o-background-size: cover;
   	background-size: cover;
   	background-repeat: no-repeat;
+
 }
 
 h4
 {
 	font-family: Chalkduster, Buxton Sketch; 
 	margin: 0 auto;
-	font-size: 20px;
 }
 
 h1.Register
@@ -25,13 +25,14 @@ h1.Register
 	font-family: Chalkduster, Buxton Sketch;
 	color: #F0FFFF; 
 	font-style: bold;
-	font-size: 40px;
+	font-size: 60px;
 }
 
 h2.Register
 {
 	font-family: Chalkduster, Buxton Sketch;
 	color: #F0FFFF;
+	font-size: 22px;
 }
 
 div.register_form
