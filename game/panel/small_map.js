@@ -40,6 +40,8 @@ function small_map_dot(e)
 
 function f_switch(i, type_id)
 {
+	var slot = document.getElementsByClassName('slot');
+	
 	switch(parseInt(type_id))
 	{
 		case 0: //unused
