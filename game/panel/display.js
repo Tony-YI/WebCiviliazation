@@ -816,9 +816,9 @@ function addBoxes1() //backup
 	}
 }
 
-function display_init()
+function display_init(slot_list)
 {
-	addBoxes();
+	addBoxes(slot_list);
 	resize();
 	window.addEventListener('resize', window_resize, false);
 	window.addEventListener('keydown', key_down, false);
