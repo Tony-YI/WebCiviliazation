@@ -29,6 +29,11 @@ function clean_small_map_dot()
 	}
 }
 
+function update_small_map() //TODO:
+{
+
+}
+
 function init_small_map()
 {
 	var slot = Array();

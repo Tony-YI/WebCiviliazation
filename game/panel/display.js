@@ -440,7 +440,6 @@ function select_army_type(e)
 	}
 }
 
-var army_type = '';
 function display_manual(x, y, type)
 {
 	//var pos_x = e.target.getAttribute('x');
