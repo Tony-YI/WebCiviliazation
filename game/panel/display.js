@@ -606,7 +606,7 @@ function remove_manual()
 	var manual = document.getElementsByClassName('manual');
 	while(manual[0])
 	{
-		if(manual[0].getAttribute('usage') == 'no')
+		if(manual[0].getAttribute('slot_type') == 'unused_slot')
 		{
 			manual[0].style.opacity = '0.0';
 		}
