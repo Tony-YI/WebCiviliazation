@@ -18,25 +18,18 @@ function Init_get_init_data()
 	xhr.open("POST","./net/init.php",false);
 	xhr.send();
 	//console.log(xhr.responseText);
-	try
-	{
-		var response = JSON.parse(xhr.responseText);
-		var p1 = new player(response.p1.user_id,response.p1.username,response.p1.gold,response.p1.wood);
-		var p2 = new player(response.p2.user_id,response.p2.username,response.p2.gold,response.p2.wood);
-		var p3 = new player(response.p3.user_id,response.p3.username,response.p3.gold,response.p3.wood);
-		player_list = [p1,p2,p3];
-
-		init_slot_list(response.slots);
-		//init_army_list(response.army);
-		console.log(player_list);
-		console.log(slot_list);
-		//console.log(army_list);
-	}
-	catch(e)
-	{
-		console.error("Parsing Error: ",e);
-	}
-
+	var response = JSON.parse(xhr.responseText);
+	var p1 = new player(response.p1.user_id,response.p1.username,response.p1.gold,response.p1.wood);
+	var p2 = new player(response.p2.user_id,response.p2.username,response.p2.gold,response.p2.wood);
+	var p3 = new player(response.p3.user_id,response.p3.username,response.p3.gold,response.p3.wood);
+	player_list = [p1,p2,p3];
+	console.log("Going to do it for slots");
+	init_slot_list(response.slots);
+	console.log("Things done for slots");
+	//init_army_list(response.army);
+	console.log(player_list);
+	console.log(slot_list);
+	//console.log(army_list);
 }
 //This is the function to add 'ACTIONS' to the form that is going to be processed on the server side
 function player_add_action_to_form(actions)
