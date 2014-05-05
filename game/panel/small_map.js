@@ -2,8 +2,15 @@
 var slot_num = 484;
 var line_num = 22; //the top/left/bottom/right are useless
 
+function update_small_map() //update according to the global variable slot_list
+{
+
+}
+
 function small_map_dot(e)
 {
+	update_small_map();
+	
 	var pos_x = e.target.getAttribute('x');
 	var pos_y = e.target.getAttribute('y');
 

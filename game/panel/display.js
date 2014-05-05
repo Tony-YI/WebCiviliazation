@@ -643,6 +643,9 @@ function resize()
 	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
 }
 
+var user_1_color = 'white';
+var user_2_color = 'green';
+var user_3_color = 'blue';
 function addBoxes(list)
 {
 	//20 x 20 map//
@@ -661,6 +664,7 @@ function addBoxes(list)
 	var user_id = getCookie('CURRENT_USER'); //in game/game_logic_client/check_functions.js
 
 	var hexagon = Array();
+	var j = 0; //record the number of user
 	for(var i = 0; i < hexagon_num; i++)
 	{
 		hexagon[i] = document.createElement('div');
@@ -720,6 +724,25 @@ function addBoxes(list)
 			default:
 			break;
 		}
+
+		if(list[i].owner && j == 0)
+		{
+			j++;
+			user_1 = list[i].owner;
+			hexagon[i].background = user_1_color;
+		}
+		if(list[i].owner && j == 1)
+		{
+			j++;
+			user_2 = list[i].owner;
+			hexagon[i].background = user_2_color;
+		}
+		if(list[i].owner && j == 2)
+		{
+			j++;
+			user_3 = list[i].owner;
+			hexagon[i].background = user_3_color;
+		}
 	}
 
 	var box = document.getElementById('box');
@@ -736,81 +759,6 @@ function addBoxes(list)
 	}
 }
 
-function addBoxes1() //backup
-{
-	//20 x 20 map//
-	var hexagon_num = 484;
-	var new_line_num = 22; //the top/left/bottom/right are useless
-
-	var new_line = Array();
-	for(var i = 0; i < new_line_num; i++)
-	{
-		new_line[i] = document.createElement('div');
-		new_line[i].setAttribute('id', 'new_line');
-		var br = document.createElement('br');
-		new_line[i].appendChild(br);
-	}
-
-	var hexagon = Array();
-	for(var i = 0; i < hexagon_num; i++)
-	{
-		hexagon[i] = document.createElement('div');
-		hexagon[i].setAttribute('class', 'hexagon');
-		hexagon[i].setAttribute('function', 'none');
-		hexagon[i].setAttribute('type', 'none');
-		hexagon[i].setAttribute('usage', 'yes');
-		var x = i % new_line_num;
-		var y = parseInt(i / new_line_num);
-		hexagon[i].setAttribute('x', x);
-		hexagon[i].setAttribute('y', y);
-
-		if(x == 0) //start hexagon
-		{
-			if(y % 2 == 0) //odd begin hexagon
-			{
-				hexagon[i].setAttribute('id', 'hexagon_begin_odd');
-				hexagon[i].setAttribute('usage', 'no');
-				hexagon[i].style.opacity = '0.0';
-			}
-			else //even begin hexagon
-			{
-				hexagon[i].setAttribute('id', 'hexagon_begin_even');
-				hexagon[i].setAttribute('usage', 'no');
-				hexagon[i].style.opacity = '0.0';
-			}
-		}
-		else if (x == new_line_num - 1) //end hexagon of one row
-		{
-			hexagon[i].setAttribute('id', 'hexagon_last');
-			hexagon[i].setAttribute('usage', 'no');
-			hexagon[i].style.opacity = '0.0';
-		}
-		else //normal hexagon
-		{
-			hexagon[i].setAttribute('id', 'hexagon_normal');
-			if(i < new_line_num || i > hexagon_num - new_line_num)
-			{
-				hexagon[i].setAttribute('usage', 'no');
-				hexagon[i].style.opacity = '0.0';
-			}
-		}
-		
-		hexagon[i].addEventListener('mousedown', mousedown_1, false);
-	}
-
-	var box = document.getElementById('box');
-	box.addEventListener('contextmenu', no_contextmenu, false);
-
-	for(var i = 0; i < new_line_num; i++)
-	{
-		box.appendChild(new_line[i]);
-
-		for(var j = 0; j < new_line_num; j++)
-		{
-			box.appendChild(hexagon[new_line_num * i + j]);
-		}
-	}
-}
 
 function display_init(list)
 {
