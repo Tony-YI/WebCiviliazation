@@ -11,8 +11,6 @@ function check_slot_owner(e) //check the slot owner
 
 	for(var i = 0; i < slot_list.length; i++)
 	{
-		console.log(slot_list[i].owner);
-				console.log(user_id);
 		if(slot_list[i].slot_x == pos_x && slot_list[i].slot_y == pos_y)
 		{
 			if(slot_list[i].owner == user_id)
@@ -22,6 +20,7 @@ function check_slot_owner(e) //check the slot owner
 		}
 	}
 
+	console.log('hehe');
 	return false;
 }
 
