@@ -23,12 +23,27 @@ function Army(army_id,type_id,army_owner)
 	console.log("creating army object with id " + army_id);
 	this.army_id = army_id;
 	this.owner = army_owner;
-	this.type_id = type_id
-	this.hp = null;
-	this.ap = null;
-	this.attack = null;
+	this.type_id = type_id;
+	if(type_id == "1")
+	{
+		this.hp = 5;
+		this.ap = 1;
+		this.attack = 3;
+	}
+	else if(type_id == "2")
+	{
+		this.hp = 3;
+		this.ap = 2;
+		this.attack = 4;
+	}
+	else if(type_id == "3")
+	{
+		this.hp = 2;
+		this.ap = 2;
+		this.attack = 1;
+	}
 	this.position_x = null;
-	this.position_y = null;	
+	this.position_y = null;
 }
 
 //This function return a set of {army_id,position_x,position_y} to indicates slots that it can attack
