@@ -5,12 +5,12 @@ var line_num = 22; //the top/left/bottom/right are useless
 function update_small_map() //update according to the global variable slot_list
 {
 	var slot = document.getElementsByClassName('slot');
+	console.log(user_1_color);
 	for(var i = 0; i < slot.length; i++)
 	{
 		if(parseInt(slot_list[i].owner) == parseInt(user_1))
 		{
 			slot[i].style.backgroundColor = user_1_color;
-			console.log(user_1_color);
 		}
 		else if(parseInt(slot_list[i].owner) == parseInt(user_2))
 		{
