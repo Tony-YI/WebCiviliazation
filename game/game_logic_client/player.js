@@ -14,4 +14,7 @@ function player(player_id, playername,gold,wood)
 	this.wood = wood;
 }
 
+player.prototype.show_info = function()
+{
 
+}

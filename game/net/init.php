@@ -111,7 +111,7 @@ JSON_ERROR;
 		if($count + 1 < $army_num)
 			echo ",";
 		else 
-			echo "],";
+			echo "]";
 	}	
 	echo "}";
 ?>
