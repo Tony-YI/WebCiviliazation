@@ -11,9 +11,9 @@ function check_slot_owner(e) //check the slot owner
 
 	for(var i = 0; i < slot_list.length; i++)
 	{
-		if(slot_list[i].slot_x == pos_x && slot_list[i].slot_y == pos_y)
+		if(parseInt(slot_list[i].slot_x) == parseInt(pos_x) && parseInt(slot_list[i].slot_y) == parseInt(pos_y))
 		{
-			if(slot_list[i].owner == user_id)
+			if(parseInt(slot_list[i].owner) == parseInt(user_id))
 			{
 				return true;
 			}
