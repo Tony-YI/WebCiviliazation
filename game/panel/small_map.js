@@ -29,6 +29,40 @@ function clean_small_map_dot()
 	}
 }
 
+function init_city_dot()
+{
+	var pos_x = e.target.getAttribute('x');
+	var pos_y = e.target.getAttribute('y');
+
+	var slot = document.getElementsByClassName('slot');
+	for(var i = 0; i < slot_num; i++)
+	{
+		switch(parseInt(slot_list[i].type_id))
+		{
+			case 0: //unused
+			break;
+
+			case 1: //normal slot
+			break;
+
+			case 2: //gold slot
+			slot[i].style.backgroundColor = 'rgb(254,215,40)';
+			break;
+
+			case 3: //wood slot
+			slot[i].style.backgroundColor = 'rgb(125,103,7)';
+			break;
+
+			case 4: //capital
+			slot[i].style.backgroundColor = 'white';
+			break;
+
+			default:
+			break;
+		}
+	}
+}
+
 function init_small_map()
 {
 	var slot = Array();
