@@ -641,9 +641,8 @@ function resize()
 
 function addBoxes(list)
 {
-	var hehe = list;
-	alert(list.length);
-	alert(slot_list.length);
+	console.log(list.length);
+	console.log(slot_list.length);
 	//20 x 20 map//
 	var hexagon_num = 484;
 	var new_line_num = 22; //the top/left/bottom/right are useless
@@ -691,7 +690,7 @@ function addBoxes(list)
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
-		switch(i)
+		switch(list[i].type_id)
 		{
 			case 1: //unused
 			hexagon[i].setAttribute('slot_type', 'unused_slot');
@@ -812,10 +811,6 @@ function addBoxes1() //backup
 
 function display_init(list)
 {
-	alert(list.length);
-	alert(slot_list.length);
-	alert('hehe');
-	
 	addBoxes(list);
 	resize();
 	window.addEventListener('resize', window_resize, false);
