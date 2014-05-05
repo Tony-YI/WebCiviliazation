@@ -4,7 +4,7 @@ body
 	height: 100%;
 	min-width: 1100px;
 	min-height: 900px;
-	font-family: Chalkduster, Castellar;
+	font-family: Chalkduster, Buxton Sketch;
 	text-align: center;
 	background-image: url('../images/background.jpg');
 	opacity: 0.8;
@@ -18,13 +18,13 @@ body
 h1
 {
 	margin-top: 50px;
-	font-family: Chalkduster, Castellar;
+	font-family: Chalkduster, Buxton Sketch;
 	color: white;
 }
 
 h4
 {
-	font-family: Chalkduster, Castellar;
+	font-family: Chalkduster, Buxton Sketch;
 	margin: 0 auto;
 }
 
