@@ -77,7 +77,7 @@ JSON_ERROR;
 	$slot_num = mysqli_num_rows($slotlist_result);
 	echo "\"slot_query\":\"$SQL_GET_SLOTLIST\",";
 	echo "\"slot_num\":\"$slot_num\",";
-	echo "\"slot\":[";
+	echo "\"slots\":[";
 	for($count = 0;$count < $slot_num;$count++)
 	{
 		$slot_row = mysqli_fetch_row($slotlist_result);
@@ -98,9 +98,20 @@ JSON_ERROR;
 			echo "],";
 	}
 
-	//TODO:
-	//ARMY INFO
 	$army_num = mysqli_num_rows($armylist_result);
 	echo "\"army_num\":\"$army_num\"";
+
+	echo "\"army\":[";
+	for($count = 0;$count < $slot_num;$count++)
+	{
+		$army_row = mysqli_fetch_row($armylist_result);
+		echo "{\"army_id\":\"$army_row[0]\",";
+		echo "\"army_type\":\"$army_row[1]\",";
+		echo "\"owner_id\":\"$army_row[2]\"}";
+		if($count + 1 < $slot_num)
+			echo ",";
+		else 
+			echo "],";
+	}	
 	echo "}";
 ?>

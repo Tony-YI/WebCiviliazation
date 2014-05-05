@@ -284,12 +284,20 @@ SQL_STATEMENT;
                         $p[0] = $row[0];
                         $p[1] = $row[1];
                         $p[2] = $row[2];
-                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[0] WHERE slot_x = $x[0] AND slot_y = $y[0]";
+                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (0,1,$p[0])";
+                        mysqli_query($con,$SQL_SET_INIT_ARMY);
+                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (1,1,$p[1])";
+                        mysqli_query($con,$SQL_SET_INIT_ARMY);
+                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (2,1,$p[2])";
+                        mysqli_query($con,$SQL_SET_INIT_ARMY);
+
+                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[0], slot_army = 0 WHERE slot_x = $x[0] AND slot_y = $y[0]";
                         mysqli_query($con,$SQL_SET_START_POS);
-                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[1] WHERE slot_x = $x[1] AND slot_y = $y[1]";
+                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[1], slot_army = 1 WHERE slot_x = $x[1] AND slot_y = $y[1]";
                         mysqli_query($con,$SQL_SET_START_POS);
-                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[2] WHERE slot_x = $x[2] AND slot_y = $y[2]";
+                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[2], slot_army = 2 WHERE slot_x = $x[2] AND slot_y = $y[2]";
                         mysqli_query($con,$SQL_SET_START_POS);
+
                         $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 WHERE slot_x = $woodPx[0] AND slot_y = $woodPy[0]";
                         mysqli_query($con,$SQL_SET_SLOT_TYPE);
                         $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 WHERE slot_x = $woodPx[1] AND slot_y = $woodPy[1]";
@@ -316,91 +324,92 @@ SQL_STATEMENT;
 	{
 		//I know it is a stupid method to generate an array!!! @Edward
 		$goldPx = range(1,6);
-                        $goldPy = range(1,6);
-                        $woodPx = range(1,6);
-                        $woodPy = range(1,6);
-                        $intv = $row_num / 4;
-                        $intv1 = range(1,$intv);
-                        $intv2 = range($intv+1, $row_num - $intv);
-                        $intv3 = range($intv+2, $row_num - $intv);
-                        $intv4 = range($row_num - $intv+1,$row_num - 1);
-                        $intv5 = range($row_num - $intv+2,$row_num - 1);
-                        $response['intervals'] = $intv5;
-                        $i = 0;
-                        while($i < 6){
-	                        switch ($i) {
-	                        	case 0:
-	                        		shuffle($intv1);
-	                        		shuffle($intv2);
-	                        		$goldPx[$i] = $intv1[0];
-	                        		$goldPy[$i] = $intv2[0];
-	                        		$woodPx[$i] = $intv1[1];
-	                        		$woodPy[$i] = $intv2[1];
-	                        		break;
-	                        	case 1:
-	                        		shuffle($intv1);
-	                        		shuffle($intv3);
-	                        		$goldPx[$i] = $intv3[0];
-	                        		$goldPy[$i] = $intv1[0];
-	                        		$woodPx[$i] = $intv3[1];
-	                        		$woodPy[$i] = $intv1[1];
-	                        		break;
-	                        	case 2:
-	                        		shuffle($intv2);
-	                        		shuffle($intv3);
-	                        		$goldPx[$i] = $intv3[0];
-	                        		$goldPy[$i] = $intv2[0];
-	                        		$woodPx[$i] = $intv3[1];
-	                        		$woodPy[$i] = $intv2[1];
-	                        		break;
-	                        	case 3:
-	                        		shuffle($intv2);
-	                        		shuffle($intv3);
-	                        		$goldPx[$i] = $intv3[0];
-	                        		$goldPy[$i] = $intv2[0];
-	                        		$woodPx[$i] = $intv3[1];
-	                        		$woodPy[$i] = $intv2[1];
-	                        		break;
-	                        	case 4:
-	                        		shuffle($intv3);
-	                        		shuffle($intv4);
-	                        		$goldPx[$i] = $intv3[0];
-	                        		$goldPy[$i] = $intv4[0];
-	                        		$woodPx[$i] = $intv3[1];
-	                        		$woodPy[$i] = $intv4[1];
-	                        		break;
-	                        	case 5:
-	                        		shuffle($intv2);
-	                        		shuffle($intv5);
-	                        		$goldPx[$i] = $intv5[0];
-	                        		$goldPy[$i] = $intv2[0];
-	                        		$woodPx[$i] = $intv5[1];
-	                        		$woodPy[$i] = $intv2[1];
-	                        		break;
-	                        	default:
+		$goldPy = range(1,6);
+		$woodPx = range(1,6);
+		$woodPy = range(1,6);
+		$intv = $row_num / 4;
+		$intv1 = range(1,$intv);
+		$intv2 = range($intv+1, $row_num - $intv);
+		$intv3 = range($intv+2, $row_num - $intv);
+		$intv4 = range($row_num - $intv+1,$row_num - 1);
+		$intv5 = range($row_num - $intv+2,$row_num - 1);
+		$response['intervals'] = $intv5;
+		$i = 0;
+		while($i < 6){
+			switch ($i) 
+			{
+				case 0:
+					shuffle($intv1);
+					shuffle($intv2);
+					$goldPx[$i] = $intv1[0];
+					$goldPy[$i] = $intv2[0];
+					$woodPx[$i] = $intv1[1];
+					$woodPy[$i] = $intv2[1];
+					break;
+				case 1:
+					shuffle($intv1);
+					shuffle($intv3);
+					$goldPx[$i] = $intv3[0];
+					$goldPy[$i] = $intv1[0];
+					$woodPx[$i] = $intv3[1];
+					$woodPy[$i] = $intv1[1];
+					break;
+				case 2:
+					shuffle($intv2);
+					shuffle($intv3);
+					$goldPx[$i] = $intv3[0];
+					$goldPy[$i] = $intv2[0];
+					$woodPx[$i] = $intv3[1];
+					$woodPy[$i] = $intv2[1];
+				break;
+				case 3:
+					shuffle($intv2);
+					shuffle($intv3);
+					$goldPx[$i] = $intv3[0];
+					$goldPy[$i] = $intv2[0];
+					$woodPx[$i] = $intv3[1];
+					$woodPy[$i] = $intv2[1];
+				break;
+				case 4:
+					shuffle($intv3);
+					shuffle($intv4);
+					$goldPx[$i] = $intv3[0];
+					$goldPy[$i] = $intv4[0];
+					$woodPx[$i] = $intv3[1];
+					$woodPy[$i] = $intv4[1];
+				break;
+				case 5:
+					shuffle($intv2);
+					shuffle($intv5);
+					$goldPx[$i] = $intv5[0];
+					$goldPy[$i] = $intv2[0];
+					$woodPx[$i] = $intv5[1];
+					$woodPy[$i] = $intv2[1];
+				break;
+				default:
 	                        		
-	                        		break;
-	                        }
-                        $i++;
-                    	}
-                    	$i = 0;
-                    	while($i < 6){
-                    		if( ($woodPx[2] == $woodPx[3] && $woodPy[2] == $woodPy[3]) || ($woodPx[2] == $goldPx[3] && $woodPy[2] == $goldPy[3]) ){
-                    			$woodPx[2]++;
-                    		}
-                    		if(($goldPx[2] == $woodPx[3] && $goldPy[2] == $woodPy[3]) || ($goldPx[2] == $goldPx[3] && $goldPy[2] == $goldPy[3])){
-                    			$goldPx[2]++;
-                    		}
-                    		$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $goldPx[$i] AND slot_y = $goldPy[$i]";
-                        	mysqli_query($con,$SQL_SET_SLOT_TYPE);
-                        	$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 WHERE slot_x = $woodPx[$i] AND slot_y = $woodPy[$i]";
-                        	mysqli_query($con,$SQL_SET_SLOT_TYPE);
-                        	$i++;
-                    	}
-                    	$response['Gold222'] = "($goldPx[0], $goldPy[0]) , ($goldPx[1], $goldPy[1]) , ($goldPx[2], $goldPy[2]),($goldPx[3], $goldPy[3]),($goldPx[4], $goldPy[4]),($goldPx[5], $goldPy[5])";
-                        $response['Wood222'] = "($woodPx[0], $woodPy[0]) , ($woodPx[1], $woodPy[1]) , ($woodPx[2], $woodPy[2]), ($woodPx[3], $woodPy[3]), ($woodPx[4], $woodPy[4]), ($woodPx[5], $woodPy[5])";
-	}
+				break;
+			}
+			$i++;
+		}
+		$i = 0;
+		while($i < 6){
+			if( ($woodPx[2] == $woodPx[3] && $woodPy[2] == $woodPy[3]) || ($woodPx[2] == $goldPx[3] && $woodPy[2] == $goldPy[3]) ){
+				$woodPx[2]++;
+			}
 
+			if(($goldPx[2] == $woodPx[3] && $goldPy[2] == $woodPy[3]) || ($goldPx[2] == $goldPx[3] && $goldPy[2] == $goldPy[3])){
+				$goldPx[2]++;
+			}
+			$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $goldPx[$i] AND slot_y = $goldPy[$i]";
+			mysqli_query($con,$SQL_SET_SLOT_TYPE);
+			$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 WHERE slot_x = $woodPx[$i] AND slot_y = $woodPy[$i]";
+			mysqli_query($con,$SQL_SET_SLOT_TYPE);
+			$i++;
+		}
+		$response['Gold222'] = "($goldPx[0], $goldPy[0]) , ($goldPx[1], $goldPy[1]) , ($goldPx[2], $goldPy[2]),($goldPx[3], $goldPy[3]),($goldPx[4], $goldPy[4]),($goldPx[5], $goldPy[5])";
+		$response['Wood222'] = "($woodPx[0], $woodPy[0]) , ($woodPx[1], $woodPy[1]) , ($woodPx[2], $woodPy[2]), ($woodPx[3], $woodPy[3]), ($woodPx[4], $woodPy[4]), ($woodPx[5], $woodPy[5])";
+	}
 
 	function initilize_slots_unused_row($game_id,$con,&$response,$row,$col_num)
 	{
