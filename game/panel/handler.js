@@ -1,5 +1,5 @@
 //This file contains handlers for clicking Attack, move, and defend 
-//variable latest_slot points to the DOM that is the grand-parent of all these actions
+//[HINT] variable 'latest_slot' points to the DOM that is the grand-parent of all these actions
 function attack_handler()
 {
 	/*
