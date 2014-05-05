@@ -7,20 +7,29 @@ function Init()
 	Init_get_init_data();
 }
 
+var player_list;
+var slot_list;
+var army_list;
+
 function Init_get_init_data()
 {
 	//This function will send request to get the initilization data
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","./net/init.php",false);
 	xhr.send();
-	console.log(xhr.responseText);
+	//console.log(xhr.responseText);
 	try
 	{
 		var response = JSON.parse(xhr.responseText);
-		console.log(response.slot_num);
-		console.log(response.p1);
-		console.log(response.p2);
-		console.log(response.p3);
+		//console.log(response.slot_num);
+		player_list.p1 = response.p1;
+		player_list.p2 = response.p2;
+		player_list.p3 = response.p3;
+		slot_list = response.slots;
+		army_list = response.army;
+		console.log(player_list);
+		console.log(slot_list);
+		console.log(army_list);
 	}
 	catch(e)
 	{
