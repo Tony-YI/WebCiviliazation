@@ -21,6 +21,7 @@ player.prototype.show_info = function()
 
 	username_div.innerHTML = "Player: " + this.pname;
 	
+	console.log(this.player_id);
 	if(parseInt(this.player_id) == parseInt(user_1))
 	{
 		username_div.style.background = user_1_color;
@@ -33,7 +34,7 @@ player.prototype.show_info = function()
 	{
 		username_div.style.background = user_3_color;
 	}
-	
+
 	gold_div.innerHTML = "gold: " + this.gold;
 	lumber_div.innerHTML = "wood: " + this.wood;
 }
