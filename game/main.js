@@ -21,7 +21,9 @@ function Init_get_init_data()
 	try
 	{
 		var response = JSON.parse(xhr.responseText);
-		//console.log(response.slot_num);
+		console.log(response.p1);
+		console.log(response.p2);
+		console.log(response.p3);
 		player_list.p1 = response.p1;
 		player_list.p2 = response.p2;
 		player_list.p3 = response.p3;
