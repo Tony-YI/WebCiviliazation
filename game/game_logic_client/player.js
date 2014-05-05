@@ -6,8 +6,8 @@
 
 function player(player_id, playername,gold,wood)
 {
-	this.id = player_id;
-	this.name = playername;
+	this.pid = player_id;
+	this.pname = playername;
 	this.gold = gold;
 	this.wood = wood;
 }
