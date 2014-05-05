@@ -102,13 +102,13 @@ JSON_ERROR;
 	echo "\"army_num\":\"$army_num\"";
 
 	echo "\"army\":[";
-	for($count = 0;$count < $slot_num;$count++)
+	for($count = 0;$count < $army_num;$count++)
 	{
 		$army_row = mysqli_fetch_row($armylist_result);
 		echo "{\"army_id\":\"$army_row[0]\",";
 		echo "\"army_type\":\"$army_row[1]\",";
 		echo "\"owner_id\":\"$army_row[2]\"}";
-		if($count + 1 < $slot_num)
+		if($count + 1 < $army_num)
 			echo ",";
 		else 
 			echo "],";
