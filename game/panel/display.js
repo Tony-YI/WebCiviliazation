@@ -776,6 +776,7 @@ function addBoxes(list)
 	}
 
 	window.location.hash = '#anchor';
+	document.getElementById('anchor').focus();
 }
 
 function update_slot() //TODO: update the slot every movement
