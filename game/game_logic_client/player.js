@@ -20,17 +20,17 @@ player.prototype.show_info = function()
 	var lumber_div = document.getElementById("lumber");
 
 	username_div.innerHTML = "Player: " + this.pname;
-	console.log(this.pid);
-	if(parseInt(this.pid) == parseInt(user_1))
+	var pid = this.pid; 
+ 	if(pid == parseInt(user_1))
 	{
 		username_div.style.backgroundColor = user_1_color;
 	}
-	else if(parseInt(this.pid) == parseInt(user_2))
+	else if(pid == parseInt(user_2))
 	{
 		username_div.style.backgroundColor = user_2_color;
 		console.log('hehe');
 	}
-	else if(parseInt(this.pid) == parseInt(user_3))
+	else if(pid == parseInt(user_3))
 	{
 		username_div.style.backgroundColor = user_3_color;
 	}
