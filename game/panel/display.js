@@ -729,19 +729,19 @@ function addBoxes(list)
 		{
 			j++;
 			user_1 = list[i].owner;
-			hexagon[i].background = user_1_color;
+			hexagon[i].style.background = user_1_color;
 		}
 		if(list[i].owner && j == 1)
 		{
 			j++;
 			user_2 = list[i].owner;
-			hexagon[i].background = user_2_color;
+			hexagon[i].style.background = user_2_color;
 		}
 		if(list[i].owner && j == 2)
 		{
 			j++;
 			user_3 = list[i].owner;
-			hexagon[i].background = user_3_color;
+			hexagon[i].style.background = user_3_color;
 		}
 	}
 
