@@ -1,6 +1,7 @@
 //This javascript file contains implementation of the army class
 function Army_list()
 {
+	
 }
 
 
