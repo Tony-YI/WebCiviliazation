@@ -6,7 +6,7 @@ function army(army_id,army_owner,hp,ap,attack,position_x,position_y)
 	this.owner = army_ownder;
 	this.hp = hp;
 	this.ap = ap;
-	this.attach = attack;
+	this.attack = attack;
 	this.position_x = position_x;
 	this.position_y = position_y;	
 }
