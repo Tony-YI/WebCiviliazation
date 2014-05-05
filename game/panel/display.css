@@ -213,6 +213,23 @@ body
     -webkit-animation-name: hover;
     -moz-animation-name: hover;
 
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+
+    opacity: 0.5;
+    background: red;
+}
+.hexagon[function="range"]:hover
+{
+    animation-name: hover;
+    -webkit-animation-name: hover;
+    -moz-animation-name: hover;
+
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
     -moz-animation-duration: 1s;
