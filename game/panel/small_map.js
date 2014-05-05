@@ -29,14 +29,23 @@ function clean_small_map_dot()
 	}
 }
 
-function init_city_dot()
+function init_small_map()
 {
-	var pos_x = e.target.getAttribute('x');
-	var pos_y = e.target.getAttribute('y');
-
-	var slot = document.getElementsByClassName('slot');
+	var slot = Array();
 	for(var i = 0; i < slot_num; i++)
 	{
+		slot[i] = document.createElement('div');
+		slot[i].setAttribute('class', 'slot');
+		var x = i % line_num;
+		var y = parseInt(i / line_num);
+		slot[i].setAttribute('x', x);
+		slot[i].setAttribute('y', y);
+
+		if(x == 0 || x == line_num - 1 || y == 0 || y == line_num - 1) //row start slot
+		{
+			slot[i].style.opacity = '0.0';
+		}
+
 		switch(parseInt(slot_list[i].type_id))
 		{
 			case 0: //unused
@@ -59,25 +68,6 @@ function init_city_dot()
 
 			default:
 			break;
-		}
-	}
-}
-
-function init_small_map()
-{
-	var slot = Array();
-	for(var i = 0; i < slot_num; i++)
-	{
-		slot[i] = document.createElement('div');
-		slot[i].setAttribute('class', 'slot');
-		var x = i % line_num;
-		var y = parseInt(i / line_num);
-		slot[i].setAttribute('x', x);
-		slot[i].setAttribute('y', y);
-
-		if(x == 0 || x == line_num - 1 || y == 0 || y == line_num - 1) //row start slot
-		{
-			slot[i].style.opacity = '0.0';
 		}
 	}
 
