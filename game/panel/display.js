@@ -50,17 +50,12 @@ function mousedown_1(e) //handel the right click on slot
 				return false;
 			}
 
-			//TODO: check whether this slot belongs to the user
-			/*
-			if(belong to user)
-			{
-				continuous;
-			}
-			else
+			//check whether this slot belongs to the user
+			var belongs = check_slot_owner(); //in /game/game_logic_client/check_functions.js
+			if(!belongs)
 			{
 				break;
 			}
-			*/
 
 			//add eventListener
 			e.target.addEventListener('mouseup', mouseup_1, false);
