@@ -28,7 +28,7 @@ function Init_get_init_data()
 	//init_army_list(response.army);
 	console.log(player_list);
 	console.log(slot_list);
-	//console.log(army_list);
+	console.log(army_list);
 }
 //This is the function to add 'ACTIONS' to the form that is going to be processed on the server side
 function player_add_action_to_form(actions)

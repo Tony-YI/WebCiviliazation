@@ -12,7 +12,7 @@ function init_army_list(army)
 function Army(army_id,type_id,army_owner)
 {
 	this.id = army_id;
-	this.owner = army_ownder;
+	this.owner = army_owner;
 	this.type_id = type_id
 	this.hp = null;
 	this.ap = null;
