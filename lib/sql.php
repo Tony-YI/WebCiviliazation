@@ -107,5 +107,24 @@ SQL_STATEMENT;
 SQL_STATEMENT;
 		return $SQL_CREATE_SLOTLIST;
 	}
+	function sql_create_actionlist($game_id)
+	{
+		$SQL_CREATE_SLOTLIST = <<<SQL_STATEMENT
+		CREATE TABLE game_{$game_id}_actionlist
+		(
+			id INT,
+			from_x INT,
+			from_y INT,
+			to_x INT,
+			to_y INT,
+			player INT,
+			army_type INT,
+			army_num INT,
+			action_type INT,
+			PRIMARY KEY(id),
+		)
+SQL_STATEMENT;
+		return $SQL_CREATE_SLOTLIST;
+	}
 
 ?>

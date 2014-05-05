@@ -7,10 +7,6 @@ function Init()
 	Init_get_init_data();
 }
 
-var player_list;
-var slot_list;
-var army_list;
-
 function Init_get_init_data()
 {
 	//This function will send request to get the initilization data

@@ -119,6 +119,7 @@
 		$SQL_CREATE_PLAYERLIST = sql_create_playerlist($game_id);
 		$SQL_CREATE_ARMYLIST = sql_create_armylist($game_id);
 		$SQL_CREATE_SLOTLIST = sql_create_slotlist($game_id);
+		$SQL_CREATE_ACTIONLIST = sql_create_actionlist($game_id);
 		
 		if(!mysqli_query($con,$SQL_CREATE_PLAYERLIST))
 		{
@@ -131,6 +132,10 @@
 		if(!mysqli_query($con,$SQL_CREATE_SLOTLIST))
 		{
 			$response["sql_slotlist_error"] = mysqli_error($con);
+		}
+		if(!mysqli_query($con,$SQL_CREATE_ACTIONLIST))
+		{
+			$response["sql_actionlist_error"] = mysqli_error($con);
 		}
 	}
 
