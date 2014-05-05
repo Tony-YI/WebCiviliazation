@@ -13,7 +13,7 @@ function getArmyById(army_id)
 {
 	for(var count = 0;count < window.army_list.length;count++)
 	{
-		if(window.army_list[count].army_id = army_id)
+		if(window.army_list[count].army_id == army_id)
 			return window.army_list[count];
 	}
 }
