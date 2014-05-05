@@ -21,15 +21,16 @@ function Init_get_init_data()
 	try
 	{
 		var response = JSON.parse(xhr.responseText);
-		console.log(response.p1);
-		console.log(response.p2);
-		console.log(response.p3);
-		player_list = [response.p1,response.p2,response.p3];
-		slot_list = response.slots;
-		army_list = response.army;
+		var p1 = new player(response.p1.user_id,response.p1.username,response.p1.gold,response.p1.wood);
+		var p2 = new player(response.p2.user_id,response.p2.username,response.p2.gold,response.p2.wood);
+		var p3 = new player(response.p3.user_id,response.p3.username,response.p3.gold,response.p3.wood);
+		player_list = [p1,p2,p3];
+
+		init_slot_list(response.slots);
+		//init_army_list(response.army);
 		console.log(player_list);
 		console.log(slot_list);
-		console.log(army_list);
+		//console.log(army_list);
 	}
 	catch(e)
 	{
