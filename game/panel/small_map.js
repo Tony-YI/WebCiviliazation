@@ -10,6 +10,7 @@ function update_small_map() //update according to the global variable slot_list
 		if(parseInt(slot_list[i].owner) == parseInt(user_1))
 		{
 			slot[i].style.backgroundColor = user_1_color;
+			console.log(user_1_color);
 		}
 		else if(parseInt(slot_list[i].owner) == parseInt(user_2))
 		{
@@ -64,7 +65,7 @@ function clean_small_map_dot()
 				break;
 
 				case 4: //capital
-				//slot[i].style.backgroundColor = 'white';
+				slot[i].style.backgroundColor = 'white';
 				break;
 
 				default:
@@ -113,7 +114,7 @@ function init_small_map()
 			break;
 
 			case 4: //capital
-			//slot[i].style.backgroundColor = 'white';
+			slot[i].style.backgroundColor = 'white';
 			break;
 
 			default:
