@@ -30,6 +30,7 @@ function clean_small_map_dot()
 				break;
 
 				case 1: //normal slot
+				slot[i].style.backgroundColor = 'gray';
 				break;
 
 				case 2: //gold slot
