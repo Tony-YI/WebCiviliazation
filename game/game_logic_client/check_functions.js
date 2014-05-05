@@ -20,7 +20,8 @@ function check_slot_owner(e) //check the slot owner
 		}
 	}
 
-	console.log('hehe');
+	console.log(pos_x);
+	console.log(pos_y);
 	return false;
 }
 
