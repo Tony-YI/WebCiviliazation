@@ -3,7 +3,7 @@ function init_army_list(army)
 {
 	for(var count = 0;count < army.length;count++)
 	{
-		var tmp = new Army(army.army_id,army.army_type,army.owner_id);
+		var tmp = new Army(army[count].army_id,army[count].army_type,army[count].owner_id);
 		army_list.push(tmp);
 	}
 
