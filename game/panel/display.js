@@ -51,7 +51,7 @@ function mousedown_1(e) //handel the right click on slot
 			}
 
 			//check whether this slot belongs to the user
-			var belongs = check_slot_owner(); //in /game/game_logic_client/check_functions.js
+			var belongs = check_slot_owner(e); //in /game/game_logic_client/check_functions.js
 			if(!belongs)
 			{
 				break;
