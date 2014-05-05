@@ -64,6 +64,8 @@ function mousedown_1(e) //handel the right click on slot
 
 			//add eventListener
 			e.target.addEventListener('mouseup', mouseup_1, false);
+			clean_small_map_dot(); //in small_map.js
+			small_map_dot(e); //in small_map.js
 			remove_manual();
 			break;
 		default:
