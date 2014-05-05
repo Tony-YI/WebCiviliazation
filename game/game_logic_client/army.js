@@ -20,6 +20,7 @@ function getArmyById(army_id)
 
 function Army(army_id,type_id,army_owner)
 {
+	console.log("creating army object with id" + army_id);
 	this.id = army_id;
 	this.owner = army_owner;
 	this.type_id = type_id
