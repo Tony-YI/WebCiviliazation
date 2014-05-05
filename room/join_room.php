@@ -296,24 +296,24 @@ SQL_STATEMENT;
                         $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (2,1,$p[2])";
                         mysqli_query($con,$SQL_SET_INIT_ARMY);
 
-                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[0], slot_army = 0 WHERE slot_x = $x[0] AND slot_y = $y[0]";
+                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 , slot_owner = $p[0], slot_army = 0 WHERE slot_x = $x[0] AND slot_y = $y[0]";
                         mysqli_query($con,$SQL_SET_START_POS);
-                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[1], slot_army = 1 WHERE slot_x = $x[1] AND slot_y = $y[1]";
+                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 , slot_owner = $p[1], slot_army = 1 WHERE slot_x = $x[1] AND slot_y = $y[1]";
                         mysqli_query($con,$SQL_SET_START_POS);
-                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 5 , slot_owner = $p[2], slot_army = 2 WHERE slot_x = $x[2] AND slot_y = $y[2]";
+                        $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 , slot_owner = $p[2], slot_army = 2 WHERE slot_x = $x[2] AND slot_y = $y[2]";
                         mysqli_query($con,$SQL_SET_START_POS);
 
-                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 WHERE slot_x = $woodPx[0] AND slot_y = $woodPy[0]";
+                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $woodPx[0] AND slot_y = $woodPy[0]";
                         mysqli_query($con,$SQL_SET_SLOT_TYPE);
-                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 WHERE slot_x = $woodPx[1] AND slot_y = $woodPy[1]";
+                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $woodPx[1] AND slot_y = $woodPy[1]";
                         mysqli_query($con,$SQL_SET_SLOT_TYPE);
-                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 WHERE slot_x = $woodPx[2] AND slot_y = $woodPy[2]";
+                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $woodPx[2] AND slot_y = $woodPy[2]";
                         mysqli_query($con,$SQL_SET_SLOT_TYPE);
-                       	$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $goldPx[0] AND slot_y = $goldPy[0]";
+                       	$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 2 WHERE slot_x = $goldPx[0] AND slot_y = $goldPy[0]";
                         mysqli_query($con,$SQL_SET_SLOT_TYPE);
-                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $goldPx[1] AND slot_y = $goldPy[1]";
+                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 2 WHERE slot_x = $goldPx[1] AND slot_y = $goldPy[1]";
                         mysqli_query($con,$SQL_SET_SLOT_TYPE);
-                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $goldPx[2] AND slot_y = $goldPy[2]";
+                        $SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 2 WHERE slot_x = $goldPx[2] AND slot_y = $goldPy[2]";
                         mysqli_query($con,$SQL_SET_SLOT_TYPE);
 
                         $response['player1Ini'] = "($x[0],$y[0])";
@@ -406,9 +406,9 @@ SQL_STATEMENT;
 			if(($goldPx[2] == $woodPx[3] && $goldPy[2] == $woodPy[3]) || ($goldPx[2] == $goldPx[3] && $goldPy[2] == $goldPy[3])){
 				$goldPx[2]++;
 			}
-			$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $goldPx[$i] AND slot_y = $goldPy[$i]";
+			$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 2 WHERE slot_x = $goldPx[$i] AND slot_y = $goldPy[$i]";
 			mysqli_query($con,$SQL_SET_SLOT_TYPE);
-			$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 WHERE slot_x = $woodPx[$i] AND slot_y = $woodPy[$i]";
+			$SQL_SET_SLOT_TYPE = "UPDATE game_{$game_id}_slotlist SET slot_type = 3 WHERE slot_x = $woodPx[$i] AND slot_y = $woodPy[$i]";
 			mysqli_query($con,$SQL_SET_SLOT_TYPE);
 			$i++;
 		}
