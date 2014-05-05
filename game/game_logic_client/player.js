@@ -23,15 +23,15 @@ player.prototype.show_info = function()
 	console.log(this.pid);
 	if(parseInt(this.pid) == parseInt(user_1))
 	{
-		username_div.style.background = user_1_color;
+		username_div.style.backgroundColor = user_1_color;
 	}
 	else if(parseInt(this.pid) == parseInt(user_2))
 	{
-		username_div.style.background = user_2_color;
+		username_div.style.backgroundColor = user_2_color;
 	}
 	else if(parseInt(this.pid) == parseInt(user_3))
 	{
-		username_div.style.background = user_3_color;
+		username_div.style.backgroundColor = user_3_color;
 	}
 	gold_div.innerHTML = "gold: " + this.gold;
 	lumber_div.innerHTML = "wood: " + this.wood;
