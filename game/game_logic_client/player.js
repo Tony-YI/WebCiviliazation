@@ -20,23 +20,17 @@ player.prototype.show_info = function()
 	var lumber_div = document.getElementById("lumber");
 
 	username_div.innerHTML = "Player: " + this.pname;
-	switch(parseInt(this.pid))
+	if(parseInt(this.pid) == parseInt(user_1))
 	{
-		case user_1:
 		username_div.style.background = user_1_color;
-		console.log(this.pname);
-		break;
-
-		case user_2:
+	}
+	else if(parseInt(this.pid) == parseInt(user_2))
+	{
 		username_div.style.background = user_2_color;
-		break;
-
-		case user_3:
+	}
+	if(parseInt(this.pid) == parseInt(user_3))
+	{
 		username_div.style.background = user_3_color;
-		break;
-
-		default:
-		break;
 	}
 	gold_div.innerHTML = "gold: " + this.gold;
 	lumber_div.innerHTML = "wood: " + this.wood;
