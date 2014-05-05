@@ -219,7 +219,7 @@ function key_down(e)
 	if(key == 77)
 	{
 		console.log(key);
-		document.getElementById('small_map').style.display = 'block';
+		e.target.addEventListener('keyup', key_up, false);
 	}
 }
 
@@ -229,8 +229,16 @@ function key_up(e)
 	if(key == 77)
 	{
 		console.log(key);
+		e.target.removeEventListener('keyup', key_up, false);
 		clean_small_map_dot(); //in small_map.js
-		document.getElementById('small_map').style.display = 'none';
+		if(document.getElementById('small_map').style.display == 'none')
+		{
+			document.getElementById('small_map').style.display = 'block';
+		}
+		else
+		{
+			document.getElementById('small_map').style.display = 'none';
+		}
 	}
 }
 
@@ -713,7 +721,6 @@ function init(e)
 	resize();
 	window.addEventListener('resize', window_resize, false);
 	window.addEventListener('keydown', key_down, false);
-	window.addEventListener('keyup', key_up, false)
 }
 
 window.addEventListener('load', init, false);
