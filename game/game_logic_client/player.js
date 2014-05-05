@@ -20,24 +20,20 @@ player.prototype.show_info = function()
 	var lumber_div = document.getElementById("lumber");
 
 	username_div.innerHTML = "Player: " + this.pname;
-	switch(parseInt(this.player_id))
+	
+	if(parseInt(this.player_id) == parseInt(user_1))
 	{
-		case parseInt(user_1):
 		username_div.style.background = user_1_color;
-		console.log(this.pname);
-		break;
-
-		case parseInt(user_2):
-		username_div.style.background = user_2_color;
-		break;
-
-		case parseInt(user_3):
-		username_div.style.background = user_3_color;
-		break;
-
-		default:
-		break;
 	}
+	else if(parseInt(this.player_id) == parseInt(user_2))
+	{
+		username_div.style.background = user_2_color;
+	}
+	else if(parseInt(this.player_id) == parseInt(user_3))
+	{
+		username_div.style.background = user_3_color;
+	}
+	
 	gold_div.innerHTML = "gold: " + this.gold;
 	lumber_div.innerHTML = "wood: " + this.wood;
 }
