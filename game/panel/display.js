@@ -745,6 +745,19 @@ function addBoxes(list)
 		}
 	}
 
+	if(user_id == user_1)
+	{
+		document.getElementById('username').style.background = user_1_color;
+	}
+	else if(user_id == user_2)
+	{
+		document.getElementById('username').style.background = user_2_color;
+	}
+	else if(user_id == user_3)
+	{
+		document.getElementById('username').style.background = user_3_color;
+	}
+
 	var box = document.getElementById('box');
 	box.addEventListener('contextmenu', no_contextmenu, false);
 
