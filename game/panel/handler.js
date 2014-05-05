@@ -1,5 +1,25 @@
 //This file contains handlers for clicking Attack, move, and defend 
 //[HINT] variable 'latest_slot' points to the DOM that is the grand-parent of all these actions
+
+function show_range(x, y)
+{
+	remove_manual(); //in display.js
+	var slot_div = document.getElementsClassName('hexagon');
+	slot_div[parseInt(y) * line_num + parseInt(x)].setAttribute('function', 'range'); //line_nume: global variable in small_map.js
+	//all the change color thing are done in display.css
+}
+
+function clear_range()
+{
+	var slot_div = document.getElementsClassName('hexagon');
+	for(var i = 0; i < slot_num; i++) //slot_num: global variable in small_map.js
+	{
+		if(slot_div[i].getAttribute('function') == 'range')
+		{
+			slot_div[i].setAttribute('function', 'none');
+		}
+	}
+}
 function attack_clicked_handler()
 {
 	/*
