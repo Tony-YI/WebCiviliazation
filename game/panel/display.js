@@ -641,9 +641,8 @@ function resize()
 
 function addBoxes(list)
 {
-	var hehe = list;
-	alert(list.length);
-	alert(slot_list.length);
+	console.log(list.length);
+	console.log(slot_list.length);
 	//20 x 20 map//
 	var hexagon_num = 484;
 	var new_line_num = 22; //the top/left/bottom/right are useless
