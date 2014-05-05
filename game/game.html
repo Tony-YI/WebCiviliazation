@@ -2,8 +2,11 @@
 
 <html>
 <head>
-	<title>Gaming Page</title>
-	<style type="text/css" href="./game.css"></style>
+    <title>WebCivilization</title>
+    <link rel="stylesheet" type="text/css" href="./panel/display.css"/>
+    <link rel="stylesheet" type="text/css" href="./panel/info.css"/>
+    <link rel="stylesheet" type="text/css" href="./panel/small_map.css"/>
+
 	<script type="text/javascript">
 	//global variable
 	var player_list;
@@ -13,12 +16,27 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="../jquery.cookie.js"></script>
     <script type="text/javascript" src="./render.js"></script>
-    <!--<script type="text/javascript" src="./panel/display.js"></script>-->
+    <script type="text/javascript" src="./panel/display.js"></script>
+    <script type="text/javascript" src="./panel/small_map.js"></script>
+    <script type="text/javascript" src="./game_logic_client/check_functions.js"></script>
     <script type="text/javascript" src="./game_logic_client/player.js"></script>
     <script type="text/javascript" src="./game_logic_client/army.js"></script>
     <script type="text/javascript" src="./game_logic_client/slot.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 </head>
 <body onload="Init()">
+	<div id="info">
+    <div id="gold">Gold:</div>
+    <div id="lumber">Lumber:</div>
+    <div id="hexagon_info"></div>
+	</div>
+
+	<div id="small_map">
+	</div>
+
+	<div id="display">
+    <div id="box">
+    </div>
+</div>
 </body>
 </html>

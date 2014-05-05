@@ -719,12 +719,10 @@ function addBoxes()
 	}
 }
 
-function init(e)
+function display_init()
 {
 	addBoxes();
 	resize();
 	window.addEventListener('resize', window_resize, false);
 	window.addEventListener('keydown', key_down, false);
 }
-
-window.addEventListener('load', init, false);

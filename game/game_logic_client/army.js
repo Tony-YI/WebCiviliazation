@@ -1,27 +1,33 @@
 //This javascript file contains implementation of the army class
 function init_army_list(army)
 {
-	
+	for(var count = 0;count < army.length;count++)
+	{
+		var tmp = new Army(army.army_id,army.army_type,army.owner_id);
+		army_list.push(tmp);
+	}
+
 }
 
-function army(army_id,army_owner,hp,ap,attack,position_x,position_y)
+function Army(army_id,type_id,army_owner)
 {
 	this.id = army_id;
 	this.owner = army_ownder;
-	this.hp = hp;
-	this.ap = ap;
-	this.attack = attack;
-	this.position_x = position_x;
-	this.position_y = position_y;	
+	this.type_id = type_id
+	this.hp = null;
+	this.ap = null;
+	this.attack = null;
+	this.position_x = null;
+	this.position_y = null;	
 }
 
 //This function return a set of {army_id,position_x,position_y} to indicates slots that it can attack
-army.prototype.attack_range = function()
+Army.prototype.attack_range = function()
 {
 };
 
 //This function return a set of {x,y} to indicates slots that it can move to 
-army.prototype.move_range = function()
+Army.prototype.move_range = function()
 {
 };
 
@@ -30,10 +36,10 @@ army.prototype.move_range = function()
 	1. 
 	.add the attack function to the form
 */
-army.prototype.attack = function()
+Army.prototype.attack = function()
 {
 };
 
-army.prototype.move = function()
+Army.prototype.move = function()
 {
 };

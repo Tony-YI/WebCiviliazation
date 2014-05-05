@@ -29,7 +29,7 @@ function clean_small_map_dot()
 	}
 }
 
-function init_small_map(e)
+function init_small_map()
 {
 	var slot = Array();
 	for(var i = 0; i < slot_num; i++)
@@ -58,5 +58,3 @@ function init_small_map(e)
 		}
 	}
 }
-
-window.addEventListener('load', init_small_map, false);
