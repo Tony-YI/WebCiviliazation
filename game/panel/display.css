@@ -222,25 +222,25 @@ body
 
 .hexagon[slot_type="unused_slot"]
 {
-    opacity = 0;
+    opacity: 0;
 }
 .hexagon[slot_type="normal_slot"]
 {
-    opacity = 1;
+    opacity: 1;
 }
 .hexagon[slot_type="gold_slot"]
 {
-    opacity = 1;
+    opacity: 1;
     background: rgb(254,215,40);
 }
 .hexagon[slot_type="wood_slot"]
 {
-    opacity = 1;
+    opacity: 1;
     background: rgb(125,103,7);
 }
 .hexagon[slot_type="capital_slot"]
 {
-    opacity = 1;
+    opacity: 1;
 }
 
 #hexagon_normal
