@@ -4,6 +4,7 @@
 	1. Player
 	2. Army
 	3. Slot (Hope that Tony can merge this with his implementatio of the display.js)
+	4. Action_List
 */
 
 function Player(player_id, playername,gold,wood)
