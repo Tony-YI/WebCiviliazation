@@ -64,8 +64,8 @@ function clean_small_map_dot()
 
 				case 4: //capital
 				slot[i].style.border = '1px solid white';
-				slot[i].width = '10px';
-				slot[i].height = '10px';
+				slot[i].style.width = '10px';
+				slot[i].style.height = '10px';
 				if(parseInt(slot_list[i].owner) == parseInt(user_1))
 				{
 					slot[i].style.backgroundColor = user_1_color;
@@ -123,8 +123,8 @@ function init_small_map()
 
 			case 4: //capital
 			slot[i].style.border = '1px solid white';
-			slot[i].width = '10px';
-			slot[i].height = '10px';
+			slot[i].style.width = '10px';
+			slot[i].style.height = '10px';
 			if(parseInt(slot_list[i].owner) == parseInt(user_1))
 			{
 				slot[i].style.backgroundColor = user_1_color;
