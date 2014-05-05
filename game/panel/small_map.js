@@ -38,9 +38,9 @@ function small_map_dot(e)
 	}
 }
 
-function f_switch(i)
+function f_switch(i, type_id)
 {
-	switch(parseInt(i))
+	switch(parseInt(type_id))
 	{
 		case 0: //unused
 		break;
@@ -87,7 +87,7 @@ function clean_small_map_dot()
 	{
 		if(slot[i].style.backgroundColor == 'red')
 		{
-			f_switch(slot_list[i].type_id);
+			f_switch(i, slot_list[i].type_id);
 		}
 	}
 }
@@ -109,7 +109,7 @@ function init_small_map()
 			slot[i].style.opacity = '0.0';
 		}
 
-		f_switch(slot_list[i].type_id);
+		f_switch(i, slot_list[i].type_id);
 	}
 
 	var small_map = document.getElementById('small_map');
