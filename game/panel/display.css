@@ -233,14 +233,39 @@ body
     opacity: 1;
     background: rgb(254,215,40);
 }
+.hexagon[slot_type="gold_slot"]:before
+{
+    border-bottom: 25px solid rgb(254,215,40);
+}
+.hexagon[slot_type="gold_slot"]:after
+{
+    border-top: 25px solid rgb(254,215,40);
+}
 .hexagon[slot_type="wood_slot"]
 {
     opacity: 1;
     background: rgb(125,103,7);
 }
+.hexagon[slot_type="wood_slot"]:before
+{
+    border-bottom: 25px solid rgb(125,103,7);
+}
+.hexagon[slot_type="wood_slot"]:after
+{
+    border-top: 25px solid rgb(125,103,7);
+}
 .hexagon[slot_type="capital_slot"]
 {
     opacity: 1;
+    background: white;
+}
+.hexagon[slot_type="capital_slot"]:before
+{
+    border-bottom: 25px solid white;
+}
+.hexagon[slot_type="capital_slot"]:after
+{
+    border-top: 25px solid white;
 }
 
 #hexagon_normal
