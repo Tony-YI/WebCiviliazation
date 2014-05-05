@@ -639,7 +639,7 @@ function resize()
 	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
 }
 
-function addBoxes(slot_list)
+function addBoxes(list)
 {
 	//20 x 20 map//
 	var hexagon_num = 484;
@@ -654,7 +654,6 @@ function addBoxes(slot_list)
 		new_line[i].appendChild(br);
 	}
 
-	//var slot_list; Global variable in game/main.js
 	var user_id = getCookie('CURRENT_USER'); //in game/game_logic_client/check_functions.js
 
 	var hexagon = Array();
@@ -689,7 +688,7 @@ function addBoxes(slot_list)
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
-		switch(slot_list[i].type_id)
+		switch(list[i].type_id)
 		{
 			case 1: //unused
 			hexagon[i].setAttribute('usage', 'no');
@@ -816,9 +815,9 @@ function addBoxes1() //backup
 	}
 }
 
-function display_init(slot_list)
+function display_init(list)
 {
-	addBoxes(slot_list);
+	addBoxes(list);
 	resize();
 	window.addEventListener('resize', window_resize, false);
 	window.addEventListener('keydown', key_down, false);
