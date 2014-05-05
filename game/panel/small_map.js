@@ -2,10 +2,11 @@
 var slot_num = 484;
 var line_num = 22; //the top/left/bottom/right are useless
 
+var slot = document.getElementsByClassName('slot');
+
 function update_small_map() //update according to the global variable slot_list
 {
-	var slot = document.getElementsByClassName('slot');
-	
+	//var slot = document.getElementsByClassName('slot');
 	for(var i = 0; i < slot.length; i++)
 	{
 		if(parseInt(slot_list[i].owner) == parseInt(user_1))
@@ -28,7 +29,7 @@ function small_map_dot(e)
 	var pos_x = e.target.getAttribute('x');
 	var pos_y = e.target.getAttribute('y');
 
-	var slot = document.getElementsByClassName('slot');
+	//var slot = document.getElementsByClassName('slot');
 	for(var i = 0; i < slot_num; i++)
 	{
 		if(slot[i].getAttribute('x') == pos_x && slot[i].getAttribute('y') == pos_y)
@@ -82,12 +83,12 @@ function f_switch(i, type_id)
 
 function clean_small_map_dot()
 {
-	var slot = document.getElementsByClassName('slot');
+	//var slot = document.getElementsByClassName('slot');
 	for(var i = 0; i < slot_num; i++)
 	{
 		if(slot[i].style.backgroundColor == 'red')
 		{
-			f_switch(i, slot_list[i].type_id);
+			f_switch(slot, i, slot_list[i].type_id);
 		}
 	}
 }
