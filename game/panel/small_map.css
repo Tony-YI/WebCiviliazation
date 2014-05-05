@@ -8,7 +8,8 @@
 	bottom: 9px;
 	z-index: 102;
 	display: none;
-	background-color: white;
+	background-color: black;
+	opacity: 0.9;
 
 	animation-name: popup;
     -webkit-animation-name: popup;
