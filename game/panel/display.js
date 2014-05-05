@@ -690,23 +690,23 @@ function addBoxes(list)
 
 		switch(parseInt(list[i].type_id))
 		{
-			case 1: //unused
+			case 0: //unused
 			hexagon[i].setAttribute('slot_type', 'unused_slot');
 			break;
 
-			case 2: //normal slot
+			case 1: //normal slot
 			hexagon[i].setAttribute('slot_type', 'normal_slot');
 			break;
 
-			case 3: //gold slot
+			case 2: //gold slot
 			hexagon[i].setAttribute('slot_type', 'gold_slot');
 			break;
 
-			case 4: //wood slot
+			case 3: //wood slot
 			hexagon[i].setAttribute('slot_type', 'wood_slot');
 			break;
 
-			case 5: //capital
+			case 4: //capital
 			hexagon[i].setAttribute('slot_type', 'capital_slot');
 			break;
 
