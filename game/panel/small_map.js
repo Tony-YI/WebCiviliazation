@@ -113,7 +113,7 @@ function init_small_map()
 			break;
 
 			case 4: //capital
-			slot[i].style.backgroundColor = 'white';
+			//slot[i].style.backgroundColor = 'white';
 			break;
 
 			default:
