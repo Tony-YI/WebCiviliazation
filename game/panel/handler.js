@@ -5,8 +5,14 @@ function show_range(x, y)
 {
 	remove_manual(); //in display.js
 	var slot_div = document.getElementsByClassName('hexagon');
-	slot_div[parseInt(y) * line_num + parseInt(x)].setAttribute('function', 'range'); //line_nume: global variable in small_map.js
-	//all the change color thing are done in display.css
+
+	var i = parseInt(y) * line_num + parseInt(x);
+
+	if(slot_list[i].type_id != 0 && !(slot_list[i].owner >= 0)) //not unused and no owner
+	{
+		slot_div[i].setAttribute('function', 'range'); //line_nume: global variable in small_map.js
+		//all the change color thing are done in display.css
+	}
 }
 
 function clear_range()
