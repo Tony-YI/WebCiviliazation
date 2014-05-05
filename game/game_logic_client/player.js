@@ -28,6 +28,7 @@ player.prototype.show_info = function()
 	else if(parseInt(this.pid) == parseInt(user_2))
 	{
 		username_div.style.backgroundColor = user_2_color;
+		console.log('hehe');
 	}
 	else if(parseInt(this.pid) == parseInt(user_3))
 	{
