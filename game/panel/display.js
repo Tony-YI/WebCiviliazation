@@ -26,6 +26,7 @@
 /***********************************/
 /**********event handelers**********/
 /***********************************/
+var latest_slot;
 function mousedown_1(e) //handel the right click on slot
 {
 	e.stopPropagation();
@@ -59,6 +60,8 @@ function mousedown_1(e) //handel the right click on slot
 
 			//add eventListener
 			e.target.addEventListener('mouseup', mouseup_1, false);
+			latest_slot = e.target;
+			console.log(latest_slot.getAttribute('x'), latest_slot.getAttribute('y'));
 			remove_manual();
 			break;
 		default:
