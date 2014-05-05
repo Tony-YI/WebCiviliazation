@@ -38,51 +38,6 @@ function small_map_dot(e)
 	}
 }
 
-function f_switch(j, type_id)
-{
-	var slot = document.getElementsByClassName('slot');
-	var i = parseInt(j);
-
-	switch(parseInt(type_id))
-	{
-		case 0: //unused
-		break;
-
-		case 1: //normal slot
-		slot[i].style.backgroundColor = 'gray';
-		break;
-
-		case 2: //gold slot
-		slot[i].style.backgroundColor = 'rgb(254,215,40)';
-		break;
-
-		case 3: //wood slot
-		slot[i].style.backgroundColor = 'rgb(125,103,7)';
-		break;
-
-		case 4: //capital
-		slot[i].style.border = '1px solid white';
-		slot[i].width = '11px';
-		slot[i].height = '11px';
-		if(parseInt(slot_list[i].owner) == parseInt(user_1))
-		{
-			slot[i].style.backgroundColor = user_1_color;
-		}
-		else if(parseInt(slot_list[i].owner) == parseInt(user_2))
-		{
-			slot[i].style.backgroundColor = user_2_color;
-		}
-		else if(parseInt(slot_list[i].owner) == parseInt(user_3))
-		{
-			slot[i].style.backgroundColor = user_3_color;
-		}
-		break;
-
-		default:
-		break;
-	}
-}
-
 function clean_small_map_dot()
 {
 	var slot = document.getElementsByClassName('slot');
@@ -90,7 +45,44 @@ function clean_small_map_dot()
 	{
 		if(slot[i].style.backgroundColor == 'red')
 		{
-			f_switch(i, slot_list[i].type_id);
+			switch(parseInt(slot_list[i].type_id))
+			{
+				case 0: //unused
+				break;
+
+				case 1: //normal slot
+				slot[i].style.backgroundColor = 'gray';
+				break;
+
+				case 2: //gold slot
+				slot[i].style.backgroundColor = 'rgb(254,215,40)';
+				break;
+
+				case 3: //wood slot
+				slot[i].style.backgroundColor = 'rgb(125,103,7)';
+				break;
+
+				case 4: //capital
+				slot[i].style.border = '1px solid white';
+				slot[i].width = '11px';
+				slot[i].height = '11px';
+				if(parseInt(slot_list[i].owner) == parseInt(user_1))
+				{
+					slot[i].style.backgroundColor = user_1_color;
+				}
+				else if(parseInt(slot_list[i].owner) == parseInt(user_2))
+				{
+					slot[i].style.backgroundColor = user_2_color;
+				}
+				else if(parseInt(slot_list[i].owner) == parseInt(user_3))
+				{
+					slot[i].style.backgroundColor = user_3_color;
+				}
+				break;
+
+				default:
+				break;
+			}
 		}
 	}
 }
@@ -112,7 +104,44 @@ function init_small_map()
 			slot[i].style.opacity = '0.0';
 		}
 
-		f_switch(i, slot_list[i].type_id);
+		switch(parseInt(slot_list[i].type_id))
+		{
+			case 0: //unused
+			break;
+
+			case 1: //normal slot
+			slot[i].style.backgroundColor = 'gray';
+			break;
+
+			case 2: //gold slot
+			slot[i].style.backgroundColor = 'rgb(254,215,40)';
+			break;
+
+			case 3: //wood slot
+			slot[i].style.backgroundColor = 'rgb(125,103,7)';
+			break;
+
+			case 4: //capital
+			slot[i].style.border = '1px solid white';
+			slot[i].width = '11px';
+			slot[i].height = '11px';
+			if(parseInt(slot_list[i].owner) == parseInt(user_1))
+			{
+				slot[i].style.backgroundColor = user_1_color;
+			}
+			else if(parseInt(slot_list[i].owner) == parseInt(user_2))
+			{
+				slot[i].style.backgroundColor = user_2_color;
+			}
+			else if(parseInt(slot_list[i].owner) == parseInt(user_3))
+			{
+				slot[i].style.backgroundColor = user_3_color;
+			}
+			break;
+
+			default:
+			break;
+		}
 	}
 
 	var small_map = document.getElementById('small_map');
