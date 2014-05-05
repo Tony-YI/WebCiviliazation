@@ -207,15 +207,16 @@ body
     }
 }
 
-.hexagon
+.hexagon[slot_type="unused"]
 {
     background: gray;
+    opacity = 0;
 }
-.hexagon:before
+.hexagon[slot_type="unused"]:before
 {
     border-bottom: 25px solid gray;
 }
-.hexagon:after
+.hexagon[slot_type="unused"]:after
 {
     border-top: 25px solid gray;
 }
