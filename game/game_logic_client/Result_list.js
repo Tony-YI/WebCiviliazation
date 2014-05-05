@@ -27,6 +27,11 @@ function action(from_x, from_y, to_x, to_y, player, army_type, army_num, action_
 function get_result(action)
 {
 	//GET RESULT(S) OF AN ACTION
+	var result = new result();
+	/*
+	...
+	*/
+	return result;
 }
 
 function parse_result(result)
