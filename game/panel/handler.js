@@ -7,7 +7,7 @@ function attack_clicked_handler()
 	2. attach attack event listener (attack_action() to the div) 3
 	3. attach cancel event handler 
 	*/
-	cosnole.log(latest_slot);
+	console.log(latest_slot);
 }
 
 function attack_action()
