@@ -4,13 +4,28 @@ var line_num = 22; //the top/left/bottom/right are useless
 
 function update_small_map() //update according to the global variable slot_list
 {
-
+	var slot = document.getElementsByClassName('slot');
+	for(var i = 0; i < slot.length; i++)
+	{
+		if(slot_list[i].owner == user_1)
+		{
+			slot[i].style.backgroundColor = user_1_color;
+		}
+		else if(slot_list[i].owner == user_2)
+		{
+			slot[i].style.backgroundColor = user_1_color;
+		}
+		else if(slot_list[i].owner == user_3)
+		{
+			slot[i].style.backgroundColor = user_3_color;
+		}
+	}
 }
 
 function small_map_dot(e)
 {
 	update_small_map();
-	
+
 	var pos_x = e.target.getAttribute('x');
 	var pos_y = e.target.getAttribute('y');
 
