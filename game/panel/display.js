@@ -770,10 +770,6 @@ function addBoxes(list)
 			box.appendChild(hexagon[new_line_num * i + j]);
 		}
 	}
-
-	show_range(1,1);
-	show_range(0,0);
-	show_range(16,4);
 }
 
 function update_slot() //TODO: update the slot every movement
