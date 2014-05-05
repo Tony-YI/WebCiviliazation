@@ -99,7 +99,7 @@ JSON_ERROR;
 	}
 
 	$army_num = mysqli_num_rows($armylist_result);
-	echo "\"army_num\":\"$army_num\"";
+	echo "\"army_num\":\"$army_num\",";
 
 	echo "\"army\":[";
 	for($count = 0;$count < $army_num;$count++)
@@ -111,7 +111,7 @@ JSON_ERROR;
 		if($count + 1 < $army_num)
 			echo ",";
 		else 
-			echo "],";
+			echo "]";
 	}	
 	echo "}";
 ?>
