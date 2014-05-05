@@ -9,6 +9,15 @@ function init_army_list(army)
 
 }
 
+function getArmyById(army_id)
+{
+	for(var count = 0;count < window.army_list.length;count)
+	{
+		if(window.army_list[count].id = army_id)
+			return window.army_list[count];
+	}
+}
+
 function Army(army_id,type_id,army_owner)
 {
 	this.id = army_id;

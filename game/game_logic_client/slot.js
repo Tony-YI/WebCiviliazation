@@ -19,6 +19,12 @@ function init_slot_list(slots)
 		slot.type_id = slots[count].slot_type;
 		//console.log("getting slotarmy");
 		slot.army_id = slots[count].slot_army;
+		if(slot.army_id != "")
+		{
+			var army_object = getArmyById(slot.army_id);
+			army_object.position_x = slot.x;
+			army_object.position_y = slot.y;
+		}
 		//console.log("getting slotowner");
 		slot.owner = slots[count].slot_owner;
 		//console.log("pushing into the array");

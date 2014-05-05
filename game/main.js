@@ -21,10 +21,14 @@ function Init_get_init_data()
 	var p2 = new player(response.p2.user_id,response.p2.username,response.p2.gold,response.p2.wood);
 	var p3 = new player(response.p3.user_id,response.p3.username,response.p3.gold,response.p3.wood);
 	player_list = [p1,p2,p3];
-	init_slot_list(response.slots);
-	console.log("Things done for slots");
+
 	init_army_list(response.army);
 	console.log("Things done for armys");
+	
+	init_slot_list(response.slots);
+	console.log("Things done for slots");
+	
+	
 	//init_army_list(response.army);
 	console.log(player_list);
 	console.log(slot_list);
