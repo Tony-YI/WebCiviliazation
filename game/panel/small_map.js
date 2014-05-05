@@ -119,7 +119,19 @@ function init_small_map()
 			break;
 
 			case 4: //capital
-			slot[i].style.backgroundColor = 'white';
+			slot[i].style.border = '1px solid white';
+			if(parseInt(slot_list[i].owner) == parseInt(user_1))
+			{
+				slot[i].style.backgroundColor = user_1_color;
+			}
+			else if(parseInt(slot_list[i].owner) == parseInt(user_2))
+			{
+				slot[i].style.backgroundColor = user_2_color;
+			}
+			else if(parseInt(slot_list[i].owner) == parseInt(user_3))
+			{
+				slot[i].style.backgroundColor = user_3_color;
+			}
 			break;
 
 			default:
