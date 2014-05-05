@@ -812,6 +812,10 @@ function addBoxes1() //backup
 
 function display_init(list)
 {
+	alert(list.length);
+	alert(slot_list.length);
+	alert('hehe');
+	
 	addBoxes(list);
 	resize();
 	window.addEventListener('resize', window_resize, false);
