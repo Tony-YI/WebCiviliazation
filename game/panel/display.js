@@ -772,6 +772,7 @@ function addBoxes(list)
 	}
 
 	show_range(1,1);
+	clear_range();
 }
 
 function update_slot() //TODO: update the slot every movement
