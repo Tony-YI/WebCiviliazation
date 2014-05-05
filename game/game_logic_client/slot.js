@@ -26,6 +26,10 @@ function init_slot_list(slots)
 			army_object.position_y = slot.slot_y;
 			console.log(slot);
 		}
+		if(slot.owner_id != "")
+		{
+			console.log(slot);
+		}
 		//console.log("getting slotowner");
 		slot.owner = slots[count].slot_owner;
 		//console.log("pushing into the array");
