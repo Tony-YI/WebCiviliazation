@@ -27,19 +27,29 @@ function action(from_x, from_y, to_x, to_y, player, army_type, army_num, action_
 function get_result(action)
 {
 	//GET RESULT(S) OF AN ACTION
-	var result = new result();
+	var result_list = Array();
 	/*
 	...
 	*/
-	return result;
+	return result_list;
 }
 
 function parse_result(result)
 {
 	//PARSE RESULT TO JSON FOMMAT TO SEND TO SERVER
+	var parsedResult = "";
+	/*
+	...
+	*/
+	return parsedResult;
 }
 
 function parse_action(action)
 {
 	//PARSE ACTION TO JSON FOMMAT TO SEND TO SERVER
+	var parsedAction = "";
+	/*
+	...
+	*/
+	return parsedAction;
 }
