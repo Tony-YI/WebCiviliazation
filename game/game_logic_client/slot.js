@@ -9,6 +9,12 @@ function Slot(slot_x,slot_y)
 	this.owner = null;
 }
 
+function getSlotByXY(slot_x,slot_y)
+{
+	console.log(slotslot_list[slot_x * 22 + slot_y])
+	return slot_list[slot_x * 22 + slot_y];
+} 
+
 function init_slot_list(slots)
 {
 	for(var count = 0;count < slots.length;count++)
