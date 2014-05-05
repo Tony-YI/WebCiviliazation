@@ -654,9 +654,106 @@ function addBoxes()
 		new_line[i].appendChild(br);
 	}
 
-	//TODO: var slot_array = ;
+	//var slot_list; Global variable in game/main.js
 	var user_id = getCookie('CURRENT_USER'); //in game/game_logic_client/check_functions.js
-	//alert(user_id);
+
+	var hexagon = Array();
+	for(var i = 0; i < hexagon_num; i++)
+	{
+		hexagon[i] = document.createElement('div');
+		hexagon[i].setAttribute('class', 'hexagon');
+		hexagon[i].setAttribute('function', 'none');
+		hexagon[i].setAttribute('type', 'none');
+		var x = i % new_line_num;
+		var y = parseInt(i / new_line_num);
+		hexagon[i].setAttribute('x', x);
+		hexagon[i].setAttribute('y', y);
+
+		if(x == 0) //start hexagon
+		{
+			if(y % 2 == 0) //odd begin hexagon
+			{
+				hexagon[i].setAttribute('id', 'hexagon_begin_odd');
+			}
+			else //even begin hexagon
+			{
+				hexagon[i].setAttribute('id', 'hexagon_begin_even');
+			}
+		}
+		else if (x == new_line_num - 1) //end hexagon of one row
+		{
+			hexagon[i].setAttribute('id', 'hexagon_last');
+		}
+		else //normal hexagon
+		{
+			hexagon[i].setAttribute('id', 'hexagon_normal');
+		}
+
+		switch(slot_list[i].type_id)
+		{
+			case 1: //unused
+			hexagon[i].setAttribute('usage', 'no');
+			hexagon[i].style.opacity = '0.0';
+			break;
+
+			case 2: //normal slot
+			hexagon[i].style.background = 'gray';
+			hexagon[i].setAttribute('usage', 'yes');
+			hexagon[i].style.opacity = '1.0';
+			break;
+
+			case 3: //gold slot
+			hexagon[i].style.background = 'rgb(254,215,40)';
+			hexagon[i].setAttribute('usage', 'yes');
+			hexagon[i].style.opacity = '1.0';
+			break;
+
+			case 4: //wood slot
+			hexagon[i].style.background = 'rgb(125,103,7)';
+			hexagon[i].setAttribute('usage', 'yes');
+			hexagon[i].style.opacity = '1.0';
+			break;
+
+			case 5: //capital
+			hexagon[i].setAttribute('usage', 'yes');
+			hexagon[i].style.opacity = '1.0';
+			break;
+
+			default:
+			break;
+		}
+		
+		hexagon[i].addEventListener('mousedown', mousedown_1, false);
+	}
+
+	var box = document.getElementById('box');
+	box.addEventListener('contextmenu', no_contextmenu, false);
+
+	for(var i = 0; i < new_line_num; i++)
+	{
+		box.appendChild(new_line[i]);
+
+		for(var j = 0; j < new_line_num; j++)
+		{
+			box.appendChild(hexagon[new_line_num * i + j]);
+		}
+	}
+}
+
+function addBoxes1() //backup
+{
+	//20 x 20 map//
+	var hexagon_num = 484;
+	var new_line_num = 22; //the top/left/bottom/right are useless
+
+	var new_line = Array();
+	for(var i = 0; i < new_line_num; i++)
+	{
+		new_line[i] = document.createElement('div');
+		new_line[i].setAttribute('id', 'new_line');
+		var br = document.createElement('br');
+		new_line[i].appendChild(br);
+	}
 
 	var hexagon = Array();
 	for(var i = 0; i < hexagon_num; i++)
@@ -701,7 +798,7 @@ function addBoxes()
 				hexagon[i].style.opacity = '0.0';
 			}
 		}
-
+		
 		hexagon[i].addEventListener('mousedown', mousedown_1, false);
 	}
 
