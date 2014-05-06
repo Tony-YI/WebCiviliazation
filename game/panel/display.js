@@ -729,6 +729,10 @@ function addBoxes(list)
 		{
 			case 1: //
 			hexagon[i].setAttribute('army_type', 'type_A');
+			var img = document.createElement('img');
+			img.setAttribute('src', '../../images/sword.png');
+			img.style.zIndex = '104';
+			hexagon[i].appendChild(img);
 			break;
 
 			case 2: //
