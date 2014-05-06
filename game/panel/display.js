@@ -577,19 +577,19 @@ function select_manual(e)
 
 	if(target_function == 'attack')
 	{
-		alert(army_type + ': Attack');
+		//alert(army_type + ': Attack');
 		remove_manual();
 		attack_clicked_handler();
 	}
 	else if(target_function == 'move')
 	{
-		alert(army_type + ': Move');
+		//alert(army_type + ': Move');
 		remove_manual();
 		move_clicked_handler();
 	}
 	else if(target_function == 'defence')
 	{
-		alert(army_type + ': Defence');
+		//alert(army_type + ': Defence');
 		remove_manual();
 		defend_clicked_handler();
 	}
@@ -725,6 +725,7 @@ function addBoxes(list)
 			break;
 		}
 
+<<<<<<< HEAD
 		switch(parseInt(list[i].army_id))
 		{
 			case 1: //
@@ -756,6 +757,8 @@ function addBoxes(list)
 			break;
 		}
 
+=======
+>>>>>>> b54a2fa31cf6fdd376c67b9a620dcff71d74a7b1
 		if(list[i].owner && j == 0)
 		{
 			j++;
