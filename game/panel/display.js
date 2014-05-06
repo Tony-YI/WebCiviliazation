@@ -640,6 +640,7 @@ function addBoxes(list)
 		var img = document.createElement('img'); //store the img
 		img.setAttribute('class', 'army');
 		var p = document.createElement('p');
+		img.setAttribute('class', 'description');
 
 		if(x == 0) //start hexagon
 		{
