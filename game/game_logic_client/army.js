@@ -37,6 +37,7 @@ function Army(army_id,type_id,army_owner)
 		this.hp = 5;
 		this.ap = 1;
 		this.attack = 3;
+		this.typename = "swordman";
 	}
 	else if(type_id == "2")
 	{
@@ -44,6 +45,7 @@ function Army(army_id,type_id,army_owner)
 		this.hp = 3;
 		this.ap = 2;
 		this.attack = 4;
+		this.typename = "calvery";
 	}
 	else if(type_id == "3")
 	{
@@ -51,6 +53,7 @@ function Army(army_id,type_id,army_owner)
 		this.hp = 2;
 		this.ap = 1;
 		this.attack = 1;
+		this.typename = "archer";
 	}
 	this.position_x = null;
 	this.position_y = null;
