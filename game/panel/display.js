@@ -270,6 +270,7 @@ function set_function_attribute_1(hexagon, function_type)
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
 	hexagon.firstChild.innerHTML = function_type;
+	hexagon.lastChild.style.display = 'none';
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
@@ -287,6 +288,7 @@ function set_function_attribute_2(hexagon, function_type)
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
 	hexagon.firstChild.innerHTML = function_type;
+	hexagon.lastChild.style.display = 'none';
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
@@ -540,7 +542,8 @@ function remove_manual()
 			manual[0].style.opacity = '0.0';
 		}
 		manual[0].setAttribute('function', 'none');
-		manual[0].innerHTML = '';
+		manual[0].firstChild.innerHTML = '';
+		manual[0].lastChild.style.display = 'block';
 		manual[0].removeEventListener('mousedown', mousedown_1, false);
 		manual[0].removeEventListener('mousedown', mousedown_2, false);
 		manual[0].removeEventListener('mousedown', mousedown_3, false);
