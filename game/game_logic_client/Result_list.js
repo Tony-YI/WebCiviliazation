@@ -233,5 +233,5 @@ function send_result_list_to_server()
 	var data = "{\"result_list\":" + JSON.stringify(result_list) + "}";
 	console.log(data);
 	xhr.send(data);
-	
+	console.log(xhr.responseText);
 }
