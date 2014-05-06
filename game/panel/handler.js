@@ -4,7 +4,7 @@ var current_usr_id = $.cookie("CURRENT_USER");
 if(current_usr_id)
 	console.log("CURRENT_USER is " + current_usr_id);
 
-function show_range(x, y)
+function show_range(x, y, action)
 {
 	remove_manual(); //in display.js
 	var slot_div = document.getElementsByClassName('hexagon');
@@ -15,8 +15,15 @@ function show_range(x, y)
 	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
 	{
 		slot_div[i].setAttribute('function', 'range');
-		slot_div[i].addEventListener('click',move_action,false);
 		//all the change color thing are done in display.css
+		if(action == 'move')
+		{
+			slot_div[i].addEventListener('click', move_action, false);
+		}
+		else if(action == 'attack')
+		{
+			slot_div[i].addEventListener('click', attack_action, false);
+		}
 	}
 }
 
@@ -43,21 +50,21 @@ function attack_clicked_handler()
 	var y = parseInt(latest_slot.getAttribute('y'));
 	if(y%2 == 1)
 	{
-		show_range(x,y-1);
-		show_range(x+1,y-1);
-		show_range(x-1,y);
-		show_range(x+1,y);
-		show_range(x,y+1);
-		show_range(x+1,y+1);
+		show_range(x, y-1, 'attack');
+		show_range(x+1, y-1, 'attack');
+		show_range(x-1, y, 'attack');
+		show_range(x+1, y, 'attack');
+		show_range(x, y+1, 'attack');
+		show_range(x+1, y+1, 'attack');
 	}
 	else
 	{
-		show_range(x-1,y-1);
-		show_range(x,y-1);
-		show_range(x-1,y);
-		show_range(x+1,y);
-		show_range(x-1,y+1);
-		show_range(x,y+1);
+		show_range(x-1, y-1, 'attack');
+		show_range(x, y-1, 'attack');
+		show_range(x-1, y, 'attack');
+		show_range(x+1, y, 'attack');
+		show_range(x-1, y+1, 'attack');
+		show_range(x, y+1, 'attack');
 	}
 }
 
@@ -69,6 +76,10 @@ function attack_action()
 	3. record the result in result list
 	4. clear the attack range
 	*/
+	e = e || window.event;
+	console.log(e.target);
+	console.log('attack from (' + latest_slot.getAttribute('x') + ', ' + latest_slot.getAttribute('y') + ') to');
+	clear_range();
 }
 
 function move_clicked_handler()
@@ -84,32 +95,34 @@ function move_clicked_handler()
 	var y = parseInt(latest_slot.getAttribute('y'));
 	if(y%2 == 1)
 	{
-		show_range(x,y-1);
-		show_range(x+1,y-1);
-		show_range(x-1,y);
-		show_range(x+1,y);
-		show_range(x,y+1);
-		show_range(x+1,y+1);
+		show_range(x, y-1, 'move');
+		show_range(x+1, y-1, 'move');
+		show_range(x-1, y, 'move');
+		show_range(x+1, y, 'move');
+		show_range(x, y+1, 'move');
+		show_range(x+1, y+1, 'move');
 	}
 	else
 	{
-		show_range(x-1,y-1);
-		show_range(x,y-1);
-		show_range(x-1,y);
-		show_range(x+1,y);
-		show_range(x-1,y+1);
-		show_range(x,y+1);
+		show_range(x-1, y-1, 'move');
+		show_range(x, y-1, 'move');
+		show_range(x-1, y, 'move');
+		show_range(x+1, y, 'move');
+		show_range(x-1, y+1, 'move');
+		show_range(x, y+1, 'move');
 	}
 }
 
-function move_action()
+function move_action(e)
 {
 	/*
 	1. compute the result of the movement
 	2. show the result
 	3. record the result in result list
 	*/
-	console.log('clear range');
+	e = e || window.event;
+	console.log(e.target);
+	console.log('move from (' + latest_slot.getAttribute('x') + ', ' + latest_slot.getAttribute('y') + ') to');
 	clear_range();
 }
 
