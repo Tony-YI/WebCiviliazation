@@ -31,6 +31,9 @@ function mousedown_1(e) //handel the right click on slot
 	e.preventDefault();
 	e.stopPropagation();
 
+	console.log(e);
+	console.log(e.target.parentNode);
+
 	switch(e.which)
 	{
 		case 1:
