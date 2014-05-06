@@ -86,7 +86,15 @@ function build_clicked_hanlder()
 	5.add the result to the result list 
 	*/
 	var buildArmy = document.getElementById('buildArmy');
+<<<<<<< HEAD
+
 	buildArmy.background='#abc123';
+
+	buildArmy.style.display= "block";
+
+=======
+	buildArmy.background='#abc123';
+>>>>>>> c6f474779da25ac37f18eb8b8b05a3652e80ccc3
 	/*buildArmy.innerHTML = """"""*/
 }
 
@@ -95,6 +103,25 @@ function surrender_clicked_handler()
 	/*
 	This function handle the click event on the surrender button
 	*/
+	/*
+	if(!IsMyTurn())
+	{
+		console.log("Is not your turn");	
+		return;
+	}
+	*/
+	var choice = confirm("Are you sure to surrender?");
+	if(choice)
+	{
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
+		xhr.setRequestHeader("TYPE","SURRENDER");
+		console.log("The server replies: " + xhr.responseText);
+	}
+	else
+	{
+		return ;
+	}
 
 }
 
