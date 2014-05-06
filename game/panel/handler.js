@@ -1,8 +1,5 @@
 //This file contains handlers for clicking Attack, move, and defend 
 //[HINT] variable 'latest_slot' points to the DOM that is the grand-parent of all these actions
-var current_usr_id = $.cookie("CURRENT_USER");
-if(current_usr_id)
-	console.log("CURRENT_USER is " + current_usr_id);
 
 function show_range(x, y)
 {
@@ -84,7 +81,7 @@ function build_clicked_hanlder()
 	*/
 	var buildArmy = document.getElementById('buildArmy');
 	buildArmy.style.background = "#E0FFFF";
-	buildArmy.style.zIndex = 100;
+	buildArmy.style.zIndex = "200";
 	/*buildArmy.innerHTML = """"""*/
 }
 
