@@ -79,6 +79,9 @@ function build_clicked_hanlder()
 	4.show the build result
 	5.add the result to the result list 
 	*/
+	var buildArmy = document.getElementById("buildArmy");
+	buildArmy.background = #ab3456;
+	/*buildArmy.innerHTML = """"""*/
 }
 
 function surrender_clicked_handler()
