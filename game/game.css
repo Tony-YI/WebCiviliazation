@@ -25,8 +25,8 @@
 }
 
 #exitBuild{
-   border-top: 1px solid #96d1f8;
-   background: #65a9d7;
+    background: #65a9d7;
+   /* border-top: 1px solid #96d1f8;
    background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
    background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
    background: -moz-linear-gradient(top, #3e779d, #65a9d7);
@@ -45,6 +45,7 @@
    font-family: Georgia, serif;
    text-decoration: none;
    vertical-align: middle;
+   margin-right: 10px;
    }
 #exitBuild:hover {
    border-top-color: #28597a;
