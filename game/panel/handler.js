@@ -113,6 +113,7 @@ function surrender_clicked_handler()
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 		xhr.setRequestHeader("TYPE","SURRENDER");
+		xhr.send();
 		console.log("The server replies: " + xhr.responseText);
 	}
 	else
