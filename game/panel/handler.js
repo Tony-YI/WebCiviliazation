@@ -107,7 +107,8 @@ function move_clicked_handler()
 	var x = parseInt(latest_slot.getAttribute('x'));
 	var y = parseInt(latest_slot.getAttribute('y'));
 	var slot = getSlotByXY(x,y);
-	console.log(slot);
+	var army = getArmyById(slot.army_id);
+	console.log(army);
 	if(y%2 == 1)
 	{
 		show_range(x, y-1, 'move');
