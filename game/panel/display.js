@@ -241,9 +241,8 @@ function key_down(e)
 	e.stopPropagation();
 	e.preventDefault();
 
-	console.log(key);
-
 	var key = e.keyCode;
+	console.log(key);
 	if(key == 77)
 	{
 		console.log(key);
