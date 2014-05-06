@@ -1,4 +1,4 @@
-function build_clicked_hanlder()
+function build_clicked_handler()
 {
     /*
     1.show build list
@@ -10,7 +10,7 @@ function build_clicked_hanlder()
     var buildArmy = document.getElementById('buildArmy');
     //alert(buildArmy);
     buildArmy.style.display= "inline-block";
-    
+
 
 
     /*buildArmy.innerHTML = """"""*/
