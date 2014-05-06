@@ -58,8 +58,8 @@ function move_clicked_handler()
 	2. attach move event listener (move_action() to the div) 
 	*/
 	console.log(latest_slot);
-	console.log(latest_slot.x);
-	console.log(latest_slot.y);
+	console.log(latest_slot.getAttribute('x'));
+	console.log(latest_slot.getAttribute('y'));
 }
 
 function move_action()
