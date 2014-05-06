@@ -301,7 +301,7 @@ function set_function_attribute_1(hexagon, function_type)
 	}
 	else if(function_type == 'cancel')
 	{
-		name = 'Cavalry';
+		name = 'Cancel';
 	}
 	hexagon.setAttribute('function', function_type);
 	hexagon.firstChild.innerHTML = name;
