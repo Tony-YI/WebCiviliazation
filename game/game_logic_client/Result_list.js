@@ -52,7 +52,7 @@ function Result(action_type)
 
 Result.prototype.Result_toString = function()
 {
-	var result_str = ;
+	var result_str = "";
 	if(this.action_type == "attack")
 	{
 		var attacker = getArmyById(this.attacker_id);
