@@ -286,8 +286,25 @@ function window_resize(e) //handel window resize
 function set_function_attribute_1(hexagon, function_type)
 {
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
+	var army_name;
+	if(function_type == 'type_A')
+	{
+		name = 'Sword';
+	}
+	else if(function_type == 'type_B')
+	{
+		name = 'Archer';
+	}
+	else if(function_type == 'type_C')
+	{
+		name = 'Cavalry';
+	}
+	else if(function_type == 'cancel')
+	{
+		name = 'Cancel';
+	}
 	hexagon.setAttribute('function', function_type);
-	hexagon.firstChild.innerHTML = function_type;
+	hexagon.firstChild.innerHTML = name;
 	hexagon.lastChild.style.display = 'none';
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
@@ -300,9 +317,26 @@ function set_function_attribute_1(hexagon, function_type)
 
 function set_function_attribute_2(hexagon, function_type)
 {
+	var army_name;
+	if(function_type == 'attack')
+	{
+		name = 'Attack';
+	}
+	else if(function_type == 'move')
+	{
+		name = 'Move';
+	}
+	else if(function_type == 'defence')
+	{
+		name = 'Defence';
+	}
+	else if(function_type == 'back')
+	{
+		name = 'Back';
+	}
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
-	hexagon.firstChild.innerHTML = function_type;
+	hexagon.firstChild.innerHTML = name;
 	hexagon.lastChild.style.display = 'none';
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
@@ -324,24 +358,26 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 	var pos_x = target.getAttribute('x');
 	var pos_y = target.getAttribute('y');
 
+	var slot_army_type = target.getAttribute('army_type');
+
 	var hexagon = document.getElementsByClassName('hexagon');
 
 	if(pos_y % 2 == 0)//odd
 	{
 		for(var i = 0; i < hexagon.length; i++)
 		{
-			if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+			if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1 && slot_army_type == 'type_A')
 			{
 				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 				set_function_attribute_1(hexagon[i], 'type_A');
 				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y && slot_army_type == 'type_B')
 			{
 				set_function_attribute_1(hexagon[i], 'type_B');
 				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1  && slot_army_type == 'type_C')
 			{
 				set_function_attribute_1(hexagon[i], 'type_C');
 				i--;
@@ -357,17 +393,17 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 	{
 		for(var i = 0; i < hexagon.length; i++)
 		{
-			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1 && slot_army_type == 'type_A')
 			{
 				set_function_attribute_1(hexagon[i], 'type_A');
 				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y && slot_army_type == 'type_B')
 			{
 				set_function_attribute_1(hexagon[i], 'type_B');
 				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
+			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1 && slot_army_type == 'type_C')
 			{
 				set_function_attribute_1(hexagon[i], 'type_C');
 				i--;
@@ -567,7 +603,7 @@ function remove_manual()
 		}
 		manual[0].setAttribute('function', 'none');
 		manual[0].firstChild.innerHTML = '';
-		manual[0].lastChild.style.display = 'block';
+		manual[0].lastChild.style.display = 'inline';
 		manual[0].removeEventListener('mousedown', mousedown_1, false);
 		manual[0].removeEventListener('mousedown', mousedown_2, false);
 		manual[0].removeEventListener('mousedown', mousedown_3, false);
