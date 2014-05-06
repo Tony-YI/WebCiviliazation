@@ -296,9 +296,9 @@ SQL_STATEMENT;
                         $p[2] = $row[2];
                         $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (0,1,$p[0])";
                         mysqli_query($con,$SQL_SET_INIT_ARMY);
-                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (1,1,$p[1])";
+                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (1,2,$p[1])";
                         mysqli_query($con,$SQL_SET_INIT_ARMY);
-                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (2,1,$p[2])";
+                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (2,3,$p[2])";
                         mysqli_query($con,$SQL_SET_INIT_ARMY);
 
                         $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 , slot_owner = $p[0], slot_army = 0 WHERE slot_x = $x[0] AND slot_y = $y[0]";
