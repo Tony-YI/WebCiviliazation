@@ -5,12 +5,13 @@
 */
 function getPlayerByID(pid)
 {
-	for(var count = 0; count < player_list.length;count++)
+	console.log("getPlayerByID: to get player with pid: " + pid);
+	for(var count = 0; count < window.player_list.length;count++)
 	{
-		if(player_list[count].pid == pid)
+		if(window.player_list[count].pid == pid)
 		{
-			console.log(player_list[count]);
-			return player_list[count];
+			console.log("getPlayerByID: " + window.player_list[count]);
+			return window.player_list[count];
 		}
 	}
 }
