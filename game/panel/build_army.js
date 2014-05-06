@@ -1,4 +1,4 @@
-function build_clicked_hanlder()
+function build_clicked_handler()
 {
     /*
     1.show build list
