@@ -30,9 +30,7 @@ function mousedown_1(e) //handel the right click on slot
 {
 	e.preventDefault();
 
-	console.log(e.target.tagName);
-
-	if(1)
+	if(e.target.getAttribute('class') == 'hexagon')
 	{
 		e.stopPropagation();
 	}
