@@ -28,47 +28,48 @@
 /***********************************/
 function mousedown_1(e) //handel the right click on slot
 {
-	if(e.target.getAttribute('class') == 'hexagon')
+	e = e.target.parentNode;
+
+	console.log(e);
+
+	e.preventDefault();
+	e.stopPropagation();
+
+	switch(e.which)
 	{
-		e.preventDefault();
-		e.stopPropagation();
+		case 1:
+			console.log('left mousedown 1');
+			clean_small_map_dot(); //in small_map.js
+			small_map_dot(e); //in small_map.js
+			display_hexagon_info(e);
+			break;
+		case 2:
+			console.log('middle mousedown 1');
+			break;
+		case 3:
+			console.log('right mousedown 1');
 
-		switch(e.which)
-		{
-			case 1:
-				console.log('left mousedown 1');
-				clean_small_map_dot(); //in small_map.js
-				small_map_dot(e); //in small_map.js
-				display_hexagon_info(e);
-				break;
-			case 2:
-				console.log('middle mousedown 1');
-				break;
-			case 3:
-				console.log('right mousedown 1');
+			if(e.target.getAttribute('usage') == 'no') //not for use
+			{
+				return false;
+			}
 
-				if(e.target.getAttribute('usage') == 'no') //not for use
-				{
-					return false;
-				}
-
-				//check whether this slot belongs to the user
-				var belongs = check_slot_owner(e); //in /game/game_logic_client/check_functions.js
-				if(!belongs)
-				{
-					break;
-				}
-
-				//add eventListener
-				e.target.addEventListener('mouseup', mouseup_1, false);
-				latest_slot = e.target;
-				console.log(latest_slot.getAttribute('x'), latest_slot.getAttribute('y'));
-				remove_manual();
+			//check whether this slot belongs to the user
+			var belongs = check_slot_owner(e); //in /game/game_logic_client/check_functions.js
+			if(!belongs)
+			{
 				break;
-			default:
-				console.log('no such mousedown id 1');
-				break;
-		}
+			}
+
+			//add eventListener
+			e.target.addEventListener('mouseup', mouseup_1, false);
+			latest_slot = e.target;
+			console.log(latest_slot.getAttribute('x'), latest_slot.getAttribute('y'));
+			remove_manual();
+			break;
+		default:
+			console.log('no such mousedown id 1');
+			break;
 	}
 }
 
