@@ -102,6 +102,7 @@ function action(action_type,army_id,from_x,from_y,to_x,to_y,army_type)
 		alert("action constructor: Invalid action_type " + action_type);
 		return null;
 	}
+	return this;
 }
 
 action.prototype.get_result = function()
