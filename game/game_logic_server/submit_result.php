@@ -27,13 +27,35 @@
 		exit;
 	}
 
-
 	if($_SERVER["HTTP_TYPE"] == "RESULT_LIST")
 	{
 		$entityBody = file_get_contents('php://input');
 		echo $entityBody."\n";
-		$request = json_decode($entityBody);
-		$result_list = $request['result_list'];
-		echo var_dump($result_list)."\n";
+		try
+		{
+			$request = json_decode($entityBody,TRUE);
+		}
+		catch (Exception $e)
+		{
+			echo 'json_decode->Caught exception: ',  $e->getMessage(), "\n";
+		}
+		try
+		{
+			$result_list = $request['result_list'];
+		}
+		catch (Exception $e)
+		{
+			echo 'accessing by name Caught exception: ',  $e->getMessage(), "\n";
+		}
+
+		try
+		{
+			echo var_dump($result_list)."\n";
+		}
+		catch (Exception $e)
+		{
+			echo 'var_dump() Caught exception: ',  $e->getMessage(), "\n";
+		}
+			
 	}
 ?>
