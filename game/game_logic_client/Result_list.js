@@ -1,6 +1,19 @@
 //THIS FILE CONTAINS IMPLEMENTATION OF RESULT_LIST IN JAVASCRIPT
 
 var result_list = new Array();
+
+function update_result_list_div()
+{
+	var result_list_div = document.getElementById("result_list_div");
+	result_list_div.innerHTML = "";
+	for(var count = 0;count < result_list.length;count++)
+	{
+		var new_p = document.createElement("p");
+		new_p.innerHTML = result_list[count].Result_toString();
+		result_list_div.appendChild(new_p);
+	}
+}
+
 function Result(action_type)
 {
 	this.action_type = action_type;
@@ -12,6 +25,8 @@ function Result(action_type)
 	{
 		this.attacker_id = null;
 		this.defender_id = null;
+		this.attacker_prev_hp = null;
+		this.defender_prev_hp = null;
 		this.attacker_remaining_hp = null;
 		this.defender_remaining_hp = null;
 	}
@@ -35,6 +50,47 @@ function Result(action_type)
 	}
 }
 
+Result.prototype.Result_toString = function()
+{
+	var result_str = ;
+	if(this.action_type == "attack")
+	{
+		var attacker = getArmyById(this.attacker_id);
+		var defender = getArmyById(this.defender_id);
+		var attacker_str = attacker.typename + "(" + attacker.army_id + ")";
+		var action_str = " attack ";
+		var defender_str = defender.typename + "(" + defender.army_id + ")";
+		if(this.attacker_remaining_hp == 0)
+			result_str = ",causing " + attacker_str +  " dead";
+		if(this.defender_remaining_hp == 0)
+			result_str += ",causing " + defender_str + " dead";
+		result_str = attacker_str  + action_str + defender_str + result_str;
+	}
+	else if(this.action_type == "move")
+	{
+		var actor = getArmyById(this.army_id);
+		var actor_str = actor.typename + "(" + actor.army_id + ")";
+		var action_str = " move ";
+		var target_str = "(" + this.to_x + "," + this.to_y + ")";
+		result_str = actor_str + action_str + target_str;
+	}
+	else if(this.action_type == "defend")
+	{
+		var actor = getArmyById(this.army_id);
+		var actor_str = actor.typename + "(" + actor.army_id + ")";
+		var action_str = " defend ";
+		var target_str = "(" + this.from_x + "," + this.from_y + ")";
+		result_str = actor_str + action_str + target_str;
+	}
+	else if(this.action_type == "build")
+	{
+		var actor = getArmyById(this.army_id);
+		var actor_str = actor.typename + "(" + actor.army_id + ")";
+		var action_str = " was built";
+		result_str = actor_str + action_str;
+	}
+	return result_str;
+}
 /*
 	action_type = "attack" -> attack action
 	{
@@ -117,14 +173,17 @@ action.prototype.get_result = function()
 		var defender_slot = getSlotByXY(this.to_x,this.to_y);
 		var defender = getArmyById(defender_slot.army_id);
 		var attacker = getArmyById(this.army_id);
+
+		result.attacker_prev_hp = attacker.hp;
+		result.defender_prev_hp = defender.hp;
 		//ensure no negative hp
 		defender.hp = defender.hp <= attacker.attack ? 0 : defender.hp - attacker.attack; 
 		attacker.hp = attacker.hp <= defender.attack ? 0 : attacker.hp - defender.attack;
 		//assigning data field specific for attack action
-		result.this.attacker_id = attacker.army_id;
-		result.this.defender_id = defender.army_id;
-		result.this.attacker_remaining_hp = attacker.hp;
-		result.this.defender_remaining_hp = defender.hp;
+		result.attacker_id = attacker.army_id;
+		result.defender_id = defender.army_id;
+		result.attacker_remaining_hp = attacker.hp;
+		result.defender_remaining_hp = defender.hp;
 	}
 	else if(this.action_type == "move")
 	{
@@ -139,6 +198,9 @@ action.prototype.get_result = function()
 		result.army_id = this.army_id;
 		result.army_type = this.army_type;
 	}
+
+	//for test, should be deleted later
+	result_list.push(result);
 	return result;
 }
 
