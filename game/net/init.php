@@ -64,12 +64,16 @@ JSON_ERROR;
 		$player_name = $player_row[1];
 		$player_gold = $player_row[2];
 		$player_wood = $player_row[3];
+		$player_status = $player_row[4];
+		$player_turn = $player_turn[5];
 		$count++;
 		echo "\"p$count\":";
 		echo "{\"user_id\":\"$player_id\",";
 		echo "\"username\":\"$player_name\",";
 		echo "\"gold\":\"$player_gold\",";
-		echo "\"wood\":\"$player_wood\"},";
+		echo "\"wood\":\"$player_wood\",";
+		echo "\"status\":\"$player_status\",";
+		echo "\"turn\":\"$player_turn\"},";
 	}
 
 	//SLOT INFO

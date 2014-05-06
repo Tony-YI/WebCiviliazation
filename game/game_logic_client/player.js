@@ -11,7 +11,7 @@ function getPlayerByID(pid)
 			return player_list[count];
 	}
 }
-function player(player_id, playername,gold,wood)
+function player(player_id, playername,gold,wood,status,turn)
 {
 	this.pid = player_id;
 	this.pname = playername;
@@ -19,6 +19,8 @@ function player(player_id, playername,gold,wood)
 	this.wood = wood;
 	this.capital_x = null;
 	this.capital_y = null;
+	this.pstatus = status;
+	this.pturn = turn;
 }
 
 player.prototype.show_info = function()
