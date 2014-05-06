@@ -11,7 +11,8 @@ function show_range(x, y, action)
 
 	var i = parseInt(y) * line_num + parseInt(x);//line_nume: global variable in small_map.js
 	var user_id = parseInt(getCookie('CURRENT_USER')); //in game/game_logic_client/check_functions.js
-
+	console.log('i: ' + i);
+	console.log(slot_list[i]);
 	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
 	{
 		if(action == 'move')
@@ -85,7 +86,7 @@ function attack_action(e)
 	4. clear the attack range
 	*/
 	e = e || window.event;
-	console.log(e.target);
+	//console.log(e.target);
 	var target = e.target;
 	var from_x = latest_slot.getAttribute('x');
 	var from_y = latest_slot.getAttribute('y');
@@ -101,12 +102,12 @@ function move_clicked_handler()
 	1. show the move range
 	2. attach move event listener (move_action() to the div) 
 	*/
-	console.log(latest_slot);
+	//console.log(latest_slot);
 	//console.log(latest_slot.getAttribute('x'));
 	//console.log(latest_slot.getAttribute('y'));
 	var x = parseInt(latest_slot.getAttribute('x'));
 	var y = parseInt(latest_slot.getAttribute('y'));
-	var slot = getSlotByXY(x,y);
+	var slot = getSlotByXY(x, y);
 	var army = getArmyById(slot.army_id);
 	console.log(army);
 	if(y%2 == 1)
@@ -167,7 +168,7 @@ function move_action(e)
 	3. record the result in result list
 	*/
 	e = e || window.event;
-	console.log(e.target);
+	//console.log(e.target);
 	var target = e.target;
 	var from_x = latest_slot.getAttribute('x');
 	var from_y = latest_slot.getAttribute('y');
