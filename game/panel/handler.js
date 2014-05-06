@@ -31,7 +31,14 @@ function show_range(x, y, action)
 		else
 		{
 			slot_div[i].setAttribute('function', 'norange');
-			slot_div[i].addEventListener('mousedown', function(e){e.target.setAttribute('function','none');}, false);
+			slot_div[i].addEventListener('mousedown', function(e){var slot_div = document.getElementsByClassName('hexagon');
+				for(var i = 0; i < slot_num; i++)
+				{
+					if(slot_div[i].getAttribute('function') == 'range')
+					{
+						slot_div[i].setAttribute('function', 'none');
+					}
+				}}, false);
 		}
 		//all the change color thing are done in display.css
 	}
