@@ -148,7 +148,12 @@ function attack_action(e)
 	var from_y = latest_slot.getAttribute('y');
 	var to_x = target.getAttribute('x');
 	var to_y = target.getAttribute('y');
+	var slot = getSlotByXY(from_x, from_y);
+	var army = getArmyById(slot.army_id);
 	console.log('attack from (' + from_x+ ', ' + from_y + ') to (' + to_x+ ', ' + to_y + ')');
+	var user_action = new action('attack', army.army_id, from_x, from_y, to_x, to_y, army.type_id);
+	user_action.get_result();
+	update_result_list_div();
 	clear_range('attack');
 }
 
@@ -254,7 +259,13 @@ function move_action(e)
 	var from_y = latest_slot.getAttribute('y');
 	var to_x = target.getAttribute('x');
 	var to_y = target.getAttribute('y');
+	var slot = getSlotByXY(from_x, from_y);
+	var army = getArmyById(slot.army_id);
 	console.log('move from (' + from_x+ ', ' + from_y + ') to (' + to_x+ ', ' + to_y + ')');
+
+	var user_action = new action('move', army.army_id, from_x, from_y, to_x, to_y, army.type_id);
+	user_action.get_result();
+	update_result_list_div();
 	clear_range('move');
 }
 
