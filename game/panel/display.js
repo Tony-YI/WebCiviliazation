@@ -28,10 +28,9 @@
 /***********************************/
 function mousedown_1(e) //handel the right click on slot
 {
-	e.preventDefault();
-
 	if(e.target.getAttribute('class') == 'hexagon')
 	{
+		e.preventDefault();
 		e.stopPropagation();
 
 		switch(e.which)
