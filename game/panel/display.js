@@ -242,8 +242,7 @@ function key_down(e)
 	e.preventDefault();
 
 	var key = e.keyCode;
-	console.log(key);
-	if(key == 77)
+	if(key == 77 || key == 73 || key == 81) //m, i, q
 	{
 		console.log(key);
 		e.target.addEventListener('keyup', key_up, false);
@@ -253,7 +252,7 @@ function key_down(e)
 function key_up(e)
 {
 	var key = e.keyCode;
-	if(key == 77)
+	if(key == 77) // m
 	{
 		console.log(key);
 		e.target.removeEventListener('keyup', key_up, false);
@@ -266,6 +265,25 @@ function key_up(e)
 		{
 			document.getElementById('small_map').style.display = 'none';
 		}
+	}
+	if(key == 73) // i
+	{
+		console.log(key);
+		e.target.removeEventListener('keyup', key_up, false);
+		if(document.getElementById('info').style.display == 'none')
+		{
+			document.getElementById('info').style.display = 'block';
+		}
+		else
+		{
+			document.getElementById('info').style.display = 'none';
+		}
+	}
+	if(key == 77) // q
+	{
+		console.log(key);
+		e.target.removeEventListener('keyup', key_up, false);
+		alert('quit');
 	}
 }
 
