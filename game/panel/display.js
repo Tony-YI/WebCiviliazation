@@ -504,19 +504,19 @@ function select_manual(e)
 	{
 		//alert(army_type + ': Attack');
 		remove_manual();
-		attack_clicked_handler(army_type));
+		attack_clicked_handler();
 	}
 	else if(target_function == 'move')
 	{
 		//alert(army_type + ': Move');
 		remove_manual();
-		move_clicked_handler(army_type);
+		move_clicked_handler();
 	}
 	else if(target_function == 'defence')
 	{
 		//alert(army_type + ': Defence');
 		remove_manual();
-		defend_clicked_handler(army_type));
+		defend_clicked_handler();
 	}
 	else if(target_function == 'back')
 	{
