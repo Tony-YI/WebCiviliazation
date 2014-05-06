@@ -35,6 +35,6 @@ player.prototype.show_info = function()
 	var lumber_div = document.getElementById("lumber");
 
 	username_div.innerHTML = "Player: " + this.pname;
-	gold_div.innerHTML = "gold: " + this.gold;
-	lumber_div.innerHTML = "wood: " + this.wood;
+	gold_div.innerHTML = "Gold: " + this.gold;
+	lumber_div.innerHTML = "Lumber: " + this.wood;
 }
