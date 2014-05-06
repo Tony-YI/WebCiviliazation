@@ -504,19 +504,19 @@ function select_manual(e)
 	{
 		//alert(army_type + ': Attack');
 		remove_manual();
-		attack_clicked_handler();
+		attack_clicked_handler(army_type));
 	}
 	else if(target_function == 'move')
 	{
 		//alert(army_type + ': Move');
 		remove_manual();
-		move_clicked_handler();
+		move_clicked_handler(army_type);
 	}
 	else if(target_function == 'defence')
 	{
 		//alert(army_type + ': Defence');
 		remove_manual();
-		defend_clicked_handler();
+		defend_clicked_handler(army_type));
 	}
 	else if(target_function == 'back')
 	{
@@ -742,6 +742,11 @@ function addBoxes(list)
 			box.appendChild(hexagon[new_line_num * i + j]);
 		}
 	}
+}
+
+function go_to_home()
+{
+	document.getElementById('anchor').focus();
 }
 
 function update_slot() //TODO: update the slot every movement
