@@ -6,6 +6,8 @@ if(current_usr_id)
 
 function show_range(x, y)
 {
+	console.log(x);
+	console.log(y);
 	remove_manual(); //in display.js
 	var slot_div = document.getElementsByClassName('hexagon');
 
@@ -58,8 +60,8 @@ function move_clicked_handler()
 	2. attach move event listener (move_action() to the div) 
 	*/
 	console.log(latest_slot);
-	console.log(latest_slot.getAttribute('x'));
-	console.log(latest_slot.getAttribute('y'));
+	//console.log(latest_slot.getAttribute('x'));
+	//console.log(latest_slot.getAttribute('y'));
 	var x = latest_slot.getAttribute('x');
 	var y = latest_slot.getAttribute('y');
 	if(y%2 == 1)
