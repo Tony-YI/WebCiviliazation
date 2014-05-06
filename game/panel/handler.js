@@ -6,8 +6,6 @@ if(current_usr_id)
 
 function show_range(x, y)
 {
-	console.log(x);
-	console.log(y);
 	remove_manual(); //in display.js
 	var slot_div = document.getElementsByClassName('hexagon');
 
@@ -17,6 +15,7 @@ function show_range(x, y)
 	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
 	{
 		slot_div[i].setAttribute('function', 'range');
+		slot_div[i].addEventListener('click',move_action,false);
 		//all the change color thing are done in display.css
 	}
 }
@@ -40,7 +39,26 @@ function attack_clicked_handler()
 	2. attach attack event listener (attack_action() to the div) 3
 	3. attach cancel event handler 
 	*/
-	console.log(latest_slot);
+	var x = parseInt(latest_slot.getAttribute('x'));
+	var y = parseInt(latest_slot.getAttribute('y'));
+	if(y%2 == 1)
+	{
+		show_range(x,y-1);
+		show_range(x+1,y-1);
+		show_range(x-1,y);
+		show_range(x+1,y);
+		show_range(x,y+1);
+		show_range(x+1,y+1);
+	}
+	else
+	{
+		show_range(x-1,y-1);
+		show_range(x,y-1);
+		show_range(x-1,y);
+		show_range(x+1,y);
+		show_range(x-1,y+1);
+		show_range(x,y+1);
+	}
 }
 
 function attack_action()
@@ -91,6 +109,8 @@ function move_action()
 	2. show the result
 	3. record the result in result list
 	*/
+	console.log('clear range');
+	clear_range();
 }
 
 function defend_clicked_handler()
