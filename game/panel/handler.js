@@ -80,7 +80,7 @@ function build_clicked_hanlder()
 	5.add the result to the result list 
 	*/
 	var buildArmy = document.getElementById('buildArmy');
-	buildArmy.style.background = '#abc234';
+	buildArmy.style.background = "#E0FFFF";
 	buildArmy.style.zIndex = 100;
 	/*buildArmy.innerHTML = """"""*/
 }
