@@ -685,6 +685,9 @@ function addBoxes(list)
 			}
 		}
 
+		hexagon[i].appendChild(p);
+		hexagon[i].appendChild(img);
+
 		if(list[i].owner && j == 0)
 		{
 			j++;
@@ -737,9 +740,6 @@ function addBoxes(list)
 			box.appendChild(hexagon[new_line_num * i + j]);
 		}
 	}
-
-	hexagon[i].appendChild(p);
-	hexagon[i].appendChild(img);
 }
 
 function go_to_home()
