@@ -269,7 +269,7 @@ function set_function_attribute_1(hexagon, function_type)
 {
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
-	hexagon.innerHTML = function_type;
+	hexagon.firstChild.innerHTML = function_type;
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
@@ -286,7 +286,7 @@ function set_function_attribute_2(hexagon, function_type)
 {
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
-	hexagon.innerHTML = function_type;
+	hexagon.firstChild.innerHTML = function_type;
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
