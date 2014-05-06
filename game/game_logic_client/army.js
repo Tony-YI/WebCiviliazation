@@ -11,7 +11,7 @@ function init_army_list(army)
 
 function getArmyById(army_id)
 {
-	if(!(army_id >= 0 && army_id < window.army_list.length)
+	if(!(army_id >= 0 && army_id < window.army_list.length))
 	{
 		console.log("getArmyById: invalid argument");
 		return null;
