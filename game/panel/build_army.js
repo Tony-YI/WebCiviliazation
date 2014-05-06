@@ -10,6 +10,7 @@ function build_clicked_hanlder()
     var buildArmy = document.getElementById('buildArmy');
     alert(buildArmy);
     buildArmy.style.display= "block";
+    
 
 
     /*buildArmy.innerHTML = """"""*/
