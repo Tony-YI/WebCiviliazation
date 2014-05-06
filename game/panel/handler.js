@@ -81,7 +81,7 @@ function build_clicked_hanlder()
 	*/
 	var buildArmy = document.getElementById('buildArmy');
 	buildArmy.style.background = "#E0FFFF";
-	buildArmy.style.zIndex = 200;
+	buildArmy.style.zIndex = "200";
 	/*buildArmy.innerHTML = """"""*/
 }
 
