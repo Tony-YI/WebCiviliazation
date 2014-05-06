@@ -227,7 +227,7 @@ function mouseup_3(e)  //w.r.t function mouse_down_3(e)
 function end_slidein(e)  //handel the animation
 {
 	var target = e.target;
-	if(target.getAttribute('class') != 'manual')
+	if(target.getAttribute('class') != 'manual' && target.getAttribute('class') != 'hexagon')
 	{
 		target = e.target.parentNode;
 	}
