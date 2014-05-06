@@ -27,7 +27,7 @@ function show_range(x, y, action)
 	}
 }
 
-function clear_range()
+function clear_range(action)
 {
 	var slot_div = document.getElementsByClassName('hexagon');
 	for(var i = 0; i < slot_num; i++) //slot_num: global variable in small_map.js
@@ -35,6 +35,14 @@ function clear_range()
 		if(slot_div[i].getAttribute('function') == 'range')
 		{
 			slot_div[i].setAttribute('function', 'none');
+			if(action == 'move')
+			{
+				slot_div[i].removeEventListener('click', move_action, false);
+			}
+			else if(action == 'attack')
+			{
+				slot_div[i].removeEventListener('click', attack_action, false);
+			}
 		}
 	}
 }
@@ -84,7 +92,7 @@ function attack_action(e)
 	var to_x = target.getAttribute('x');
 	var to_y = target.getAttribute('y');
 	console.log('attack from (' + from_x+ ', ' + from_y + ') to (' + to_x+ ', ' + to_y + ')');
-	clear_range();
+	clear_range('attack');
 }
 
 function move_clicked_handler()
@@ -133,7 +141,7 @@ function move_action(e)
 	var to_x = target.getAttribute('x');
 	var to_y = target.getAttribute('y');
 	console.log('move from (' + from_x+ ', ' + from_y + ') to (' + to_x+ ', ' + to_y + ')');
-	clear_range();
+	clear_range('move');
 }
 
 function defend_clicked_handler()
