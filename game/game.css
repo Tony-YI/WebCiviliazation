@@ -4,3 +4,13 @@
 	background-color: red;
 	opacity: 0.1;
 }
+#buildArmy
+{
+    display: none;
+    background: #E0FFFF;
+    position: fixed;
+    top:30%;
+    left: 50%;
+    width: 30;
+    height: 30%;
+}
