@@ -80,11 +80,17 @@ function mousedown_2(e) //handel the left click on selecting army type
 	e.stopPropagation();
 	e.preventDefault();
 
+	var target = e.target;
+	if(target.getAttribute('class') != 'manual')
+	{
+		target = e.target.parentNode;
+	}
+
 	switch(e.which)
 	{
 		case 1:
 			console.log('left mousedown 2');
-			e.target.addEventListener('mouseup', mouseup_2, false);
+			target.addEventListener('mouseup', mouseup_2, false);
 			break;
 		case 2:
 			console.log('middle mousedown 2');
@@ -103,11 +109,17 @@ function mousedown_3(e) //handel the left click on selecting function (attack/de
 	e.stopPropagation();
 	e.preventDefault();
 
+	var target = e.target;
+	if(target.getAttribute('class') != 'manual')
+	{
+		target = e.target.parentNode;
+	}
+
 	switch(e.which)
 	{
 		case 1:
 			console.log('left mousedown 3');
-			e.target.addEventListener('mouseup', mouseup_3, false);
+			target.addEventListener('mouseup', mouseup_3, false);
 			break;
 		case 2:
 			console.log('middle mousedown 3');
@@ -214,8 +226,14 @@ function mouseup_3(e)  //w.r.t function mouse_down_3(e)
 
 function end_slidein(e)  //handel the animation
 {
-	e.target.removeEventListener('mouseover', end_slidein, false);
-	e.target.setAttribute('type', 'none');
+	var target = e.target;
+	if(target.getAttribute('class') != 'manual')
+	{
+		target = e.target.parentNode;
+	}
+
+	target.removeEventListener('mouseover', end_slidein, false);
+	target.setAttribute('type', 'none');
 }
 
 function key_down(e)
@@ -371,20 +389,26 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 
 function select_army_type(e)
 {
-	var x = e.target.getAttribute('x');
-	var y = e.target.getAttribute('y');
+	var target = e.target;
+	if(target.getAttribute('class') != 'manual')
+	{
+		target = e.target.parentNode;
+	}
 
-	e.target.removeEventListener('mousedown', mousedown_2, false);
-	e.target.removeEventListener('mouseup', mouseup_2, false);
+	var x = target.getAttribute('x');
+	var y = target.getAttribute('y');
 
-	var target_function = e.target.getAttribute('function');
+	target.removeEventListener('mousedown', mousedown_2, false);
+	target.removeEventListener('mouseup', mouseup_2, false);
+
+	var target_function = target.getAttribute('function');
 
 	if(target_function == 'type_A')
 	{
 		//alert('A');
 		remove_manual();
 
-		if(parseInt(e.target.getAttribute('y')) % 2 == 1) //odd
+		if(parseInt(target.getAttribute('y')) % 2 == 1) //odd
 		{
 			x = parseInt(x) + 1;
 		}
@@ -405,7 +429,7 @@ function select_army_type(e)
 	{
 		//alert('C');
 		remove_manual();
-		if(parseInt(e.target.getAttribute('y')) % 2 == 1) //odd
+		if(parseInt(target.getAttribute('y')) % 2 == 1) //odd
 		{
 			x = parseInt(x) + 1;
 		}
@@ -494,10 +518,16 @@ function display_manual(x, y, type)
 
 function select_manual(e)
 {
-	e.target.removeEventListener('mousedown', mousedown_3, false);
-	e.target.removeEventListener('mouseup', mouseup_3, false);
+	var target = e.target;
+	if(target.getAttribute('class') != 'manual')
+	{
+		target = e.target.parentNode;
+	}
 
-	var target_function = e.target.getAttribute('function');
+	target.removeEventListener('mousedown', mousedown_3, false);
+	target.removeEventListener('mouseup', mouseup_3, false);
+
+	var target_function = target.getAttribute('function');
 
 	if(target_function == 'attack')
 	{
