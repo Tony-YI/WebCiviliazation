@@ -8,6 +8,9 @@ function Init()
 	//send request to get the initilization data
 	Init_get_init_data();
 	display_init(slot_list);
+
+    document.getElementById('anchor').focus();
+
 	init_small_map();
 }
 
