@@ -297,9 +297,9 @@ body
 img.army
 {
     z-index: 101;
-    max-width: 90px;
-    max-height: 90px;
-    top: -35px;
+    max-width: 70px;
+    max-height: 70px;
+    top: -23px;
     position: relative;
 }
 
@@ -435,4 +435,5 @@ img.army
     float: right;
     position: relative;
     width: 100%;
+    z-index: -100;
 }

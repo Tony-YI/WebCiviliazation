@@ -227,7 +227,7 @@ function mouseup_3(e)  //w.r.t function mouse_down_3(e)
 function end_slidein(e)  //handel the animation
 {
 	var target = e.target;
-	if(target.getAttribute('class') != 'manual')
+	if(target.getAttribute('class') != 'manual' && target.getAttribute('class') != 'hexagon')
 	{
 		target = e.target.parentNode;
 	}
@@ -309,10 +309,7 @@ function set_function_attribute_2(hexagon, function_type)
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
 	hexagon.removeEventListener('mouseup', mouseup_1, false);
 	hexagon.addEventListener('mousedown', mousedown_3, false);
-	if(function_type != 'back')
-	{
-		hexagon.addEventListener('mouseover', end_slidein, false);
-	}
+	hexagon.addEventListener('mouseover', end_slidein, false);
 	hexagon.setAttribute('class', 'manual');
 }
 
@@ -577,7 +574,10 @@ function remove_manual()
 		manual[0].removeEventListener('mouseup', mouseup_1, false);
 		manual[0].removeEventListener('mouseup', mouseup_2, false);
 		manual[0].removeEventListener('mouseup', mouseup_3, false);
-		manual[0].addEventListener('mousedown', mousedown_1, false);
+		if(manual[0].getAttribute('slot_type') != 'unused_slot')
+		{
+			manual[0].addEventListener('mousedown', mousedown_1, false);
+		}
 		manual[0].setAttribute('class', 'hexagon');
 	}
 }
@@ -640,6 +640,7 @@ function addBoxes(list)
 		var img = document.createElement('img'); //store the img
 		img.setAttribute('class', 'army');
 		var p = document.createElement('p');
+		p.setAttribute('class', 'description');
 
 		if(x == 0) //start hexagon
 		{
@@ -661,7 +662,7 @@ function addBoxes(list)
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
-		hexagon[i].addEventListener('mousedown', mousedown_1, true);
+		hexagon[i].addEventListener('mousedown', mousedown_1, false);
 
 		switch(parseInt(list[i].type_id))
 		{
