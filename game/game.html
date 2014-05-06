@@ -2,51 +2,52 @@
 
 <html>
 <head>
-    <title>WebCivilization</title>
-    <link rel="stylesheet" type="text/css" href="./panel/display.css"/>
-    <link rel="stylesheet" type="text/css" href="./panel/info.css"/>
-    <link rel="stylesheet" type="text/css" href="./panel/small_map.css"/>
+	<title>WebCivilization</title>
+	<link rel="stylesheet" type="text/css" href="./panel/display.css"/>
+	<link rel="stylesheet" type="text/css" href="./panel/info.css"/>
+	<link rel="stylesheet" type="text/css" href="./panel/small_map.css"/>
 
 	<script type="text/javascript">
 	//global variable
-	var player_list;
-	var slot_list = new Array();
-	var army_list = new Array();
-    var latest_slot;
-    var army_type = ''; //store which army type you have select
-    var user_1; //store the user ID
-    var user_2;
-    var user_3;
+		var player_list;
+		var slot_list = new Array();
+		var army_list = new Array();
+		var latest_slot;
+		var army_type = ''; //store which army type you have select
+		var user_1; //store the user ID
+		var user_2;
+		var user_3;
 	</script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
-    <script type="text/javascript" src="../jquery.cookie.js"></script>
-    <script type="text/javascript" src="./render.js"></script>
-    <script type="text/javascript" src="./panel/display.js"></script>
-    <script type="text/javascript" src="./panel/small_map.js"></script>
-    <script type="text/javascript" src="./game_logic_client/check_functions.js"></script>
-    <script type="text/javascript" src="./game_logic_client/player.js"></script>
-    <script type="text/javascript" src="./game_logic_client/army.js"></script>
-    <script type="text/javascript" src="./game_logic_client/slot.js"></script>
-    <script type="text/javascript" src="./panel/handler.js"></script>
-    <script type="text/javascript" src="./main.js"></script>
+	<script type="text/javascript" src="../jquery.cookie.js"></script>
+	<script type="text/javascript" src="./render.js"></script>
+	<script type="text/javascript" src="./panel/display.js"></script>
+	<script type="text/javascript" src="./panel/small_map.js"></script>
+	<script type="text/javascript" src="./game_logic_client/check_functions.js"></script>
+	<script type="text/javascript" src="./game_logic_client/player.js"></script>
+	<script type="text/javascript" src="./game_logic_client/army.js"></script>
+	<script type="text/javascript" src="./game_logic_client/slot.js"></script>
+	<script type="text/javascript" src="./panel/handler.js"></script>
+	<script type="text/javascript" src="./main.js"></script>
 </head>
 <body onload="Init()">
 	<div id="info">
-    <div id="username">Player:</div>
-    <div id="gold">Gold:</div>
-    <div id="lumber">Lumber:</div>
-    <div id="hexagon_info"></div>
-    <button id="build_army" type="button">Build a new army</button>
-    <button id="nextround" type="button">Next Round</button>
-    <button id="surrender" type="button">surrender</button>
+		<div id="username">Player:</div>
+		<div id="gold">Gold:</div>
+		<div id="lumber">Lumber:</div>
+		<div id="hexagon_info"></div>
+		<button id="build_army" type="button">Build a new army</button>
+		<button id="nextround" type="button">Next Round</button>
+		<button id="surrender" type="button">surrender</button>
 	</div>
 
-	<div id="small_map">
-	</div>
+            <div id="small_map">
+            </div>
 
 	<div id="display">
-    <div id="box">
-    </div>
-</div>
+    		<div id="box">
+    		</div>
+	</div>
+	<div id="buildArmy" zIndex=20></div>
 </body>
 </html>
