@@ -324,24 +324,26 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 	var pos_x = target.getAttribute('x');
 	var pos_y = target.getAttribute('y');
 
+	var slot_army_type = target.getAttribute('army_type');
+
 	var hexagon = document.getElementsByClassName('hexagon');
 
 	if(pos_y % 2 == 0)//odd
 	{
 		for(var i = 0; i < hexagon.length; i++)
 		{
-			if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+			if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1 && slot_army_type == 'type_A')
 			{
 				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 				set_function_attribute_1(hexagon[i], 'type_A');
 				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y && slot_army_type == 'type_B')
 			{
 				set_function_attribute_1(hexagon[i], 'type_B');
 				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1  && slot_army_type == 'type_C')
 			{
 				set_function_attribute_1(hexagon[i], 'type_C');
 				i--;
@@ -357,17 +359,17 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 	{
 		for(var i = 0; i < hexagon.length; i++)
 		{
-			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
+			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1 && slot_army_type == 'type_A')
 			{
 				set_function_attribute_1(hexagon[i], 'type_A');
 				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
+			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y && slot_army_type == 'type_B')
 			{
 				set_function_attribute_1(hexagon[i], 'type_B');
 				i--;
 			}
-			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
+			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1 && slot_army_type == 'type_C')
 			{
 				set_function_attribute_1(hexagon[i], 'type_C');
 				i--;
