@@ -452,6 +452,20 @@ function select_army_type(e)
 	}
 }
 
+function set_function_attribute(hexagon, function_type)
+{
+	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
+	hexagon[i].setAttribute('function', function_type);
+	hexagon[i].innerHTML = 'Attack';
+	hexagon[i].setAttribute('type', 'slidein');
+	hexagon[i].style.opacity = '1.0';
+	hexagon[i].removeEventListener('mousedown', mousedown_1, false);
+	hexagon[i].removeEventListener('mouseup', mouseup_1, false);
+	hexagon[i].addEventListener('mousedown', mousedown_3, false);
+	hexagon[i].addEventListener('mouseover', end_slidein, false);
+	hexagon[i].setAttribute('class', 'manual');
+}
+
 function display_manual(x, y, type)
 {
 	//var pos_x = e.target.getAttribute('x');
@@ -468,16 +482,7 @@ function display_manual(x, y, type)
 		{
 			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
-				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
-				hexagon[i].setAttribute('function', 'attack');
-				hexagon[i].innerHTML = 'Attack';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_3, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute(hexagon[i], 'attack');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
