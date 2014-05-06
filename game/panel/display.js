@@ -276,10 +276,7 @@ function set_function_attribute_1(hexagon, function_type)
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
 	hexagon.removeEventListener('mouseup', mouseup_1, false);
 	hexagon.addEventListener('mousedown', mousedown_2, false);
-	if(function_type != 'cancel')
-	{
-		hexagon.addEventListener('mouseover', end_slidein, false);
-	}
+	hexagon.addEventListener('mouseover', end_slidein, false);
 	hexagon.setAttribute('class', 'manual');
 }
 
@@ -294,10 +291,7 @@ function set_function_attribute_2(hexagon, function_type)
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
 	hexagon.removeEventListener('mouseup', mouseup_1, false);
 	hexagon.addEventListener('mousedown', mousedown_3, false);
-	if(function_type != 'back')
-	{
-		hexagon.addEventListener('mouseover', end_slidein, false);
-	}
+	hexagon.addEventListener('mouseover', end_slidein, false);
 	hexagon.setAttribute('class', 'manual');
 }
 
