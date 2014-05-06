@@ -17,8 +17,8 @@ function show_range(x, y, action)
 	{
 		var slot = getSlotByXY(x,y);
 		console.log(slot);
-		console.log(slot_list[i].owner);
-		if(action == 'move' && slot_list[i].owner == null)
+		console.log(slot_list[i].owner == null);
+		if(action == 'move' && slot_list[i].owner == "")
 		{
 			slot_div[i].addEventListener('mousedown', move_action, false);
 			slot_div[i].setAttribute('function', 'range');
