@@ -455,18 +455,18 @@ function select_army_type(e)
 function set_function_attribute(hexagon, function_type)
 {
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
-	hexagon[i].setAttribute('function', function_type);
-	hexagon[i].innerHTML = function_type;
-	hexagon[i].setAttribute('type', 'slidein');
-	hexagon[i].style.opacity = '1.0';
-	hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-	hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-	hexagon[i].addEventListener('mousedown', mousedown_3, false);
+	hexagon.setAttribute('function', function_type);
+	hexagon.innerHTML = function_type;
+	hexagon.setAttribute('type', 'slidein');
+	hexagon.style.opacity = '1.0';
+	hexagon.removeEventListener('mousedown', mousedown_1, false);
+	hexagon.removeEventListener('mouseup', mouseup_1, false);
+	hexagon.addEventListener('mousedown', mousedown_3, false);
 	if(function_type != 'back' && function_type != 'cancel')
 	{
-		hexagon[i].addEventListener('mouseover', end_slidein, false);
+		hexagon.addEventListener('mouseover', end_slidein, false);
 	}
-	hexagon[i].setAttribute('class', 'manual');
+	hexagon.setAttribute('class', 'manual');
 }
 
 function display_manual(x, y, type)
