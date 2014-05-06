@@ -10,6 +10,10 @@ function Init()
 	display_init(slot_list);
 	init_small_map();
 	document.getElementById("surrender").addEventListener("onclick","surrender_clicked_handler",false);
+	
+	alert('To show the Information Board, Press "i"');
+    alert('To show the Small Map, Press "m"');
+    alert('To quit, Press "q"');
 }
 
 function Init_get_init_data()
