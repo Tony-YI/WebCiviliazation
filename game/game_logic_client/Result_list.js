@@ -57,9 +57,9 @@ Result.prototype.Result_toString = function()
 	{
 		var attacker = getArmyById(this.attacker_id);
 		var defender = getArmyById(this.defender_id);
-		var attacker_str = attacker.typename + "(" + attacker.army_id + ")";
+		var attacker_str = attacker.typename + "( army_id:" + attacker.army_id + ")";
 		var action_str = " attack ";
-		var defender_str = defender.typename + "(" + defender.army_id + ")";
+		var defender_str = defender.typename + "( army_id:" + defender.army_id + ")";
 		if(this.attacker_remaining_hp == 0)
 			result_str = ",causing " + attacker_str +  " dead";
 		if(this.defender_remaining_hp == 0)
@@ -69,15 +69,15 @@ Result.prototype.Result_toString = function()
 	else if(this.action_type == "move")
 	{
 		var actor = getArmyById(this.army_id);
-		var actor_str = actor.typename + "(" + actor.army_id + ")";
-		var action_str = " move ";
+		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
+		var action_str = " move to ";
 		var target_str = "(" + this.to_x + "," + this.to_y + ")";
 		result_str = actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "defend")
 	{
 		var actor = getArmyById(this.army_id);
-		var actor_str = actor.typename + "(" + actor.army_id + ")";
+		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " defend ";
 		var target_str = "(" + this.from_x + "," + this.from_y + ")";
 		result_str = actor_str + action_str + target_str;
@@ -85,7 +85,7 @@ Result.prototype.Result_toString = function()
 	else if(this.action_type == "build")
 	{
 		var actor = getArmyById(this.army_id);
-		var actor_str = actor.typename + "(" + actor.army_id + ")";
+		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " was built";
 		result_str = actor_str + action_str;
 	}
@@ -222,4 +222,16 @@ function parse_action(action)
 	...
 	*/
 	return parsedAction;
+}
+
+function send_result_list_to_server()
+{
+	//This function should be triggered when the player clicked the next round button
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","/game/game_logic_server/submit_result.php",false);
+	xhr.setRequestHeader("TYPE","RESULT_LIST");
+	var data = "{\"result_list\":" + JSON.stringify(result_list) + "}";
+	console.log(data);
+	xhr.send(data);
+	
 }
