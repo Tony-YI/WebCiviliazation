@@ -23,13 +23,9 @@
     height: 35%;
     display: inline-block;
 }
-#exit
+
+#exitBuild::before
 {
-    margin-top: -10px;
-}
-#exit::before
-{
-    content: "";
     width: 130px;
     height: 130px;
     display: block;
@@ -41,9 +37,8 @@
     border-radius: 65px;
     box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4);
 }
-#exit::after
+#exitBuild::after
 {
-    content: "Exit";
     color: #09F;
     font-size: 20px;
     width: 100%;
