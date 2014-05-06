@@ -732,6 +732,8 @@ function addBoxes(list)
 			var img = document.createElement('img');
 			img.setAttribute('src', '../../images/sword.png');
 			img.style.zIndex = '104';
+			img.style.width = '100px';
+			img.style.height = '100px';
 			hexagon[i].appendChild(img);
 			break;
 
