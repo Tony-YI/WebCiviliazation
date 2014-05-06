@@ -8,10 +8,10 @@
     width: 30%;
     height: 30%;
 }
-.armytypeThumb
-{
-    display: inline-block;
 
-    width: 30%;
+.armytypeId
+{
+    width: 20%;
     height: 30%;
+    display: inline-block;
 }
