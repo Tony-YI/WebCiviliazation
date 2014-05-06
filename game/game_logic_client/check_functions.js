@@ -5,7 +5,7 @@ function check_slot_owner(e) //check the slot owner
 {
 	if(e.target.getAttribute('class') != 'hexagon')
 	{
-		break;
+		return false;
 	}
 
 	//TODO: check whether this slot belongs to the user
