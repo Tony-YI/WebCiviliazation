@@ -286,6 +286,21 @@ function window_resize(e) //handel window resize
 function set_function_attribute_1(hexagon, function_type)
 {
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
+	switch(function_type)
+	{
+		case 'type_A':
+		function_type = 'Sword';
+		break;
+		case 'type_B':
+		function_type = 'Archer';
+		break;
+		case 'type_C':
+		function_type = 'Cavalry';
+		break;
+		case default:
+		break;
+
+	}
 	hexagon.setAttribute('function', function_type);
 	hexagon.firstChild.innerHTML = function_type;
 	hexagon.lastChild.style.display = 'none';
