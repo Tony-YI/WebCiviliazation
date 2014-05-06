@@ -28,10 +28,6 @@
 /***********************************/
 function mousedown_1(e) //handel the right click on slot
 {
-	e = e.target.parentNode;
-
-	console.log(e);
-
 	e.preventDefault();
 	e.stopPropagation();
 
