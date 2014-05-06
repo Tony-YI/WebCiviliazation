@@ -241,6 +241,8 @@ function key_down(e)
 	e.stopPropagation();
 	e.preventDefault();
 
+	console.log(key);
+
 	var key = e.keyCode;
 	if(key == 77)
 	{
@@ -823,6 +825,7 @@ function update_slot() //TODO: update the slot every movement
 
 function display_init(list)
 {
+	document.getElementById('info').style.display = 'none';
 	addBoxes(list);
 	resize();
 	window.addEventListener('resize', window_resize, false);
