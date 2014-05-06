@@ -5,13 +5,17 @@
 */
 function getPlayerByID(pid)
 {
-	for(var count = 0; count < player_list.length;count++)
+	console.log("getPlayerByID: to get player with pid: " + pid);
+	for(var count = 0; count < window.player_list.length;count++)
 	{
-		if(player_list[count].pid == pid)
-			return player_list[count];
+		if(window.player_list[count].pid == pid)
+		{
+			console.log("getPlayerByID: " + window.player_list[count]);
+			return window.player_list[count];
+		}
 	}
 }
-function player(player_id, playername,gold,wood)
+function player(player_id, playername,gold,wood,status,turn)
 {
 	this.pid = player_id;
 	this.pname = playername;
@@ -19,6 +23,8 @@ function player(player_id, playername,gold,wood)
 	this.wood = wood;
 	this.capital_x = null;
 	this.capital_y = null;
+	this.pstatus = status;
+	this.pturn = turn;
 }
 
 player.prototype.show_info = function()
