@@ -567,7 +567,7 @@ function remove_manual()
 		}
 		manual[0].setAttribute('function', 'none');
 		manual[0].firstChild.innerHTML = '';
-		manual[0].lastChild.style.display = 'block';
+		manual[0].lastChild.style.display = 'inline';
 		manual[0].removeEventListener('mousedown', mousedown_1, false);
 		manual[0].removeEventListener('mousedown', mousedown_2, false);
 		manual[0].removeEventListener('mousedown', mousedown_3, false);
