@@ -685,8 +685,7 @@ function addBoxes(list)
 			}
 		}
 
-		hexagon[i].appendChild(p);
-		hexagon[i].appendChild(img);
+		hexagon[i].appendChild(p); //frst DOM child
 
 		if(list[i].owner && j == 0)
 		{
@@ -711,8 +710,10 @@ function addBoxes(list)
 		{
 			var anchor = document.createElement('div');
 			anchor.setAttribute('id', 'anchor');
-			hexagon[i].appendChild(anchor);
+			hexagon[i].appendChild(anchor); //second DOM child
 		}
+
+		hexagon[i].appendChild(img); // last DOM child
 	}
 
 	if(user_id == user_1)
