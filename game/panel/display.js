@@ -725,7 +725,6 @@ function addBoxes(list)
 			break;
 		}
 
-<<<<<<< HEAD
 		switch(parseInt(list[i].army_id))
 		{
 			case 1: //
