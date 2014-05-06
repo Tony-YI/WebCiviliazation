@@ -294,6 +294,19 @@ body
     border-top: 25px solid white;
 }
 
+.hexagon[army_type="type_A"]
+{
+    background: red;
+}
+.hexagon[army_type="type_B"]
+{
+    background: red;
+}
+.hexagon[army_type="type_C"]
+{
+    background: red;
+}
+
 #hexagon_normal
 {
     width: 100px;
