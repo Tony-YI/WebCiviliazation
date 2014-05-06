@@ -727,15 +727,15 @@ function addBoxes(list)
 
 		switch(parseInt(list[i].army_id))
 		{
-			case 0: //
+			case 1: //
 			hexagon[i].setAttribute('army_type', 'type_A');
 			break;
 
-			case 1: //
+			case 2: //
 			hexagon[i].setAttribute('army_type', 'type_B');
 			break;
 
-			case 2: //
+			case 3: //
 			hexagon[i].setAttribute('army_type', 'type_C');
 			break;
 
