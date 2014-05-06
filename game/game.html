@@ -35,7 +35,7 @@
 </head>
 <body onload="Init()">
 	<div id="info">
-        <a href="#anchor">go to home</a>
+        <button type="button" onclick="go_to_home()">Go to home</button>
 		<div id="username">Player:</div>
 		<div id="gold">Gold:</div>
 		<div id="lumber">Lumber:</div>
@@ -57,17 +57,18 @@
 	<div id="buildArmy">
 		<div class="armytypeId" id="sword">
 			<img class="armytypeThumb" src="../../images/sword.png">
-			<p id="swordCost">Gold Cost: 20<br/>Wood Cost: 20</p>
+			<br/>
+			<p id="swordCost">Wood Cost: 20<br/>Gold Cost: 20</p>
 			<button id="sword" type="submit">Build Sword</button>
 		</div>
 		<div class="armytypeId" id="archer">
 			<img class="armytypeThumb" src="../../images/archer.png">
-			<p id="archerCost">Gold Cost: 15<br/>Wood Cost: 25</p>
+			<br/>
 			<button id="ancher" type="submit">Build Ancher</button>
 		</div>
 		<div class="armytypeId" id="cavalry">
 			<img class="armytypeThumb" src="../../images/cavalry.png">
-			<p id="cavalryCost">Gold Cost: 25<br/>Wood Cost: 15</p>
+			<br/>
 			<button id="cavalry" type="submit">Build Cavalry</button>
 		</div>
 	</div>
