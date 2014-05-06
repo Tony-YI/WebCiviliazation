@@ -757,8 +757,6 @@ function addBoxes(list)
 			break;
 		}
 
-=======
->>>>>>> b54a2fa31cf6fdd376c67b9a620dcff71d74a7b1
 		if(list[i].owner && j == 0)
 		{
 			j++;
