@@ -106,6 +106,8 @@ function move_clicked_handler()
 	//console.log(latest_slot.getAttribute('y'));
 	var x = parseInt(latest_slot.getAttribute('x'));
 	var y = parseInt(latest_slot.getAttribute('y'));
+	var slot = getSlotByXY(x,y);
+	console.log(slot);
 	if(y%2 == 1)
 	{
 		show_range(x, y-1, 'move');
@@ -146,7 +148,6 @@ function move_action(e)
 
 function defend_clicked_handler()
 {
-
 }
 
 
