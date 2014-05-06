@@ -15,6 +15,7 @@ function show_range(x, y)
 	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
 	{
 		slot_div[i].setAttribute('function', 'range');
+		slot_div[i].addEventListener('click',move_action,false);
 		//all the change color thing are done in display.css
 	}
 }
@@ -38,7 +39,26 @@ function attack_clicked_handler()
 	2. attach attack event listener (attack_action() to the div) 3
 	3. attach cancel event handler 
 	*/
-	console.log(latest_slot);
+	var x = parseInt(latest_slot.getAttribute('x'));
+	var y = parseInt(latest_slot.getAttribute('y'));
+	if(y%2 == 1)
+	{
+		show_range(x,y-1);
+		show_range(x+1,y-1);
+		show_range(x-1,y);
+		show_range(x+1,y);
+		show_range(x,y+1);
+		show_range(x+1,y+1);
+	}
+	else
+	{
+		show_range(x-1,y-1);
+		show_range(x,y-1);
+		show_range(x-1,y);
+		show_range(x+1,y);
+		show_range(x-1,y+1);
+		show_range(x,y+1);
+	}
 }
 
 function attack_action()
@@ -58,8 +78,28 @@ function move_clicked_handler()
 	2. attach move event listener (move_action() to the div) 
 	*/
 	console.log(latest_slot);
-	console.log(latest_slot.getAttribute('x'));
-	console.log(latest_slot.getAttribute('y'));
+	//console.log(latest_slot.getAttribute('x'));
+	//console.log(latest_slot.getAttribute('y'));
+	var x = parseInt(latest_slot.getAttribute('x'));
+	var y = parseInt(latest_slot.getAttribute('y'));
+	if(y%2 == 1)
+	{
+		show_range(x,y-1);
+		show_range(x+1,y-1);
+		show_range(x-1,y);
+		show_range(x+1,y);
+		show_range(x,y+1);
+		show_range(x+1,y+1);
+	}
+	else
+	{
+		show_range(x-1,y-1);
+		show_range(x,y-1);
+		show_range(x-1,y);
+		show_range(x+1,y);
+		show_range(x-1,y+1);
+		show_range(x,y+1);
+	}
 }
 
 function move_action()
@@ -69,6 +109,8 @@ function move_action()
 	2. show the result
 	3. record the result in result list
 	*/
+	console.log('clear range');
+	clear_range();
 }
 
 function defend_clicked_handler()
@@ -76,49 +118,12 @@ function defend_clicked_handler()
 
 }
 
-function build_clicked_hanlder()
-{
-	/*
-	1.show build list
-	2.wait for player's choice
-	3.check whether the player can build this kind of army (cost, position)
-	4.show the build result
-	5.add the result to the result list 
-	*/
-	var buildArmy = document.getElementById('buildArmy');
-
-	buildArmy.background='#abc123';
-
-	buildArmy.style.display= "block";
-
-
-	/*buildArmy.innerHTML = """"""*/
-}
 
 function surrender_clicked_handler()
 {
 	/*
 	This function handle the click event on the surrender button
 	*/
-	/*
-	if(!IsMyTurn())
-	{
-		console.log("Is not your turn");	
-		return;
-	}
-	*/
-	var choice = confirm("Are you sure to surrender?");
-	if(choice)
-	{
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
-		xhr.setRequestHeader("TYPE","SURRENDER");
-		console.log("The server replies: " + xhr.responseText);
-	}
-	else
-	{
-		return ;
-	}
 
 }
 
