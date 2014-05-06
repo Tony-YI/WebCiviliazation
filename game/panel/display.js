@@ -286,20 +286,21 @@ function window_resize(e) //handel window resize
 function set_function_attribute_1(hexagon, function_type)
 {
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
+	var army_name;
 	if(function_type == 'type_A')
 	{
-		function_type = 'Sword';
+		army_name = 'Sword';
 	}
 	else if(function_type == 'type_B')
 	{
-		function_type = 'Archer';
+		army_name = 'Archer';
 	}
 	else if(function_type == 'type_C')
 	{
-		function_type = 'Cavalry';
+		army_name = 'Cavalry';
 	}
 	hexagon.setAttribute('function', function_type);
-	hexagon.firstChild.innerHTML = function_type;
+	hexagon.firstChild.innerHTML = army_name;
 	hexagon.lastChild.style.display = 'none';
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
