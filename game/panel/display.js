@@ -28,8 +28,14 @@
 /***********************************/
 function mousedown_1(e) //handel the right click on slot
 {
-	e.stopPropagation();
 	e.preventDefault();
+
+	console.log(e.target);
+
+	if(1)
+	{
+		e.stopPropagation();
+	}
 
 	switch(e.which)
 	{
