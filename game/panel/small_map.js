@@ -152,6 +152,7 @@ function init_small_map()
 
 	var small_map = document.getElementById('small_map');
 	small_map.addEventListener('contextmenu', no_contextmenu, false);
+	small_map.style.display = 'none';
 
 	for(var i = 0; i < line_num; i++)
 	{
