@@ -60,6 +60,26 @@ function move_clicked_handler()
 	console.log(latest_slot);
 	console.log(latest_slot.getAttribute('x'));
 	console.log(latest_slot.getAttribute('y'));
+	var x = latest_slot.getAttribute('x');
+	var y = latest_slot.getAttribute('y');
+	if(y%2 == 1)
+	{
+		show_range(x,y-1);
+		show_range(x+1,y-1);
+		show_range(x-1,y);
+		show_range(x+1,y);
+		show_range(x,y+1);
+		show_range(x+1,y+1);
+	}
+	else
+	{
+		show_range(x-1,y-1);
+		show_range(x,y-1);
+		show_range(x-1,y);
+		show_range(x+1,y);
+		show_range(x-1,y+1);
+		show_range(x,y+1);
+	}
 }
 
 function move_action()
@@ -77,32 +97,11 @@ function defend_clicked_handler()
 }
 
 
-
 function surrender_clicked_handler()
 {
 	/*
 	This function handle the click event on the surrender button
 	*/
-	/*
-	if(!IsMyTurn())
-	{
-		console.log("Is not your turn");	
-		return;
-	}
-	*/
-	var choice = confirm("Are you sure to surrender?");
-	if(choice)
-	{
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
-		xhr.setRequestHeader("TYPE","SURRENDER");
-		xhr.send();
-		console.log("The server replies: " + xhr.responseText);
-	}
-	else
-	{
-		return ;
-	}
 
 }
 
