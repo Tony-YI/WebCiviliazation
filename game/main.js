@@ -8,12 +8,18 @@ function Init()
 	//send request to get the initilization data
 	Init_get_init_data();
 	display_init(slot_list);
-
-    document.getElementById('anchor').focus();
-
 	init_small_map();
-
-	document.getElementById("surrender").addEventListener("click","surrender_clicked_handler",false);
+	try
+	{
+		console.log("adding event listener to surrender button");
+		console.log(document.getElementById("surrender"));
+		console.log(document.getElementById("surrender").addEventListener);
+		document.getElementById("surrender").addEventListener("onclick","surrender_clicked_handler",false);
+	}
+	catch(e)
+	{
+		console.log("Init :" + e);
+	}
 }
 
 function Init_get_init_data()
