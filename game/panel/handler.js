@@ -57,6 +57,9 @@ function move_clicked_handler()
 	1. show the move range
 	2. attach move event listener (move_action() to the div) 
 	*/
+	console.log(latest_slot);
+	console.log(latest_slot.x);
+	console.log(latest_slot.y);
 }
 
 function move_action()
@@ -83,8 +86,7 @@ function build_clicked_hanlder()
 	5.add the result to the result list 
 	*/
 	var buildArmy = document.getElementById('buildArmy');
-	buildArmy.style.background = "#E0FFFF";
-	buildArmy.style.zIndex = 100;
+	buildArmy.background='#abc123';
 	/*buildArmy.innerHTML = """"""*/
 }
 
