@@ -222,13 +222,38 @@ body
     -moz-animation-iteration-count: infinite;
 
     opacity: 0.5;
-    background: red;
+    background: green;
 }
 .hexagon[function="range"]:before
 {
-    border-bottom: 25px solid red;
+    border-bottom: 25px solid green;
 }
 .hexagon[function="range"]:after
+{
+    border-top: 25px solid green;
+}
+.hexagon[function="norange"]
+{
+    animation-name: hover;
+    -webkit-animation-name: hover;
+    -moz-animation-name: hover;
+
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+
+    opacity: 0.5;
+    background: red;
+}
+.hexagon[function="norange"]:before
+{
+    border-bottom: 25px solid red;
+}
+.hexagon[function="norange"]:after
 {
     border-top: 25px solid red;
 }
