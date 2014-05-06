@@ -577,19 +577,19 @@ function select_manual(e)
 
 	if(target_function == 'attack')
 	{
-		alert(army_type + ': Attack');
+		//alert(army_type + ': Attack');
 		remove_manual();
 		attack_clicked_handler();
 	}
 	else if(target_function == 'move')
 	{
-		alert(army_type + ': Move');
+		//alert(army_type + ': Move');
 		remove_manual();
 		move_clicked_handler();
 	}
 	else if(target_function == 'defence')
 	{
-		alert(army_type + ': Defence');
+		//alert(army_type + ': Defence');
 		remove_manual();
 		defend_clicked_handler();
 	}
@@ -722,31 +722,6 @@ function addBoxes(list)
 			break;
 
 			default:
-			break;
-		}
-
-		switch(parseInt(list[i].army_id))
-		{
-			case 1: //
-			hexagon[i].setAttribute('army_type', 'type_A');
-			var img = document.createElement('img');
-			img.setAttribute('src', '../../images/sword.png');
-			img.style.zIndex = '104';
-			img.style.width = '100px';
-			img.style.height = '100px';
-			hexagon[i].appendChild(img);
-			break;
-
-			case 2: //
-			hexagon[i].setAttribute('army_type', 'type_B');
-			break;
-
-			case 3: //
-			hexagon[i].setAttribute('army_type', 'type_C');
-			break;
-
-			default:
-			hexagon[i].setAttribute('army_type', 'none');
 			break;
 		}
 
