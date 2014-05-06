@@ -725,6 +725,25 @@ function addBoxes(list)
 			break;
 		}
 
+		switch(parseInt(list[i].army_id))
+		{
+			case 1: //
+			hexagon[i].setAttribute('army_type', 'type_A');
+			break;
+
+			case 2: //
+			hexagon[i].setAttribute('army_type', 'type_B');
+			break;
+
+			case 3: //
+			hexagon[i].setAttribute('army_type', 'type_C');
+			break;
+
+			default:
+			hexagon[i].setAttribute('army_type', 'none');
+			break;
+		}
+
 		if(list[i].owner && j == 0)
 		{
 			j++;

@@ -8,8 +8,9 @@ function build_clicked_hanlder()
     5.add the result to the result list 
     */
     var buildArmy = document.getElementById('buildArmy');
-    alert(buildArmy);
+    //alert(buildArmy);
     buildArmy.style.display= "block";
+
 
 
     /*buildArmy.innerHTML = """"""*/
