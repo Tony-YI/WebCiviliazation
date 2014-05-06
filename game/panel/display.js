@@ -742,7 +742,10 @@ function addBoxes(list)
 			j++;
 			user_3 = list[i].owner;
 			hexagon[i].style.background = user_3_color;
+		}
 
+		if(list[i].owner == user_id)
+		{
 			var anchor = document.createElement('div');
 			anchor.setAttribute('id', 'anchor');
 			hexagon[i].appendChild(anchor);
