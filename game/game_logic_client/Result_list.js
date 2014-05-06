@@ -1,7 +1,7 @@
 //THIS FILE CONTAINS IMPLEMENTATION OF RESULT_LIST IN JAVASCRIPT
 
 var result_list = new Array();
-function result(action_type)
+function Result(action_type)
 {
 	this.action_type = action_type;
 	this.from_x = null;
