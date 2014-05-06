@@ -12,8 +12,14 @@ function Init()
     document.getElementById('anchor').focus();
 
 	init_small_map();
-
-	document.getElementById("surrender").addEventListener("click","surrender_clicked_handler",false);
+	try
+	{
+		document.getElementById("surrender").addEventListener("onclick","surrender_clicked_handler",false);
+	}
+	catch(e)
+	{
+		console.log("Init :" + e);
+	}
 }
 
 function Init_get_init_data()
