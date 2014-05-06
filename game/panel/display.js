@@ -598,7 +598,7 @@ function remove_manual()
 function display_hexagon_info(e)
 {
 	var target = e.target;
-	if(target.getAttribute('class') != 'hexagon')
+	if(target.getAttribute('class') != 'hexagon' && target.getAttribute('class') != 'manual')
 	{
 		target = e.target.parentNode;
 	}
