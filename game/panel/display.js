@@ -309,10 +309,7 @@ function set_function_attribute_2(hexagon, function_type)
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
 	hexagon.removeEventListener('mouseup', mouseup_1, false);
 	hexagon.addEventListener('mousedown', mousedown_3, false);
-	if(function_type != 'back')
-	{
-		hexagon.addEventListener('mouseover', end_slidein, false);
-	}
+	hexagon.addEventListener('mouseover', end_slidein, false);
 	hexagon.setAttribute('class', 'manual');
 }
 
@@ -640,6 +637,7 @@ function addBoxes(list)
 		var img = document.createElement('img'); //store the img
 		img.setAttribute('class', 'army');
 		var p = document.createElement('p');
+		p.setAttribute('class', 'description');
 
 		if(x == 0) //start hexagon
 		{
@@ -661,7 +659,7 @@ function addBoxes(list)
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
-		hexagon[i].addEventListener('mousedown', mousedown_1, true);
+		hexagon[i].addEventListener('mousedown', mousedown_1, false);
 
 		switch(parseInt(list[i].type_id))
 		{
