@@ -747,6 +747,7 @@ function addBoxes(list)
 function go_to_home()
 {
 	document.getElementById('anchor').focus();
+	alert('hehe');
 }
 
 function update_slot() //TODO: update the slot every movement
