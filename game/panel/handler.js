@@ -31,6 +31,7 @@ function show_range(x, y, action)
 		else
 		{
 			slot_div[i].setAttribute('function', 'norange');
+			slot_div[i].addEventListener('mousedown', function(e){e.target.setAttribute('function','none');}, false);
 		}
 		//all the change color thing are done in display.css
 	}
