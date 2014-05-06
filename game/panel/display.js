@@ -31,9 +31,10 @@ function mousedown_1(e) //handel the right click on slot
 	e.preventDefault();
 	e.stopPropagation();
 
-	if(e.target.getAttribute('class') == 'army')
+	var target = e.target;
+	if(target.getAttribute('class') == 'army')
 	{
-		e.target = e.target.parentNode;
+		target = e.target.parentNode;
 	}
 
 	switch(e.which)
@@ -50,21 +51,23 @@ function mousedown_1(e) //handel the right click on slot
 		case 3:
 			console.log('right mousedown 1');
 
-			if(e.target.getAttribute('usage') == 'no') //not for use
+			if(target.getAttribute('usage') == 'no') //not for use
 			{
 				return false;
 			}
 
 			//check whether this slot belongs to the user
 			var belongs = check_slot_owner(e); //in /game/game_logic_client/check_functions.js
+			/*
 			if(!belongs)
 			{
 				break;
 			}
+			*/
 
 			//add eventListener
-			e.target.addEventListener('mouseup', mouseup_1, false);
-			latest_slot = e.target;
+			target.addEventListener('mouseup', mouseup_1, false);
+			latest_slot = target;
 			console.log(latest_slot.getAttribute('x'), latest_slot.getAttribute('y'));
 			remove_manual();
 			break;
