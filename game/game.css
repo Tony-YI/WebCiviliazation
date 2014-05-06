@@ -10,11 +10,12 @@
 }
 .armytypeThumb
 {
+    display: inline-block;
     width: 20%;
     height: 30%;
-    display: inline-block;
 }
 .armytypeId
 {
+    position: fixed;
     display: inline-block;
 }

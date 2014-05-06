@@ -68,7 +68,7 @@ function attack_clicked_handler()
 	}
 }
 
-function attack_action()
+function attack_action(e)
 {
 	/*
 	1. compute the result of the attack
@@ -78,7 +78,12 @@ function attack_action()
 	*/
 	e = e || window.event;
 	console.log(e.target);
-	console.log('attack from (' + latest_slot.getAttribute('x') + ', ' + latest_slot.getAttribute('y') + ') to');
+	var target = e.target;
+	var from_x = latest_slot.getAttribute('x');
+	var from_y = latest_slot.getAttribute('y');
+	var to_x = target.getAttribute('x');
+	var to_y = target.getAttribute('y');
+	console.log('attack from (' + from_x+ ', ' + from_y + ') to (' + to_x+ ', ' + to_y + ')');
 	clear_range();
 }
 
@@ -122,7 +127,12 @@ function move_action(e)
 	*/
 	e = e || window.event;
 	console.log(e.target);
-	console.log('move from (' + latest_slot.getAttribute('x') + ', ' + latest_slot.getAttribute('y') + ') to');
+	var target = e.target;
+	var from_x = latest_slot.getAttribute('x');
+	var from_y = latest_slot.getAttribute('y');
+	var to_x = target.getAttribute('x');
+	var to_y = target.getAttribute('y');
+	console.log('move from (' + from_x+ ', ' + from_y + ') to (' + to_x+ ', ' + to_y + ')');
 	clear_range();
 }
 
