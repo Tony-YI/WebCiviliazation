@@ -6,8 +6,6 @@ if(current_usr_id)
 
 function show_range(x, y)
 {
-	console.log(x);
-	console.log(y);
 	remove_manual(); //in display.js
 	var slot_div = document.getElementsByClassName('hexagon');
 
@@ -17,6 +15,7 @@ function show_range(x, y)
 	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
 	{
 		slot_div[i].setAttribute('function', 'range');
+		slot_div[i].addEventListener('click',move_action,false);
 		//all the change color thing are done in display.css
 	}
 }
@@ -91,6 +90,8 @@ function move_action()
 	2. show the result
 	3. record the result in result list
 	*/
+	console.log('clear range');
+	clear_range();
 }
 
 function defend_clicked_handler()
