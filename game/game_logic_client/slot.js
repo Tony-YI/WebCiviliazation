@@ -34,9 +34,15 @@ function init_slot_list(slots)
 		if(slot.owner_id != "" && slot.type_id == 4) 
 		{
 			console.log(slot);
-			var player_object = getPlayerByID(slot.owner_id);	
-			player_object.capital_x = slot.slot_x;
-			player_object.capital_y = slot.slot_y;
+			try{
+				var player_object = getPlayerByID(slot.owner_id);
+				player_object.capital_x = slot.slot_x;
+				player_object.capital_y = slot.slot_y;
+			}
+			catch(e)
+			{
+				console.log(e);
+			}
 		}
 		//console.log("getting slotowner");
 		slot.owner = slots[count].slot_owner;

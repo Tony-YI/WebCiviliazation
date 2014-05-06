@@ -8,7 +8,10 @@ function getPlayerByID(pid)
 	for(var count = 0; count < player_list.length;count++)
 	{
 		if(player_list[count].pid == pid)
+		{
+			console.log(player_list[count]);
 			return player_list[count];
+		}
 	}
 }
 function player(player_id, playername,gold,wood,status,turn)
