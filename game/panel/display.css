@@ -296,15 +296,15 @@ body
 
 .hexagon[army_type="type_A"]
 {
-    background: red;
+    background-color: red;
 }
 .hexagon[army_type="type_B"]
 {
-    background: red;
+    background-color: red;
 }
 .hexagon[army_type="type_C"]
 {
-    background: red;
+    background-color: red;
 }
 
 #hexagon_normal
