@@ -20,3 +20,8 @@ function build_clicked_Exit()
 	var buildArmy = document.getElementById('buildArmy');
     	buildArmy.style.display= "none";
 }
+function build_sword()
+{
+	if(current_player.gold < 20 || current_player.wood < 20)
+		alert("You do not have enough Gold or Wood to build a sword army");
+}
