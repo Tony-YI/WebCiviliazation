@@ -14,8 +14,6 @@ function show_range(x, y, action)
 
 	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
 	{
-		slot_div[i].setAttribute('function', 'range');
-		//all the change color thing are done in display.css
 		if(action == 'move')
 		{
 			slot_div[i].addEventListener('click', move_action, false);
@@ -24,6 +22,8 @@ function show_range(x, y, action)
 		{
 			slot_div[i].addEventListener('click', attack_action, false);
 		}
+		slot_div[i].setAttribute('function', 'range');
+		//all the change color thing are done in display.css
 	}
 }
 
