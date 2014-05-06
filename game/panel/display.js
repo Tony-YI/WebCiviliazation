@@ -32,7 +32,7 @@ function mousedown_1(e) //handel the right click on slot
 	e.stopPropagation();
 
 	var target = e.target;
-	if(target.getAttribute('class') == 'army')
+	if(target.getAttribute('class') != 'hexagon')
 	{
 		target = e.target.parentNode;
 	}
@@ -58,12 +58,10 @@ function mousedown_1(e) //handel the right click on slot
 
 			//check whether this slot belongs to the user
 			var belongs = check_slot_owner(e); //in /game/game_logic_client/check_functions.js
-			/*
 			if(!belongs)
 			{
 				break;
 			}
-			*/
 
 			//add eventListener
 			target.addEventListener('mouseup', mouseup_1, false);
@@ -269,8 +267,14 @@ function window_resize(e) //handel window resize
 /***********************************/
 function display_army_type(e) //TODO: check whether this slot has shuch army type
 {
-	var pos_x = e.target.getAttribute('x');
-	var pos_y = e.target.getAttribute('y');
+	var target = e.target;
+	if(target.getAttribute('class') != 'hexagon')
+	{
+		target = e.target.parentNode;
+	}
+
+	var pos_x = target.getAttribute('x');
+	var pos_y = target.getAttribute('y');
 
 	var hexagon = document.getElementsByClassName('hexagon');
 
@@ -637,8 +641,14 @@ function remove_manual()
 
 function display_hexagon_info(e)
 {
-	var pos_x = e.target.getAttribute('x');
-	var pos_y = e.target.getAttribute('y');
+	var target = e.target;
+	if(target.getAttribute('class') != 'hexagon')
+	{
+		target = e.target.parentNode;
+	}
+
+	var pos_x = target.getAttribute('x');
+	var pos_y = target.getAttribute('y');
 
 	var hexagon_info = document.getElementById('hexagon_info');
 	hexagon_info.innerHTML = 'x = ' + pos_x + '; y = ' + pos_y;
@@ -737,7 +747,7 @@ function addBoxes(list)
 		{
 			switch(parseInt(army_list[parseInt(list[i].army_id)].type_id))
 			{
-				case 0: //
+				case 1: //
 				hexagon[i].setAttribute('army_type', 'type_A');
 				var img = document.createElement('img');
 				img.setAttribute('src', '../../images/sword.png');
@@ -745,7 +755,7 @@ function addBoxes(list)
 				hexagon[i].appendChild(img);
 				break;
 
-				case 1: //
+				case 2: //
 				hexagon[i].setAttribute('army_type', 'type_B');
 				var img = document.createElement('img');
 				img.setAttribute('src', '../../images/archer.png');
@@ -753,7 +763,7 @@ function addBoxes(list)
 				hexagon[i].appendChild(img);
 				break;
 
-				case 2: //
+				case 3: //
 				hexagon[i].setAttribute('army_type', 'type_C');
 				var img = document.createElement('img');
 				img.setAttribute('src', '../../images/cavalry.png');

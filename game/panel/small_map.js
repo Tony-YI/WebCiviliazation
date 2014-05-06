@@ -25,8 +25,14 @@ function update_small_map() //update according to the global variable slot_list
 
 function small_map_dot(e)
 {
-	var pos_x = e.target.getAttribute('x');
-	var pos_y = e.target.getAttribute('y');
+	var target = e.target;
+	if(target.getAttribute('class') != 'hexagon')
+	{
+		target = e.target.parentNode;
+	}
+
+	var pos_x = target.getAttribute('x');
+	var pos_y = target.getAttribute('y');
 
 	var slot = document.getElementsByClassName('slot');
 	for(var i = 0; i < slot_num; i++)
