@@ -26,6 +26,8 @@
 		}
 		exit;
 	}
+
+	
 	if($_SERVER["HTTP_TYPE"] == "RESULT_LIST")
 	{
 		$entityBody = file_get_contents('php://input');
