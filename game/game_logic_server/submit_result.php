@@ -27,19 +27,16 @@
 		exit;
 	}
 
-	
+
 	if($_SERVER["HTTP_TYPE"] == "RESULT_LIST")
 	{
 		$entityBody = file_get_contents('php://input');
 		echo $entityBody."\n";
 		$request = json_decode($entityBody);
-		$result_list = $result[0];
-		echo var_dump($result_list)."\n";
-		foreach ($request as $value) {
-				echo var_dump($value)."\n";
-				foreach ($value as $ele) {
-					echo var_dump($ele)."\n";
-				}
-		}
+		//$result_list = $request[0];
+		$result_list_by_str = $request["result_list"];
+		echo var_dump($request[0])."\n";
+		//echo var_dump($result_list)."\n";
+		echo var_dump($result_list_by_str)."\n";
 	}
 ?>

@@ -1,12 +1,15 @@
 #buildArmy
 {
     display: none;
-    background: #E0FFFF;
+    background: white;
     position: fixed;
     top:33%;
     left: 35%;
     width: 30%;
     height: 30%;
+    min-width: 400px;
+    min-height: 210px;
+    border: 1px solid red;
 }
 .armytypeThumb
 {
@@ -18,7 +21,5 @@
 {
     width: 30%;
     height: 35%;
-    min-width: 400px;
-    min-height: 100px;
     display: inline-block;
 }
