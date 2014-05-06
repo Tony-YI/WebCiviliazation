@@ -662,7 +662,7 @@ function addBoxes(list)
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
-		hexagon[i].addEventListener('mousedown', mousedown_1, true);
+		hexagon[i].addEventListener('mousedown', mousedown_1, false);
 
 		switch(parseInt(list[i].type_id))
 		{
