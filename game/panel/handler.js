@@ -34,7 +34,7 @@ function show_range(x, y, action)
 			slot_div[i].addEventListener('mousedown', function(e){var slot_div = document.getElementsByClassName('hexagon');
 				for(var i = 0; i < slot_num; i++)
 				{
-					if(slot_div[i].getAttribute('function') == 'range')
+					if(slot_div[i].getAttribute('function') == 'norange')
 					{
 						slot_div[i].setAttribute('function', 'none');
 					}
