@@ -34,11 +34,13 @@ function build_army(armyType)
 			if(current_player.gold < 25 || current_player.wood < 15){
 				alert("You do not have enough Gold or Wood to build a sword army");
 			}
+			alert(armyType);
 			break;
 		case 3:
 			if(current_player.gold < 15 || current_player.wood < 25){
 				alert("You do not have enough Gold or Wood to build a sword army");
 			}
+			alert(armyType);
 			break;
 		default:
 			break;
