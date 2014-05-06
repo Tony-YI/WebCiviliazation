@@ -269,7 +269,7 @@ function set_function_attribute_1(hexagon, function_type)
 {
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
-	hexagon.innerHTML = function_type;
+	hexagon.firstChild.innerHTML = function_type;
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
@@ -286,7 +286,7 @@ function set_function_attribute_2(hexagon, function_type)
 {
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
-	hexagon.innerHTML = function_type;
+	hexagon.firstChild.innerHTML = function_type;
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
@@ -607,6 +607,10 @@ function addBoxes(list)
 		hexagon[i].setAttribute('x', x);
 		hexagon[i].setAttribute('y', y);
 
+		var img = document.createElement('img'); //store the img
+		img.setAttribute('class', 'army');
+		var p = document.createElement('p');
+
 		if(x == 0) //start hexagon
 		{
 			if(y % 2 == 0) //odd begin hexagon
@@ -662,26 +666,17 @@ function addBoxes(list)
 			{
 				case 1: //
 				hexagon[i].setAttribute('army_type', 'type_A');
-				var img = document.createElement('img');
 				img.setAttribute('src', '../../images/sword.png');
-				img.setAttribute('class', 'army');
-				hexagon[i].appendChild(img);
 				break;
 
 				case 2: //
 				hexagon[i].setAttribute('army_type', 'type_B');
-				var img = document.createElement('img');
 				img.setAttribute('src', '../../images/archer.png');
-				img.setAttribute('class', 'army');
-				hexagon[i].appendChild(img);
 				break;
 
 				case 3: //
 				hexagon[i].setAttribute('army_type', 'type_C');
-				var img = document.createElement('img');
 				img.setAttribute('src', '../../images/cavalry.png');
-				img.setAttribute('class', 'army');
-				hexagon[i].appendChild(img);
 				break;
 
 				default:
@@ -689,6 +684,9 @@ function addBoxes(list)
 				break;
 			}
 		}
+
+		hexagon[i].appendChild(p);
+		hexagon[i].appendChild(img);
 
 		if(list[i].owner && j == 0)
 		{
