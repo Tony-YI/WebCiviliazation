@@ -294,6 +294,15 @@ body
     border-top: 25px solid white;
 }
 
+img.army
+{
+    z-index: 101;
+    width: 80px;
+    height: 80px;
+    top: -15px;
+    position: relative;
+}
+
 #hexagon_normal
 {
     width: 100px;
