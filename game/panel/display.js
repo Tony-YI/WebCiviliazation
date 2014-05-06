@@ -279,7 +279,7 @@ function key_up(e)
 			document.getElementById('info').style.display = 'none';
 		}
 	}
-	if(key == 77) // q
+	if(key == 81) // q
 	{
 		console.log(key);
 		e.target.removeEventListener('keyup', key_up, false);
