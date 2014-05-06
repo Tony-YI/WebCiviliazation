@@ -270,15 +270,13 @@ function set_function_attribute_1(hexagon, function_type)
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
 	hexagon.firstChild.innerHTML = function_type;
+	hexagon.lastChild.style.display = 'none';
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
 	hexagon.removeEventListener('mouseup', mouseup_1, false);
 	hexagon.addEventListener('mousedown', mousedown_2, false);
-	if(function_type != 'cancel')
-	{
-		hexagon.addEventListener('mouseover', end_slidein, false);
-	}
+	hexagon.addEventListener('mouseover', end_slidein, false);
 	hexagon.setAttribute('class', 'manual');
 }
 
@@ -287,6 +285,7 @@ function set_function_attribute_2(hexagon, function_type)
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
 	hexagon.firstChild.innerHTML = function_type;
+	hexagon.lastChild.style.display = 'none';
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
 	hexagon.removeEventListener('mousedown', mousedown_1, false);
@@ -540,7 +539,8 @@ function remove_manual()
 			manual[0].style.opacity = '0.0';
 		}
 		manual[0].setAttribute('function', 'none');
-		manual[0].innerHTML = '';
+		manual[0].firstChild.innerHTML = '';
+		manual[0].lastChild.style.display = 'block';
 		manual[0].removeEventListener('mousedown', mousedown_1, false);
 		manual[0].removeEventListener('mousedown', mousedown_2, false);
 		manual[0].removeEventListener('mousedown', mousedown_3, false);
@@ -685,8 +685,7 @@ function addBoxes(list)
 			}
 		}
 
-		hexagon[i].appendChild(p);
-		hexagon[i].appendChild(img);
+		hexagon[i].appendChild(p); //frst DOM child
 
 		if(list[i].owner && j == 0)
 		{
@@ -711,8 +710,10 @@ function addBoxes(list)
 		{
 			var anchor = document.createElement('div');
 			anchor.setAttribute('id', 'anchor');
-			hexagon[i].appendChild(anchor);
+			hexagon[i].appendChild(anchor); //second DOM child
 		}
+
+		hexagon[i].appendChild(img); // last DOM child
 	}
 
 	if(user_id == user_1)
