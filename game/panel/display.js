@@ -574,7 +574,10 @@ function remove_manual()
 		manual[0].removeEventListener('mouseup', mouseup_1, false);
 		manual[0].removeEventListener('mouseup', mouseup_2, false);
 		manual[0].removeEventListener('mouseup', mouseup_3, false);
-		manual[0].addEventListener('mousedown', mousedown_1, false);
+		if(manual[0].getAttribute('slot_type') != 'unused_slot')
+		{
+			manual[0].addEventListener('mousedown', mousedown_1, false);
+		}
 		manual[0].setAttribute('class', 'hexagon');
 	}
 }
