@@ -28,6 +28,10 @@ function show_range(x, y, action)
 			slot_div[i].addEventListener('mousedown', attack_action, false);
 			slot_div[i].setAttribute('function', 'range');
 		}
+		else
+		{
+			slot_div[i].setAttribute('function', 'norange');
+		}
 		//all the change color thing are done in display.css
 	}
 }
