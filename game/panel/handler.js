@@ -120,18 +120,30 @@ function move_clicked_handler()
 		show_range(x+1, y+1, 'move');
 		if(army.ap == 2)
 		{
-			show_range(x-1, y-2, 'move');
-			show_range(x, y-2, 'move');
-			show_range(x+1, y-2, 'move');
+			if( y > 1)
+			{
+				show_range(x-1, y-2, 'move');
+				show_range(x, y-2, 'move');
+				show_range(x+1, y-2, 'move');
+			}
+			if(y < 20)
+			{
+				show_range(x-1, y+2, 'move');
+				show_range(x, y+2, 'move');
+				show_range(x+1, y+2, 'move');
+			}
+			if(x > 1)
+			{
+				show_range(x-2, y, 'move');
+			}
+			if(x < 20)
+			{
+				show_range(x+2, y-1, 'move');
+				show_range(x+2, y, 'move');
+				show_range(x+2, y+1, 'move');
+			}
 			show_range(x-1, y-1, 'move');
-			show_range(x+2, y-1, 'move');
-			show_range(x-2, y, 'move');
-			show_range(x+2, y, 'move');
 			show_range(x-1, y+1, 'move');
-			show_range(x+2, y+1, 'move');
-			show_range(x-1, y+2, 'move');
-			show_range(x, y+2, 'move');
-			show_range(x+1, y+2, 'move');
 		}
 	}
 	else
@@ -144,18 +156,30 @@ function move_clicked_handler()
 		show_range(x, y+1, 'move');
 		if(army.ap == 2)
 		{
-			show_range(x-1, y-2, 'move');
-			show_range(x, y-2, 'move');
-			show_range(x+1, y-2, 'move');
-			show_range(x-2, y-1, 'move');
+			if(y > 1)
+			{
+				show_range(x-1, y-2, 'move');
+				show_range(x, y-2, 'move');
+				show_range(x+1, y-2, 'move');
+			}
+			if(y < 20)
+			{
+				show_range(x-1, y+2, 'move');
+				show_range(x, y+2, 'move');
+				show_range(x+1, y+2, 'move');
+			}
+			if(x > 1)
+			{
+				show_range(x-2, y-1, 'move');
+				show_range(x-2, y, 'move');
+				show_range(x-2, y+1, 'move');
+			}
+			if(x < 20)
+			{
+				show_range(x+2, y, 'move');
+			}
 			show_range(x+1, y-1, 'move');
-			show_range(x-2, y, 'move');
-			show_range(x+2, y, 'move');
-			show_range(x-2, y+1, 'move');
 			show_range(x+1, y+1, 'move');
-			show_range(x-1, y+2, 'move');
-			show_range(x, y+2, 'move');
-			show_range(x+1, y+2, 'move');
 		}
 	}
 }
