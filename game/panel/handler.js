@@ -96,19 +96,6 @@ function defend_clicked_handler()
 
 }
 
-function build_clicked_hanlder()
-{
-	/*
-	1.show build list
-	2.wait for player's choice
-	3.check whether the player can build this kind of army (cost, position)
-	4.show the build result
-	5.add the result to the result list 
-	*/
-	var buildArmy = document.getElementById('buildArmy');
-	buildArmy.background='#abc123';
-	/*buildArmy.innerHTML = """"""*/
-}
 
 function surrender_clicked_handler()
 {
