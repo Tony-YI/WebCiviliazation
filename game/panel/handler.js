@@ -13,19 +13,21 @@ function show_range(x, y, action)
 	var user_id = parseInt(getCookie('CURRENT_USER')); //in game/game_logic_client/check_functions.js
 	//console.log('i: ' + i);
 	//console.log(slot_list[i]);
-	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
+	if(parseInt(slot_list[i].type_id) != 0) //not invalid  slot
 	{
 		var slot = getSlotByXY(x,y);
 		console.log(slot);
-		if(action == 'move')
+		console.log(slot_list[i].owner == null);
+		if(action == 'move' && slot_list[i].owner == "")
 		{
 			slot_div[i].addEventListener('mousedown', move_action, false);
+			slot_div[i].setAttribute('function', 'range');
 		}
-		else if(action == 'attack')
+		else if(action == 'attack' && slot_list[i].owner != null && parseInt(slot_list[i].owner) != user_id)
 		{
 			slot_div[i].addEventListener('mousedown', attack_action, false);
+			slot_div[i].setAttribute('function', 'range');
 		}
-		slot_div[i].setAttribute('function', 'range');
 		//all the change color thing are done in display.css
 	}
 }
