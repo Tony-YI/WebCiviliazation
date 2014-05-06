@@ -725,41 +725,35 @@ function addBoxes(list)
 			break;
 		}
 
-		if(list[i].army_id)
+		switch(parseInt(army_list[parseInt(list[i].army_id)].type_id))
 		{
-			for(var j = 0; j < army_list.length; j++)
-			{
-				switch(parseInt(army_list[j].type_id))
-				{
-					case 0: //
-					hexagon[i].setAttribute('army_type', 'type_A');
-					var img = document.createElement('img');
-					img.setAttribute('src', '../../images/sword.png');
-					img.setAttribute('class', 'army');
-					hexagon[i].appendChild(img);
-					break;
+			case 0: //
+			hexagon[i].setAttribute('army_type', 'type_A');
+			var img = document.createElement('img');
+			img.setAttribute('src', '../../images/sword.png');
+			img.setAttribute('class', 'army');
+			hexagon[i].appendChild(img);
+			break;
 
-					case 1: //
-					hexagon[i].setAttribute('army_type', 'type_B');
-					var img = document.createElement('img');
-					img.setAttribute('src', '../../images/archer.png');
-					img.setAttribute('class', 'army');
-					hexagon[i].appendChild(img);
-					break;
+			case 1: //
+			hexagon[i].setAttribute('army_type', 'type_B');
+			var img = document.createElement('img');
+			img.setAttribute('src', '../../images/archer.png');
+			img.setAttribute('class', 'army');
+			hexagon[i].appendChild(img);
+			break;
 
-					case 2: //
-					hexagon[i].setAttribute('army_type', 'type_C');
-					var img = document.createElement('img');
-					img.setAttribute('src', '../../images/cavalry.png');
-					img.setAttribute('class', 'army');
-					hexagon[i].appendChild(img);
-					break;
+			case 2: //
+			hexagon[i].setAttribute('army_type', 'type_C');
+			var img = document.createElement('img');
+			img.setAttribute('src', '../../images/cavalry.png');
+			img.setAttribute('class', 'army');
+			hexagon[i].appendChild(img);
+			break;
 
-					default:
-					hexagon[i].setAttribute('army_type', 'none');
-					break;
-				}
-			}
+			default:
+			hexagon[i].setAttribute('army_type', 'none');
+			break;
 		}
 
 		if(list[i].owner && j == 0)
