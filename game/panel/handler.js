@@ -68,7 +68,7 @@ function attack_clicked_handler()
 	}
 }
 
-function attack_action()
+function attack_action(e)
 {
 	/*
 	1. compute the result of the attack
