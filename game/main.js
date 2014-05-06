@@ -9,17 +9,6 @@ function Init()
 	Init_get_init_data();
 	display_init(slot_list);
 	init_small_map();
-	try
-	{
-		console.log("adding event listener to surrender button");
-		console.log(document.getElementById("surrender"));
-		console.log(document.getElementById("surrender").addEventListener);
-		document.getElementById("surrender").addEventListener("onclick","surrender_clicked_handler",false);
-	}
-	catch(e)
-	{
-		console.log("Init :" + e);
-	}
 }
 
 function Init_get_init_data()
