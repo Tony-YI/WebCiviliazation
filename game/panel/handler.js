@@ -83,7 +83,12 @@ function build_clicked_hanlder()
 	5.add the result to the result list 
 	*/
 	var buildArmy = document.getElementById('buildArmy');
+<<<<<<< HEAD
 	buildArmy.background='#abc123';
+=======
+	buildArmy.style.display= "block";
+
+>>>>>>> 7ccb27de9720396b4bbb41963f0cb9a2d4608377
 	/*buildArmy.innerHTML = """"""*/
 }
 

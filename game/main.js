@@ -9,6 +9,7 @@ function Init()
 	Init_get_init_data();
 	display_init(slot_list);
 	init_small_map();
+	document.getElementById("surrender").addEventListener("onclick","surrender_clicked_handler",false);
 }
 
 function Init_get_init_data()
