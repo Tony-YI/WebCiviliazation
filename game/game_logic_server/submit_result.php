@@ -26,12 +26,15 @@
 		}
 		exit;
 	}
+
+	
 	if($_SERVER["HTTP_TYPE"] == "RESULT_LIST")
 	{
 		$entityBody = file_get_contents('php://input');
 		echo $entityBody."\n";
 		$request = json_decode($entityBody);
-		echo var_dump($request)."\n";
+		$result_list = $result[0];
+		echo var_dump($result_list)."\n";
 		foreach ($request as $value) {
 				echo var_dump($value)."\n";
 				foreach ($value as $ele) {
