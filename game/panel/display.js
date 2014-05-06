@@ -29,7 +29,7 @@
 function mousedown_1(e) //handel the right click on slot
 {
 	e.preventDefault();
-	e.stopPropagation();
+	//e.stopPropagation();
 
 	console.log(e.target);
 
