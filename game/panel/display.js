@@ -456,13 +456,16 @@ function set_function_attribute(hexagon, function_type)
 {
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon[i].setAttribute('function', function_type);
-	hexagon[i].innerHTML = 'Attack';
+	hexagon[i].innerHTML = function_type;
 	hexagon[i].setAttribute('type', 'slidein');
 	hexagon[i].style.opacity = '1.0';
 	hexagon[i].removeEventListener('mousedown', mousedown_1, false);
 	hexagon[i].removeEventListener('mouseup', mouseup_1, false);
 	hexagon[i].addEventListener('mousedown', mousedown_3, false);
-	hexagon[i].addEventListener('mouseover', end_slidein, false);
+	if(function_type != 'back' && function_type != 'cancel')
+	{
+		hexagon[i].addEventListener('mouseover', end_slidein, false);
+	}
 	hexagon[i].setAttribute('class', 'manual');
 }
 
@@ -487,39 +490,17 @@ function display_manual(x, y, type)
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('function', 'move');
-				hexagon[i].innerHTML = 'Move';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_3, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute(hexagon[i], 'move');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
-				hexagon[i].setAttribute('function', 'defence');
-				hexagon[i].innerHTML = 'Defence';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_3, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute(hexagon[i], 'defence');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('function', 'back');
-				hexagon[i].innerHTML = 'Back';
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_3, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute(hexagon[i], 'back');
 				i--;
 			}
 		}
@@ -530,52 +511,22 @@ function display_manual(x, y, type)
 		{
 			if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
-				hexagon[i].setAttribute('function', 'attack');
-				hexagon[i].innerHTML = 'Attack';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_3, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute(hexagon[i], 'attack');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('function', 'move');
-				hexagon[i].innerHTML = 'Move';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_3, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute(hexagon[i], 'move');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
-				hexagon[i].setAttribute('function', 'defence');
-				hexagon[i].innerHTML = 'Defence';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_3, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute(hexagon[i], 'defence');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('function', 'back');
-				hexagon[i].innerHTML = 'Back';
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_3, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute(hexagon[i], 'back');
 				i--;
 			}
 		}
