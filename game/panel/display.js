@@ -289,18 +289,22 @@ function set_function_attribute_1(hexagon, function_type)
 	var army_name;
 	if(function_type == 'type_A')
 	{
-		army_name = 'Sword';
+		name = 'Sword';
 	}
 	else if(function_type == 'type_B')
 	{
-		army_name = 'Archer';
+		name = 'Archer';
 	}
 	else if(function_type == 'type_C')
 	{
-		army_name = 'Cavalry';
+		name = 'Cavalry';
+	}
+	else if(function_type == 'cancel')
+	{
+		name = 'Cavalry';
 	}
 	hexagon.setAttribute('function', function_type);
-	hexagon.firstChild.innerHTML = army_name;
+	hexagon.firstChild.innerHTML = name;
 	hexagon.lastChild.style.display = 'none';
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
@@ -313,9 +317,26 @@ function set_function_attribute_1(hexagon, function_type)
 
 function set_function_attribute_2(hexagon, function_type)
 {
+	var army_name;
+	if(function_type == 'attack')
+	{
+		name = 'Attack';
+	}
+	else if(function_type == 'move')
+	{
+		name = 'Move';
+	}
+	else if(function_type == 'defence')
+	{
+		name = 'Defence';
+	}
+	else if(function_type == 'back')
+	{
+		name = 'Back';
+	}
 	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
 	hexagon.setAttribute('function', function_type);
-	hexagon.firstChild.innerHTML = function_type;
+	hexagon.firstChild.innerHTML = name;
 	hexagon.lastChild.style.display = 'none';
 	hexagon.setAttribute('type', 'slidein');
 	hexagon.style.opacity = '1.0';
