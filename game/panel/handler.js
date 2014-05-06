@@ -85,19 +85,8 @@ function build_clicked_hanlder()
 	/*buildArmy.innerHTML = """"""*/
 }
 
-function surrender_clicked_handler(e)
+function surrender_clicked_handler()
 {
-	/*
-	This function handle the click event on the surrender button
-	*/
-	try
-	{
-		e.stopPropagation();
-		e.preventDefault();
-	}catch(error)
-	{
-		console.log("surrender_clicked_handler: " + error);
-	}
 	/*
 	This function handle the click event on the surrender button
 	*/
