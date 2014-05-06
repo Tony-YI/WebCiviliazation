@@ -31,7 +31,8 @@
 		$entityBody = file_get_contents('php://input');
 		echo $entityBody."\n";
 		$request = json_decode($entityBody);
-		echo var_dump($request)."\n";
+		$result_list = $result["result_list"];
+		echo var_dump($result_list)."\n";
 		foreach ($request as $value) {
 				echo var_dump($value)."\n";
 				foreach ($value as $ele) {
