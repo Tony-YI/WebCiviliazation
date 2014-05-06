@@ -12,6 +12,9 @@ var num_of_slot_in_row = 22
 
 function getSlotByXY(slot_x,slot_y)
 {
+	var tmp = slot_list[parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x)];
+	if(tmp == null || typeof(tmp) == "undefined" )
+		console.log("getSlotByXY: slot_x " + slot_x + " , slot_y " + slot_y);
 	return slot_list[parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x)];
 } 
 
