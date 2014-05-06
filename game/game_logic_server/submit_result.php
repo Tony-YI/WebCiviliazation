@@ -31,24 +31,14 @@
 	{
 		$entityBody = file_get_contents('php://input');
 		echo $entityBody."\n";
-		$request = json_decode($entityBody);
-		try
-		{
-			$result_list = $request['result_list'];
+		$request = json_decode($entityBody,TRUE);
+		$result_list = $request['result_list'];
+		foreach ($result_list as $value) {
+			echo "{";
+			foreach ($value as $key => $ele) {
+					echo $key.":"."$ele".",";
+					}
+			echo "}";
 		}
-		catch (Exception $e)
-		{
-			echo 'Caught exception: ',  $e->getMessage(), "\n";
-		}
-		
-		try
-		{
-			echo var_dump($result_list)."\n";
-		}
-		catch (Exception $e)
-		{
-			echo 'Caught exception: ',  $e->getMessage(), "\n";
-		}
-			
 	}
 ?>

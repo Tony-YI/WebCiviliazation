@@ -11,8 +11,8 @@ function show_range(x, y, action)
 
 	var i = parseInt(y) * line_num + parseInt(x);//line_nume: global variable in small_map.js
 	var user_id = parseInt(getCookie('CURRENT_USER')); //in game/game_logic_client/check_functions.js
-	console.log('i: ' + i);
-	console.log(slot_list[i]);
+	//console.log('i: ' + i);
+	//console.log(slot_list[i]);
 	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
 	{
 		if(action == 'move')
@@ -57,6 +57,8 @@ function attack_clicked_handler()
 	*/
 	var x = parseInt(latest_slot.getAttribute('x'));
 	var y = parseInt(latest_slot.getAttribute('y'));
+	var slot = getSlotByXY(x, y);
+	var army = getArmyById(slot.army_id);
 	if(y%2 == 1)
 	{
 		show_range(x, y-1, 'attack');
@@ -65,6 +67,33 @@ function attack_clicked_handler()
 		show_range(x+1, y, 'attack');
 		show_range(x, y+1, 'attack');
 		show_range(x+1, y+1, 'attack');
+		if(army.typename == 'archor')
+		{
+			if( y > 1)
+			{
+				show_range(x-1, y-2, 'attack');
+				show_range(x, y-2, 'attack');
+				show_range(x+1, y-2, 'attack');
+			}
+			if(y < 20)
+			{
+				show_range(x-1, y+2, 'attack');
+				show_range(x, y+2, 'attack');
+				show_range(x+1, y+2, 'attack');
+			}
+			if(x > 1)
+			{
+				show_range(x-2, y, 'attack');
+			}
+			if(x < 20)
+			{
+				show_range(x+2, y-1, 'attack');
+				show_range(x+2, y, 'attack');
+				show_range(x+2, y+1, 'attack');
+			}
+			show_range(x-1, y-1, 'attack');
+			show_range(x-1, y+1, 'attack');
+		}
 	}
 	else
 	{
@@ -74,6 +103,33 @@ function attack_clicked_handler()
 		show_range(x+1, y, 'attack');
 		show_range(x-1, y+1, 'attack');
 		show_range(x, y+1, 'attack');
+		if(army.typename == 'archor')
+		{
+			if(y > 1)
+			{
+				show_range(x-1, y-2, 'attack');
+				show_range(x, y-2, 'attack');
+				show_range(x+1, y-2, 'attack');
+			}
+			if(y < 20)
+			{
+				show_range(x-1, y+2, 'attack');
+				show_range(x, y+2, 'attack');
+				show_range(x+1, y+2, 'attack');
+			}
+			if(x > 1)
+			{
+				show_range(x-2, y-1, 'attack');
+				show_range(x-2, y, 'attack');
+				show_range(x-2, y+1, 'attack');
+			}
+			if(x < 20)
+			{
+				show_range(x+2, y, 'attack');
+			}
+			show_range(x+1, y-1, 'attack');
+			show_range(x+1, y+1, 'attack');
+		}
 	}
 }
 
@@ -109,7 +165,7 @@ function move_clicked_handler()
 	var y = parseInt(latest_slot.getAttribute('y'));
 	var slot = getSlotByXY(x, y);
 	var army = getArmyById(slot.army_id);
-	console.log(army);
+	//console.log(army);
 	if(y%2 == 1)
 	{
 		show_range(x, y-1, 'move');
