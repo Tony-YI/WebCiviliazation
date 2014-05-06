@@ -730,6 +730,10 @@ function addBoxes(list)
 			j++;
 			user_1 = list[i].owner;
 			hexagon[i].style.background = user_1_color;
+			
+			var anchor = document.createElement('div');
+			anchor.setAttribute('id', 'anchor');
+			hexagon[i].appendChild(anchor);
 		}
 		else if(list[i].owner && j == 1)
 		{
