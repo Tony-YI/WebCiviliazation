@@ -45,23 +45,17 @@ function IsMyTurn()
 	else 
 		return false;
 }
-function player_add_action_to_form(actions)
-{
 
-}
-//This is the function to get the Round result from the server
-function player_get_result()
+function query_turn()
 {
-
-}
-//This is the right click handler for every slot
-function slot_rightclick_handler()
-{
+	//If it is current player's turn, then do not query the server
+	if(IsMyTurn())
+		return ;
+	//If it is not current player's turn, send query to the server
 
 }
 
-//This is the left click handler for every slot
-function slot_leftclick_handler()
+function new_round()
 {
-
+	//this function will have the army recover some HP 
 }

@@ -28,6 +28,7 @@
 	<script type="text/javascript" src="./game_logic_client/player.js"></script>
 	<script type="text/javascript" src="./game_logic_client/army.js"></script>
 	<script type="text/javascript" src="./game_logic_client/slot.js"></script>
+	<script type="text/javascript" src="./game_logic_client/Result_list.js"></script>
 	<script type="text/javascript" src="./panel/handler.js"></script>
 	<script type="text/javascript" src="./panel/build_army.js"></script>
 	<script type="text/javascript" src="./main.js"></script>
@@ -52,10 +53,20 @@
     		</div>
 	</div>
 	<div id="buildArmy">
-		<div id="armytypeId">
-			<img class="armytypeThumb" src="../../images/sword.png" style="position:left">
-			<img class="armytypeThumb" src="../../images/archer.png" style="position:middle">
-			<img class="armytypeThumb" src="../../images/cavalry.png" style="position:right">
+		<div class="armytypeId" id="sword">
+			<img class="armytypeThumb" src="../../images/sword.png">
+			<br/>
+			<button id="sword" type="submit">Build Sword</button>
+		</div>
+		<div class="armytypeId" id="archer">
+			<img class="armytypeThumb" src="../../images/archer.png">
+			<br/>
+			<button id="ancher" type="submit">Build Ancher</button>
+		</div>
+		<div class="armytypeId" id="cavalry">
+			<img class="armytypeThumb" src="../../images/cavalry.png">
+			<br/>
+			<button id="cavalry" type="submit">Build Cavalry</button>
 		</div>
 	</div>
 </body>

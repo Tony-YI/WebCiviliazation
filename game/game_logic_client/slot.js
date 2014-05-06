@@ -9,6 +9,7 @@ function Slot(slot_x,slot_y)
 	this.owner = null;
 }
 var num_of_slot_in_row = 22
+
 function getSlotByXY(slot_x,slot_y)
 {
 	return slot_list[parseInt(slot_y) * num_of_slot_in_row + parseInt(slot_x)];
