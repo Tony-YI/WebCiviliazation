@@ -16,11 +16,11 @@ function show_range(x, y, action)
 	{
 		if(action == 'move')
 		{
-			slot_div[i].addEventListener('click', move_action, false);
+			slot_div[i].addEventListener('mousedown', move_action, false);
 		}
 		else if(action == 'attack')
 		{
-			slot_div[i].addEventListener('click', attack_action, false);
+			slot_div[i].addEventListener('mousedown', attack_action, false);
 		}
 		slot_div[i].setAttribute('function', 'range');
 		//all the change color thing are done in display.css
@@ -37,11 +37,11 @@ function clear_range(action)
 			slot_div[i].setAttribute('function', 'none');
 			if(action == 'move')
 			{
-				slot_div[i].removeEventListener('click', move_action, false);
+				slot_div[i].removeEventListener('mousedown', move_action, false);
 			}
 			else if(action == 'attack')
 			{
-				slot_div[i].removeEventListener('click', attack_action, false);
+				slot_div[i].removeEventListener('mousedown', attack_action, false);
 			}
 		}
 	}
