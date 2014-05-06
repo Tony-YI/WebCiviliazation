@@ -15,6 +15,8 @@ function show_range(x, y, action)
 	//console.log(slot_list[i]);
 	if(parseInt(slot_list[i].type_id) != 0 && parseInt(slot_list[i].owner) != user_id) //not unused and not your own city
 	{
+		var slot = getSlotByXY(x,y);
+		console.log(slot);
 		if(action == 'move')
 		{
 			slot_div[i].addEventListener('mousedown', move_action, false);
