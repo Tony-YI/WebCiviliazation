@@ -15,3 +15,8 @@ function build_clicked_handler()
 
     /*buildArmy.innerHTML = """"""*/
 }
+function build_clicked_Exit()
+{
+	var buildArmy = document.getElementById('buildArmy');
+    	buildArmy.style.display= "none";
+}
