@@ -731,18 +731,24 @@ function addBoxes(list)
 			hexagon[i].setAttribute('army_type', 'type_A');
 			var img = document.createElement('img');
 			img.setAttribute('src', '../../images/sword.png');
-			img.style.zIndex = '104';
-			img.style.width = '100px';
-			img.style.height = '100px';
+			img.setAttribute('class', 'army');
 			hexagon[i].appendChild(img);
 			break;
 
 			case 2: //
 			hexagon[i].setAttribute('army_type', 'type_B');
+			var img = document.createElement('img');
+			img.setAttribute('src', '../../images/archer.png');
+			img.setAttribute('class', 'army');
+			hexagon[i].appendChild(img);
 			break;
 
 			case 3: //
 			hexagon[i].setAttribute('army_type', 'type_C');
+			var img = document.createElement('img');
+			img.setAttribute('src', '../../images/cavalry.png');
+			img.setAttribute('class', 'army');
+			hexagon[i].appendChild(img);
 			break;
 
 			default:

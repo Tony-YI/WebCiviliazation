@@ -307,6 +307,14 @@ body
     background-image: url("../../images/cavalry.png");
 }
 
+.army img
+{
+    z-index: 105;
+    width: 100px;
+    height: 100px;
+    top: -25px;
+}
+
 #hexagon_normal
 {
     width: 100px;
