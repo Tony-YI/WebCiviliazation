@@ -53,7 +53,6 @@ function room_get_list()
 				console.log('Your game has started!');
 				document.location.href = '../game/game.html';
 				return false;
-
 			}
 		}
 	};
