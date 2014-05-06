@@ -3,11 +3,6 @@
 /***********************************/
 function check_slot_owner(e) //check the slot owner
 {
-	if(e.target.getAttribute('class') != 'hexagon')
-	{
-		return false;
-	}
-
 	//TODO: check whether this slot belongs to the user
 	var user_id = getCookie('CURRENT_USER'); //in game/game_logic_client/check_functions.js
 
