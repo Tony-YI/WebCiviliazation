@@ -8,7 +8,12 @@ function Init()
 	//send request to get the initilization data
 	Init_get_init_data();
 	display_init(slot_list);
+
+    document.getElementById('anchor').focus();
+
 	init_small_map();
+
+	document.getElementById("surrender").addEventListener("click","surrender_clicked_handler",false);
 }
 
 function Init_get_init_data()
@@ -30,15 +35,19 @@ function Init_get_init_data()
 	}
 	current_player.show_info();
 	init_army_list(response.army);
-	console.log("Things done for armys");
+	//console.log("Things done for armys");
 	
 	init_slot_list(response.slots);
-	console.log("Things done for slots");
+	//console.log("Things done for slots");
 }
-//This is the function to add 'ACTIONS' to the form that is going to be processed on the server side
+
+//This function returns true or false 
 function IsMyTurn()
 {
-	return current_player["turn"];
+	if(current_player["turn"] == "1")
+		return true;
+	else 
+		return false;
 }
 function player_add_action_to_form(actions)
 {
