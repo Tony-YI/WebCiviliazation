@@ -13,6 +13,13 @@ function getArmyById(army_id)
 {
 	for(var count = 0;count < window.army_list.length;count++)
 	{
+		try{
+			window.army_list[count].army_id == army_id
+		}
+		catch(e)
+		{
+			console.log("getArmyById: " + e);
+		}
 		if(window.army_list[count].army_id == army_id)
 			return window.army_list[count];
 	}
@@ -26,20 +33,23 @@ function Army(army_id,type_id,army_owner)
 	this.type_id = type_id;
 	if(type_id == "1")
 	{
+		//sword man
 		this.hp = 5;
 		this.ap = 1;
 		this.attack = 3;
 	}
 	else if(type_id == "2")
 	{
+		//calvery
 		this.hp = 3;
 		this.ap = 2;
 		this.attack = 4;
 	}
 	else if(type_id == "3")
 	{
+		//archer
 		this.hp = 2;
-		this.ap = 2;
+		this.ap = 1;
 		this.attack = 1;
 	}
 	this.position_x = null;
