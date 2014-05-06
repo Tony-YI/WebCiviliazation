@@ -1,5 +1,8 @@
 //This file contains handlers for clicking Attack, move, and defend 
 //[HINT] variable 'latest_slot' points to the DOM that is the grand-parent of all these actions
+var current_usr_id = $.cookie("CURRENT_USER");
+if(current_usr_id)
+	console.log("CURRENT_USER is " + current_usr_id);
 
 function show_range(x, y)
 {
@@ -54,9 +57,6 @@ function move_clicked_handler()
 	1. show the move range
 	2. attach move event listener (move_action() to the div) 
 	*/
-	console.log(latest_slot);
-	console.log(latest_slot.x);
-	console.log(latest_slot.y);
 }
 
 function move_action()
@@ -83,50 +83,16 @@ function build_clicked_hanlder()
 	5.add the result to the result list 
 	*/
 	var buildArmy = document.getElementById('buildArmy');
-<<<<<<< HEAD
 	buildArmy.background='#abc123';
-=======
-	buildArmy.style.background = "#E0FFFF";
-	buildArmy.style.zIndex = "200";
->>>>>>> 83d8b6e76ff4cb9f2e669ea0dc6b9f2dc99feb04
 	/*buildArmy.innerHTML = """"""*/
 }
 
-function surrender_clicked_handler(e)
+function surrender_clicked_handler()
 {
 	/*
 	This function handle the click event on the surrender button
 	*/
-	try
-	{
-		e.stopPropagation();
-		e.preventDefault();
-	}catch(error)
-	{
-		console.log("surrender_clicked_handler: " + error);
-	}
-	/*
-	This function handle the click event on the surrender button
-	*/
-	/*
-	if(!IsMyTurn())
-	{
-		console.log("Is not your turn");	
-		return;
-	}
-	*/
-	var choice = confirm("Are you sure to surrender?");
-	if(choice)
-	{
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
-		xhr.setRequestHeader("TYPE","SURRENDER");
-		console.log("The server replies: " + xhr.responseText);
-	}
-	else
-	{
-		return ;
-	}
+
 }
 
 function nextround_clicked_handler()
