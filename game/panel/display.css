@@ -294,7 +294,7 @@ body
     border-top: 25px solid white;
 }
 
-.army img
+img.army
 {
     z-index: 105;
     width: 100px;
