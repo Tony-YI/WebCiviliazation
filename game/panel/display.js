@@ -31,6 +31,11 @@ function mousedown_1(e) //handel the right click on slot
 	e.preventDefault();
 	e.stopPropagation();
 
+	if(e.target.getAttribute('class') == 'army')
+	{
+		e.target = e.target.parentNode;
+	}
+
 	switch(e.which)
 	{
 		case 1:
@@ -696,7 +701,7 @@ function addBoxes(list)
 			hexagon[i].setAttribute('id', 'hexagon_normal');
 		}
 
-		hexagon[i].addEventListener('mousedown', mousedown_1, false);
+		hexagon[i].addEventListener('mousedown', mousedown_1, true);
 
 		switch(parseInt(list[i].type_id))
 		{
