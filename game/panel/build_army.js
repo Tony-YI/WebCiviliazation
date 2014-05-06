@@ -10,7 +10,7 @@ function build_clicked_handler()
     var buildArmy = document.getElementById('buildArmy');
     //alert(buildArmy);
     buildArmy.style.display= "inline-block";
-
+    buildArmy.style.zIndex= "200";
 
 
     /*buildArmy.innerHTML = """"""*/

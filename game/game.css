@@ -18,5 +18,7 @@
 {
     width: 30%;
     height: 35%;
+    min-width: 400px;
+    min-height: 100px;
     display: inline-block;
 }
