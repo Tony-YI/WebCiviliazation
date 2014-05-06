@@ -294,17 +294,12 @@ body
     border-top: 25px solid white;
 }
 
-.hexagon[army_type="type_A"]
+.army img
 {
-    background-image: url("../../images/sword.png");
-}
-.hexagon[army_type="type_B"]
-{
-    background-image: url("../../images/archer.png");
-}
-.hexagon[army_type="type_C"]
-{
-    background-image: url("../../images/cavalry.png");
+    z-index: 105;
+    width: 100px;
+    height: 100px;
+    top: -25px;
 }
 
 #hexagon_normal
