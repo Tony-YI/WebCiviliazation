@@ -27,6 +27,12 @@ function check_slot_owner(e) //check the slot owner
 
 function check_army_type(e) //check the army type of this slot
 {
+	var target = e.target;
+	if(target.getAttribute('class')) //!= 'hexagon')
+	{
+		target = e.target.parentNode;
+	}
+
 	return true;
 }
 

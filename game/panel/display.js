@@ -641,8 +641,14 @@ function remove_manual()
 
 function display_hexagon_info(e)
 {
-	var pos_x = e.target.getAttribute('x');
-	var pos_y = e.target.getAttribute('y');
+	var target = e.target;
+	if(target.getAttribute('class') != 'hexagon')
+	{
+		target = e.target.parentNode;
+	}
+
+	var pos_x = target.getAttribute('x');
+	var pos_y = target.getAttribute('y');
 
 	var hexagon_info = document.getElementById('hexagon_info');
 	hexagon_info.innerHTML = 'x = ' + pos_x + '; y = ' + pos_y;
