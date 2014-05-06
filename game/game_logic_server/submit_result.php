@@ -33,10 +33,10 @@
 		$entityBody = file_get_contents('php://input');
 		echo $entityBody."\n";
 		$request = json_decode($entityBody);
-		$result_list = $request[0];
+		//$result_list = $request[0];
 		$result_list_by_str = $request["result_list"];
 		echo var_dump($request[0])."\n";
-		echo var_dump($result_list)."\n";
+		//echo var_dump($result_list)."\n";
 		echo var_dump($result_list_by_str)."\n";
 	}
 ?>
