@@ -81,12 +81,38 @@ function build_clicked_hanlder()
 	*/
 }
 
-function surrender_clicked_handler()
+function surrender_clicked_handler(e)
 {
+	try
+	{
+		e.stopPropagation();
+		e.preventDefault();
+	}catch(e)
+	{
+		console.log("surrender_clicked_handler: " + e);
+	}
 	/*
 	This function handle the click event on the surrender button
 	*/
-
+	/*
+	if(!IsMyTurn())
+	{
+		console.log("Is not your turn");	
+		return;
+	}
+	*/
+	var choice = confirm("Are you sure to surrender?");
+	if(choice)
+	{
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
+		xhr.setRequestHeader("TYPE","SURRENDER");
+		console.log("The server replies: " + xhr.responseText);
+	}
+	else
+	{
+		return ;
+	}
 }
 
 function nextround_clicked_handler()
