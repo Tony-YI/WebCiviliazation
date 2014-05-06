@@ -69,6 +69,8 @@ SQL_STATEMENT;
 			player_name CHAR(32),
 			player_gold INT,
 			player_wood INT,
+			player_status INT,
+			player_turn INT,
 			FOREIGN KEY(player_id) REFERENCES User(user_id)
 		)
 SQL_STATEMENT;

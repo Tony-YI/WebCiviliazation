@@ -31,12 +31,13 @@ function init_slot_list(slots)
 			army_object.position_y = slot.slot_y;
 			//console.log(slot);
 		}
-		/*
-		if(slot.owner_id != "")
+		if(slot.owner_id != "" && slot.type_id == 4) 
 		{
 			console.log(slot);
+			var player_object = getPlayerByID(slot.owner_id);	
+			player_object.capital_x = slot.slot_x;
+			player_object.capital_y = slot.slot_y;
 		}
-		*/
 		//console.log("getting slotowner");
 		slot.owner = slots[count].slot_owner;
 		//console.log("pushing into the array");

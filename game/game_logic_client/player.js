@@ -3,13 +3,22 @@
 /*
 	1. Player
 */
-
+function getPlayerByID(pid)
+{
+	for(var count = 0; count < player_list.length;count++)
+	{
+		if(player_list[count].pid == pid)
+			return player_list[count];
+	}
+}
 function player(player_id, playername,gold,wood)
 {
 	this.pid = player_id;
 	this.pname = playername;
 	this.gold = gold;
 	this.wood = wood;
+	this.capital_x = null;
+	this.capital_y = null;
 }
 
 player.prototype.show_info = function()

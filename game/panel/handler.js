@@ -80,3 +80,18 @@ function build_clicked_hanlder()
 	5.add the result to the result list 
 	*/
 }
+
+function surrender_clicked_handler()
+{
+	/*
+	This function handle the click event on the surrender button
+	*/
+
+}
+
+function nextround_clicked_handler()
+{
+	/*
+	This function handle the click event on the next round button
+	*/
+}
