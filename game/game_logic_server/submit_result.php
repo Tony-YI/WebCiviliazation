@@ -24,6 +24,15 @@
 			echo "{\"status\":\"success\",";
 			echo "\"result\":\"surrender\"}";
 		}
-
+		exit;
+	}
+	if($_SERVER["HTTP_TYPE"] == "RESULT_LIST")
+	{
+		$entityBody = file_get_contents('php://input');
+		echo $entityBody;
+		$result_list = json_decode($entityBody);
+		foreach ($result_list as $value) {
+			echo $value;
+		}
 	}
 ?>

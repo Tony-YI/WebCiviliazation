@@ -265,6 +265,40 @@ function window_resize(e) //handel window resize
 /***********************************/
 /*********display functions*********/
 /***********************************/
+function set_function_attribute_1(hexagon, function_type)
+{
+	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
+	hexagon.setAttribute('function', function_type);
+	hexagon.innerHTML = function_type;
+	hexagon.setAttribute('type', 'slidein');
+	hexagon.style.opacity = '1.0';
+	hexagon.removeEventListener('mousedown', mousedown_1, false);
+	hexagon.removeEventListener('mouseup', mouseup_1, false);
+	hexagon.addEventListener('mousedown', mousedown_2, false);
+	if(function_type != 'cancel')
+	{
+		hexagon.addEventListener('mouseover', end_slidein, false);
+	}
+	hexagon.setAttribute('class', 'manual');
+}
+
+function set_function_attribute_2(hexagon, function_type)
+{
+	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
+	hexagon.setAttribute('function', function_type);
+	hexagon.innerHTML = function_type;
+	hexagon.setAttribute('type', 'slidein');
+	hexagon.style.opacity = '1.0';
+	hexagon.removeEventListener('mousedown', mousedown_1, false);
+	hexagon.removeEventListener('mouseup', mouseup_1, false);
+	hexagon.addEventListener('mousedown', mousedown_3, false);
+	if(function_type != 'back')
+	{
+		hexagon.addEventListener('mouseover', end_slidein, false);
+	}
+	hexagon.setAttribute('class', 'manual');
+}
+
 function display_army_type(e) //TODO: check whether this slot has shuch army type
 {
 	var target = e.target;
@@ -285,52 +319,22 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 			if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
 				//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
-				hexagon[i].setAttribute('function', 'type_A');
-				hexagon[i].innerHTML = 'type_A';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute_1(hexagon[i], 'type_A');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('function', 'type_B');
-				hexagon[i].innerHTML = 'type_B';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute_1(hexagon[i], 'type_B');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
-				hexagon[i].setAttribute('function', 'type_C');
-				hexagon[i].innerHTML = 'type_C';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute_1(hexagon[i], 'type_C');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('function', 'cancel');
-				hexagon[i].innerHTML = 'Cancel';
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute_1(hexagon[i], 'cancel');
 				i--;
 			}
 		}
@@ -341,52 +345,22 @@ function display_army_type(e) //TODO: check whether this slot has shuch army typ
 		{
 			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
-				hexagon[i].setAttribute('function', 'type_A');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].innerHTML = 'type_A';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute_1(hexagon[i], 'type_A');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) - 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('function', 'type_B');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].innerHTML = 'type_B';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute_1(hexagon[i], 'type_B');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
-				hexagon[i].setAttribute('function', 'type_C');
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].setAttribute('type', 'slidein');
-				hexagon[i].innerHTML = 'type_C';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].addEventListener('mouseover', end_slidein, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute_1(hexagon[i], 'type_C');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
 			{
-				hexagon[i].setAttribute('function', 'cancel');
-				hexagon[i].innerHTML = 'Cancel';
-				hexagon[i].style.opacity = '1.0';
-				hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-				hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-				hexagon[i].addEventListener('mousedown', mousedown_2, false);
-				hexagon[i].setAttribute('class', 'manual');
+				set_function_attribute_1(hexagon[i], 'cancel');
 				i--;
 			}
 		}
@@ -452,23 +426,6 @@ function select_army_type(e)
 	}
 }
 
-function set_function_attribute(hexagon, function_type)
-{
-	//must add the attribute 'function' befor change the class name, other with hexagon[i] will be the next hexagon
-	hexagon[i].setAttribute('function', function_type);
-	hexagon[i].innerHTML = function_type;
-	hexagon[i].setAttribute('type', 'slidein');
-	hexagon[i].style.opacity = '1.0';
-	hexagon[i].removeEventListener('mousedown', mousedown_1, false);
-	hexagon[i].removeEventListener('mouseup', mouseup_1, false);
-	hexagon[i].addEventListener('mousedown', mousedown_3, false);
-	if(function_type != 'back' && function_type != 'cancel')
-	{
-		hexagon[i].addEventListener('mouseover', end_slidein, false);
-	}
-	hexagon[i].setAttribute('class', 'manual');
-}
-
 function display_manual(x, y, type)
 {
 	//var pos_x = e.target.getAttribute('x');
@@ -485,22 +442,22 @@ function display_manual(x, y, type)
 		{
 			if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
-				set_function_attribute(hexagon[i], 'attack');
+				set_function_attribute_2(hexagon[i], 'attack');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
-				set_function_attribute(hexagon[i], 'move');
+				set_function_attribute_2(hexagon[i], 'move');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
-				set_function_attribute(hexagon[i], 'defence');
+				set_function_attribute_2(hexagon[i], 'defence');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
 			{
-				set_function_attribute(hexagon[i], 'back');
+				set_function_attribute_2(hexagon[i], 'back');
 				i--;
 			}
 		}
@@ -511,22 +468,22 @@ function display_manual(x, y, type)
 		{
 			if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) - 1)
 			{
-				set_function_attribute(hexagon[i], 'attack');
+				set_function_attribute_2(hexagon[i], 'attack');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == pos_y)
 			{
-				set_function_attribute(hexagon[i], 'move');
+				set_function_attribute_2(hexagon[i], 'move');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == parseInt(pos_x) + 1 && hexagon[i].getAttribute('y') == parseInt(pos_y) + 1)
 			{
-				set_function_attribute(hexagon[i], 'defence');
+				set_function_attribute_2(hexagon[i], 'defence');
 				i--;
 			}
 			else if(hexagon[i].getAttribute('x') == pos_x && hexagon[i].getAttribute('y') == pos_y)
 			{
-				set_function_attribute(hexagon[i], 'back');
+				set_function_attribute_2(hexagon[i], 'back');
 				i--;
 			}
 		}
@@ -598,7 +555,7 @@ function remove_manual()
 function display_hexagon_info(e)
 {
 	var target = e.target;
-	if(target.getAttribute('class') != 'hexagon')
+	if(target.getAttribute('class') != 'hexagon' && target.getAttribute('class') != 'manual')
 	{
 		target = e.target.parentNode;
 	}
@@ -785,6 +742,13 @@ function addBoxes(list)
 			box.appendChild(hexagon[new_line_num * i + j]);
 		}
 	}
+}
+
+function go_to_home()
+{
+	document.getElementById('anchor').scrollIntoView();
+	document.getElementById('anchor').innerHTML = 'hehehehe';
+	alert('hehe');
 }
 
 function update_slot() //TODO: update the slot every movement
