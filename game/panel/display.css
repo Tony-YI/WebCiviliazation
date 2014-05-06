@@ -296,10 +296,11 @@ body
 
 img.army
 {
-    z-index: 105;
-    width: 100px;
-    height: 100px;
-    top: -25px;
+    z-index: 101;
+    width: 80px;
+    height: 80px;
+    top: -15px;
+    position: relative;
 }
 
 #hexagon_normal
