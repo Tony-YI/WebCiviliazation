@@ -30,8 +30,8 @@ function show_range(x, y, action)
 		}
 		else
 		{
-			slot_div[i].setAttribute('function', 'norange');
 			slot_div[i].addEventListener('mousedown', invalid_action, false);
+			slot_div[i].setAttribute('function', 'norange');
 		}
 		//all the change color thing are done in display.css
 	}
@@ -42,10 +42,8 @@ function clear_range(action)
 	var slot_div = document.getElementsByClassName('hexagon');
 	for(var i = 0; i < slot_num; i++) //slot_num: global variable in small_map.js
 	{
-		console.log(slot_div[i]);
 		if(slot_div[i].getAttribute('function') == 'range')
 		{
-			slot_div[i].setAttribute('function', 'none');
 			if(action == 'move')
 			{
 				slot_div[i].removeEventListener('mousedown', valid_move_action, false);
@@ -54,8 +52,12 @@ function clear_range(action)
 			{
 				slot_div[i].removeEventListener('mousedown', valid_attack_action, false);
 			}
+		}
+		else if(slot_div[i].getAttribute('function') == 'norange')
+		{
 			slot_div[i].removeEventListener('mousedown', invalid_action, false);
 		}
+		slot_div[i].setAttribute('function', 'none');
 	}
 }
 
@@ -283,14 +285,6 @@ function valid_move_action(e)
 function invalid_action(e)
 {
 	console.log('Invalid action');
-	var slot_div = document.getElementsByClassName('hexagon');
-	for(var i = 0; i < slot_num; i++) //slot_num: global variable in small_map.js
-	{
-		if(slot_div[i].getAttribute('function') == 'norange')
-		{
-			slot_div[i].setAttribute('function', 'none');
-		}
-	}
 	clear_range();
 }
 function defend_clicked_handler()
