@@ -5,6 +5,7 @@
 	$user_id = $_COOKIE["CURRENT_USER"];
 	$game_id = $_COOKIE["IN_GAME"];
 
+	$latest_result_id = $_SERVER["HTTP_MAX_"]
 	if(!check_cookie($db))
 	{
 		echo "{\"status\":\"error\",";
@@ -18,8 +19,7 @@
 
 	echo "{\"active_player\":\"$row[0]\"";
 
-	/*
-	show result list here
-	*/
+	/*show result list here*/
+
 	echo "}";
 ?>
