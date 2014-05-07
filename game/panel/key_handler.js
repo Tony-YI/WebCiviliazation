@@ -58,7 +58,7 @@ function key_up(e)
 		}
 		else
 		{
-			document.getElementById('info').style.display = 'none';
+			document.getElementById('help').style.display = 'none';
 		}
 	}
 }
