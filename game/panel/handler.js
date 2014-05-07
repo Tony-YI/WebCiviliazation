@@ -322,5 +322,6 @@ function nextround_clicked_handler()
 	This function handle the click event on the next round button
 	*/
 	console.log("nextround_clicked_handler: sending the result list to the server");
-	send_result_list_to_server()
+	send_result_list_to_server();
+	update_result_list_div();
 }
