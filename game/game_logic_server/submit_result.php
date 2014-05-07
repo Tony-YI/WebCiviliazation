@@ -79,6 +79,6 @@
 				echo "\"error1\":\"invalid action_type\"";
 			}
 		}
-		//nextTurn($db,$game_id);
+		nextTurn($db,$game_id);
 	}
 ?>
