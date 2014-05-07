@@ -84,15 +84,15 @@ JSON_ERROR;
 	echo "\"slots\":[";
 	for($count = 0;$count < $slot_num;$count++)
 	{
-		$slot_row = mysqli_fetch_row($slotlist_result);
-		$slot_x = $slot_row[0];
-		$slot_y = $slot_row[1];
-		$slot_owner = $slot_row[2];
-		$slot_type = $slot_row[3];
-		$slot_army = $slot_row[4];
+		$row = mysqli_fetch_row($slotlist_result);
+		$slot_row = $row[0];
+		$slot_col = $row[1];
+		$slot_owner = $row[2];
+		$slot_type = $row[3];
+		$slot_army = $row[4];
 		echo "{";
-		echo "\"slot_x\":\"$slot_x\",";
-		echo "\"slot_y\":\"$slot_y\",";
+		echo "\"slot_row\":\"$slot_row\",";
+		echo "\"slot_col\":\"$slot_col\",";
 		echo "\"slot_owner\":\"$slot_owner\",";
 		echo "\"slot_type\":\"$slot_type\",";
 		echo "\"slot_army\":\"$slot_army\"}";
