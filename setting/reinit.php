@@ -34,25 +34,21 @@
 			{
 				$sql_error = mysqli_error($db);
 				echo "<p>$SQL_DROP_actionlist Error: $sql_error</p>";
-				exit;
 			}
 			if(!mysqli_query($db,$SQL_DROP_slotlist))
 			{
 				$sql_error = mysqli_error($db);
 				echo "<p>$SQL_DROP_slotlist Error: $sql_error</p>";
-				exit;
 			}
 			if(!mysqli_query($db,$SQL_DROP_armylist))
 			{
 				$sql_error = mysqli_error($db);
 				echo "<p>$SQL_DROP_armylist Error: $sql_error</p>";
-				exit;
 			}
 			if(!mysqli_query($db,$SQL_DROP_playerlist))
 			{
 				$sql_error = mysqli_error($db);
 				echo "<p>$SQL_DROP_playerlist Error: $sql_error</p>";
-				exit;
 			}
 		}
 	}
