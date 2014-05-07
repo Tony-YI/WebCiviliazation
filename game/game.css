@@ -47,7 +47,7 @@
    }
 #info
 {
-   	font-family: Britannic Bold;
+   	font-family: Comic Sans MS;
 }
 
 #help
@@ -70,7 +70,7 @@
    color: #696969;
    border-radius: 8px;
    font-size: 12px;
-   font-family: Britannic Bold, Serif;
+   font-family: Comic Sans MS, Serif;
    text-decoration: none;
 
     transition:border linear .3s,box-shadow linear .7s;
