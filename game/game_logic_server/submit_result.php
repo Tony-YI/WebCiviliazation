@@ -51,22 +51,9 @@
 			1. store it into game_{$game_id}_resultlist TABLE,
 			2. Modify the accordingly value in the database
 			*/
-			if($result["action_type"] == "attack")
-			{
-
-			}
-			else if($result["action_type"] == "move")
-			{
-
-			}
-			else if($result["action_type"] == "defend")
-			{
-
-			}
-			else if($result["action_type"] == "build")
-			{
-
-			}
+			$SQL_INSERT_STATEMENT = SQL_generate_insert_result($result);
+			echo $SQL_INSERT_STATEMENT."\n";
+			mysqli_query($db,$SQL_INSERT_STATEMENT);
 		}
 		nextTurn($db,$game_id);
 	}

@@ -85,4 +85,94 @@
 		mysqli_query($db,$SQL_PLAYER_TURN_CANCEL);
 		mysqli_query($db,$SQL_PLAYER_TURN_ACTIVATE);
 	}
+
+	function SQL_generate_insert_result($result)
+	{
+		$result_id = $result["result_id"];
+		$result_action_type = $result["action_type"];
+		$result_player_id = $result["player_id"];
+		if($result["action_type"] == "attack")
+		{
+			$army1_id = $result["attacker_id"];
+			$army1_rema_hp = $result["attacker_remaining_hp"];
+			$army1_prev_hp = $result["attacker_prev_hp"];
+
+			$army2_id = $result["defender_id"];
+			$army2_rema_hp = $result["defender_remaining_hp"];
+			$army2_prev_hp = $result["defender_prev_hp"];
+
+			$from_x = $result["from_x"];
+			$from_y = $result["from_y"];
+			$to_x = $result["to_x"];
+			$to_y = $result["to_y"];
+			$army_type = "NULL";
+		}
+		else if($result["action_type"] == "move")
+		{
+			$army1_id = $result["army_id"];
+			$army1_rema_hp = "NULL";
+			$army1_prev_hp = "NULL";
+
+			$army2_id = "NULL";
+			$army2_rema_hp = "NULL";
+			$army2_prev_hp = "NULL";
+
+			$from_x = $result["from_x"];
+			$from_y = $result["from_y"];
+			$to_x = $result["to_x"];
+			$to_y = $result["to_y"];
+			$army_type = "NULL";
+		}
+		else if($result["action_type"] == "defend")
+		{
+			$army1_id = $result["defender_id"];
+			$army1_rema_hp = "NULL";
+			$army1_prev_hp = "NULL";
+
+			$army2_id = "NULL";
+			$army2_rema_hp = "NULL";
+			$army2_prev_hp = "NULL";
+			$from_x = $result["from_x"];
+			$from_y = $result["from_y"];
+			$to_x = "NULL";
+			$to_y = "NULL";
+			$army_type = "NULL";
+		}
+		else if($result["action_type"] == "build")
+		{
+			$army1_id = $result["army_id"];
+			$army1_rema_hp = "NULL";
+			$army1_prev_hp = "NULL";
+
+			$army2_id = "NULL";
+			$army2_rema_hp = "NULL";
+			$army2_prev_hp = "NULL";
+			$from_x = "NULL";
+			$from_y = "NULL";
+			$to_x = "NULL";
+			$to_y = "NULL";
+			$army_type = $result["army_type"];
+		}
+		$SQL_INSERT_RESULT = <<<SQL_STATEMENT
+INSERT INTO game_{$game_id}_resultlist 
+VALUES($result_id,
+	'$result_action_type',
+	$result_player_id,
+	$army1_id,
+	$army2_id,
+	$from_x,
+	$from_y,
+	$to_x,
+	$to_y,
+	$army1_prev_hp,
+	$army1_rema_hp,
+	$army2_prev_hp,
+	$army2_rema_hp,
+	$army_type)
+SQL_STATEMENT;
+
+	return $SQL_INSERT_RESULT;
+	}
+
+	
 ?>

@@ -14,6 +14,7 @@ function getArmyById(army_id)
 	if(!(army_id >= 0 && army_id < window.army_list.length))
 	{
 		console.log("getArmyById: invalid argument");
+		console.log('army_id: ' + army_id);
 		return null;
 	}
 	for(var count = 0;count < window.army_list.length;count++)
