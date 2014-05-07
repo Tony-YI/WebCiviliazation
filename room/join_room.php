@@ -427,7 +427,7 @@ SQL_STATEMENT;
 		$table_slotlist = "game_{$game_id}_slotlist";
 		for($count_col = 0;$count_col < $col_num;$count_col++)
 		{
-			$SQL_INSERT_UNUSED_SLOTS = "INSERT INTO $table_slotlist VALUES ($row,NULL,0,NULL)";
+			$SQL_INSERT_UNUSED_SLOTS = "INSERT INTO $table_slotlist VALUES ($row,$count_col,NULL,0,NULL)";
 			if(!mysqli_query($con,$SQL_INSERT_UNUSED_SLOTS))
 			{
 				$response["SQL_INSERT_UNUSED_SLOTS"] = $SQL_INSERT_UNUSED_SLOTS.":".mysqli_error($con);
