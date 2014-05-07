@@ -88,7 +88,7 @@
 
 	function SQL_generate_insert_result($result)
 	{
-		$result_id = $result["result_id"];
+		$result_id = $result["Result_id"];
 		$result_action_type = $result["action_type"];
 		$result_player_id = $result["player_id"];
 		if($result["action_type"] == "attack")
@@ -174,5 +174,5 @@ SQL_STATEMENT;
 	return $SQL_INSERT_RESULT;
 	}
 
-	
+
 ?>
