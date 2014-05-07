@@ -331,6 +331,13 @@ function nextround_clicked_handler()
 	/*
 	This function handle the click event on the next round button
 	*/
-	console.log("nextround_clicked_handler: sending the result list to the server");
-	send_result_list_to_server()
+	if(IsMyTurn())
+	{
+		console.log("nextround_clicked_handler: sending the result list to the server");
+		send_result_list_to_server();
+	}
+	else
+	{
+		alert("It's not your turn, don't click me!");
+	}
 }

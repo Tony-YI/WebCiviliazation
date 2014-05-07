@@ -4,6 +4,7 @@ function init_army_list(army)
 	for(var count = 0;count < army.length;count++)
 	{
 		var tmp = new Army(army[count].army_id,army[count].army_type,army[count].owner_id);
+		tmp.army_status = army[count].army_status
 		army_list.push(tmp);
 	}
 
@@ -37,6 +38,7 @@ function Army(army_id,type_id,army_owner)
 	this.army_id = army_id;
 	this.owner = army_owner;
 	this.type_id = type_id;
+	this.army_status = null;
 	if(type_id == "1")
 	{
 		//sword man

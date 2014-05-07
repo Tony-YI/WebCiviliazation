@@ -29,13 +29,16 @@ function build_army(armyType)
 			if(window.current_player.gold < 20 || current_player.wood < 20){
 				alert("You do not have enough Gold or Wood to build a sword army");
 			}
+			else if(window.getSlotByXY(window.current_player.capital_x,window.current_player.capital_y).army_id != ""){
+				alert("You can not build army here! Please make sure there is no army in the current slot");
+			}
 			else{
 				window.current_player.gold = window.current_player.gold - 20;
 				window.current_player.wood = window.current_player.wood - 20;
 				var armyId = (window.army_list.length).toString();
 				var newArmy = new Army(armyId,armyType,window.current_player.pid);
 				window.army_list.push(newArmy);
-				var tmp = new action("build","armyId",null,null,null,null,armyType);
+				var tmp = new action("build",armyId,null,null,null,null,armyType);
 				tmp.get_result();
 				window.current_player.show_info();
 			}
@@ -45,13 +48,16 @@ function build_army(armyType)
 			if(window.current_player.gold < 25 || current_player.wood < 15){
 				alert("You do not have enough Gold or Wood to build a sword army");
 			}
+			else if(window.getSlotByXY(window.current_player.capital_x,window.current_player.capital_y).army_id != ""){
+				alert("You can not build army here! Please make sure there is no army in the current slot");
+			}
 			else{
 				window.current_player.gold = window.current_player.gold - 25;
 				window.current_player.wood = window.current_player.wood - 15;
 				var armyId = (window.army_list.length).toString();
 				var newArmy = new Army(armyId,armyType,window.current_player.pid);
 				window.army_list.push(newArmy);
-				var tmp = new action("build","armyId",null,null,null,null,armyType);
+				var tmp = new action("build",armyId,null,null,null,null,armyType);
 				tmp.get_result();
 				window.current_player.show_info();
 			}
@@ -60,13 +66,16 @@ function build_army(armyType)
 			if(window.current_player.gold < 15 || current_player.wood < 25){
 				alert("You do not have enough Gold or Wood to build a sword army");
 			}
+			else if(window.getSlotByXY(window.current_player.capital_x,window.current_player.capital_y).army_id != ""){
+				alert("You can not build army here! Please make sure there is no army in the current slot");
+			}
 			else{
 				window.current_player.gold = window.current_player.gold - 15;
 				window.current_player.wood = window.current_player.wood - 25;
 				var armyId = (window.army_list.length).toString();
 				var newArmy = new Army(armyId,armyType,window.current_player.pid);
 				window.army_list.push(newArmy);
-				var tmp = new action("build","armyId",null,null,null,null,armyType);
+				var tmp = new action("build",armyId,null,null,null,null,armyType);
 				tmp.get_result();
 				window.current_player.show_info();
 			}

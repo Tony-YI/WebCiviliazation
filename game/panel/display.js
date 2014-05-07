@@ -261,11 +261,11 @@ function set_function_attribute_1(hexagon, function_type)
 	}
 	else if(function_type == 'type_B')
 	{
-		name = 'Archer';
+		name = 'Cavalry';
 	}
 	else if(function_type == 'type_C')
 	{
-		name = 'Cavalry';
+		name = 'Archer';
 	}
 	else if(function_type == 'cancel')
 	{
@@ -650,13 +650,13 @@ function display_hexagon_info(e)
 		}
 		else if(army_type == 'type_B')
 		{
-			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Archer<br/>';
-			new_img_army_type.setAttribute('src', '../../images/archer.png');
+			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Cavalry<br/>';
+			new_img_army_type.setAttribute('src', '../../images/cavalry.png');
 		}
 		else if (army_type == 'type_C')
 		{
-			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Cavalry<br/>';
-			new_img_army_type.setAttribute('src', '../../images/cavalry.png');
+			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Archer<br/>';
+			new_img_army_type.setAttribute('src', '../../images/archer.png');
 		}
 	}
 
@@ -772,12 +772,12 @@ function addBoxes(list)
 
 				case 2: //
 				hexagon[i].setAttribute('army_type', 'type_B');
-				img.setAttribute('src', '../../images/archer.png');
+				img.setAttribute('src', '../../images/cavalry.png');
 				break;
 
 				case 3: //
 				hexagon[i].setAttribute('army_type', 'type_C');
-				img.setAttribute('src', '../../images/cavalry.png');
+				img.setAttribute('src', '../../images/archer.png');
 				break;
 
 				default:
