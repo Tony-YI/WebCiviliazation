@@ -784,22 +784,11 @@ function go_to_home()
 	document.getElementById('anchor').scrollIntoView();
 }
 
-function update_slot() //TODO: update the slot every movement
-{
-	//var result_list; global variable
-	if(result_list)
-	{
-		if(result_list)
-		{
-			
-		}
-	}
-}
-
-
 function display_init(list)
 {
 	document.getElementById('info').style.display = 'none';
+	document.getElementById('help').style.display = 'block';
+	init_help(); //in key_handler.js
 	addBoxes(list);
 	resize();
 	window.addEventListener('resize', window_resize, false);
