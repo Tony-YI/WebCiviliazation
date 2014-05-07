@@ -14,6 +14,8 @@
 		$rows[0] = mysqli_fetch_row($result);
 		$rows[1] = mysqli_fetch_row($result);
 		$rows[2] = mysqli_fetch_row($result);
+		$SQL_PLAYER_TURN_CANCEL = "";
+		$SQL_PLAYER_TURN_ACTIVATE = "";
 		for($count = 0;$count < 3;$count++)
 		{
 			$row = $rows[$count];
@@ -23,6 +25,8 @@
 			{
 				$SQL_PLAYER_TURN_CANCEL = "UPDATE game_{$game_id}_playerlist SET `player_turn` = 0 WHERE player_id = $row[0]";
 				$SQL_PLAYER_TURN_ACTIVATE = "UPDATE game_{$game_id}_playerlist SET `player_turn` = 1";
+				echo "\n".$SQL_PLAYER_TURN_CANCEL."\n";
+				echo "\n".$SQL_PLAYER_TURN_ACTIVATE."\n";
 				switch ($count) 
 				{
 					case '0':
@@ -75,6 +79,8 @@
 				$SQL_PLAYER_TURN_ACTIVATE .= " WHERE `player_id` = $tmp_id";
 			}
 		}
+		echo "\n".$SQL_PLAYER_TURN_CANCEL."\n";
+		echo "\n".$SQL_PLAYER_TURN_ACTIVATE."\n";
 		mysqli_query($db,$SQL_PLAYER_TURN_CANCEL);
 		mysqli_query($db,$SQL_PLAYER_TURN_ACTIVATE);
 	}
