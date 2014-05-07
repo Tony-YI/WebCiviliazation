@@ -45,17 +45,17 @@ function clear_army_type(hexagon, type)
 	hexagon.lastChild.setAttribute('src', '');
 }
 
-function update_attack(from_x, from_y, to_x, to_y)
+function update_attack(from_x, from_y, to_x, to_y, army_id)
 {
 
 }
 
-function update_move(from_x, from_y, to_x, to_y)
+function update_move(from_x, from_y, to_x, to_y, army_id)
 {
 	var hexagon_from = get_hexagon(from_x, from_y);
 	var hexagon_to = get_hexagon(to_x, to_y);
 	var army_id_from = '';
-	var army_id_to = getSlotByXY(from_x, from_y).army_id;
+	var army_id_to = army_id;
 
 	set_army_type(hexagon_from, 'none');
 	set_army_type(hexagon_to, army_type);
@@ -63,15 +63,15 @@ function update_move(from_x, from_y, to_x, to_y)
 	update_slot_list_own(hexagon_to, army_id_to);
 }
 
-function update_defend(from_x, from_y, to_x, to_y)
+function update_defend(from_x, from_y, to_x, to_y, army_id)
 {
 
 }
 
-function update_build(from_x, from_y, to_x, to_y)
+function update_build(from_x, from_y, to_x, to_y, army_id)
 {
 	var hexagon_to = get_hexagon(to_x, to_y);
-	var army_id_to = getSlotByXY(to_x, to_y).army_id;
+	var army_id_to = army_id;
 	var type = getArmyById(army_id_to).type_id;
 	if(type == 1)//sword
 	{
@@ -98,19 +98,19 @@ function update_slot_own() //update the slot movement
 	{
 		if(result.action_type == 'attack')
 		{
-			update_attack(result.from_x, result.from_y, result.to_x, result.to_y);
+			update_attack(result.from_x, result.from_y, result.to_x, result.to_y, army_id);
 		}
 		else if(result.action_type == 'move')
 		{
-			update_move(result.from_x, result.from_y, result.to_x, result.to_y);
+			update_move(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
 		}
 		else if(result.action_type == 'defend')
 		{
-			update_defend(result.from_x, result.from_y, result.to_x, result.to_y);
+			update_defend(result.from_x, result.from_y, result.to_x, result.to_y, army_id);
 		}
 		else if(result.action_type == 'build')
 		{
-			update_build(result.from_x, result.from_y, window.current_player.capital_x, window.current_player.capital_y);
+			update_build(result.from_x, result.from_y, window.current_player.capital_x, window.current_player.capital_y, result.army_id);
 		}
 	}
 }
