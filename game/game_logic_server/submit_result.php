@@ -50,7 +50,7 @@
 			1. store it into game_{$game_id}_resultlist TABLE,
 			2. Modify the accordingly value in the database
 			*/
-			$SQL_INSERT_STATEMENT = SQL_generate_insert_result($result);
+			$SQL_INSERT_STATEMENT = SQL_generate_insert_result($result,$game_id);
 			echo $SQL_INSERT_STATEMENT."\n";
 			if(!mysqli_query($db,$SQL_INSERT_STATEMENT))
 			echo "\n".mysqli_error($db)."\n";

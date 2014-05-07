@@ -86,7 +86,7 @@
 		mysqli_query($db,$SQL_PLAYER_TURN_ACTIVATE);
 	}
 
-	function SQL_generate_insert_result($result)
+	function SQL_generate_insert_result($result,$game_id)
 	{
 		$result_id = $result["Result_id"];
 		$result_action_type = $result["action_type"];
