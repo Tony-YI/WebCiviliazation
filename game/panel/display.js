@@ -654,6 +654,8 @@ function display_hexagon_info(e)
 		}
 	}
 
+
+	hexagon_info.innerHTML = '';
 	hexagon_info.appendChild(new_p);
 	hexagon_info.appendChild(new_img_slot_type);
 	hexagon_info.appendChild(new_img_army_type);

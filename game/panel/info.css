@@ -1,7 +1,6 @@
 #info
 {
 	width: 200px;
-	height:300px;
 	border: 1px solid red;
 	position: fixed;
 	right: 9px;
@@ -85,12 +84,12 @@
 
 #new_img_army_type
 {
-	max-width: 150px;
-	max-height: 150px;
+	max-width: 100px;
+	max-height: 100px;
 }
 
 #new_img_slot_type
 {
-	max-width: 150px;
-	max-height: 150px;
+	max-width: 100px;
+	max-height: 100px;
 }

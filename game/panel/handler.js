@@ -296,8 +296,30 @@ function defend_clicked_handler()
 	console.log('id: ' + parseInt(slot.army_id));
 	console.log('parsed id: ' + (slot.army_id));
 	var armyid = parseInt(slot.army_id);
-	var army = getArmyById(armyid);
-	var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
+	if(armyid == 0)
+	{
+		console.log('id: ' + parseInt(slot.army_id));
+		var army = getArmyById(0);
+		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
+	}
+	else if(armyid == 1)
+	{
+		console.log('id: ' + parseInt(slot.army_id));
+		var army = getArmyById(1);
+		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
+	}
+	else if(armyid == 2)
+	{
+		console.log('id: ' + parseInt(slot.army_id));
+		var army = getArmyById(2);
+		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
+	}
+	else
+	{
+		console.log('id: ' + parseInt(slot.army_id));
+		var army = getArmyById(100);
+		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
+	}
 	//console.log(army);
 	console.log('defend at (' + from_x+ ', ' + from_y + ')');
 	user_action.get_result();
