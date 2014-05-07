@@ -598,7 +598,7 @@ function display_hexagon_info(e)
 	var pos_y = target.getAttribute('y');
 	var slot_type = target.getAttribute('slot_type');
 	var army_type = target.getAttribute('army_type');
-	var owner = ;
+	var owner = '';
 
 	var hexagon_info = document.getElementById('hexagon_info');
 	hexagon_info.innerHTML = 'x = ' + pos_x + '; y = ' + pos_y;
