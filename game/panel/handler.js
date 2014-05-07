@@ -298,21 +298,25 @@ function defend_clicked_handler()
 	var armyid = parseInt(slot.army_id);
 	if(armyid == 0)
 	{
+		console.log('id: ' + parseInt(slot.army_id));
 		var army = getArmyById(0);
 		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
 	}
 	else if(armyid == 1)
 	{
+		console.log('id: ' + parseInt(slot.army_id));
 		var army = getArmyById(1);
 		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
 	}
 	else if(armyid == 2)
 	{
+		console.log('id: ' + parseInt(slot.army_id));
 		var army = getArmyById(2);
 		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
 	}
 	else
 	{
+		console.log('id: ' + parseInt(slot.army_id));
 		var army = getArmyById(100);
 		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
 	}
