@@ -261,11 +261,11 @@ function set_function_attribute_1(hexagon, function_type)
 	}
 	else if(function_type == 'type_B')
 	{
-		name = 'Archer';
+		name = 'Cavalry';
 	}
 	else if(function_type == 'type_C')
 	{
-		name = 'Cavalry';
+		name = 'Archer';
 	}
 	else if(function_type == 'cancel')
 	{
