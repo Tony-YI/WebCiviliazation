@@ -20,25 +20,18 @@ function show_range(x, y, action)
 		console.log(slot_list[i].owner == null);
 		if(action == 'move' && slot_list[i].owner == "")
 		{
-			slot_div[i].addEventListener('mousedown', move_action, false);
+			slot_div[i].addEventListener('mousedown', valid_move_action, false);
 			slot_div[i].setAttribute('function', 'range');
 		}
 		else if(action == 'attack' && slot_list[i].owner != "" && parseInt(slot_list[i].owner) != user_id)
 		{
-			slot_div[i].addEventListener('mousedown', attack_action, false);
+			slot_div[i].addEventListener('mousedown', valid_attack_action, false);
 			slot_div[i].setAttribute('function', 'range');
 		}
 		else
 		{
 			slot_div[i].setAttribute('function', 'norange');
-			slot_div[i].addEventListener('mousedown', function(e){var slot_div = document.getElementsByClassName('hexagon');
-				for(var i = 0; i < slot_num; i++)
-				{
-					if(slot_div[i].getAttribute('function') == 'norange')
-					{
-						slot_div[i].setAttribute('function', 'none');
-					}
-				}}, false);
+			slot_div[i].addEventListener('mousedown', invalid_action, false);
 		}
 		//all the change color thing are done in display.css
 	}
@@ -54,12 +47,13 @@ function clear_range(action)
 			slot_div[i].setAttribute('function', 'none');
 			if(action == 'move')
 			{
-				slot_div[i].removeEventListener('mousedown', move_action, false);
+				slot_div[i].removeEventListener('mousedown', valid_move_action, false);
 			}
 			else if(action == 'attack')
 			{
-				slot_div[i].removeEventListener('mousedown', attack_action, false);
+				slot_div[i].removeEventListener('mousedown', valid_attack_action, false);
 			}
+			slot_div[i].removeEventListener('mousedown', invalid_action, false);
 		}
 	}
 }
@@ -68,7 +62,7 @@ function attack_clicked_handler()
 {
 	/*
 	1. show the attack range
-	2. attach attack event listener (attack_action() to the div) 3
+	2. attach attack event listener (valid_attack_action() to the div) 3
 	3. attach cancel event handler 
 	*/
 	var x = parseInt(latest_slot.getAttribute('x'));
@@ -149,7 +143,7 @@ function attack_clicked_handler()
 	}
 }
 
-function attack_action(e)
+function valid_attack_action(e)
 {
 	/*
 	1. compute the result of the attack
@@ -177,7 +171,7 @@ function move_clicked_handler()
 {
 	/*
 	1. show the move range
-	2. attach move event listener (move_action() to the div) 
+	2. attach move event listener (valid_move_action() to the div) 
 	*/
 	//console.log(latest_slot);
 	//console.log(latest_slot.getAttribute('x'));
@@ -261,7 +255,7 @@ function move_clicked_handler()
 	}
 }
 
-function move_action(e)
+function valid_move_action(e)
 {
 	/*
 	1. compute the result of the movement
@@ -285,6 +279,18 @@ function move_action(e)
 	clear_range('move');
 }
 
+function invalid_action(e)
+{
+	var slot_div = document.getElementsByClassName('hexagon');
+	for(var i = 0; i < slot_num; i++) //slot_num: global variable in small_map.js
+	{
+		if(slot_div[i].getAttribute('function') == 'norange')
+		{
+			slot_div[i].setAttribute('function', 'none');
+		}
+	}
+	clear_range();
+}
 function defend_clicked_handler()
 {
 }
