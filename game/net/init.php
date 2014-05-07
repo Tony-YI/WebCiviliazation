@@ -38,7 +38,7 @@ JSON_ERROR;
 
 	$SQL_GET_PLAYERLIST = "SELECT * FROM game_{$game_id}_playerlist";
 	$SQL_GET_SLOTLIST = "SELECT * FROM game_{$game_id}_slotlist";
-	$SQL_GET_ARMYLIST = "SELECT * FROM game_{$game_id}_armylist";
+	$SQL_GET_ARMYLIST = "SELECT * FROM game_{$game_id}_armylist WHERE army_status != 'dead'";
 
 	if(!($playerlist_result = mysqli_query($db,$SQL_GET_PLAYERLIST)) || 
 		!($slotlist_result = mysqli_query($db,$SQL_GET_SLOTLIST)) || 
@@ -111,7 +111,8 @@ JSON_ERROR;
 		$army_row = mysqli_fetch_row($armylist_result);
 		echo "{\"army_id\":\"$army_row[0]\",";
 		echo "\"army_type\":\"$army_row[1]\",";
-		echo "\"owner_id\":\"$army_row[2]\"}";
+		echo "\"owner_id\":\"$army_row[2]\"";
+		echo ",\"army_status\":\"$army_row[3]\"}";
 		if($count + 1 < $army_num)
 			echo ",";
 		else 
