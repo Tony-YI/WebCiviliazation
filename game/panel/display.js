@@ -628,7 +628,7 @@ function display_hexagon_info(e)
 	else if(slot_type == 'capital_slot')
 	{
 		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Capital Slot <br/>';
-		new_img_slot_type.setAttribute('src', '');
+		new_img_slot_type.setAttribute('src', '../../images/capital.png');
 	}
 
 	if(army_type == 'none')
