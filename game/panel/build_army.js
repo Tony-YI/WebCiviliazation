@@ -33,7 +33,7 @@ function build_army(armyType)
 				window.current_player.gold = window.current_player.gold - 20;
 				window.current_player.wood = window.current_player.wood - 20;
 				var armyId = window.army_list.length;
-				window.army_list.Army(armyId,armyType,window.current_player.pid)
+				window.army_list.push(Army(armyId,armyType,window.current_player.pid));
 				var tmp = new action("build","armyId",null,null,null,null,armyType);
 				tmp.get_result();
 				window.current_player.show_info();
@@ -48,7 +48,7 @@ function build_army(armyType)
 				window.current_player.gold = window.current_player.gold - 25;
 				window.current_player.wood = window.current_player.wood - 15;
 				var armyId = window.army_list.length;
-				window.army_list.Army(armyId,armyType,window.current_player.pid)
+				window.army_list.push(Army(armyId,armyType,window.current_player.pid));
 				var tmp = new action("build","armyId",null,null,null,null,armyType);
 				tmp.get_result();
 				window.current_player.show_info();
@@ -62,7 +62,7 @@ function build_army(armyType)
 				window.current_player.gold = window.current_player.gold - 15;
 				window.current_player.wood = window.current_player.wood - 25;
 				var armyId = window.army_list.length;
-				window.army_list.Army(armyId,armyType,window.current_player.pid)
+				window.army_list.push(Army(armyId,armyType,window.current_player.pid));
 				var tmp = new action("build","armyId",null,null,null,null,armyType);
 				tmp.get_result();
 				window.current_player.show_info();
