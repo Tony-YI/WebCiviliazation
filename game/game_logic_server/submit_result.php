@@ -40,7 +40,6 @@
 	if($_SERVER["HTTP_TYPE"] == "RESULT_LIST")
 	{
 		$entityBody = file_get_contents('php://input');
-		echo $entityBody."\n";
 		$request = json_decode($entityBody,TRUE);
 		$result_list = $request['result_list'];
 		//handling every single result
@@ -53,7 +52,8 @@
 			*/
 			$SQL_INSERT_STATEMENT = SQL_generate_insert_result($result);
 			echo $SQL_INSERT_STATEMENT."\n";
-			mysqli_query($db,$SQL_INSERT_STATEMENT);
+			if(!mysqli_query($db,$SQL_INSERT_STATEMENT))
+			echo "\n".mysqli_error($db)."\n";
 		}
 		//nextTurn($db,$game_id);
 	}
