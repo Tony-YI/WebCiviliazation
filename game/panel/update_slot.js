@@ -8,6 +8,28 @@ function get_hexagon(x, y)
 	return hexagon_div;
 }
 
+function set_army_type(hexagon_from, hexagon_to, type)
+{
+	hexagon_from.setAttribute('army_type', 'none');
+	hexagon_to.setAttribute('army_type', type); //army_type: global variable in game.html
+
+	hexagon_from.lastChild.setAttribute('src', '');
+	var src = '';
+	if(type == 'type_A')
+	{
+		src = '../../images/sword.png';
+	}
+	else if(type == 'type_B')
+	{
+		src = '../../images/cavalry.png';
+	}
+	else if(type == 'type_C')
+	{
+		src = '../../images/archer.png';
+	}
+	hexagon_to.lastChild.setAttribute('src', src);
+}
+
 function update_attack(from_x, from_y, to_x, to_y)
 {
 
@@ -16,10 +38,9 @@ function update_attack(from_x, from_y, to_x, to_y)
 function update_move(from_x, from_y, to_x, to_y)
 {
 	var hexagon_from = get_hexagon(from_x, from_y);
-	hexagon_from.setAttribute('army_type', 'none');
-
 	var hexagon_to = get_hexagon(to_x, to_y);
-	hexagon_to.setAttribute('army_type', army_type); //army_type: global variable in game.html
+
+	set_army_type(hexagon_from, hexagon_to, army_type);
 }
 
 function update_defend(from_x, from_y, to_x, to_y)
