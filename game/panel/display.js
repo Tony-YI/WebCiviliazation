@@ -598,10 +598,65 @@ function display_hexagon_info(e)
 	var pos_y = target.getAttribute('y');
 	var slot_type = target.getAttribute('slot_type');
 	var army_type = target.getAttribute('army_type');
-	var owner = '';
+
+	//var player = getPlayerByID(parseInt(slot_list[parseInt(y) * line_num + parseInt(x)].owner)); //slot_list and line_num are global variable
+	//var owner = player.pname;
 
 	var hexagon_info = document.getElementById('hexagon_info');
-	hexagon_info.innerHTML = 'x = ' + pos_x + '; y = ' + pos_y;
+	var new_p = document.createElement('p');
+	var new_img_slot_type = document.createElement('img');
+	var new_img_army_type = document.createElement('img');
+
+	//var info = 'Owner: ' + owner + '<br/>';
+	var info = + 'x: ' + pos_x + '; y: ' + pos_y + '<br/>';
+	if(slot_type == 'normal_slot')
+	{
+		info = info + 'Slot Type: Normal Slot <br/>';
+		new_img_slot_type.setAttribute('src', '');
+	}
+	else if(slot_type == 'gold_slot')
+	{
+		info = info + 'Slot Type: Gold Slot <br/>';
+		new_img_slot_type.setAttribute('src', '');
+	}
+	else if(slot_type == 'wood_slot')
+	{
+		info = info + 'Slot Type: Lumber Slot <br/>';
+		new_img_slot_type.setAttribute('src', '');
+	}
+	else if(slot_type == 'capital_slot')
+	{
+		info = info + 'Slot Type: Capital Slot <br/>';
+		new_img_slot_type.setAttribute('src', '');
+	}
+
+	if(army_type == 'none')
+	{
+	}
+	else
+	{
+		new_img_army_type.setAttribute('id', 'new_img_army_type');
+		
+		if(army_type == 'type_A')
+		{
+			info = info + 'Army Type: Sword<br/>';
+			new_img_army_type.setAttribute('src', '../../images/sword.png');
+		}
+		else if(army_type == 'type_B')
+		{
+			info = info + 'Army Type: Archer<br/>';
+			new_img_army_type.setAttribute('src', '../../images/archer.png');
+		}
+		else if (army_type == 'type_C')
+		{
+			info = info + 'Army Type: Cavalry<br/>';
+			new_img_army_type.setAttribute('src', '../../images/cavalry.png');
+		}
+	}
+
+	hexagon_info.appendChild('new_p');
+	hexagon_info.appendChild('new_img_slot_type');
+	hexagon_info.appendChild('new_img_army_type');
 }
 /***********************************/
 
