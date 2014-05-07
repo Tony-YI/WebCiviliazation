@@ -19,9 +19,10 @@
 		for($count = 0;$count < 3;$count++)
 		{
 			$row = $rows[$count];
-			//$row[5] is player_status, 0 indicates gaming, 1 indicates win, 2 indicates lose
-			//$row[6] is player_turn,0 indicates not his/her turn, 1 indicates his/her turn
-			if($row[6] == 1 && $row[5] == 0)
+			echo "row[4] $row[4],row[5] $row[5]"."\n";
+			//$row[4] is player_status, 0 indicates gaming, 1 indicates win, 2 indicates lose
+			//$row[5] is player_turn,0 indicates not his/her turn, 1 indicates his/her turn
+			if($row[5] == 1 && $row[4] == 0)
 			{
 				$SQL_PLAYER_TURN_CANCEL = "UPDATE game_{$game_id}_playerlist SET `player_turn` = 0 WHERE player_id = $row[0]";
 				$SQL_PLAYER_TURN_ACTIVATE = "UPDATE game_{$game_id}_playerlist SET `player_turn` = 1";
@@ -31,7 +32,7 @@
 				{
 					case '0':
 						//player 1 is acting
-						if($rows[1][5] == 0)
+						if($rows[1][4] == 0)
 						{
 							//player 2 is in game
 							//get player 2 ready
@@ -45,7 +46,7 @@
 						}
 						break;
 					case '1':
-						if($rows[2][5] == 0)
+						if($rows[2][4] == 0)
 						{
 							//player 3 is in game
 							$tmp_id = $rows[2][0];
@@ -59,7 +60,7 @@
 						}
 						break;
 					case '2':
-						if($rows[0][5] == 0)
+						if($rows[0][4] == 0)
 						{
 							//player 1 is in game
 							$tmp_id = $rows[0][0];
