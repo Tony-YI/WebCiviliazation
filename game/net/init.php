@@ -65,7 +65,7 @@ JSON_ERROR;
 		$player_gold = $player_row[2];
 		$player_wood = $player_row[3];
 		$player_status = $player_row[4];
-		$player_turn = $player_turn[5];
+		$player_turn = $player_row[5];
 		$count++;
 		echo "\"p$count\":";
 		echo "{\"user_id\":\"$player_id\",";

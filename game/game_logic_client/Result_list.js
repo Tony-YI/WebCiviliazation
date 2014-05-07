@@ -234,4 +234,5 @@ function send_result_list_to_server()
 	console.log(data);
 	xhr.send(data);
 	console.log(xhr.responseText);
+	current_player.pturn = "0";
 }

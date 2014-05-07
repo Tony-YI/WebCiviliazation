@@ -684,6 +684,7 @@ function addBoxes(list)
 		hexagon[i].setAttribute('class', 'hexagon');
 		hexagon[i].setAttribute('function', 'none');
 		hexagon[i].setAttribute('type', 'none');
+		hexagon[i].setAttribute('army_type', 'none');
 		var x = i % new_line_num;
 		var y = parseInt(i / new_line_num);
 		hexagon[i].setAttribute('x', x);
