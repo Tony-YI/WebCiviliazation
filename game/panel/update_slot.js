@@ -6,6 +6,7 @@ function update_slot_list_own(hexagon, army_id)
 	var pos_y = hexagon.getAttribute('y');
 	var slot = getSlotByXY(pos_x, pos_y) //function in game/game_logic_client->slot.js
 	slot.army_id = army_id;
+	alert(army_id);
 }
 
 function update_slot_list_others()
