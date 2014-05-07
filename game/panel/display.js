@@ -607,26 +607,26 @@ function display_hexagon_info(e)
 	var new_img_slot_type = document.createElement('img');
 	var new_img_army_type = document.createElement('img');
 
-	//var content = 'Owner: ' + owner + '<br/>';
-	var content = 'x: ' + pos_x + '; y: ' + pos_y + '<br/>';
+	//new_p.innerHTML = 'Owner: ' + owner + '<br/>';
+	new_p.innerHTML = 'x: ' + pos_x + '; y: ' + pos_y + '<br/>';
 	if(slot_type == 'normal_slot')
 	{
-		content = content + 'Slot Type: Normal Slot <br/>';
+		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Normal Slot <br/>';
 		new_img_slot_type.setAttribute('src', '');
 	}
 	else if(slot_type == 'gold_slot')
 	{
-		content = content + 'Slot Type: Gold Slot <br/>';
+		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Gold Slot <br/>';
 		new_img_slot_type.setAttribute('src', '');
 	}
 	else if(slot_type == 'wood_slot')
 	{
-		content = content + 'Slot Type: Lumber Slot <br/>';
+		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Lumber Slot <br/>';
 		new_img_slot_type.setAttribute('src', '');
 	}
 	else if(slot_type == 'capital_slot')
 	{
-		content = content + 'Slot Type: Capital Slot <br/>';
+		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Capital Slot <br/>';
 		new_img_slot_type.setAttribute('src', '');
 	}
 
@@ -639,22 +639,21 @@ function display_hexagon_info(e)
 
 		if(army_type == 'type_A')
 		{
-			content = content + 'Army Type: Sword<br/>';
+			new_p.innerHTML = new_p.innerHTML + 'Army Type: Sword<br/>';
 			new_img_army_type.setAttribute('src', '../../images/sword.png');
 		}
 		else if(army_type == 'type_B')
 		{
-			content = content + 'Army Type: Archer<br/>';
+			new_p.innerHTML = new_p.innerHTML + 'Army Type: Archer<br/>';
 			new_img_army_type.setAttribute('src', '../../images/archer.png');
 		}
 		else if (army_type == 'type_C')
 		{
-			content = content + 'Army Type: Cavalry<br/>';
+			new_p.innerHTML = new_p.innerHTML + 'Army Type: Cavalry<br/>';
 			new_img_army_type.setAttribute('src', '../../images/cavalry.png');
 		}
 	}
 
-	new_p.innerHTML = content;
 	hexagon_info.appendChild('new_p');
 	hexagon_info.appendChild('new_img_slot_type');
 	hexagon_info.appendChild('new_img_army_type');
