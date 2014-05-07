@@ -1,3 +1,8 @@
+function init_help()
+{
+	
+}
+
 function key_down(e)
 {
 	e.stopPropagation();

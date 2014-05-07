@@ -7,7 +7,6 @@
 	background-color: white;
 	z-index: 105;
 	opacity: 0.9;
-	display: block;
 
 	animation-name: in;
     -webkit-animation-name: in;

@@ -791,15 +791,16 @@ function update_slot() //TODO: update the slot every movement
 	{
 		if(result_list)
 		{
-			
+
 		}
 	}
 }
 
-
 function display_init(list)
 {
 	document.getElementById('info').style.display = 'none';
+	document.getElementById('help').style.display = 'block';
+	init_help(); //in key_handler.js
 	addBoxes(list);
 	resize();
 	window.addEventListener('resize', window_resize, false);
