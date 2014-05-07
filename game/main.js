@@ -74,7 +74,7 @@ function query_turn()
 				console.log("query_turn() :JSON parse error" + error);
 				return ;
 			}
-			getPlayerById(response["active_player"]).pturn = "1";
+			getPlayerByID(response["active_player"]).pturn = "1";
 		}
 	}
 }
@@ -86,7 +86,7 @@ function new_round()
 
 function show_control()
 {
-	
+
 }
 
 function hide_control()
