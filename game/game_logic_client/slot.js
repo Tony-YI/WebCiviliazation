@@ -23,7 +23,7 @@ function init_slot_list(slots)
 	for(var count = 0;count < slots.length;count++)
 	{
 		//console.log("Constructing new Slot");
-		var slot = new Slot(slots[count].slot_x,slots[count].slot_y);
+		var slot = new Slot(slots[count].slot_y,slots[count].slot_x);
 		//console.log("getting slottype");
 		slot.type_id = slots[count].slot_type;
 		//console.log("getting slotarmy");
