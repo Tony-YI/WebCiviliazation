@@ -615,7 +615,7 @@ function display_hexagon_info(e)
 	if(slot_type == 'normal_slot')
 	{
 		new_p_1.innerHTML = new_p_1.innerHTML + 'Slot Type: Normal Slot <br/>';
-		new_img_slot_type.setAttribute('src', '');
+		new_img_slot_type.setAttribute('src', '../../images/normal.png');
 	}
 	else if(slot_type == 'gold_slot')
 	{
