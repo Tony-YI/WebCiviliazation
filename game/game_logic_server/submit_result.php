@@ -1,14 +1,24 @@
 <?php
 	//This file will handle the turn result submiitted by the player
 	require_once("../../lib/db.php");
+	require_once("lib.php");
 	$user_id = $_COOKIE["CURRENT_USER"];
 	$game_id = $_COOKIE["IN_GAME"];
 
 	if(!check_cookie($db))
 	{
 		echo "{\"status\":\"error\",";
-		echo "\"error_detail\":\"user not holding valid cookie\"}";
+		echo "\"error_detail\":\"no_valid_cookie\"}";
+		exit;
 	}
+
+	if(!IsMyTurn($db,$user_id,$game_id))
+	{
+		echo "{\"status\":\"error\",";
+		echo "\"error_detail\":\"not_your_turn\"}";
+		exit;
+	}
+
 	/*Handling surrender*/
 	if($_SERVER["HTTP_TYPE"] == "SURRENDER")
 	{
@@ -33,12 +43,31 @@
 		echo $entityBody."\n";
 		$request = json_decode($entityBody,TRUE);
 		$result_list = $request['result_list'];
-		foreach ($result_list as $value) {
-			echo "{";
-			foreach ($value as $key => $ele) {
-					echo $key.":"."$ele".",";
-					}
-			echo "}";
+		//handling every single result
+		foreach ($result_list as $result) 
+		{
+			/*
+			for every single result,
+			1. store it into game_{$game_id}_resultlist TABLE,
+			2. Modify the accordingly value in the database
+			*/
+			if($result["action_type"] == "attack")
+			{
+
+			}
+			else if($result["action_type"] == "move")
+			{
+
+			}
+			else if($result["action_type"] == "defend")
+			{
+
+			}
+			else if($result["action_type"] == "build")
+			{
+
+			}
 		}
+		next_turn($db,$game_id);
 	}
 ?>

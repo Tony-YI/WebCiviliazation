@@ -112,18 +112,24 @@ SQL_STATEMENT;
 	function sql_create_actionlist($game_id)
 	{
 		$SQL_CREATE_SLOTLIST = <<<SQL_STATEMENT
-		CREATE TABLE game_{$game_id}_actionlist
+		CREATE TABLE game_{$game_id}_resultlist
 		(
-			id INT,
+			result_id INT,
+			action_type CHAR(16),
+			player_id INT,
+			army1_id INT,
+			army2_id INT,
 			from_x INT,
 			from_y INT,
 			to_x INT,
 			to_y INT,
-			player INT,
+			army1_prev_hp INT,
+			army1_remaining_hp INT,
+			army2_prev_hp INT,
+			army2_remaining_hp INT,
 			army_type INT,
-			army_num INT,
-			action_type INT,
-			PRIMARY KEY (id)
+			PRIMARY KEY(result_id),
+			FOREIGN KEY(player_id) REFERENCES game_{$game_id}_playerlist(player_id)
 		)
 SQL_STATEMENT;
 		return $SQL_CREATE_SLOTLIST;
