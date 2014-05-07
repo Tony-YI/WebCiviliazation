@@ -10,10 +10,6 @@ function Init()
 	display_init(slot_list);
 	init_small_map();
 	document.getElementById("surrender").addEventListener("onclick","surrender_clicked_handler",false);
-	
-	alert('To show the Information Board, Press "i"');
-    alert('To show the Small Map, Press "m"');
-    alert('To quit, Press "q"');
 }
 
 function Init_get_init_data()
@@ -59,10 +55,41 @@ function query_turn()
 	if(IsMyTurn())
 		return ;
 	//If it is not current player's turn, send query to the server
-
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","/game/game_logic_server/query_turn.php",true);
+	xhr.setRequestHeader("MAX_RESULT_ID",getMAXResultId());
+	xhr.send();
+	xhr.onreadystatechange = function()
+	{
+		if(xhr.status == 200 && xhr.readyState == 4)
+		{
+			console.log("query_turn() :" + xhr.responseText);
+			var response;
+			try
+			{
+				response = JSON.parse(xhr.responseText);
+			}
+			catch(error)
+			{
+				console.log("query_turn() :JSON parse error" + error);
+				return ;
+			}
+			getPlayerByID(response["active_player"]).pturn = "1";
+		}
+	}
 }
 
 function new_round()
 {
 	//this function will have the army recover some HP 
+}
+
+function show_control()
+{
+
+}
+
+function hide_control()
+{
+
 }
