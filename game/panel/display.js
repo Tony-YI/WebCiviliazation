@@ -596,6 +596,9 @@ function display_hexagon_info(e)
 
 	var pos_x = target.getAttribute('x');
 	var pos_y = target.getAttribute('y');
+	var slot_type = target.getAttribute('slot_type');
+	var army_type = target.getAttribute('army_type');
+	var owner = ;
 
 	var hexagon_info = document.getElementById('hexagon_info');
 	hexagon_info.innerHTML = 'x = ' + pos_x + '; y = ' + pos_y;
@@ -606,6 +609,8 @@ function resize()
 {
 	document.getElementById('display').style.width = parseInt(window.innerWidth) - 20 + 'px';
 	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
+	document.getElementById('help').style.top = (parseInt(window.innerWidth) - 300) / 2 + 'px';
+	document.getElementById('help').style.left = (parseInt(window.innerHeight) - 200) / 2 + 'px';
 }
 
 var user_1_color = 'purple';
