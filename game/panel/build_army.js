@@ -34,7 +34,9 @@ function build_army(armyType)
 				window.current_player.wood = window.current_player.wood - 20;
 				var armyId = window.army_list.length;
 				var newArmy = new Army(armyId,armyType,window.current_player.pid);
+				alert("zzeze");
 				window.army_list.push(newArmy);
+				alert(newArmy);
 				var tmp = new action("build","armyId",null,null,null,null,armyType);
 				tmp.get_result();
 				window.current_player.show_info();
