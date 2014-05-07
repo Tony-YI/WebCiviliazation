@@ -68,6 +68,6 @@
 
 			}
 		}
-		next_turn($db,$game_id);
+		nextTurn($db,$game_id);
 	}
 ?>
