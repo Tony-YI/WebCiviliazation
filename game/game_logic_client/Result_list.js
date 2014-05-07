@@ -64,6 +64,7 @@ function Result(action_type)
 
 Result.prototype.Result_toString = function()
 {
+	console.log('tostring');
 	var result_str = "";
 	if(this.action_type == "attack")
 	{
@@ -174,6 +175,7 @@ function action(action_type,army_id,from_x,from_y,to_x,to_y,army_type)
 
 action.prototype.get_result = function()
 {
+	console.log('get_result');
 	var result = new Result(this.action_type);
 	result.from_x = this.from_x;
 	result.from_y = this.from_y;
