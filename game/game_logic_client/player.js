@@ -5,15 +5,17 @@
 */
 function getPlayerByID(pid)
 {
-	console.log("getPlayerByID: to get player with pid: " + pid);
+	//console.log("getPlayerByID: to get player with pid: " + pid);
 	for(var count = 0; count < window.player_list.length;count++)
 	{
 		if(window.player_list[count].pid == pid)
 		{
-			console.log("getPlayerByID: " + window.player_list[count]);
+			//console.log("getPlayerByID: " + window.player_list[count]);
 			return window.player_list[count];
 		}
 	}
+	console.log("player with pid " + pid + " not found");
+	return null;
 }
 function player(player_id, playername,gold,wood,status,turn)
 {
