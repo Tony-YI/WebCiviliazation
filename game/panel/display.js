@@ -594,6 +594,8 @@ function display_hexagon_info(e)
 		target = e.target.parentNode;
 	}
 
+	hexagon_info.innerHTML = '';
+
 	var pos_x = target.getAttribute('x');
 	var pos_y = target.getAttribute('y');
 	var slot_type = target.getAttribute('slot_type');
@@ -603,33 +605,37 @@ function display_hexagon_info(e)
 	//var owner = player.pname;
 
 	var hexagon_info = document.getElementById('hexagon_info');
-	var new_p = document.createElement('p');
+	var new_p_1 = document.createElement('p');
+	var new_p_2 = document.createElement('p');
 	var new_img_slot_type = document.createElement('img');
 	new_img_slot_type.setAttribute('id', 'new_img_slot_type');
 	var new_img_army_type = document.createElement('img');
 
-	//new_p.innerHTML = 'Owner: ' + owner + '<br/>';
-	new_p.innerHTML = 'x: ' + pos_x + '; y: ' + pos_y + '<br/>';
+	//new_p_1.innerHTML = 'Owner: ' + owner + '<br/>';
+	new_p_1.innerHTML = 'x: ' + pos_x + '; y: ' + pos_y + '<br/>';
 	if(slot_type == 'normal_slot')
 	{
-		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Normal Slot <br/>';
+		new_p_1.innerHTML = new_p_1.innerHTML + 'Slot Type: Normal Slot <br/>';
 		new_img_slot_type.setAttribute('src', '');
 	}
 	else if(slot_type == 'gold_slot')
 	{
-		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Gold Slot <br/>';
+		new_p_1.innerHTML = new_p_1.innerHTML + 'Slot Type: Gold Slot <br/>';
 		new_img_slot_type.setAttribute('src', '../../images/gold.png');
 	}
 	else if(slot_type == 'wood_slot')
 	{
-		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Lumber Slot <br/>';
+		new_p_1.innerHTML = new_p_1.innerHTML + 'Slot Type: Lumber Slot <br/>';
 		new_img_slot_type.setAttribute('src', '../../images/lumber.png');
 	}
 	else if(slot_type == 'capital_slot')
 	{
-		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Capital Slot <br/>';
+		new_p_1.innerHTML = new_p_1.innerHTML + 'Slot Type: Capital Slot <br/>';
 		new_img_slot_type.setAttribute('src', '../../images/capital.png');
 	}
+	
+	hexagon_info.appendChild(new_p_1);
+	hexagon_info.appendChild(new_img_slot_type);
 
 	if(army_type == 'none')
 	{
@@ -640,25 +646,22 @@ function display_hexagon_info(e)
 
 		if(army_type == 'type_A')
 		{
-			new_p.innerHTML = new_p.innerHTML + 'Army Type: Sword<br/>';
+			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Sword<br/>';
 			new_img_army_type.setAttribute('src', '../../images/sword.png');
 		}
 		else if(army_type == 'type_B')
 		{
-			new_p.innerHTML = new_p.innerHTML + 'Army Type: Archer<br/>';
+			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Archer<br/>';
 			new_img_army_type.setAttribute('src', '../../images/archer.png');
 		}
 		else if (army_type == 'type_C')
 		{
-			new_p.innerHTML = new_p.innerHTML + 'Army Type: Cavalry<br/>';
+			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Cavalry<br/>';
 			new_img_army_type.setAttribute('src', '../../images/cavalry.png');
 		}
 	}
 
-
-	hexagon_info.innerHTML = '';
-	hexagon_info.appendChild(new_p);
-	hexagon_info.appendChild(new_img_slot_type);
+	hexagon_info.appendChild(new_p_2);
 	hexagon_info.appendChild(new_img_army_type);
 }
 /***********************************/
