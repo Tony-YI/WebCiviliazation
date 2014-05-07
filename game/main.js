@@ -62,11 +62,34 @@ function query_turn()
 	xhr.onreadystatechange = function()
 	{
 		if(xhr.status == 200 && xhr.readyState == 4)
-		console.log("query_turn() :" + xhr.responseText);
+		{
+			console.log("query_turn() :" + xhr.responseText);
+			var response;
+			try
+			{
+				response = JSON.parse(xhr.responseText);
+			}
+			catch(error)
+			{
+				console.log("query_turn() :JSON parse error" + error);
+				return ;
+			}
+			getPlayerByID(response["active_player"]).pturn = "1";
+		}
 	}
 }
 
 function new_round()
 {
 	//this function will have the army recover some HP 
+}
+
+function show_control()
+{
+
+}
+
+function hide_control()
+{
+
 }
