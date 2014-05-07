@@ -14,6 +14,8 @@
 		$rows[0] = mysqli_fetch_row($result);
 		$rows[1] = mysqli_fetch_row($result);
 		$rows[2] = mysqli_fetch_row($result);
+		$SQL_PLAYER_TURN_CANCEL = "";
+		$SQL_PLAYER_TURN_ACTIVATE = "";
 		for($count = 0;$count < 3;$count++)
 		{
 			$row = $rows[$count];
