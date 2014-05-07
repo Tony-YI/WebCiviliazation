@@ -25,6 +25,8 @@
 			{
 				$SQL_PLAYER_TURN_CANCEL = "UPDATE game_{$game_id}_playerlist SET `player_turn` = 0 WHERE player_id = $row[0]";
 				$SQL_PLAYER_TURN_ACTIVATE = "UPDATE game_{$game_id}_playerlist SET `player_turn` = 1";
+				echo "\n".$SQL_PLAYER_TURN_CANCEL."\n";
+				echo "\n".$SQL_PLAYER_TURN_ACTIVATE."\n";
 				switch ($count) 
 				{
 					case '0':
