@@ -1,7 +1,7 @@
 /***********************************/
 /**********check functions**********/
 /***********************************/
-function check_slot_owner(e) //check the slot owner
+function check_slot_right_click_able(e) //check the slot owner
 {
 	var target = e.target;
 	if(target.getAttribute('class') != 'hexagon')
@@ -17,7 +17,7 @@ function check_slot_owner(e) //check the slot owner
 
 	var slot = getSlotByXY(pos_x, pos_y); //in slot.js
 
-	if(parseInt(slot.owner) == parseInt(user_id))
+	if(parseInt(getArmyById(slot.army_id).owner) == user_id)
 	{
 		return true;
 	}
