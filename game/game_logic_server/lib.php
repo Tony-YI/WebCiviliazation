@@ -215,4 +215,19 @@ function row_to_result_JSON($row)
 	return $result;
 }
 
+function player1_get_new_resource()
+{
+
+}
+
+function player2_get_new_resource()
+{
+
+}
+
+function player3_get_new_resource()
+{
+
+}
+
 ?>
