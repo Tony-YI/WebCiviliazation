@@ -5,7 +5,7 @@ function key_down(e)
 
 	var key = e.keyCode;
 	console.log(key);
-	if(key == 77 || key == 73 || key == 81) //m, i, q
+	if(key == 77 || key == 73 || key == 81 || key == 72) //m, i, q, h
 	{
 		e.target.addEventListener('keyup', key_up, false);
 	}
@@ -43,5 +43,17 @@ function key_up(e)
 	{
 		e.target.removeEventListener('keyup', key_up, false);
 		alert('quit');
+	}
+	if(key == 72) // h
+	{
+		e.target.removeEventListener('keyup', key_up, false);
+		if(document.getElementById('help').style.display == 'none')
+		{
+			document.getElementById('help').style.display = 'block';
+		}
+		else
+		{
+			document.getElementById('info').style.display = 'none';
+		}
 	}
 }
