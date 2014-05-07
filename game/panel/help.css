@@ -1,84 +1,74 @@
 #help
 {
-	width: 200px;
-	height:300px;
+	width: 300px;
+	height:200px;
 	border: 1px solid red;
 	position: fixed;
-	right: 9px;
-	top: 9px;
 	background-color: white;
 	z-index: 105;
 	opacity: 0.9;
+	display: block;
 
-	animation-name: popup;
-    -webkit-animation-name: popup;
-    -moz-animation-name: popup;
+	animation-name: in;
+    -webkit-animation-name: in;
+    -moz-animation-name: in;
 
     animation-duration: 0.5s;
     -webkit-animation-duration: 0.5s;
     -moz-animation-duration: 0.5s;
 }
 
-@keyframes popup
+@keyframes in
 {
     0% {
-		transform: translateX(150%);
+		transform: scale(0);
+		opacity: 0.0;		
 	}
-	50%{
-		transform: translateX(-8%);
+	60% {
+		transform: scale(1.1);	
 	}
-	65%{
-		transform: translateX(4%);
-	}
-	80%{
-		transform: translateX(-4%);
-	}
-	95%{
-		transform: translateX(2%);
-	}			
+	80% {
+		transform: scale(0.9);
+		opacity: 1;	
+	}	
 	100% {
-		transform: translateX(0%);
+		transform: scale(1);
+		opacity: 1;	
 	}
 }
-@-webkit-keyframes popup
+@-webkit-keyframes in
 {
     0% {
-		-webkit-transform: translateX(150%);
+		-webkit-transform: scale(0);
+		opacity: 0.0;		
 	}
-	50%{
-		-webkit-transform: translateX(-8%);
+	60% {
+		-webkit-transform: scale(1.1);
 	}
-	65%{
-		-webkit-transform: translateX(4%);
-	}
-	80%{
-		-webkit-transform: translateX(-4%);
-	}
-	95%{
-		-webkit-transform: translateX(2%);
-	}			
+	80% {
+		-webkit-transform: scale(0.9);
+		opacity: 1;	
+	}	
 	100% {
-		-webkit-transform: translateX(0%);
+		-webkit-transform: scale(1);
+		opacity: 1;	
 	}
 }
-@-moz-keyframes popup
+@-moz-keyframes in
 {
     0% {
-		-moz-transform: translateX(150%);
+		-moz-transform: scale(0);
+		opacity: 0.0;		
 	}
-	50%{
-		-moz-transform: translateX(-8%);
+	60% {
+		-moz-transform: scale(1.1);
 	}
-	65%{
-		-moz-transform: translateX(4%);
-	}
-	80%{
-		-moz-transform: translateX(-4%);
-	}
-	95%{
-		-moz-transform: translateX(2%);
-	}			
+	80% {
+		-moz-transform: scale(0.9);
+		opacity: 1;	
+	}	
 	100% {
-		-moz-transform: translateX(0%);
+		-moz-transform: scale(1);
+		opacity: 1;	
 	}
 }
