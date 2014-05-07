@@ -608,7 +608,7 @@ function display_hexagon_info(e)
 	var new_img_army_type = document.createElement('img');
 
 	//var content = 'Owner: ' + owner + '<br/>';
-	var content = + 'x: ' + pos_x + '; y: ' + pos_y + '<br/>';
+	var content = 'x: ' + pos_x + '; y: ' + pos_y + '<br/>';
 	if(slot_type == 'normal_slot')
 	{
 		content = content + 'Slot Type: Normal Slot <br/>';
