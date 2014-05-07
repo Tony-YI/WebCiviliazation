@@ -242,9 +242,9 @@ function key_down(e)
 	e.preventDefault();
 
 	var key = e.keyCode;
+	console.log(key);
 	if(key == 77 || key == 73 || key == 81) //m, i, q
 	{
-		console.log(key);
 		e.target.addEventListener('keyup', key_up, false);
 	}
 }
@@ -254,7 +254,6 @@ function key_up(e)
 	var key = e.keyCode;
 	if(key == 77) // m
 	{
-		console.log(key);
 		e.target.removeEventListener('keyup', key_up, false);
 		clean_small_map_dot(); //in small_map.js
 		if(document.getElementById('small_map').style.display == 'none')
@@ -268,7 +267,6 @@ function key_up(e)
 	}
 	if(key == 73) // i
 	{
-		console.log(key);
 		e.target.removeEventListener('keyup', key_up, false);
 		if(document.getElementById('info').style.display == 'none')
 		{
@@ -281,7 +279,6 @@ function key_up(e)
 	}
 	if(key == 81) // q
 	{
-		console.log(key);
 		e.target.removeEventListener('keyup', key_up, false);
 		alert('quit');
 	}
@@ -366,7 +363,7 @@ function set_function_attribute_2(hexagon, function_type)
 	hexagon.setAttribute('class', 'manual');
 }
 
-function display_army_type(e) //TODO: check whether this slot has shuch army type
+function display_army_type(e)
 {
 	var target = e.target;
 	if(target.getAttribute('class') != 'hexagon')
