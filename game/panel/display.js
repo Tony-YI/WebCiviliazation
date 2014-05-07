@@ -243,7 +243,7 @@ function key_down(e)
 
 	var key = e.keyCode;
 	console.log(key);
-	if(key == 77 || key == 73 || key == 81) //m, i, q
+	if(key == 77 || key == 73 || key == 81) //m, i, q, h
 	{
 		e.target.addEventListener('keyup', key_up, false);
 	}
