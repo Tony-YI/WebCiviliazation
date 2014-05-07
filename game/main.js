@@ -59,7 +59,9 @@ function query_turn()
 	if(IsMyTurn())
 		return ;
 	//If it is not current player's turn, send query to the server
-
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","/game/game_logic_server/query_turn.php",true);
+	xhr.setRequestHeader("");
 }
 
 function new_round()

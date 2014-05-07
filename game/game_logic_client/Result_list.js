@@ -13,9 +13,21 @@ function update_result_list_div()
 		result_list_div.appendChild(new_p);
 	}
 }
-
+function getMAXResultId()
+{
+	var count = 0;
+	var max = 0;
+	for(count = 0;count < result_list.length;count++)
+	{
+		if(result_list[count].Result_id > max)
+			max = result_list[count].Result_id;
+	}
+	return max;
+}
 function Result(action_type)
 {
+	this.Result_id = getMAXResultId() + 1;
+	this.player_id = current_player.pid;
 	this.action_type = action_type;
 	this.from_x = null;
 	this.from_y = null;
