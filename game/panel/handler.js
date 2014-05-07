@@ -59,16 +59,13 @@ function clear_range(action)
 	}
 }
 
-function attack_clicked_handler(e)
+function attack_clicked_handler()
 {
 	/*
 	1. show the attack range
 	2. attach attack event listener (valid_attack_action() to the div) 3
 	3. attach cancel event handler 
 	*/
-	e = e || window.event;
-	e.preventDefault();
-	e.stopPropagation();
 	var x = parseInt(latest_slot.getAttribute('x'));
 	var y = parseInt(latest_slot.getAttribute('y'));
 	var slot = getSlotByXY(x, y);
@@ -157,8 +154,6 @@ function valid_attack_action(e)
 	*/
 	e = e || window.event;
 	//console.log(e.target);
-	e.preventDefault();
-	e.stopPropagation();
 	var target = e.target;
 	var from_x = latest_slot.getAttribute('x');
 	var from_y = latest_slot.getAttribute('y');
@@ -173,7 +168,7 @@ function valid_attack_action(e)
 	clear_range('attack');
 }
 
-function move_clicked_handler(e)
+function move_clicked_handler()
 {
 	/*
 	1. show the move range
@@ -182,9 +177,6 @@ function move_clicked_handler(e)
 	//console.log(latest_slot);
 	//console.log(latest_slot.getAttribute('x'));
 	//console.log(latest_slot.getAttribute('y'));
-	e = e || window.event;
-	e.preventDefault();
-	e.stopPropagation();
 	var x = parseInt(latest_slot.getAttribute('x'));
 	var y = parseInt(latest_slot.getAttribute('y'));
 	var slot = getSlotByXY(x, y);
@@ -272,8 +264,6 @@ function valid_move_action(e)
 	3. record the result in result list
 	*/
 	e = e || window.event;
-	e.preventDefault();
-	e.stopPropagation();
 	//console.log(e.target);
 	var target = e.target;
 	var from_x = latest_slot.getAttribute('x');
@@ -287,54 +277,26 @@ function valid_move_action(e)
 	var user_action = new action('move', army.army_id, from_x, from_y, to_x, to_y, army.type_id);
 	user_action.get_result();
 	update_result_list_div();
+	update_slot_own();
 	clear_range('move');
 }
 
-function invalid_action(e)
+function invalid_action()
 {
-	e = e || window.event;
-	e.preventDefault();
-	e.stopPropagation();
 	console.log('Invalid action');
 	clear_range();
 }
-function defend_clicked_handler(e)
+function defend_clicked_handler()
 {
-	e = e || window.event;
-	e.preventDefault();
-	e.stopPropagation();
+
 	var from_x = latest_slot.getAttribute('x');
 	var from_y = latest_slot.getAttribute('y');
 	var slot = getSlotByXY(from_x, from_y);
 	//console.log(slot);
 	//console.log('id: ' + parseInt(slot.army_id));
 	//console.log('parsed id: ' + (slot.army_id));
-	var armyid = parseInt(slot.army_id);
-	if(armyid == 0)
-	{
-		//console.log('id: ' + parseInt(slot.army_id));
-		var army = getArmyById(0);
-		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
-	}
-	else if(armyid == 1)
-	{
-		//console.log('id: ' + parseInt(slot.army_id));
-		var army = getArmyById(1);
-		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
-	}
-	else if(armyid == 2)
-	{
-		//console.log('id: ' + parseInt(slot.army_id));
-		var army = getArmyById(2);
-		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
-	}
-	else
-	{
-		//console.log('id: ' + parseInt(slot.army_id));
-		var army = getArmyById(100);
-		var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
-	}
-	//console.log(army);
+	var army = getArmyById(slot.army_id);
+	var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
 	console.log('defend at (' + from_x+ ', ' + from_y + ')');
 	user_action.get_result();
 	update_result_list_div();
