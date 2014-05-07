@@ -174,5 +174,44 @@ SQL_STATEMENT;
 	return $SQL_INSERT_RESULT;
 	}
 
+function row_to_result_JSON($row)
+{
+	$result = "{\"Result_id\":\"$row[0]\"";
+	$result .= ",\"action_type\":\"$row[1]\"";
+	$result .= ",\"player_id\":\"$row[2]\"";
+	if($row[1] == "attack")
+	{
+		$result .= ",\"attacker_id\":\"$row[3]\"";
+		$result .= ",\"defender_id\":\"$row[4]\"";
+		$result .= ",\"from_x\":\"$row[5]\"";
+		$result .= ",\"from_y\":\"$row[6]\"";
+		$result .= ",\"to_x\":\"$row[7]\"";
+		$result .= ",\"to_y\":\"$row[8]\"";
+		$result .= ",\"attacker_prev_hp\":\"$row[9]\"";
+		$result .= ",\"atatcker_remaining_hp\":\"$row[10]\"";
+		$result .= ",\"defender_prev_hp\":\"$row[11]\"";
+		$result .= ",\"defender_prev_hp\":\"$row[12]\"";
+	}
+	else if($row[1] == "move")
+	{
+		$result .= ",\"army_id\":\"$row[3]\"";
+		$result .= ",\"from_x\":\"$row[5]\"";
+		$result .= ",\"from_y\":\"$row[6]\"";
+		$result .= ",\"to_x\":\"$row[7]\"";
+		$result .= ",\"to_y\":\"$row[8]\"";
+	}
+	else if($row[1] == "defend")
+	{
+		$result .= ",\"defender_id\":\"$row[3]\"";
+		$result .= ",\"from_x\":\"$row[5]\"";
+		$result .= ",\"from_y\":\"$row[6]\"";
+	}
+	else if($row[1] == "build")
+	{
+		$result .= ",\"army_id\":\"$row[3]\"";
+		$result .= ",\"army_type\":\"$row[13]\"";
+	}
+	$result .= "}";
+}
 
 ?>
