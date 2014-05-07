@@ -282,6 +282,7 @@ function valid_move_action(e)
 
 function invalid_action(e)
 {
+	console.log('Invalid action');
 	var slot_div = document.getElementsByClassName('hexagon');
 	for(var i = 0; i < slot_num; i++) //slot_num: global variable in small_map.js
 	{
