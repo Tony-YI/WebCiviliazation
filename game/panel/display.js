@@ -594,8 +594,6 @@ function display_hexagon_info(e)
 		target = e.target.parentNode;
 	}
 
-	hexagon_info.innerHTML = '';
-
 	var pos_x = target.getAttribute('x');
 	var pos_y = target.getAttribute('y');
 	var slot_type = target.getAttribute('slot_type');
@@ -605,6 +603,7 @@ function display_hexagon_info(e)
 	//var owner = player.pname;
 
 	var hexagon_info = document.getElementById('hexagon_info');
+	hexagon_info.innerHTML = '';
 	var new_p_1 = document.createElement('p');
 	var new_p_2 = document.createElement('p');
 	var new_img_slot_type = document.createElement('img');
@@ -633,7 +632,7 @@ function display_hexagon_info(e)
 		new_p_1.innerHTML = new_p_1.innerHTML + 'Slot Type: Capital Slot <br/>';
 		new_img_slot_type.setAttribute('src', '../../images/capital.png');
 	}
-	
+
 	hexagon_info.appendChild(new_p_1);
 	hexagon_info.appendChild(new_img_slot_type);
 
