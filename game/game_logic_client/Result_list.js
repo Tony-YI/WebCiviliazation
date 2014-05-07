@@ -234,6 +234,7 @@ action.prototype.get_result = function()
 
 	//for test, should be deleted later
 	result_list.push(result);
+	update_slot_own();
 	return result;
 }
 
