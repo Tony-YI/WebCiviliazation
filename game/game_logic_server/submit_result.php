@@ -68,10 +68,10 @@
 				$SQL_ADD_ARMY_OF_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = $army_id WHERE slot_col = $to_x AND slot_row = $to_y";
 				echo "\"sql_statement\":\"$SQL_REMOVE_ARMY_OF_SLOT\"";
 				echo "\"sql_statement\":\"$SQL_ADD_ARMY_OF_SLOT\"";
-				if(!mysqli_query($SQL_REMOVE_ARMY_OF_SLOT))
+				if(!mysqli_query($db,$SQL_REMOVE_ARMY_OF_SLOT))
 					echo "\n".mysqli_error();
 				
-				if(!mysqli_query($SQL_ADD_ARMY_OF_SLOT))
+				if(!mysqli_query($db,$SQL_ADD_ARMY_OF_SLOT))
 					echo "\n".mysqli_error();
 			}
 			else
