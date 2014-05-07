@@ -296,7 +296,7 @@ function set_function_attribute_2(hexagon, function_type)
 	}
 	else if(function_type == 'defence')
 	{
-		name = 'Defence';
+		name = 'Defend';
 	}
 	else if(function_type == 'back')
 	{
