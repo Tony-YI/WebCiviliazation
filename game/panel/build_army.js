@@ -20,6 +20,7 @@ function build_clicked_Exit()
 	var buildArmy = document.getElementById('buildArmy');
     	buildArmy.style.display= "none";
 }
+
 function build_army(armyType)
 {
 	switch(armyType)
@@ -28,19 +29,38 @@ function build_army(armyType)
 			if(window.current_player.gold < 20 || current_player.wood < 20){
 				alert("You do not have enough Gold or Wood to build a sword army");
 			}
+			else{
+				window.current_player.gold = window.current_player.gold - 20;
+				window.current_player.wood = window.current_player.wood - 20;
+				var armyId = window.army_list.length;
+				var tmp = new action("build","armyId",null,null,null,null,armyType);
+				tmp.get_result();
+			}
 			
 			break;
 		case 2:
 			if(window.current_player.gold < 25 || current_player.wood < 15){
 				alert("You do not have enough Gold or Wood to build a sword army");
 			}
-			
+			else{
+				window.current_player.gold = window.current_player.gold - 25;
+				window.current_player.wood = window.current_player.wood - 15;
+				var armyId = window.army_list.length;
+				var tmp = new action("build","armyId",null,null,null,null,armyType);
+				tmp.get_result();
+			}
 			break;
 		case 3:
 			if(window.current_player.gold < 15 || current_player.wood < 25){
 				alert("You do not have enough Gold or Wood to build a sword army");
 			}
-			
+			else{
+				window.current_player.gold = window.current_player.gold - 15;
+				window.current_player.wood = window.current_player.wood - 25;
+				var armyId = window.army_list.length;
+				var tmp = new action("build","armyId",null,null,null,null,armyType);
+				tmp.get_result();
+			}
 			break;
 		default:
 			break;
