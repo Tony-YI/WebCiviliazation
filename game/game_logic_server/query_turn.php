@@ -15,7 +15,7 @@
 
 	$SQL_GET_ACTIVE_PLAYER = "SELECT player_id FROM game_{$game_id}_playerlist WHERE player_turn = 1";
 	$result = mysqli_query($db,$SQL_GET_ACTIVE_PLAYER);
-	$row = mysqli_fetch_row($result);
+	
 
 	echo "{\"active_player\":\"$row[0]\"";
 
@@ -29,6 +29,7 @@
 
 	for($count = 0;$count < $row_num;$count++)
 	{
+		$row = mysqli_fetch_row($result);
 		echo row_to_result_JSON($row);
 		if($count + 1 < $row_num)
 			echo ",";
