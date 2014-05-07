@@ -55,6 +55,6 @@
 			echo $SQL_INSERT_STATEMENT."\n";
 			mysqli_query($db,$SQL_INSERT_STATEMENT);
 		}
-		nextTurn($db,$game_id);
+		//nextTurn($db,$game_id);
 	}
 ?>
