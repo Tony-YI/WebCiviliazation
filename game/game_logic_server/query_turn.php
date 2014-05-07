@@ -29,8 +29,8 @@
 		echo row_to_result_JSON($row);
 		if($count + 1 < $row_num)
 			echo ",";
-		else
-			echo "]";
+
 	}
+	echo "]";
 	echo "}";
 ?>
