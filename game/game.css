@@ -50,24 +50,28 @@
    	font-family: Britannic Bold;
 }
 
+#help
+{
+	font-family: Bradley Hand ITC;
+}
+
 #info>button
 {
   display: inline-block;
-  background: rgba(19,19,19,0.85);
+  background: rgba(230,230,250,.85);
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
-   color: #E6E6FA;
+   color: #696969;
    border-radius: 8px;
-   font-size: 8px;
-   font-family: Buxton Sketch, Serif;
+   font-size: 12px;
+   font-family: Britannic Bold, Serif;
    text-decoration: none;
 
     transition:border linear .3s,box-shadow linear .7s;
     -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
     -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
-    outline:none;border-color:rgba(200,200,200,.75);
-    box-shadow:0 0 8px rgba(200,200,200,.5);
-    -moz-box-shadow:0 0 8px rgba(200,200,200,.5);
-    -webkit-box-shadow:0 0 8px rgba(200,200,200,.3);
-
+    outline:none;border-color:rgba(230,230,250,.75);
+    box-shadow:0 0 8px rgba(230,230,250,.5);
+    -moz-box-shadow:0 0 8px rgba(230,230,250,.5);
+    -webkit-box-shadow:0 0 8px rgba(230,230,250,.3);
 }

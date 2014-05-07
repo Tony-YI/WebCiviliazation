@@ -277,7 +277,6 @@ function valid_move_action(e)
 	var user_action = new action('move', army.army_id, from_x, from_y, to_x, to_y, army.type_id);
 	user_action.get_result();
 	update_result_list_div();
-	update_slot_own();
 	clear_range('move');
 }
 
