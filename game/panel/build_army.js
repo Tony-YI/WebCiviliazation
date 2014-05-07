@@ -32,7 +32,7 @@ function build_army(armyType)
 			else{
 				window.current_player.gold = window.current_player.gold - 20;
 				window.current_player.wood = window.current_player.wood - 20;
-				var armyId = window.army_list.length;
+				var armyId = (window.army_list.length).toString();
 				var newArmy = new Army(armyId,armyType,window.current_player.pid);
 				alert("zzeze");
 				window.army_list.push(newArmy);
