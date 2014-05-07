@@ -71,6 +71,10 @@
 				if(!mysqli_query($SQL_ADD_ARMY_OF_SLOT))
 					echo "\n".mysqli_error();
 			}
+			else
+			{
+				echo "\"error1\":\"invalid action_type\"";
+			}
 		}
 		//nextTurn($db,$game_id);
 	}
