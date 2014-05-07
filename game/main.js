@@ -75,9 +75,15 @@ function query_turn()
 				return ;
 			}
 			getPlayerByID(response["active_player"]).pturn = "1";
+			if(IsMyTurn())
+			{
+				alert("Hey ! It's your turn !");
+			}
 		}
 	}
 }
+
+setInterval(query_turn(),2000);
 
 function new_round()
 {
