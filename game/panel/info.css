@@ -82,3 +82,15 @@
 		-moz-transform: translateX(0%);
 	}
 }
+
+#new_img_army_type
+{
+	max-width: 150px;
+	max-height: 150px;
+}
+
+#new_img_slot_type
+{
+	max-width: 150px;
+	max-height: 150px;
+}
