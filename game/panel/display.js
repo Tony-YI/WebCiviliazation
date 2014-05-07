@@ -617,12 +617,12 @@ function display_hexagon_info(e)
 	else if(slot_type == 'gold_slot')
 	{
 		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Gold Slot <br/>';
-		new_img_slot_type.setAttribute('src', '');
+		new_img_slot_type.setAttribute('src', '../../images/gold.png');
 	}
 	else if(slot_type == 'wood_slot')
 	{
 		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Lumber Slot <br/>';
-		new_img_slot_type.setAttribute('src', '');
+		new_img_slot_type.setAttribute('src', '../../images/lumber.png');
 	}
 	else if(slot_type == 'capital_slot')
 	{
