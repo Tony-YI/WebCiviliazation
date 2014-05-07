@@ -293,6 +293,7 @@ function defend_clicked_handler()
 	var from_y = latest_slot.getAttribute('y');
 	var slot = getSlotByXY(from_x, from_y);
 	console.log(slot);
+	console.log(parseInt(slot.army_id));
 	var army = getArmyById(parseInt(slot.army_id));
 	var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
 	console.log(army);
