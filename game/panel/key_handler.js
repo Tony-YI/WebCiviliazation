@@ -1,6 +1,6 @@
 function init_help()
 {
-	document.getElementById('help').innerHTML='<p id="title"><h3>Hint</h3><p>Use key "i" to invoke/hide information board<br/>Use key "m" to invoke/hide small map<br/>Use key "q" to quit game<br/>Use key "h" to invoke/hide hint board</p>';
+	document.getElementById('help').innerHTML='<p id="title"><h3>Hint</h3><p>Use key <h4><b>"i"</b></h4> to invoke/hide information board<br/>Use key <h4><b>"m"</b></h4> to invoke/hide small map<br/>Use key <h4><b>"q"</b></h4> to quit game<br/>Use key <h4><b>"h"</b></h4> to invoke/hide hint board</p>';
 }
 
 function key_down(e)
