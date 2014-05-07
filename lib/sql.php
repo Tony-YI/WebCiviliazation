@@ -97,12 +97,12 @@ SQL_STATEMENT;
 		$SQL_CREATE_SLOTLIST = <<<SQL_STATEMENT
 		CREATE TABLE game_{$game_id}_slotlist
 		(
-			slot_x INT,
-			slot_y INT,
+			slot_row INT,
+			slot_col INT,
 			slot_owner INT,
 			slot_type INT,
 			slot_army INT,
-			PRIMARY KEY(slot_x,slot_y),
+			PRIMARY KEY(slot_row,slot_col),
 			FOREIGN KEY(slot_owner) REFERENCES game_{$game_id}_playerlist(player_id),
 			FOREIGN KEY(slot_army) REFERENCES game_{$game_id}_armylist(army_id)
 		)
