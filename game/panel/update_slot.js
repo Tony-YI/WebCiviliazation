@@ -1,5 +1,22 @@
 //var result_list; global variable
 //var line_num = 22; global variable in small_map.js
+function update_slot_list_own(hexagon_from, hexagon_to, army_id_from, army_id_to)
+{
+	var from_x = hexagon_from.getAttribute('x');
+	var from_y = hexagon_from.getAttribute('y');
+	var slot_from = getSlotByXY(from_x, from_y) //function in game/game_logic_client->slot.js
+	slot_from.army_id = army_id_from;
+
+	var to_x = hexagon_to.getAttribute('x');
+	var to_y = hexagon_to.getAttribute('y');
+	var slot_to = getSlotByXY(to_x, to_y) //function in game/game_logic_client->slot.js
+	slot_to.army_id = army_id_to;
+}
+
+function update_slot_list_others()
+{
+
+}
 
 function get_hexagon(x, y)
 {
@@ -39,8 +56,11 @@ function update_move(from_x, from_y, to_x, to_y)
 {
 	var hexagon_from = get_hexagon(from_x, from_y);
 	var hexagon_to = get_hexagon(to_x, to_y);
+	var army_id_from = '';
+	var army_id_to = getSlotByXY(from_x, from_y).army_id;
 
 	set_army_type(hexagon_from, hexagon_to, army_type);
+	update_slot_list_own(hexagon_from, hexagon_to, army_id_from, army_id_to)
 }
 
 function update_defend(from_x, from_y, to_x, to_y)
