@@ -22,10 +22,11 @@
 	/*show result list here*/
 	$SQL_GET_RESULT_LIST = "SELECT * FROM game_{$game_id}_resultlist WHERE result_id > $max_result_id";
 	echo ",\"sql_statement_used\":\"$SQL_GET_RESULT_LIST\"";
-
-	echo ",\"latest_result_list\":[";
 	$result = mysqli_query($db,$SQL_GET_RESULT_LIST);
 	$row_num = mysqli_num_rows($result);
+	echo ",\"row_num\":\"$row_num\"";
+	echo ",\"latest_result_list\":[";
+
 	for($count = 0;$count < $row_num;$count++)
 	{
 		echo row_to_result_JSON($row);

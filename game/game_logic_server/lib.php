@@ -212,6 +212,7 @@ function row_to_result_JSON($row)
 		$result .= ",\"army_type\":\"$row[13]\"";
 	}
 	$result .= "}";
+	return $result;
 }
 
 ?>
