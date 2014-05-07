@@ -294,6 +294,7 @@ function defend_clicked_handler()
 	var slot = getSlotByXY(from_x, from_y);
 	var army = getArmyById(slot.army_id);
 	var user_action = new action('defend', army.army_id, from_x, from_y, null, null, army.type_id);
+	console.log(army);
 	console.log('defend at (' + from_x+ ', ' + from_y + ')');
 	user_action.get_result();
 	update_result_list_div();
