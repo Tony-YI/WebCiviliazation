@@ -89,7 +89,7 @@ Result.prototype.Result_toString = function()
 	}
 	else if(this.action_type == "defend")
 	{
-		var actor = getArmyById(this.army_id);
+		var actor = getArmyById(this.defender_id);
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " defend ";
 		var target_str = "(" + this.from_x + "," + this.from_y + ")";
