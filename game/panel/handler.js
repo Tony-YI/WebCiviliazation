@@ -293,7 +293,7 @@ function defend_clicked_handler()
 	var from_y = latest_slot.getAttribute('y');
 	var slot = getSlotByXY(from_x, from_y);
 	console.log(slot);
-	var army = getArmyById(parseInt(slot.army_id);
+	var army = getArmyById(parseInt(slot.army_id));
 	var user_action = new action('defend', army.army_id, from_x, from_y, null, null, parsearmy.type_id);
 	console.log(army);
 	console.log('defend at (' + from_x+ ', ' + from_y + ')');
@@ -332,6 +332,5 @@ function nextround_clicked_handler()
 	This function handle the click event on the next round button
 	*/
 	console.log("nextround_clicked_handler: sending the result list to the server");
-	send_result_list_to_server();
-	update_result_list_div();
+	send_result_list_to_server()
 }
