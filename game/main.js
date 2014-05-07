@@ -61,7 +61,13 @@ function query_turn()
 	//If it is not current player's turn, send query to the server
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","/game/game_logic_server/query_turn.php",true);
-	xhr.setRequestHeader("");
+	xhr.setRequestHeader("MAX_RESULT_ID",getMAXResultId());
+	xhr.send();
+	xhr.onreadystatechange = function()
+	{
+		if(xhr.status == 200 && xhr.readyState == 4)
+		console.log("query_turn() :" + xhr.responseText);
+	}
 }
 
 function new_round()
