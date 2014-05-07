@@ -45,14 +45,21 @@
    border-top-color: #1b435e;
    background: #1b435e;
    }
-#info
+#info, #buildArmy
 {
-   	font-family: Britannic Bold;
+   	font-family: Lucida Calligraphy;
+
 }
 
 #help
 {
-	font-family: Bradley Hand ITC;
+	font-family: Lucida Handwriting;
+	font-size: 14px;
+}
+#help>b
+{
+	font-family: Bookman Old Style;
+	font-size: 16px;
 }
 
 #info>button
@@ -64,7 +71,7 @@
    color: #696969;
    border-radius: 8px;
    font-size: 12px;
-   font-family: Britannic Bold, Serif;
+   font-family: Comic Sans MS, Serif;
    text-decoration: none;
 
     transition:border linear .3s,box-shadow linear .7s;
