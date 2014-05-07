@@ -38,12 +38,13 @@ function Init_get_init_data()
 	
 	init_slot_list(response.slots);
 	//console.log("Things done for slots");
+	window.setInterval(query_turn(),2000);
 }
 
 //This function returns true or false 
 function IsMyTurn()
 {
-	if(current_player["turn"] == "1")
+	if(current_player["pturn"] == "1")
 		return true;
 	else 
 		return false;
@@ -75,9 +76,14 @@ function query_turn()
 				return ;
 			}
 			getPlayerByID(response["active_player"]).pturn = "1";
+			if(IsMyTurn())
+			{
+				alert("Hey ! It's your turn !");
+			}
 		}
 	}
 }
+
 
 function new_round()
 {
