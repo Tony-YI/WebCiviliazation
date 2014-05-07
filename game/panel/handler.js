@@ -59,13 +59,16 @@ function clear_range(action)
 	}
 }
 
-function attack_clicked_handler()
+function attack_clicked_handler(e)
 {
 	/*
 	1. show the attack range
 	2. attach attack event listener (valid_attack_action() to the div) 3
 	3. attach cancel event handler 
 	*/
+	e = e || window.event;
+	e.preventDefault();
+	e.stopPropagation();
 	var x = parseInt(latest_slot.getAttribute('x'));
 	var y = parseInt(latest_slot.getAttribute('y'));
 	var slot = getSlotByXY(x, y);
@@ -154,6 +157,8 @@ function valid_attack_action(e)
 	*/
 	e = e || window.event;
 	//console.log(e.target);
+	e.preventDefault();
+	e.stopPropagation();
 	var target = e.target;
 	var from_x = latest_slot.getAttribute('x');
 	var from_y = latest_slot.getAttribute('y');
@@ -168,7 +173,7 @@ function valid_attack_action(e)
 	clear_range('attack');
 }
 
-function move_clicked_handler()
+function move_clicked_handler(e)
 {
 	/*
 	1. show the move range
@@ -177,6 +182,9 @@ function move_clicked_handler()
 	//console.log(latest_slot);
 	//console.log(latest_slot.getAttribute('x'));
 	//console.log(latest_slot.getAttribute('y'));
+	e = e || window.event;
+	e.preventDefault();
+	e.stopPropagation();
 	var x = parseInt(latest_slot.getAttribute('x'));
 	var y = parseInt(latest_slot.getAttribute('y'));
 	var slot = getSlotByXY(x, y);
@@ -264,6 +272,8 @@ function valid_move_action(e)
 	3. record the result in result list
 	*/
 	e = e || window.event;
+	e.preventDefault();
+	e.stopPropagation();
 	//console.log(e.target);
 	var target = e.target;
 	var from_x = latest_slot.getAttribute('x');
@@ -282,11 +292,17 @@ function valid_move_action(e)
 
 function invalid_action(e)
 {
+	e = e || window.event;
+	e.preventDefault();
+	e.stopPropagation();
 	console.log('Invalid action');
 	clear_range();
 }
-function defend_clicked_handler()
+function defend_clicked_handler(e)
 {
+	e = e || window.event;
+	e.preventDefault();
+	e.stopPropagation();
 	var from_x = latest_slot.getAttribute('x');
 	var from_y = latest_slot.getAttribute('y');
 	var slot = getSlotByXY(from_x, from_y);
