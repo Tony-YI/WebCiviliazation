@@ -45,7 +45,29 @@
    border-top-color: #1b435e;
    background: #1b435e;
    }
-   #info
-   {
+#info
+{
    	font-family: Britannic Bold;
-   }
+}
+
+#info>button
+{
+  display: inline-block;
+  background: rgba(19,19,19,0.85);
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   color: #E6E6FA;
+   border-radius: 8px;
+   font-size: 8px;
+   font-family: Buxton Sketch, Serif;
+   text-decoration: none;
+
+    transition:border linear .3s,box-shadow linear .7s;
+    -moz-transition:border linear .3s,-moz-box-shadow linear .7s;
+    -webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
+    outline:none;border-color:rgba(200,200,200,.75);
+    box-shadow:0 0 8px rgba(200,200,200,.5);
+    -moz-box-shadow:0 0 8px rgba(200,200,200,.5);
+    -webkit-box-shadow:0 0 8px rgba(200,200,200,.3);
+
+}
