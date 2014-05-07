@@ -29,7 +29,7 @@
 			$SQL_DROP_playerlist = "DROP TABLE game_{$row[0]}_playerlist";
 			$SQL_DROP_armylist = "DROP TABLE game_{$row[0]}_armylist";
 			$SQL_DROP_slotlist = "DROP TABLE game_{$row[0]}_slotlist";
-			$SQL_DROP_actionlist = "DROP TABLE game_{$row[0]}_actionlist";
+			$SQL_DROP_actionlist = "DROP TABLE game_{$row[0]}_resultlist";
 			if(!mysqli_query($db,$SQL_DROP_actionlist))
 			{
 				$sql_error = mysqli_error($db);
