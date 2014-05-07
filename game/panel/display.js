@@ -605,6 +605,7 @@ function display_hexagon_info(e)
 	var hexagon_info = document.getElementById('hexagon_info');
 	var new_p = document.createElement('p');
 	var new_img_slot_type = document.createElement('img');
+	new_img_slot_type.setAttribute('id', 'new_img_slot_type');
 	var new_img_army_type = document.createElement('img');
 
 	//new_p.innerHTML = 'Owner: ' + owner + '<br/>';
@@ -617,12 +618,12 @@ function display_hexagon_info(e)
 	else if(slot_type == 'gold_slot')
 	{
 		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Gold Slot <br/>';
-		new_img_slot_type.setAttribute('src', '');
+		new_img_slot_type.setAttribute('src', '../../images/gold.png');
 	}
 	else if(slot_type == 'wood_slot')
 	{
 		new_p.innerHTML = new_p.innerHTML + 'Slot Type: Lumber Slot <br/>';
-		new_img_slot_type.setAttribute('src', '');
+		new_img_slot_type.setAttribute('src', '../../images/lumber.png');
 	}
 	else if(slot_type == 'capital_slot')
 	{
