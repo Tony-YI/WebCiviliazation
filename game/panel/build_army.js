@@ -29,6 +29,9 @@ function build_army(armyType)
 			if(window.current_player.gold < 20 || current_player.wood < 20){
 				alert("You do not have enough Gold or Wood to build a sword army");
 			}
+			else if(window.getSlotByXY(window.current_player.capital_x,window.current_player.capital_y).army_id != ""){
+				alert("You can not build army here! Please make sure there is no other army type in the current slot");
+			}
 			else{
 				window.current_player.gold = window.current_player.gold - 20;
 				window.current_player.wood = window.current_player.wood - 20;
