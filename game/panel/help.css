@@ -1,0 +1,84 @@
+#help
+{
+	width: 200px;
+	height:300px;
+	border: 1px solid red;
+	position: fixed;
+	right: 9px;
+	top: 9px;
+	background-color: white;
+	z-index: 105;
+	opacity: 0.9;
+
+	animation-name: popup;
+    -webkit-animation-name: popup;
+    -moz-animation-name: popup;
+
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+}
+
+@keyframes popup
+{
+    0% {
+		transform: translateX(150%);
+	}
+	50%{
+		transform: translateX(-8%);
+	}
+	65%{
+		transform: translateX(4%);
+	}
+	80%{
+		transform: translateX(-4%);
+	}
+	95%{
+		transform: translateX(2%);
+	}			
+	100% {
+		transform: translateX(0%);
+	}
+}
+@-webkit-keyframes popup
+{
+    0% {
+		-webkit-transform: translateX(150%);
+	}
+	50%{
+		-webkit-transform: translateX(-8%);
+	}
+	65%{
+		-webkit-transform: translateX(4%);
+	}
+	80%{
+		-webkit-transform: translateX(-4%);
+	}
+	95%{
+		-webkit-transform: translateX(2%);
+	}			
+	100% {
+		-webkit-transform: translateX(0%);
+	}
+}
+@-moz-keyframes popup
+{
+    0% {
+		-moz-transform: translateX(150%);
+	}
+	50%{
+		-moz-transform: translateX(-8%);
+	}
+	65%{
+		-moz-transform: translateX(4%);
+	}
+	80%{
+		-moz-transform: translateX(-4%);
+	}
+	95%{
+		-moz-transform: translateX(2%);
+	}			
+	100% {
+		-moz-transform: translateX(0%);
+	}
+}
