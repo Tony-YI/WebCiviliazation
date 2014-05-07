@@ -29,30 +29,26 @@
 			$SQL_DROP_playerlist = "DROP TABLE game_{$row[0]}_playerlist";
 			$SQL_DROP_armylist = "DROP TABLE game_{$row[0]}_armylist";
 			$SQL_DROP_slotlist = "DROP TABLE game_{$row[0]}_slotlist";
-			$SQL_DROP_actionlist = "DROP TABLE game_{$row[0]}_actionlist";
+			$SQL_DROP_actionlist = "DROP TABLE game_{$row[0]}_resultlist";
 			if(!mysqli_query($db,$SQL_DROP_actionlist))
 			{
 				$sql_error = mysqli_error($db);
 				echo "<p>$SQL_DROP_actionlist Error: $sql_error</p>";
-				exit;
 			}
 			if(!mysqli_query($db,$SQL_DROP_slotlist))
 			{
 				$sql_error = mysqli_error($db);
 				echo "<p>$SQL_DROP_slotlist Error: $sql_error</p>";
-				exit;
 			}
 			if(!mysqli_query($db,$SQL_DROP_armylist))
 			{
 				$sql_error = mysqli_error($db);
 				echo "<p>$SQL_DROP_armylist Error: $sql_error</p>";
-				exit;
 			}
 			if(!mysqli_query($db,$SQL_DROP_playerlist))
 			{
 				$sql_error = mysqli_error($db);
 				echo "<p>$SQL_DROP_playerlist Error: $sql_error</p>";
-				exit;
 			}
 		}
 	}
