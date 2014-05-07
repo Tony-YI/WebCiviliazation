@@ -636,7 +636,7 @@ function display_hexagon_info(e)
 	else
 	{
 		new_img_army_type.setAttribute('id', 'new_img_army_type');
-		
+
 		if(army_type == 'type_A')
 		{
 			info = info + 'Army Type: Sword<br/>';
@@ -654,6 +654,7 @@ function display_hexagon_info(e)
 		}
 	}
 
+	new_p.innerHTML = info;
 	hexagon_info.appendChild('new_p');
 	hexagon_info.appendChild('new_img_slot_type');
 	hexagon_info.appendChild('new_img_army_type');
