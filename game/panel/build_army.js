@@ -35,6 +35,7 @@ function build_army(armyType)
 				var armyId = window.army_list.length;
 				var tmp = new action("build","armyId",null,null,null,null,armyType);
 				tmp.get_result();
+				window.current_player.show_info();
 			}
 			
 			break;
@@ -48,6 +49,7 @@ function build_army(armyType)
 				var armyId = window.army_list.length;
 				var tmp = new action("build","armyId",null,null,null,null,armyType);
 				tmp.get_result();
+				window.current_player.show_info();
 			}
 			break;
 		case 3:
@@ -60,6 +62,7 @@ function build_army(armyType)
 				var armyId = window.army_list.length;
 				var tmp = new action("build","armyId",null,null,null,null,armyType);
 				tmp.get_result();
+				window.current_player.show_info();
 			}
 			break;
 		default:
