@@ -21,6 +21,8 @@
 
 	/*show result list here*/
 	$SQL_GET_RESULT_LIST = "SELECT * FROM game_{$game_id}_resultlist WHERE result_id > $max_result_id";
+	echo ",\"sql_statement_used\":\"$SQL_GET_RESULT_LIST\"";
+
 	echo ",\"latest_result_list\":[";
 	$result = mysqli_query($db,$SQL_GET_RESULT_LIST);
 	$row_num = mysqli_num_rows($result);
