@@ -650,12 +650,12 @@ function display_hexagon_info(e)
 		}
 		else if(army_type == 'type_B')
 		{
-			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Archer<br/>';
+			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Cavalry<br/>';
 			new_img_army_type.setAttribute('src', '../../images/cavalry.png');
 		}
 		else if (army_type == 'type_C')
 		{
-			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Cavalry<br/>';
+			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Archer<br/>';
 			new_img_army_type.setAttribute('src', '../../images/archer.png');
 		}
 	}
