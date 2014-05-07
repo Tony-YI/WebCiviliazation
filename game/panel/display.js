@@ -605,7 +605,7 @@ function display_hexagon_info(e)
 	var hexagon_info = document.getElementById('hexagon_info');
 	var new_p = document.createElement('p');
 	var new_img_slot_type = document.createElement('img');
-	new_img_army_type.setAttribute('id', 'new_img_slot_type');
+	new_img_slot_type.setAttribute('id', 'new_img_slot_type');
 	var new_img_army_type = document.createElement('img');
 
 	//new_p.innerHTML = 'Owner: ' + owner + '<br/>';
