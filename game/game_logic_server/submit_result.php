@@ -52,6 +52,7 @@
 			2. Modify the accordingly value in the database
 			*/
 			$SQL_INSERT_STATEMENT = SQL_generate_insert_result($result);
+			echo $SQL_INSERT_STATEMENT."\n";
 			mysqli_query($db,$SQL_INSERT_STATEMENT);
 		}
 		nextTurn($db,$game_id);
