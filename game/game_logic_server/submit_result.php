@@ -54,6 +54,27 @@
 			echo $SQL_INSERT_STATEMENT."\n";
 			if(!mysqli_query($db,$SQL_INSERT_STATEMENT))
 			echo "\n".mysqli_error($db)."\n";
+
+			if($result["action_type"] == "move")
+			{
+				$army_id = $result["army_id"];
+				$from_x = $result["from_x"];
+				$from_y = $result["from_y"];
+				$to_x = $result["to_x"];
+				$to_y = $result["to_y"];
+
+				$SQL_REMOVE_ARMY_OF_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = NULL WHERE slot_col = $from_x AND slot_row = $from_y";
+				$SQL_ADD_ARMY_OF_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = $army_id WHERE slot_col = $to_x AND slot_row = $to_y";
+				if(!mysqli_query($SQL_REMOVE_ARMY_OF_SLOT))
+					echo "\n".mysqli_error();
+				
+				if(!mysqli_query($SQL_ADD_ARMY_OF_SLOT))
+					echo "\n".mysqli_error();
+			}
+			else
+			{
+				echo "\"error1\":\"invalid action_type\"";
+			}
 		}
 		//nextTurn($db,$game_id);
 	}
