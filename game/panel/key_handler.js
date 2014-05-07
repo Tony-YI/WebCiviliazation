@@ -1,6 +1,10 @@
 function init_help()
 {
-	
+	document.getElementById('help').innerHTML="""
+		<p><h2>Hint</h2><p>
+		<p>Use i to invoke information board<p>
+		<p>Use m to invoke small map<p>
+	"""
 }
 
 function key_down(e)
