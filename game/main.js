@@ -44,7 +44,7 @@ function Init_get_init_data()
 //This function returns true or false 
 function IsMyTurn()
 {
-	if(current_player["turn"] == "1")
+	if(current_player["pturn"] == "1")
 		return true;
 	else 
 		return false;
