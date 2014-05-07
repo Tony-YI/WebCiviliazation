@@ -75,6 +75,8 @@
 				$SQL_PLAYER_TURN_ACTIVATE .= " WHERE `player_id` = $tmp_id";
 			}
 		}
+		echo "\n".$SQL_PLAYER_TURN_CANCEL."\n";
+		echo "\n".$SQL_PLAYER_TURN_ACTIVATE."\n";
 		mysqli_query($db,$SQL_PLAYER_TURN_CANCEL);
 		mysqli_query($db,$SQL_PLAYER_TURN_ACTIVATE);
 	}
