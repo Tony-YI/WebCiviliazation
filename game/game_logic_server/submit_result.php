@@ -63,8 +63,8 @@
 				$to_x = $result["to_x"];
 				$to_y = $result["to_y"];
 
-				$SQL_REMOVE_ARMY_OF_SLOT = "UPDATE game_{$game_id}_slotlist SET army_id = NULL WHERE slot_col = $from_x AND slot_row = $from_y";
-				$SQL_ADD_ARMY_OF_SLOT = "UPDATE game_{$game_id}_slotlist SET army_id = $army_id WHERE slot_col = $to_x AND slot_row = $to_y";
+				$SQL_REMOVE_ARMY_OF_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = NULL WHERE slot_col = $from_x AND slot_row = $from_y";
+				$SQL_ADD_ARMY_OF_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = $army_id WHERE slot_col = $to_x AND slot_row = $to_y";
 				if(!mysqli_query($SQL_REMOVE_ARMY_OF_SLOT))
 					echo "\n".mysqli_error();
 				
