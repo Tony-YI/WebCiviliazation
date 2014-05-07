@@ -50,6 +50,11 @@
    	font-family: Britannic Bold;
 }
 
+#help
+{
+	font-family: Bradley Hand ITC;
+}
+
 #info>button
 {
   display: inline-block;
@@ -69,5 +74,4 @@
     box-shadow:0 0 8px rgba(230,230,250,.5);
     -moz-box-shadow:0 0 8px rgba(230,230,250,.5);
     -webkit-box-shadow:0 0 8px rgba(230,230,250,.3);
-
 }
