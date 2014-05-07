@@ -61,6 +61,25 @@ function Result(action_type)
 		return null;
 	}
 }
+Result.prototype.setFrom = function(from_x,from_y)
+{
+	this.from_x = from_x;
+	this.from_y = from_y;
+}
+Result.prototype.setTo = function(to_x,to_y)
+{
+	this.to_x = to_x;
+	this.to_y = to_y;
+}
+Result.prototype.setAttack = function(attacker_id,defender_id,attacker_prev_hp,attacker_remaining_hp,defender_prev_hp,defender_remaining_hp)
+{
+	this.attacker_id = attacker_id;
+	this.defender_id = defender_id;
+	this.attacker_prev_hp = attacker_prev_hp;
+	this.defender_prev_hp = defender_prev_hp;
+	this.attacker_remaining_hp = attacker_remaining_hp;
+	this.defender_remaining_hp = defender_remaining_hp;
+}
 
 Result.prototype.Result_toString = function()
 {
@@ -218,13 +237,49 @@ action.prototype.get_result = function()
 	return result;
 }
 
-function parse_result(result)
+function parseRemoteResultList(latest_result_list)
 {
-	//PARSE RESULT TO JSON FOMMAT TO SEND TO SERVER
-	var parsedResult = "";
-	/*
-	...
-	*/
+	//from JSON format to Result Object,
+	//stored it in result_list
+	//called functions to display it
+	//and show it on the div
+	for(var count = 0;count < latest_result_list.length;count++)
+	{
+		var tmp_result_json = latest_result_list[count];
+		var tmp_result = new Result(tmp_result_json["action_type"]);
+		tmp_result.Result_id = tmp_result_json["Result_id"];
+		tmp_result.player_id = tmp_result_json["player_id"];
+
+		if(tmp_result_json["action_type"] == "attack")
+		{
+			tmp_result.setFrom(tmp_result_json["from_x"],tmp_result_json["from_y"]);
+			tmp_result.setTo(tmp_result_json["to_x"],tmp_result_json["to_y"]);
+			tmp_result.setAttack(tmp_result_json["attacker_id"],
+								tmp_result_json["defender_id"],
+								tmp_result_json["attacker_prev_hp"],
+								tmp_result_json["attacker_remaining_hp"],
+								tmp_result_json["defender_prev_hp"],
+								tmp_result_json["defender_remaining_hp"]);
+		}
+		else if(tmp_result_json["action_type"] == "move")
+		{
+			tmp_result.army_id = tmp_result_json["army_id"];
+			tmp_result.setFrom(tmp_result_json["from_x"],tmp_result_json["from_y"]);
+			tmp_result.setTo(tmp_result_json["to_x"],tmp_result_json["to_y"]);
+		}
+		else if(tmp_result_json["action_type"] == "defend")
+		{
+			tmp_result.army_id = tmp_result_json["defender_id"];
+			tmp_result.setFrom(tmp_result_json["from_x"],tmp_result_json["from_y"]);
+		}
+		else if(tmp_result_json["action_type"] == "build")
+		{
+			tmp_result.army_id = tmp_result_json["army_id"];
+			tmp_result.army_type = tmp_result_json["army_type"];
+		}
+		result_list.push(tmp_result);
+		update_result_list_div();
+	}
 	return parsedResult;
 }
 

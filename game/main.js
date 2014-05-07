@@ -76,6 +76,10 @@ function query_turn()
 				console.log("query_turn() :JSON parse error" + error);
 				return ;
 			}
+
+			//parseRemoteResultList() is implemented in /game/game_logic_server/Result_list.js
+			parseRemoteResultList(response["latest_result_list"]);
+			
 			getPlayerByID(response["active_player"]).pturn = "1";
 			if(IsMyTurn())
 			{
