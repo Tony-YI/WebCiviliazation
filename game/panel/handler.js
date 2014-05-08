@@ -12,7 +12,7 @@ function show_range(x, y, action)
 	var i = parseInt(y) * line_num + parseInt(x);//line_nume: global variable in small_map.js
 	var user_id = parseInt(getCookie('CURRENT_USER')); //in game/game_logic_client/check_functions.js
 	//console.log('i: ' + i);
-	//console.log(slot_list[i]);
+	console.log(slot_list[i]);
 	if(parseInt(slot_list[i].type_id) != 0) //not invalid  slot
 	{
 		var slot = getSlotByXY(x,y);
