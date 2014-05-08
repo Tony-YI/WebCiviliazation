@@ -300,9 +300,9 @@ function parseRemoteResultList(latest_result_list)
 			tmp_result.army_type = tmp_result_json["army_type"];
 		}
 		result_list.push(tmp_result);
-		result_list.sort(compare_result_id);
-		update_result_list_div();
 	}
+	result_list.sort(compare_result_id);
+	update_result_list_div();
 	return null;
 }
 
