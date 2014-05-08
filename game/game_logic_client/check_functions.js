@@ -17,7 +17,7 @@ function check_slot_right_click_able(e) //check the slot owner
 
 	var slot = getSlotByXY(pos_x, pos_y); //in slot.js
 
-	if(target.getAttribute('army_type') != 'none' && parseInt(getArmyById(slot.army_id).owner) == user_id && IsMyTurn())
+	if(target.getAttribute('army_type') != 'none' && getArmyById(slot.army_id).army_status == 'ready' && parseInt(getArmyById(slot.army_id).owner) == user_id && IsMyTurn())
 	{
 		return true;
 	}
