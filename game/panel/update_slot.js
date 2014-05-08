@@ -136,3 +136,25 @@ function update_slot_others()
 {
 
 }
+
+function update_turn_div()
+{
+	var target = document.getElementsById('turn');
+	target.innerHTML = '';
+	
+	var div_user_1 = document.createElement('div');
+	div_user_1.setAttribute('class', 'user_turn');
+	div_user_1.style.background = user_1_color;
+
+	var div_user_2 = document.createElement('div');
+	div_user_2.setAttribute('class', 'user_turn');
+	div_user_2.style.background = user_2_color;
+
+	var div_user_3 = document.createElement('div');
+	div_user_3.setAttribute('class', 'user_turn');
+	div_user_3.style.background = user_3_color;
+
+	target.appendChild(div_user_1);
+	target.appendChild(div_user_2);
+	target.appendChild(div_user_3);
+}
