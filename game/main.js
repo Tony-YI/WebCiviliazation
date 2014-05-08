@@ -42,6 +42,7 @@ function Init_get_init_data()
 	//console.log("Things done for slots");
 
 	parseRemoteResultList(response["result"]);
+	
 	if(IsMyTurn())
 	{
 		alert("Hey ! It's your turn !");
