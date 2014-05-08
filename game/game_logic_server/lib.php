@@ -106,7 +106,7 @@ function Player_get_slots($db,$game_id,$player_id)
 	FROM game_{$game_id}_slotlist, game_{$game_id}_armylist
 	WHERE game_{$game_id}_slotlist.slot_army = game_{$game_id}_armylist.army_id
 	AND game_{$game_id}_armylist.owner_id = $player_id 
-	AND game_{$game_id}_slotlist.slot_owner != $player_id
+	AND ((game_{$game_id}_slotlist.slot_owner != $player_id) OR (game_{$game_id}_slotlist.slot_owner IS NULL)
 SQL_STATEMENT;
 
 	echo ",\"sql_statment_for_get_slots\":\"$SQL_SELECT_TARGET\"";
