@@ -14,6 +14,18 @@ function getActivePlayerId()
 		}
 	}
 }
+
+function setActivePlayer(pid)
+{
+	for(var count = 0; count < window.player_list.length;count++)
+	{
+		if(window.player_list[count].pid == pid)
+			window.player_list[count].pturn = "1";
+		else
+			window.player_list[count].pturn = "0";
+	}
+}
+
 function getPlayerByID(pid)
 {
 	//console.log("getPlayerByID: to get player with pid: " + pid);
