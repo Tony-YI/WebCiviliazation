@@ -39,7 +39,10 @@ function Init_get_init_data()
 	
 	init_slot_list(response.slots);
 	//console.log("Things done for slots");
-	
+	if(IsMyTurn())
+	{
+		alert("Hey ! It's your turn !");
+	}
 }
 
 //This function returns true or false 

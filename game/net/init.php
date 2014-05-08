@@ -14,6 +14,7 @@
 		}
 	*/
 	require_once("../../lib/db.php");
+	require_once($_ENV["OPENSHIFT_REPO_DIR"]."game/game_logic_server/lib.php");
 	if(!check_cookie($db))
 	{
 		echo "{\"status\":\"unauthorized user\"}";
@@ -117,6 +118,27 @@ JSON_ERROR;
 			echo ",";
 		else 
 			echo "]";
-	}	
-	echo "}";
+	}
+
+	$SQL_GET_RESULT = "SELECT * FROM game_{$game_id}_resultlist ORDER BY result_id DESC LIMIT 0,10";
+	if($result = mysqli_query($db,$SQL_GET_RESULT))
+	{
+		$result_num = $mysqli_num_rows($result);
+		echo ",\"result_num\":\"$result_num\"";
+		echo ",\"result\":[";
+		for($count = 0;$count < $result_num;$count++)
+		{
+			$row = mysqli_fetch_row($result);
+			echo row_to_result_JSON($row);
+			if($count + 1 < $result_num)
+				echo ",";
+		}
+		echo "]";
+	}
+	else
+	{
+		$sql_error = mysqli_error($db);
+		echo ",\"query_result_error\":\"$sql_error\"";
+	}
+
 ?>
