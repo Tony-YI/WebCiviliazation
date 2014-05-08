@@ -233,9 +233,9 @@ action.prototype.get_result = function()
 	}
 
 	//for test, should be deleted later
-	var army = getArmyById(this.army_id);
+	var army = getArmyById(result.army_id);
 	console.log(army);
-	army.status = "";
+	army.army_status = "";
 	result_list.push(result);
 	update_slot_own();
 	return result;
