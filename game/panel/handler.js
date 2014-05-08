@@ -12,11 +12,11 @@ function show_range(x, y, action)
 	var i = parseInt(y) * line_num + parseInt(x);//line_nume: global variable in small_map.js
 	var user_id = parseInt(getCookie('CURRENT_USER')); //in game/game_logic_client/check_functions.js
 	//console.log('i: ' + i);
-	//console.log(slot_list[i]);
+	console.log(slot_list[i]);
 	if(parseInt(slot_list[i].type_id) != 0) //not invalid  slot
 	{
 		var slot = getSlotByXY(x,y);
-		if(action == 'move' && slot_list[i].owner == "")
+		if(action == 'move' && slot_list[i].army_id == "")
 		{
 			slot_div[i].addEventListener('mousedown', valid_move_action, false);
 			slot_div[i].setAttribute('function', 'range');
@@ -272,6 +272,7 @@ function valid_move_action(e)
 	var to_y = target.getAttribute('y');
 	var slot = getSlotByXY(from_x, from_y);
 	var army = getArmyById(slot.army_id);
+	console.log(army);
 	console.log('move from (' + from_x+ ', ' + from_y + ') to (' + to_x+ ', ' + to_y + ')');
 
 	var user_action = new action('move', army.army_id, from_x, from_y, to_x, to_y, army.type_id);

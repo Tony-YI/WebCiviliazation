@@ -125,7 +125,7 @@ SQL_STATEMENT;
 function Player_get_slots($db,$game_id,$player_id)
 {
 	//detele the previous records
-	$SQL_DELETE_OCCUPATION_RECORD = "DELETE FROM game_{$game_id}_occupationrecord";
+	$SQL_DELETE_OCCUPATION_RECORD = "DELETE FROM game_{$game_id}_occupationresult";
 
 	mysqli_query($db,$SQL_DELETE_OCCUPATION_RECORD);
 	//select the slots, where the owner id is not the current army's owner, and the current army's owner is $player_id
@@ -159,7 +159,7 @@ SQL_STATEMENT;
 			$prev_owner = $row[2];
 
 		$SQL_INSERT_RECORD = <<<SQL_STATEMENT
-		INSERT INTO game_{$game_id}_occupationrecord VALUES($row[0],$row[1],$prev_owner,$player_id);
+		INSERT INTO game_{$game_id}_occupationresult VALUES($row[0],$row[1],$prev_owner,$player_id);
 SQL_STATEMENT;
 		if(!mysqli_query($db,$SQL_INSERT_RECORD))
 		{

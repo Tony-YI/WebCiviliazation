@@ -44,6 +44,7 @@
 	echo ",\"occupation_record\":[";
 	for($count = 0;$count < $row_num;$count++)
 	{
+		$row = mysqli_fetch_row($result);
 		$slot_col = $row[0];
 		$slot_row = $row[1];
 		$prev_owner = $row[2];
