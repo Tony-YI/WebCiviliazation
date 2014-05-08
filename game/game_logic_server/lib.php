@@ -119,13 +119,19 @@ SQL_STATEMENT;
 	echo 'capital:' . $num_capital_slots . ' ';
 	echo 'gold increment:' . $gold_increment . ' ';
 	echo 'wood increment:' . $wood_increment. ' ';
+	$SQL_UPDATE_GOLD = <<<SQL_STATEMENT
+	UPDATE game_{$game_id}_playerlist 
+	SET player_gold = player_gold + $gold_increment, player_wood = player_wood + $wood_increment
+	WHERE  player_id = $player_id
+SQL_STATEMENT;
+
 }
 
 //This function will check whether player $player_id has successfully occupy new/other's slots
 function Player_get_slots($db,$game_id,$player_id)
 {
 	//detele the previous records
-	//$SQL_DELETE_OCCUPATION_RECORD = "DELETE FROM game_{$game_id}_occupationresult";
+	//$SQL_DELETE_OCCUPATION_RECORD = "DELETE FROM game_{$game_id}_occupationrecord";
 	mysqli_query($db,$SQL_DELETE_OCCUPATION_RECORD);
 	
 	//select the slots, where the owner id is not the current army's owner, and the current army's owner is $player_id
@@ -159,7 +165,7 @@ SQL_STATEMENT;
 			$prev_owner = $row[2];
 
 		$SQL_INSERT_RECORD = <<<SQL_STATEMENT
-		INSERT INTO game_{$game_id}_occupationresult VALUES($row[0],$row[1],$prev_owner,$player_id);
+		INSERT INTO game_{$game_id}_occupationrecord VALUES($row[0],$row[1],$prev_owner,$player_id);
 SQL_STATEMENT;
 		if(!mysqli_query($db,$SQL_INSERT_RECORD))
 		{
