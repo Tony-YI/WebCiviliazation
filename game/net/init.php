@@ -125,7 +125,7 @@ JSON_ERROR;
 	if(($result = mysqli_query($db,$SQL_GET_RESULT)))
 	{
 		echo ",\"flag2\":\"output results\"";
-		$result_num = $mysqli_num_rows($result);
+		$result_num = mysqli_num_rows($result);
 		echo ",\"result_num\":\"$result_num\"";
 		echo ",\"result\":[";
 		for($count = 0;$count < $result_num;$count++)
