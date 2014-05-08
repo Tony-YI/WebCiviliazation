@@ -40,28 +40,31 @@ function set_army_type(hexagon, type, army_id)
 	}	
 
 	var user_id = getArmyById(parseInt(army_id)).owner;
-	if(user_id == user_1)
+	if(hexagon.getAttribute('slot_type') != 'capital_slot')
 	{
-		user_color = user_1_color;
-	}
-	else if(user_id == user_2)
-	{
-		user_color = user_2_color;
-	}
-	else if(user_id == user_3)
-	{
-		user_color = user_3_color;
+		if(user_id == user_1)
+		{
+			user_color = user_1_color;
+		}
+		else if(user_id == user_2)
+		{
+			user_color = user_2_color;
+		}
+		else if(user_id == user_3)
+		{
+			user_color = user_3_color;
+		}
 	}
 
 	hexagon.lastChild.setAttribute('src', src);
-	hexagon.lastChild.style.background = user_color;
+	hexagon.lastChild.style.border = '1px solid' +  user_color;
 }
 
 function clear_army_type(hexagon, type)
 {
 	hexagon.setAttribute('army_type', type);
 	hexagon.lastChild.setAttribute('src', '');
-	hexagon.lastChild.style.background = '';
+	hexagon.lastChild.style.border = '';
 }
 
 function update_attack(from_x, from_y, to_x, to_y, army_id)
