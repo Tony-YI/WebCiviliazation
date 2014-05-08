@@ -153,7 +153,7 @@ SQL_STATEMENT;
 		//insert into the occupation record
 		if($row[2] == NULL)
 		{
-			$prev_owner = "NULL"
+			$prev_owner = "NULL";
 		}
 		else
 			$prev_owner = $row[2];
