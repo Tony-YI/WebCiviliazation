@@ -140,5 +140,5 @@ JSON_ERROR;
 		$sql_error = mysqli_error($db);
 		echo ",\"query_result_error\":\"$sql_error\"";
 	}
-
+	echo "}";
 ?>
