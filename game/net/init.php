@@ -120,9 +120,11 @@ JSON_ERROR;
 			echo "]";
 	}
 
+	echo ",\"flag1\":\"going to output results\"";
 	$SQL_GET_RESULT = "SELECT * FROM game_{$game_id}_resultlist ORDER BY result_id DESC LIMIT 0,10";
 	if(($result = mysqli_query($db,$SQL_GET_RESULT)))
 	{
+		echo ",\"flag2\":\"output results\"";
 		$result_num = $mysqli_num_rows($result);
 		echo ",\"result_num\":\"$result_num\"";
 		echo ",\"result\":[";
@@ -137,8 +139,10 @@ JSON_ERROR;
 	}
 	else
 	{
+		echo ",\"flag3\":\"not output results\"";
 		$sql_error = mysqli_error($db);
 		echo ",\"query_result_error\":\"$sql_error\"";
 	}
+	echo ",\"flag4\":\"ending\"";
 	echo "}";
 ?>
