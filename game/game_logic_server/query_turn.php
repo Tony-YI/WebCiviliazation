@@ -36,5 +36,25 @@
 
 	}
 	echo "]";
+
+	$SQL_GET_OCCUPATIONRECORD = "SELECT * FROM game_{$game_id}_occupationrecord"
+	$result = mysqli_query($db,$SQL_GET_OCCUPATIONRECORD);
+	$row_num = mysqli_num_rows($result);
+	echo ",\"occupation_record_num\":\"$row_num\"";
+	echo ",\"occupation_record\":[";
+	for($count = 0;$count < $row_num;$count++)
+	{
+		$slot_col = $row[0];
+		$slot_row = $row[1];
+		$prev_owner = $row[2];
+		$curr_owner = $row[3];
+		echo "{\"slot_col\":\"$slot_col\"";
+		echo ",\"slot_row\":\"$slot_row\"";
+		echo ",\"prev_owner\":\"$prev_owner\"";
+		echo ",\"curr_owner\":\"$curr_owner\"}";
+		if($count + 1 < $row_num)
+			echo ",";
+	}
+	echo "]";
 	echo "}";
 ?>
