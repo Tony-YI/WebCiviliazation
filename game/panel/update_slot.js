@@ -139,7 +139,7 @@ function update_slot_others()
 
 function update_turn_div()
 {
-	var target = document.getElementsById('turn');
+	var target = document.getElementById('turn');
 	target.innerHTML = '';
 	
 	var div_user_1 = document.createElement('div');
