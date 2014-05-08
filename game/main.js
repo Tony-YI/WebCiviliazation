@@ -3,6 +3,7 @@
 */
 
 var current_player;
+var last_result_index = 0;
 function Init()
 {
 	//send request to get the initilization data
@@ -39,6 +40,8 @@ function Init_get_init_data()
 	
 	init_slot_list(response.slots);
 	//console.log("Things done for slots");
+
+	parseRemoteResultList(response["result"]);
 	if(IsMyTurn())
 	{
 		alert("Hey ! It's your turn !");

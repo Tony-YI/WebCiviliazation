@@ -108,6 +108,15 @@
 				if(!mysqli_query($db,$SQL_ADD_ARMY_OF_SLOT))
 					echo "\n".mysqli_error();
 			}
+			else if($result["action_type"] == "build")
+			{
+				$army_id = $result["army_id"];
+				$army_type = $result["army_type"];
+				$from_x = $result["from_x"];
+				$from_y = $result["from_y"];
+
+				$SQL_ADD_NEW_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES()"
+			}
 			else
 			{
 				echo "\"error1\":\"invalid action_type\"";
