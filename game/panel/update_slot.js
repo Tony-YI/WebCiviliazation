@@ -144,15 +144,31 @@ function update_turn_div()
 	
 	var div_user_1 = document.createElement('div');
 	div_user_1.setAttribute('class', 'user_turn');
+	div_user_1.setAttribute('animation', 'off');
 	div_user_1.style.background = user_1_color;
 
 	var div_user_2 = document.createElement('div');
 	div_user_2.setAttribute('class', 'user_turn');
+	div_user_2.setAttribute('animation', 'off');
 	div_user_2.style.background = user_2_color;
 
 	var div_user_3 = document.createElement('div');
 	div_user_3.setAttribute('class', 'user_turn');
+	div_user_3.setAttribute('animation', 'off');
 	div_user_3.style.background = user_3_color;
+
+	if(getActivePlayerId() == user_1)
+	{
+		div_user_1.setAttribute('animation', 'on');
+	}
+	else if(getActivePlayerId() == user_2)
+	{
+		div_user_2.setAttribute('animation', 'on');
+	}
+	else if(getActivePlayerId() == user_3)
+	{
+		div_user_3.setAttribute('animation', 'on');
+	}
 
 	target.appendChild(div_user_1);
 	target.appendChild(div_user_2);

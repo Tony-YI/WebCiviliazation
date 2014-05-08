@@ -101,3 +101,18 @@
 	margin-left: 10px; 
 	margin-right: 10px;
 }
+
+.user_turn[animation="on"]
+{
+	animation-name: hover;
+    -webkit-animation-name: hover;
+    -moz-animation-name: hover;
+
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
