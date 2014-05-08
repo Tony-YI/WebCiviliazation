@@ -41,15 +41,15 @@ function set_army_type(hexagon, type)
 
 	if(current_player.pid == user_1)
 	{
-		
+		user_color = user_1_color;
 	}
 	else if(current_player.pid == user_2)
 	{
-		user_color = user_color_2;
+		user_color = user_2_color;
 	}
 	else if(current_player.pid == user_3)
 	{
-		user_color = user_color_3;
+		user_color = user_3_color;
 	}
 
 	hexagon.lastChild.setAttribute('src', src);
