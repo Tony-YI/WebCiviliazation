@@ -242,6 +242,8 @@ action.prototype.get_result = function()
 	{
 		result.army_id = this.army_id;
 		result.army_type = this.army_type;
+		result.from_x = window.current_player.capital_x;
+		result.from_y = window.current_player.capital_y;
 	}
 
 	//for test, should be deleted later
