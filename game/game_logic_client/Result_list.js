@@ -15,7 +15,7 @@ function update_result_list_div()
 		}
 		catch(error)
 		{
-			console.log("Error in update_result_list_div: " + JSON.stringify(result_list[count]);
+			console.log("Error in update_result_list_div: " + JSON.stringify(result_list[count]));
 		}
 		result_list_div.appendChild(new_p);
 	}
