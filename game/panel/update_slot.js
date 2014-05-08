@@ -43,15 +43,15 @@ function set_army_type(hexagon, type, army_id)
 	{
 		if(user_id == user_1)
 		{
-			hexagon.lastChild.style.setAttribute('user', 'user_1');
+			hexagon.lastChild.setAttribute('user', 'user_1');
 		}
 		else if(user_id == user_2)
 		{
-			hexagon.lastChild.style.setAttribute('user', 'user_2');
+			hexagon.lastChild.setAttribute('user', 'user_2');
 		}
 		else if(user_id == user_3)
 		{
-			hexagon.lastChild.style.setAttribute('user', 'user_3');
+			hexagon.lastChild.setAttribute('user', 'user_3');
 		}
 	}
 
@@ -62,7 +62,7 @@ function clear_army_type(hexagon, type)
 {
 	hexagon.setAttribute('army_type', type);
 	hexagon.lastChild.setAttribute('src', '');
-	hexagon.lastChild.style.setAttribute('user', 'none');
+	hexagon.lastChild.setAttribute('user', 'none');
 }
 
 function update_attack(from_x, from_y, to_x, to_y, army_id)
