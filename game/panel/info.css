@@ -100,6 +100,7 @@
 	height: 20px;
 	margin-left: 10px; 
 	margin-right: 10px;
+	position: relative;
 }
 
 .user_turn[animation="on"]
