@@ -99,10 +99,10 @@ Result.prototype.Result_toString = function()
 		var action_str = " attack ";
 		var defender_str = defender.typename + "( army_id:" + defender.army_id + ")";
 		if(this.attacker_remaining_hp == 0)
-			result_str = ",causing " + attacker_str +  " dead";
+			result_str += ",causing " + attacker_str +  " dead";
 		if(this.defender_remaining_hp == 0)
 			result_str += ",causing " + defender_str + " dead";
-		result_str = attacker_str  + action_str + defender_str + result_str;
+		result_str = this.Result_id + ":" + attacker_str  + action_str + defender_str + result_str;
 	}
 	else if(this.action_type == "move")
 	{
@@ -110,7 +110,7 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " move to ";
 		var target_str = "(" + this.to_x + "," + this.to_y + ")";
-		result_str = actor_str + action_str + target_str;
+		result_str = this.Result_id + ":" + actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "defend")
 	{
@@ -118,14 +118,14 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " defend ";
 		var target_str = "(" + this.from_x + "," + this.from_y + ")";
-		result_str = actor_str + action_str + target_str;
+		result_str = this.Result_id + ":" + actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "build")
 	{
 		var actor = getArmyById(this.army_id);
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " was built";
-		result_str = actor_str + action_str;
+		result_str = this.Result_id + ":" + actor_str + action_str;
 	}
 	return result_str;
 }
