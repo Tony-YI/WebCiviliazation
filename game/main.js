@@ -91,7 +91,7 @@ function query_turn()
 			last_result_index = result_list.length;
 			//parseSlotOwnerChange() is implemented here 
 			parseSlotOwnerChange(response["occupation_record"]);
-
+			
 			getPlayerByID(response["active_player"]).pturn = "1";
 			update_turn_div();
 			if(IsMyTurn())
