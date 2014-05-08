@@ -117,12 +117,19 @@ SQL_STATEMENT;
 	{
 		//change the slot owner
 		$SQL_CHANGE_OWNER = <<<SQL_STATEMENT
-	UPDATE game_{$game_id}_slotlist SET slot_owner = $player_id WHERE slot_col = $row[0] AND slot_row = $row[1]
+		UPDATE game_{$game_id}_slotlist SET slot_owner = $player_id WHERE slot_col = $row[0] AND slot_row = $row[1]
 SQL_STATEMENT;
 		mysqli_query($db,$SQL_CHANGE_OWNER);
-
+		//insert into the occupation record
+		$SQL_INSERT_RECORD = <<<SQL_STATEMENT
+		INSERT INTO game_{$game_id}_occupationresult VALUES($row[0],$row[1],$row[2],$player_id);
+SQL_STATEMENT;
+		if(!mysqli_query($db,$SQL_INSERT_RECORD))
+		{
+			$sql_error = mysqli_error($db);
+			echo ",\"sql_insert_record_error\":\"$sql_error\"";
+		}
 	}
-
 
 }
 
