@@ -6,18 +6,37 @@ function update_result_list_div()
 {
 	var result_list_div = document.getElementById("result_list_div");
 	result_list_div.innerHTML = "";
-	for(var count = 0;count < result_list.length;count++)
+	if(result_list.length < 10)
 	{
-		var new_p = document.createElement("p");
-		try
+		for(var count = 0;count < result_list.length;count++)
 		{
-			new_p.innerHTML = result_list[count].Result_toString();
+			var new_p = document.createElement("p");
+			try
+			{
+				new_p.innerHTML = result_list[count].Result_toString();
+			}
+			catch(error)
+			{
+				console.log("Error in update_result_list_div: " + JSON.stringify(result_list[count]));
+			}
+			result_list_div.appendChild(new_p);
 		}
-		catch(error)
+	}
+	else
+	{
+		for(var count = result_list.length - 10;count < result_list.length;count++)
 		{
-			console.log("Error in update_result_list_div: " + JSON.stringify(result_list[count]));
+			var new_p = document.createElement("p");
+			try
+			{
+				new_p.innerHTML = result_list[count].Result_toString();
+			}
+			catch(error)
+			{
+				console.log("Error in update_result_list_div: " + JSON.stringify(result_list[count]));
+			}
+			result_list_div.appendChild(new_p);
 		}
-		result_list_div.appendChild(new_p);
 	}
 }
 function getMAXResultId()
@@ -102,7 +121,8 @@ Result.prototype.Result_toString = function()
 			result_str += ",causing " + attacker_str +  " dead";
 		if(this.defender_remaining_hp == 0)
 			result_str += ",causing " + defender_str + " dead";
-		result_str = this.Result_id + ":" + attacker_str  + action_str + defender_str + result_str;
+		var player_name = getPlayerByID(this.player_id).pname;
+		result_str = "(" +  this.Result_id + ")" + ":" + player_name + attacker_str  + action_str + defender_str + result_str;
 	}
 	else if(this.action_type == "move")
 	{
@@ -110,7 +130,8 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " move to ";
 		var target_str = "(" + this.to_x + "," + this.to_y + ")";
-		result_str = this.Result_id + ":" + actor_str + action_str + target_str;
+		var player_name = getPlayerByID(this.player_id).pname;
+		result_str = "(" + this.Result_id + ")" + ":" +  player_name +actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "defend")
 	{
@@ -118,14 +139,16 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " defend ";
 		var target_str = "(" + this.from_x + "," + this.from_y + ")";
-		result_str = this.Result_id + ":" + actor_str + action_str + target_str;
+		var player_name = getPlayerByID(this.player_id).pname;
+		result_str = "(" + this.Result_id + ")" + ":" + player_name  +  actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "build")
 	{
 		var actor = getArmyById(this.army_id);
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " was built";
-		result_str = this.Result_id + ":" + actor_str + action_str;
+		var player_name = getPlayerByID(this.player_id).pname;
+		result_str = "(" + this.Result_id + ")"  + ":" player_name + actor_str + action_str;
 	}
 	return result_str;
 }
