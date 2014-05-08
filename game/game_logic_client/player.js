@@ -3,6 +3,17 @@
 /*
 	1. Player
 */
+
+function getActivePlayerId()
+{
+	for(var count = 0; count < window.player_list.length;count++)
+	{
+		if(window.player_list[count].pturn == "1")
+		{
+			return window.player_list[count].pid;
+		}
+	}
+}
 function getPlayerByID(pid)
 {
 	//console.log("getPlayerByID: to get player with pid: " + pid);
