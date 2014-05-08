@@ -136,4 +136,18 @@ SQL_STATEMENT;
 		return $SQL_CREATE_SLOTLIST;
 	}
 
+function sql_create_occupationrecord($game_id)
+{
+	$SQL_CREATE_OCCUPATIONRECORD = <<<SQL_STATEMENT
+	CREATE TABLE game_{$game_id}_occupationrecord
+	(
+		slot_col INT,
+		slot_row INT,
+		prev_owner INT,
+		curr_owner INT,
+		FOREIGN KEY(prev_owner) REFERENCES game_{$game_id}_playerlist(player_id),
+		FOREIGN KEY(curr_owner) REFERENCES game_{$game_id}_playerlist(player_id)
+	)
+SQL_STATEMENT;
+}
 ?>
