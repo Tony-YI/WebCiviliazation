@@ -322,7 +322,7 @@ function send_result_list_to_server()
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 	xhr.setRequestHeader("TYPE","RESULT_LIST");
-	var data = "{\"result_list\":" + JSON.stringify(result_list,slice(last_result_index,result_list.length)) + "}";
+	var data = "{\"result_list\":" + JSON.stringify(result_list.slice(last_result_index,result_list.length)) + "}";
 	console.log(data);
 	xhr.send(data);
 	console.log(xhr.responseText);
