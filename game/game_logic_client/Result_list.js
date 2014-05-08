@@ -229,15 +229,13 @@ action.prototype.get_result = function()
 	else if(this.action_type == "defend")
 	{
 		result.defender_id = this.army_id;
-		var army = getArmyById(result.army_id);
+		var army = getArmyById(result.defender_id);
 		army.army_status = "";
 	}
 	else if(this.action_type == "build")
 	{
 		result.army_id = this.army_id;
 		result.army_type = this.army_type;
-		result.from_x = current_player.capital_x;
-		result.from_y = current_player.capital_y;
 	}
 
 	//for test, should be deleted later
@@ -287,7 +285,6 @@ function parseRemoteResultList(latest_result_list)
 			tmp_result.army_type = tmp_result_json["army_type"];
 		}
 		result_list.push(tmp_result);
-		var last_result_index = result_list.length;
 		update_result_list_div();
 	}
 	return null;
@@ -309,7 +306,7 @@ function send_result_list_to_server()
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 	xhr.setRequestHeader("TYPE","RESULT_LIST");
-	var data = "{\"result_list\":" + JSON.stringify(result_list.slice(last_result_index,result_list.length)) + "}";
+	var data = "{\"result_list\":" + JSON.stringify(result_list) + "}";
 	console.log(data);
 	xhr.send(data);
 	console.log(xhr.responseText);
