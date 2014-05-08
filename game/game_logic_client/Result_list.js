@@ -83,7 +83,6 @@ Result.prototype.setAttack = function(attacker_id,defender_id,attacker_prev_hp,a
 
 Result.prototype.Result_toString = function()
 {
-	console.log('Result_toString');
 	var result_str = "";
 	if(this.action_type == "attack")
 	{
