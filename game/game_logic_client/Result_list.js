@@ -217,14 +217,20 @@ action.prototype.get_result = function()
 		result.defender_id = defender.army_id;
 		result.attacker_remaining_hp = attacker.hp;
 		result.defender_remaining_hp = defender.hp;
+		var army = getArmyById(result.army_id);
+		army.army_status = "";
 	}
 	else if(this.action_type == "move")
 	{
 		result.army_id = this.army_id;
+		var army = getArmyById(result.army_id);
+		army.army_status = "";
 	}
 	else if(this.action_type == "defend")
 	{
-		result.defender_id = this.army_id
+		result.defender_id = this.army_id;
+		var army = getArmyById(result.army_id);
+		army.army_status = "";
 	}
 	else if(this.action_type == "build")
 	{
@@ -233,9 +239,6 @@ action.prototype.get_result = function()
 	}
 
 	//for test, should be deleted later
-	var army = getArmyById(result.army_id);
-	console.log(army);
-	army.army_status = "";
 	result_list.push(result);
 	update_slot_own();
 	return result;
