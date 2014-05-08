@@ -102,6 +102,11 @@
 	margin-right: 10px;
 }
 
+#result_list_div
+{
+	overflow: scroll;
+}
+
 .user_turn[animation="on"]
 {
 	animation-name: hover;
