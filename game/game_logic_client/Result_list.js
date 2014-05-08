@@ -244,6 +244,15 @@ action.prototype.get_result = function()
 	return result;
 }
 
+function compare_result_id(result1,result2)
+{
+	if(result1.result_id < result2.result_id)
+		return -1;
+	if(result1.result_id > result2.result_id)
+		return 1;
+	return 0;
+}
+
 function parseRemoteResultList(latest_result_list)
 {
 	//from JSON format to Result Object,
@@ -285,6 +294,7 @@ function parseRemoteResultList(latest_result_list)
 			tmp_result.army_type = tmp_result_json["army_type"];
 		}
 		result_list.push(tmp_result);
+		result_list.sort(compare_result_id);
 		update_result_list_div();
 	}
 	return null;
