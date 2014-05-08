@@ -140,17 +140,20 @@ function update_slot_others()
 function update_turn_div()
 {
 	var div_user = document.getElementsByClassName('user_turn');
+	var active_id = getActivePlayerId();
 
 	div_user[0].setAttribute('animation', 'off');
+	div_user[0].innerHTML = getPlayerByID(active_id).pname;
 	div_user[0].style.background = user_1_color;
 
 	div_user[1].setAttribute('animation', 'off');
+	div_user[1].innerHTML = getPlayerByID(active_id).pname;
 	div_user[1].style.background = user_2_color;
 
 	div_user[2].setAttribute('animation', 'off');
+	div_user[2].innerHTML = getPlayerByID(active_id).pname;
 	div_user[2].style.background = user_3_color;
 
-	var active_id = getActivePlayerId();
 	if(active_id == user_1)
 	{
 		div_user[0].setAttribute('animation', 'on');
