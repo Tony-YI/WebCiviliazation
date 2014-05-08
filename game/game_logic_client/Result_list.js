@@ -326,6 +326,7 @@ function parseRemoteResultList(latest_result_list)
 			if(getArmyById(tmp_result.army_id) == null || typeof(getArmyById(tmp_result.army_id)) == "undefined")
 			{
 				var tmp_army = new Army(tmp_result.army_id,tmp_result.army_type,tmp_result_json["player_id"]);
+				tmp_army.army_status = "ready";
 				army_list.push(tmp_army);
 			}
 		}
