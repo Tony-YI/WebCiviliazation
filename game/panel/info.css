@@ -96,11 +96,10 @@
 
 .user_turn
 {
-	width: 40px;
+	width: 180px;
 	height: 20px;
 	margin-left: 10px; 
 	margin-right: 10px;
-	position: relative;
 }
 
 .user_turn[animation="on"]
