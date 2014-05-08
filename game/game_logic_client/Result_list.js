@@ -26,8 +26,8 @@ function getMAXResultId()
 	var max = 0;
 	for(count = 0;count < result_list.length;count++)
 	{
-		if(result_list[count].Result_id > max)
-			max = result_list[count].Result_id;
+		if(parseInt(result_list[count].Result_id) > max)
+			max = parseInt(result_list[count].Result_id);
 	}
 	return parseInt(max);
 }
