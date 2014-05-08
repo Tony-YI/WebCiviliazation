@@ -708,6 +708,7 @@ function addBoxes(list)
 
 		var img = document.createElement('img'); //store the img
 		img.setAttribute('class', 'army');
+		img.setAttribute('user', 'none');
 		var p = document.createElement('p');
 		p.setAttribute('class', 'description');
 
@@ -790,14 +791,17 @@ function addBoxes(list)
 		if(list[i].owner == user_1)
 		{
 			hexagon[i].style.background = user_1_color;
+			hexagon[i].lastChild.setAttribute('user', 'user_1');
 		}
 		else if(list[i].owner == user_2)
 		{
 			hexagon[i].style.background = user_2_color;
+			hexagon[i].lastChild.setAttribute('user', 'user_2');
 		}
 		else if(list[i].owner == user_3)
 		{
 			hexagon[i].style.background = user_3_color;
+			hexagon[i].lastChild.setAttribute('user', 'user_3');
 		}
 
 		if(list[i].owner == user_id)
