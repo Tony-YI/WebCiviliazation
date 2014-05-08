@@ -99,6 +99,7 @@ function Player_get_slots($db,$game_id,$player_id)
 	//detele the previous records
 	$SQL_DELETE_OCCUPATION_RECORD = "DELETE FROM game_{$game_id}_occupationresult";
 
+	mysqli_query($db,$SQL_DELETE_OCCUPATION_RECORD);
 	//select the slots, where the owner id is not the current army's owner, and the current army's owner is $player_id
 	$SQL_SELECT_TARGET = <<<SQL_STATEMENT
 	SELECT game_{$game_id}_slotlist.slot_col, game_{$game_id}_slotlist.slot_row, game_{$game_id}_slotlist.slot_owner
