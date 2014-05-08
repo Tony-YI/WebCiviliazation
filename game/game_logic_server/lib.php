@@ -145,6 +145,9 @@ SQL_STATEMENT;
 		if(!mysqli_query($db,$SQL_INSERT_RECORD))
 		{
 			$sql_error = mysqli_error($db);
+			echo ",\"row0\":\"$row[0]\"";
+			echo ",\"row1\":\"$row[1]\"";
+			echo ",\"row2\":\"$row[2]\"";
 			echo ",\"sql_insert_record\":\"$SQL_INSERT_RECORD\"";
 			echo ",\"sql_insert_record_error\":\"$sql_error\"";
 		}
