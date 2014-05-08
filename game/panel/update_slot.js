@@ -57,14 +57,14 @@ function set_army_type(hexagon, type, army_id)
 	}
 
 	hexagon.lastChild.setAttribute('src', src);
-	hexagon.lastChild.style.background = user_color;
+	hexagon.lastChild.style.border = '1px solid' +  user_color;
 }
 
 function clear_army_type(hexagon, type)
 {
 	hexagon.setAttribute('army_type', type);
 	hexagon.lastChild.setAttribute('src', '');
-	hexagon.lastChild.style.background = '';
+	hexagon.lastChild.style.border = '';
 }
 
 function update_attack(from_x, from_y, to_x, to_y, army_id)
