@@ -78,6 +78,8 @@
 						break;
 				}
 				$SQL_PLAYER_TURN_ACTIVATE .= " WHERE `player_id` = $tmp_id";
+				Player_get_slots($game_id,$tmp_id)
+				Player_get_resource($game_id,$tmp_id);
 			}
 		}
 		//echo "\n".$SQL_PLAYER_TURN_CANCEL."\n";
@@ -85,6 +87,16 @@
 		mysqli_query($db,$SQL_PLAYER_TURN_CANCEL);
 		mysqli_query($db,$SQL_PLAYER_TURN_ACTIVATE);
 	}
+//InterLy please finish this function
+//This function will have the player have new resources according to the slots he/she owns
+function Player_get_resource($game_id,$player_id)
+{
+}
+
+//This function will check whether player $player_id has successfully occupy new/other's slots
+function Player_get_slots($game_id,$player_id)
+{
+}
 
 	function SQL_generate_insert_result($result,$game_id)
 	{
@@ -213,21 +225,6 @@ function row_to_result_JSON($row)
 	}
 	$result .= "}";
 	return $result;
-}
-
-function player1_get_new_resource()
-{
-
-}
-
-function player2_get_new_resource()
-{
-
-}
-
-function player3_get_new_resource()
-{
-
 }
 
 ?>
