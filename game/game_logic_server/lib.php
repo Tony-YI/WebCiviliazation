@@ -140,7 +140,9 @@ SQL_STATEMENT;
 	echo ",\"sql_statment_for_get_slots\":\"$SQL_SELECT_TARGET\"";
 	$result = mysqli_query($db,$SQL_SELECT_TARGET);
 	$row_num = mysqli_num_rows($result);
+
 	echo ",\"query_result_num\":\"$row_num\"";
+	echo ",\"var_dump\"".var_dump($result);
 	while($row = mysqli_fetch_row($result))
 	{
 		//change the slot owner
@@ -149,12 +151,24 @@ SQL_STATEMENT;
 SQL_STATEMENT;
 		mysqli_query($db,$SQL_CHANGE_OWNER);
 		//insert into the occupation record
+		if($row[2] == NULL)
+		{
+			$prev_owner = "NULL"
+		}
+		else
+			$prev_owner = $row[2];
+
 		$SQL_INSERT_RECORD = <<<SQL_STATEMENT
-		INSERT INTO game_{$game_id}_occupationresult VALUES($row[0],$row[1],$row[2],$player_id);
+		INSERT INTO game_{$game_id}_occupationresult VALUES($row[0],$row[1],$prev_owner,$player_id);
 SQL_STATEMENT;
 		if(!mysqli_query($db,$SQL_INSERT_RECORD))
 		{
 			$sql_error = mysqli_error($db);
+
+			echo ",\"row0\":\"$row[0]\"";
+			echo ",\"row1\":\"$row[1]\"";
+			echo ",\"row2\":\"$row[2]\"";
+			echo ",\"sql_insert_record\":\"$SQL_INSERT_RECORD\"";
 			echo ",\"sql_insert_record_error\":\"$sql_error\"";
 		}
 	}
