@@ -37,7 +37,7 @@
 	}
 	echo "]";
 
-	$SQL_GET_OCCUPATIONRECORD = "SELECT * FROM game_{$game_id}_occupationrecord"
+	$SQL_GET_OCCUPATIONRECORD = "SELECT * FROM game_{$game_id}_occupationrecord";
 	$result = mysqli_query($db,$SQL_GET_OCCUPATIONRECORD);
 	$row_num = mysqli_num_rows($result);
 	echo ",\"occupation_record_num\":\"$row_num\"";
