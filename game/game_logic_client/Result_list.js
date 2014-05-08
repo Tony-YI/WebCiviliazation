@@ -242,7 +242,7 @@ action.prototype.get_result = function()
 	{
 		result.army_id = this.army_id;
 		result.army_type = this.army_type;
-		var tmp_army = new army(this.army_id,this.army_type,window.current_player.pid);
+		var tmp_army = new Army(this.army_id,this.army_type,window.current_player.pid);
 		army_list.push(tmp_army);
 	}
 
