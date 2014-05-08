@@ -151,8 +151,15 @@ SQL_STATEMENT;
 SQL_STATEMENT;
 		mysqli_query($db,$SQL_CHANGE_OWNER);
 		//insert into the occupation record
+		if($row[2] == NULL)
+		{
+			$prev_owner = "NULL"
+		}
+		else
+			$prev_owner = $row[2];
+
 		$SQL_INSERT_RECORD = <<<SQL_STATEMENT
-		INSERT INTO game_{$game_id}_occupationresult VALUES($row[0],$row[1],$row[2],$player_id);
+		INSERT INTO game_{$game_id}_occupationresult VALUES($row[0],$row[1],$prev_owner,$player_id);
 SQL_STATEMENT;
 		if(!mysqli_query($db,$SQL_INSERT_RECORD))
 		{
