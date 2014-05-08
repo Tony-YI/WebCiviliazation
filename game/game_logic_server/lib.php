@@ -96,7 +96,7 @@ function Player_get_resource($db,$game_id,$player_id)
 	FROM game_{$game_id}_slotlist
 	WHERE game_{$game_id}_slotlist.slot_owner = $player_id AND game_{$game_id}_slotlist.slot_type = 2
 SQL_STATEMENT;
-	$SQL_SELECT_GOLD = <<<SQL_STATEMENT
+	$SQL_SELECT_WOOD = <<<SQL_STATEMENT
 	SELECT *
 	FROM game_{$game_id}_slotlist
 	WHERE game_{$game_id}_slotlist.slot_owner = $player_id AND game_{$game_id}_slotlist.slot_type = 3
