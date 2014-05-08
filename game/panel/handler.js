@@ -16,7 +16,7 @@ function show_range(x, y, action)
 	if(parseInt(slot_list[i].type_id) != 0) //not invalid  slot
 	{
 		var slot = getSlotByXY(x,y);
-		if(action == 'move' && slot_list[i].owner == "")
+		if(action == 'move' && slot_list[i].army_id == "")
 		{
 			slot_div[i].addEventListener('mousedown', valid_move_action, false);
 			slot_div[i].setAttribute('function', 'range');
