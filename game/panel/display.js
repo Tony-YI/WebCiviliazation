@@ -694,7 +694,6 @@ function addBoxes(list)
 	var user_id = getCookie('CURRENT_USER'); //in game/game_logic_client/check_functions.js
 
 	var hexagon = Array();
-	var j = 0; //record the number of user
 	for(var i = 0; i < hexagon_num; i++)
 	{
 		hexagon[i] = document.createElement('div');
@@ -788,22 +787,16 @@ function addBoxes(list)
 
 		hexagon[i].appendChild(p); //frst DOM child
 
-		if(list[i].owner && j == 0)
+		if(list[i].owner == user_1)
 		{
-			j++;
-			user_1 = list[i].owner;
 			hexagon[i].style.background = user_1_color;
 		}
-		else if(list[i].owner && j == 1 && list[i].owner != user_1)
+		else if(list[i].owner == user_2)
 		{
-			j++;
-			user_2 = list[i].owner;
 			hexagon[i].style.background = user_2_color;
 		}
-		else if(list[i].owner && j == 2 && list[i].owner != user_1 && list[i].owner != user_2)
+		else if(list[i].owner == user_3)
 		{
-			j++;
-			user_3 = list[i].owner;
 			hexagon[i].style.background = user_3_color;
 		}
 
@@ -853,6 +846,9 @@ function display_init(list)
 {
 	document.getElementById('info').style.display = 'none';
 	document.getElementById('help').style.display = 'block';
+	user_1 = player_list[0].pid;
+	user_2 = player_list[1].pid;
+	user_3 = player_list[2].pid;
 	init_help(); //in key_handler.js
 	addBoxes(list);
 	resize();
