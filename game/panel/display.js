@@ -786,22 +786,32 @@ function addBoxes(list)
 			}
 		}
 
+		if(getArmyById(list[i].army_id).owner == user_1)
+		{
+			hexagon[i].lastChild.setAttribute('user', 'user_1');
+		}
+		else if(getArmyById(list[i].army_id).owner == user_2)
+		{
+			hexagon[i].lastChild.setAttribute('user', 'user_2');
+		}
+		else if(getArmyById(list[i].army_id).owner == user_3)
+		{
+			hexagon[i].lastChild.setAttribute('user', 'user_3');
+		}
+
 		hexagon[i].appendChild(p); //frst DOM child
 
 		if(list[i].owner == user_1)
 		{
 			hexagon[i].style.background = user_1_color;
-			hexagon[i].lastChild.setAttribute('user', 'user_1');
 		}
 		else if(list[i].owner == user_2)
 		{
 			hexagon[i].style.background = user_2_color;
-			hexagon[i].lastChild.setAttribute('user', 'user_2');
 		}
 		else if(list[i].owner == user_3)
 		{
 			hexagon[i].style.background = user_3_color;
-			hexagon[i].lastChild.setAttribute('user', 'user_3');
 		}
 
 		if(list[i].owner == user_id)
