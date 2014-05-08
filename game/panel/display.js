@@ -765,15 +765,15 @@ function addBoxes(list)
 		{
 			if(getArmyById(list[i].army_id).owner == user_1)
 			{
-				hexagon[i].lastChild.setAttribute('user', 'user_1');
+				img.setAttribute('user', 'user_1');
 			}
 			else if(getArmyById(list[i].army_id).owner == user_2)
 			{
-				hexagon[i].lastChild.setAttribute('user', 'user_2');
+				img.setAttribute('user', 'user_2');
 			}
 			else if(getArmyById(list[i].army_id).owner == user_3)
 			{
-				hexagon[i].lastChild.setAttribute('user', 'user_3');
+				img.setAttribute('user', 'user_3');
 			}
 
 			switch(parseInt(army_list[parseInt(list[i].army_id)].type_id))
