@@ -800,7 +800,7 @@ function addBoxes(list)
 			user_2 = list[i].owner;
 			hexagon[i].style.background = user_2_color;
 		}
-		else if(list[i].owner && j == 2 && && list[i].owner != user_1 && list[i].owner != user_2)
+		else if(list[i].owner && j == 2 && list[i].owner != user_1 && list[i].owner != user_2)
 		{
 			j++;
 			user_3 = list[i].owner;
