@@ -148,7 +148,7 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " was built";
 		var player_name = getPlayerByID(this.player_id).pname;
-		result_str = "(" + this.Result_id + ")"  + ":" player_name + actor_str + action_str;
+		result_str = "(" + this.Result_id + ")"  + ":" + player_name + actor_str + action_str;
 	}
 	return result_str;
 }
