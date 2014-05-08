@@ -39,15 +39,15 @@ function set_army_type(hexagon, type)
 		src = '../../images/archer.png';
 	}
 
-	if(user_id == user_id_1)
+	if(current_player.pid == user_id_1)
 	{
 		
 	}
-	else if(user_id == user_id_2)
+	else if(current_player.pid == user_id_2)
 	{
 		user_color = user_color_2;
 	}
-	else if(user_id == user_id_3)
+	else if(current_player.pid == user_id_3)
 	{
 		user_color = user_color_3;
 	}
