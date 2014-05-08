@@ -286,7 +286,7 @@ function valid_move_action(e)
 function invalid_action()
 {
 	console.log('Invalid action');
-	clear_range();
+	clear_range('whatever');
 }
 function defend_clicked_handler()
 {
