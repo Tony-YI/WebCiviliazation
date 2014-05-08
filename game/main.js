@@ -42,6 +42,7 @@ function Init_get_init_data()
 	//console.log("Things done for slots");
 
 	parseRemoteResultList(response["result"]);
+
 	if(IsMyTurn())
 	{
 		alert("Hey ! It's your turn !");
@@ -85,7 +86,10 @@ function query_turn()
 
 			//parseRemoteResultList() is implemented in /game/game_logic_server/Result_list.js
 			parseRemoteResultList(response["latest_result_list"]);
-			
+
+			//parseSlotOwnerChange() is implemented here 
+			parseSlotOwnerChange(response["occupation_record"]);
+
 			getPlayerByID(response["active_player"]).pturn = "1";
 			if(IsMyTurn())
 			{
@@ -97,17 +101,10 @@ function query_turn()
 
 var query_timer;
 
-function new_round()
+function parseSlotOwnerChange(record)
 {
-	//this function will have the army recover some HP 
-}
-
-function show_control()
-{
-
-}
-
-function hide_control()
-{
-
+	for(var count = 0;count < record.length;count++)
+	{
+		getSlotByXY(record[count]["slot_col"],record[count]["slot_row"]).owner = record[count]["curr_owner"];
+	}
 }

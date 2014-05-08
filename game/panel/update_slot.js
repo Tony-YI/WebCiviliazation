@@ -24,7 +24,6 @@ function set_army_type(hexagon, type, army_id)
 {
 	hexagon.setAttribute('army_type', type); //army_type: global variable in game.html
 	var src = '';
-	var user_color = '';
 
 	if(type == 'type_A')
 	{
@@ -44,27 +43,26 @@ function set_army_type(hexagon, type, army_id)
 	{
 		if(user_id == user_1)
 		{
-			user_color = user_1_color;
+			hexagon.lastChild.style.setAttribute('user', 'user_1');
 		}
 		else if(user_id == user_2)
 		{
-			user_color = user_2_color;
+			hexagon.lastChild.style.setAttribute('user', 'user_2');
 		}
 		else if(user_id == user_3)
 		{
-			user_color = user_3_color;
+			hexagon.lastChild.style.setAttribute('user', 'user_3');
 		}
 	}
 
 	hexagon.lastChild.setAttribute('src', src);
-	hexagon.lastChild.style.background = user_color;
 }
 
 function clear_army_type(hexagon, type)
 {
 	hexagon.setAttribute('army_type', type);
 	hexagon.lastChild.setAttribute('src', '');
-	hexagon.lastChild.style.background = '';
+	hexagon.lastChild.style.setAttribute('user', 'none');
 }
 
 function update_attack(from_x, from_y, to_x, to_y, army_id)

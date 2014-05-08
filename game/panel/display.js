@@ -708,6 +708,7 @@ function addBoxes(list)
 
 		var img = document.createElement('img'); //store the img
 		img.setAttribute('class', 'army');
+		img.setAttribute('user', 'none');
 		var p = document.createElement('p');
 		p.setAttribute('class', 'description');
 
@@ -783,6 +784,19 @@ function addBoxes(list)
 				hexagon[i].setAttribute('army_type', 'none');
 				break;
 			}
+		}
+
+		if(getArmyById(list[i].army_id).owner == user_1)
+		{
+			hexagon[i].lastChild.setAttribute('user', 'user_1');
+		}
+		else if(getArmyById(list[i].army_id).owner == user_2)
+		{
+			hexagon[i].lastChild.setAttribute('user', 'user_2');
+		}
+		else if(getArmyById(list[i].army_id).owner == user_3)
+		{
+			hexagon[i].lastChild.setAttribute('user', 'user_3');
 		}
 
 		hexagon[i].appendChild(p); //frst DOM child

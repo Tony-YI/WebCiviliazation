@@ -115,7 +115,10 @@
 				$from_x = $result["from_x"];
 				$from_y = $result["from_y"];
 
-				$SQL_ADD_NEW_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES()"
+				$SQL_ADD_NEW_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES($army_id,$army_type,$user_id,'ready')";
+				$SQL_ADD_TO_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = $army_id WHERE slot_col = $from_x AND slot_row = $from_y";
+				mysqli_query($db,$SQL_ADD_NEW_ARMY);
+				mysqli_query($db,$SQL_ADD_TO_SLOT);
 			}
 			else
 			{
