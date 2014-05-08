@@ -105,7 +105,7 @@ function update_build(from_x, from_y, to_x, to_y, army_id)
 		type = 'type_C';
 	}
 
-	set_army_type(hexagon_to, type);
+	set_army_type(hexagon_to, type, army_id);
 	update_slot_list_own(hexagon_to, army_id_to)
 }
 
