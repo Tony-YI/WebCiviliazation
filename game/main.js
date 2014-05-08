@@ -39,11 +39,12 @@ function Init_get_init_data()
 	//console.log("Things done for armys");
 	
 	init_slot_list(response.slots);
-	result_list.sort(compare_result_id);
+
 	//console.log("Things done for slots");
 
 	parseRemoteResultList(response["result"]);
-
+	result_list.sort(compare_result_id);
+	
 	if(IsMyTurn())
 	{
 		alert("Hey ! It's your turn !");
