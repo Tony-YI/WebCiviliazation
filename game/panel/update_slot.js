@@ -139,38 +139,28 @@ function update_slot_others()
 
 function update_turn_div()
 {
-	var target = document.getElementById('turn');
-	target.innerHTML = '';
-	
-	var div_user_1 = document.createElement('div');
-	div_user_1.setAttribute('class', 'user_turn');
-	div_user_1.setAttribute('animation', 'off');
-	div_user_1.style.background = user_1_color;
+	var div_user = document.getElementsByClassName('user_turn');
 
-	var div_user_2 = document.createElement('div');
-	div_user_2.setAttribute('class', 'user_turn');
-	div_user_2.setAttribute('animation', 'off');
-	div_user_2.style.background = user_2_color;
+	div_user[0].setAttribute('animation', 'off');
+	div_user[0].style.background = user_1_color;
 
-	var div_user_3 = document.createElement('div');
-	div_user_3.setAttribute('class', 'user_turn');
-	div_user_3.setAttribute('animation', 'off');
-	div_user_3.style.background = user_3_color;
+	div_user[1].setAttribute('animation', 'off');
+	div_user[1].style.background = user_2_color;
 
-	if(getActivePlayerId() == user_1)
+	div_user[2].setAttribute('animation', 'off');
+	div_user[2].style.background = user_3_color;
+
+	var active_id = getActivePlayerId();
+	if(active_id == user_1)
 	{
-		div_user_1.setAttribute('animation', 'on');
+		div_user[0].setAttribute('animation', 'on');
 	}
-	else if(getActivePlayerId() == user_2)
+	else if(active_id == user_2)
 	{
-		div_user_2.setAttribute('animation', 'on');
+		div_user[1].setAttribute('animation', 'on');
 	}
-	else if(getActivePlayerId() == user_3)
+	else if(active_id == user_3)
 	{
-		div_user_3.setAttribute('animation', 'on');
+		div_user[2].setAttribute('animation', 'on');
 	}
-
-	target.appendChild(div_user_1);
-	target.appendChild(div_user_2);
-	target.appendChild(div_user_3);
 }
