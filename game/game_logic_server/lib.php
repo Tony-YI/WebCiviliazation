@@ -109,6 +109,16 @@ SQL_STATEMENT;
 	$gold_result = mysqli_query($db,$SQL_SELECT_GOLD);
 	$wood_result = mysqli_query($db,$SQL_SELECT_WOOD);
 	$capital_result = mysqli_query($db,$SQL_SELECT_CAPITAL);
+	$num_gold_slots = mysqli_num_rows($gold_result );
+	$num_wood_slots = mysqli_num_rows($wood_result);
+	$num_capital_slots = mysqli_num_rows($capital_result);
+	$gold_increment = 5 * $num_gold_slots + 20 * $num_capital_slots;
+	$wood_increment = 5 * $num_wood_slots + 20 * $num_capital_slots;
+	echo 'gold:' . $num_gold_slots . ' ';
+	echo 'wood:' . $num_wood_slots . ' ';
+	echo 'capital:' . $num_capital_slots . ' ';
+	echo 'gold increment:' . $gold_increment . ' ';
+	echo 'wood increment:' . $wood_increment. ' ';
 }
 
 //This function will check whether player $player_id has successfully occupy new/other's slots
@@ -145,6 +155,9 @@ SQL_STATEMENT;
 		if(!mysqli_query($db,$SQL_INSERT_RECORD))
 		{
 			$sql_error = mysqli_error($db);
+			echo ",\"row0\":\"$row[0]\"";
+			echo ",\"row1\":\"$row[1]\"";
+			echo ",\"row2\":\"$row[2]\"";
 			echo ",\"sql_insert_record\":\"$SQL_INSERT_RECORD\"";
 			echo ",\"sql_insert_record_error\":\"$sql_error\"";
 		}
