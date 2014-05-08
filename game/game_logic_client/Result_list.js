@@ -281,7 +281,7 @@ function parseRemoteResultList(latest_result_list)
 		result_list.push(tmp_result);
 		update_result_list_div();
 	}
-	return parsedResult;
+	return null;
 }
 
 function parse_action(action)
