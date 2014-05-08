@@ -57,7 +57,7 @@ function set_army_type(hexagon, type, army_id)
 	}
 
 	hexagon.lastChild.setAttribute('src', src);
-	hexagon.lastChild.style.border = '1px solid' +  user_color;
+	hexagon.lastChild.style.border = '1px solid red';
 }
 
 function clear_army_type(hexagon, type)
