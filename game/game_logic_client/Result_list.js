@@ -22,7 +22,7 @@ function getMAXResultId()
 		if(result_list[count].Result_id > max)
 			max = result_list[count].Result_id;
 	}
-	return max;
+	return parseInt(max);
 }
 function Result(action_type)
 {
