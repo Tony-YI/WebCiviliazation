@@ -91,6 +91,24 @@
 //This function will have the player have new resources according to the slots he/she owns
 function Player_get_resource($db,$game_id,$player_id)
 {
+	$SQL_SELECT_GOLD = <<<SQL_STATEMENT
+	SELECT *
+	FROM game_{$game_id}_slotlist
+	WHERE game_{$game_id}_slotlist.slot_owner = $player_id AND game_{$game_id}_slotlist.slot_type = 2
+SQL_STATEMENT;
+	$SQL_SELECT_GOLD = <<<SQL_STATEMENT
+	SELECT *
+	FROM game_{$game_id}_slotlist
+	WHERE game_{$game_id}_slotlist.slot_owner = $player_id AND game_{$game_id}_slotlist.slot_type = 3
+SQL_STATEMENT;
+	$SQL_SELECT_CAPITAL = <<<SQL_STATEMENT
+	SELECT *
+	FROM game_{$game_id}_slotlist
+	WHERE game_{$game_id}_slotlist.slot_owner = $player_id AND game_{$game_id}_slotlist.slot_type = 4
+SQL_STATEMENT;
+	$gold_result = mysqli_query($db,$SQL_SELECT_GOLD);
+	$wood_result = mysqli_query($db,$SQL_SELECT_WOOD);
+	$capital_result = mysqli_query($db,$SQL_SELECT_CAPITAL);
 }
 
 //This function will check whether player $player_id has successfully occupy new/other's slots
