@@ -119,11 +119,12 @@ SQL_STATEMENT;
 	echo 'capital:' . $num_capital_slots . ' ';
 	echo 'gold increment:' . $gold_increment . ' ';
 	echo 'wood increment:' . $wood_increment. ' ';
-	$SQL_UPDATE_GOLD = <<<SQL_STATEMENT
+	$SQL_UPDATE_RESOURCE = <<<SQL_STATEMENT
 	UPDATE game_{$game_id}_playerlist 
 	SET player_gold = player_gold + $gold_increment, player_wood = player_wood + $wood_increment
 	WHERE  player_id = $player_id
 SQL_STATEMENT;
+	echo mysqli_query($db,$SQL_UPDATE_RESOURCE);
 
 }
 
