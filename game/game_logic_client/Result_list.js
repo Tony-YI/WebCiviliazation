@@ -252,9 +252,9 @@ action.prototype.get_result = function()
 
 function compare_result_id(result1,result2)
 {
-	if(result1.Result_id < result2.Result_id)
+	if(parseInt(result1.Result_id) < parseInt(result2.Result_id))
 		return -1;
-	if(result1.Result_id > result2.Result_id)
+	if(parseInt(result1.Result_id) > parseInt(result2.Result_id))
 		return 1;
 	return 0;
 }
