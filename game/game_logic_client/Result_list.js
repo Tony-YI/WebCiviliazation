@@ -9,7 +9,14 @@ function update_result_list_div()
 	for(var count = 0;count < result_list.length;count++)
 	{
 		var new_p = document.createElement("p");
-		new_p.innerHTML = result_list[count].Result_toString();
+		try
+		{
+			new_p.innerHTML = result_list[count].Result_toString();
+		}
+		catch(error)
+		{
+			console.log("Error in update_result_list_div: " + result_list[count]);
+		}
 		result_list_div.appendChild(new_p);
 	}
 }
@@ -83,7 +90,6 @@ Result.prototype.setAttack = function(attacker_id,defender_id,attacker_prev_hp,a
 
 Result.prototype.Result_toString = function()
 {
-	console.log('Result_toString');
 	var result_str = "";
 	if(this.action_type == "attack")
 	{
@@ -93,10 +99,10 @@ Result.prototype.Result_toString = function()
 		var action_str = " attack ";
 		var defender_str = defender.typename + "( army_id:" + defender.army_id + ")";
 		if(this.attacker_remaining_hp == 0)
-			result_str = ",causing " + attacker_str +  " dead";
+			result_str += ",causing " + attacker_str +  " dead";
 		if(this.defender_remaining_hp == 0)
 			result_str += ",causing " + defender_str + " dead";
-		result_str = attacker_str  + action_str + defender_str + result_str;
+		result_str = this.Result_id + ":" + attacker_str  + action_str + defender_str + result_str;
 	}
 	else if(this.action_type == "move")
 	{
@@ -104,7 +110,7 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " move to ";
 		var target_str = "(" + this.to_x + "," + this.to_y + ")";
-		result_str = actor_str + action_str + target_str;
+		result_str = this.Result_id + ":" + actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "defend")
 	{
@@ -112,14 +118,14 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " defend ";
 		var target_str = "(" + this.from_x + "," + this.from_y + ")";
-		result_str = actor_str + action_str + target_str;
+		result_str = this.Result_id + ":" + actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "build")
 	{
 		var actor = getArmyById(this.army_id);
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " was built";
-		result_str = actor_str + action_str;
+		result_str = this.Result_id + ":" + actor_str + action_str;
 	}
 	return result_str;
 }
@@ -244,6 +250,15 @@ action.prototype.get_result = function()
 	return result;
 }
 
+function compare_result_id(result1,result2)
+{
+	if(parseInt(result1.Result_id) < parseInt(result2.Result_id))
+		return -1;
+	if(parseInt(result1.Result_id) > parseInt(result2.Result_id))
+		return 1;
+	return 0;
+}
+
 function parseRemoteResultList(latest_result_list)
 {
 	//from JSON format to Result Object,
@@ -285,6 +300,7 @@ function parseRemoteResultList(latest_result_list)
 			tmp_result.army_type = tmp_result_json["army_type"];
 		}
 		result_list.push(tmp_result);
+		result_list.sort(compare_result_id);
 		update_result_list_div();
 	}
 	return null;

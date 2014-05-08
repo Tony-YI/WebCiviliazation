@@ -43,6 +43,8 @@ function clear_range(action)
 	{
 		if(slot_div[i].getAttribute('function') == 'range')
 		{
+			slot_div[i].removeEventListener('mousedown', valid_move_action, false);
+			slot_div[i].removeEventListener('mousedown', valid_attack_action, false);
 			if(action == 'move')
 			{
 				slot_div[i].removeEventListener('mousedown', valid_move_action, false);
@@ -286,7 +288,7 @@ function valid_move_action(e)
 function invalid_action()
 {
 	console.log('Invalid action');
-	clear_range();
+	clear_range('whatever');
 }
 function defend_clicked_handler()
 {
