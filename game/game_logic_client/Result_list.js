@@ -9,7 +9,14 @@ function update_result_list_div()
 	for(var count = 0;count < result_list.length;count++)
 	{
 		var new_p = document.createElement("p");
-		new_p.innerHTML = result_list[count].Result_toString();
+		try
+		{
+			new_p.innerHTML = result_list[count].Result_toString();
+		}
+		catch(error)
+		{
+			console.log("Error in update_result_list_div: " + result_list[count]);
+		}
 		result_list_div.appendChild(new_p);
 	}
 }
