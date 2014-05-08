@@ -763,6 +763,19 @@ function addBoxes(list)
 
 		if(list[i].army_id)
 		{
+			if(getArmyById(list[i].army_id).owner == user_1)
+			{
+				hexagon[i].lastChild.setAttribute('user', 'user_1');
+			}
+			else if(getArmyById(list[i].army_id).owner == user_2)
+			{
+				hexagon[i].lastChild.setAttribute('user', 'user_2');
+			}
+			else if(getArmyById(list[i].army_id).owner == user_3)
+			{
+				hexagon[i].lastChild.setAttribute('user', 'user_3');
+			}
+
 			switch(parseInt(army_list[parseInt(list[i].army_id)].type_id))
 			{
 				case 1: //
@@ -784,19 +797,6 @@ function addBoxes(list)
 				hexagon[i].setAttribute('army_type', 'none');
 				break;
 			}
-		}
-
-		if(getArmyById(list[i].army_id).owner == user_1)
-		{
-			hexagon[i].lastChild.setAttribute('user', 'user_1');
-		}
-		else if(getArmyById(list[i].army_id).owner == user_2)
-		{
-			hexagon[i].lastChild.setAttribute('user', 'user_2');
-		}
-		else if(getArmyById(list[i].army_id).owner == user_3)
-		{
-			hexagon[i].lastChild.setAttribute('user', 'user_3');
 		}
 
 		hexagon[i].appendChild(p); //frst DOM child
