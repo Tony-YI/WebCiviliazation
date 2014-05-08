@@ -37,6 +37,7 @@ function set_army_type(hexagon, type)
 		src = '../../images/archer.png';
 	}
 	hexagon.lastChild.setAttribute('src', src);
+	hexagon.lastChild.style.background = 'red';
 }
 
 function clear_army_type(hexagon, type)
