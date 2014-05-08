@@ -147,8 +147,8 @@ function update_turn_div()
 	div_user[1].setAttribute('animation', 'off');
 	div_user[1].style.background = user_2_color;
 
-	div_user[3].setAttribute('animation', 'off');
-	div_user[3].style.background = user_3_color;
+	div_user[2].setAttribute('animation', 'off');
+	div_user[2].style.background = user_3_color;
 
 	var active_id = getActivePlayerId();
 	if(active_id == user_1)
@@ -161,6 +161,6 @@ function update_turn_div()
 	}
 	else if(active_id == user_3)
 	{
-		div_user[3].setAttribute('animation', 'on');
+		div_user[2].setAttribute('animation', 'on');
 	}
 }
