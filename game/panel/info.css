@@ -1,9 +1,9 @@
 #info
 {
 	width: 200px;
-	min-height: 680px;
+	min-height: 700px;
 	border: 1px solid red;
-	position: fixed;
+	position: absolute;
 	right: 9px;
 	top: 9px;
 	background-color: white;
@@ -106,6 +106,7 @@
 #result_list_div
 {
 	overflow: scroll;
+	height: 150px;
 }
 
 .user_turn[animation="on"]
