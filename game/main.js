@@ -88,7 +88,7 @@ function query_turn()
 
 			//parseRemoteResultList() is implemented in /game/game_logic_server/Result_list.js
 			parseRemoteResultList(response["latest_result_list"]);
-
+			last_result_index = result_list.length;
 			//parseSlotOwnerChange() is implemented here 
 			parseSlotOwnerChange(response["occupation_record"]);
 
