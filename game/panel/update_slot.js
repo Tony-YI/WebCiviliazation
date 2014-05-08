@@ -24,6 +24,8 @@ function set_army_type(hexagon, type)
 {
 	hexagon.setAttribute('army_type', type); //army_type: global variable in game.html
 	var src = '';
+	var user_color = '';
+
 	if(type == 'type_A')
 	{
 		src = '../../images/sword.png';
@@ -36,7 +38,22 @@ function set_army_type(hexagon, type)
 	{
 		src = '../../images/archer.png';
 	}
+
+	if(user_id == user_id_1)
+	{
+		
+	}
+	else if(user_id == user_id_2)
+	{
+		user_color = user_color_2;
+	}
+	else if(user_id == user_id_3)
+	{
+		user_color = user_color_3;
+	}
+
 	hexagon.lastChild.setAttribute('src', src);
+	hexagon.lastChild.style.background = user_color;
 }
 
 function clear_army_type(hexagon, type)
