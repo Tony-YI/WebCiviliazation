@@ -149,5 +149,6 @@ function sql_create_occupationrecord($game_id)
 		FOREIGN KEY(curr_owner) REFERENCES game_{$game_id}_playerlist(player_id)
 	)
 SQL_STATEMENT;
+	return $SQL_CREATE_OCCUPATIONRECORD;
 }
 ?>
