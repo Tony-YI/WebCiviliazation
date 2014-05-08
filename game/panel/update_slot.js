@@ -157,15 +157,15 @@ function update_turn_div()
 	div_user_3.setAttribute('animation', 'off');
 	div_user_3.style.background = user_3_color;
 
-	if()
+	if(getActivePlayerId() == user_1)
 	{
 		div_user_1.setAttribute('animation', 'on');
 	}
-	else if()
+	else if(getActivePlayerId() == user_2)
 	{
 		div_user_2.setAttribute('animation', 'on');
 	}
-	else if()
+	else if(getActivePlayerId() == user_3)
 	{
 		div_user_3.setAttribute('animation', 'on');
 	}
