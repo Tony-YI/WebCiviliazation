@@ -121,7 +121,7 @@ JSON_ERROR;
 	}
 
 	$SQL_GET_RESULT = "SELECT * FROM game_{$game_id}_resultlist ORDER BY result_id DESC LIMIT 0,10";
-	if($result = mysqli_query($db,$SQL_GET_RESULT))
+	if(($result = mysqli_query($db,$SQL_GET_RESULT)))
 	{
 		$result_num = $mysqli_num_rows($result);
 		echo ",\"result_num\":\"$result_num\"";
