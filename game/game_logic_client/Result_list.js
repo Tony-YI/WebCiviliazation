@@ -122,7 +122,7 @@ Result.prototype.Result_toString = function()
 		if(this.defender_remaining_hp == 0)
 			result_str += ",causing " + defender_str + " dead";
 		var player_name = getPlayerByID(this.player_id).pname;
-		result_str = player_name + this.Result_id + ":" + attacker_str  + action_str + defender_str + result_str;
+		result_str = player_name + "(" +  this.Result_id + ")" + ":" + attacker_str  + action_str + defender_str + result_str;
 	}
 	else if(this.action_type == "move")
 	{
