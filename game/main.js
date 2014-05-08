@@ -93,6 +93,7 @@ function query_turn()
 			parseSlotOwnerChange(response["occupation_record"]);
 
 			getPlayerByID(response["active_player"]).pturn = "1";
+			update_turn_div();
 			if(IsMyTurn())
 			{
 				alert("Hey ! It's your turn !");
