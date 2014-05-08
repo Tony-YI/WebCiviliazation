@@ -20,7 +20,7 @@ function get_hexagon(x, y)
 	return hexagon_div;
 }
 
-function set_army_type(hexagon, type)
+function set_army_type(hexagon, type, army_id)
 {
 	hexagon.setAttribute('army_type', type); //army_type: global variable in game.html
 	var src = '';
@@ -37,17 +37,18 @@ function set_army_type(hexagon, type)
 	else if(type == 'type_C')
 	{
 		src = '../../images/archer.png';
-	}
+	}	
 
-	if(current_player.pid == user_1)
+	var user_id = getArmyById(parseInt(army_id)).owner;
+	if(user_id == user_1)
 	{
 		user_color = user_1_color;
 	}
-	else if(current_player.pid == user_2)
+	else if(user_id == user_2)
 	{
 		user_color = user_2_color;
 	}
-	else if(current_player.pid == user_3)
+	else if(user_id == user_3)
 	{
 		user_color = user_3_color;
 	}
@@ -60,6 +61,7 @@ function clear_army_type(hexagon, type)
 {
 	hexagon.setAttribute('army_type', type);
 	hexagon.lastChild.setAttribute('src', '');
+	hexagon.lastChild.style.background = '';
 }
 
 function update_attack(from_x, from_y, to_x, to_y, army_id)
@@ -74,8 +76,8 @@ function update_move(from_x, from_y, to_x, to_y, army_id)
 	var army_id_from = '';
 	var army_id_to = army_id;
 
-	set_army_type(hexagon_from, 'none');
-	set_army_type(hexagon_to, army_type);
+	clear_army_type(hexagon_from, 'none');
+	set_army_type(hexagon_to, army_type, army_id);
 	update_slot_list_own(hexagon_from, army_id_from);
 	update_slot_list_own(hexagon_to, army_id_to);
 }
