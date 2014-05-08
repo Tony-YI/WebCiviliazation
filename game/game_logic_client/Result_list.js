@@ -6,18 +6,37 @@ function update_result_list_div()
 {
 	var result_list_div = document.getElementById("result_list_div");
 	result_list_div.innerHTML = "";
-	for(var count = 0;count < result_list.length;count++)
+	if(result_list.length < 10)
 	{
-		var new_p = document.createElement("p");
-		try
+		for(var count = 0;count < result_list.length;count++)
 		{
-			new_p.innerHTML = result_list[count].Result_toString();
+			var new_p = document.createElement("p");
+			try
+			{
+				new_p.innerHTML = result_list[count].Result_toString();
+			}
+			catch(error)
+			{
+				console.log("Error in update_result_list_div: " + JSON.stringify(result_list[count]));
+			}
+			result_list_div.appendChild(new_p);
 		}
-		catch(error)
+	}
+	else
+	{
+		for(var count = result_list.length - 10;count < result_list.length;count++)
 		{
-			console.log("Error in update_result_list_div: " + JSON.stringify(result_list[count]));
+			var new_p = document.createElement("p");
+			try
+			{
+				new_p.innerHTML = result_list[count].Result_toString();
+			}
+			catch(error)
+			{
+				console.log("Error in update_result_list_div: " + JSON.stringify(result_list[count]));
+			}
+			result_list_div.appendChild(new_p);
 		}
-		result_list_div.appendChild(new_p);
 	}
 }
 function getMAXResultId()
