@@ -24,7 +24,7 @@
     display: inline-block;
 }
 
-#exitBuild{
+/*#exitBuild{
     background: #65a9d7;
    -webkit-border-radius: 40px;
    -moz-border-radius: 40px;
@@ -44,10 +44,10 @@
 #exitBuild:active {
    border-top-color: #1b435e;
    background: #1b435e;
-   }
+   }*/
 #info, #buildArmy
 {
-   	font-family: Lucida Calligraphy;
+   	font-family: Bookman Old Style;
 
 }
 
@@ -62,7 +62,7 @@
 	font-size: 16px;
 }
 
-#info>button
+#info>button, #buildArmy>button
 {
   display: inline-block;
   background: rgba(230,230,250,.85);

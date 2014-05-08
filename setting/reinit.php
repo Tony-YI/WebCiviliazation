@@ -30,6 +30,13 @@
 			$SQL_DROP_armylist = "DROP TABLE game_{$row[0]}_armylist";
 			$SQL_DROP_slotlist = "DROP TABLE game_{$row[0]}_slotlist";
 			$SQL_DROP_actionlist = "DROP TABLE game_{$row[0]}_resultlist";
+			$SQL_DROP_occupationrecord = "DROP TABLE game_{$row[0]}_occupationrecord";
+			
+			if(!mysqli_query($db,$SQL_DROP_occupationrecord))
+			{
+				$sql_error = mysqli_error($db);
+				echo "<p>$SQL_DROP_actionlist Error: $sql_error</p>";
+			}
 			if(!mysqli_query($db,$SQL_DROP_actionlist))
 			{
 				$sql_error = mysqli_error($db);

@@ -78,6 +78,8 @@
 						break;
 				}
 				$SQL_PLAYER_TURN_ACTIVATE .= " WHERE `player_id` = $tmp_id";
+				Player_get_slots($db,$game_id,$tmp_id);
+				Player_get_resource($db,$game_id,$tmp_id);
 			}
 		}
 		//echo "\n".$SQL_PLAYER_TURN_CANCEL."\n";
@@ -85,6 +87,45 @@
 		mysqli_query($db,$SQL_PLAYER_TURN_CANCEL);
 		mysqli_query($db,$SQL_PLAYER_TURN_ACTIVATE);
 	}
+//InterLy please finish this function
+//This function will have the player have new resources according to the slots he/she owns
+function Player_get_resource($db,$game_id,$player_id)
+{
+}
+
+//This function will check whether player $player_id has successfully occupy new/other's slots
+function Player_get_slots($db,$game_id,$player_id)
+{
+	//detele the previous records
+	$SQL_DELETE_OCCUPATION_RECORD = "DELETE FROM game_{$game_id}_occupationresult";
+
+	mysqli_query($db,$SQL_DELETE_OCCUPATION_RECORD);
+	//select the slots, where the owner id is not the current army's owner, and the current army's owner is $player_id
+	$SQL_SELECT_TARGET = <<<SQL_STATEMENT
+	SELECT game_{$game_id}_slotlist.slot_col, game_{$game_id}_slotlist.slot_row, game_{$game_id}_slotlist.slot_owner
+	FROM game_{$game_id}_slotlist, game_{$game_id}_armylist
+	WHERE game_{$game_id}_slotlist.slot_army = game_{$game_id}_armylist.army_id
+	AND game_{$game_id}_armylist.owner_id = $player_id 
+	AND game_{$game_id}_slotlist.slot_owner != $player_id
+SQL_STATEMENT;
+
+	echo ",\"sql_statment_for_get_slots\":\"$SQL_SELECT_TARGET\"";
+	$result = mysqli_query($db,$SQL_SELECT_TARGET);
+	while($row = mysqli_fetch_row($result))
+	{
+		//change the slot owner
+		$SQL_CHANGE_OWNER = <<<SQL_STATEMENT
+	UPDATE game_{$game_id}_slotlist SET slot_owner = $player_id WHERE slot_col = $row[0] AND slot_row = $row[1]
+SQL_STATEMENT;
+		mysqli_query($db,$SQL_CHANGE_OWNER);
+
+	}
+
+
+}
+
+
+
 
 	function SQL_generate_insert_result($result,$game_id)
 	{
@@ -213,21 +254,6 @@ function row_to_result_JSON($row)
 	}
 	$result .= "}";
 	return $result;
-}
-
-function player1_get_new_resource()
-{
-
-}
-
-function player2_get_new_resource()
-{
-
-}
-
-function player3_get_new_resource()
-{
-
 }
 
 ?>
