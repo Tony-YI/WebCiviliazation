@@ -106,11 +106,13 @@ function Player_get_slots($db,$game_id,$player_id)
 	FROM game_{$game_id}_slotlist, game_{$game_id}_armylist
 	WHERE game_{$game_id}_slotlist.slot_army = game_{$game_id}_armylist.army_id
 	AND game_{$game_id}_armylist.owner_id = $player_id 
-	AND ((game_{$game_id}_slotlist.slot_owner != $player_id) OR (game_{$game_id}_slotlist.slot_owner IS NULL)
+	AND ((game_{$game_id}_slotlist.slot_owner != $player_id) OR (game_{$game_id}_slotlist.slot_owner IS NULL))
 SQL_STATEMENT;
 
 	echo ",\"sql_statment_for_get_slots\":\"$SQL_SELECT_TARGET\"";
 	$result = mysqli_query($db,$SQL_SELECT_TARGET);
+	$row_num = mysqli_num_rows($result);
+	echo ",\"query_result_num\":\"$row_num\"";
 	while($row = mysqli_fetch_row($result))
 	{
 		//change the slot owner
