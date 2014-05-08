@@ -323,6 +323,11 @@ function parseRemoteResultList(latest_result_list)
 		{
 			tmp_result.army_id = tmp_result_json["army_id"];
 			tmp_result.army_type = tmp_result_json["army_type"];
+			if(getArmyById(tmp_result.army_id) == null || typeof(getArmyById(tmp_result.army_id)) == "undefined")
+			{
+				var tmp_army = new Army(tmp_result.army_id,tmp_result.army_type,tmp_result_json["player_id"]);
+				army_list.push(tmp_army);
+			}
 		}
 		result_list.push(tmp_result);
 	}
