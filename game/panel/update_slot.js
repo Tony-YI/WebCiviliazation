@@ -39,20 +39,17 @@ function set_army_type(hexagon, type, army_id)
 	}	
 
 	var user_id = getArmyById(parseInt(army_id)).owner;
-	if(hexagon.getAttribute('slot_type') != 'capital_slot')
+	if(user_id == user_1)
 	{
-		if(user_id == user_1)
-		{
-			hexagon.lastChild.setAttribute('user', 'user_1');
-		}
-		else if(user_id == user_2)
-		{
-			hexagon.lastChild.setAttribute('user', 'user_2');
-		}
-		else if(user_id == user_3)
-		{
-			hexagon.lastChild.setAttribute('user', 'user_3');
-		}
+		hexagon.lastChild.setAttribute('user', 'user_1');
+	}
+	else if(user_id == user_2)
+	{
+		hexagon.lastChild.setAttribute('user', 'user_2');
+	}
+	else if(user_id == user_3)
+	{
+		hexagon.lastChild.setAttribute('user', 'user_3');
 	}
 
 	hexagon.lastChild.setAttribute('src', src);
