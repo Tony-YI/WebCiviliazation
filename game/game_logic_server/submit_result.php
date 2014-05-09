@@ -118,8 +118,8 @@
 				$SQL_ADD_NEW_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES($army_id,$army_type,$user_id,'ready')";
 				$SQL_ADD_TO_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = $army_id WHERE slot_col = $from_x AND slot_row = $from_y";
 				
-				$gold_cost = $army_gold_cost[int($army_id)];
-				$wood_cost = $army_wood_cost[int($army_id)];
+				$gold_cost = $army_gold_cost[(int) $army_id)];
+				$wood_cost = $army_wood_cost[(int) $army_id)];
 
 				$SQL_REDUCE_RESOURCE = "UPDATE game_{$game_id}_playerlist SET player_gold = player_gold - $gold_cost, player_wood = player_wood - $wood_cost WHERE player_id = $user_id";
 				mysqli_query($db,$SQL_ADD_NEW_ARMY);
