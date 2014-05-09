@@ -48,6 +48,7 @@ function Army(army_id,type_id,army_owner)
 	if(type_id == "1")
 	{
 		//sword man
+		this.max_hp = 5;
 		this.hp = 5;
 		this.ap = 1;
 		this.attack = 3;
@@ -56,6 +57,7 @@ function Army(army_id,type_id,army_owner)
 	else if(type_id == "2")
 	{
 		//calvery
+		this.max_hp = 3;
 		this.hp = 3;
 		this.ap = 2;
 		this.attack = 4;
@@ -64,6 +66,7 @@ function Army(army_id,type_id,army_owner)
 	else if(type_id == "3")
 	{
 		//archer
+		this.max_hp = 2;
 		this.hp = 2;
 		this.ap = 1;
 		this.attack = 1;
