@@ -124,7 +124,11 @@
 				$SQL_REDUCE_RESOURCE = "UPDATE game_{$game_id}_playerlist SET player_gold = player_gold - $gold_cost, player_wood = player_wood - $wood_cost WHERE player_id = $user_id";
 				mysqli_query($db,$SQL_ADD_NEW_ARMY);
 				mysqli_query($db,$SQL_ADD_TO_SLOT);
-				mysqli_query($db,$SQL_REDUCE_RESOURCE);
+				if(!mysqli_query($db,$SQL_REDUCE_RESOURCE))
+				{
+					echo "\"sql_reduce_resource\":\"$SQL_REDUCE_RESOURCE\"";
+					echo "\"sql_reduce_resource_error\""."\"".mysqli_error()."\"";
+				}
 			}
 			else if($result["action_type"] == "surrender")
 			{
