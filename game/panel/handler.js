@@ -22,7 +22,7 @@ function show_range(x, y, action)
 			slot_div[i].addEventListener('mousedown', valid_move_action, false);
 			slot_div[i].setAttribute('function', 'range');
 		}
-		else if(action == 'attack' && slot_list[i].owner != "" && parseInt(slot_list[i].owner) != user_id)
+		else if(action == 'attack' && slot_list[i].army_id != "" && parseInt(getArmyById(slot_list[i].army_id).owner) != user_id)
 		{
 			slot_div[i].addEventListener('mousedown', valid_attack_action, false);
 			slot_div[i].setAttribute('function', 'range');
