@@ -115,7 +115,7 @@ function update_slot_own() //update the slot movement
 	{
 		if(result.action_type == 'attack')
 		{
-			update_attack(result.from_x, result.from_y, result.to_x, result.to_y, army_id);
+			update_attack(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
 		}
 		else if(result.action_type == 'move')
 		{
@@ -123,7 +123,7 @@ function update_slot_own() //update the slot movement
 		}
 		else if(result.action_type == 'defend')
 		{
-			update_defend(result.from_x, result.from_y, result.to_x, result.to_y, army_id);
+			update_defend(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
 		}
 		else if(result.action_type == 'build')
 		{
