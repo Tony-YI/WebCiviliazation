@@ -318,9 +318,16 @@ function parseRemoteResultList(latest_result_list)
 			var attacker = getArmyById(tmp_result_json["attacker_id"]);
 			var defender = getArmyById(tmp_result_json["defender_id"]);
 			if((attacker.hp = tmp_result_json["attacker_remaining_hp"]) == 0)
+			{
 				attacker.army_status = "dead";
+				getSlotByXY(tmp_result.from_x,tmp_result.from_y).army_id = "";
+			}
 			if((defender.hp = tmp_result_json["defender_remaining_hp"]) == 0)
+			{
 				defender.army_status = "dead";
+				//if the attacker hp is 0, set null, else set attacker's army_id
+				getSlotByXY(tmp_result.to_x,tmp_result.to_y).army_id = attacker.hp ? attack.army_id : "";
+			}
 		}
 		else if(tmp_result_json["action_type"] == "move")
 		{
