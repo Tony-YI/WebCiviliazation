@@ -158,6 +158,10 @@ function valid_attack_action(e)
 	e = e || window.event;
 	//console.log(e.target);
 	var target = e.target;
+	while(target.className != 'hexagon')
+	{
+		target = target.parentNode;
+	}
 	console.log(target);
 	var from_x = latest_slot.getAttribute('x');
 	var from_y = latest_slot.getAttribute('y');
@@ -272,6 +276,10 @@ function valid_move_action(e)
 	e = e || window.event;
 	//console.log(e.target);
 	var target = e.target;
+	while(target.className != 'hexagon')
+	{
+		target = target.parentNode;
+	}
 	var from_x = latest_slot.getAttribute('x');
 	var from_y = latest_slot.getAttribute('y');
 	var to_x = target.getAttribute('x');
