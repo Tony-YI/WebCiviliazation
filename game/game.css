@@ -24,27 +24,12 @@
     display: inline-block;
 }
 
-/*#exitBuild{
-    background: #65a9d7;
-   -webkit-border-radius: 40px;
-   -moz-border-radius: 40px;
-   border-radius: 40px;
-   color: white;
-   font-size: 10px;
-   font-family: Georgia, serif;
-   text-decoration: none;
-   vertical-align: middle;
-   margin-left: 60px;
-   }
-#exitBuild:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #ccc;
-   }
-#exitBuild:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
-   }*/
+#exitBuild{
+	position: fixed;
+	top:10px; 
+
+ }
+
 #info, #buildArmy
 {
    	font-family: Bookman Old Style;
@@ -82,7 +67,7 @@
     -moz-box-shadow:0 0 8px rgba(230,230,250,.5);
     -webkit-box-shadow:0 0 8px rgba(230,230,250,.3);
 }
-.armytypeId
+#buildArmy
 {
 	min-height: 350px;
 	min-width: 450px;
