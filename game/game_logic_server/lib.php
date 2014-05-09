@@ -1,7 +1,7 @@
 <?php
 
-$army_gold_cost = array("20","25","15");
-$army_wood_cost = array("20","15","25");
+$army_gold_cost = array("20","15","25");
+$army_wood_cost = array("20","25","15");
 
 	function IsMyTurn($db,$user_id,$game_id)
 	{
