@@ -1,4 +1,8 @@
 <?php
+
+$army_gold_cost = {"20","25","15"};
+$army_wood_cost = {"20","15","25"};
+
 	function IsMyTurn($db,$user_id,$game_id)
 	{
 		$SQL_GET_PLAYER  = "SELECT `player_turn` FROM game_{$game_id}_playerlist WHERE `player_id` = $user_id";
