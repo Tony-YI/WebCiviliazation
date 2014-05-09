@@ -118,16 +118,24 @@
 				$SQL_ADD_NEW_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES($army_id,$army_type,$user_id,'ready')";
 				$SQL_ADD_TO_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = $army_id WHERE slot_col = $from_x AND slot_row = $from_y";
 				
-				$gold_cost = $army_gold_cost[intval($army_id)];
-				$wood_cost = $army_wood_cost[intval($army_id)];
+				$value = intval($army_type);
+				$gold_cost = $army_gold_cost[intval($army_type)];
+				$wood_cost = $army_wood_cost[intval($army_type)];
 
 				$SQL_REDUCE_RESOURCE = "UPDATE game_{$game_id}_playerlist SET player_gold = player_gold - $gold_cost, player_wood = player_wood - $wood_cost WHERE player_id = $user_id";
 				mysqli_query($db,$SQL_ADD_NEW_ARMY);
 				mysqli_query($db,$SQL_ADD_TO_SLOT);
 				if(!mysqli_query($db,$SQL_REDUCE_RESOURCE))
 				{
-					echo "\"sql_reduce_resource\":\"$SQL_REDUCE_RESOURCE\"";
-					echo "\"sql_reduce_resource_error\""."\"".mysqli_error()."\"";
+					$var_dump_gold = var_dump($army_gold_cost);
+					$var_dump_wood = var_dump($army_wood_cost);
+					echo ",\"intval()\":\"$value\"";
+					echo ",\"gold_cost\":\"$gold_cost\"";
+					echo ",\"wood_cost\":\"$wood_cost\"";
+					echo ",\"var_dump_gold\":\"$var_dump_gold\"";
+					echo ",\"var_dump_wood\":\"$var_dump_wood\"";
+					echo ",\"sql_reduce_resource\":\"$SQL_REDUCE_RESOURCE\"";
+					echo ",\"sql_reduce_resource_error\""."\"".mysqli_error()."\"";
 				}
 			}
 			else if($result["action_type"] == "surrender")
