@@ -62,7 +62,7 @@
 	font-size: 16px;
 }
 
-#info>button
+#info>button, .armytypeId>button
 {
   display: inline-block;
   background: rgba(230,230,250,.85);
@@ -82,7 +82,7 @@
     -moz-box-shadow:0 0 8px rgba(230,230,250,.5);
     -webkit-box-shadow:0 0 8px rgba(230,230,250,.3);
 }
-#buildArmy>button
+/*#buildArmy>button
 {
 	display: inline-block;
 	background: rgba(230,230,250,.85);
@@ -101,4 +101,4 @@
 	box-shadow:0 0 8px rgba(230,230,250,.5);
 	-moz-box-shadow:0 0 8px rgba(230,230,250,.5);
 	-webkit-box-shadow:0 0 8px rgba(230,230,250,.3);
-}
+}*/
