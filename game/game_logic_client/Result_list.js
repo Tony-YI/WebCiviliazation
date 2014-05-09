@@ -333,6 +333,8 @@ function parseRemoteResultList(latest_result_list)
 		result_list.push(tmp_result);
 	}
 	result_list.sort(compare_result_id);
+	//every time a remote result list is parsed, remember the position where the previous result_list are already in the server
+	last_result_index = result_list.length - 1;
 	update_result_list_div();
 	return null;
 }
