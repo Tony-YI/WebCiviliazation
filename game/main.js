@@ -92,12 +92,14 @@ function query_turn()
 			//last_result_index = result_list.length;
 			//parseSlotOwnerChange() is implemented here 
 			parseSlotOwnerChange(response["occupation_record"]);
-
 			setActivePlayer(response["active_player"]);			
 			update_turn_div();
 			if(IsMyTurn())
 			{
-				update_turn_div();
+				window.current_player.gold = response["player_gold"];
+				window.current_player.wood = response["player_wood"];
+				current_player.show_info();
+				reinit_not_dead_army();
 				alert("Hey ! It's your turn !");
 			}
 		}

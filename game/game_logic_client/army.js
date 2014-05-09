@@ -9,7 +9,14 @@ function init_army_list(army)
 	}
 
 }
-
+function reinit_not_dead_army()
+{
+	for(var count = 0;count < army_list.length;count++)
+	{
+		if(army_list[count].owner == window.current_player.pid && army_list[count].army_status != "dead")
+			army_list[count].army_status = "ready";
+	}
+}
 function getArmyById(army_id)
 {
 	if(!(army_id >= 0 && army_id < window.army_list.length))

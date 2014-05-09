@@ -241,13 +241,20 @@ action.prototype.get_result = function()
 		//ensure no negative hp
 		defender.hp = defender.hp <= attacker.attack ? 0 : defender.hp - attacker.attack; 
 		attacker.hp = attacker.hp <= defender.attack ? 0 : attacker.hp - defender.attack;
+		if(defender.hp == 0)
+			defender.army_status = "dead";
+		else
+			defender.army_status = "";
+		if(attacker.hp == 0)
+			attacker.army_status = "dead";
+		else
+			attacker.army_status = "";
 		//assigning data field specific for attack action
 		result.attacker_id = attacker.army_id;
 		result.defender_id = defender.army_id;
 		result.attacker_remaining_hp = attacker.hp;
 		result.defender_remaining_hp = defender.hp;
-		var army = getArmyById(result.army_id);
-		army.army_status = "";
+
 	}
 	else if(this.action_type == "move")
 	{
@@ -307,22 +314,34 @@ function parseRemoteResultList(latest_result_list)
 								tmp_result_json["attacker_remaining_hp"],
 								tmp_result_json["defender_prev_hp"],
 								tmp_result_json["defender_remaining_hp"]);
+			//modify the local army list
+			var attacker = getArmyById(tmp_result_json["attacker_id"]);
+			var defender = getArmyById(tmp_result_json["defender_id"]);
+			if((attacker.hp = tmp_result_json["attacker_remaining_hp"]) == 0)
+				attacker.army_status = "dead";
+			if((defender.hp = tmp_result_json["defender_remaining_hp"]) == 0)
+				defender.army_status = "dead";
 		}
 		else if(tmp_result_json["action_type"] == "move")
 		{
 			tmp_result.army_id = tmp_result_json["army_id"];
 			tmp_result.setFrom(tmp_result_json["from_x"],tmp_result_json["from_y"]);
 			tmp_result.setTo(tmp_result_json["to_x"],tmp_result_json["to_y"]);
+			//modify the slot list
+			getSlotByXY(tmp_result.from_x,tmp_result.from_y).army_id = "";
+			getSlotByXY(tmp_result.to_x,tmp_result.to_y).army_id = tmp_result.army_id;
 		}
 		else if(tmp_result_json["action_type"] == "defend")
 		{
 			tmp_result.army_id = tmp_result_json["defender_id"];
 			tmp_result.setFrom(tmp_result_json["from_x"],tmp_result_json["from_y"]);
+			//The defending army should have a bouns on its attack
 		}
 		else if(tmp_result_json["action_type"] == "build")
 		{
 			tmp_result.army_id = tmp_result_json["army_id"];
 			tmp_result.army_type = tmp_result_json["army_type"];
+			//modify the local army list
 			if(getArmyById(tmp_result.army_id) == null || typeof(getArmyById(tmp_result.army_id)) == "undefined")
 			{
 				var tmp_army = new Army(tmp_result.army_id,tmp_result.army_type,tmp_result_json["player_id"]);
