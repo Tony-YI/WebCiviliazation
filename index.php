@@ -21,4 +21,5 @@
 	?>
 	
 	<img src="images/cut3.png" class="cut">
+	<div></div>
 </html>
