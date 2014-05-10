@@ -15,16 +15,17 @@ img:hover{
    	width: 450px;
     	transition: 1s;
 }*/
-#box
-{
-	background: blue;
-	width: 100px;
-	height: 100px;
+
+.box {
+    width: 100px;
+    height: 100px; 
+    background: hotpink;
 }
-.flash
-{
-	display: none;
-	width: 15px;
-	height: 15px;
-	transition: 1s;
+
+@-webkit-keyframes growBox {
+  to {
+    width: 300px;
+    height: 300px;
+   }
 }
+.change-size { -webkit-animation: growBox 3s linear 1s 3 normal;}
