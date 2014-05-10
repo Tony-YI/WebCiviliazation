@@ -21,4 +21,5 @@
 	?>
 	
 	<div><img src="images/cut3.png" class="flash"></div>
+	<div class="falsh">Simple test</div>
 </html>
