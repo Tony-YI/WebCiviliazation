@@ -19,9 +19,12 @@ function reinit_not_dead_army()
 			var tmp_army = getArmyById(slot_list[count].army_id);
 			if(tmp_army.owner == current_player.pid && tmp_army.status != "dead")
 			{
+				console.log("set " + slot_list[count]["slot_x"] + "," + slot_list[count]["slot_y"]);
 				tmp_army.status = "ready";
 				set_army_animation(slot_list[count]["slot_x"],slot_list[count]["slot_y"],tmp_army.army_id);
 			}
+			else
+				console.log("not set " + slot_list[count]["slot_x"] + "," + slot_list[count]["slot_y"]);
 		}
 	}
 }

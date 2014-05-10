@@ -1,7 +1,8 @@
 function onclick1()
 {
-	box = document.getElementById('box');
-	box.classList.add('change-size');
+	img1 = document.getElementById('img1');
+	img1.style.display="block";
+	img1.classList.add('change-size');
 }
 
 
