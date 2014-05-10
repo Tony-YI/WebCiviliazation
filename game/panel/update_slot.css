@@ -1,0 +1,41 @@
+.hexagon[user="user_1"]
+{
+    opacity: 1;
+    background: purple;
+}
+.hexagon[user="user_1"]:before
+{
+    border-bottom: 25px solid purple;
+}
+.hexagon[user="user_1"]:after
+{
+    border-top: 25px solid purple;
+}
+
+.hexagon[user="user_2"]
+{
+    opacity: 1;
+    background: green;
+}
+.hexagon[user="user_2"]:before
+{
+    border-bottom: 25px solid green;
+}
+.hexagon[user="user_2"]:after
+{
+    border-top: 25px solid green;
+}
+
+.hexagon[user="user_3"]
+{
+    opacity: 1;
+    background: blue;
+}
+.hexagon[user="user_3"]:before
+{
+    border-bottom: 25px solid blue;
+}
+.hexagon[user="user_3"]:after
+{
+    border-top: 25px solid blue;
+}
