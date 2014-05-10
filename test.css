@@ -14,7 +14,8 @@ div{
     	width: 450px;
 }
 div:hover {
-  animation: 1s rainbow;
+  -webkit-animation: 1s rainbow;
+  -moz-animation: 1s rainbow;
 }
 @keyframes rainbow {
   0% { background: #c00; }
