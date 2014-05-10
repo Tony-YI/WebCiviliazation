@@ -109,7 +109,7 @@
 	border: 1px red solid;
 	min-height: 700px;
 	position: absolute;
-	right: 9px;
+	left: 9px;
 	top: 9px;
 	background-color: white;
 	z-index: 105;
