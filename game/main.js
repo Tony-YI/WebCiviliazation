@@ -70,6 +70,7 @@ function query_turn()
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","/game/game_logic_server/query_turn.php",true);
 	xhr.setRequestHeader("MAX_RESULT_ID",getMAXResultId());
+	xhr.setRequestHeader("MAX_OCCUPATIONRECORD_ID",last_occupationrecord_id);
 	xhr.send();
 	xhr.onreadystatechange = function()
 	{
@@ -107,6 +108,7 @@ function query_turn()
 }
 
 var query_timer;
+var last_occupationrecord_id = 0;
 
 function parseSlotOwnerChange(record)
 {
@@ -114,4 +116,5 @@ function parseSlotOwnerChange(record)
 	{
 		getSlotByXY(record[count]["slot_col"],record[count]["slot_row"]).owner = record[count]["curr_owner"];
 	}
+	last_occupationrecord_id = record[record.length - 1]["id"];
 }

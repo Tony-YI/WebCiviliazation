@@ -6,6 +6,8 @@
 	$game_id = $_COOKIE["IN_GAME"];
 
 	$max_result_id = $_SERVER["HTTP_MAX_RESULT_ID"];
+	$max_occupationrecord_id = $_SERVER["HTTP_MAX_OCCUPATIONRECORD_ID"];
+
 	if(!check_cookie($db))
 	{
 		echo "{\"status\":\"error\",";
@@ -39,7 +41,7 @@
 	}
 	echo "]";
 
-	$SQL_GET_OCCUPATIONRECORD = "SELECT * FROM game_{$game_id}_occupationrecord";
+	$SQL_GET_OCCUPATIONRECORD = "SELECT * FROM game_{$game_id}_occupationrecord WHERE id > $max_occupationrecord_id";
 	$result = mysqli_query($db,$SQL_GET_OCCUPATIONRECORD);
 	$row_num = mysqli_num_rows($result);
 	echo ",\"occupation_record_num\":\"$row_num\"";
