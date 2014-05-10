@@ -66,6 +66,8 @@ function query_turn()
 	//If it is current player's turn, then do not query the server
 	if(IsMyTurn())
 		return ;
+	if(!display_init_done)
+		return ;
 	//If it is not current player's turn, send query to the server
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","/game/game_logic_server/query_turn.php",true);
@@ -115,6 +117,8 @@ function parseSlotOwnerChange(record)
 	for(var count = 0;count < record.length;count++)
 	{
 		getSlotByXY(record[count]["slot_col"],record[count]["slot_row"]).owner = record[count]["curr_owner"];
+		if(count + 1 == record.length)
+		last_occupationrecord_id = record[record.length - 1]["id"];
 	}
-	last_occupationrecord_id = record[record.length - 1]["id"];
+	
 }
