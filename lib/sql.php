@@ -86,6 +86,7 @@ SQL_STATEMENT;
 			army_type INT,
 			owner_id INT,
 			army_status char(6),
+			army_hp INT,
 			FOREIGN KEY(owner_id) REFERENCES game_{$game_id}_playerlist(player_id)
 		)
 SQL_STATEMENT;

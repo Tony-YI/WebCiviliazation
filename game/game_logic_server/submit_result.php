@@ -88,6 +88,13 @@
 						mysqli_query($db,$SQL_ATTACKER_MOVE_TO);
 					}
 				}
+				//update the hp in the table
+				$attacker_hp = $result["attacker_remaining_hp"];
+				$defender_hp = $result["defender_remaining_hp"];
+				$SQL_UPDATE_ATTACKER_HP = "UPDATE game_{$game_id}_armylist SET army_hp = $attacker_hp WHERE army_id = $attacker_id";
+				$SQL_UPDATE_DEFENDER_HP = "UPDATE game_{$game_id}_armylist SET army_hp = $defender_hp WHERE army_id = $defender_id";
+				mysqli_query($SQL_UPDATE_ATTACKER_HP);
+				mysqli_query($SQL_UPDATE_DEFENDER_HP);
 			}
 			else if($result["action_type"] == "move")
 			{
@@ -115,12 +122,17 @@
 				$from_x = $result["from_x"];
 				$from_y = $result["from_y"];
 
-				$SQL_ADD_NEW_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES($army_id,$army_type,$user_id,'ready')";
+				$value = intval($army_type) - 1;
+				$gold_cost = $army_gold_cost[$value];
+				$wood_cost = $army_wood_cost[$value];
+				$hp = $army_hp[$value];
+
+				$SQL_ADD_NEW_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES($army_id,$army_type,$user_id,'ready',$hp)";
 				$SQL_ADD_TO_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = $army_id WHERE slot_col = $from_x AND slot_row = $from_y";
 				
-				$value = intval($army_type);
-				$gold_cost = $army_gold_cost[intval($army_type)];
-				$wood_cost = $army_wood_cost[intval($army_type)];
+				//army_type ranges from (1..3)
+				//the index ranges from (0..2)
+
 
 				$SQL_REDUCE_RESOURCE = "UPDATE game_{$game_id}_playerlist SET player_gold = player_gold - $gold_cost, player_wood = player_wood - $wood_cost WHERE player_id = $user_id";
 				mysqli_query($db,$SQL_ADD_NEW_ARMY);

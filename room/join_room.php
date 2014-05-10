@@ -299,11 +299,11 @@ SQL_STATEMENT;
                         $p[0] = $row[0];
                         $p[1] = $row[1];
                         $p[2] = $row[2];
-                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (0,1,$p[0],'ready')";
+                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (0,1,$p[0],'ready',$army_hp[0])";
                         mysqli_query($con,$SQL_SET_INIT_ARMY);
-                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (1,1,$p[1],'ready')";
+                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (1,1,$p[1],'ready',$army_hp[0])";
                         mysqli_query($con,$SQL_SET_INIT_ARMY);
-                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (2,1,$p[2],'ready')";
+                        $SQL_SET_INIT_ARMY = "INSERT INTO game_{$game_id}_armylist VALUES (2,1,$p[2],'ready',$army_hp[0])";
                         mysqli_query($con,$SQL_SET_INIT_ARMY);
 
                         $SQL_SET_START_POS = "UPDATE game_{$game_id}_slotlist SET slot_type = 4 , slot_owner = $p[0], slot_army = 0 WHERE slot_row = $x[0] AND slot_col = $y[0]";

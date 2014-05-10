@@ -4,6 +4,7 @@
 
 var current_player;
 var last_result_index = 0;
+var not_init = 1;
 function Init()
 {
 	//send request to get the initilization data
@@ -13,6 +14,7 @@ function Init()
 	update_turn_div();
 	query_timer = setInterval(query_turn,3000);
 	document.getElementById("surrender").addEventListener("onclick","surrender_clicked_handler",false);
+	not_init = 0;
 }
 
 function Init_get_init_data()

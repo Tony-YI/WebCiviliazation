@@ -5,6 +5,7 @@ function init_army_list(army)
 	{
 		var tmp = new Army(army[count].army_id,army[count].army_type,army[count].owner_id);
 		tmp.army_status = army[count].army_status
+		tmp.army_hp = army[count].army_hp;
 		army_list.push(tmp);
 	}
 
