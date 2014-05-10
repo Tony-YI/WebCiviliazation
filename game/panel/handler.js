@@ -18,7 +18,7 @@ function show_range(x, y, action)
 		//console.log(slot_list[i]);
 		if(action == 'move' && slot_list[i].army_id == "")
 		{
-			console.log(slot_list[i].army_id);
+			//console.log(slot_list[i].army_id);
 			slot_div[i].addEventListener('mousedown', valid_move_action, false);
 			slot_div[i].setAttribute('function', 'range');
 		}
