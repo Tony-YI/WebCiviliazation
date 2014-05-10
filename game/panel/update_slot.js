@@ -130,7 +130,8 @@ function update_build(from_x, from_y, to_x, to_y, army_id)
 function update_slot_own() //update the slot movement
 {
 	var result = result_list[result_list.length - 1];
-	
+	if(!display_init_done)
+		return;
 	if(result)//not none
 	{
 		if(result.action_type == 'attack')
