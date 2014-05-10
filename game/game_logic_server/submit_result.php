@@ -51,7 +51,7 @@
 			2. Modify the accordingly value in the database
 			*/
 			$SQL_INSERT_STATEMENT = SQL_generate_insert_result($result,$game_id);
-			echo $SQL_INSERT_STATEMENT."\n";
+			//echo $SQL_INSERT_STATEMENT."\n";
 			if(!mysqli_query($db,$SQL_INSERT_STATEMENT))
 			echo "\n".mysqli_error($db)."\n";
 
@@ -85,7 +85,12 @@
 						mysqli_query($db,$SQL_ATTACKER_DISAPPEAR);
 						$SQL_ATTACKER_MOVE_TO = "UPDATE game_{$game_id}_slotlist SET slot_army = $attacker_id WHERE slot_col = $to_x AND slot_row = $to_y";
 						//move to the attacked slot
-						mysqli_query($db,$SQL_ATTACKER_MOVE_TO);
+						if(!mysqli_query($db,$SQL_ATTACKER_MOVE_TO))
+						{
+							$sql_error = mysqli_error($db);
+							echo ",\"attack_new_owner_error!\":\"$sql_error\"";
+							echo ",\"attacker_move_to\":\"$SQL_ATTACKER_MOVE_TO\"";
+						}
 					}
 				}
 				//update the hp in the table
@@ -98,7 +103,7 @@
 			}
 			else if($result["action_type"] == "move")
 			{
-				echo "\n"."editing move for database"."\n";
+				//echo "\n"."editing move for database"."\n";
 				$army_id = $result["army_id"];
 				$from_x = $result["from_x"];
 				$from_y = $result["from_y"];
@@ -107,8 +112,8 @@
 
 				$SQL_REMOVE_ARMY_OF_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = NULL WHERE slot_col = $from_x AND slot_row = $from_y";
 				$SQL_ADD_ARMY_OF_SLOT = "UPDATE game_{$game_id}_slotlist SET slot_army = $army_id WHERE slot_col = $to_x AND slot_row = $to_y";
-				echo "\"sql_statement\":\"$SQL_REMOVE_ARMY_OF_SLOT\"";
-				echo "\"sql_statement\":\"$SQL_ADD_ARMY_OF_SLOT\"";
+				//echo "\"sql_statement\":\"$SQL_REMOVE_ARMY_OF_SLOT\"";
+				//echo "\"sql_statement\":\"$SQL_ADD_ARMY_OF_SLOT\"";
 				if(!mysqli_query($db,$SQL_REMOVE_ARMY_OF_SLOT))
 					echo "\n".mysqli_error();
 				

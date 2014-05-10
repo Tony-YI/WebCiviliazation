@@ -152,8 +152,8 @@ SQL_STATEMENT;
 	$result = mysqli_query($db,$SQL_SELECT_TARGET);
 	$row_num = mysqli_num_rows($result);
 
-	echo ",\"query_result_num\":\"$row_num\"";
-	echo ",\"var_dump\"".var_dump($result);
+	//echo ",\"query_result_num\":\"$row_num\"";
+	//echo ",\"var_dump\"".var_dump($result);
 	while($row = mysqli_fetch_row($result))
 	{
 		//change the slot owner

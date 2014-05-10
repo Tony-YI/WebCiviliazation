@@ -642,6 +642,11 @@ function display_hexagon_info(e)
 	else
 	{
 		new_img_army_type.setAttribute('id', 'new_img_army_type');
+		var army_id = getSlotByXY(pos_x, pos_y).army_id;
+		var max_hp = getArmyById(army_id).max_hp;
+		var hp = getArmyById(army_id).hp;
+		var attack = getArmyById(army_id).attack;
+		var owner = getArmyById(army_id).owner;
 
 		if(army_type == 'type_A')
 		{
@@ -657,6 +662,13 @@ function display_hexagon_info(e)
 		{
 			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Archer<br/>';
 			new_img_army_type.setAttribute('src', '../../images/archer.png');
+		}
+		new_p_2.innerHTML = new_p_2.innerHTML + 'Attack : ' + attack + '<br>';
+		if(window.current_player.pid == owner){
+			new_p_2.innerHTML = new_p_2.innerHTML + 'HP : ' + hp + '/' + max_hp + '<br/>';
+		}
+		else{
+			new_p_2.innerHTML = new_p_2.innerHTML + 'HP : ?/' + max_hp + '<br/>';
 		}
 	}
 
