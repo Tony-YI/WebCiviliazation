@@ -292,9 +292,9 @@ function row_to_result_JSON($row)
 		$result .= ",\"to_x\":\"$row[7]\"";
 		$result .= ",\"to_y\":\"$row[8]\"";
 		$result .= ",\"attacker_prev_hp\":\"$row[9]\"";
-		$result .= ",\"atatcker_remaining_hp\":\"$row[10]\"";
+		$result .= ",\"attacker_remaining_hp\":\"$row[10]\"";
 		$result .= ",\"defender_prev_hp\":\"$row[11]\"";
-		$result .= ",\"defender_prev_hp\":\"$row[12]\"";
+		$result .= ",\"defender_remaining_hp\":\"$row[12]\"";
 	}
 	else if($row[1] == "move")
 	{
