@@ -157,7 +157,7 @@ function update_slot_own() //update the slot movement
 		}
 		else if(result.action_type == 'build')
 		{
-			update_build(result.from_x, result.from_y, window.current_player.capital_x, window.current_player.capital_y, result.army_id);
+			update_build(result.from_x, result.from_y, result.from_x, result.from_y, result.army_id);
 		}
 	}
 }
