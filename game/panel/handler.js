@@ -15,7 +15,7 @@ function show_range(x, y, action)
 	if(parseInt(slot_list[i].type_id) != 0) //not invalid  slot
 	{
 		var slot = getSlotByXY(x,y);
-		console.log(slot_list[i]);
+		//console.log(slot_list[i]);
 		if(action == 'move' && slot_list[i].army_id == "")
 		{
 			console.log(slot_list[i].army_id);
@@ -39,6 +39,8 @@ function show_range(x, y, action)
 function clear_range(action)
 {
 	var slot_div = document.getElementsByClassName('hexagon');
+	console.log(slot_num);
+	console.log(slot_div.length);
 	for(var i = 0; i < slot_num; i++) //slot_num: global variable in small_map.js
 	{
 		if(slot_div[i].getAttribute('function') == 'range')
