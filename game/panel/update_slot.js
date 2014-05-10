@@ -54,6 +54,13 @@ function set_army_animation(x, y, army_id)
 	}
 }
 
+function clear_army_animation(x, y, army_id)
+{
+	var hexagon = document.getElementsByClassName('hexagon');
+
+	hexagon[parseInt(y) * line_num + parseInt(x)].lastChild.setAttribute('animation', 'off');
+}
+
 function set_army_type(hexagon, type, army_id)
 {
 	hexagon.setAttribute('army_type', type); //army_type: global variable in game.html
