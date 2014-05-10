@@ -57,7 +57,7 @@
 
 			if($result["action_type"] == "attack")
 			{
-				$attcker_id = $result["attacker_id"];
+				$attacker_id = $result["attacker_id"];
 				$defender_id = $result["defender_id"];
 				$from_x = $result["from_x"];
 				$from_y = $result["from_y"];
