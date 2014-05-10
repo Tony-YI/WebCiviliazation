@@ -85,9 +85,66 @@ function clear_army_type(hexagon, type)
 	hexagon.lastChild.setAttribute('user', 'none');
 }
 
-function update_attack(from_x, from_y, to_x, to_y, army_id)
+function update_attack(from_x, from_y, to_x, to_y, attacker_id, defender_id)
 {
+	var hexagon_from = get_hexagon(from_x, from_y);
+	var attacker_type = getArmyById(attacker_id).type_id;
+	var attacker_status = getArmyById(attacker_id).army_status;
 
+	var hexagon_to = get_hexagon(to_x, to_y);
+	var defender_type = getArmyById(defender_id).type_id;
+	var defender_status = getArmyById(defender_id).army_status;
+
+	if(parseInt(attacker_type) == 1)
+	{
+		attacker_type = 'type_A';
+	}
+	else if(parseInt(attacker_type) == 2)
+	{
+		attacker_type = 'type_B';
+	}
+	else if(parseInt(attacker_type) == 3)
+	{
+		attacker_type = 'type_C';
+	}
+
+	if(parseInt(defender_type) == 1)
+	{
+		defender_type = 'type_A';
+	}
+	else if(parseInt(defender_type) == 2)
+	{
+		defender_type = 'type_B';
+	}
+	else if(parseInt(defender_type) == 3)
+	{
+		defender_type = 'type_C';
+	}
+
+	clear_army_animation(from_x, from_y, attacker_id);
+	clear_army_animation(to_x, to_y, defender_id);
+	if(attacker_status != 'dead' && defender_status != 'dead')
+	{
+	}
+	if(attacker_status == 'dead' && defender_status == 'dead')
+	{
+		clear_army_type(hexagon_from, 'none');
+		clear_army_type(hexagon_to, 'none');
+		update_slot_list_own(hexagon_from, '');
+		update_slot_list_own(hexagon_to, '');
+	}
+	if(attacker_status == 'dead' && defender_status != 'dead')
+	{
+		clear_army_type(hexagon_from, 'none');
+		update_slot_list_own(hexagon_from, '');
+	}
+	if(attacker_status != 'dead' && defender_status == 'dead')
+	{
+		clear_army_type(hexagon_from, 'none');
+		set_army_type(hexagon_to, attacker_type, attacker_id);
+		update_slot_list_own(hexagon_from, '');
+		update_slot_list_own(hexagon_to, attacker_id);
+	}
 }
 
 function update_move(from_x, from_y, to_x, to_y, army_id)
@@ -153,11 +210,10 @@ function update_slot_own() //update the slot movement
 	{
 		if(result.action_type == 'attack')
 		{
-			update_attack(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
+			update_attack(result.from_x, result.from_y, result.to_x, result.to_y, result.attacker_id, result.defender_id);
 		}
 		else if(result.action_type == 'move')
 		{
-			console.log(result.Result_id);
 			update_move(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
 		}
 		else if(result.action_type == 'defend')
