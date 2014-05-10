@@ -9,8 +9,6 @@ function show_range(x, y, action)
 	remove_manual(); //in display.js
 	var slot_div = document.getElementsByClassName('hexagon');
 
-	console.log(latest_slot);
-
 	var i = parseInt(y) * line_num + parseInt(x);//line_nume: global variable in small_map.js
 	var user_id = parseInt(getCookie('CURRENT_USER')); //in game/game_logic_client/check_functions.js
 	//console.log('i: ' + i);
