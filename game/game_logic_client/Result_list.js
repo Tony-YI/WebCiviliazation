@@ -356,10 +356,11 @@ function parseRemoteResultList(latest_result_list)
 				army_list.push(tmp_army);
 			}
 		}
+		result_list.sort(compare_result_id);
 		result_list.push(tmp_result);
 		update_slot_own();
 	}
-	result_list.sort(compare_result_id);
+	
 	//every time a remote result list is parsed, remember the position where the previous result_list are already in the server
 	last_result_index = result_list.length;
 	update_result_list_div();
