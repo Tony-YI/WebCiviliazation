@@ -23,5 +23,5 @@
 	
 	
 	<input type="button" id="button" value="Click"/>
-	<div id="box" class="box"></div>
+	<div id="box" class="box" onclick="onclick1()"></div>
 </html>
