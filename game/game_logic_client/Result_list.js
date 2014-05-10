@@ -235,7 +235,11 @@ action.prototype.get_result = function()
 		var defender_slot = getSlotByXY(this.to_x,this.to_y);
 		var defender = getArmyById(defender_slot.army_id);
 		var attacker = getArmyById(this.army_id);
-
+		if(defender.army_status == "dead")
+		{
+			console.log("action.get_result(): You can't attack a already dead army!");
+			return ;
+		}
 		result.attacker_prev_hp = attacker.hp;
 		result.defender_prev_hp = defender.hp;
 		//ensure no negative hp
