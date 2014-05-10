@@ -74,7 +74,7 @@ function set_army_type(hexagon, type, army_id)
 
 	hexagon.lastChild.setAttribute('src', src);
 
-	if(getArmyById(parseInt(army_id)).army_status == 'ready')
+	if(IsMyTurn() && getArmyById(parseInt(army_id)).army_status == 'ready' && user_id == current_player.pid)
 	{
 		hexagon.lastChild.setAttribute('animation', 'on');
 	}
@@ -157,7 +157,7 @@ function update_slot_own() //update the slot movement
 		}
 		else if(result.action_type == 'build')
 		{
-			update_build(result.from_x, result.from_y, window.current_player.capital_x, window.current_player.capital_y, result.army_id);
+			update_build(result.from_x, result.from_y, result.from_x, result.from_y, result.army_id);
 		}
 	}
 }
