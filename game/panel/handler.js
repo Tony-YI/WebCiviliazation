@@ -148,7 +148,7 @@ function attack_clicked_handler()
 			show_range(x+1, y+1, 'attack');
 		}
 	}
-	slot.addEventListener('mousedown', invalid_action, false);
+	latest_slot.addEventListener('mousedown', invalid_action, false);
 }
 
 function valid_attack_action(e)
@@ -268,7 +268,7 @@ function move_clicked_handler()
 			show_range(x+1, y+1, 'move');
 		}
 	}
-	slot.addEventListener('mousedown', invalid_action, false);
+	latest_slot.addEventListener('mousedown', invalid_action, false);
 }
 
 function valid_move_action(e)
