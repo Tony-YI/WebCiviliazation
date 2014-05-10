@@ -74,7 +74,7 @@ function set_army_type(hexagon, type, army_id)
 
 	hexagon.lastChild.setAttribute('src', src);
 
-	if(IsMyTurn() && getArmyById(parseInt(list[i].army_id)).army_status == 'ready')
+	if(IsMyTurn() && getArmyById(parseInt(army_id)).army_status == 'ready' && user_id == current_player.pid)
 	{
 		img.setAttribute('animation', 'on');
 	}

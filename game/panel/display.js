@@ -785,7 +785,7 @@ function addBoxes(list)
 
 		if(list[i].army_id)
 		{
-			if(IsMyTurn() && getArmyById(parseInt(list[i].army_id)).army_status == 'ready')
+			if(IsMyTurn() && getArmyById(parseInt(list[i].army_id)).army_status == 'ready' && getArmyById(parseInt(list[i].army_id)).owner == current_player.pid)
 			{
 				img.setAttribute('animation', 'on');
 			}
