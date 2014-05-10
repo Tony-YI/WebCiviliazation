@@ -50,7 +50,7 @@ function set_army_animation(x, y, army_id)
 	}
 	else
 	{
-		hexagon[].lastChild.setAttribute('animation', 'off');
+		hexagon[parseInt(y) * line_num + parseInt(x)].lastChild.setAttribute('animation', 'off');
 	}
 }
 
