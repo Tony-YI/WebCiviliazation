@@ -60,6 +60,7 @@ function clear_range(action)
 		}
 		slot_div[i].setAttribute('function', 'none');
 	}
+	latest_slot.removeEventListener('mousedown', invalid_action, false);
 }
 
 function attack_clicked_handler()
