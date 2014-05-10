@@ -76,11 +76,11 @@ function set_army_type(hexagon, type, army_id)
 
 	if(IsMyTurn() && getArmyById(parseInt(army_id)).army_status == 'ready' && user_id == current_player.pid)
 	{
-		img.setAttribute('animation', 'on');
+		hexagon.lastChild.setAttribute('animation', 'on');
 	}
 	else
 	{
-		img.setAttribute('animation', 'off');
+		hexagon.lastChild.setAttribute('animation', 'off');
 	}
 }
 
