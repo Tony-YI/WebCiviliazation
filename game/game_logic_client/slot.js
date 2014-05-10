@@ -30,15 +30,21 @@ function init_slot_list(slots)
 		slot.army_id = slots[count].slot_army;
 		if(slot.army_id != "")
 		{
-			var army_object = getArmyById(slot.army_id);
-			army_object.position_x = slot.slot_x;
-			army_object.position_y = slot.slot_y;
+			try{
+				var army_object = getArmyById(slot.army_id);
+				army_object.position_x = slot.slot_x;
+				army_object.position_y = slot.slot_y;
+			}
+			catch(error)
+			{
+				console.log("init_slot_list(): " + JSON.stringify(slot));
+			}
 			//console.log(slot);
 		}
 		slot.owner = slots[count].slot_owner;
 		if(slot.owner != "" && slot.type_id == 4) 
 		{
-			console.log(slot);
+			//console.log(slot);
 			try{
 				var player_object = getPlayerByID(slot.owner);
 				player_object.capital_x = slot.slot_x;
