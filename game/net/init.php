@@ -33,6 +33,7 @@
 JSON_ERROR;
 		exit;
 	}
+
 	$table_playerlist = "game_{$game_id}_playerlist";
 	$table_slotlist = "game_{$game_id}_slotlist";
 	$table_armylist = "game_{$game_id}_armylist";
@@ -59,6 +60,8 @@ JSON_ERROR;
 	//PLAYER INFO
 	$count = 0;
 	echo "{";
+	$hp = $army_hp[0];
+	echo "\"army_hp_1\":\"$hp\",";
 	while($player_row = mysqli_fetch_row($playerlist_result))
 	{
 		$player_id = $player_row[0];
