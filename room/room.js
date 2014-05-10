@@ -51,7 +51,7 @@ function room_get_list()
 			if(obj.started == 'yes')
 			{
 				alert('Your game has started!');
-				//document.location.href = '../game/game.html';
+				document.location.href = '../game/game.html';
 				return false;
 			}
 		}
