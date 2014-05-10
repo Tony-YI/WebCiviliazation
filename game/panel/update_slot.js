@@ -73,6 +73,15 @@ function set_army_type(hexagon, type, army_id)
 	}
 
 	hexagon.lastChild.setAttribute('src', src);
+
+	if(getArmyById(parseInt(army_id)).army_status == 'ready')
+	{
+		hexagon.lastChild.setAttribute('animation', 'on');
+	}
+	else
+	{
+		hexagon.lastChild.setAttribute('animation', 'off');
+	}
 }
 
 function clear_army_type(hexagon, type)
