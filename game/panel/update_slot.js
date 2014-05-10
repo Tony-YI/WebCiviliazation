@@ -171,6 +171,43 @@ function update_slot_own() //update the slot movement
 	}
 }
 
+function update_hexagon_owner(x, y, owner_id)
+{
+	var hexagon = document.getElementsByClassName('hexagon');
+
+	if(hexagon[parseInt(y) * line_num + parseInt(x)].setAttribute() == 'normal_slot')
+	{
+		if(parseInt(owner_id) == user_1)
+		{
+			hexagon[parseInt(y) * line_num + parseInt(x)].setAttribute('user', 'user_1');
+		}
+		if(parseInt(owner_id) == user_2)
+		{
+			hexagon[parseInt(y) * line_num + parseInt(x)].setAttribute('user', 'user_2');
+		}
+		if(parseInt(owner_id) == user_3)
+		{
+			hexagon[parseInt(y) * line_num + parseInt(x)].setAttribute('user', 'user_3');
+		}
+	}
+	else
+	{
+		hexagon[parseInt(y) * line_num + parseInt(x)].setAttribute('user', 'user');
+		if(parseInt(owner_id) == user_1)
+		{
+			hexagon[parseInt(y) * line_num + parseInt(x)].style.background = user_1_color;
+		}
+		if(parseInt(owner_id) == user_2)
+		{
+			hexagon[parseInt(y) * line_num + parseInt(x)].style.background = user_2_color;
+		}
+		if(parseInt(owner_id) == user_3)
+		{
+			hexagon[parseInt(y) * line_num + parseInt(x)].style.background = user_3_color;
+		}
+	}
+}
+
 function update_slot_others()
 {
 }
