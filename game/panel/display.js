@@ -702,6 +702,7 @@ function addBoxes(list)
 		hexagon[i].setAttribute('function', 'none');
 		hexagon[i].setAttribute('type', 'none');
 		hexagon[i].setAttribute('army_type', 'none');
+		hexagon[i].setAttribute('user', 'none');
 		var x = i % new_line_num;
 		var y = parseInt(i / new_line_num);
 		hexagon[i].setAttribute('x', x);
@@ -735,6 +736,22 @@ function addBoxes(list)
 
 		hexagon[i].addEventListener('mousedown', mousedown_1, false);
 
+		if(list[i].owner == user_1)
+		{
+			hexagon[i].setAttribute('user', 'user_1');
+			hexagon[i].style.background = user_1_color;
+		}
+		else if(list[i].owner == user_2)
+		{
+			hexagon[i].setAttribute('user', 'user_2');
+			hexagon[i].style.background = user_2_color;
+		}
+		else if(list[i].owner == user_3)
+		{
+			hexagon[i].setAttribute('user', 'user_3');
+			hexagon[i].style.background = user_3_color;
+		}
+
 		switch(parseInt(list[i].type_id))
 		{
 			case 0: //unused
@@ -748,14 +765,17 @@ function addBoxes(list)
 
 			case 2: //gold slot
 			hexagon[i].setAttribute('slot_type', 'gold_slot');
+			hexagon[i].setAttribute('user', 'user');
 			break;
 
 			case 3: //wood slot
 			hexagon[i].setAttribute('slot_type', 'wood_slot');
+			hexagon[i].setAttribute('user', 'user');
 			break;
 
 			case 4: //capital
 			hexagon[i].setAttribute('slot_type', 'capital_slot');
+			hexagon[i].setAttribute('user', 'user');
 			break;
 
 			default:
@@ -801,19 +821,6 @@ function addBoxes(list)
 		}
 
 		hexagon[i].appendChild(p); //frst DOM child
-
-		if(list[i].owner == user_1)
-		{
-			hexagon[i].style.background = user_1_color;
-		}
-		else if(list[i].owner == user_2)
-		{
-			hexagon[i].style.background = user_2_color;
-		}
-		else if(list[i].owner == user_3)
-		{
-			hexagon[i].style.background = user_3_color;
-		}
 
 		if(list[i].owner == user_id)
 		{

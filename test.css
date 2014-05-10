@@ -1,9 +1,24 @@
+.cut {
+ 	-webkit-animation: pound .3s infinite;
+ 	-moz-animation: pound .3s infinite;
+}
 
 @-webkit-keyframes pound {
   from { transform: none; }
   to { transform: scale(1.2); }
 }
 
-.cut {
-  -webkit-animation: pound .5s infinite;
+@keyframes pound {
+  from { transform: none; }
+  to { transform: scale(1.2); }
+}
+
+div {
+	background: blue;
+    	-webkit-animation: spin 1s linear infinite;
+    	-webkit-animation-play-state: paused;
+}
+
+div:hover {
+  	-webkit-animation-play-state: running;
 }
