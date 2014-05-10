@@ -89,7 +89,7 @@
 						{
 							$sql_error = mysqli_error($db);
 							echo ",\"attack_new_owner_error!\":\"$sql_error\"";
-							echo ",\"attacker_move_to\":\"$SQL_ATTACKER_MOVE_TO\";
+							echo ",\"attacker_move_to\":\"$SQL_ATTACKER_MOVE_TO\"";
 						}
 					}
 				}
