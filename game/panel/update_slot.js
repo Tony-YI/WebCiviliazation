@@ -74,13 +74,13 @@ function set_army_type(hexagon, type, army_id)
 
 	hexagon.lastChild.setAttribute('src', src);
 
-	if(getArmyById(parseInt(army_id)).army_status == 'ready')
+	if(IsMyTurn() && getArmyById(parseInt(list[i].army_id)).army_status == 'ready')
 	{
-		hexagon.lastChild.setAttribute('animation', 'on');
+		img.setAttribute('animation', 'on');
 	}
 	else
 	{
-		hexagon.lastChild.setAttribute('animation', 'off');
+		img.setAttribute('animation', 'off');
 	}
 }
 
