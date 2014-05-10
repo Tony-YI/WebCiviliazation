@@ -740,17 +740,26 @@ function addBoxes(list)
 		if(list[i].owner == user_1)
 		{
 			hexagon[i].setAttribute('user', 'user_1');
-			hexagon[i].style.background = user_1_color;
+			if(list[i].type_id != 1)
+			{
+				hexagon[i].style.background = user_1_color;
+			}
 		}
 		else if(list[i].owner == user_2)
 		{
 			hexagon[i].setAttribute('user', 'user_2');
-			hexagon[i].style.background = user_2_color;
+			if(list[i].type_id != 1)
+			{
+				hexagon[i].style.background = user_2_color;
+			}	
 		}
 		else if(list[i].owner == user_3)
 		{
 			hexagon[i].setAttribute('user', 'user_3');
-			hexagon[i].style.background = user_3_color;
+			if(list[i].type_id != 1)
+			{
+				hexagon[i].style.background = user_3_color;
+			}
 		}
 
 		switch(parseInt(list[i].type_id))
