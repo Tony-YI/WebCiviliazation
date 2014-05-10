@@ -19,8 +19,6 @@ $army_wood_cost = array(20,15,25);
 	$MYSQL_USR = getenv("OPENSHIFT_MYSQL_DB_USERNAME");
 #$db is the connection to the mysql server
 	$db = mysqli_connect("$MYSQL_HOST:$MYSQL_PORT",$MYSQL_USR,$MYSQL_PWD,"project");
-
-$army_hp = array()
 	function show_db_php()
 	{
 		global $DATA_DIR, $RUNTIME_DATA_DIR, $MYSQL_HOST, $MYSQL_PORT, $MYSQL_USR, $MYSQL_PWD;
