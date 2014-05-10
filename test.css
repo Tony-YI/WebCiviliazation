@@ -23,6 +23,7 @@ to {background: yellow;}
 }
 div
 {
+	background: red;
 animation: myfirst 5s;
 -moz-animation: myfirst 5s;	/* Firefox */
 -webkit-animation: myfirst 5s;	/* Safari 和 Chrome */
