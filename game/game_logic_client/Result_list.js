@@ -318,8 +318,8 @@ function parseRemoteResultList(latest_result_list)
 								tmp_result_json["defender_prev_hp"],
 								tmp_result_json["defender_remaining_hp"]);
 			//modify the local army list
-			var attacker = getArmyById(tmp_result_json["attacker_id"]);
-			var defender = getArmyById(tmp_result_json["defender_id"]);
+			var attacker = getArmyById(parseInt(tmp_result_json["attacker_id"]));
+			var defender = getArmyById(parseInt(tmp_result_json["defender_id"]));
 			if((attacker.hp = parseInt(tmp_result_json["attacker_remaining_hp"])) == 0)
 			{
 				attacker.army_status = "dead";
