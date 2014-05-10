@@ -40,6 +40,20 @@ function get_hexagon(x, y)
 	return hexagon_div;
 }
 
+function set_army_animation(x, y, army_id)
+{
+	var hexagon = document.getElementsByClassName('hexagon');
+
+	if(IsMyTurn() && getArmyById(parseInt(army_id)).army_status == 'ready' && getArmyById(parseInt(army_id)).owner == current_player.pid)
+	{
+		hexagon[parseInt(y) * line_num + parseInt(x)].lastChild.setAttribute('animation', 'on');
+	}
+	else
+	{
+		hexagon[].lastChild.setAttribute('animation', 'off');
+	}
+}
+
 function set_army_type(hexagon, type, army_id)
 {
 	hexagon.setAttribute('army_type', type); //army_type: global variable in game.html
@@ -74,14 +88,7 @@ function set_army_type(hexagon, type, army_id)
 
 	hexagon.lastChild.setAttribute('src', src);
 
-	if(IsMyTurn() && getArmyById(parseInt(army_id)).army_status == 'ready' && user_id == current_player.pid)
-	{
-		hexagon.lastChild.setAttribute('animation', 'on');
-	}
-	else
-	{
-		hexagon.lastChild.setAttribute('animation', 'off');
-	}
+
 }
 
 function clear_army_type(hexagon, type)
