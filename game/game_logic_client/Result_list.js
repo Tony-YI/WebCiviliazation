@@ -297,6 +297,8 @@ function parseRemoteResultList(latest_result_list)
 	//stored it in result_list
 	//called functions to display it
 	//and show it on the div
+	latest_result_list.sort(compare_result_id);
+
 	for(var count = 0;count < latest_result_list.length;count++)
 	{
 		var tmp_result_json = latest_result_list[count];
@@ -306,6 +308,7 @@ function parseRemoteResultList(latest_result_list)
 
 		if(tmp_result_json["action_type"] == "attack")
 		{
+			console.log(tmp_result_json);
 			tmp_result.setFrom(tmp_result_json["from_x"],tmp_result_json["from_y"]);
 			tmp_result.setTo(tmp_result_json["to_x"],tmp_result_json["to_y"]);
 			tmp_result.setAttack(tmp_result_json["attacker_id"],
