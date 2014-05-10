@@ -1,24 +1,30 @@
-.cut {
- 	-webkit-animation: pound .3s infinite;
- 	-moz-animation: pound .3s infinite;
+@keyframes myfirst
+{
+from {background: red;}
+to {background: yellow;}
 }
 
-@-webkit-keyframes pound {
-  from { transform: none; }
-  to { transform: scale(1.2); }
+@-moz-keyframes myfirst /* Firefox */
+{
+from {background: red;}
+to {background: yellow;}
 }
 
-@keyframes pound {
-  from { transform: none; }
-  to { transform: scale(1.2); }
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+from {background: red;}
+to {background: yellow;}
 }
 
-div {
-	background: blue;
-    	-webkit-animation: spin 1s linear infinite;
-    	-webkit-animation-play-state: paused;
+@-o-keyframes myfirst /* Opera */
+{
+from {background: red;}
+to {background: yellow;}
 }
-
-div:hover {
-  	-webkit-animation-play-state: running;
+div
+{
+animation: myfirst 5s;
+-moz-animation: myfirst 5s;	/* Firefox */
+-webkit-animation: myfirst 5s;	/* Safari 和 Chrome */
+-o-animation: myfirst 5s;	/* Opera */
 }
