@@ -220,6 +220,7 @@ SQL_STATEMENT;
 	//I also set several slots type here!!!! @ Edward
 	function randomize_players_start_position($game_id,$con,&$response,$row_num)
 	{
+		global $army_hp,$army_attack,$army_gold_cost,$army_wood_cost;
 		$posNum = range(1,4);
                         $intv = (int)(($row_num - 2)/ 4);
                         shuffle($posNum);
