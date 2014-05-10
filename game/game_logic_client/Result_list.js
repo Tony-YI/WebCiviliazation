@@ -320,10 +320,17 @@ function parseRemoteResultList(latest_result_list)
 			//modify the local army list
 			var attacker = getArmyById(parseInt(tmp_result_json["attacker_id"]));
 			var defender = getArmyById(parseInt(tmp_result_json["defender_id"]));
+			try{
 			if((attacker.hp = parseInt(tmp_result_json["attacker_remaining_hp"])) == 0)
 			{
 				attacker.army_status = "dead";
 				getSlotByXY(tmp_result.from_x,tmp_result.from_y).army_id = "";
+			}
+			}
+			catch(error)
+			{
+				console.log("parseRemoteResultList(): " + error);
+				console.log(parseInt(tmp_result_json["attacker_id"]));
 			}
 			if((defender.hp = parseInt(tmp_result_json["defender_remaining_hp"])) == 0)
 			{
