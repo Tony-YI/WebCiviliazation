@@ -324,12 +324,13 @@ function parseRemoteResultList(latest_result_list)
 			//modify the local army list
 			var attacker = getArmyById(parseInt(tmp_result_json["attacker_id"]));
 			var defender = getArmyById(parseInt(tmp_result_json["defender_id"]));
-			try{
-			if((attacker.hp = parseInt(tmp_result_json["attacker_remaining_hp"])) == 0)
+			try
 			{
+				if((attacker.hp = parseInt(tmp_result_json["attacker_remaining_hp"])) == 0)
+				{
 				attacker.army_status = "dead";
 				getSlotByXY(tmp_result.from_x,tmp_result.from_y).army_id = "";
-			}
+				}
 			}
 			catch(error)
 			{
@@ -340,7 +341,7 @@ function parseRemoteResultList(latest_result_list)
 			{
 				defender.army_status = "dead";
 				//if the attacker hp is 0, set null, else set attacker's army_id
-				getSlotByXY(tmp_result.to_x,tmp_result.to_y).army_id = attacker.hp ? attack.army_id : "";
+				getSlotByXY(tmp_result.to_x,tmp_result.to_y).army_id = attacker.hp ? attacker.army_id : "";
 			}
 		}
 		else if(tmp_result_json["action_type"] == "move")
