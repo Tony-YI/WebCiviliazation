@@ -683,7 +683,7 @@ function resize()
 	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
 	document.getElementById('help').style.left = (parseInt(window.innerWidth) - 300) / 2 + 'px';
 	document.getElementById('help').style.top = (parseInt(window.innerHeight) - 200) / 2 + 'px';
-	document.getElementById('result_list_div').style.maxHeight = (parseInt(window.innerHeight) - 20) + 'px';
+	document.getElementById('result_list_div').style.height = (parseInt(window.innerHeight) - 20) + 'px';
 }
 
 var user_1_color = 'purple';
