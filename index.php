@@ -20,6 +20,14 @@
 		}*/
 	?>
 	
+	<textarea data-raw="" spellcheck="false" rows="8" style="font-size: 65%;">@keyframes pound {
+  		from { transform: none; }
+  		to { transform: scale(1.2); }
+	}
 
-	<div><img src="images/cut3.png" class="cut"></div>
+	.cut {
+  	animation: pound .3s infinite;
+	}
+	</textarea>
+	<img src="images/cut3.png" class="cut">
 </html>
