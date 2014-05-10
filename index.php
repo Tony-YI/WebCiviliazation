@@ -23,6 +23,6 @@
 	
 	
 	<input type="button" id="button" value="Click" onclick="onclick1()"/>
-	<div id="box" class="box" ><img src="images/cut3.png" id="img1"></div>
+	<img src="images/cut3.png" id="img1">
 
 </html>
