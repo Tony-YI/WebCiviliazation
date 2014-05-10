@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" type="text/css" href="test.css">
 	<?php
 		#Check Cookie here
 		#if cookie exist, redirect the page
@@ -17,4 +18,6 @@
 			echo "<script type=\"text/javascript\">location.href=\"./login/login.php\"</script>";
 		}
 	?>
+
+	<div><img src="images/cut3.png" class="cut"></div>
 </html>
