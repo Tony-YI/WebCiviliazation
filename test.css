@@ -24,11 +24,11 @@ img:hover{
 #img1{
 	width: 2%;
 	height: 2%;
-	display: none;
+	display: block;
 }
 @-webkit-keyframes growBox {
   to {
-  	display: block;
+  	
     width: 300px;
     height: 300px;
    }
