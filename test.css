@@ -15,19 +15,7 @@ img:hover{
    	width: 450px;
     	transition: 1s;
 }*/
-#box
-{
-	background: blue;
-	width: 100px;
-	height: 100px;
-}
-.flash
-{
-	display: none;
-	width: 15px;
-	height: 15px;
-	transition: 1s;
-}
+
 .box {
     width: 100px;
     height: 100px; 

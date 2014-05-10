@@ -21,7 +21,7 @@
 		}*/
 	?>
 	
-	<div id="box" onclick="onclick1()"><img src="images/cut3.png" class="flash"></div>
-	<input type="button" id="button" value="点击我查看下面box的变化"/>
+	
+	<input type="button" id="button" value="Click"/>
 	<div id="box" class="box"></div>
 </html>
