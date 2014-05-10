@@ -13,3 +13,11 @@
   to { transform: scale(1.2); }
 }
 
+div {
+    animation: spin 1s linear infinite;
+    animation-play-state: paused;
+}
+
+div:hover {
+  animation-play-state: running;
+}
