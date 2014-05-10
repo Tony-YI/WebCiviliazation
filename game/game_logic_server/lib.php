@@ -30,6 +30,7 @@ $army_wood_cost = array("20","25","15");
 			{
 				$SQL_PLAYER_TURN_CANCEL = "UPDATE game_{$game_id}_playerlist SET `player_turn` = 0 WHERE player_id = $row[0]";
 				$SQL_PLAYER_TURN_ACTIVATE = "UPDATE game_{$game_id}_playerlist SET `player_turn` = 1";
+				Player_get_resource($db,$game_id,$row[0]);
 				//echo "\n".$SQL_PLAYER_TURN_CANCEL."\n";
 				//echo "\n".$SQL_PLAYER_TURN_ACTIVATE."\n";
 				switch ($count) 
@@ -83,7 +84,7 @@ $army_wood_cost = array("20","25","15");
 				}
 				$SQL_PLAYER_TURN_ACTIVATE .= " WHERE `player_id` = $tmp_id";
 				Player_get_slots($db,$game_id,$tmp_id);
-				Player_get_resource($db,$game_id,$tmp_id);
+				
 			}
 		}
 		//echo "\n".$SQL_PLAYER_TURN_CANCEL."\n";
@@ -170,7 +171,7 @@ SQL_STATEMENT;
 			$prev_owner = $row[2];
 
 		$SQL_INSERT_RECORD = <<<SQL_STATEMENT
-		INSERT INTO game_{$game_id}_occupationrecord VALUES($row[0],$row[1],$prev_owner,$player_id);
+		INSERT INTO game_{$game_id}_occupationrecord (slot_col,slot_row,prev_owner,curr_owner) VALUES($row[0],$row[1],$prev_owner,$player_id);
 SQL_STATEMENT;
 		if(!mysqli_query($db,$SQL_INSERT_RECORD))
 		{
