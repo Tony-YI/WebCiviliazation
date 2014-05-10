@@ -1,9 +1,11 @@
 img{
-    height:15px;
-    width:15px;
+    	height:15px;
+    	width:15px;
 }
 
 img:active{
-    height: 450px;
-    width: 450px;
+	display: block;
+    	height: 450px;
+   	width: 450px;
+    	transition: 1s;
 }
