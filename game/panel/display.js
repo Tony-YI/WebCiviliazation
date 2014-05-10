@@ -784,7 +784,7 @@ function addBoxes(list)
 
 		if(list[i].army_id)
 		{
-			if(getArmyById(parseInt(army_id)).army_status == 'ready')
+			if(getArmyById(parseInt(list[i].army_id)).army_status == 'ready')
 			{
 				img.setAttribute('animation', 'on');
 			}
