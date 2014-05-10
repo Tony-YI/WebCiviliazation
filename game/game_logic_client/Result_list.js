@@ -235,7 +235,11 @@ action.prototype.get_result = function()
 		var defender_slot = getSlotByXY(this.to_x,this.to_y);
 		var defender = getArmyById(defender_slot.army_id);
 		var attacker = getArmyById(this.army_id);
-
+		if(defender.army_status == "dead")
+		{
+			console.log("action.get_result(): You can't attack a already dead army!");
+			return ;
+		}
 		result.attacker_prev_hp = attacker.hp;
 		result.defender_prev_hp = defender.hp;
 		//ensure no negative hp
@@ -318,12 +322,19 @@ function parseRemoteResultList(latest_result_list)
 								tmp_result_json["defender_prev_hp"],
 								tmp_result_json["defender_remaining_hp"]);
 			//modify the local army list
-			var attacker = getArmyById(tmp_result_json["attacker_id"]);
-			var defender = getArmyById(tmp_result_json["defender_id"]);
+			var attacker = getArmyById(parseInt(tmp_result_json["attacker_id"]));
+			var defender = getArmyById(parseInt(tmp_result_json["defender_id"]));
+			try{
 			if((attacker.hp = parseInt(tmp_result_json["attacker_remaining_hp"])) == 0)
 			{
 				attacker.army_status = "dead";
 				getSlotByXY(tmp_result.from_x,tmp_result.from_y).army_id = "";
+			}
+			}
+			catch(error)
+			{
+				console.log("parseRemoteResultList(): " + error);
+				console.log(parseInt(tmp_result_json["attacker_id"]));
 			}
 			if((defender.hp = parseInt(tmp_result_json["defender_remaining_hp"])) == 0)
 			{

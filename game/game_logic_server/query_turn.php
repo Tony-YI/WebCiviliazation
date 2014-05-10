@@ -49,11 +49,13 @@
 	for($count = 0;$count < $row_num;$count++)
 	{
 		$row = mysqli_fetch_row($result);
-		$slot_col = $row[0];
-		$slot_row = $row[1];
-		$prev_owner = $row[2];
-		$curr_owner = $row[3];
-		echo "{\"slot_col\":\"$slot_col\"";
+		$id = $row[0];
+		$slot_col = $row[1];
+		$slot_row = $row[2];
+		$prev_owner = $row[3];
+		$curr_owner = $row[4];
+		echo "{\"id\":\"$id\"";
+		echo ",\"slot_col\":\"$slot_col\"";
 		echo ",\"slot_row\":\"$slot_row\"";
 		echo ",\"prev_owner\":\"$prev_owner\"";
 		echo ",\"curr_owner\":\"$curr_owner\"}";
