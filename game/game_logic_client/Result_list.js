@@ -352,7 +352,7 @@ function parseRemoteResultList(latest_result_list)
 			tmp_result.army_id = tmp_result_json["army_id"];
 			tmp_result.army_type = tmp_result_json["army_type"];
 			tmp_result.setFrom(tmp_result_json["from_x"],tmp_result_json["from_y"]);
-			getSlotByXY(tmp_result.to_x,tmp_result.to_y).army_id = tmp_result.army_id;
+			getSlotByXY(tmp_result.from_x,tmp_result.from_y).army_id = tmp_result.army_id;
 			//modify the local army list
 			if(getArmyById(tmp_result.army_id) == null || typeof(getArmyById(tmp_result.army_id)) == "undefined")
 			{
