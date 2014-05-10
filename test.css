@@ -1,0 +1,8 @@
+@keyframes pound {
+  from { transform: none; }
+  to { transform: scale(1.2); }
+}
+
+.cut {
+  animation: pound .5s infinite;
+}
