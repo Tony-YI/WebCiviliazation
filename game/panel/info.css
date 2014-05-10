@@ -1,7 +1,6 @@
 #info
 {
 	width: 200px;
-	min-height: 700px;
 	border: 1px solid red;
 	position: absolute;
 	right: 9px;
@@ -106,7 +105,23 @@
 #result_list_div
 {
 	overflow: scroll;
-	height: 150px;
+	width: 200px;
+	border: 1px red solid;
+	min-height: 700px;
+	position: absolute;
+	right: 9px;
+	top: 9px;
+	background-color: white;
+	z-index: 105;
+	opacity: 0.9;
+
+	animation-name: popup;
+    -webkit-animation-name: popup;
+    -moz-animation-name: popup;
+
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
 }
 
 .user_turn[animation="on"]

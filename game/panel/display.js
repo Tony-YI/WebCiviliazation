@@ -671,7 +671,7 @@ function resize()
 	document.getElementById('display').style.height = parseInt(window.innerHeight) - 20 + 'px';
 	document.getElementById('help').style.left = (parseInt(window.innerWidth) - 300) / 2 + 'px';
 	document.getElementById('help').style.top = (parseInt(window.innerHeight) - 200) / 2 + 'px';
-	document.getElementById('info').style.maxHeight = (parseInt(window.innerHeight) - 20) + 'px';
+	document.getElementById('result_list_div').style.maxHeight = (parseInt(window.innerHeight) - 20) + 'px';
 }
 
 var user_1_color = 'purple';
@@ -883,6 +883,7 @@ var display_init_done = 0;
 function display_init(list)
 {
 	document.getElementById('info').style.display = 'none';
+	document.getElementById('result_list_div').style.display = 'none';
 	document.getElementById('help').style.display = 'block';
 	user_1 = player_list[0].pid;
 	user_2 = player_list[1].pid;
