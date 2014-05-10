@@ -149,12 +149,6 @@ function attack_clicked_handler()
 			show_range(x+1, y+1, 'attack');
 		}
 	}
-	latest_slot.setAttribute('function', 'cancel');
-	latest_slot.firstChild.innerHTML = 'Cancel';
-	latest_slot.lastChild.style.display = 'none';
-	latest_slot.setAttribute('type', 'slidein');
-	latest_slot.style.opacity = '1.0';
-	latest_slot.setAttribute('class', 'manual');
 	latest_slot.addEventListener('mousedown', invalid_action, false);
 }
 
@@ -275,12 +269,6 @@ function move_clicked_handler()
 			show_range(x+1, y+1, 'move');
 		}
 	}
-	latest_slot.setAttribute('function', 'cancel');
-	latest_slot.firstChild.innerHTML = 'Cancel';
-	latest_slot.lastChild.style.display = 'none';
-	latest_slot.setAttribute('type', 'slidein');
-	latest_slot.style.opacity = '1.0';
-	latest_slot.setAttribute('class', 'manual');
 	latest_slot.addEventListener('mousedown', invalid_action, false);
 }
 
