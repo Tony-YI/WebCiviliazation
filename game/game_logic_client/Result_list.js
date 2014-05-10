@@ -384,6 +384,7 @@ function parse_action(action)
 function send_result_list_to_server()
 {
 	//This function should be triggered when the player clicked the next round button
+	disable_all_army();
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 	xhr.setRequestHeader("TYPE","RESULT_LIST");
