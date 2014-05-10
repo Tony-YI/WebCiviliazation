@@ -784,15 +784,18 @@ function addBoxes(list)
 
 		if(list[i].army_id)
 		{
-			if(getArmyById(parseInt(list[i].army_id)).army_status == 'ready')
+			if(IsMyTurn())
 			{
-				img.setAttribute('animation', 'on');
+				if(getArmyById(parseInt(list[i].army_id)).army_status == 'ready')
+				{
+					img.setAttribute('animation', 'on');
+				}
+				else
+				{
+					img.setAttribute('animation', 'off');
+				}
 			}
-			else
-			{
-				img.setAttribute('animation', 'off');
-			}
-	
+
 			if(getArmyById(list[i].army_id).owner == user_1)
 			{
 				img.setAttribute('user', 'user_1');
