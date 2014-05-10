@@ -702,6 +702,7 @@ function addBoxes(list)
 		hexagon[i].setAttribute('function', 'none');
 		hexagon[i].setAttribute('type', 'none');
 		hexagon[i].setAttribute('army_type', 'none');
+		hexagon[i].setAttribute('user', 'none');
 		var x = i % new_line_num;
 		var y = parseInt(i / new_line_num);
 		hexagon[i].setAttribute('x', x);
@@ -804,15 +805,15 @@ function addBoxes(list)
 
 		if(list[i].owner == user_1)
 		{
-			hexagon[i].style.background = user_1_color;
+			hexagon[i].setAttribute('user', 'user_1');
 		}
 		else if(list[i].owner == user_2)
 		{
-			hexagon[i].style.background = user_2_color;
+			hexagon[i].setAttribute('user', 'user_2');
 		}
 		else if(list[i].owner == user_3)
 		{
-			hexagon[i].style.background = user_3_color;
+			hexagon[i].setAttribute('user', 'user_3');
 		}
 
 		if(list[i].owner == user_id)
