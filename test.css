@@ -15,22 +15,16 @@ img:hover{
    	width: 450px;
     	transition: 1s;
 }*/
-
-.box {
-    width: 100px;
-    height: 100px; 
-    background: hotpink;
-}
 #img1{
-	width: 100px;
-	height: 200px;
+	width: 80px;
+	height: 100px;
 	display: none;
 }
 @-webkit-keyframes growBox {
   to {
   	
-    width: 150px;
-    height: 300px;
+    width: 120px;
+    height: 150px;
    }
 }
-.change-size { -webkit-animation: growBox 2s linear 0.3s 3 normal;}
+.change-size { -webkit-animation: growBox  0.5s infinite;}
