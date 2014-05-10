@@ -14,10 +14,10 @@
 }
 
 div {
-    animation: spin 1s linear infinite;
-    animation-play-state: paused;
+    -webkit-animation: spin 1s linear infinite;
+    -webkit-animation-play-state: paused;
 }
 
 div:hover {
-  animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
