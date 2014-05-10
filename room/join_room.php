@@ -231,7 +231,7 @@ SQL_STATEMENT;
                         $woodPx = range(1,3);
                         $woodPy = range(1,3);
                         $intv1 = range(1,$intv);
-                        $intv2 = range(20-$intv+1,$row_num - 2);
+                        $intv2 = range($row_num-$intv-1,$row_num - 2);
   
                         $i = 0;
                         while ($i < 3) {
