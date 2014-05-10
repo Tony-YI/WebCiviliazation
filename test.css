@@ -1,8 +1,24 @@
-@keyframes pound {
-  from { transform: none; }
-  to { transform: scale(1.2); }
+
+img{
+    height:15px;
+    width:15px;
+    transition: 1s;
 }
 
-.cut {
-  animation: pound .5s infinite;
+img:hover{
+    height: 450px;
+    width: 450px;
+}
+div{
+	height: 450px;
+    	width: 450px;
+}
+div:hover {
+  -webkit-animation: 1s rainbow;
+  -moz-animation: 1s rainbow;
+}
+@keyframes rainbow {
+  0% { background: #c00; }
+  50% { background: orange; }
+  100% { background: yellowgreen; }
 }
