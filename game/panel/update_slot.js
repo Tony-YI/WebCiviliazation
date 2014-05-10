@@ -12,25 +12,6 @@ function update_slot_list_own(hexagon, army_id)
 //modification to show the result on the screen
 function update_slot_list_others(result)
 {
-	if(result)//not none
-	{
-		if(result.action_type == 'attack')
-		{
-			update_attack(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
-		}
-		else if(result.action_type == 'move')
-		{
-			update_move(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
-		}
-		else if(result.action_type == 'defend')
-		{
-			update_defend(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
-		}
-		else if(result.action_type == 'build')
-		{
-			update_build(result.from_x, result.from_y, window.current_player.capital_x, window.current_player.capital_y, result.army_id);
-		}
-	}
 }
 
 function get_hexagon(x, y)
@@ -170,6 +151,7 @@ function update_slot_own() //update the slot movement
 		}
 		else if(result.action_type == 'move')
 		{
+			console.log(result.Result_id);
 			update_move(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
 		}
 		else if(result.action_type == 'defend')
@@ -185,7 +167,6 @@ function update_slot_own() //update the slot movement
 
 function update_slot_others()
 {
-
 }
 
 function update_turn_div()
