@@ -175,7 +175,7 @@ function update_hexagon_owner(x, y, owner_id)
 {
 	var hexagon = document.getElementsByClassName('hexagon');
 
-	if(hexagon[parseInt(y) * line_num + parseInt(x)].setAttribute() == 'normal_slot')
+	if(hexagon[parseInt(y) * line_num + parseInt(x)].getAttribute('slot_type') == 'normal_slot')
 	{
 		if(parseInt(owner_id) == user_1)
 		{
