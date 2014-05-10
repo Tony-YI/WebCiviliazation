@@ -857,6 +857,7 @@ function go_to_home()
 	document.getElementById('anchor').scrollIntoView();
 }
 
+var display_init_done = 0;
 function display_init(list)
 {
 	document.getElementById('info').style.display = 'none';
@@ -869,4 +870,5 @@ function display_init(list)
 	resize();
 	window.addEventListener('resize', window_resize, false);
 	window.addEventListener('keydown', key_down, false);
+	display_init_done = 1;
 }

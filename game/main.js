@@ -66,6 +66,8 @@ function query_turn()
 	//If it is current player's turn, then do not query the server
 	if(IsMyTurn())
 		return ;
+	if(!display_init_done)
+		return ;
 	//If it is not current player's turn, send query to the server
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","/game/game_logic_server/query_turn.php",true);
