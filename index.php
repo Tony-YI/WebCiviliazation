@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="test.css">
-<script type="text/javascript" src="http://visionmedia.github.io/move.js"></script>
 <script type="text/javascript" src="test.js"></script>
 	
 	<?php
@@ -22,6 +21,5 @@
 		}*/
 	?>
 	
-	<div><img src="images/cut3.png" class="flash"></div>
-	<div class="falsh">Simple test</div>
+	<div id="box" onclick="onclick1()"><img src="images/cut3.png" class="flash"></div>
 </html>

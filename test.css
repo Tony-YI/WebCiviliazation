@@ -1,4 +1,4 @@
-img{
+/*img{
     	height:15px;
     	width:15px;
 }
@@ -14,4 +14,17 @@ img:hover{
     	height: 450px;
    	width: 450px;
     	transition: 1s;
+}*/
+#box
+{
+	background: blue;
+	width: 100px;
+	height: 100px;
+}
+.flash
+{
+	display: none;
+	width: 15px;
+	height: 15px;
+	transition: 1s;
 }
