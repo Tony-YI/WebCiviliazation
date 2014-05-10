@@ -149,6 +149,7 @@ function attack_clicked_handler()
 		}
 	}
 	latest_slot.addEventListener('mousedown', invalid_action, false);
+	set_function_attribute_1(latest_slot, 'cancel');
 }
 
 function valid_attack_action(e)
@@ -269,6 +270,7 @@ function move_clicked_handler()
 		}
 	}
 	latest_slot.addEventListener('mousedown', invalid_action, false);
+	set_function_attribute_1(latest_slot, 'cancel');
 }
 
 function valid_move_action(e)
