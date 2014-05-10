@@ -60,7 +60,6 @@ function clear_range(action)
 		}
 		slot_div[i].setAttribute('function', 'none');
 	}
-	latest_slot.removeEventListener('mousedown', invalid_action, false);
 }
 
 function attack_clicked_handler()
@@ -147,7 +146,6 @@ function attack_clicked_handler()
 		}
 	}
 	latest_slot.addEventListener('mousedown', invalid_action, false);
-	set_function_attribute_1(latest_slot, 'cancel');
 }
 
 function valid_attack_action(e)
@@ -268,7 +266,6 @@ function move_clicked_handler()
 		}
 	}
 	latest_slot.addEventListener('mousedown', invalid_action, false);
-	set_function_attribute_1(latest_slot, 'cancel');
 }
 
 function valid_move_action(e)
