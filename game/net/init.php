@@ -121,7 +121,7 @@ JSON_ERROR;
 	}
 
 	echo ",\"flag1\":\"going to output results\"";
-	$SQL_GET_RESULT = "SELECT * FROM game_{$game_id}_resultlist ORDER BY result_id DESC LIMIT 0,30";
+	$SQL_GET_RESULT = "SELECT * FROM game_{$game_id}_resultlist ORDER BY result_id DESC LIMIT 0,1";
 	if(($result = mysqli_query($db,$SQL_GET_RESULT)))
 	{
 		echo ",\"flag2\":\"output results\"";
