@@ -7,7 +7,7 @@ var in_room = 0;
 
 if(current_usr_id)
 	console.log("CURRENT_USER is " + current_usr_id);
-setInterval(room_get_list,1000);
+setInterval(room_get_list,3000);
 
 function room_get_list()
 {
@@ -51,7 +51,7 @@ function room_get_list()
 			if(obj.started == 'yes')
 			{
 				alert('Your game has started!');
-				document.location.href = '../game/game.html';
+				//document.location.href = '../game/game.html';
 				return false;
 			}
 		}
