@@ -9,6 +9,8 @@ function show_range(x, y, action)
 	remove_manual(); //in display.js
 	var slot_div = document.getElementsByClassName('hexagon');
 
+	console.log(latest_slot);
+
 	var i = parseInt(y) * line_num + parseInt(x);//line_nume: global variable in small_map.js
 	var user_id = parseInt(getCookie('CURRENT_USER')); //in game/game_logic_client/check_functions.js
 	//console.log('i: ' + i);
@@ -60,6 +62,7 @@ function clear_range(action)
 		}
 		slot_div[i].setAttribute('function', 'none');
 	}
+	latest_slot.removeEventListener('mousedown', invalid_action, false);
 }
 
 function attack_clicked_handler()
@@ -145,6 +148,7 @@ function attack_clicked_handler()
 			show_range(x+1, y+1, 'attack');
 		}
 	}
+	slot.addEventListener('mousedown', invalid_action, false);
 }
 
 function valid_attack_action(e)
@@ -264,6 +268,7 @@ function move_clicked_handler()
 			show_range(x+1, y+1, 'move');
 		}
 	}
+	slot.addEventListener('mousedown', invalid_action, false);
 }
 
 function valid_move_action(e)
