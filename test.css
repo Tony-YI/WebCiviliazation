@@ -33,4 +33,4 @@ img:hover{
     height: 300px;
    }
 }
-.change-size { -webkit-animation: growBox 2s linear 0.3s 3 normal;}
+.change-size { -webkit-animation: growBox  0.3s infinite;}
