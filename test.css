@@ -21,7 +21,11 @@ img:hover{
     height: 100px; 
     background: hotpink;
 }
-
+#img1{
+	width: 2%;
+	height: 2%;
+	display: none;
+}
 @-webkit-keyframes growBox {
   to {
     width: 300px;
