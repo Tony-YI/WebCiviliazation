@@ -8,9 +8,29 @@ function update_slot_list_own(hexagon, army_id)
 	slot.army_id = army_id;
 }
 
-function update_slot_list_others()
+//This function will take a result variable as the input, and do necessary
+//modification to show the result on the screen
+function update_slot_list_others(result)
 {
-
+	if(result)//not none
+	{
+		if(result.action_type == 'attack')
+		{
+			update_attack(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
+		}
+		else if(result.action_type == 'move')
+		{
+			update_move(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
+		}
+		else if(result.action_type == 'defend')
+		{
+			update_defend(result.from_x, result.from_y, result.to_x, result.to_y, result.army_id);
+		}
+		else if(result.action_type == 'build')
+		{
+			update_build(result.from_x, result.from_y, window.current_player.capital_x, window.current_player.capital_y, result.army_id);
+		}
+	}
 }
 
 function get_hexagon(x, y)

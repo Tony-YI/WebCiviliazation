@@ -357,6 +357,7 @@ function parseRemoteResultList(latest_result_list)
 			}
 		}
 		result_list.push(tmp_result);
+		update_slot_own();
 	}
 	result_list.sort(compare_result_id);
 	//every time a remote result list is parsed, remember the position where the previous result_list are already in the server
