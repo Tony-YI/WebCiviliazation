@@ -110,9 +110,9 @@ JSON_ERROR;
 	for($count = 0;$count < $army_num;$count++)
 	{
 		$army_row = mysqli_fetch_row($armylist_result);
-		echo "{\"army_id\":\"$army_row[0]\",";
-		echo "\"army_type\":\"$army_row[1]\",";
-		echo "\"owner_id\":\"$army_row[2]\"";
+		echo "{\"army_id\":\"$army_row[0]\"";
+		echo ",\"army_type\":\"$army_row[1]\"";
+		echo ",\"owner_id\":\"$army_row[2]\"";
 		echo ",\"army_status\":\"$army_row[3]\"";
 		echo ",\"army_hp\":\"$army_row[4]\"}";
 		if($count + 1 < $army_num)

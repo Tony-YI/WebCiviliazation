@@ -296,6 +296,7 @@ SQL_STATEMENT;
                         $SQL_SELECT_PLAYER = "SELECT P1, P2, P3 FROM Game WHERE game_id = $game_id";
                         $result = mysqli_query($con,$SQL_SELECT_PLAYER);
                         $row = mysqli_fetch_row($result);
+                        $response['army_hp'] = $army_hp[0];
                         $p[0] = $row[0];
                         $p[1] = $row[1];
                         $p[2] = $row[2];
