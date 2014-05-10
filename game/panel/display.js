@@ -598,6 +598,11 @@ function display_hexagon_info(e)
 	var pos_y = target.getAttribute('y');
 	var slot_type = target.getAttribute('slot_type');
 	var army_type = target.getAttribute('army_type');
+	var army_id = getSlotByXY(pos_x, pos_y).army_id;
+	var max_hp = getArmyById(army_id).max_hp;
+	var hp = getArmyById(army_id).hp;
+	var attack = getArmyById(army_id).attack;
+	var onwer = getArmyById(army_id).owner;
 
 	//var player = getPlayerByID(parseInt(slot_list[parseInt(y) * line_num + parseInt(x)].owner)); //slot_list and line_num are global variable
 	//var owner = player.pname;
@@ -657,6 +662,13 @@ function display_hexagon_info(e)
 		{
 			new_p_2.innerHTML = new_p_2.innerHTML + 'Army Type: Archer<br/>';
 			new_img_army_type.setAttribute('src', '../../images/archer.png');
+		}
+		new_p_2.innerHTML = new_p_2.innerHTML + 'Attack : ' + attack + '<br>';
+		if(window.current_player.pid == owner){
+			new_p_2.innerHTML = new_p_2.innerHTML + 'HP : ' + hp + '/' + max_hp + '<br/>';
+		}
+		else{
+			new_p_2.innerHTML = new_p_2.innerHTML + 'HP : ?/' + max_hp + '<br/>';
 		}
 	}
 
