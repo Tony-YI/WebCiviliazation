@@ -119,6 +119,8 @@ function update_move(from_x, from_y, to_x, to_y, army_id)
 		type = 'type_C';
 	}
 
+	console.log(type);
+
 
 	clear_army_type(hexagon_from, 'none');
 	set_army_type(hexagon_to, type, army_id);
