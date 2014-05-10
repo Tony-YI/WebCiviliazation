@@ -9,3 +9,9 @@ img:active{
    	width: 450px;
     	transition: 1s;
 }
+img:hover{
+	display: block;
+    	height: 450px;
+   	width: 450px;
+    	transition: 1s;
+}
