@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="test.css">
+<script type="text/javascript" src="http://visionmedia.github.io/move.js"></script>
+<script type="text/javascript" src="test.js"></script>
 	
 	<?php
 		#Check Cookie here

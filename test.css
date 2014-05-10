@@ -1,23 +1,17 @@
-@-webkit-keyframes flash {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
+img{
+    	height:15px;
+    	width:15px;
 }
 
-@keyframes flash {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
+img:active{
+	display: block;
+    	height: 450px;
+   	width: 450px;
+    	transition: 1s;
 }
-.flash {
-  -webkit-animation-name: flash;
-  animation-name: flash;
+img:hover{
+	display: block;
+    	height: 450px;
+   	width: 450px;
+    	transition: 1s;
 }
