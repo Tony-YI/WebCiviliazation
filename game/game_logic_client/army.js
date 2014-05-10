@@ -11,12 +11,20 @@ function init_army_list(army)
 }
 function reinit_not_dead_army()
 {
-	for(var count = 0;count < army_list.length;count++)
+	for(var count = 0;count < slot_list.length;count++)
 	{
-		if(army_list[count].owner == window.current_player.pid && army_list[count].army_status != "dead")
-			army_list[count].army_status = "ready";
+		if(slot_list[count].army_id != "")
+		{
+			var tmp_army = getArmyById(slot_list[count].army_id);
+			if(tmp_army.owner == current_player.pid && tmp_army.status != "dead")
+			{
+				tmp_army.status = "ready";
+				set_army_animation(slot_list[count]["slot_x"],slot_list[count]["slot_y"],tmp_army.army_id);
+			}
+		}
 	}
 }
+
 function getArmyById(army_id)
 {
 	if(!(army_id >= 0 && army_id < window.army_list.length))
