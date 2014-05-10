@@ -117,6 +117,7 @@ function parseSlotOwnerChange(record)
 	for(var count = 0;count < record.length;count++)
 	{
 		getSlotByXY(record[count]["slot_col"],record[count]["slot_row"]).owner = record[count]["curr_owner"];
+		update_hexagon_owner(record[count]["slot_col"],record[count]["slot_row"],record[count]["curr_owner"]);
 		if(count + 1 == record.length)
 		last_occupationrecord_id = record[record.length - 1]["id"];
 	}
