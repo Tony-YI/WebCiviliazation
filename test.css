@@ -1,31 +1,23 @@
-@keyframes myfirst
-{
-from {background: red;}
-to {background: yellow;}
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
 }
 
-@-moz-keyframes myfirst /* Firefox */
-{
-from {background: red;}
-to {background: yellow;}
-}
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
 
-@-webkit-keyframes myfirst /* Safari 和 Chrome */
-{
-from {background: red;}
-to {background: yellow;}
+  25%, 75% {
+    opacity: 0;
+  }
 }
-
-@-o-keyframes myfirst /* Opera */
-{
-from {background: red;}
-to {background: yellow;}
-}
-div
-{
-	background: red;
-animation: myfirst 5s;
--moz-animation: myfirst 5s;	/* Firefox */
--webkit-animation: myfirst 5s;	/* Safari 和 Chrome */
--o-animation: myfirst 5s;	/* Opera */
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
 }

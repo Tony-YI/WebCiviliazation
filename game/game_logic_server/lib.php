@@ -314,6 +314,8 @@ function row_to_result_JSON($row)
 	{
 		$result .= ",\"army_id\":\"$row[3]\"";
 		$result .= ",\"army_type\":\"$row[13]\"";
+		$result .= ",\"from_x\":\"$row[5]\"";
+		$result .= ",\"from_y\":\"$row[6]\"";
 	}
 	$result .= "}";
 	return $result;

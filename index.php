@@ -20,6 +20,5 @@
 		}*/
 	?>
 	
-	<img src="images/cut3.png" class="cut">
-	<div></div>
+	<div><img src="images/cut3.png" class="flash"></div>
 </html>
