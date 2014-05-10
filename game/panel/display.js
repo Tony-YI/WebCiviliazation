@@ -646,7 +646,7 @@ function display_hexagon_info(e)
 		var max_hp = getArmyById(army_id).max_hp;
 		var hp = getArmyById(army_id).hp;
 		var attack = getArmyById(army_id).attack;
-		var onwer = getArmyById(army_id).owner;
+		var owner = getArmyById(army_id).owner;
 
 		if(army_type == 'type_A')
 		{
