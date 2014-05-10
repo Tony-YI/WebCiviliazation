@@ -2,7 +2,7 @@
 {
 	width: 200px;
 	border: 1px solid red;
-	position: absolute;
+	position: fixed;
 	right: 9px;
 	top: 9px;
 	background-color: white;
