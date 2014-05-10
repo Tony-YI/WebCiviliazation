@@ -711,6 +711,7 @@ function addBoxes(list)
 		var img = document.createElement('img'); //store the img
 		img.setAttribute('class', 'army');
 		img.setAttribute('user', 'none');
+		img.setAttribute('animation', 'off');
 		var p = document.createElement('p');
 		p.setAttribute('class', 'description');
 
@@ -784,16 +785,9 @@ function addBoxes(list)
 
 		if(list[i].army_id)
 		{
-			if(IsMyTurn())
+			if(IsMyTurn() && getArmyById(parseInt(list[i].army_id)).army_status == 'ready' && getArmyById(parseInt(list[i].army_id)).owner == current_player.pid)
 			{
-				if(getArmyById(parseInt(list[i].army_id)).army_status == 'ready')
-				{
-					img.setAttribute('animation', 'on');
-				}
-				else
-				{
-					img.setAttribute('animation', 'off');
-				}
+				img.setAttribute('animation', 'on');
 			}
 
 			if(getArmyById(list[i].army_id).owner == user_1)
