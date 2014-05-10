@@ -39,7 +39,7 @@ JSON_ERROR;
 
 	$SQL_GET_PLAYERLIST = "SELECT * FROM game_{$game_id}_playerlist";
 	$SQL_GET_SLOTLIST = "SELECT * FROM game_{$game_id}_slotlist";
-	$SQL_GET_ARMYLIST = "SELECT * FROM game_{$game_id}_armylist WHERE army_status != 'dead'";
+	$SQL_GET_ARMYLIST = "SELECT * FROM game_{$game_id}_armylist";
 
 	if(!($playerlist_result = mysqli_query($db,$SQL_GET_PLAYERLIST)) || 
 		!($slotlist_result = mysqli_query($db,$SQL_GET_SLOTLIST)) || 
