@@ -297,6 +297,8 @@ function parseRemoteResultList(latest_result_list)
 	//stored it in result_list
 	//called functions to display it
 	//and show it on the div
+	latest_result_list.sort(compare_result_id);
+	
 	for(var count = 0;count < latest_result_list.length;count++)
 	{
 		var tmp_result_json = latest_result_list[count];
