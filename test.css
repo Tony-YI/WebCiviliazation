@@ -22,15 +22,15 @@ img:hover{
     background: hotpink;
 }
 #img1{
-	width: 2%;
-	height: 2%;
-	display: block;
+	width: 100px;
+	height: 200px;
+	display: none;
 }
 @-webkit-keyframes growBox {
   to {
   	
-    width: 300px;
+    width: 150px;
     height: 300px;
    }
 }
-.change-size { -webkit-animation: growBox 3s linear 1s 3 normal;}
+.change-size { -webkit-animation: growBox 2s linear 0.3s 3 normal;}

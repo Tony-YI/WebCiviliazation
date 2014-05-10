@@ -24,15 +24,7 @@ function get_hexagon(x, y)
 function set_army_animation(x, y, army_id)
 {
 	var hexagon = document.getElementsByClassName('hexagon');
-
-	if(IsMyTurn() && getArmyById(parseInt(army_id)).army_status == 'ready' && getArmyById(parseInt(army_id)).owner == current_player.pid)
-	{
-		hexagon[parseInt(y) * line_num + parseInt(x)].lastChild.setAttribute('animation', 'on');
-	}
-	else
-	{
-		hexagon[parseInt(y) * line_num + parseInt(x)].lastChild.setAttribute('animation', 'off');
-	}
+	hexagon[parseInt(y) * line_num + parseInt(x)].lastChild.setAttribute('animation', 'on');
 }
 
 function clear_army_animation(x, y, army_id)
@@ -118,9 +110,6 @@ function update_move(from_x, from_y, to_x, to_y, army_id)
 	{
 		type = 'type_C';
 	}
-
-	console.log(type);
-
 
 	clear_army_type(hexagon_from, 'none');
 	set_army_type(hexagon_to, type, army_id);
