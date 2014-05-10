@@ -113,7 +113,7 @@ JSON_ERROR;
 		echo "{\"army_id\":\"$army_row[0]\",";
 		echo "\"army_type\":\"$army_row[1]\",";
 		echo "\"owner_id\":\"$army_row[2]\"";
-		echo ",\"army_status\":\"$army_row[3]\""
+		echo ",\"army_status\":\"$army_row[3]\"";
 		echo ",\"army_hp\":\"$army_row[4]\"}";
 		if($count + 1 < $army_num)
 			echo ",";
