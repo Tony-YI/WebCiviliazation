@@ -356,6 +356,8 @@ function parseRemoteResultList(latest_result_list)
 				army_list.push(tmp_army);
 			}
 		}
+		if(!display_init_done)
+			result_list.sort(compare_result_id);
 		result_list.push(tmp_result);
 		update_slot_own();
 	}
