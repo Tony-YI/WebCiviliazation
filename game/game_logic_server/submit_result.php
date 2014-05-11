@@ -23,10 +23,24 @@
 	/*Handling surrender*/
 	if($_SERVER["HTTP_TYPE"] == "SURRENDER")
 	{
-		nextTurn($db,$game_id);
+		
 		$max_result_id = $_SERVER["HTTP_MAX_RESULT_ID"];
-		$SQL_UPDATE_SURRENDER = "UPDATE game_{$game_id}_playerlist SET player_status = 2 WHERE player_id = $user_id";
+		
 		echo "{";
+
+		//insert the surrender action into the result list
+		$new_result_id = (int) $max_result_id + 1;
+		$SQL_UPDATE_SURRENDER = "INSERT INTO game_{$game_id}_resultlist (result_id,action_type,player_id) VALUES ($new_result_id,'gg',$user_id)";
+		if(!mysqli_query($db,$SQL_UPDATE_SURRENDER))
+		{
+			$sql_error = mysqli_error($db);
+			echo "\"surrender_sql_error\":\"$sql_error\"";
+		}
+
+		nextTurn($db,$game_id);
+
+		//officially set the player's status to losing the game
+		$SQL_UPDATE_SURRENDER = "UPDATE game_{$game_id}_playerlist SET player_status = 2 WHERE player_id = $user_id";
 		if(!mysqli_query($db,$SQL_UPDATE_SURRENDER))
 		{
 			$sql_error = mysqli_error($db);
@@ -35,18 +49,11 @@
 		}
 		else
 		{
-			echo "{\"status\":\"success\"";
+			echo "\"status\":\"success\"";
 			echo ",\"result\":\"surrender\"";
 		}
-		//insert the surrender action into the result list
-		$new_result_id = (int) $max_result_id + 1;
-		$SQL_UPDATE_SURRENDER = "INSERT INTO game_{$game_id}_resultlist (result_id,action_type,player_id) VALUES ($new_result_id,'gg',$user_id)";
-		if(!mysqli_query($db,$SQL_UPDATE_SURRENDER))
-		{
-			$sql_error = mysqli_error($db);
-			echo ",\"surrender_sql_error\":\"$sql_error\"";
-		}
 		echo "}";
+
 		exit;
 	}
 
