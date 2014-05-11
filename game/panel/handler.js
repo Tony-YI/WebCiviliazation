@@ -281,6 +281,8 @@ function valid_move_action(e)
 	2. show the result
 	3. record the result in result list
 	*/
+	var audio = document.getElementById("clickButton");
+	audio.play();
 	e = e || window.event;
 	//console.log(e.target);
 	var target = e.target;
@@ -303,7 +305,9 @@ function valid_move_action(e)
 }
 
 function invalid_action()
-{
+{	
+	var audio = document.getElementById("clickSurrender");
+	audio.play();
 	console.log('Invalid action');
 	clear_range('whatever');
 }
