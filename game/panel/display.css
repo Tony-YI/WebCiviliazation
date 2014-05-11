@@ -239,6 +239,7 @@ img[user="none"]
     -moz-animation-iteration-count: infinite;
 
     opacity: 0.5;
+    display: inline;
     background: green;
 }
 .hexagon[function="range"]:before
@@ -264,6 +265,7 @@ img[user="none"]
     -moz-animation-iteration-count: infinite;
 
     opacity: 0;
+    display: none;
     background: red;
 }
 .hexagon[function="norange"]:before
