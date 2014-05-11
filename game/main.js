@@ -7,7 +7,7 @@ var last_result_index = 0;
 var not_init = 1;
 var isSetTimeout;
 var timeout;
-var time = 0;
+var time = 30;
 function Init()
 {
 	//send request to get the initilization data
@@ -65,7 +65,8 @@ function IsMyTurn()
 		if(isSetTimeout){}
 		else
 		{
-			timeout = setTimeout(time_up, 30000);
+			time = 30;
+			timeout = setInterval(time_up, 1000);
 			isSetTimeout = true;
 		}
 		return true;
@@ -74,7 +75,7 @@ function IsMyTurn()
 	{
 		if(isSetTimeout)
 		{
-			clearTimeout(timeout);
+			clearInterval(timeout);
 			isSetTimeout = false;
 		}
 		else{}
@@ -151,6 +152,10 @@ function parseSlotOwnerChange(record)
 
 function time_up()
 {
-	alert('Time is up!');
-	nextround_clicked_handler();
+	console.log(time--);
+	if(time == 0)
+	{
+		alert('Time is up!');
+		nextround_clicked_handler();
+	}
 }

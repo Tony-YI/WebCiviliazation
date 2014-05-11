@@ -61,8 +61,8 @@ function clear_range(action)
 			slot_div[i].removeEventListener('mousedown', invalid_action, false);
 		}
 		slot_div[i].setAttribute('function', 'none');
+		slot_div[i].removeEventListener('mousedown', invalid_action, false);
 	}
-	latest_slot.removeEventListener('mousedown', invalid_action, false);
 	remove_manual();
 }
 
