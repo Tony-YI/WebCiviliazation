@@ -202,7 +202,7 @@ SQL_STATEMENT;
 	WHERE player_id NOT IN (SELECT slot_owner FROM game_{$game_id}_slotlist WHERE slot_type = 4)
 	AND player_status != 2
 SQL_STATEMENT;
-	$result = mysqli_query($SQL_SELECT_PLAYER_WITHOUT_CAPITAL);
+	$result = mysqli_query($db,$SQL_SELECT_PLAYER_WITHOUT_CAPITAL);
 	if(mysqli_num_rows($result) != 0)
 	{
 		while($row = mysqli_fetch_row($result))
@@ -220,7 +220,7 @@ SQL_STATEMENT;
 
 			//insert into the result list
 			$SQL_INSERT_TO_RESULT = "INSERT INTO game_{$game_id}_slotlist (result_id,action_type,player_id) VALUES ($max_result_id,'gg',$surrender_id)";
-			mysqli_query($SQL_INSERT_TO_RESULT);
+			mysqli_query($db,$SQL_INSERT_TO_RESULT);
 		}
 	}
 }
