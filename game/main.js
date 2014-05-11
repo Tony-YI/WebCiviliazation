@@ -155,7 +155,7 @@ function parseSlotOwnerChange(record)
 function time_up()
 {
 	var time_div = document.getElementById("time");
-	if(time == 15){
+	if(time == 17){
 		document.getElementById("count15").play();
 	}
 	if(time == 1)
