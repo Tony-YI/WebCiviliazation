@@ -52,7 +52,7 @@
 			echo "\"status\":\"success\"";
 			echo ",\"result\":\"surrender\"";
 		}
-		echo "}";
+		
 		
 		if(game_is_over($db,$game_id))
 		{
@@ -61,8 +61,15 @@
 			$row = mysqli_fetch_row($result);
 			$new_result_id = $new_result_id + 1;
 			$SQL_INSERT_WIN_RESULT = "INSERT INTO game_{$game_id}_resultlist (result_id,action_type,player_id) VALUES ($new_result_id,'win',$row[0])";
-			mysqli_query($db,$SQL_INSERT_WIN_RESULT);
+			if(!mysqli_query($db,$SQL_INSERT_WIN_RESULT));
+			{
+				$sql_error = mysqli_error($db);
+				echo ",\"SQL_STATEMENT_USED\":\"$SQL_INSERT_WIN_RESULT\"";
+				echo ",\"sql_result\":\"$sql_error\"";
+			}
 		}
+
+		echo "}";
 		exit;
 	}
 
