@@ -85,6 +85,10 @@ function Result(action_type)
 	{
 
 	}
+	else if(this.action_type == "win")
+	{
+
+	}
 	else 
 	{
 		alert("Result constructor : invalid action type " + this.action_type)
@@ -381,6 +385,10 @@ function parseRemoteResultList(latest_result_list)
 		{
 			if(tmp_result.player_id != current_player.pid)
 			alert("Player " + getPlayerByID(tmp_result.player_id).pname + " has gg!");
+		}
+		else if(tmp_result_json["action_type"] == "win")
+		{
+			alert("Player " + getPlayerByID(tmp_result.player_id).pname + " has won the game!");
 		}
 		result_list.push(tmp_result);
 		update_slot_own();
