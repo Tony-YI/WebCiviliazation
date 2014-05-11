@@ -49,6 +49,8 @@ function build_army(armyType)
 				var armyId = (window.army_list.length).toString();
 				var newArmy = new Army(armyId,armyType,window.current_player.pid);
 				newArmy.army_status = 'ready';
+				var audio = document.getElementById("armyBirth");
+				audio.play();
 				window.army_list.push(newArmy);
 				var tmp = new action("build",armyId,null,null,null,null,armyType);
 				tmp.get_result();
