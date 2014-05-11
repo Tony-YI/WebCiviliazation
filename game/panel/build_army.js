@@ -9,10 +9,17 @@ function build_clicked_handler()
     */
     var audio = document.getElementById("clickButton");
     audio.play();
-    var buildArmy = document.getElementById('buildArmy');
-    //alert(buildArmy);
-    buildArmy.style.display= "inline-block";
-    buildArmy.style.zIndex= "200";
+    if(IsMyTurn()){
+    	var buildArmy = document.getElementById('buildArmy');
+	//alert(buildArmy);
+	buildArmy.style.display= "inline-block";
+	buildArmy.style.zIndex= "200";
+    }
+    else
+    {
+    	alert("You cannot build a new Army when it's not your turn");
+	return ;
+    }
 
 
     /*buildArmy.innerHTML = """"""*/
