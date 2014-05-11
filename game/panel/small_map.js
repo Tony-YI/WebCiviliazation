@@ -109,28 +109,55 @@ function clean_small_map_dot()
 				break;
 
 				case 2: //gold slot
-				slot[i].style.backgroundColor = 'rgb(254,215,40)';
+				if(slot_list[i].owner == user_1)
+				{
+					set_slot_color(slot[i], i, user_1_color);
+				}
+				else if(slot_list[i].owner == user_2)
+				{
+					set_slot_color(slot[i], i, user_2_color);
+				}
+				else if(slot_list[i].owner == user_3)
+				{
+					set_slot_color(slot[i], i, user_3_color);
+				}
+				else
+				{
+					set_slot_color(slot[i], i, 'rgb(254,215,40)');
+				}
 				break;
 
 				case 3: //wood slot
-				slot[i].style.backgroundColor = 'rgb(125,103,7)';
+				if(slot_list[i].owner == user_1)
+				{
+					set_slot_color(slot[i], i, user_1_color);
+				}
+				else if(slot_list[i].owner == user_2)
+				{
+					set_slot_color(slot[i], i, user_2_color);
+				}
+				else if(slot_list[i].owner == user_3)
+				{
+					set_slot_color(slot[i], i, user_3_color);
+				}
+				else
+				{
+					set_slot_color(slot[i], i, 'rgb(125,103,7)');
+				}
 				break;
 
 				case 4: //capital
-				slot[i].style.border = '2px solid white';
-				slot[i].style.width = '8px';
-				slot[i].style.height = '8px';
-				if(parseInt(slot_list[i].owner) == parseInt(user_1))
+				if(slot_list[i].owner == user_1)
 				{
-					slot[i].style.backgroundColor = user_1_color;
+					set_slot_color(slot[i], i, user_1_color);
 				}
-				else if(parseInt(slot_list[i].owner) == parseInt(user_2))
+				else if(slot_list[i].owner == user_2)
 				{
-					slot[i].style.backgroundColor = user_2_color;
+					set_slot_color(slot[i], i, user_2_color);
 				}
-				else if(parseInt(slot_list[i].owner) == parseInt(user_3))
+				else if(slot_list[i].owner == user_3)
 				{
-					slot[i].style.backgroundColor = user_3_color;
+					set_slot_color(slot[i], i, user_3_color);
 				}
 				break;
 
