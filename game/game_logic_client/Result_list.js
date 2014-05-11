@@ -379,7 +379,8 @@ function parseRemoteResultList(latest_result_list)
 		}
 		else if(tmp_result_json["action_type"] == "gg" )
 		{
-			alert("Player " + getPlayerByID(tmp_result.player_id).pname + "has gg!");
+			if(tmp_result.player_id != current_player.pid)
+			alert("Player " + getPlayerByID(tmp_result.player_id).pname + " has gg!");
 		}
 		result_list.push(tmp_result);
 		update_slot_own();

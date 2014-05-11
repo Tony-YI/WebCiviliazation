@@ -46,7 +46,7 @@
 			echo ",\"surrender_sql_error\":\"$sql_error\"";
 		}
 		echo "}";
-		nextTurn();
+		nextTurn($db,$game_id);
 		exit;
 	}
 
