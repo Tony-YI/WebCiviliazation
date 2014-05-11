@@ -23,6 +23,7 @@ function key_up(e)
 	{
 		e.target.removeEventListener('keyup', key_up, false);
 		clean_small_map_dot(); //in small_map.js
+		update_small_map();
 		if(document.getElementById('small_map').style.display == 'none')
 		{
 			document.getElementById('small_map').style.display = 'block';
