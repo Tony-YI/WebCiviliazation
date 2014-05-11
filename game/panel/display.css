@@ -273,7 +273,7 @@ img[user="none"]
 {
     0% {
         transform: scale(0.5);
-        opacity: 0.5;       
+        opacity: 1;       
     }
     50% {
         transform: scale(0.5);
@@ -281,14 +281,14 @@ img[user="none"]
     }   
     100% {
         transform: scale(0.5);
-        opacity: 0.5;   
+        opacity: 1;   
     }
 }
 @-webkit-keyframes norange
 {
     0% {
         -webkit-transform: scale(0.5);
-        opacity: 0.5;       
+        opacity: 1;       
     }
     50% {
         -webkit-transform: scale(0.5);
@@ -296,14 +296,14 @@ img[user="none"]
     }   
     100% {
         -webkit-transform: scale(0.5);
-        opacity: 0.5;   
+        opacity: 1;   
     }
 }
 @-moz-keyframes norange
 {
     0% {
         -moz-transform: scale(0.5);
-        opacity: 0.5;       
+        opacity: 1;       
     }
     50% {
         -moz-transform: scale(0.5);
@@ -311,7 +311,7 @@ img[user="none"]
     }   
     100% {
         -moz-transform: scale(0.5);
-        opacity: 0.5;   
+        opacity: 1;   
     }
 }
 
