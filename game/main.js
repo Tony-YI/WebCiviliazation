@@ -153,7 +153,7 @@ function parseSlotOwnerChange(record)
 function time_up()
 {
 	console.log(time--);
-	if(time = 0)
+	if(time == 0)
 	{
 		alert('Time is up!');
 		nextround_clicked_handler();
