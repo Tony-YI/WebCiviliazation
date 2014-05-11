@@ -7,15 +7,15 @@ function set_slot_color(slot, i)
 	var user_color = '';
 	if(slot_list[i].owner == user_1)
 	{
-		user_color = user_color_1;
+		user_color = user_1_color;
 	}
 	else if(slot_list[i].owner == user_2)
 	{
-		user_color = user_color_2;
+		user_color = user_2_color;
 	}
 	else if(slot_list[i].owner == user_3)
 	{
-		user_color = user_color_3;
+		user_color = user_3_color;
 	}
 
 	if(slot_list[i].type_id == 0)
