@@ -7,6 +7,8 @@ function build_clicked_handler()
     4.show the build result
     5.add the result to the result list 
     */
+    var audio = document.getElementById("clickButton");
+    audio.play();
     var buildArmy = document.getElementById('buildArmy');
     //alert(buildArmy);
     buildArmy.style.display= "inline-block";

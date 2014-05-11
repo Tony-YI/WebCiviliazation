@@ -367,6 +367,8 @@ function nextround_clicked_handler()
 	/*
 	This function handle the click event on the next round button
 	*/
+	var audio = document.getElementById("clickButton");
+	audio.play();
 	if(IsMyTurn())
 	{
 		remove_manual();
