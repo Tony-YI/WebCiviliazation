@@ -155,11 +155,11 @@ function parseSlotOwnerChange(record)
 function time_up()
 {
 	var time_div = document.getElementById("time");
-	time_div.innerHTML = "Time remaining: " + time + "s";
 	if(time == 0)
 	{
 		time_div.innerHTML = 'Time is up!';
 		nextround_clicked_handler();
 	}
+	time_div.innerHTML = "Time remaining: " + time + "s";
 	time = time - 1;
 }

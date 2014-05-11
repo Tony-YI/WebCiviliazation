@@ -121,7 +121,7 @@ function attack_clicked_handler()
 		show_range(x+1, y, 'attack');
 		show_range(x-1, y+1, 'attack');
 		show_range(x, y+1, 'attack');
-		if(army.typename == 'archor')
+		if(army.typename == 'archer')
 		{
 			if(y > 1)
 			{
