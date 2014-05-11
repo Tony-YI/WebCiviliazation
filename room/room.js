@@ -236,17 +236,20 @@ function logout()
 {
 	var audio = document.getElementById("clickButton");
             audio.play();
-	var xhr = new XMLHttpRequest();
-	//this is a synchornous request
-	xhr.open("POST","login/logout.php",false);
-	xhr.send();
-	console.log(xhr.responseText);
-	response = JSON.parse(xhr.responseText);
-	if(response.status == "success")
-	{
-		console.log("Logout Success, going to redirect");
-		window.location = "login/login.php";
-	}
+            var as = confirm("Are you sure to log out?");
+            if(as == true){
+            	var xhr = new XMLHttpRequest();
+		//this is a synchornous request
+		xhr.open("POST","login/logout.php",false);
+		xhr.send();
+		console.log(xhr.responseText);
+		response = JSON.parse(xhr.responseText);
+		if(response.status == "success")
+		{
+			console.log("Logout Success, going to redirect");
+			window.location = "login/login.php";
+		}
+            }
 }
 
 function start_game()
