@@ -251,8 +251,16 @@ action.prototype.get_result = function()
 		result.attacker_prev_hp = attacker.hp;
 		result.defender_prev_hp = defender.hp;
 		//ensure no negative hp
+		if(attacker.type_id != 3)
+		{
+			attacker.hp = attacker.hp <= defender.attack ? 0 : attacker.hp - defender.attack;
+		}
+		else 
+		{
+			attacker.hp = attacker.hp;
+		}
+		
 		defender.hp = defender.hp <= attacker.attack ? 0 : defender.hp - attacker.attack; 
-		attacker.hp = attacker.hp <= defender.attack ? 0 : attacker.hp - defender.attack;
 		if(defender.hp == 0)
 			defender.army_status = "dead";
 		else
