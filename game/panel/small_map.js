@@ -2,47 +2,33 @@
 var slot_num = 484;
 var line_num = 22; //the top/left/bottom/right are useless
 
-function set_slot_color(slot, i)
+function set_slot_color(slot, i, color)
 {
-	var user_color = '';
-	if(slot_list[i].owner == user_1)
-	{
-		user_color = user_1_color;
-	}
-	else if(slot_list[i].owner == user_2)
-	{
-		user_color = user_2_color;
-	}
-	else if(slot_list[i].owner == user_3)
-	{
-		user_color = user_3_color;
-	}
-
 	if(slot_list[i].type_id == 0)
 	{
 
 	}
 	else if(slot_list[i].type_id == 1) //normal slot
 	{
-		slot.style.backgroundColor = user_color;
+		slot.style.backgroundColor = color;
 	}
 	else if(slot_list[i].type_id == 2) //gold slot
 	{
-		slot.style.backgroundColor = user_color;
+		slot.style.backgroundColor = color;
 		slot.style.border = '1px solid rgb(254,215,40)';
 		slot.style.width = '10px';
 		slot.style.height = '10px';
 	}
 	else if(slot_list[i].type_id == 3) //wood slot
 	{
-		slot.style.backgroundColor = user_color;
+		slot.style.backgroundColor = color;
 		slot.style.border = '1px solid rgb(125,103,7)';
 		slot.style.width = '10px';
 		slot.style.height = '10px';
 	}
 	else if(slot_list[i].type_id == 4) //capital slot
 	{
-		slot.style.backgroundColor = user_color;
+		slot.style.backgroundColor = color;
 		slot.style.border = '1px solid white';
 		slot.style.width = '10px';
 		slot.style.height = '10px';
@@ -55,7 +41,18 @@ function update_small_map() //update according to the global variable slot_list
 	
 	for(var i = 0; i < slot.length; i++)
 	{
-		set_slot_color(slot[i], i);
+		if(slot_list[i].owner == user_1)
+		{
+			set_slot_color(slot[i], i, user_1_color);
+		}
+		else if(slot_list[i].owner == user_2)
+		{
+			set_slot_color(slot[i], i, user_2_color);
+		}
+		else if(slot_list[i].owner == user_3)
+		{
+			set_slot_color(slot[i], i, user_3_color);
+		}
 	}
 }
 
