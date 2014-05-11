@@ -234,7 +234,7 @@ function render_room_information(response)
 }
 function logout()
 {
-	var audio = document.getElementById("clickButton");
+	var audio = document.getElementById("clickQuit");
             audio.play();
             var as = confirm("Are you sure to log out?");
             if(as == true){
