@@ -263,7 +263,7 @@ img[user="none"]
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
 
-    opacity: 0.5;
+    opacity: 0;
     background: red;
 }
 .hexagon[function="norange"]:before
