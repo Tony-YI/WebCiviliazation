@@ -1,6 +1,8 @@
 <?php
-	require_once("../lib/db.php");
-	require_once("game_logic_server/lib.php");
+	$APP_ROOT = $_ENV["OPENSHIFT_REPO_DIR"];
+	require_once($APP_ROOT."lib/db.php");
+	require_once($APP_ROOT."game/game_logic_server/lib.php");
+
 	$user_id = $_COOKIE["CURRENT_USER"];
 	$game_id = $_COOKIE["IN_GAME"];
 	
