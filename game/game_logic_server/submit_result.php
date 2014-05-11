@@ -23,6 +23,7 @@
 	/*Handling surrender*/
 	if($_SERVER["HTTP_TYPE"] == "SURRENDER")
 	{
+		nextTurn($db,$game_id);
 		$max_result_id = $_SERVER["HTTP_MAX_RESULT_ID"];
 		$SQL_UPDATE_SURRENDER = "UPDATE game_{$game_id}_playerlist SET player_status = 2 WHERE player_id = $user_id";
 		echo "{";
@@ -46,7 +47,6 @@
 			echo ",\"surrender_sql_error\":\"$sql_error\"";
 		}
 		echo "}";
-		nextTurn($db,$game_id);
 		exit;
 	}
 
