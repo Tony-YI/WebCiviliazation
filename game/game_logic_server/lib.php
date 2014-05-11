@@ -196,6 +196,7 @@ SQL_STATEMENT;
 			echo ",\"sql_insert_record_error\":\"$sql_error\"";
 		}
 	}
+	
 	//check does any player has no capital at all, and has not yet surrender
 	$SQL_SELECT_PLAYER_WITHOUT_CAPITAL = <<<SQL_STATEMENT
 	SELECT player_id FROM game_{$game_id}_playerlist
