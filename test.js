@@ -5,6 +5,7 @@ function onclick1()
 	img1.classList.add('change-size');
             var audio = document.getElementById("attackAudio");
             audio.src="audio/cut.wav";
+            audio.currentTime = 0;
             audio.play();
 }
 
