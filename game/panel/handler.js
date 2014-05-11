@@ -9,18 +9,16 @@ function show_range(x, y, action)
 	remove_manual(); //in display.js
 	var slot_div = document.getElementsByClassName('hexagon');
 
-	console.log(latest_slot);
-
 	var i = parseInt(y) * line_num + parseInt(x);//line_nume: global variable in small_map.js
 	var user_id = parseInt(getCookie('CURRENT_USER')); //in game/game_logic_client/check_functions.js
 	//console.log('i: ' + i);
 	if(parseInt(slot_list[i].type_id) != 0) //not invalid  slot
 	{
 		var slot = getSlotByXY(x,y);
-		console.log(slot_list[i]);
+		//console.log(slot_list[i]);
 		if(action == 'move' && slot_list[i].army_id == "")
 		{
-			console.log(slot_list[i].army_id);
+			//console.log(slot_list[i].army_id);
 			slot_div[i].addEventListener('mousedown', valid_move_action, false);
 			slot_div[i].setAttribute('function', 'range');
 		}
@@ -41,6 +39,8 @@ function show_range(x, y, action)
 function clear_range(action)
 {
 	var slot_div = document.getElementsByClassName('hexagon');
+	console.log(slot_num);
+	console.log(slot_div.length);
 	for(var i = 0; i < slot_num; i++) //slot_num: global variable in small_map.js
 	{
 		if(slot_div[i].getAttribute('function') == 'range')
@@ -63,6 +63,7 @@ function clear_range(action)
 		slot_div[i].setAttribute('function', 'none');
 	}
 	latest_slot.removeEventListener('mousedown', invalid_action, false);
+	remove_manual();
 }
 
 function attack_clicked_handler()
