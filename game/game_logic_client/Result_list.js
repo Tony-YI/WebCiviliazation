@@ -389,6 +389,7 @@ function parseRemoteResultList(latest_result_list)
 		else if(tmp_result_json["action_type"] == "win")
 		{
 			alert("Player " + getPlayerByID(tmp_result.player_id).pname + " has won the game!");
+			window.location.href = "/game/end.html";
 		}
 		result_list.push(tmp_result);
 		update_slot_own();
