@@ -178,7 +178,7 @@ function valid_attack_action(e)
 	var user_action = new action('attack', army.army_id, from_x, from_y, to_x, to_y, army.type_id);
 	user_action.get_result();
 	var audio = document.getElementById("attackAudio");
-	audio.src="../../audio/cut.wmv";
+	audio.src="../../audio/cut.wav";
 	audio.play();
 	//console.log(army);
 	//army.status = "";
