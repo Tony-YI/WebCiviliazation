@@ -118,6 +118,8 @@ function room_onclick(e)
 	e = e || window.event;
 	var target = e.target;
 	//console.log(target);
+	var audio = document.getElementById("clickButton");
+            audio.play();
 	while(target.className != "roomBtn")
 	{
 		target = target.parentNode;
@@ -166,6 +168,8 @@ function room_onclick(e)
 
 function room_create()
 {
+	var audio = document.getElementById("clickButton");
+            audio.play();
 	var xhr = new XMLHttpRequest();
 	//this is a synchornous request
 	xhr.open("POST","room/create_room.php",false);
@@ -189,6 +193,8 @@ function room_create()
 function quit_room()
 {
 	//This function will let the user quit the room he entered
+	var audio = document.getElementById("clickButton");
+            audio.play();
 	console.log('quit room clicked');
 	var xhr = new XMLHttpRequest();
 	//this is a synchornous request
@@ -228,6 +234,8 @@ function render_room_information(response)
 }
 function logout()
 {
+	var audio = document.getElementById("clickButton");
+            audio.play();
 	var xhr = new XMLHttpRequest();
 	//this is a synchornous request
 	xhr.open("POST","login/logout.php",false);
