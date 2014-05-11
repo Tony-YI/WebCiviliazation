@@ -334,14 +334,14 @@ function surrender_clicked_handler()
 		return;
 	}
 	*/
+	var audio = document.getElementById("clickSurrender");
+	audio.play();
 	if(!IsMyTurn())
 	{
 		alert("You cannot surrender when it's not your turn");
 		return ;
 	}
 
-	var audio = document.getElementById("clickSurrender");
-	audio.play();
 	var choice = confirm("Are you sure to surrender?");
 	
 	if(choice)
