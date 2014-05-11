@@ -79,6 +79,8 @@ function IsMyTurn()
 			isSetTimeout = false;
 		}
 		else{}
+		var time_div = document.getElementById("time");
+		time_div.innerHTML = "Not your turn.";
 		return false;
 	}
 }
@@ -152,10 +154,11 @@ function parseSlotOwnerChange(record)
 
 function time_up()
 {
-	console.log(time--);
+	var time_div = document.getElementById("time");
+	time_div.innerHTML = "Time remaining: " + time + "s";
 	if(time == 0)
 	{
-		alert('Time is up!');
+		time_div.innerHTML = 'Time is up!';
 		nextround_clicked_handler();
 	}
 }
