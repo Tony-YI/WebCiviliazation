@@ -345,7 +345,9 @@ function surrender_clicked_handler()
 		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 		xhr.setRequestHeader("TYPE","SURRENDER");
 		xhr.setRequestHeader("MAX_RESULT_ID",getMAXResultId());
+		xhr.send();
 		console.log("The server replies: " + xhr.responseText);
+
 		disable_all_army();
 		current_player.pturn = "0";
 	}
