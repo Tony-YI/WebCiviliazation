@@ -65,7 +65,7 @@ function IsMyTurn()
 		if(isSetTimeout){}
 		else
 		{
-			timeout = setTimeout(nextround_clicked_handler,30000);
+			timeout = setTimeout(time_up, 30000);
 			isSetTimeout = true;
 		}
 		return true;
@@ -85,7 +85,7 @@ function IsMyTurn()
 function query_turn()
 {
 	//If it is current player's turn, then do not query the server
-	console.log(time++);
+	//console.log(time++);
 	if(IsMyTurn())
 	{
 		return ;
@@ -147,4 +147,10 @@ function parseSlotOwnerChange(record)
 		last_occupationrecord_id = record[record.length - 1]["id"];
 	}
 	
+}
+
+function time_up()
+{
+	alert('Time is up!');
+	nextround_clicked_handler();
 }
