@@ -118,6 +118,8 @@ function room_onclick(e)
 	e = e || window.event;
 	var target = e.target;
 	//console.log(target);
+	var audio = document.getElementById("clickButton");
+            audio.play();
 	while(target.className != "roomBtn")
 	{
 		target = target.parentNode;
