@@ -367,7 +367,7 @@ function nextround_clicked_handler()
 	/*
 	This function handle the click event on the next round button
 	*/
-	var audio = document.getElementById("clickButton");
+	var audio = document.getElementById("clickNextround");
 	audio.play();
 	if(IsMyTurn())
 	{
