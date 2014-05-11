@@ -340,7 +340,10 @@ function surrender_clicked_handler()
 		return ;
 	}
 
+	var audio = document.getElementById("clickSurrender");
+	audio.play();
 	var choice = confirm("Are you sure to surrender?");
+	
 	if(choice)
 	{
 		var xhr = new XMLHttpRequest();
