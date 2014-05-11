@@ -888,6 +888,8 @@ function addBoxes(list)
 
 function go_to_home()
 {
+	var audio = document.getElementById("goHome");
+	audio.play;
 	document.getElementById('anchor').scrollIntoView();
 }
 
