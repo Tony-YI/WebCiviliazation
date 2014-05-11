@@ -79,34 +79,34 @@ function delete_game($con,$game_id)
 	$SQL_DROP_actionlist = "DROP TABLE game_{$game_id}_resultlist";
 	$SQL_DROP_occupationrecord = "DROP TABLE game_{$game_id}_occupationrecord";
 	$SQL_DELETE_GAME = "DELETE FROM Game WHERE game_id = $game_id";
-	if(!mysqli_query($db,$SQL_DROP_occupationrecord))
+	if(!mysqli_query($con,$SQL_DROP_occupationrecord))
 	{
-		$sql_error = mysqli_error($db);
+		$sql_error = mysqli_error($con);
 		echo "\"occupationrecordError\":\"$sql_error\",";
 	}
-	if(!mysqli_query($db,$SQL_DROP_actionlist))
+	if(!mysqli_query($con,$SQL_DROP_actionlist))
 	{
-		$sql_error = mysqli_error($db);
+		$sql_error = mysqli_error($con);
 		echo "\"actionlistError\":\"$sql_error\",";
 	}
-	if(!mysqli_query($db,$SQL_DROP_slotlist))
+	if(!mysqli_query($con,$SQL_DROP_slotlist))
 	{
-		$sql_error = mysqli_error($db);
+		$sql_error = mysqli_error($con);
 		echo "\"slotlistError\":\"$sql_error\",";
 	}
-	if(!mysqli_query($db,$SQL_DROP_armylist))
+	if(!mysqli_query($con,$SQL_DROP_armylist))
 	{
-		$sql_error = mysqli_error($db);
+		$sql_error = mysqli_error($con);
 		echo "\"armylistError\": $sql_error\",";
 	}
-	if(!mysqli_query($db,$SQL_DROP_playerlist))
+	if(!mysqli_query($con,$SQL_DROP_playerlist))
 	{
-		$sql_error = mysqli_error($db);
+		$sql_error = mysqli_error($con);
 		echo "\"playerlistError\":\"$sql_error\",";
 	}
-	if(!mysqli_query($db,$SQL_DELETE_GAME))
+	if(!mysqli_query($con,$SQL_DELETE_GAME))
 	{
-		$sql_error = mysqli_error($db);
+		$sql_error = mysqli_error($con);
 		echo "\"deletegame\":\"$sql_error\",";
 	}
 }
