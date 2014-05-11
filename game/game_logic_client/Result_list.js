@@ -409,7 +409,7 @@ function send_result_list_to_server()
 	xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 	xhr.setRequestHeader("TYPE","RESULT_LIST");
 	var data = "{\"result_list\":" + JSON.stringify(result_list.slice(last_result_index,result_list.length)) + "}";
-	console.log(data);
+	//console.log(data);
 	xhr.send(data);
 	console.log(xhr.responseText);
 	current_player.pturn = "0";

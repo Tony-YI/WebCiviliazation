@@ -346,6 +346,8 @@ function surrender_clicked_handler()
 		xhr.setRequestHeader("TYPE","SURRENDER");
 		xhr.setRequestHeader("MAX_RESULT_ID",getMAXResultId());
 		console.log("The server replies: " + xhr.responseText);
+		disable_all_army();
+		current_player.pturn = "0";
 	}
 	else
 	{
