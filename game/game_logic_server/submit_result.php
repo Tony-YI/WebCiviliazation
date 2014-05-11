@@ -61,6 +61,7 @@
 			$row = mysqli_fetch_row($result);
 			$new_result_id = $new_result_id + 1;
 			$SQL_INSERT_WIN_RESULT = "INSERT INTO game_{$game_id}_resultlist (result_id,action_type,player_id) VALUES ($new_result_id,'win',$row[0])";
+			mysqli_query($db,$SQL_INSERT_WIN_RESULT);
 		}
 		exit;
 	}
