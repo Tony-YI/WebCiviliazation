@@ -24,6 +24,6 @@
 	
 	<input type="button" id="button" value="Click" onclick="onclick1()"/>
 	<img src="images/cut3.png" id="img1">
-	<audio id="attackAudio"></audio>
+	<audio id="attackAudio" src="../../audio/cut.wav"></audio>
 
 </html>
