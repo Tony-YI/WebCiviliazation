@@ -328,14 +328,16 @@ img[user="none"]
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
+
+    background: gray;
 }
 .hexagon[function="range"]:before
 {
-    border-bottom: 25px solid;
+    border-bottom: 25px solid gray;
 }
 .hexagon[function="range"]:after
 {
-    border-top: 25px solid;
+    border-top: 25px solid gray;
 }
 .hexagon[function="norange"]
 {
@@ -350,14 +352,16 @@ img[user="none"]
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
+
+    background: gray;
 }
 .hexagon[function="norange"]:before
 {
-    border-bottom: 25px solid;
+    border-bottom: 25px solid gray;
 }
 .hexagon[function="norange"]:after
 {
-    border-top: 25px solid;
+    border-top: 25px solid gray;
 }
 
 .hexagon
