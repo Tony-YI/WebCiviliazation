@@ -351,7 +351,7 @@ SQL_STATEMENT;
 		$intv = (int)(($row_num - 2)/ 4);
 		$intv1 = range(1,$intv);
 		$intv2 = range($intv+1, $row_num - $intv);
-		$intv3 = range($intv+2, $row_num - $intv);
+		$intv3 = range($intv+2, $row_num - $intv-1);
 		$intv4 = range($row_num - $intv+1,$row_num - 2);
 		$intv5 = range($row_num - $intv+2,$row_num - 2);
 		$response['intervals'] = $intv5;
