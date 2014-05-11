@@ -224,11 +224,102 @@ img[user="none"]
     }
 }
 
-.hexagon[function="range"]1
+@keyframes range
 {
-    animation-name: hover;
-    -webkit-animation-name: hover;
-    -moz-animation-name: hover;
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;       
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1; 
+    }   
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;   
+    }
+}
+@-webkit-keyframes range
+{
+    0% {
+        -webkit-transform: scale(0.8);
+        opacity: 0.5;       
+    }
+    50% {
+        -webkit-transform: scale(1);
+        opacity: 1; 
+    }   
+    100% {
+        -webkit-transform: scale(0.8);
+        opacity: 0.5;   
+    }
+}
+@-moz-keyframes range
+{
+    0% {
+        -moz-transform: scale(0.8);
+        opacity: 0.5;       
+    }
+    50% {
+        -moz-transform: scale(1);
+        opacity: 1; 
+    }   
+    100% {
+        -moz-transform: scale(0.8);
+        opacity: 0.5;   
+    }
+}
+@keyframes norange
+{
+    0% {
+        transform: scale(0.5);
+        opacity: 1;       
+    }
+    50% {
+        transform: scale(0.5);
+        opacity: 1; 
+    }   
+    100% {
+        transform: scale(0.5);
+        opacity: 1;   
+    }
+}
+@-webkit-keyframes norange
+{
+    0% {
+        -webkit-transform: scale(0.5);
+        opacity: 1;       
+    }
+    50% {
+        -webkit-transform: scale(0.5);
+        opacity: 1; 
+    }   
+    100% {
+        -webkit-transform: scale(0.5);
+        opacity: 1;   
+    }
+}
+@-moz-keyframes norange
+{
+    0% {
+        -moz-transform: scale(0.5);
+        opacity: 1;       
+    }
+    50% {
+        -moz-transform: scale(0.5);
+        opacity: 1; 
+    }   
+    100% {
+        -moz-transform: scale(0.5);
+        opacity: 1;   
+    }
+}
+
+.hexagon[function="range"]
+{
+    animation-name: range;
+    -webkit-animation-name: range;
+    -moz-animation-name: range;
 
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
@@ -238,33 +329,21 @@ img[user="none"]
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
 
-    opacity: 0.5;
-    background: green;
-}
-.hexagon[function="range"]
-{
-    display: inline-block;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: box-shadow;
-    transition-property: box-shadow;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);
+    background: gray;
 }
 .hexagon[function="range"]:before
 {
-    border-bottom: 25px solid green;
+    border-bottom: 25px solid gray;
 }
 .hexagon[function="range"]:after
 {
-    border-top: 25px solid green;
+    border-top: 25px solid gray;
 }
 .hexagon[function="norange"]
 {
-    animation-name: hover;
-    -webkit-animation-name: hover;
-    -moz-animation-name: hover;
+    animation-name: norange;
+    -webkit-animation-name: norange;
+    -moz-animation-name: norange;
 
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
@@ -274,16 +353,15 @@ img[user="none"]
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
 
-    opacity: 0;
-    background: red;
+    background: gray;
 }
 .hexagon[function="norange"]:before
 {
-    border-bottom: 25px solid red;
+    border-bottom: 25px solid gray;
 }
 .hexagon[function="norange"]:after
 {
-    border-top: 25px solid red;
+    border-top: 25px solid gray;
 }
 
 .hexagon
