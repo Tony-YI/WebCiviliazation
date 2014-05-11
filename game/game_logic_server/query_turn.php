@@ -15,29 +15,11 @@
 		exit;
 	}
 	echo "{";
-	//check if the game is ended
-	if(($game_end = game_is_over($db,$game_id)))
-	{
-		//if so, get the winner's player id
-		$SQL_SELECT_WINNER = "SELECT player_id FROM game_{$game_id}_playerlist WHERE player_status != 2";
-		$result = mysqli_query($SQL_SELECT_WINNER);
-		$row = mysqli_fetch_row($result);
-		//get the maximum result id
-		$SQL_QUERY_MAX_RESULT_ID = "SELECT MAX(result_id) FROM game_{$game_id}_resultlist";
-		$tmp_result = mysqli_query($db,$SQL_QUERY_MAX_RESULT_ID);
-		$tmp_row = mysqli_fetch_row($tmp_result);
-		$new_result_id = (int) $tmp_row[0] + 1;
-
-		//insert the win result into the result list
-		$SQL_INSERT_WIN_RESULT = "INSERT INTO game_{$game_id}_resultlist (result_id,action_type,player_id) VALUES ($new_result_id,'win',$row[0])";
-		//mysqli_query($SQL_INSERT_WIN_RESULT);
-	}
 
 	$SQL_GET_ACTIVE_PLAYER = "SELECT * FROM game_{$game_id}_playerlist WHERE player_turn = 1";
 	$result = mysqli_query($db,$SQL_GET_ACTIVE_PLAYER);
 	$row = mysqli_fetch_row($result);
 	
-	echo ",\"game_end\":\"$game_end\"";
 	echo ",\"active_player\":\"$row[0]\"";
 	echo ",\"player_gold\":\"$row[2]\"";
 	echo ",\"player_wood\":\"$row[3]\"";
