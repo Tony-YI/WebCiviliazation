@@ -81,6 +81,10 @@ function Result(action_type)
 		this.army_id = null;
 		this.army_type = null;
 	}
+	else if(this.action_type == "gg")
+	{
+
+	}
 	else 
 	{
 		alert("Result constructor : invalid action type " + this.action_type)
@@ -214,7 +218,7 @@ function action(action_type,army_id,from_x,from_y,to_x,to_y,army_type)
 		this.army_id = army_id;
 		this.army_type = army_type;
 	}
-	else 
+	else
 	{
 		alert("action constructor: Invalid action_type " + action_type);
 		return null;
@@ -372,6 +376,10 @@ function parseRemoteResultList(latest_result_list)
 				tmp_army.army_status = "ready";
 				army_list.push(tmp_army);
 			}
+		}
+		else if(tmp_result_json["action_type"] == "gg" )
+		{
+			alert("Player " + getPlayerByID(tmp_result.player_id).pname + "has gg!");
 		}
 		result_list.push(tmp_result);
 		update_slot_own();

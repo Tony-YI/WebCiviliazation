@@ -333,11 +333,12 @@ function surrender_clicked_handler()
 	}
 	*/
 	var choice = confirm("Are you sure to surrender?");
-	if(choice)
+	if(choice && IsMyTurn())
 	{
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 		xhr.setRequestHeader("TYPE","SURRENDER");
+		xhr.setRequestHeader("MAX_RESULT_ID",getMAXResultId());
 		console.log("The server replies: " + xhr.responseText);
 	}
 	else

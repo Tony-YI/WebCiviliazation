@@ -183,7 +183,33 @@ SQL_STATEMENT;
 			echo ",\"sql_insert_record_error\":\"$sql_error\"";
 		}
 	}
+	//check does any player has no capital at all, and has not yet surrender
+	$SQL_SELECT_PLAYER_WITHOUT_CAPITAL = <<<SQL_STATEMENT
+	SELECT player_id FROM game_{$game_id}_playerlist
+	WHERE player_id NOT IN (SELECT slot_owner FROM game_{$game_id}_slotlist WHERE slot_type = 4)
+	AND player_status != 2
+SQL_STATEMENT;
+	$result = mysqli_query($SQL_SELECT_PLAYER_WITHOUT_CAPITAL);
+	if(mysqli_num_rows($result) != 0)
+	{
+		while($row = mysqli_fetch_row($result))
+		{
+			$surrender_id = $row[0];
+			//set the player_status to 2
+			$SQL_PLAYER_LOSE = "UPDATE game_{$game_id}_playerlist SET player_status = 2 WHERE player_id = $surrender_id";
+			mysqli_query($db,$SQL_PLAYER_LOSE);
 
+			//get the max result_id
+			$SQL_QUERY_MAX_RESULT_ID = "SELECT MAX(result_id) FROM game_{$game_id}_resultlist";
+			$tmp_result = mysqli_query($db,$SQL_QUERY_MAX_RESULT_ID);
+			$tmp_row = mysqli_fetch_row($tmp_result);
+			$max_result_id = (int) $tmp_row[0] + 1;
+
+			//insert into the result list
+			$SQL_INSERT_TO_RESULT = "INSERT INTO game_{$game_id}_slotlist (result_id,action_type,player_id) VALUES ($max_result_id,'gg',$surrender_id)";
+			mysqli_query($SQL_INSERT_TO_RESULT);
+		}
+	}
 }
 
 
