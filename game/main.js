@@ -80,7 +80,7 @@ function IsMyTurn()
 		}
 		else{}
 		var time_div = document.getElementById("time");
-		time_div.innerHTML = "Not your turn."
+		time_div.innerHTML = "Not your turn.";
 		return false;
 	}
 }
