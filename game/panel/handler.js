@@ -367,6 +367,8 @@ function nextround_clicked_handler()
 	if(IsMyTurn())
 	{
 		console.log("nextround_clicked_handler: sending the result list to the server");
+		remove_manual();
+		clear_range();
 		send_result_list_to_server();
 	}
 	else
