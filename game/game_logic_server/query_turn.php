@@ -14,6 +14,7 @@
 		echo "\"error_detail\":\"no_valid_cookie\"}";
 		exit;
 	}
+	echo "{";
 	//check if the game is ended
 	if(($game_end = game_is_over($db,$game_id)))
 	{
@@ -29,14 +30,14 @@
 
 		//insert the win result into the result list
 		$SQL_INSERT_WIN_RESULT = "INSERT INTO game_{$game_id}_resultlist (result_id,action_type,player_id) VALUES ($new_result_id,'win',$row[0])";
-		mysqli_query($SQL_INSERT_WIN_RESULT);
+		//mysqli_query($SQL_INSERT_WIN_RESULT);
 	}
 
 	$SQL_GET_ACTIVE_PLAYER = "SELECT * FROM game_{$game_id}_playerlist WHERE player_turn = 1";
 	$result = mysqli_query($db,$SQL_GET_ACTIVE_PLAYER);
 	$row = mysqli_fetch_row($result);
-	echo "{";
-	echo "\"game_end\":\"$game_end\"";
+	
+	echo ",\"game_end\":\"$game_end\"";
 	echo ",\"active_player\":\"$row[0]\"";
 	echo ",\"player_gold\":\"$row[2]\"";
 	echo ",\"player_wood\":\"$row[3]\"";
