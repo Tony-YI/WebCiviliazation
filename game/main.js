@@ -65,7 +65,7 @@ function IsMyTurn()
 		if(isSetTimeout){}
 		else
 		{
-			timeout = setInterval(time_up, 30000);
+			timeout = setTimeout(time_up, 30000);
 			isSetTimeout = true;
 		}
 		return true;
@@ -74,7 +74,7 @@ function IsMyTurn()
 	{
 		if(isSetTimeout)
 		{
-			clearInterval(timeout);
+			clearTimeout(timeout);
 			isSetTimeout = false;
 		}
 		else{}
