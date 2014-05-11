@@ -21,7 +21,13 @@
 		$result = mysqli_query($db,$SQL_VISITED_NUM);
 		$row_num = mysqli_num_rows($result);
 		$SQL_GAME_RESET = "UPDATE Game SET game_started = 0 WHERE game_id = $game_id";
-		mysqli_query($SQL_GAME_RESET);
+		if(!mysqli_query($db,$SQL_GAME_RESET))
+		{
+			$sql_error = mysqli_error($db);
+			echo "<!--";
+			echo "$sql_error";
+			echo "-->";
+		}
 
 		echo <<<HTML_CONTENT
 <!DOCTYPE html>
