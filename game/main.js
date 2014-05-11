@@ -5,6 +5,9 @@
 var current_player;
 var last_result_index = 0;
 var not_init = 1;
+var isSetTimeout;
+var timeout;
+var time = 0;
 function Init()
 {
 	//send request to get the initilization data
@@ -58,16 +61,35 @@ function Init_get_init_data()
 function IsMyTurn()
 {
 	if(current_player["pturn"] == "1")
+	{
+		if(isSetTimeout){}
+		else
+		{
+			timeout = setTimeout(nextround_clicked_handler,30000);
+			isSetTimeout = true;
+		}
 		return true;
+	}
 	else 
+	{
+		if(isSetTimeout)
+		{
+			clearTimeout(timeout);
+			isSetTimeout = false;
+		}
+		else{}
 		return false;
+	}
 }
 
 function query_turn()
 {
 	//If it is current player's turn, then do not query the server
+	console.log(time++);
 	if(IsMyTurn())
+	{
 		return ;
+	}
 	if(!display_init_done)
 		return ;
 	//If it is not current player's turn, send query to the server
