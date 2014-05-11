@@ -56,9 +56,19 @@
 		
 		if(game_is_over($db,$game_id))
 		{
-			$SQL_SELECT_WINNER = "SELECT player_id FROM game_{$game_id}_playerlist WHERE player_status != 2";
-			$result = mysqli_query($SQL_SELECT_WINNER);
+			$SQL_SELECT_WINNER = "SELECT player_id FROM game_{$game_id}_playerlist WHERE player_status = 0";
+			if(mysqli_query($db,$SQL_SELECT_WINNER))
+			{
+				$sql_error = mysqli_error($db);
+				echo ",\"SQL_SELECT_WINNER_USED\":\"$SQL_SELECT_WINNER\"";
+				echo ",\"sql_result\":\"$sql_error\"";
+			}
+			else
+				$result = mysqli_query($db,$SQL_SELECT_WINNER);
+			$row_num = mysqli_num_rows($result_id);
+			echo ",\"row_num\":\"$row_num\"";
 			$row = mysqli_fetch_row($result);
+			echo ",\"row[0]\":\"$row[0]\"";
 			$new_result_id = $new_result_id + 1;
 			$SQL_INSERT_WIN_RESULT = "INSERT INTO game_{$game_id}_resultlist (result_id,action_type,player_id) VALUES ($new_result_id,'win',$row[0])";
 			if(!mysqli_query($db,$SQL_INSERT_WIN_RESULT));
@@ -134,8 +144,8 @@
 				$defender_hp = $result["defender_remaining_hp"];
 				$SQL_UPDATE_ATTACKER_HP = "UPDATE game_{$game_id}_armylist SET army_hp = $attacker_hp WHERE army_id = $attacker_id";
 				$SQL_UPDATE_DEFENDER_HP = "UPDATE game_{$game_id}_armylist SET army_hp = $defender_hp WHERE army_id = $defender_id";
-				mysqli_query($SQL_UPDATE_ATTACKER_HP);
-				mysqli_query($SQL_UPDATE_DEFENDER_HP);
+				mysqli_query($db,$SQL_UPDATE_ATTACKER_HP);
+				mysqli_query($db,$SQL_UPDATE_DEFENDER_HP);
 			}
 			else if($result["action_type"] == "move")
 			{
@@ -207,7 +217,7 @@
 		{
 			//if so, get the winner's player id
 			$SQL_SELECT_WINNER = "SELECT player_id FROM game_{$game_id}_playerlist WHERE player_status != 2";
-			$result = mysqli_query($SQL_SELECT_WINNER);
+			$result = mysqli_query($db,$SQL_SELECT_WINNER);
 			$row = mysqli_fetch_row($result);
 			//get the maximum result id
 			$SQL_QUERY_MAX_RESULT_ID = "SELECT MAX(result_id) FROM game_{$game_id}_resultlist";
@@ -217,7 +227,7 @@
 
 			//insert the win result into the result list
 			$SQL_INSERT_WIN_RESULT = "INSERT INTO game_{$game_id}_resultlist (result_id,action_type,player_id) VALUES ($new_result_id,'win',$row[0])";
-			mysqli_query($SQL_INSERT_WIN_RESULT);
+			mysqli_query($db,$SQL_INSERT_WIN_RESULT);
 		}
 	}
 ?>
