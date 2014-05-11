@@ -90,7 +90,22 @@ function clean_small_map_dot()
 				break;
 
 				case 1: //normal slot
-				slot[i].style.backgroundColor = 'gray';
+				if(slot_list[i].owner == user_1)
+				{
+					set_slot_color(slot[i], i, user_1_color);
+				}
+				else if(slot_list[i].owner == user_2)
+				{
+					set_slot_color(slot[i], i, user_2_color);
+				}
+				else if(slot_list[i].owner == user_3)
+				{
+					set_slot_color(slot[i], i, user_3_color);
+				}
+				else
+				{
+					set_slot_color(slot[i], i, 'gray');
+				}
 				break;
 
 				case 2: //gold slot
