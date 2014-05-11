@@ -15,23 +15,23 @@ function set_slot_color(slot, i, color)
 	else if(slot_list[i].type_id == 2) //gold slot
 	{
 		slot.style.backgroundColor = color;
-		slot.style.border = '1px solid rgb(254,215,40)';
-		slot.style.width = '10px';
-		slot.style.height = '10px';
+		slot.style.border = '2px solid rgb(254,215,40)';
+		slot.style.width = '8px';
+		slot.style.height = '8px';
 	}
 	else if(slot_list[i].type_id == 3) //wood slot
 	{
 		slot.style.backgroundColor = color;
-		slot.style.border = '1px solid rgb(125,103,7)';
-		slot.style.width = '10px';
-		slot.style.height = '10px';
+		slot.style.border = '2px solid rgb(125,103,7)';
+		slot.style.width = '8px';
+		slot.style.height = '8px';
 	}
 	else if(slot_list[i].type_id == 4) //capital slot
 	{
 		slot.style.backgroundColor = color;
-		slot.style.border = '1px solid white';
-		slot.style.width = '10px';
-		slot.style.height = '10px';
+		slot.style.border = '2px solid white';
+		slot.style.width = '8px';
+		slot.style.height = '8px';
 	}
 }
 
@@ -102,9 +102,9 @@ function clean_small_map_dot()
 				break;
 
 				case 4: //capital
-				slot[i].style.border = '1px solid white';
-				slot[i].style.width = '10px';
-				slot[i].style.height = '10px';
+				slot[i].style.border = '2px solid white';
+				slot[i].style.width = '8px';
+				slot[i].style.height = '8px';
 				if(parseInt(slot_list[i].owner) == parseInt(user_1))
 				{
 					slot[i].style.backgroundColor = user_1_color;
@@ -161,9 +161,9 @@ function init_small_map()
 			break;
 
 			case 4: //capital
-			slot[i].style.border = '1px solid white';
-			slot[i].style.width = '10px';
-			slot[i].style.height = '10px';
+			slot[i].style.border = '2px solid white';
+			slot[i].style.width = '8px';
+			slot[i].style.height = '8px';
 			if(parseInt(slot_list[i].owner) == parseInt(user_1))
 			{
 				slot[i].style.backgroundColor = user_1_color;
