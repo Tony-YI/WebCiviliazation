@@ -14,12 +14,13 @@
 		echo "\"error_detail\":\"no_valid_cookie\"}";
 		exit;
 	}
-	
+	echo "{";
+
 	$SQL_GET_ACTIVE_PLAYER = "SELECT * FROM game_{$game_id}_playerlist WHERE player_turn = 1";
 	$result = mysqli_query($db,$SQL_GET_ACTIVE_PLAYER);
 	$row = mysqli_fetch_row($result);
-
-	echo "{\"active_player\":\"$row[0]\"";
+	
+	echo "\"active_player\":\"$row[0]\"";
 	echo ",\"player_gold\":\"$row[2]\"";
 	echo ",\"player_wood\":\"$row[3]\"";
 

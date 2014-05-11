@@ -91,6 +91,19 @@
 		mysqli_query($db,$SQL_PLAYER_TURN_CANCEL);
 		mysqli_query($db,$SQL_PLAYER_TURN_ACTIVATE);
 	}
+
+//this function will check whether the game is over
+function game_is_over($db,$game_id)
+{
+	$SQL_SELECT_LOSE_PLAYER = "SELECT * FROM game_{$game_id}_playerlist WHERE player_status = 2";
+	$result = mysqli_query($db,$SQL_SELECT_LOSE_PLAYER);
+	$num = mysqli_num_rows($result);
+	//echo "\"lose_player_num\":\"$num\"";
+	if(mysqli_num_rows($result) > 1)
+		return 1;
+	else 
+		return 0;
+}
 //InterLy please finish this function
 //This function will have the player have new resources according to the slots he/she owns
 function Player_get_resource($db,$game_id,$player_id)
@@ -211,7 +224,6 @@ SQL_STATEMENT;
 		}
 	}
 }
-
 
 
 
