@@ -20,6 +20,8 @@
 		$SQL_VISITED_NUM = "SELECT * FROM game_{$game_id}_playerlist WHERE player_status = 3";
 		$result = mysqli_query($db,$SQL_VISITED_NUM);
 		$row_num = mysqli_num_rows($result);
+		$SQL_GAME_RESET = "UPDATE Game SET game_started = 0 WHERE game_id = $game_id";
+		mysqli_query($SQL_GAME_RESET);
 
 		echo <<<HTML_CONTENT
 <!DOCTYPE html>
