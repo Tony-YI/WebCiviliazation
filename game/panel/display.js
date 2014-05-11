@@ -849,7 +849,7 @@ function addBoxes(list)
 
 		hexagon[i].appendChild(p); //frst DOM child
 
-		if(list[i].owner == user_id)
+		if(list[i].owner == user_id && list[i].type_id == 4)//capital slot
 		{
 			var anchor = document.createElement('div');
 			anchor.setAttribute('id', 'anchor');
