@@ -273,7 +273,7 @@ img[user="none"]
 {
     0% {
         transform: scale(0.5);
-        opacity: 0.5;       
+        opacity: 1;       
     }
     50% {
         transform: scale(0.5);
@@ -281,14 +281,14 @@ img[user="none"]
     }   
     100% {
         transform: scale(0.5);
-        opacity: 0.5;   
+        opacity: 1;   
     }
 }
 @-webkit-keyframes norange
 {
     0% {
         -webkit-transform: scale(0.5);
-        opacity: 0.5;       
+        opacity: 1;       
     }
     50% {
         -webkit-transform: scale(0.5);
@@ -296,14 +296,14 @@ img[user="none"]
     }   
     100% {
         -webkit-transform: scale(0.5);
-        opacity: 0.5;   
+        opacity: 1;   
     }
 }
 @-moz-keyframes norange
 {
     0% {
         -moz-transform: scale(0.5);
-        opacity: 0.5;       
+        opacity: 1;       
     }
     50% {
         -moz-transform: scale(0.5);
@@ -311,7 +311,7 @@ img[user="none"]
     }   
     100% {
         -moz-transform: scale(0.5);
-        opacity: 0.5;   
+        opacity: 1;   
     }
 }
 
@@ -329,16 +329,15 @@ img[user="none"]
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
 
-    opacity: 0.5;
-    background: green;
+    background: gray;
 }
 .hexagon[function="range"]:before
 {
-    border-bottom: 25px solid green;
+    border-bottom: 25px solid gray;
 }
 .hexagon[function="range"]:after
 {
-    border-top: 25px solid green;
+    border-top: 25px solid gray;
 }
 .hexagon[function="norange"]
 {
@@ -354,15 +353,15 @@ img[user="none"]
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
 
-    background: red;
+    background: gray;
 }
 .hexagon[function="norange"]:before
 {
-    border-bottom: 25px solid red;
+    border-bottom: 25px solid gray;
 }
 .hexagon[function="norange"]:after
 {
-    border-top: 25px solid red;
+    border-top: 25px solid gray;
 }
 
 .hexagon

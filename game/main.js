@@ -7,7 +7,7 @@ var last_result_index = 0;
 var not_init = 1;
 var isSetTimeout;
 var timeout;
-var time = 0;
+var time = 30;
 function Init()
 {
 	//send request to get the initilization data
@@ -65,7 +65,8 @@ function IsMyTurn()
 		if(isSetTimeout){}
 		else
 		{
-			timeout = setTimeout(nextround_clicked_handler,30000);
+			time = 30;
+			timeout = setInterval(time_up, 1000);
 			isSetTimeout = true;
 		}
 		return true;
@@ -74,10 +75,12 @@ function IsMyTurn()
 	{
 		if(isSetTimeout)
 		{
-			clearTimeout(timeout);
+			clearInterval(timeout);
 			isSetTimeout = false;
 		}
 		else{}
+		var time_div = document.getElementById("time");
+		time_div.innerHTML = "Not your turn.";
 		return false;
 	}
 }
@@ -85,7 +88,7 @@ function IsMyTurn()
 function query_turn()
 {
 	//If it is current player's turn, then do not query the server
-	console.log(time++);
+	//console.log(time++);
 	if(IsMyTurn())
 	{
 		return ;
@@ -147,4 +150,16 @@ function parseSlotOwnerChange(record)
 		last_occupationrecord_id = record[record.length - 1]["id"];
 	}
 	
+}
+
+function time_up()
+{
+	var time_div = document.getElementById("time");
+	time_div.innerHTML = "Time remaining: " + time + "s";
+	if(time == 0)
+	{
+		time_div.innerHTML = 'Time is up!';
+		nextround_clicked_handler();
+	}
+	time = time - 1;
 }

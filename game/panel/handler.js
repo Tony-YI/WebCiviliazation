@@ -61,8 +61,8 @@ function clear_range(action)
 			slot_div[i].removeEventListener('mousedown', invalid_action, false);
 		}
 		slot_div[i].setAttribute('function', 'none');
+		slot_div[i].removeEventListener('mousedown', invalid_action, false);
 	}
-	latest_slot.removeEventListener('mousedown', invalid_action, false);
 	remove_manual();
 }
 
@@ -366,6 +366,9 @@ function nextround_clicked_handler()
 	*/
 	if(IsMyTurn())
 	{
+		remove_manual();
+		clear_range('attack');
+		clear_range('move');
 		console.log("nextround_clicked_handler: sending the result list to the server");
 		send_result_list_to_server();
 	}
