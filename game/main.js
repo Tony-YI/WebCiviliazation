@@ -161,4 +161,5 @@ function time_up()
 		time_div.innerHTML = 'Time is up!';
 		nextround_clicked_handler();
 	}
+	time = time - 1;
 }
