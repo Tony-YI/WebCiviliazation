@@ -6,7 +6,7 @@ function update_result_list_div()
 {
 	var result_list_div = document.getElementById("result_list_div");
 	result_list_div.innerHTML = "";
-	if(result_list.length < 10)
+	if(result_list.length < 20)
 	{
 		for(var count = 0;count < result_list.length;count++)
 		{
@@ -24,7 +24,7 @@ function update_result_list_div()
 	}
 	else
 	{
-		for(var count = result_list.length - 10;count < result_list.length;count++)
+		for(var count = result_list.length - 20;count < result_list.length;count++)
 		{
 			var new_p = document.createElement("p");
 			try
