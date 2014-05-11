@@ -57,12 +57,14 @@
 		if(game_is_over($db,$game_id))
 		{
 			$SQL_SELECT_WINNER = "SELECT player_id FROM game_{$game_id}_playerlist WHERE player_status != 2";
-			if(!($result = mysqli_query($SQL_SELECT_WINNER))
+			if(mysqli_query($SQL_SELECT_WINNER))
 			{
 				$sql_error = mysqli_error($db);
 				echo ",\"SQL_STATEMENT_USED\":\"$SQL_SELECT_WINNER\"";
 				echo ",\"sql_result\":\"$sql_error\"";
 			}
+			else
+				$result = mysqli_query($SQL_SELECT_WINNER);
 			$row = mysqli_fetch_row($result);
 			echo ",\"row[0]\":\"$row[0]\"";
 			$new_result_id = $new_result_id + 1;
