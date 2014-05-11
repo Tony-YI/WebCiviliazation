@@ -19,6 +19,8 @@ function build_clicked_handler()
 }
 function build_clicked_Exit()
 {
+	var audio = document.getElementById("clickButton");
+    	audio.play();
 	var buildArmy = document.getElementById('buildArmy');
     	buildArmy.style.display= "none";
 }
