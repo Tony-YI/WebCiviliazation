@@ -46,6 +46,7 @@
 			echo ",\"surrender_sql_error\":\"$sql_error\"";
 		}
 		echo "}";
+		nextTurn();
 		exit;
 	}
 
