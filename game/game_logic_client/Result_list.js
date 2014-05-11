@@ -81,6 +81,10 @@ function Result(action_type)
 		this.army_id = null;
 		this.army_type = null;
 	}
+	else if(this.action_type == "gg")
+	{
+
+	}
 	else 
 	{
 		alert("Result constructor : invalid action type " + this.action_type)
@@ -214,7 +218,7 @@ function action(action_type,army_id,from_x,from_y,to_x,to_y,army_type)
 		this.army_id = army_id;
 		this.army_type = army_type;
 	}
-	else 
+	else
 	{
 		alert("action constructor: Invalid action_type " + action_type);
 		return null;
@@ -373,6 +377,11 @@ function parseRemoteResultList(latest_result_list)
 				army_list.push(tmp_army);
 			}
 		}
+		else if(tmp_result_json["action_type"] == "gg" )
+		{
+			if(tmp_result.player_id != current_player.pid)
+			alert("Player " + getPlayerByID(tmp_result.player_id).pname + " has gg!");
+		}
 		result_list.push(tmp_result);
 		update_slot_own();
 	}
@@ -401,7 +410,7 @@ function send_result_list_to_server()
 	xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 	xhr.setRequestHeader("TYPE","RESULT_LIST");
 	var data = "{\"result_list\":" + JSON.stringify(result_list.slice(last_result_index,result_list.length)) + "}";
-	console.log(data);
+	//console.log(data);
 	xhr.send(data);
 	console.log(xhr.responseText);
 	current_player.pturn = "0";
