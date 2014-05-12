@@ -175,17 +175,17 @@ function time_up()
 
 function generate_quit_button()
 {
-	//alert("generating the quit button");
+	alert("You may now quit the game by clicking the button in the info board");
 	var info_div = document.getElementById("info");
 	var quit_button = document.createElement("button");
 	quit_button.innerHTML = "quit this game";
-	quit_button.onclick = "quit_game()";
+	quit_button.addEventListener("onclick",quit_game,false);
 	info_div.appendChild(quit_button);
 }
 
 function quit_game()
 {
-	alert("generating quit request");
+	alert("quiting the game");
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","/game/game_logic_server/quit_game.php",false);
 	xhr.send();
