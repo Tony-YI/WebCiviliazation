@@ -1,5 +1,6 @@
 <?php
 	//This file will handle the turn result submiitted by the player
+	$APP_ROOT = $_ENV["OPENSHIFT_REPO_DIR"];
 	require_once($APP_ROOT."lib/db.php");
 	require_once("lib.php");
 	$user_id = $_COOKIE["CURRENT_USER"];
