@@ -129,7 +129,7 @@ Result.prototype.Result_toString = function()
 			result_str += ",causing " + attacker_str +  " dead";
 		if(this.defender_remaining_hp == 0)
 			result_str += ",causing " + defender_str + " dead";
-		var player_name = "Player " getPlayerByID(this.player_id).pname + "\'s ";
+		var player_name = "Player " + getPlayerByID(this.player_id).pname + "\'s ";
 		result_str = this.Result_id  + ":" + player_name + attacker_str  + action_str + defender_str + result_str;
 	}
 	else if(this.action_type == "move")
@@ -138,7 +138,7 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " move to ";
 		var target_str = "(" + this.to_x + "," + this.to_y + ")";
-		var player_name = "Player " getPlayerByID(this.player_id).pname + "\'s ";
+		var player_name = "Player " + getPlayerByID(this.player_id).pname + "\'s ";
 		result_str =  this.Result_id  + ":" +  player_name + actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "defend")
@@ -147,7 +147,7 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " defend ";
 		var target_str = "(" + this.from_x + "," + this.from_y + ")";
-		var player_name = "Player " getPlayerByID(this.player_id).pname + "\'s ";
+		var player_name = "Player " + getPlayerByID(this.player_id).pname + "\'s ";
 		result_str =  this.Result_id  + ":" + player_name  +  actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "build")
@@ -155,7 +155,7 @@ Result.prototype.Result_toString = function()
 		var actor = getArmyById(this.army_id);
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " was built";
-		var player_name = "Player " getPlayerByID(this.player_id).pname + "\'s ";
+		var player_name = "Player " + getPlayerByID(this.player_id).pname + "\'s ";
 		result_str =  this.Result_id + ":" + player_name + actor_str + action_str;
 	}
 	return result_str;

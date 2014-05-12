@@ -9,6 +9,7 @@ var isSetTimeout;
 var timeout;
 var time = 120;
 var game_over = 0;
+
 function Init()
 {
 	//send request to get the initilization data
@@ -170,4 +171,9 @@ function time_up()
 	}
 	time_div.innerHTML = "Time remaining: " + time + "s";
 	time = time - 1;
+}
+
+function generate_quit_button()
+{
+	var 
 }
