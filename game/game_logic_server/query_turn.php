@@ -1,6 +1,7 @@
 <?php
 #This file will handle the player's query about whether it's his/her turn
-	require_once("../../lib/db.php");
+	$APP_ROOT = $_ENV["OPENSHIFT_REPO_DIR"];
+	require_once($APP_ROOT."lib/db.php");
 	require_once("lib.php");
 	$user_id = $_COOKIE["CURRENT_USER"];
 	$game_id = $_COOKIE["IN_GAME"];

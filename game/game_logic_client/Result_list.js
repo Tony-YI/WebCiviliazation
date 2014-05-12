@@ -396,7 +396,10 @@ function parseRemoteResultList(latest_result_list)
 			if(tmp_result.player_id != current_player.pid)
 				alert("Player " + getPlayerByID(tmp_result.player_id).pname + " has gg!");
 			else
+			{
 				current_player.pstatus = 2;
+				generate_quit_button();
+			}
 		}
 		else if(tmp_result_json["action_type"] == "win")
 		{

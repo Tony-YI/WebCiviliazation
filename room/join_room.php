@@ -167,9 +167,9 @@
 			//Every player has 50 gold and wood at the begining,
 			//p1 starts first
 			if($count == 0)
-				$SQL_INSERT_playerlist .= "50,50,0,1)";
+				$SQL_INSERT_playerlist .= "30,30,0,1)";
 			else
-				$SQL_INSERT_playerlist .= "50,50,0,0)";
+				$SQL_INSERT_playerlist .= "30,30,0,0)";
 			if(!mysqli_query($con,$SQL_INSERT_playerlist))
 				$response["SQL_INSERT_playerlist_$count"] = mysqli_error($con);
 		}
