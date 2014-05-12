@@ -20,7 +20,7 @@ body
 	top: 40%;
 	background-color: black;
 	color: #696969;
-	font-size: 12px;
+	font-size: 25px;
 	font-family: Comic Sans MS, Serif;
 	text-decoration: none;
 	z-index: 105;
@@ -28,7 +28,9 @@ body
 }
 #btn
 {
-	display: inline-block;
+	position: relative;
+	top: 80;
+	left: 20;
 	background: rgba(230,230,250,.85);
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
