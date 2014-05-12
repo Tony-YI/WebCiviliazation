@@ -177,7 +177,7 @@ function generate_quit_button()
 {
 	var quit_button = document.getElementById("quit_game");
 	quit_button.style.display = "inline-block";
-
+}
 function quit_game()
 {
 	alert("quiting the game");
