@@ -7,7 +7,7 @@ var last_result_index = 0;
 var not_init = 1;
 var isSetTimeout;
 var timeout;
-var time = 30;
+var time = 120;
 var game_over = 0;
 function Init()
 {
@@ -66,7 +66,7 @@ function IsMyTurn()
 		if(isSetTimeout){}
 		else
 		{
-			time = 30;
+			time = 120;
 			timeout = setInterval(time_up, 1000);
 			isSetTimeout = true;
 		}
@@ -160,7 +160,7 @@ function parseSlotOwnerChange(record)
 function time_up()
 {
 	var time_div = document.getElementById("time");
-	if(time == 17){
+	if(time == 16){
 		document.getElementById("count15").play();
 	}
 	if(time == 1)

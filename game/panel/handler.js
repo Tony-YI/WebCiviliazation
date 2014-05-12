@@ -338,6 +338,7 @@ function surrender_clicked_handler()
 		return;
 	}
 	*/
+
 	var audio = document.getElementById("clickSurrender");
 	audio.play();
 	if(!IsMyTurn())
@@ -350,6 +351,8 @@ function surrender_clicked_handler()
 	
 	if(choice)
 	{
+		document.getElementById("count15").pause();
+		document.getElementById("count15").currentTime = 0;
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 		xhr.setRequestHeader("TYPE","SURRENDER");
@@ -371,6 +374,8 @@ function nextround_clicked_handler()
 	/*
 	This function handle the click event on the next round button
 	*/
+	document.getElementById("count15").pause();
+	document.getElementById("count15").currentTime = 0;
 	var audio = document.getElementById("clickNextround");
 	audio.play();
 	if(IsMyTurn())
