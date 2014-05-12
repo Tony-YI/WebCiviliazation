@@ -32,6 +32,7 @@
 <html>
 <head>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="end.css"/>
     <script type="text/javascript" src="/jquery.cookie.js"></script>
 	<script type="text/javascript">
 		function delete_game()
@@ -42,10 +43,12 @@
 	</script>
 </head>
 <body>
+	<div id = "conv">
 	<p>$row_num players have known the game is over</p>
 	<p>The game has endded !</p>
 	<p>Thank you for playing !</p>
 	<button type="button" onclick="delete_game()">Click Here to return to room selection</button>
+	</div>
 </body>
 </html>
 HTML_CONTENT;

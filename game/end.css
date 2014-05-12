@@ -1,0 +1,23 @@
+body
+{
+	background-image: url(../images/bg0.jpg);
+	background-repeat: no-repeat; 
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	margin: 0px;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	opacity:0.8; 
+	-khtml-opacity: 0.8;
+}
+#conv
+{
+	width: 200px;
+	border: 1px solid red;
+	position: fixed;
+	right: 9px;
+	top: 9px;
+	background-color: white;
+	z-index: 105;
+	opacity: 0.9;
+}
