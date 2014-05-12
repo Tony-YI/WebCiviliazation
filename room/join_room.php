@@ -17,7 +17,7 @@
 		//If the cookie exists
 		$user_id = $_SERVER['HTTP_USERID'];
 		$room_id = $_SERVER['HTTP_ROOMID'];
-		$SQL_CHECK_ROOM = "SELECT * FROM Game WHERE Game_id = '$room_id' AND game_started = 0";
+		$SQL_CHECK_ROOM = "SELECT * FROM Game WHERE Game_id = '$room_id' AND game_started IS NULL";
 		$result = mysqli_query($db, $SQL_CHECK_ROOM);
 		if(mysqli_num_rows($result) == 0)
 		{
