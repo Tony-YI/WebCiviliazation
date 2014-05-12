@@ -175,13 +175,8 @@ function time_up()
 
 function generate_quit_button()
 {
-	alert("You may now quit the game by clicking the button in the info board");
-	var info_div = document.getElementById("info");
-	var quit_button = document.createElement("button");
-	quit_button.innerHTML = "quit this game";
-	quit_button.addEventListener("onclick",quit_game,true);
-	info_div.appendChild(quit_button);
-}
+	var quit_button = document.getElementById("quit_game");
+	quit_button.style.display = "inline-block";
 
 function quit_game()
 {
