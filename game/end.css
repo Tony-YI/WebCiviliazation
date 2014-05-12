@@ -13,7 +13,7 @@ body
 #conv
 {
 	width: 400px;
-	height: 300px;
+	height: 200px;
 	border: 2px solid white;
 	position: fixed;
 	left: 30%;
@@ -29,7 +29,6 @@ body
 #btn
 {
 	position: relative;
-	left: 20px;
 	background: rgba(230,230,250,.85);
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
