@@ -129,8 +129,8 @@ Result.prototype.Result_toString = function()
 			result_str += ",causing " + attacker_str +  " dead";
 		if(this.defender_remaining_hp == 0)
 			result_str += ",causing " + defender_str + " dead";
-		var player_name = getPlayerByID(this.player_id).pname;
-		result_str = "(" +  this.Result_id + ")" + ":" + player_name + attacker_str  + action_str + defender_str + result_str;
+		var player_name = "Player " getPlayerByID(this.player_id).pname + "\'s ";
+		result_str = this.Result_id  + ":" + player_name + attacker_str  + action_str + defender_str + result_str;
 	}
 	else if(this.action_type == "move")
 	{
@@ -138,8 +138,8 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " move to ";
 		var target_str = "(" + this.to_x + "," + this.to_y + ")";
-		var player_name = getPlayerByID(this.player_id).pname;
-		result_str = "(" + this.Result_id + ")" + ":" +  player_name +actor_str + action_str + target_str;
+		var player_name = "Player " getPlayerByID(this.player_id).pname + "\'s ";
+		result_str =  this.Result_id  + ":" +  player_name + actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "defend")
 	{
@@ -147,16 +147,16 @@ Result.prototype.Result_toString = function()
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " defend ";
 		var target_str = "(" + this.from_x + "," + this.from_y + ")";
-		var player_name = getPlayerByID(this.player_id).pname;
-		result_str = "(" + this.Result_id + ")" + ":" + player_name  +  actor_str + action_str + target_str;
+		var player_name = "Player " getPlayerByID(this.player_id).pname + "\'s ";
+		result_str =  this.Result_id  + ":" + player_name  +  actor_str + action_str + target_str;
 	}
 	else if(this.action_type == "build")
 	{
 		var actor = getArmyById(this.army_id);
 		var actor_str = actor.typename + "( army_id:" + actor.army_id + ")";
 		var action_str = " was built";
-		var player_name = getPlayerByID(this.player_id).pname;
-		result_str = "(" + this.Result_id + ")"  + ":" + player_name + actor_str + action_str;
+		var player_name = "Player " getPlayerByID(this.player_id).pname + "\'s ";
+		result_str =  this.Result_id + ":" + player_name + actor_str + action_str;
 	}
 	return result_str;
 }
@@ -373,7 +373,9 @@ function parseRemoteResultList(latest_result_list)
 		{
 			tmp_result.army_id = tmp_result_json["defender_id"];
 			tmp_result.setFrom(tmp_result_json["from_x"],tmp_result_json["from_y"]);
-			//The defending army should have a bouns on its attack
+			//The defending army should have a bonus on its attack
+			var tmp_army = getArmyById(tmp_result.army_id);
+			tmp_army.attack = tmp_army.attack + 1;
 		}
 		else if(tmp_result_json["action_type"] == "build")
 		{
@@ -392,11 +394,14 @@ function parseRemoteResultList(latest_result_list)
 		else if(tmp_result_json["action_type"] == "gg" )
 		{
 			if(tmp_result.player_id != current_player.pid)
-			alert("Player " + getPlayerByID(tmp_result.player_id).pname + " has gg!");
+				alert("Player " + getPlayerByID(tmp_result.player_id).pname + " has gg!");
+			else
+				current_player.pstatus = 2;
 		}
 		else if(tmp_result_json["action_type"] == "win")
 		{
 			alert("Player " + getPlayerByID(tmp_result.player_id).pname + " has won the game!");
+			game_over = 1;
 			window.location.href = "/game/end.php";
 		}
 		result_list.push(tmp_result);

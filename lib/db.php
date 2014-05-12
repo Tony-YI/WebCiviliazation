@@ -6,7 +6,7 @@
 #$MYSQL_PWD is the password of the MYSQL SERVER
 #$MYSQL_USR is the username of the MYSQL SERVER
 
-$army_hp = array(5,3,2);
+$army_hp = array(5,3,3);
 $army_attack = array(3,4,1);
 $army_gold_cost = array(20,25,15);
 $army_wood_cost = array(20,15,25);

@@ -8,6 +8,7 @@ var not_init = 1;
 var isSetTimeout;
 var timeout;
 var time = 30;
+var game_over = 0;
 function Init()
 {
 	//send request to get the initilization data
@@ -120,11 +121,15 @@ function query_turn()
 			//parseRemoteResultList() is implemented in /game/game_logic_server/Result_list.js
 			parseRemoteResultList(response["latest_result_list"]);
 			//last_result_index = result_list.length;
+			
 			//parseSlotOwnerChange() is implemented here 
 			parseSlotOwnerChange(response["occupation_record"]);
-			setActivePlayer(response["active_player"]);			
+			setActivePlayer(response["active_player"]);
+			
+			//this function will reset the attack to default value, called in order to cancel the defend effect in the previous round
+			reset_army_attack(response["active_player"]);	
 			update_turn_div();
-			if(IsMyTurn())
+			if(IsMyTurn() && !game_over)
 			{
 				window.current_player.gold = response["player_gold"];
 				window.current_player.wood = response["player_wood"];

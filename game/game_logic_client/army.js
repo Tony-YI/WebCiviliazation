@@ -30,6 +30,22 @@ function reinit_not_dead_army()
 	}
 }
 
+//this function will reset the attack to default value, called in order to cancel the defend effect in the previous round
+function reset_army_attack(player_id)
+{
+	for(var count = 0;count < army_list.length;count++)
+	{
+		if(player_id == army_list[count].owner)
+		{
+			if(army_list[count].type_id == 1)
+				army_list[count].attack = 3;
+			else if(army_list[count].type_id == 2)
+				army_list[count].attack = 4;
+			else if(army_list[count].type_id == 3)
+				army_list[count].attack = 1;
+		}
+	}
+}
 function disable_all_army()
 {
 	for(var count = 0;count < slot_list.length;count++)
@@ -94,8 +110,8 @@ function Army(army_id,type_id,army_owner)
 	else if(type_id == "3")
 	{
 		//archer
-		this.max_hp = 2;
-		this.hp = 2;
+		this.max_hp = 3;
+		this.hp = 3;
 		this.ap = 1;
 		this.attack = 1;
 		this.typename = "archer";
@@ -104,25 +120,4 @@ function Army(army_id,type_id,army_owner)
 	this.position_y = null;
 }
 
-//This function return a set of {army_id,position_x,position_y} to indicates slots that it can attack
-Army.prototype.attack_range = function()
-{
-};
 
-//This function return a set of {x,y} to indicates slots that it can move to 
-Army.prototype.move_range = function()
-{
-};
-
-//This function will realize the attack of a army,
-/*
-	1. 
-	.add the attack function to the form
-*/
-Army.prototype.attack = function()
-{
-};
-
-Army.prototype.move = function()
-{
-};
