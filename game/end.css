@@ -20,8 +20,8 @@ body
 	top: 50px;
 	background-color: black;
 	color: #696969;
-	font-size: 25px;
-	font-family: Comic Sans MS, Serif;
+	font-size: 20px;
+	font-family: Buxton Sketch, Serif;
 	text-decoration: none;
 	z-index: 105;
 	opacity: 0.9;
@@ -29,7 +29,7 @@ body
 #btn
 {
 	position: relative;
-	top: 250px;
+	top: 50px;
 	left: 20px;
 	background: rgba(230,230,250,.85);
 	-webkit-border-radius: 8px;
@@ -37,7 +37,7 @@ body
 	color: #696969;
 	border-radius: 8px;
 	font-size: 12px;
-	font-family: Buxton Sketch, Serif;
+	font-family: Comic Sans MS, Serif;
 	text-decoration: none;
 
 	transition:border linear .3s,box-shadow linear .7s;
