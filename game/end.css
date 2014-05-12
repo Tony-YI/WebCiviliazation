@@ -29,15 +29,15 @@ body
 #btn
 {
 	position: relative;
-	top: 80;
-	left: 20;
+	top: 250px;
+	left: 20px;
 	background: rgba(230,230,250,.85);
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	color: #696969;
 	border-radius: 8px;
 	font-size: 12px;
-	font-family: Comic Sans MS, Serif;
+	font-family: Buxton Sketch, Serif;
 	text-decoration: none;
 
 	transition:border linear .3s,box-shadow linear .7s;
