@@ -1,6 +1,6 @@
 <?php
 	//This file will handle the turn result submiitted by the player
-	require_once("../../lib/db.php");
+	require_once($APP_ROOT."lib/db.php");
 	require_once("lib.php");
 	$user_id = $_COOKIE["CURRENT_USER"];
 	$game_id = $_COOKIE["IN_GAME"];

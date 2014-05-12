@@ -175,5 +175,18 @@ function time_up()
 
 function generate_quit_button()
 {
+	var info_div = document.getElementById("info");
 	var quit_button = document.createElement("div");
+	quit_button.innerHTML = "quit this game";
+	quit_button.onclick = "quit_game()";
+	info_div.appendChild(quit_button);
+}
+
+function quit_game()
+{
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","/game/game_logic_server/quit_game.php",false);
+	xhr.send();
+	alert(xhr.responseText);
+	window.location.href = "/room.php";
 }
