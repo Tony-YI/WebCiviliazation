@@ -65,7 +65,7 @@ function IsMyTurn()
 		if(isSetTimeout){}
 		else
 		{
-			time = 30;
+			time = 120;
 			timeout = setInterval(time_up, 1000);
 			isSetTimeout = true;
 		}
