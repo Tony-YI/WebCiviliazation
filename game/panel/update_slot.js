@@ -177,9 +177,9 @@ function update_move(from_x, from_y, to_x, to_y, army_id)
 
 function update_defend(from_x, from_y, to_x, to_y, army_id)
 {
-	var hexagon_to = get_hexagon(to_x, to_y);
-	var army_id_to = army_id;
-	clear_army_animation(to_x, to_y, army_id_to);
+	var hexagon_to = get_hexagon(from_x, from_y);
+	var army_id_from = army_id;
+	clear_army_animation(from_x, from_y, army_id_from);
 }
 
 function update_build(from_x, from_y, to_x, to_y, army_id)
