@@ -175,6 +175,7 @@ function time_up()
 
 function generate_quit_button()
 {
+	alert("You have lost the game, you may quit game by clicking the button on the info board");
 	var quit_button = document.getElementById("quit_game");
 	quit_button.style.display = "inline-block";
 }
