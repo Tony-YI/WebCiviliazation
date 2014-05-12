@@ -47,7 +47,7 @@
 	<p>$row_num players have known the game is over</p>
 	<p>The game has endded !</p>
 	<p>Thank you for playing !</p>
-	<button type="button" onclick="delete_game()">Click Here to return to room selection</button>
+	<button type="button" onclick="delete_game()" id="btn">Click Here to return to room selection</button>
 	</div>
 </body>
 </html>

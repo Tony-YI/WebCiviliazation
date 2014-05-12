@@ -15,9 +15,29 @@ body
 	width: 200px;
 	border: 1px solid red;
 	position: fixed;
-	right: 9px;
-	top: 9px;
+	left: 40%;
+	top: 40%;
 	background-color: white;
 	z-index: 105;
 	opacity: 0.9;
+}
+#btn
+{
+	display: inline-block;
+	background: rgba(230,230,250,.85);
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	color: #696969;
+	border-radius: 8px;
+	font-size: 12px;
+	font-family: Comic Sans MS, Serif;
+	text-decoration: none;
+
+	transition:border linear .3s,box-shadow linear .7s;
+	-moz-transition:border linear .3s,-moz-box-shadow linear .7s;
+	-webkit-transition:border linear .3s,-webkit-box-shadow linear .7s;
+	outline:none;border-color:rgba(230,230,250,.75);
+	box-shadow:0 0 8px rgba(230,230,250,.5);
+	-moz-box-shadow:0 0 8px rgba(230,230,250,.5);
+	-webkit-box-shadow:0 0 8px rgba(230,230,250,.3);
 }
