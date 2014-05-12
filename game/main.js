@@ -7,7 +7,7 @@ var last_result_index = 0;
 var not_init = 1;
 var isSetTimeout;
 var timeout;
-var time = 30;
+var time = 120;
 function Init()
 {
 	//send request to get the initilization data
