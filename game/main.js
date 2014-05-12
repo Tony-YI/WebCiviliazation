@@ -177,7 +177,7 @@ function generate_quit_button()
 {
 	alert("generating the quit button");
 	var info_div = document.getElementById("info");
-	var quit_button = document.createElement("div");
+	var quit_button = document.createElement("button");
 	quit_button.innerHTML = "quit this game";
 	quit_button.onclick = "quit_game()";
 	info_div.appendChild(quit_button);
