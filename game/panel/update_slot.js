@@ -168,6 +168,7 @@ function update_move(from_x, from_y, to_x, to_y, army_id)
 		type = 'type_C';
 	}
 
+	clear_army_animation(to_x, to_y, army_id_to);
 	clear_army_type(hexagon_from, 'none');
 	set_army_type(hexagon_to, type, army_id);
 	update_slot_list_own(hexagon_from, army_id_from);
@@ -176,7 +177,9 @@ function update_move(from_x, from_y, to_x, to_y, army_id)
 
 function update_defend(from_x, from_y, to_x, to_y, army_id)
 {
-
+	var hexagon_to = get_hexagon(to_x, to_y);
+	var army_id_to = army_id;
+	clear_army_animation(to_x, to_y, army_id_to);
 }
 
 function update_build(from_x, from_y, to_x, to_y, army_id)
