@@ -175,5 +175,5 @@ function time_up()
 
 function generate_quit_button()
 {
-	var 
+	var quit_button = document.createElement("div");
 }
