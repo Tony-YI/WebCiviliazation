@@ -38,7 +38,7 @@
 		$response = str_replace("}\"", "}", $response);
 		$response = str_replace("null", "\"null\"", $response);
 
-		$SQL_INSPECT_GAMES = "SELECT * FROM Game ORDER BY game_id ASC";
+		$SQL_INSPECT_GAMES = "SELECT * FROM Game WHERE game_started = 0 ORDER BY game_id ASC";
 		$result = mysqli_query($db,$SQL_INSPECT_GAMES);
 		$SQL_INSPECT_USERS = "SELECT username FROM User ORDER BY user_id ASC";
 		$result2 = mysqli_query($db,$SQL_INSPECT_USERS);
