@@ -175,6 +175,7 @@ function time_up()
 
 function generate_quit_button()
 {
+	alert("generating the quit button");
 	var info_div = document.getElementById("info");
 	var quit_button = document.createElement("div");
 	quit_button.innerHTML = "quit this game";
