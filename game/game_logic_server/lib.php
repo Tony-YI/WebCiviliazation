@@ -1,6 +1,6 @@
 <?php
-
-	require_once("../../lib/db.php");
+	$APP_ROOT = $_ENV["OPENSHIFT_REPO_DIR"];
+	require_once($APP_ROOT."lib/db.php");
 	
 	function IsMyTurn($db,$user_id,$game_id)
 	{
@@ -95,7 +95,7 @@
 //this function will check whether the game is over
 function game_is_over($db,$game_id)
 {
-	$SQL_SELECT_LOSE_PLAYER = "SELECT * FROM game_{$game_id}_playerlist WHERE player_status = 2";
+	$SQL_SELECT_LOSE_PLAYER = "SELECT * FROM game_{$game_id}_playerlist WHERE player_status >= 2";
 	$result = mysqli_query($db,$SQL_SELECT_LOSE_PLAYER);
 	$num = mysqli_num_rows($result);
 	//echo "\"lose_player_num\":\"$num\"";
@@ -196,7 +196,7 @@ SQL_STATEMENT;
 			echo ",\"sql_insert_record_error\":\"$sql_error\"";
 		}
 	}
-	
+
 	//check does any player has no capital at all, and has not yet surrender
 	$SQL_SELECT_PLAYER_WITHOUT_CAPITAL = <<<SQL_STATEMENT
 	SELECT player_id FROM game_{$game_id}_playerlist

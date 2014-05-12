@@ -40,6 +40,7 @@
 
 <body onload="Init()">
 	<div id="info">
+		<div id="time"></div>
 		<div id="turn">
 			<div class="user_turn"></div>
 			<div class="user_turn"></div>
@@ -52,7 +53,7 @@
 		<div id="hexagon_info"></div>
 		<button id="build_army" type="button" onclick="build_clicked_handler()">Build a new army</button>
 		<button id="nextround" type="button" onclick="nextround_clicked_handler()">Next Round</button>
-		<button id="surrender" type="button"  onclick="surrender_clicked_handler()">surrender</button>
+		<button id="surrender" type="button"  onclick="surrender_clicked_handler()">Surrender</button>
 	</div>
 
 	<div id="result_list_div"></div>
@@ -89,5 +90,11 @@
 		</div>
 	</div>
     <audio id="attackAudio" src="../../audio/cut.wav"></audio>
+    <audio id="clickButton" src="../../audio/button.wav"></audio>
+    <audio id="goHome" src="../../audio/gohome.wav"></audio>
+    <audio id="armyBirth" src="../../audio/buildarmy.wav"></audio>
+    <audio id="clickSurrender" src="../../audio/quit.wav"></audio>
+    <audio id="clickNextround" src="../../audio/nextround.wav"></audio>
+    <audio id="count15" src="../../audio/count15.wav"></audio>
 </body>
 </html>

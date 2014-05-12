@@ -7,16 +7,27 @@ function build_clicked_handler()
     4.show the build result
     5.add the result to the result list 
     */
-    var buildArmy = document.getElementById('buildArmy');
-    //alert(buildArmy);
-    buildArmy.style.display= "inline-block";
-    buildArmy.style.zIndex= "200";
+    var audio = document.getElementById("clickButton");
+    audio.play();
+    if(IsMyTurn()){
+    	var buildArmy = document.getElementById('buildArmy');
+	//alert(buildArmy);
+	buildArmy.style.display= "inline-block";
+	buildArmy.style.zIndex= "200";
+    }
+    else
+    {
+    	alert("You cannot build a new Army when it's not your turn");
+	return ;
+    }
 
 
     /*buildArmy.innerHTML = """"""*/
 }
 function build_clicked_Exit()
 {
+	var audio = document.getElementById("clickButton");
+    	audio.play();
 	var buildArmy = document.getElementById('buildArmy');
     	buildArmy.style.display= "none";
 }
@@ -38,6 +49,8 @@ function build_army(armyType)
 				var armyId = (window.army_list.length).toString();
 				var newArmy = new Army(armyId,armyType,window.current_player.pid);
 				newArmy.army_status = 'ready';
+				var audio = document.getElementById("armyBirth");
+				audio.play();
 				window.army_list.push(newArmy);
 				var tmp = new action("build",armyId,null,null,null,null,armyType);
 				tmp.get_result();
@@ -58,6 +71,8 @@ function build_army(armyType)
 				var armyId = (window.army_list.length).toString();
 				var newArmy = new Army(armyId,armyType,window.current_player.pid);
 				newArmy.army_status = 'ready';
+				var audio = document.getElementById("armyBirth");
+				audio.play();
 				window.army_list.push(newArmy);
 				var tmp = new action("build",armyId,null,null,null,null,armyType);
 				tmp.get_result();
@@ -77,6 +92,8 @@ function build_army(armyType)
 				var armyId = (window.army_list.length).toString();
 				var newArmy = new Army(armyId,armyType,window.current_player.pid);
 				newArmy.army_status = 'ready';
+				var audio = document.getElementById("armyBirth");
+				audio.play();
 				window.army_list.push(newArmy);
 				var tmp = new action("build",armyId,null,null,null,null,armyType);
 				tmp.get_result();

@@ -85,7 +85,7 @@ function attack_clicked_handler()
 		show_range(x+1, y, 'attack');
 		show_range(x, y+1, 'attack');
 		show_range(x+1, y+1, 'attack');
-		if(army.typename == 'archor')
+		if(army.typename == 'archer')
 		{
 			if( y > 1)
 			{
@@ -121,7 +121,7 @@ function attack_clicked_handler()
 		show_range(x+1, y, 'attack');
 		show_range(x-1, y+1, 'attack');
 		show_range(x, y+1, 'attack');
-		if(army.typename == 'archor')
+		if(army.typename == 'archer')
 		{
 			if(y > 1)
 			{
@@ -281,6 +281,8 @@ function valid_move_action(e)
 	2. show the result
 	3. record the result in result list
 	*/
+	var audio = document.getElementById("clickButton");
+	audio.play();
 	e = e || window.event;
 	//console.log(e.target);
 	var target = e.target;
@@ -303,7 +305,9 @@ function valid_move_action(e)
 }
 
 function invalid_action()
-{
+{	
+	var audio = document.getElementById("clickSurrender");
+	audio.play();
 	console.log('Invalid action');
 	clear_range('whatever');
 }
@@ -334,6 +338,9 @@ function surrender_clicked_handler()
 		return;
 	}
 	*/
+
+	var audio = document.getElementById("clickSurrender");
+	audio.play();
 	if(!IsMyTurn())
 	{
 		alert("You cannot surrender when it's not your turn");
@@ -341,8 +348,11 @@ function surrender_clicked_handler()
 	}
 
 	var choice = confirm("Are you sure to surrender?");
+	
 	if(choice)
 	{
+		document.getElementById("count15").pause();
+		document.getElementById("count15").currentTime = 0;
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST","/game/game_logic_server/submit_result.php",false);
 		xhr.setRequestHeader("TYPE","SURRENDER");
@@ -364,6 +374,10 @@ function nextround_clicked_handler()
 	/*
 	This function handle the click event on the next round button
 	*/
+	document.getElementById("count15").pause();
+	document.getElementById("count15").currentTime = 0;
+	var audio = document.getElementById("clickNextround");
+	audio.play();
 	if(IsMyTurn())
 	{
 		remove_manual();

@@ -31,6 +31,6 @@ function login()
 	}
 	else if(response.status =="failed")
 	{
-		console.log("Login Failed, check password");
+		alert("Login Failed, check password");
 	}
 }

@@ -7,7 +7,9 @@ var last_result_index = 0;
 var not_init = 1;
 var isSetTimeout;
 var timeout;
-var time = 30;
+var time = 120;
+var game_over = 0;
+
 function Init()
 {
 	//send request to get the initilization data
@@ -65,7 +67,7 @@ function IsMyTurn()
 		if(isSetTimeout){}
 		else
 		{
-			time = 30;
+			time = 120;
 			timeout = setInterval(time_up, 1000);
 			isSetTimeout = true;
 		}
@@ -79,6 +81,8 @@ function IsMyTurn()
 			isSetTimeout = false;
 		}
 		else{}
+		var time_div = document.getElementById("time");
+		time_div.innerHTML = "Not your turn.";
 		return false;
 	}
 }
@@ -118,11 +122,15 @@ function query_turn()
 			//parseRemoteResultList() is implemented in /game/game_logic_server/Result_list.js
 			parseRemoteResultList(response["latest_result_list"]);
 			//last_result_index = result_list.length;
+			
 			//parseSlotOwnerChange() is implemented here 
 			parseSlotOwnerChange(response["occupation_record"]);
-			setActivePlayer(response["active_player"]);			
+			setActivePlayer(response["active_player"]);
+			
+			//this function will reset the attack to default value, called in order to cancel the defend effect in the previous round
+			reset_army_attack(response["active_player"]);	
 			update_turn_div();
-			if(IsMyTurn())
+			if(IsMyTurn() && !game_over)
 			{
 				window.current_player.gold = response["player_gold"];
 				window.current_player.wood = response["player_wood"];
@@ -152,10 +160,20 @@ function parseSlotOwnerChange(record)
 
 function time_up()
 {
-	console.log(time--);
-	if(time == 0)
+	var time_div = document.getElementById("time");
+	if(time == 16){
+		document.getElementById("count15").play();
+	}
+	if(time == 1)
 	{
-		alert('Time is up!');
+		time_div.innerHTML = 'Time is up!';
 		nextround_clicked_handler();
 	}
+	time_div.innerHTML = "Time remaining: " + time + "s";
+	time = time - 1;
+}
+
+function generate_quit_button()
+{
+	var quit_button = document.createElement("div");
 }

@@ -1,6 +1,8 @@
 <?php
-	require_once("../lib/db.php");
-	require_once("game_logic_server/lib.php");
+	$APP_ROOT = $_ENV["OPENSHIFT_REPO_DIR"];
+	require_once($APP_ROOT."lib/db.php");
+	require_once($APP_ROOT."game/game_logic_server/lib.php");
+
 	$user_id = $_COOKIE["CURRENT_USER"];
 	$game_id = $_COOKIE["IN_GAME"];
 	
@@ -18,6 +20,14 @@
 		$SQL_VISITED_NUM = "SELECT * FROM game_{$game_id}_playerlist WHERE player_status = 3";
 		$result = mysqli_query($db,$SQL_VISITED_NUM);
 		$row_num = mysqli_num_rows($result);
+		$SQL_GAME_RESET = "UPDATE Game SET game_started = 0 WHERE game_id = $game_id";
+		if(!mysqli_query($db,$SQL_GAME_RESET))
+		{
+			$sql_error = mysqli_error($db);
+			echo "<!--";
+			echo "$sql_error";
+			echo "-->";
+		}
 
 		echo <<<HTML_CONTENT
 <!DOCTYPE html>
