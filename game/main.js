@@ -175,7 +175,7 @@ function time_up()
 
 function generate_quit_button()
 {
-	alert("generating the quit button");
+	//alert("generating the quit button");
 	var info_div = document.getElementById("info");
 	var quit_button = document.createElement("button");
 	quit_button.innerHTML = "quit this game";
@@ -185,6 +185,7 @@ function generate_quit_button()
 
 function quit_game()
 {
+	alert("generating quit request");
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST","/game/game_logic_server/quit_game.php",false);
 	xhr.send();
