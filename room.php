@@ -97,5 +97,6 @@
     </div>
     <audio id="clickButton" src="../audio/button.wav"></audio>
     <audio id="clickQuit" src="../audio/quit.wav"></audio>
+    <audio id="gameStart" src="../audio/start.wav"></audio>
 </body>
 </html>

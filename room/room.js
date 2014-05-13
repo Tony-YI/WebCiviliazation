@@ -50,6 +50,7 @@ function room_get_list()
 			}
 			if(obj.started == 'yes')
 			{
+				document.getElementById("gameStart").play();
 				alert('Your game has started!');
 				document.location.href = '../game/game.html';
 				return false;
