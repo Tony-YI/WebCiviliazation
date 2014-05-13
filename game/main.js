@@ -136,6 +136,7 @@ function query_turn()
 				window.current_player.wood = response["player_wood"];
 				current_player.show_info();
 				reinit_not_dead_army();
+				document.getElementById("turn").play();
 				alert("Hey ! It's your turn !");
 			}
 		}
